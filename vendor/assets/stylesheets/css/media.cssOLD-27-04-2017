@@ -1,0 +1,2849 @@
+@media only screen and (min-width: 992px) and (max-width: 1200px)
+
+{
+  /* body{border:1px solid #f00;}  */
+ .logo-main img {
+  width: 320px;
+}
+.navigation-part .nav_bar li {
+  margin-right: 29px !important;
+}
+.navigation-part .nav_bar li a {
+  font-size: 19px;
+}
+ .banner-inner h2 {
+  font-size: 78px;
+  line-height: 75px;
+  margin: 0 0 20px;
+}
+.exclusive-firts-country {
+  margin: 0 10px 20px;
+  padding: 14px 17px !important;
+  width: 22.88%;
+}
+.contact2-footer p 
+{
+  width: 85%;
+}
+
+.guaranteed-part1-content-main2 h3 {
+  font-size: 25px;
+}
+.guaranteed-content-sec h3 {
+  font-size: 25px;
+}
+.accommodation1-main-inner h3 {
+  font-size: 24px;
+  line-height: 24px;
+  margin: 0 0 13px;
+}
+
+.green-ring-bg2 {
+  display: none;
+}
+.guaranteed-part1-overlay .guaranteed-content-sec {
+  height: 313px;
+  
+}
+
+.guaranteed-part1-overlay.overlay2 .guaranteed-content-sec {
+  height: 225px;
+}
+.guaranteed-part2-main-right {
+  padding-left: 30px !important;
+}
+.guaranteed-part1-imgnew2 {
+  height: 710px;
+}
+.guaranteed-content-sec {
+  height: 473px;
+}
+.guaranteed-part1-overlay.overlay4 {
+  height: 350px;
+  width: 92%;
+}
+.guaranteed-part1-overlay.overlay5 .guaranteed-content-sec {
+  height: 180px;
+}
+.accommodation1-main.space4 {
+  height: 222px;
+}
+.authprised-territories-img.short-new > img {
+  width: 25px;
+}
+.col-xs-12.pad_none.guaranteed-part1-overlay.overlay3 {
+  height: 156px;
+  width: 94%;
+  margin: 10px;
+}
+.guaranteed-part1-overlay 
+{
+  width: 84%;
+}
+
+/*==== ACCOMODATION PAGE START ====*/
+.banner-main.accomodation-banner {
+  padding: 180px 0 104px !important;
+}
+.pallazo-versace-ratig-out4 {
+  padding: 173px 0 !important;
+}
+.hotels-first4-outer {
+  min-height: 290px;
+}
+.jupiter3-hotel-rating-sec h4 {
+  font-size: 14px;
+  margin: 93% 0 0;
+}
+.defination-luxury-out2 {
+  background: rgba(0, 0, 0, 0) url("../images/luxury-class-info-bg2.png") no-repeat scroll center top / 58% auto;
+  padding: 30px 0 54px !important;
+}
+.details-out-inner-left2.details-out-inner-right2 {
+  padding: 25px 4% 25px 2% !important;
+}
+
+/*==== ACCOMODATION PAGE END ====*/
+
+
+
+
+/*==== EVENTS TICKET PAGE START ====*/
+
+.ticket2-applications-right-purpel2 
+{
+  width: 83%;
+}
+.condition-of-sale-table-out.content {
+  height: 390px;
+}
+
+/*==== EVENTS TICKET PAGE END ====*/
+
+
+/*==== CONTACT US PAGE Starts ====*/
+
+.contact2-send-message-inner1 {
+  width: 95%;
+}
+.contact2-send-message-left {
+  padding: 60px 10px 80px 0 !important;
+}
+
+/*==== CONTACT US PAGE END ====*/
+}
+
+
+
+
+
+
+
+@media only screen and (min-width: 767px) and (max-width: 991px) 
+{
+/* body{border:1px solid #f00;} */
+
+
+
+.banner-main {
+  padding: 175px 0 100px !important;
+}
+header.fixed .logo-main img {
+  transition: all 1s ease 0s;
+  width: 200px;
+}
+ .logo-main img {
+  width: 250px;
+}
+.navigation-part {
+  margin-top: 12px;
+}
+header.fixed .navigation-part .nav_bar li {
+  margin-right: 16px !important;
+}
+.navigation-part .nav_bar li {
+  margin-right: 19px !important;
+}
+header.fixed .navigation-part .nav_bar li a {
+  font-size: 13px;
+}
+.navigation-part .nav_bar li a {
+  font-size: 17px;
+}
+
+.banner-inner h2 {
+  font-size: 42px;
+  line-height: 46px;
+  margin: 0 0 20px;
+}
+.exclusive-firts-country {
+  margin: 0 5px 10px;
+  padding: 10px 12px !important;
+  width: 240px;
+}
+.banner-inner p {
+  font-size: 14px;
+  line-height: 21px
+}
+.contact2-footer p 
+{
+  width: 85%;
+}
+.gold-cost-right img {
+  width: 58px;
+}
+
+.exclusive-reprensentatio-main {
+  padding: 80px 0 !important;
+}
+.exclusive-reprensentatio-inner h2 {
+  font-size: 40px;
+  line-height: 40px;
+  margin: 0 0 28px;
+  padding-bottom: 16px;
+}
+
+.shopping_cart_top h2 {
+  font-size: 55px;
+  line-height: 52px;
+  margin: 0 0 17px;
+  padding-bottom: 10px;
+}
+.authprised-territories-img > img {
+  width: 80px;
+}
+
+.guaranteed-part1-inner {
+  padding: 61px 13px !important;
+}
+.guaranteed-content-sec {
+  height: 465px;
+}
+.guaranteed-part2-main-right {
+  padding-left: 25px !important;
+}
+
+
+
+
+.create-own-program2-inner h3 {
+  font-size: 27px;
+  line-height: 28px;
+  margin: 155px 0 12px;
+  text-shadow: 0 0 26px #000000;
+}
+.create-own-program2-new-right-inner h3 {
+   font-size: 27px;
+  line-height: 28px;
+   text-shadow: 0 0 26px #000;
+  margin: 160px 0 12px;
+}
+
+.green-ring-bg2 img {
+  width: 65px;
+  display: none;
+}
+.sales3-permitted-inner h3 {
+  
+  font-size: 27px;
+  line-height: 28px;
+  margin: 98px 0 12px;
+}
+.sales3-permitted-inner {
+  height: 197px;
+}
+.shopping-cart-main {
+  padding: 170px 0 80px !important;
+}
+.accomdation-sales-inner-left-bottom h3 {
+ 
+  font-size: 28px;
+  line-height: 28px;
+  margin: 315px 0 12px;
+}
+.create-own-program2-inner.sydney-program2-same2 h3 {
+  margin: 103px 0 12px;
+  font-size: 25px;
+}
+.subcribe-main-out {
+  padding: 70px 0 !important;
+}
+.subscribe-inner-main2 h2 {
+  font-size: 33px;
+  line-height: 12px;
+  margin: 0 0 31px;
+}
+
+.sbscribe2-field-outer input {
+  font-size: 16px;
+  margin: 0 5px 0 0;
+  padding: 17px 25px !important;
+}
+
+.subscribe-submit {
+  padding: 14px 28px !important;
+  width: 200px;
+}
+.footer-inner-section1 img {
+  width: 165px;
+}
+.contact2-footer span {
+  width: 21px;
+}
+.col-xs-12.pad_none.follow-us-main2 img {
+  width: 27px;
+}
+.follow-us-main2 samp {
+  margin: 0px 15px 0 0;
+}
+
+
+/* ============================================ */
+
+
+.guaranteed-part1-content-main2 h3 {
+  font-size: 20px;
+}
+
+
+.guaranteed-content-sec h3 {
+  font-size: 18px;
+  line-height: 20px;
+  margin: 0 0 8px 0;
+}
+.accommodation1-main-inner h3 {
+  font-size: 24px;
+  line-height: 24px;
+  margin: 0 0 13px;
+}
+
+.green-ring-bg2 {
+  display: none;
+}
+.guaranteed-part1-inner {
+ 
+  margin: 10px;
+  
+}
+
+.guaranteed-part1-overlay .guaranteed-content-sec {
+  height: 258px;
+}
+.guaranteed-part1-overlay.overlay2 .guaranteed-content-sec {
+  height: 178px;
+}
+.guaranteed-part2-main-right {
+  padding-left: 30px !important;
+}
+.guaranteed-part1-imgnew2 {
+  height: 607px;
+}
+.guaranteed-content-sec {
+  height: 473px;
+}
+
+.guaranteed-part1-overlay.overlay4 {
+  height: 279px;
+  width: 94%;
+}
+.guaranteed-part1-overlay.overlay5 .guaranteed-content-sec {
+  height: 148px;
+}
+.accommodation1-main.space4 {
+  height: 168px;
+}
+.authprised-territories-img.short-new > img {
+  width: 25px;
+}
+.col-xs-12.pad_none.guaranteed-part1-overlay.overlay3 {
+  height: 117px;
+  margin: 10px;
+  width: 94%;
+}
+.guaranteed-part1-overlay.overlay3 .guaranteed-content-sec {
+  height: 136px;
+}
+.guaranteed-part1-overlay {
+  margin: 10px;
+  width: 91%;
+}
+.accommodation1-main-inner h3 {
+  font-size: 13px;
+  line-height: 20px;
+  margin: 0px;
+  text-shadow: 0 0 26px #000000;
+}
+.guaranteed-content-sec p {
+  font-size: 12px;
+   padding: 0 4% !important;
+}
+.guaranteed-content-sec h3 span {
+  font-size: 10px;
+}
+.guaranteed-content-sec h3 span::before {
+  right: -12px;
+  top: 5px;
+  width: 5px;
+}
+.guaranteed-content-sec h3 span::after 
+{
+  left: -13px;
+  top: 5px;
+  width: 5px;
+}
+.accommodation1-main-inner h3 span::before {
+  right: -12px;
+  top: 5px;
+  width: 5px;
+}
+
+.accommodation1-main-inner h3 span::after {
+ left: -13px;
+  top: 5px;
+  width: 5px;
+}
+.col-xs-12.pad_none.accommodation1-main-inner > samp img {
+  width: 17px;
+}
+.col-xs-12.pad_none.guaranteed-part1-content-main2 samp img {
+  width: 16px;
+}
+/* ============================================ */
+
+
+
+/*==== ACCOMODATION PAGE START ====*/
+.banner-main.accomodation-banner {
+  padding: 140px 0 60px !important;
+}
+
+.pallazo-versace-ratig-out4 {
+  padding: 121px 0 !important;
+}
+.hotels-first4-outer {
+  min-height: 225px;
+  padding: 5px !important;
+}
+.jupiter3-hotel-rating-sec h4 {
+  font-size: 14px;
+  margin: 93% 0 0;
+}
+
+
+.defination-luxury-out2 {
+  background: rgba(0, 0, 0, 0) url("../images/luxury-class-info-bg2.png") no-repeat scroll center top / 58% auto;
+  padding: 30px 0 54px !important;
+}
+.room-type-img03 > img {
+  max-width: 87%;
+}
+.details-out-inner-left2.details-out-inner-right2 {
+  padding: 25px 6px 25px !important;
+}
+.pallazo-versace-ratig-out4 h3 {
+  font-size: 40px;
+}
+.accommodation-main-outer4 {
+  background: #ffffff url("../images/accomidatio-design-bgnw.png") no-repeat scroll -67px 49px / 44% auto;
+   padding: 70px 0 30px !important;
+}
+
+.accommodation-scrolling-out .content {
+  height: 232px;
+}
+.details-out-inner-left2 {
+  padding: 25px 2% 25px 10% !important;
+}
+.details-out-inner-left2 p {
+  font-size: 17px;
+}
+
+.details-out-inner-left2 p strong
+ {
+  font-size: 17px;
+}
+.room-type-img03 {
+  float: left;
+  margin: -4px 10px 0 0;
+  text-align: center;
+  width: 11%;
+}
+.feauture-first-inner2 > img {
+  max-width: 75%;
+}
+
+.feauture-first03 {
+  background: rgba(0, 0, 0, 0) url("../images/feature-border-bg.png") no-repeat scroll left -6px;
+  padding: 5px !important;
+}
+.feauture-first-inner2 {
+  height: 147px;
+}
+.feture-note-out3 p {
+  font-size: 17px;
+  line-height: 21px;
+}
+.feture-note-out3 {
+  padding: 24px 20px !important;
+}
+.luxury-class-img2 {
+  left: -8px;
+  position: absolute;
+  top: 129px;
+  z-index: 9;
+  width: 200px;
+}
+.accomodation0details-view-out {
+  padding: 60px 0 50px !important;
+}
+
+.col-md-6.col-sm-6.pad_none.jupiter-hotel-first > img {
+  width: 100%;
+}
+.seaworl-overlay3:hover .jupiter3-hotel-rating-sec-new {
+  background: rgba(0, 0, 0, 0) url("../images/seaworl-overlay3-hover.png") no-repeat scroll center top;
+  display: block;
+  background-size: cover;
+}
+
+
+/*==== ACCOMODATION PAGE END ====*/
+
+
+
+/*==== EVENTS TICKET PAGE START ====*/
+
+
+
+.ticket2-applications-right-purpel2 {
+  padding: 10px 10px 10px 35px !important;
+  width: 81%;
+}
+.condition-of-sale-table-out.content {
+  height: 300px;
+}
+.banner-main.event-tickets-banner {
+  padding: 140px 0 60px !important;
+}
+.accommodation-main-outer4.event-ticket-inner3 {
+  padding: 70px 0 30px !important;
+  background: #ffffff url("../images/events2-design-bgnw.png") no-repeat scroll left 50px / 34% auto;
+}
+.col-xs-12.pad_none.event-ticket-main-out4 br {
+  display: none;
+}
+.info-by0check-Commonwealth2 {
+  padding: 0 2%;
+}
+.info-by0check-Commonwealth2 h5 {
+  font-size: 18px;
+}
+.ticket-info-design-img3 {
+  top: -75px;
+  width: 126px;
+}
+.ticket-applications-inner2 h2 {
+  font-size: 40px;
+  line-height: 40px;
+     margin: 0 0 28px;
+    padding-bottom: 16px;
+}
+.ticket2-applications-calender2 {
+  padding: 20px 0 !important;
+  width: 140px;
+}
+.ticket2-applications-calender2 h4 {
+  font-size: 26px;
+}
+.ticket2-applications-calender2 h4 strong {
+  font-size: 35px;
+  line-height: 30px;
+}
+.ticket2-applications3-right-inner p {
+  font-size: 15px;
+  line-height: 22px;
+  margin: 0;
+}
+.ticket2-applications3-right-inner h5 {
+  font-size: 18px;
+}
+.ticket2-applications3-right-inner {
+  height: 114px;
+}
+.right-green-arow2 {
+  right: -12px;
+  top: 61px;
+}
+.condition-of-sale-main-inner h2 {
+  font-size: 40px;
+  line-height: 40px;
+  margin: 0 0 27px;
+  padding-bottom: 20px;
+}
+.condition-of-sale-main-inner p {
+  margin: 28px 0 52px;
+}
+/*==== EVENTS TICKET PAGE END ====*/
+
+
+/*==== CONTACT US PAGE Starts ====*/
+
+.contact-us-main-inner-part2 {
+  padding: 0 !important;
+}
+.contact2-send-message-inner1 {
+  width: 95%;
+}
+.contact2-send-message-left {
+  padding: 60px 10px 80px 0 !important;
+}
+.col-xs-12.pad_none.sendus-message-field-out > span {
+  width: 8%;
+}
+.sendus-message-field-out input {
+  width: 91%;
+}
+.sendus-message-field-out textarea {
+  width: 91%;
+}
+.send_clear {
+  width: 150px;
+  padding: 12px 28px !important;
+}
+
+/*==== CONTACT US PAGE END ====*/
+
+
+
+}
+
+
+@media only screen and (min-width: 620px) and (max-width: 766px) 
+
+{
+	
+/* body{border:1px solid #f00;}
+ */
+
+.banner-main {
+  padding: 120px 0 70px !important;
+}
+.logo-main img {
+  position: relative;
+  width: 250px;
+  z-index: 9999;
+}
+
+.navigation-part .nav_bar li a {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  color: #ffffff;
+  font-size: 17px;
+  padding: 0 !important;
+}
+.banner-inner h2 {
+  font-size: 31px;
+  line-height: 37px;
+  margin: 0 0 10px;
+  padding: 0 0 10px 0 !important;
+}
+.exclusive-firts-country {
+  margin: 0 5px 10px;
+  padding: 10px 12px !important;
+  width: 196px;
+}
+.banner-inner p {
+  font-size: 14px;
+  line-height: 21px
+}
+
+.contact2-footer p 
+{
+  width: 85%;
+}
+.gold-cost-right img {
+  width: 58px;
+}
+#active-nav {
+  color: #303030 !important;
+}
+.exclusive-reprensentatio-main {
+  padding: 50px 0 !important;
+}
+.exclusive-reprensentatio-inner h2 {
+  font-size: 35px;
+  line-height: 34px;
+  margin: 0 0 28px;
+  padding-bottom: 8px;
+}
+.exclusive-firts-country img {
+  width: 50px;
+}
+.shopping_cart_top h2 {
+  font-size: 45px;
+  line-height: 42px;
+  margin: 0 0 17px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+.guaranteed-part1 {
+  margin: 0px 0 0;
+  padding:15px !important;
+}
+.authprised-territories-img > img {
+  width: 80px;
+}
+.shopping_cart_top h2::after 
+{
+  left: 50%;
+  transform: translate(-50%);
+  width: 20%;
+}
+.col-xs-12.col-sm-7.col-md-7.pad_none.shopping_cart_top br {
+  display: none;
+}
+.shopping_cart_top p {
+  font-size: 16px;
+  line-height: 23px;
+  margin: 0;
+  padding: 0 2% !important;
+  text-align: center;
+}
+.shopping_cart_top {
+  margin: 0 0 20px;
+  padding: 0 !important;
+  text-align: center;
+}
+.guaranteed-part1-inner {
+  padding: 61px 13px !important;
+}
+
+.guaranteed-content-sec {
+  height: 430px;
+}
+
+.guaranteed-part2-main-right {
+  padding:  0 15px !important;
+}
+
+.accommodation1-main-inner h3 {
+  font-size: 27px;
+  line-height: 28px;
+  margin: 285px 0 12px;
+  text-shadow: 0 0 26px #000000;
+}
+.hospitality1-inner h3 {
+   font-size: 27px;
+  line-height: 28px;
+  margin: 285px 0 12px;
+  text-shadow: 0 0 26px #000000;
+}
+
+.create-own-program2-inner h3 {
+  font-size: 27px;
+  line-height: 28px;
+  margin: 155px 0 12px;
+  text-shadow: 0 0 26px #000000;
+}
+.shopping-botttom2-inner {
+  margin-top: 25px;
+  padding: 0 15px !important;
+}
+.create-own-space-outer2 {
+  margin: 10px 0;
+  padding: 0 5px !important;
+}
+.accomdation-sales-inner-right {
+  padding: 0 0px !important;
+}
+.create-own-program2-new-right-inner h3 {
+   font-size: 27px;
+  line-height: 28px;
+   text-shadow: 0 0 26px #000;
+  margin: 160px 0 12px;
+}
+
+.green-ring-bg2 img {
+  width: 65px;
+  display: none;
+}
+.sales3-permitted-inner h3 {
+  
+  font-size: 27px;
+  line-height: 28px;
+  margin: 98px 0 12px;
+}
+.sales3-permitted-inner {
+  height: 277px;
+}
+.guaranteed-part1-main {
+  padding: 15px !important;
+}
+.shopping-cart-main {
+  padding: 80px 0 80px !important;
+}
+.accomdation-sales-inner-left-bottom h3 {
+ 
+  font-size: 28px;
+  line-height: 28px;
+  margin: 315px 0 12px;
+}
+.create-own-program2-inner.sydney-program2-same2 h3 {
+  margin: 103px 0 12px;
+  font-size: 25px;
+}
+.subcribe-main-out {
+  padding: 70px 0 !important;
+}
+.subscribe-inner-main2 h2 {
+  font-size: 33px;
+  line-height: 12px;
+  margin: 0 0 31px;
+}
+
+
+.sbscribe2-field-outer input {
+  font-size: 16px;
+  margin: 0 5px 0 0;
+  padding: 17px 25px !important;
+  width: 60%;
+}
+.subscribe-submit {
+  padding: 14px 28px !important;
+  width: 200px;
+}
+.footer-inner-section1 img {
+  width: 165px;
+}
+.contact2-footer span {
+  width: 21px;
+}
+.col-xs-12.pad_none.follow-us-main2 img {
+  width: 27px;
+}
+.follow-us-main2 samp {
+  margin: 0px 15px 0 0;
+}
+.navigation-part {
+  margin-top: 5px;
+  position: absolute;
+  text-align: right;
+}
+.banner-inner {
+  text-align: left;
+  width: 70%;
+  padding: 0 10px !important;
+}
+.footer-inner-section2 {
+  margin-top: 16px;
+  text-align: left;
+  width: 33%;
+}
+
+.navigation-part .dropdown-menu {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0 !important;
+  border-radius: 0;
+  display: block;
+  min-height: 1px;
+  position: relative;
+  top: 0;
+  border: 0;
+  box-shadow: none;
+}
+.dropdown-menu::after {
+  display: none;
+}
+.navigation-part .dropdown-menu li a {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border-radius: 0;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 0 15px !important;
+  text-transform: uppercase;
+}
+
+.navbar-collapse {
+  background: #f5ba13;
+  border-radius: 4px;
+  box-shadow: none;
+  overflow-x: visible;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  right: 14px;
+  width: 301px;
+  padding: 4px 15px !important;
+}
+.navigation-part .nav_bar li {
+  margin-bottom: 0px;
+  margin-right: 0 !important;
+  text-align: left;
+  width: 100%;
+}
+header.fixed .navigation-part .nav_bar li a {
+  font-size: 17px;
+  transition: all 1s ease 0s;
+}
+header.fixed .logo-main img {
+  transition: all 1s ease 0s;
+  width: 250px;
+}
+.navigation-part .nav_bar li a:hover {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0 !important;
+  color: #323232 !important;
+}
+
+header {
+  padding: 11px 10px !important;
+}
+
+header.fixed {
+  display: block;
+  position: absolute;
+}
+
+
+/* ============================================ */
+
+
+.guaranteed-part1-content-main2 h3 {
+  font-size: 20px;
+}
+
+
+.guaranteed-content-sec h3 {
+  font-size: 18px;
+  line-height: 20px;
+  margin: 0 0 8px 0;
+}
+.accommodation1-main-inner h3 {
+  font-size: 24px;
+  line-height: 24px;
+  margin: 0 0 13px;
+}
+
+.green-ring-bg2 {
+  display: none;
+}
+.guaranteed-part1-inner {
+ 
+  margin: 10px;
+  
+}
+.guaranteed-part1-overlay .guaranteed-content-sec {
+  height: 370px;
+}
+.guaranteed-part1-overlay.overlay2 .guaranteed-content-sec {
+  height: 264px;
+}
+.guaranteed-part2-main-right {
+  padding-left: 30px !important;
+}
+
+.guaranteed-part1-imgnew2 {
+  height: 390px;
+  overflow: hidden;
+}
+.guaranteed-content-sec {
+  height: 250px;
+}
+.guaranteed-part1-overlay.overlay4 {
+  height: 545px;
+  width: 97%;
+}
+.accommodation1-main a img {
+  border-radius: 4px;
+}
+.guaranteed-part1-overlay.overlay5 .guaranteed-content-sec {
+  height: 148px;
+}
+.accommodation1-main.space4 {
+  height: 168px;
+}
+.authprised-territories-img.short-new > img {
+  width: 60px;
+}
+.col-xs-12.pad_none.guaranteed-part1-overlay.overlay3 {
+  height: 268px;
+  margin: 10px;
+  width: 96.55%;
+}
+
+.guaranteed-part1-overlay.overlay3 .guaranteed-content-sec {
+  height: 136px;
+  width: 563px;
+}
+.guaranteed-part1-overlay {
+  margin: 10px;
+  width: 93%;
+}
+.accommodation1-main-inner h3 {
+  font-size: 13px;
+  line-height: 20px;
+  margin: 0px;
+  text-shadow: 0 0 26px #000000;
+}
+.guaranteed-content-sec p {
+  font-size: 12px;
+   padding: 0 4% !important;
+}
+.guaranteed-content-sec h3 span {
+  font-size: 10px;
+}
+.guaranteed-content-sec h3 span::before {
+  right: -12px;
+  top: 5px;
+  width: 5px;
+}
+.guaranteed-content-sec h3 span::after 
+{
+  left: -13px;
+  top: 5px;
+  width: 5px;
+}
+.accommodation1-main-inner h3 span::before {
+  right: -12px;
+  top: 5px;
+  width: 5px;
+}
+
+.accommodation1-main-inner h3 span::after {
+ left: -13px;
+  top: 5px;
+  width: 5px;
+}
+.col-xs-12.pad_none.accommodation1-main-inner > samp img {
+  width: 17px;
+}
+.col-xs-12.pad_none.guaranteed-part1-content-main2 samp img {
+  width: 16px;
+}
+/* ============================================ */
+
+
+
+
+
+/*==== ACCOMODATION PAGE START ====*/
+.banner-main.accomodation-banner {
+  padding: 140px 0 60px !important;
+}
+.pallazo-versace-ratig-out4 {
+  padding: 92px 0 !important;
+}
+.hotels-first4-outer {
+  min-height: 188px;
+  padding: 5px !important;
+  float: left;
+  width: 50%;
+}
+.jupiter3-hotel-rating-sec-new h4 {
+  font-size: 21px;
+  margin: 22% 0 0;
+}
+.jupiter3-hotel-rating-sec h4 {
+  font-size: 14px;
+  margin: 93% 0 0;
+}
+.defination-luxury-out2 {
+  background: rgba(0, 0, 0, 0) url("../images/luxury-class-info-bg2.png") no-repeat scroll center top / 58% auto;
+  padding: 30px 0 54px !important;
+}
+.room-type-img03 > img {
+  max-width: 87%;
+}
+
+.details-out-inner-left2.details-out-inner-right2 {
+  padding: 25px 2% 25px 2% !important;
+}
+.pallazo-versace-ratig-out4 h3 {
+  font-size: 40px;
+}
+
+.accommodation-main-outer4 {
+  background: #ffffff url("../images/accomidatio-design-bgnw.png") no-repeat scroll -67px 49px / 44% auto;
+  padding: 70px 0 50px 0 !important;
+}
+.accommodation-scrolling-out .content {
+  height: 232px;
+}
+.details-out-inner-left2 {
+  padding: 25px 2% 25px 2% !important;
+}
+.details-out-inner-left2 p {
+  font-size: 17px;
+}
+
+.details-out-inner-left2 p strong
+ {
+  font-size: 17px;
+}
+.room-type-img03 {
+  float: left;
+  margin: -4px 10px 0 0;
+  text-align: center;
+  width: 11%;
+}
+.feauture-first-inner2 > img {
+  max-width: 75%;
+}
+
+.feauture-first03 {
+  background: rgba(0, 0, 0, 0) url("../images/feature-border-bg.png") no-repeat scroll left -6px;
+  padding: 5px !important;
+}
+.feauture-first-inner2 {
+  height: 147px;
+}
+.feture-note-out3 p {
+  font-size: 17px;
+  line-height: 21px;
+}
+.feture-note-out3 {
+  padding: 24px 20px !important;
+}
+
+.luxury-class-img2 {
+  left: -8px;
+  position: absolute;
+  top: 157px;
+  width: 176px;
+  z-index: 9;
+}
+.accomodation0details-view-out {
+  padding: 45px 15px 40px !important;
+}
+
+.col-md-6.col-sm-6.pad_none.jupiter-hotel-first > img {
+  float: left;
+  height: auto;
+  width: 50%;
+}
+.seaworl-overlay3:hover .jupiter3-hotel-rating-sec-new {
+  background: rgba(0, 0, 0, 0) url("../images/seaworl-overlay3-hover.png") no-repeat scroll center top;
+  display: block;
+  background-size: cover;
+}
+
+.defination-luxury-inner-right2 img {
+  max-width:100%;
+}
+.defination-luxury-inner-right2 {
+  padding-left: 0px !important;
+  text-align: left;
+  margin: 11px 0 0 0;
+}
+
+.feauture-first03 {
+  float: left;
+  padding: 10px !important;
+  text-align: center;
+  width: 32.66%;
+  border-bottom:1px solid #e8e7e7;
+}
+.features-inner-main2 {
+  border-bottom: 0px;
+  display: table;
+}
+/*==== ACCOMODATION PAGE END ====*/
+
+
+
+
+/*==== EVENTS TICKET PAGE START ====*/
+
+
+
+.ticket2-applications-right-purpel2 {
+  padding: 10px 10px 10px 35px !important;
+  width: 81%;
+}
+.condition-of-sale-table-out.content {
+  height: 300px;
+}
+.banner-main.event-tickets-banner {
+  padding: 140px 0 60px !important;
+}
+.accommodation-main-outer4.event-ticket-inner3 {
+  padding: 70px 0 30px !important;
+  background: #ffffff url("../images/events2-design-bgnw.png") no-repeat scroll left 50px / 34% auto;
+}
+.col-xs-12.pad_none.event-ticket-main-out4 br {
+  display: none;
+}
+.info-by0check-Commonwealth2 {
+  padding: 0 2%;
+}
+.info-by0check-Commonwealth2 h5 {
+  font-size: 18px;
+}
+.ticket-info-design-img3 {
+  top: -91px;
+  width: 152px;
+}
+.ticket-applications-inner2 h2 {
+  font-size: 40px;
+  line-height: 40px;
+     margin: 0 0 28px;
+    padding-bottom: 16px;
+}
+.ticket2-applications-calender2 {
+  padding: 29px 0 !important;
+  width: 116px;
+}
+.ticket2-applications-calender2 h4 {
+  font-size: 26px;
+}
+.ticket2-applications-calender2 h4 strong {
+  font-size: 35px;
+  line-height: 30px;
+}
+.ticket2-applications3-right-inner p {
+  font-size: 15px;
+  line-height: 22px;
+  margin: 0;
+}
+.ticket2-applications3-right-inner h5 {
+  font-size: 18px;
+}
+.ticket2-applications3-right-inner {
+  height: 131.33px;
+}
+.right-green-arow2 {
+  right: -12px;
+  top: 67px;
+}
+.condition-of-sale-main-inner h2 {
+  font-size: 40px;
+  line-height: 40px;
+  margin: 0 0 27px;
+  padding-bottom: 20px;
+}
+.condition-of-sale-main-inner p {
+  margin: 28px 0 52px;
+}
+.event-ticket-main-out4 {
+  margin-top: 0;
+}
+.event-ticket-main-out4 p {
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0;
+  padding: 0 2% !important;
+}
+.info-first-contry2 {
+  margin-bottom: 30px;
+  text-align: left;
+  width: 25%;
+  float: left;
+  padding: 0 4px !important;
+  min-height: 60px;
+  margin-bottom: 20px;
+}
+
+
+/*==== EVENTS TICKET PAGE END ====*/
+
+/*==== CONTACT US PAGE Starts ====*/
+
+.contact-us-main-outer4 {
+  padding: 30px 0 0 !important;
+}
+.contact-us-main-inner-part2 {
+  margin-top: 0;
+}
+.contact-us-address02 h3 {
+  margin: 10px 0 0;
+}
+.contact-us-address02 {
+  margin: 0 0 20px;
+}
+.contact-us-main-inner-part2 {
+  padding: 0 !important;
+}
+.contact2-send-message-inner1 {
+  width: 100%;
+}
+.contact2-send-message-left {
+  padding: 16px 0 35px 0 !important;
+}
+.contact-us-send-message-out {
+  background-position: right top;
+  background-size: 210px auto;
+}
+.contact2-send-message-left h2 {
+  font-size: 32px;
+  line-height: 26px;
+  margin-bottom: 20px;
+}
+.col-xs-12.pad_none.sendus-message-field-out > span {
+  width: 4%;
+}
+.sendus-message-field-out input {
+  width: 96%;
+}
+.sendus-message-field-out textarea {
+  width: 96%;
+}
+.otr_send_clear {
+  margin: 8px 0 0;
+}
+.send_clear {
+  width: 120px;
+  padding: 8px 28px !important;
+}
+.contact2-map1-right {
+  padding: 0 !important;
+}
+.contact2-map1-right iframe {
+  height: 320px;
+}
+
+/*==== CONTACT US PAGE END ====*/
+}
+
+@media only screen and (min-width: 480px) and (max-width: 619px) 
+
+{
+	
+/* 		
+body{border:1px solid #f00;}
+ */
+
+.banner-main {
+  padding: 120px 0 70px !important;
+}
+
+.logo-main img {
+  position: relative;
+  width: 250px;
+  z-index: 9999;
+}
+header.fixed .logo-main img {
+  transition: all 1s ease 0s;
+  width: 250px;
+}
+
+header.fixed {
+  position: absolute;
+  display: block;
+}
+/* .navigation-part .nav_bar li a {
+  font-size: 17px;
+} */
+.banner-inner h2 {
+  font-size: 31px;
+  line-height: 37px;
+  margin: 0 0 10px;
+  padding: 0 0 10px 0 !important;
+}
+
+.exclusive-firts-country {
+  margin: 0 5px 10px;
+  padding: 10px 12px !important;
+  width: 229px;
+}
+.banner-inner p {
+  font-size: 14px;
+  line-height: 21px
+}
+#active-nav {
+  color: #303030 !important;
+}
+.contact2-footer p 
+{
+  width: 85%;
+}
+.gold-cost-right img {
+  width: 58px;
+}
+
+.exclusive-reprensentatio-main {
+  padding: 50px 0 !important;
+}
+.exclusive-reprensentatio-inner h2 {
+  font-size: 35px;
+  line-height: 34px;
+  margin: 0 0 28px;
+  padding-bottom: 8px;
+}
+.exclusive-firts-country img {
+  width: 50px;
+}
+.shopping_cart_top h2 {
+  font-size: 45px;
+  line-height: 42px;
+  margin: 0 0 17px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+.guaranteed-part1 {
+  margin: 0px 0 0;
+  padding:15px !important;
+}
+.authprised-territories-img > img {
+  width: 80px;
+}
+.shopping_cart_top h2::after 
+{
+  left: 50%;
+  transform: translate(-50%);
+  width: 20%;
+}
+.col-xs-12.col-sm-7.col-md-7.pad_none.shopping_cart_top br {
+  display: none;
+}
+.shopping_cart_top p {
+  font-size: 16px;
+  line-height: 23px;
+  margin: 0;
+  padding: 0 2% !important;
+  text-align: center;
+}
+.shopping_cart_top {
+  margin: 0 0 20px;
+  padding: 0 !important;
+  text-align: center;
+}
+.guaranteed-part1-inner {
+  padding: 61px 13px !important;
+}
+
+.guaranteed-content-sec {
+  height: 430px;
+}
+
+.guaranteed-part2-main-right {
+  padding:  0 15px !important;
+}
+
+.accommodation1-main-inner h3 {
+  font-size: 27px;
+  line-height: 28px;
+  margin: 285px 0 12px;
+  text-shadow: 0 0 26px #000000;
+}
+.hospitality1-inner h3 {
+   font-size: 27px;
+  line-height: 28px;
+  margin: 285px 0 12px;
+  text-shadow: 0 0 26px #000000;
+}
+
+.create-own-program2-inner h3 {
+  font-size: 27px;
+  line-height: 28px;
+  margin: 155px 0 12px;
+  text-shadow: 0 0 26px #000000;
+}
+.shopping-botttom2-inner {
+  margin-top: 25px;
+  padding: 0 15px !important;
+}
+.create-own-space-outer2 {
+  margin: 10px 0;
+  padding: 0 5px !important;
+}
+.accomdation-sales-inner-right {
+  padding: 0 0px !important;
+}
+.create-own-program2-new-right-inner h3 {
+   font-size: 27px;
+  line-height: 28px;
+   text-shadow: 0 0 26px #000;
+  margin: 160px 0 12px;
+}
+.dropdown-menu::after {
+  display: none;
+}
+
+.navigation-part .dropdown-menu {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0 !important;
+  border-radius: 0;
+  display: block;
+  min-height: 1px;
+  position: relative;
+  top: 0;
+}
+.green-ring-bg2 img {
+  width: 65px;
+  display: none;
+}
+.sales3-permitted-inner h3 {
+  
+  font-size: 27px;
+  line-height: 28px;
+  margin: 98px 0 12px;
+}
+.sales3-permitted-inner {
+  height: 277px;
+}
+.guaranteed-part1-main {
+  padding: 15px !important;
+}
+
+.shopping-cart-main {
+  padding: 50px 0 !important;
+}
+.accomdation-sales-inner-left-bottom h3 {
+ 
+  font-size: 28px;
+  line-height: 28px;
+  margin: 315px 0 12px;
+}
+.create-own-program2-inner.sydney-program2-same2 h3 {
+  margin: 103px 0 12px;
+  font-size: 25px;
+}
+.subcribe-main-out {
+  padding: 70px 0 !important;
+}
+.subscribe-inner-main2 h2 {
+  font-size: 33px;
+  line-height: 12px;
+  margin: 0 0 31px;
+}
+.sbscribe2-field-outer input {
+  font-size: 16px;
+  margin: 0 0 12px;
+  padding: 17px 25px !important;
+  width: 90%;
+}
+.subscribe-submit {
+  padding: 14px 28px !important;
+  width: 200px;
+}
+.footer-inner-section1 img {
+  width: 165px;
+}
+.contact2-footer span {
+  width: 21px;
+}
+.col-xs-12.pad_none.follow-us-main2 img {
+  width: 27px;
+}
+.follow-us-main2 samp {
+  margin: 0px 15px 0 0;
+}
+
+.navigation-part {
+  margin-top: 13px;
+  position: absolute;
+  text-align: right;
+}
+.banner-inner {
+  text-align: left;
+  width: 70%;
+  padding: 0 10px !important;
+}
+.footer-inner-section2 {
+  margin-top: 16px;
+  text-align: left;
+  width: 50%;
+}
+
+
+.navbar-collapse {
+  background: #f5ba13;
+  border-radius: 4px;
+  box-shadow: none;
+  overflow-x: visible;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  right: 14px;
+  width: 301px;
+  padding: 4px 15px !important;
+}	
+
+.navigation-part .nav_bar li {
+  margin-bottom: 0;
+  margin-right: 0 !important;
+  text-align: left;
+  width: 100%;
+}
+.navigation-part .dropdown-menu li a {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border: 0 none;
+  border-radius: 0;
+  color: #ffffff;
+  font-size: 16px !important;
+  padding: 0 15px !important;
+  text-transform: uppercase;
+}
+header.fixed .navigation-part .nav_bar li a {
+  font-size: 17px;
+  transition: all 1s ease 0s;
+}
+.dropdown-menu {
+  border: medium none;
+  border-radius: 0;
+  box-shadow: 0 0 0 0;
+}
+.navigation-part .nav_bar li a {
+  font-size: 17px;
+}
+.navigation-part .nav_bar li a:hover {
+  color: #323232;
+  background: none;
+}
+.navigation-part .dropdown-menu {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0 !important;
+  border-radius: 0;
+  display: block;
+  min-height: 1px;
+  position: relative;
+  top: 0;
+}
+header {
+  padding: 11px 10px !important;
+}
+
+
+
+
+/* ============================================ */
+
+
+.guaranteed-part1-content-main2 h3 {
+  font-size: 20px;
+}
+
+.guaranteed-part1 {
+  margin: 0;
+  padding: 0 0 10px !important;
+}
+.guaranteed-content-sec h3 {
+  font-size: 18px;
+  line-height: 20px;
+  margin: 0 0 8px 0;
+}
+.accommodation1-main-inner h3 {
+  font-size: 24px;
+  line-height: 24px;
+  margin: 0 0 13px;
+}
+
+.green-ring-bg2 {
+  display: none;
+}
+.guaranteed-part1-inner {
+ 
+  margin: 10px;
+  
+}
+.guaranteed-part1-overlay.overlay2 .guaranteed-content-sec {
+  height: 197px;
+}
+.col-xs-12.col-sm-5.col-md-5.pad_none.accommodation1-main.globel0new.fadeInUp.wow {
+  width: 100%;
+}
+.guaranteed-part1-overlay .guaranteed-content-sec {
+  height: 284px;
+  width: 440px;
+}
+.guaranteed-part1-imgnew2 {
+  height: 390px;
+  overflow: hidden;
+}
+.guaranteed-content-sec {
+  height: 250px;
+}
+
+.guaranteed-part1-overlay.overlay4 {
+  height: 413px;
+  width: 96%;
+}
+.accommodation1-main a img {
+  border-radius: 4px;
+}
+.guaranteed-part1-overlay.overlay5 .guaranteed-content-sec {
+  height: 347px;
+  width: 429px;
+}
+.accommodation1-main.space4 {
+  height: 368px;
+  width: 100%;
+}
+.authprised-territories-img.short-new > img {
+  width: 50px;
+}
+.accommodation1-main {
+  float: left;
+  width: 50%;
+}
+.col-xs-12.pad_none.accommodation1-main.sales-permitted-outer {
+  margin-top: 0px;
+  width: 100%;
+}
+.col-xs-12.pad_none.guaranteed-part1-overlay.overlay3 {
+  height: 200px;
+  margin: 10px;
+  width: 96.55%;
+}
+.guaranteed-part1-overlay.overlay3 .guaranteed-content-sec {
+  height: 136px;
+  width: 563px;
+}
+
+.guaranteed-part1-overlay {
+  margin: 10px;
+  width: 94%;
+}
+.accommodation1-main-inner h3 {
+  font-size: 22px;
+  line-height: 26px;
+  margin: 0;
+  text-shadow: 0 0 26px #000000;
+}
+.guaranteed-content-sec p {
+  font-size: 12px;
+   padding: 0 4% !important;
+}
+.guaranteed-content-sec h3 span {
+  font-size: 10px;
+}
+.guaranteed-content-sec h3 span::before {
+  right: -12px;
+  top: 5px;
+  width: 5px;
+}
+.guaranteed-content-sec h3 span::after 
+{
+  left: -13px;
+  top: 5px;
+  width: 5px;
+}
+.accommodation1-main-inner h3 span::before {
+  right: -12px;
+  top: 5px;
+  width: 5px;
+}
+
+.accommodation1-main-inner h3 span::after {
+ left: -13px;
+  top: 5px;
+  width: 5px;
+}
+.col-xs-12.pad_none.accommodation1-main-inner > samp img {
+  width: 17px;
+}
+.col-xs-12.pad_none.guaranteed-part1-content-main2 samp img {
+  width: 16px;
+}
+/* ============================================ */
+
+
+
+
+
+
+/*==== ACCOMODATION PAGE START ====*/
+.banner-main.accomodation-banner {
+  padding: 140px 0 60px !important;
+}
+
+.pallazo-versace-ratig-out4 {
+  padding: 83px 0 !important;
+}
+.hotels-first4-outer {
+  float: left;
+  min-height: 188px;
+  padding: 5px !important;
+  width: 80%;
+  float: none;
+  display: inline-block;
+}
+.jupiter3-hotel-rating-sec {
+  top: 0;
+  width: 81.66%;
+  left: 35px;
+}
+.jupiter3-hotel-rating-sec-new h4 {
+  font-size: 21px;
+  margin: 22% 0 0;
+}
+.jupiter3-hotel-rating-sec h4 {
+  font-size: 14px;
+  margin: 93% 0 0;
+}
+.defination-luxury-out2 {
+  background: rgba(0, 0, 0, 0) url("../images/luxury-class-info-bg2.png") no-repeat scroll center top / 58% auto;
+  padding: 30px 0 30px !important;
+}
+.room-type-img03 > img {
+  max-width: 87%;
+}
+.details-out-inner-left2.details-out-inner-right2 {
+  padding: 15px 2% 30px 5% !important;
+}
+.pallazo-versace-ratig-out4 h3 {
+  font-size: 30px;
+  line-height: 33px;
+}
+
+.accommodation-main-outer4 {
+  background: #ffffff url("../images/accomidatio-design-bgnw.png") no-repeat scroll -67px 49px / 44% auto;
+  padding: 70px 0 50px 0 !important;
+}
+.accommodation-scrolling-out .content {
+  height: 232px;
+}
+
+
+.details-out-inner-left2 {
+  padding: 30px 2% 14px 5% !important;
+}
+.details-out-inner-left2 p {
+  font-size: 17px;
+}
+
+.details-out-inner-left2 p strong
+ {
+  font-size: 17px;
+}
+.room-type-img03 {
+  float: left;
+  margin: -4px 10px 0 0;
+  text-align: center;
+  width: 11%;
+}
+.feauture-first-inner2 > img {
+  max-width: 75%;
+}
+
+.feauture-first03 {
+  background: rgba(0, 0, 0, 0) url("../images/feature-border-bg.png") no-repeat scroll left -6px;
+  padding: 5px !important;
+}
+.feauture-first-inner2 {
+  height: 147px;
+}
+
+.feture-note-out3 p {
+  font-size: 15px;
+  line-height: 23px;
+}
+.feture-note-out3 {
+  padding: 24px 20px !important;
+}
+.luxury-class-img2 {
+  left: -4px;
+  position: absolute;
+  top: 151px;
+  width: 105px;
+  z-index: 9;
+}
+.accomodation0details-view-out {
+  padding: 45px 15px 40px !important;
+}
+
+.col-md-6.col-sm-6.pad_none.jupiter-hotel-first > img {
+  float: left;
+  height: auto;
+  width: 50%;
+}
+.seaworl-overlay3:hover .jupiter3-hotel-rating-sec-new {
+  background: rgba(0, 0, 0, 0) url("../images/seaworl-overlay3-hover.png") no-repeat scroll center top;
+  display: block;
+  background-size: cover;
+}
+
+.defination-luxury-inner-right2 img {
+  max-width:100%;
+}
+
+.defination-luxury-inner-right2 {
+  margin: 11px 0 0;
+  padding-left: 0 !important;
+  text-align: left;
+  display: none;
+}
+
+.feauture-first03 {
+  float: left;
+  padding: 10px !important;
+  text-align: center;
+  width: 32.66%;
+  border-bottom:1px solid #e8e7e7;
+}
+.features-inner-main2 {
+  border-bottom: 0px;
+  display: table;
+}
+.pallazo-versace-ratig-out4 img {
+  width: 130px;
+}
+
+/*==== ACCOMODATION PAGE END ====*/
+
+
+
+
+/*==== EVENTS TICKET PAGE START ====*/
+
+
+.ticket2-applications-right-purpel2 {
+  padding: 10px 10px 10px 25px !important;
+  width: 79%;
+}
+.condition-of-sale-table-out.content {
+  height: 300px;
+}
+.banner-main.event-tickets-banner {
+  padding: 140px 0 60px !important;
+}
+.accommodation-main-outer4.event-ticket-inner3 {
+  padding: 70px 0 30px !important;
+  background: #ffffff url("../images/events2-design-bgnw.png") no-repeat scroll left 50px / 34% auto;
+}
+.col-xs-12.pad_none.event-ticket-main-out4 br {
+  display: none;
+}
+.info-by0check-Commonwealth2 {
+  padding: 0 2%;
+}
+.info-by0check-Commonwealth2 h5 {
+  font-size: 18px;
+}
+.ticket-info-design-img3 {
+  top: -119px;
+  width: 192px;
+}
+.ticket-applications-inner2 h2 {
+  font-size: 30px;
+  line-height: 30px;
+  margin: 0 0 20px;
+  padding-bottom: 12px;
+}
+.ticket2-applications-calender2 {
+  padding: 54px 0 !important;
+  width: 98px;
+}
+.ticket2-applications-calender2 h4 {
+  font-size: 22px;
+}
+.ticket2-applications-calender2 h4 strong {
+  font-size: 30px;
+  line-height: 30px;
+}
+.ticket2-applications3-right-inner p {
+  font-size: 15px;
+  line-height: 22px;
+  margin: 0;
+}
+.ticket2-applications3-right-inner h5 {
+  font-size: 18px;
+}
+.ticket2-applications3-right-inner {
+  height: 175.33px;
+}
+.right-green-arow2 {
+  right: -9px;
+  top: 88px;
+}
+.condition-of-sale-main-inner h2 {
+  font-size: 40px;
+  line-height: 40px;
+  margin: 0 0 27px;
+  padding-bottom: 20px;
+}
+.condition-of-sale-main-inner p {
+  margin: 28px 0 52px;
+}
+.event-ticket-main-out4 {
+  margin-top: 0;
+}
+.event-ticket-main-out4 p {
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0;
+  padding: 0 2% !important;
+}
+.info-first-contry2 {
+  float: left;
+  margin-bottom: 20px;
+  min-height: 60px;
+  padding: 0 4px !important;
+  text-align: left;
+  width: 33%;
+}
+
+
+/*==== EVENTS TICKET PAGE END ====*/
+
+
+/*==== CONTACT US PAGE Starts ====*/
+
+.contact-us-main-outer4 {
+  padding: 30px 0 0 !important;
+}
+.contact-us-main-inner-part2 {
+  margin-top: 0;
+}
+.contact-us-address02 h3 {
+  margin: 10px 0 0;
+}
+.contact-us-address02 {
+  margin: 0 0 20px;
+}
+.contact-us-main-inner-part2 {
+  padding: 0 !important;
+}
+.contact2-send-message-inner1 {
+  width: 100%;
+}
+.contact2-send-message-left {
+  padding: 16px 0 35px 0 !important;
+}
+.contact-us-send-message-out {
+  background-position: right top;
+  background-size: 210px auto;
+}
+.contact2-send-message-left h2 {
+  font-size: 32px;
+  line-height: 26px;
+  margin-bottom: 20px;
+}
+.col-xs-12.pad_none.sendus-message-field-out > span {
+  width: 5%;
+}
+.sendus-message-field-out input {
+  width: 95%;
+}
+.sendus-message-field-out textarea {
+  width: 95%;
+}
+.otr_send_clear {
+  margin: 8px 0 0;
+}
+.send_clear {
+  width: 120px;
+  padding: 8px 28px !important;
+}
+.contact2-map1-right {
+  padding: 0 !important;
+}
+.contact2-map1-right iframe {
+  height: 300px;
+}
+
+/*==== CONTACT US PAGE END ====*/
+
+}
+@media only screen and (max-width: 479px) 
+
+{
+			
+/* body{border:1px solid #f00;} */
+
+
+
+.banner-main {
+  padding: 110px 0 40px !important;
+}
+header.fixed .logo-main img {
+  transition: all 1s ease 0s;
+  width: 210px;
+}
+
+
+/* header.fixed .navigation-part {
+  margin-top: -2px;
+  transition: all 1s ease 0s;
+} */
+.logo-main img {
+  position: relative;
+  width: 210px;
+  z-index: 9999;
+}
+.navigation-part .nav_bar li a {
+  font-size: 16px;
+}
+
+.banner-inner h2 {
+  font-size: 26px;
+  line-height: 28px;
+  margin: 0 0 10px;
+  padding: 0 0 10px !important;
+}
+.exclusive-firts-country {
+  margin: 0 0px 10px 0;
+  padding: 10px 12px !important;
+  width: 77%;
+  float: none;
+  display: inline-block;
+}
+.banner-inner p {
+  font-size: 14px;
+  line-height: 21px
+}
+.exclusive-firts-country p {
+  
+  float: none;
+  font-size: 13px;
+  height: 49px;
+  margin: 0;
+}
+.exclusive-firts-country span {
+  float: left;
+  margin-right: 18px;
+}
+.contact2-footer p 
+{
+  width: 85%;
+}
+.navbar-toggle {
+  margin-right: 0px;
+}
+.gold-cost-right {
+  bottom: 12px;
+  position: absolute;
+  right: 12px;
+  top: auto;
+}
+.gold-cost-right img {
+  width: 40px;
+}
+.banner-inner h2::after {
+  left: 50%;
+  width: 66px;
+  transform: translate(-50%);
+}
+.read-more-banner {
+  display: inline-block;
+  float: none;
+  font-size: 16px;
+  padding: 12px 24px !important;
+}
+.exclusive-reprensentatio-main {
+  padding: 40px 0 !important;
+}
+.exclusive-flages-out {
+  text-align: center;
+}
+.exclusive-reprensentatio-inner h2 {
+  font-size: 30px;
+  line-height: 30px;
+  margin: 0 0 28px;
+  padding-bottom: 8px;
+}
+.exclusive-firts-country img {
+  width: 50px;
+}
+
+.shopping_cart_top h2 {
+  font-size: 40px;
+  line-height: 42px;
+  margin: 0 0 17px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+.guaranteed-part1 {
+  margin: 0px 0 0;
+  padding:15px !important;
+}
+.authprised-territories-img > img {
+  width: 80px;
+}
+
+.shopping_cart_top h2::after 
+{
+  left: 50%;
+  transform: translate(-50%);
+  width: 20%;
+}
+.accommodation1-main {
+  width: 100%;
+}
+.hospitality1-main {
+  width: 100%;
+}
+.col-md-6.col-xs-6.col-xs-12x.pad_none.create-own-program2-main {
+  text-align: center;
+  width: 100%;
+}
+.col-md-6.col-xs-6.col-xs-12x.pad_none.create-own-program2-new-right {
+  width: 100%;
+}
+.col-md-6.col-xs-6.col-xs-12x.create-own-space-outer2 {
+  width: 100%;
+}
+.col-xs-12.col-sm-7.col-md-7.pad_none.shopping_cart_top br {
+  display: none;
+}
+.shopping_cart_top p {
+  font-size: 16px;
+  line-height: 23px;
+  margin: 0;
+  padding: 0 2% !important;
+  text-align: center;
+}
+.shopping_cart_top {
+  margin: 0 0 20px;
+  padding: 0 !important;
+  text-align: center;
+}
+.guaranteed-part1-inner {
+  padding: 61px 13px !important;
+}
+
+.guaranteed-content-sec {
+  height: 430px;
+}
+
+.guaranteed-part2-main-right {
+  padding:  0 15px !important;
+}
+
+.accommodation1-main-inner h3 {
+  font-size: 27px;
+  line-height: 28px;
+  margin: 285px 0 12px;
+  text-shadow: 0 0 26px #000000;
+}
+.hospitality1-inner h3 {
+   font-size: 27px;
+  line-height: 28px;
+  margin: 285px 0 12px;
+  text-shadow: 0 0 26px #000000;
+}
+
+.create-own-program2-inner h3 {
+  font-size: 27px;
+  line-height: 28px;
+  margin: 155px 0 12px;
+  text-shadow: 0 0 26px #000000;
+}
+.shopping-botttom2-inner {
+  margin-top: 25px;
+  padding: 0 15px !important;
+}
+.create-own-space-outer2 {
+  margin: 10px 0;
+  padding: 0 5px !important;
+}
+.accomdation-sales-inner-right {
+  padding: 0 0px !important;
+}
+.create-own-program2-new-right-inner h3 {
+   font-size: 27px;
+  line-height: 28px;
+   text-shadow: 0 0 26px #000;
+  margin: 160px 0 12px;
+}
+
+.green-ring-bg2 img {
+  width: 65px;
+  display: none;
+}
+.sales3-permitted-inner h3 {
+  
+  font-size: 27px;
+  line-height: 28px;
+  margin: 98px 0 12px;
+}
+.sales3-permitted-inner {
+  height: 277px;
+}
+.guaranteed-part1-main {
+  padding: 15px !important;
+}
+
+.shopping-cart-main {
+  padding: 50px 0 !important;
+}
+.accomdation-sales-inner-left-bottom h3 {
+ 
+  font-size: 28px;
+  line-height: 28px;
+  margin: 315px 0 12px;
+}
+.create-own-program2-inner.sydney-program2-same2 h3 {
+  margin: 103px 0 12px;
+  font-size: 25px;
+}
+.subcribe-main-out {
+  padding: 70px 0 !important;
+}
+.subscribe-inner-main2 h2 {
+  font-size: 33px;
+  line-height: 12px;
+  margin: 0 0 31px;
+}
+.sbscribe2-field-outer input {
+  font-size: 16px;
+  margin: 0 0 12px;
+  padding: 17px 25px !important;
+  width: 90%;
+}
+.subscribe-submit {
+  padding: 14px 28px !important;
+  width: 200px;
+}
+.footer-inner-section1 img {
+  width: 165px;
+}
+.contact2-footer span {
+  width: 21px;
+}
+.col-xs-12.pad_none.follow-us-main2 img {
+  width: 27px;
+}
+.follow-us-main2 samp {
+  margin: 0px 15px 0 0;
+}
+.navigation-part {
+  margin-top: 4px;
+  position: absolute;
+  text-align: right;
+}
+
+.banner-inner {
+  padding: 0 10px !important;
+  text-align: center;
+  width: 100%;
+}
+.footer-inner-section2 {
+  margin-top: 16px;
+  width: 100%;
+}
+
+.navbar-collapse {
+  background: #f5ba13 none repeat scroll 0 0;
+  border-radius: 4px;
+  box-shadow: none;
+  overflow-x: visible;
+  padding: 4px 15px !important;
+  position: relative;
+  right: 0;
+  width: 100%;
+}	
+.navigation-part .nav_bar li {
+  margin-bottom: 0px;
+  margin-right: 0 !important;
+  text-align: left;
+  width: 100%;
+}
+.navigation-part .nav_bar li a:hover {
+  color: #323232;
+}
+#active-nav {
+  color: #303030 !important;
+}
+.navigation-part .dropdown-menu {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0 !important;
+  border-radius: 0;
+  display: block;
+  min-height: 1px;
+  position: relative;
+  top: 0;
+}
+header.fixed .navigation-part .nav_bar li a {
+  font-size: 16px;
+  transition: all 1s ease 0s;
+}
+.navigation-part .nav_bar li a:hover {
+  color: #323232;
+  background: transparent;
+}
+.navigation-part .dropdown-menu li a {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border-radius: 0;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 0 15px !important;
+  text-transform: uppercase;
+}
+.dropdown-menu {
+
+  border:none;
+  border-radius: 0;
+  box-shadow: 0 0 0 0;
+}
+header {
+  padding: 11px 10px !important;
+}
+/* header.fixed {
+ display:none;
+}*/
+.dropdown-menu::after {
+  display: none;
+} 
+header.fixed 
+{
+   position: absolute;
+  }
+
+
+/* ============================================ */
+
+
+.guaranteed-part1-content-main2 h3 {
+  font-size: 20px;
+}
+
+.guaranteed-part1 {
+  margin: 0;
+  padding: 0 0 10px !important;
+}
+.guaranteed-content-sec h3 {
+  font-size: 18px;
+  line-height: 20px;
+  margin: 0 0 8px 0;
+}
+.accommodation1-main-inner h3 {
+  font-size: 24px;
+  line-height: 24px;
+  margin: 0 0 13px;
+}
+
+.green-ring-bg2 {
+  display: none;
+}
+.guaranteed-part1-inner {
+ 
+  margin: 10px;
+  
+}
+.guaranteed-part1-overlay.overlay2 .guaranteed-content-sec {
+  height: 263px;
+}
+.col-xs-12.col-sm-5.col-md-5.pad_none.accommodation1-main.globel0new.fadeInUp.wow {
+  width: 100%;
+}
+.guaranteed-part1-overlay .guaranteed-content-sec {
+  height: 374px;
+  width: 100%;
+}
+.guaranteed-part1-imgnew2 {
+  height: 390px;
+  overflow: hidden;
+}
+.guaranteed-content-sec {
+  height: 250px;
+}
+
+.guaranteed-part1-overlay.overlay4 {
+  height: 413px;
+  width: 96%;
+}
+.accommodation1-main a img {
+  border-radius: 4px;
+}
+.guaranteed-part1-overlay.overlay5 .guaranteed-content-sec {
+  height: 222px;
+  width: 429px;
+}
+.accommodation1-main.space4 {
+  height: 217px;
+  width: 100%;
+}
+.authprised-territories-img.short-new > img {
+  width: 50px;
+}
+.accommodation1-main {
+  float: left;
+  width: 100%;
+  margin: 0 0 6px 0;
+}
+.col-xs-12.pad_none.accommodation1-main.sales-permitted-outer {
+  margin-top: 0px;
+  width: 100%;
+}
+.col-xs-12.pad_none.guaranteed-part1-overlay.overlay3 {
+  height: 200px;
+  margin: 10px;
+  width: 96.55%;
+}
+.guaranteed-part1-overlay.overlay3 .guaranteed-content-sec {
+  height: 136px;
+  width: 300px;
+}
+.guaranteed-part1-overlay {
+  margin: 10px;
+  width: 91%;
+}
+.accommodation1-main-inner h3 {
+  font-size: 22px;
+  line-height: 26px;
+  margin: 0;
+  text-shadow: 0 0 26px #000000;
+}
+.guaranteed-content-sec p {
+  font-size: 12px;
+   padding: 0 4% !important;
+}
+.guaranteed-content-sec h3 span {
+  font-size: 10px;
+}
+.guaranteed-content-sec h3 span::before {
+  right: -12px;
+  top: 5px;
+  width: 5px;
+}
+.guaranteed-content-sec h3 span::after 
+{
+  left: -13px;
+  top: 5px;
+  width: 5px;
+}
+.accommodation1-main-inner h3 span::before {
+  right: -12px;
+  top: 5px;
+  width: 5px;
+}
+
+.accommodation1-main-inner h3 span::after {
+ left: -13px;
+  top: 5px;
+  width: 5px;
+}
+.col-xs-12.pad_none.accommodation1-main-inner > samp img {
+  width: 17px;
+}
+.col-xs-12.pad_none.guaranteed-part1-content-main2 samp img {
+  width: 16px;
+}
+/* ============================================ */
+
+
+
+
+
+
+/*==== ACCOMODATION PAGE START ====*/
+.banner-main.accomodation-banner {
+  padding: 140px 0 60px !important;
+}
+
+.pallazo-versace-ratig-out4 {
+  padding: 55px 0 !important;
+}
+.hotels-first4-outer {
+  float: left;
+  min-height: 188px;
+  padding: 5px !important;
+  width: 100%;
+}
+.pallazo-versace-left-sec h3 {
+  
+  font-size: 33px;
+}
+.pallazo-versace-rigth-sec2 {
+  text-align: left;
+  width: auto;
+  float: left;
+}
+.jupiter3-hotel-rating-sec-new h4 {
+  font-size: 21px;
+  margin: 22% 0 0;
+}
+.jupiter3-hotel-rating-sec h4 {
+  font-size: 11px;
+  margin: 87% 0 0;
+}
+.defination-luxury-out2 {
+  background: rgba(0, 0, 0, 0) url("../images/luxury-class-info-bg2.png") no-repeat scroll center top / 58% auto;
+  padding: 30px 0 30px !important;
+}
+.room-type-img03 > img {
+  max-width: 87%;
+}
+.details-out-inner-left2.details-out-inner-right2 {
+  padding: 15px 2% 30px 5% !important;
+}
+
+
+
+.pallazo-versace-ratig-out4 h3 {
+  font-size: 16px;
+  line-height: 14px;
+}
+.accommodation-main-outer4 {
+  background: #ffffff url("../images/accomidatio-design-bgnw.png") no-repeat scroll -67px 49px / 44% auto;
+  padding: 50px 0 50px 0 !important;
+}
+
+.accommodation-scrolling-out .content {
+  height: 140px;
+}
+
+
+.details-out-inner-left2 {
+  padding: 30px 2% 14px 5% !important;
+}
+.details-out-inner-left2 p {
+  font-size: 17px;
+}
+
+.details-out-inner-left2 p strong
+ {
+  font-size: 17px;
+}
+.room-type-img03 {
+  float: left;
+  margin: -4px 10px 0 0;
+  text-align: center;
+  width: 11%;
+}
+.feauture-first-inner2 > img {
+  max-width: 75%;
+}
+
+.feauture-first03 {
+  background: rgba(0, 0, 0, 0) url("../images/feature-border-bg.png") no-repeat scroll left -6px;
+  padding: 5px !important;
+}
+.feauture-first-inner2 {
+  height: 147px;
+}
+
+.feture-note-out3 p {
+  font-size: 15px;
+  line-height: 23px;
+}
+.feture-note-out3 {
+  padding: 24px 20px !important;
+}
+.luxury-class-img2 {
+  left: -3px;
+  position: absolute;
+  top: 165px;
+  width: 73px;
+  z-index: 9;
+}
+.more-photo-heading3 h5 {
+  font-size: 15px;
+}
+.pallazo-versace-rigth-sec2 p {
+  float: right;
+  font-size: 16px;
+  margin: 14px 0 0;
+  padding: 0 12px 0 0 !important;
+}
+.accomdation-bbok-now-button {
+  font-size: 11px;
+  padding: 11px 25px !important;
+}
+.pallazo-versace-rigth-sec2 p a samp {
+  font-size: 18px;
+  padding-left: 9px;
+}
+.accomodation0details-view-out {
+  padding: 45px 15px 40px !important;
+}
+
+.col-md-6.col-sm-6.pad_none.jupiter-hotel-first > img {
+  float: left;
+  height: auto;
+  width: 50%;
+}
+
+.seaworl-overlay3:hover .jupiter3-hotel-rating-sec-new {
+  background: rgba(0, 0, 0, 0) url("../images/seaworl-overlay3-hover.png") no-repeat scroll center top;
+  display: block;
+  background-size: cover;
+}
+
+.defination-luxury-inner-right2 img {
+  max-width:100%;
+}
+
+.defination-luxury-inner-right2 {
+  margin: 11px 0 0;
+  padding-left: 0 !important;
+  text-align: left;
+  display: none;
+}
+.feauture-first03 {
+  border-bottom: 1px solid #e8e7e7;
+  float: left;
+  padding: 10px !important;
+  text-align: center;
+  width: 100%;
+}
+.features-inner-main2 {
+  border-bottom: 0px;
+  display: table;
+}
+.col-xs-12.pad_none.pallazo-versace-ratig-out4 img {
+  width: 81px;
+}
+.feauture-first-inner2 p {
+  font-size: 22px;
+  line-height: 24px;
+}
+
+/*==== ACCOMODATION PAGE END ====*/
+
+
+
+
+
+/*==== EVENTS TICKET PAGE START ====*/
+.ticket2-applications-right-purpel2 {
+  padding: 15px 10px !important;
+  text-align: center;
+  width: 100%;
+}
+.condition-of-sale-table-out.content {
+  height: 300px;
+}
+.banner-main.event-tickets-banner {
+  padding: 140px 0 60px !important;
+}
+
+
+.accommodation-main-outer4.event-ticket-inner3 {
+  background: #ffffff url("../images/events2-design-bgnw.png") no-repeat scroll -45px 83px / 48% auto;
+  padding: 40px 0 30px !important;
+}
+.col-xs-12.pad_none.event-ticket-main-out4 br {
+  display: none;
+}
+.info-by0check-Commonwealth2 {
+  padding: 0 2%;
+}
+.info-by0check-Commonwealth2 h5 {
+  font-size: 18px;
+}
+.ticket-info-design-img3 {
+  top: -69px;
+  width: 110px;
+  right: -29px;
+}
+.ticket2-applications-lottery-out {
+  padding: 0 10px !important;
+}
+.ticket-applications-inner2 h2 {
+  font-size: 30px;
+  line-height: 30px;
+  margin: 0 0 20px;
+  padding-bottom: 12px;
+}
+.ticket2-applications-calender2 {
+  padding: 21px 0 !important;
+  width: 100%;
+}
+.ticket2-applications-calender2 h4 {
+  font-size: 22px;
+}
+.ticket2-applications-calender2 h4 strong {
+  font-size: 30px;
+  line-height: 30px;
+}
+.ticket2-applications3-right-inner p {
+  font-size: 15px;
+  line-height: 22px;
+  margin: 0;
+}
+.ticket2-applications3-right-inner h5 {
+  font-size: 18px;
+}
+
+
+.ticket2-applications3-right-inner {
+  height: auto;
+  text-align: center;
+}
+.right-green-arow2 {
+  bottom: -14px;
+  left: 47%;
+  right: auto;
+  top: auto;
+  transform: rotate(91deg);
+}
+main {
+  overflow: hidden;
+}
+.condition-of-sale-main-inner h2 {
+  font-size: 40px;
+  line-height: 40px;
+  margin: 0 0 27px;
+  padding-bottom: 20px;
+}
+.condition-of-sale-main-inner p {
+  margin: 28px 0 52px;
+}
+.event-ticket-main-out4 {
+  margin-top: 0;
+}
+.event-ticket-main-out4 p {
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0;
+  padding: 0 2% !important;
+}
+.info-first-contry2 {
+  float: left;
+  margin-bottom: 20px;
+  min-height: 36px;
+  padding: 0 4px !important;
+  text-align: left;
+  width: 50%;
+}
+
+
+/*==== EVENTS TICKET PAGE END ====*/
+
+/*==== CONTACT US PAGE Starts ====*/
+
+.contact-us-main-outer4 {
+  padding: 30px 0 0 !important;
+}
+.contact-us-main-inner-part2 {
+  margin-top: 0;
+}
+.contact-us-address02 h3 {
+  margin: 10px 0 0;
+}
+.contact-us-address02 {
+  margin: 0 0 20px;
+}
+.contact-us-main-inner-part2 {
+  padding: 0 !important;
+}
+.contact2-send-message-inner1 {
+  width: 100%;
+}
+.contact2-send-message-left {
+  padding: 16px 0 35px 0 !important;
+}
+.contact-us-send-message-out {
+  background-position: right top;
+  background-size: 210px auto;
+}
+.contact2-send-message-left h2 {
+  font-size: 32px;
+  line-height: 26px;
+  margin-bottom: 20px;
+}
+.col-xs-12.pad_none.sendus-message-field-out > span {
+  width: 5%;
+}
+.sendus-message-field-out input {
+  width: 95%;
+}
+.sendus-message-field-out textarea {
+  width: 95%;
+}
+.otr_send_clear {
+  margin: 8px 0 0;
+}
+.send_clear {
+  width: 120px;
+  padding: 8px 28px !important;
+}
+.contact2-map1-right {
+  padding: 0 !important;
+}
+.contact2-map1-right iframe {
+  height: 300px;
+}
+
+/*==== CONTACT US PAGE END ====*/
+
+
+
+
+}

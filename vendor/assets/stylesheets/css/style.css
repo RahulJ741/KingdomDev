@@ -1,0 +1,6222 @@
+
+*{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.pad_none{
+	padding:0 !important;
+}
+
+body{
+	font-weight:400;font-family: 'Roboto', sans-serif;
+}
+
+a:focus,a:hover{
+	text-decoration:none;
+}
+a{
+	transition: all 1s ease 0s;
+}
+
+main
+{
+	position:relative;
+}
+
+/* ---------------------header part start------------------ */
+header {
+  float: left;
+  padding: 20px 0;
+  position: absolute;
+  width: 100%;
+  z-index: 9999;
+   transition: all 1s ease 0s;
+}
+
+header.fixed {
+  background: rgba(0, 0, 0, 0.8) none repeat scroll 0 0;
+  box-shadow: 0 0 4px;
+  left: 0;
+  padding: 7px 0;
+  position: fixed;
+  top: 0;
+  transition: all 1s ease 0s;
+  z-index: 99999;
+}
+
+.header_main-part
+{
+	
+}
+
+.logo-main
+{
+}
+
+
+header.fixed .logo-main img {
+  width: 310px;
+   transition: all 1s ease 0s;
+}
+
+header.fixed .navigation-part .nav_bar li {
+  margin-right: 33px !important;
+   transition: all 1s ease 0s;
+}
+header.fixed  .navigation-part .nav_bar li a {
+  font-size: 18px;
+  transition: all 1s ease 0s;
+}
+.logo-main img 
+{
+  width: 390px;
+  transition: all 1s ease 0s;
+}
+.navbar-collapse 
+{
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+.navigation-part 
+{
+  margin-top: 30px;
+  text-align:right;
+  
+}
+.navbar-default {
+  background-color: rgba(0, 0, 0, 0);
+  border-color: rgba(0, 0, 0, 0);
+  float: right;
+}
+.navigation-part .nav_bar li 
+{
+  float: left;
+  margin-right:38px !important;
+  position:relative;
+   transition: all 1s ease 0s;
+}
+
+.navigation-part .nav_bar li a {
+  color: #ffffff;
+  font-family: "proxima_nova_condensedregular";
+  font-size: 20px;
+  padding: 6px 0 !important;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 1s ease 0s;
+}
+
+
+.navigation-part .dropdown-menu {
+  border-radius: 6px;
+  display: none;
+  padding:0px !important;
+  min-width: 200px;
+  top: 28px;
+  
+}
+
+.dropdown-menu::after {
+  background: rgba(0, 0, 0, 0) url("../images/sub-menu-bg.png") no-repeat center top;
+  content: "";
+  height: 10px;
+  left: 17px;
+  position: absolute;
+  top:-9px;
+  width: 17px;
+}
+
+.navigation-part .nav_bar li:hover .dropdown-menu
+{
+	display:block;
+}
+
+.navigation-part .dropdown-menu li
+{
+	float:left;
+	width:100%;
+	margin:0px !important;
+}
+.navigation-part .dropdown-menu li a
+{
+	float:left;
+	width:100%;
+	padding:10px 15px !important;
+	background:#fff;
+	font-family: 'proxima_nova_condensedregular';
+	color:#303030;
+	font-size:20px;
+	text-transform:capitalize;
+	 border-radius: 5px ;
+}
+
+.navigation-part .dropdown-menu li a:hover
+{
+	background:#e1e1e1;
+	color:#303030 !important;
+}
+
+
+.navigation-part .nav_bar li a:hover .dropdown-menu
+{
+  display: block !important;
+}
+
+.navigation-part .nav_bar li:last-child
+{
+	margin-right:0px !important;
+}
+.navigation-part .nav_bar li a:hover
+{
+	color:#f5c438;
+	
+}
+
+
+/* new ul 26 april */
+
+.dropdown02
+{
+	display:none;
+}
+.dropdown-menu li:hover .dropdown02 {
+  background: #fff;
+  border-radius: 4px;
+  display: block;
+  position: absolute;
+  right: -174px;
+  width: 174px;
+}
+.dropdown02 li a
+{
+	font-size:15px !important;
+}
+
+/* new ul 26 april */
+
+
+
+
+/* ---------------------header part end------------------ */
+
+
+/* ---------------------Banner part start------------------ */
+.banner-main {
+  background: rgba(0, 0, 0, 0) url("../images/main-banner.jpg") no-repeat scroll center top / cover ;
+  float: left;
+  padding: 240px 0 130px !important;
+  position: relative;
+  width: 100%;
+  z-index: 9;
+}
+
+.banner-inner
+{
+	text-align:left;
+	width:45%;
+}
+.banner-inner h2 {
+  color: #ffffff;
+  font-family: "bebas_neuebold";
+  font-size: 94px;
+  font-weight: normal;
+  line-height: 80px;
+  margin: 0 0 20px 0;
+  padding-bottom: 20px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.banner-inner h2 span
+{
+	color:#f5ba13;
+}
+
+.banner-inner h2::after {
+  background: #ffffff none repeat scroll 0 0;
+  bottom: 0;
+  color: #ffffff;
+  content: "";
+  height: 1px;
+  left: 5px;
+  position: absolute;
+  width: 121px;
+}
+
+.banner-inner p {
+  color: #ffffff;
+  font-family: "proxima_nova_condensedSBd";
+  font-size: 16px;
+  line-height: 23px;
+  margin: 0;
+}
+
+.banner-inner p strong
+{
+	color:#f5ba13;
+	font-size:16px;
+	text-transform:uppercase;
+}
+.banner-inner h5
+{
+	color:#fff;
+	font-size:16px;
+	margin:0px;
+	font-family: 'proxima_nova_condensedSBd';
+	text-transform:capitalize;
+	 line-height: 23px;
+}
+.read-more-banner {
+  background: #f5ba13 none repeat scroll 0 0;
+  border-radius: 5px;
+  color: #000000;
+  float: left;
+  font-family: "proxima_novabold";
+  font-size: 18px;
+  margin-top: 20px;
+  padding: 13px 28px !important;
+  box-shadow: 0px 5px 0px 0 #a1790c;
+  transition: all 1s ease 0s;
+}
+
+.read-more-banner:hover
+{
+	text-decoration:none;
+	background:#fff;
+	color:#000;
+	 box-shadow: 0px 5px 0px 0 #a1790c;
+	  transition: all 1s ease 0s;
+}
+
+.banr-readmore3 {
+  margin: -5px 0 0 10px;
+}
+
+
+.gold-cost-right {
+  position: absolute;
+  right: 30px;
+  top: 43%;
+}
+
+.gold-cost-right img
+{
+	width:100px;
+}
+
+
+/* ---------------------Banner part end------------------ */
+
+
+/* --------exclusive-reprensentatio part start ----------- */
+.exclusive-reprensentatio-main
+{
+	float:left;
+	width:100%;
+	background:#fff;
+	padding:100px 0 80px 0 !important;
+}
+.exclusive-reprensentatio-inner
+{
+	text-align:center;
+}
+
+
+
+.exclusive-reprensentatio-inner h2 {
+  color: #323232;
+  font-family: "proxima_novabold";
+  font-size: 50px;
+  font-weight: normal;
+  line-height: 47px;
+  margin: 0 0 30px;
+  padding-bottom: 28px;
+  position: relative;
+  text-transform: uppercase;
+}
+.exclusive-reprensentatio-inner h2::after {
+  background: #f5ba13 none repeat scroll 0 0;
+  bottom: -4px;
+  color: #f5ba13;
+  content: "";
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%);
+  width: 200px;
+}
+
+.exclusive-flages-out
+{
+	
+}
+.exclusive-firts-country {
+  background: #ffffff none repeat scroll 0 0;
+  border-radius: 5px;
+  box-shadow: 0 0 8px #eaeaea;
+  display: table;
+  float: left;
+  margin: 0 10px 20px;
+  padding: 14px 17px !important;
+  width: 18.22%;
+}
+
+.exclusive-firts-country:hover
+{
+	 box-shadow: 0 0 8px #f5ba13 ;
+}
+.exclusive-firts-country span
+{
+	float:left;
+	margin-right:10px;
+}
+
+.exclusive-firts-country p {
+  color: #414141;
+  display: table-cell;
+  float: none;
+  font-family: "proxima_novabold";
+  font-size: 16px;
+  margin: 0;
+  text-align: left;
+  text-transform: uppercase;
+  vertical-align: middle;
+  width: auto;
+  line-height: 18px;
+}
+
+.exclusive-reprensentatio-main.authoriesde-part-main
+{
+	background:#e7e7e7;
+}
+
+
+
+/* -------------exclusive-reprensentatio part end ------------ */
+
+
+
+/* ------------- shopping cart part start ------------ */
+.shopping-cart-main
+{
+	float:left;
+	width:100%;
+	background:url(../images/shopping-bg-main.jpg) center top no-repeat;
+	background-size:cover;
+	padding:170px 0 125px !important;
+}
+.shopping_cart_top {
+  float: right;
+  margin: 0 0 48px;
+  padding: 0 0 0 0px !important;
+  text-align: left;
+}
+.shopping_cart_top h2 {
+  color: #323232;
+  font-family: "proxima_novabold";
+  font-size: 80px;
+  font-weight: bold;
+  line-height: 68px;
+  margin: 0 0 20px;
+  padding-bottom: 20px;
+  position: relative;
+  text-transform: uppercase;
+}
+.shopping_cart_top h2::after {
+  background: #f5ba13 none repeat scroll 0 0;
+  bottom: -4px;
+  color: #f5ba13;
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
+  width: 182px;
+}
+.shopping_cart_top p {
+  color: #414141;
+  font-family: 'proxima_nova_condensedlight';
+  font-size: 16px;
+  line-height: 23px;
+  margin: 0;
+}
+
+.shopping_cart_inner
+{
+	background:#f5ba13;
+	position:relative;
+}
+.guaranteed-part1 {
+  margin:-310px 0 0;
+  position: relative;
+}
+
+/* .guaranteed-part1 {
+  background: rgba(0, 0, 0, 0) url("../images/shopping-big-img2.jpg") no-repeat scroll center top / cover ; 
+  border-radius: 4px;
+  margin: -324px 0 0;
+  padding: 20px !important;
+  position: relative;
+} */
+
+.guaranteed-part1-imgnew2 {
+  height: 780px;
+  position: relative;
+}
+
+.guaranteed-part1-imgnew2 img 
+{
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.guaranteed-part1-imgnew2:hover .guaranteed-part1-content-main2
+{
+	display:none;
+}
+.guaranteed-part1-imgnew2:hover .guaranteed-part1-inner
+{
+	display:block;
+}
+
+
+
+
+.guaranteed-part1-content-main2 > samp {
+  float: left;
+  text-align: center;
+  width: 100%;
+}
+.col-xs-12.pad_none.guaranteed-part1-content-main2 samp img {
+  width: auto;
+}
+.guaranteed-part1-content-main2 {
+  bottom:10px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  z-index: 99;
+  left: 0px;
+}
+.guaranteed-part1-content-main2 h3 {
+  color: #f4f4f4;
+  font-family: "proxima_novabold";
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 28px;
+  margin: 0 0 14px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.guaranteed-part1-content-main2 h3 span
+{
+	font-size:14px;
+	text-transform:uppercase;
+	font-weight:normal;
+	  font-family: 'proxima_nova_condensedlight';
+	  position:relative;
+}
+.guaranteed-part1-content-main2 h3 span::after {
+  background: #f4f4f4 none repeat scroll 0 0;
+  content: "";
+  height: 1px;
+  left: -23px;
+  position: absolute;
+  top: 7px;
+  width: 12px;
+}
+
+.guaranteed-part1-content-main2 h3 span::before {
+  background: #f4f4f4 none repeat scroll 0 0;
+  content: "";
+  height: 1px;
+  right: -23px;
+  position: absolute;
+  top: 7px;
+  width: 12px;
+}
+.guaranteed-part1-inner {
+  background: rgba(0, 0, 0, 0.68) none repeat scroll 0 0;
+  border-radius: 4px;
+  display: none;
+  padding: 100px 20px !important;
+  position: absolute;
+  top: 0;
+  margin: 20px;
+  width: auto;
+}
+.authprised-territories-img {
+  position: absolute;
+  right: 20px;
+  top: 27px;
+}
+.guaranteed-content-sec {
+  display: table-cell;
+  float: none;
+  height: 540px;
+  text-align: center;
+  vertical-align: middle;
+}
+.guaranteed-content-sec h3 {
+  color: #f4f4f4;
+  font-family: "proxima_novabold";
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0 0 18px;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 28px;
+}
+
+.guaranteed-content-sec h3 span
+{
+	font-size:14px;
+	text-transform:uppercase;
+	font-weight:normal;
+	  font-family: 'proxima_nova_condensedlight';
+	  position:relative;
+}
+.guaranteed-content-sec h3 span::after {
+  background: #f4f4f4 none repeat scroll 0 0;
+  content: "";
+  height: 1px;
+  left: -23px;
+  position: absolute;
+  top: 7px;
+  width: 12px;
+}
+
+.guaranteed-content-sec h3 span::before {
+  background: #f4f4f4 none repeat scroll 0 0;
+  content: "";
+  height: 1px;
+  right: -23px;
+  position: absolute;
+  top: 7px;
+  width: 12px;
+}
+.guaranteed-content-sec p {
+  color: #ffffff;
+  font-family: "proxima_nova_condensedregular";
+  font-size: 16px;
+  font-weight: normal;
+  text-transform: capitalize;
+  padding: 0 8% !important;
+  margin: 0px;
+}
+.guaranteed-part1-overlay.overlay3 .guaranteed-content-sec {
+  display: table-cell;
+  float: none;
+  height: 185px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.guaranteed-part1-overlay.overlay5 .guaranteed-content-sec {
+  display: table-cell;
+  float: none;
+  height: 200px;
+  text-align: center;
+  vertical-align: middle;
+}
+.col-xs-12.pad_none.guaranteed-part1-overlay.overlay3 {
+  height: 185px;
+  width: 91%;
+}
+.accommodation1-main.space4 {
+  display: block;
+  /*height: 235px;
+  overflow: hidden;
+  padding: 4px !important;*/
+}
+/* .space4.accommodation1-main a img {
+  border-radius: 4px;
+  height: auto;
+  width: 100%;
+} */
+.guaranteed-part1-overlay.overlay4 {
+  height: 92%;
+}
+
+.guaranteed-part1-overlay.overlay6 {
+  height: 525px;
+  width: 92%;
+}
+/* 
+.sales-permitted-outer {
+   background: rgba(0, 0, 0, 0) url("../images/sales-permitted-img2.png") no-repeat scroll center top / cover ; 
+  display: table;
+  margin: 20px 0 8px;
+  text-align: center;
+  border-radius: 4px;
+} */
+.guaranteed-part1-main-left {
+  padding: 0px 15px 0px 0px !important;
+}
+.guaranteed-part1-main-center {
+  padding: 0px 7.5px 0px 7.5px!important;
+}
+.guaranteed-part1-main-right {
+  padding: 0px 0px 0px 15px !important;
+}
+.col-xs-12.pad_none.accommodation1-main.sales-permitted-outer {
+  margin-top:30px;
+}
+
+.sales3-permitted-inner {
+  display: table-cell;
+  height: 248px;
+  text-align: center;
+  vertical-align: middle;
+  float: none;
+}
+
+.sales3-permitted-inner h3 
+{
+  color: #f4f4f4;
+  font-family: "proxima_novabold";
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 28px;
+  margin: 123px 0 12px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.sales3-permitted-inner h3 span {
+  font-family: "proxima_nova_condensedlight";
+  font-size: 14px;
+  font-weight: normal;
+  position: relative;
+  text-transform: uppercase;
+}
+.sales3-permitted-inner h3 span::before {
+  background: #f4f4f4 none repeat scroll 0 0;
+  content: "";
+  height: 1px;
+  position: absolute;
+  right: -23px;
+  top: 7px;
+  width: 12px;
+}
+
+.sales3-permitted-inner h3 span::after {
+  background: #f4f4f4 none repeat scroll 0 0;
+  content: "";
+  height: 1px;
+  left: -23px;
+  position: absolute;
+  top: 7px;
+  width: 12px;
+}
+.sales3-permitted-inner
+{
+	text-align:center;
+}
+
+
+.guaranteed-part2-main-right
+{
+	padding-left:50px !important;
+}
+.accommodation1-main {
+ /*  background: rgba(0, 0, 0, 0) url("../images/accomodation-img2.png") no-repeat scroll center top / cover ; */
+  display: table;
+  margin: 0;
+  text-align: center;
+  position:relative;
+}
+
+.accommodation1-main a img 
+{
+  border-radius: 4px 0 0 0;
+  height: auto;
+  width: 100%;
+}
+.col-xs-12.pad_none.accommodation1-main-inner > samp img
+{
+	width:auto;
+}
+
+
+.accommodation1-main:hover .accommodation1-main-inner
+{
+	display:none;
+}
+
+.authprised-territories-img.short-new {
+  position: absolute;
+  right: 15px;
+  top: 18px;
+}
+.guaranteed-part1-overlay.overlay2 .guaranteed-content-sec {
+  height: 270px;
+}
+.accommodation1-main:hover .guaranteed-part1-overlay
+{
+	display:block;
+}
+.authprised-territories-img.short-new > img {
+  width: 50px;
+}
+
+.guaranteed-part1-overlay {
+  background: rgba(0, 0, 0, 0.68) none repeat scroll 0 0;
+  border-radius: 1px;
+  float: none;
+  height:auto;
+  display:none;
+  margin: 20px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  vertical-align: middle;
+  width: 88%;
+}
+.guaranteed-part1-overlay .guaranteed-content-sec {
+  display: table-cell;
+  float: none;
+  height: 390px;
+  text-align: center;
+  vertical-align: middle;
+}
+/* black overlay*/
+
+.accommodation-overlay2
+{
+	position:absolute;
+	background:rgba(0,0,0,.44);
+	top:0;
+	left:0;
+	float:left;
+	width:100%;
+	display:none;
+}
+.accommodation1-main:hover .accommodation-overlay2
+{
+	display:block;
+}
+/* .accommodation1-main:hover .accommodation1-main-inner h3
+{
+	display:none;
+}
+ */
+
+/* black overlay */
+
+.accommodation1-main-inner {
+  bottom: 12px;
+  float: none;
+  position: absolute;
+  text-align: center;
+  vertical-align: middle;
+  z-index: 9;
+}
+.accommodation1-main-inner h3 {
+  color: #f4f4f4;
+  font-family: "proxima_novabold";
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 28px;
+  margin: 0 0 13px 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+.accommodation1-main-inner h3 span {
+  font-family: "proxima_nova_condensedlight";
+  font-size: 14px;
+  font-weight: normal;
+  position: relative;
+  text-transform: uppercase;
+}
+.accommodation1-main-inner h3 span::before {
+  background: #f4f4f4 none repeat scroll 0 0;
+  content: "";
+  height: 1px;
+  position: absolute;
+  right: -23px;
+  top: 7px;
+  width: 12px;
+}
+
+.accommodation1-main-inner h3 span::after {
+  background: #f4f4f4 none repeat scroll 0 0;
+  content: "";
+  height: 1px;
+  left: -23px;
+  position: absolute;
+  top: 7px;
+  width: 12px;
+}
+
+
+.hospitality1-main
+{
+	background: rgba(0, 0, 0, 0) url("../images/hospital-img2.png") no-repeat center top / cover ;
+  display: table;
+  margin: 0;
+  text-align: center;
+  padding: 0 0 6px 0 !important;
+  border-radius: 0px 4px 0 0px;
+}
+
+.hospitality1-inner
+ {
+   display: table-cell;
+  float: none;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.hospitality1-inner h3 {
+  color: #f4f4f4;
+  font-family: "proxima_novabold";
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 28px;
+  margin: 300px 0 12px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.hospitality1-inner h3 span {
+  font-family: "proxima_nova_condensedlight";
+  font-size: 14px;
+  font-weight: normal;
+  position: relative;
+  text-transform: uppercase;
+}
+.hospitality1-inner h3 span::before {
+  background: #f4f4f4 none repeat scroll 0 0;
+  content: "";
+  height: 1px;
+  position: absolute;
+  right: -23px;
+  top: 7px;
+  width: 12px;
+}
+
+.hospitality1-inner h3 span::after {
+  background: #f4f4f4 none repeat scroll 0 0;
+  content: "";
+  height: 1px;
+  left: -23px;
+  position: absolute;
+  top: 7px;
+  width: 12px;
+}
+
+
+
+
+.create-own-program2-main
+{
+	background: rgba(0, 0, 0, 0) url("../images/your-own-program-img2.png") no-repeat scroll center top / cover ;
+  display: table;
+  margin: 0;
+  text-align: center;
+  padding: 0 0 6px 0 !important;
+  border-radius: 4px 0 0px 4px;
+}
+.create-own-program2-inner
+ {
+  display: table-cell;
+  float: none;
+  text-align: center;
+  vertical-align: middle;
+}
+.create-own-program2-inner h3 {
+  color: #f4f4f4;
+  font-family: "proxima_novabold";
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 28px;
+  margin: 200px 0 12px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.create-own-program2-inner  h3 span::before {
+  background: #f4f4f4 none repeat scroll 0 0;
+  content: "";
+  height: 1px;
+  position: absolute;
+  right: -23px;
+  top: 7px;
+  width: 12px;
+}
+.create-own-program2-inner h3 span::after {
+  background: #f4f4f4 none repeat scroll 0 0;
+  content: "";
+  height: 1px;
+  left: -23px;
+  position: absolute;
+  top: 7px;
+  width: 12px;
+}
+.create-own-program2-inner h3 span {
+  font-family: "proxima_nova_condensedlight";
+  font-size: 14px;
+  font-weight: normal;
+  position: relative;
+  text-transform: uppercase;
+}
+
+
+
+
+.create-own-program2-new-right
+{
+  background: rgba(0, 0, 0, 0) url("../images/create-new-img4.png") no-repeat scroll center top / cover ;
+  display: table;
+  margin: 0;
+  text-align: center;
+  padding: 0 0 6px 0 !important;
+  border-radius:0 0 4px 0;
+}
+
+
+.create-own-program2-new-right-inner
+ {
+  display: table-cell;
+  float: none;
+  text-align: center;
+  vertical-align: middle;
+}
+.create-own-program2-new-right-inner h3 {
+  color: #f4f4f4;
+  font-family: "proxima_novabold";
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 28px;
+  margin: 207px 0 12px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.create-own-program2-new-right-inner  h3 span::before {
+  background: #f4f4f4 none repeat scroll 0 0;
+  content: "";
+  height: 1px;
+  position: absolute;
+  right: -23px;
+  top: 7px;
+  width: 12px;
+}
+.create-own-program2-new-right-inner h3 span::after {
+  background: #f4f4f4 none repeat scroll 0 0;
+  content: "";
+  height: 1px;
+  left: -23px;
+  position: absolute;
+  top: 7px;
+  width: 12px;
+}
+.create-own-program2-new-right-inner h3 span {
+  font-family: "proxima_nova_condensedlight";
+  font-size: 14px;
+  font-weight: normal;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.green-ring-bg2
+{
+	position:absolute;
+	right:0;
+	bottom:120px;
+}
+.green-ring-bg2  img {
+  width: 65px;
+}
+
+
+
+.shopping-botttom2-inner
+{
+	margin-top:40px;
+}
+
+.accomdation-sales-permited-main
+{
+	
+}
+
+.accomdation-sales-inner-left
+{
+	padding-right:10px !important;
+	background: rgba(0, 0, 0, 0) url("../images/accomdation-sales-inner-left2.png") no-repeat center top / cover ;
+	display: table;
+	margin: 0;
+	text-align: center;
+	padding: 0 0 6px 0 !important;
+	border-radius:0 0 4px 0;
+	border-radius:4px;
+}
+.accomdation-sales-inner-left-bottom
+{
+display: table-cell;
+  float: none;
+  text-align: center;
+  vertical-align: middle;	
+}
+.accomdation-sales-inner-left-bottom h3 {
+  color: #f4f4f4;
+  font-family: "proxima_novabold";
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 28px;
+  margin: 386px 0 12px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.accomdation-sales-inner-left-bottom h3 span::before {
+  background: #f4f4f4 none repeat scroll 0 0;
+  content: "";
+  height: 1px;
+  position: absolute;
+  right: -23px;
+  top: 7px;
+  width: 12px;
+}
+.accomdation-sales-inner-left-bottom h3 span::after {
+  background: #f4f4f4 none repeat scroll 0 0;
+  content: "";
+  height: 1px;
+  left: -23px;
+  position: absolute;
+  top: 7px;
+  width: 12px;
+}
+.accomdation-sales-inner-left-bottom h3 span {
+  font-family: "proxima_nova_condensedlight";
+  font-size: 14px;
+  font-weight: normal;
+  position: relative;
+  text-transform: uppercase;
+}
+
+
+.accomdation-sales-inner-right {
+  padding: 0 0 0 5px !important;
+}
+
+.accomdation-sales-lower-left {
+  padding: 10px 5px 0 0px !important;
+}
+
+.accomdation-sales-lower-right {
+  padding: 10px 0 0 5px !important;
+}
+
+.create-own-space-outer2
+{
+	padding:0 5px !important;
+	margin-bottom:10px;
+}
+
+
+
+.sydney-program2-main2 {
+  background: rgba(0, 0, 0, 0) url("../images/sydney-ticket2.png") no-repeat center top / cover ;
+  border-radius:4px;
+  display: table;
+  margin: 0;
+  padding: 0 0 6px !important;
+  text-align: center;
+}
+
+.new-zealand-program2-main2 {
+  background: rgba(0, 0, 0, 0) url("../images/newziland-ticket2.png") no-repeat center top / cover ;
+ border-radius:4px;
+  display: table;
+  margin: 0;
+  padding: 0 0 6px !important;
+  text-align: center;
+}
+
+.cairns-program2-main2
+{
+	background: rgba(0, 0, 0, 0) url("../images/chairn-ticket2.png") no-repeat center top / cover ;
+   border-radius:4px;
+  display: table;
+  margin: 0;
+  padding: 0 0 6px !important;
+  text-align: center;
+}
+
+.melbourne-program2-main2
+{
+	 background: rgba(0, 0, 0, 0) url("../images/malbourn-ticket2.png") no-repeat center top / cover ;
+  border-radius:4px;
+  display: table;
+  margin: 0;
+  padding: 0 0 6px !important;
+  text-align: center;
+}
+
+.create-own-program2-inner.sydney-program2-same2 h3 {
+  margin: 140px 0 12px;
+}
+
+
+/* ------------- shopping cart part end ------------ */
+
+
+
+/* ------------- subscribe part start ------------ */
+.subcribe-main-out
+{
+	float:left;
+	width:100%;
+	padding:120px 0 !important;
+	background:url(../images/subscribe-bg.jpg) center top no-repeat;
+	background-size:cover;
+}
+
+.subscribe-inner-main2
+{
+	text-align:center;
+}
+
+.subscribe-inner-main2 h2 {
+  color: #f4f4f4;
+  font-family: "proxima_novabold";
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 28px;
+  text-align: center;
+  margin:0px 0 50px 0;
+  text-transform: uppercase;
+}
+.subscribe-inner-main2 h2 span {
+  float: left;
+  text-align: center;
+  width: 100%;
+  margin: 0 0 30px 0;
+}
+
+.sbscribe2-field-outer{
+	text-align:center;
+	float:left;
+	width:100%;
+}
+.sbscribe2-field-outer input
+{
+	border:1px solid #fff;
+	background:transparent;
+	border-radius:4px;
+	padding:20px 25px !important;
+	font-family: 'proxima_nova_condensedlight';
+	font-size:16px;
+	color:#fff;
+	width:37%;
+	 margin: 0 5px 0 0;
+}
+
+.subscribe-submit {
+  background: #f5ba13 none repeat scroll 0 0;
+  border: 0 none;
+  border-radius: 5px;
+  box-shadow: 0 5px 0 0 #a1790c;
+  color: #000000;
+  display: inline-block;
+  float: none;
+  font-family: "proxima_novabold";
+  font-size: 18px;
+  margin: 0 0 0 5px;
+  padding: 18px 28px !important;
+  transition: all 1s ease 0s;
+  width: 200px;
+}
+
+.subscribe-submit:hover {
+  background: #ffffff none repeat scroll 0 0;
+  box-shadow: 0 5px 0 0 #a1790c;
+  color: #000000;
+  text-decoration: none;
+  transition: all 1s ease 0s;
+}
+
+/* ------------- subscribe part end ------------ */
+
+
+
+
+
+
+/* ------------- footer part start ------------ */
+footer
+{
+	float:left;
+	width:100%;
+	background:#fff;
+	padding:50px 0 0 0 !important;
+}
+
+.footer-inner-section1
+{
+	text-align:left;
+}
+
+
+.footer-inner-section1 p
+{
+	color:#646464;
+	font-size:#13px;
+	font-family: 'proxima_nova_condensedlight';
+	margin-top:20px;
+}
+.footer-inner-section1 p strong
+{
+	  font-family: 'proxima_nova_condensedSBd';
+}
+
+
+
+.footer-inner-section2
+{
+	text-align:left;
+	
+}
+
+
+.footer-inner-section2 h2
+{
+  color: #3c3c3c;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 28px;
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  position:relative;
+  margin:0px 0 25px 0;
+  position:relative;
+  padding: 0 0 10px 0 !important;
+}
+.footer-inner-section2 h2::after {
+  background: #f5ba13 none repeat scroll 0 0;
+  content: "";
+  height: 1px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 24px;
+}
+.footer-inner-section2 ul
+{
+	list-style:none;
+	margin:0px;
+	padding:0px !important;
+}
+.footer-inner-section2 li
+{
+	float:left;
+	width:100%;
+	margin-bottom:4px;
+	background:url(../images/footer-arrow-img.png) left 5px no-repeat;
+	padding-left:15px !important;
+}
+
+.footer-inner-section2 li a
+{
+	float:left;
+	color:#646464;
+	font-size:13px;
+	 font-family: 'Roboto', sans-serif;
+	 font-weight:300;
+	 text-transform:capitalize;
+}
+.footer-inner-section2 li a:hover
+{
+	color:#f5ba12;
+}
+.contact2-footer
+{
+	margin-bottom:15px;
+  font-size: 16px;
+}
+.contact2-footer span {
+  float: left;
+  margin: 0 0px 0 0;
+  text-align: left;
+  width: 30px;
+}
+.contact2-footer p
+{
+	color:#646464;
+	float:left;
+	width:87%;
+	font-size:#13px;
+	font-family: 'proxima_nova_condensedlight';
+	margin-top:20px;
+	margin:0px;
+}
+.contact2-footer p a{
+	text-decoration:none;
+	color:#646464;
+}
+
+.map-marker-footer
+{
+	color:#f5ba12 !important; 
+	font-size:16px !important;
+}
+
+.phone3
+{
+	color:#f5ba12 !important; 
+	font-size:16px !important;
+}
+
+.envelope2
+{
+	color:#f5ba12 !important; 
+	font-size:16px !important;
+}
+.follow-us-main2
+{
+	margin-top:15px;
+}
+.follow-us-main2 samp
+{
+	color: #646464;
+  float: left;
+  font-family: "proxima_nova_condensedlight";
+  margin: 0;
+  width: auto;
+  font-size:18px;
+  margin:10px 15px 0 0;
+}
+
+.follow-us-main2 ul
+{
+	list-style:none;
+	padding:0px !important;
+	margin:0px;
+}
+.follow-us-main2 li {
+  background-image: none !important; 
+  float: left;
+  margin: 0 4px 0 0;
+  padding: 0 !important;
+  width: auto;
+}
+
+.copy-right-out
+{
+	float:left;
+	width:100%;
+	padding:25px 0 !important;
+	border-top:1px solid #ebebeb;
+	margin-top:30px;
+}
+.copy-right-out p
+{
+  color: #a8a8a8;
+ text-align:center;
+ font-size:13px;
+  font-family: "proxima_nova_condensedlight";
+  margin: 0;
+}
+
+/* ------- footer part end ------ */
+
+
+
+
+/* =================== 18 April 2017 ACCOMODATION PAGE START ============================ */
+
+.banner-main.accomodation-banner {
+  background: rgba(0, 0, 0, 0) url("../images/accomodation-banner2.jpg") no-repeat scroll center top / cover ;
+  float: left;
+  padding: 240px 0 130px !important;
+  position: relative;
+  width: 100%;
+  z-index: 9;
+}
+
+.accommodation-main-outer4 {
+  background: #ffffff url("../images/accomidatio-design-bgnw.png") no-repeat scroll left 50px;
+  float: left;
+  padding: 100px 0 80px !important;
+  width: 100%;
+  background-size: 26%;
+  position:relative;
+}
+
+
+.accommodation-hotels-main-out4
+{
+	
+}
+.accommodation-scrolling-out {
+  margin-bottom: 15px;
+  padding: 0 0 0 20px !important;
+}
+.accommodation-scrolling-out p {
+  color: #212121;
+  font-family: "proxima_nova_condensedlight";
+  font-size: 19px;
+  line-height: 30px;
+  margin: 0 0 8px;
+  text-align: left;
+}
+.accommodation-scrolling-out p  samp
+{
+	font-family: 'proxima_novaregular';
+	font-weight:600;
+	text-transform:uppercase;
+}
+.puschase-icon4 {
+  float: left;
+  margin: 0px 15px 0 0;
+}
+
+/*---- scroll ---*/
+.accommodation-scrolling-out .content {
+  height: 340px;
+  overflow: auto;
+  width: 100%;
+}
+.mCSB_container{
+	width:auto;
+	margin-right:30px;
+	overflow:hidden;
+}
+.mCS_disabled>.mCustomScrollBox>.mCSB_container.mCS_no_scrollbar,
+.mCS_destroyed>.mCustomScrollBox>.mCSB_container.mCS_no_scrollbar{
+	margin-right:30px;
+}
+.mCustomScrollBox > .mCSB_scrollTools {
+  height: 100%;
+  right: 0;
+  top: 0;
+  width:8px;
+}
+.mCSB_scrollTools .mCSB_draggerContainer{
+	position:absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0; 
+	height:auto;
+}
+.mCSB_scrollTools .mCSB_draggerRail {
+  background-color: #dedede;
+  border-radius: 5px;
+  height: 100%;
+  margin: 0 auto;
+  width: 8px;
+}
+/* .mCSB_scrollTools .mCSB_dragger{
+	cursor:pointer;
+	width:100%;
+	height:30px;
+} */
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+	width:8px;
+	height:100%;
+	margin:0 auto;
+}
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+	background:#fff; /* rgba fallback */
+}
+.content{width:409px; height:500px; overflow:auto; }
+
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  background: #f5ba13 none repeat scroll 0 0;
+  border-radius: 5px;
+  /* height: 40px; */
+ 
+}
+
+/*--- scroll ---*/
+
+
+.pallazo-versace-hotel-main {
+  margin-top: 20px;
+  position: relative;
+}
+.pallazo4-versace-img3 {
+  border: 7px solid #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 0 5px #dcdcdc;
+  height: auto;
+  position: relative;
+  width: 100%;
+}
+
+
+.pallazo-versace-ratig-out4 {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border: 7px solid rgba(0, 0, 0, 0);
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  padding: 221px 0 !important;
+}
+.pallazo-versace-ratig-out4 h3 {
+  color: #fff;
+  font-family: "proxima_novabold";
+  font-size: 50px;
+  font-weight: normal;
+  line-height: 69px;
+  margin: 0 0 0px;
+  text-transform: transparent;
+}
+.pallazo-versace-ratig-out4 span
+{
+	float:left;
+	width:100%;
+	cursor:pointer;
+}
+
+.pallazo-versace-ratig-out4:hover
+{
+	background:rgba(217,23,37,0.72);
+	 border: 7px solid #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 0 5px #dcdcdc;
+}
+
+.hover6:hover
+{
+	background:rgba(217,23,37,0.72);
+}
+
+.jupiter3-hotel-rating-sec:hover h4
+{
+  margin: 57% 0 0;
+
+}
+.accomdtion-design2-bg {
+  position: absolute;
+  right: 0;
+  top: 62%;
+  width: 88px;
+}
+
+.accomdation-hotels-view-out {
+  margin-top: 20px;
+}
+
+.hotels-first4-outer
+{
+	padding:10px !important;
+}
+
+.jupiter-hotel-first
+{
+	position:relative;
+}
+.hotels-first4-outer {
+  min-height: 350px;
+}
+
+.jupiter-hotel-first img
+{
+	position:relative;
+	max-width:100%;
+	/* 
+	border-radius:4px; */
+}
+
+
+.jupiter3-hotel-rating-sec {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+.jupiter3-hotel-rating-sec:hover
+{
+	background:rgba(217, 23, 37, 0.72) none repeat scroll 0 0;
+}
+
+.jupiter3-hotel-rating-sec h4 {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  color: #ffffff;
+  font-family: "proxima_novabold";
+  font-size: 16px;
+  font-weight: normal;
+  margin: 0;
+  text-transform: uppercase;
+  margin: 98% 0 0 0;
+}
+.jupiter3-hotel-rating-sec span
+{
+	text-align:center;
+}
+
+
+.jupiter3-hotel-rating-sec-new {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  top: 0;
+}
+
+.jupiter3-hotel-rating-sec-new h4 {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  color: #ffffff;
+  font-family: "proxima_novabold";
+  font-size: 33px;
+  font-weight: bold;
+  margin: 0;
+  text-transform: uppercase;
+  margin:22% 0 0 0;
+}
+.jupiter3-hotel-rating-sec-new span
+{
+	text-align:center;
+}
+
+
+.jupiter3-hotel-rating-sec-new:hover
+{
+	background:rgba(217, 23, 37, 0.72) none repeat scroll 0 0;
+}
+
+.seaworl-overlay3
+{
+	position:relative;
+}
+
+.jupiter3-hotel-rating-sec-new
+{
+	display:none;
+}
+
+.seaworl-overlay3:hover .jupiter3-hotel-rating-sec-new
+{
+	display:block;
+	background:url(../images/seaworl-overlay3-hover.png) center top no-repeat;
+}
+
+
+
+/* hotel views address start*/
+
+
+.accomodation0details-view-out
+{
+	float:left;
+	width:100%;
+	background:#f8f8f8;
+	padding:90px 0 80px 0 !important;
+}
+
+.accomodation0details-view-iiner
+{
+	
+}
+
+.pallazo-versace-out3 {
+  margin-bottom: 30px;
+}
+
+.pallazo-versace-left-sec
+{
+	text-align:left;
+}
+
+.pallazo-versace-left-sec h3{
+  color: #323232;
+  font-family: "proxima_novabold";
+  font-size:40px;
+  font-weight: 500;
+  margin:0px;
+  text-transform: capitalize;
+}
+.jssort01 {
+  background: white;
+  /*background: #f8f8f8;*/
+}
+
+.pallazo-versace-left-sec span
+{
+	margin:0 0 0 10px;
+}
+
+.map-marker-new3 {
+  color: #474747;
+  font-family: "proxima_nova_condensedlight";
+  margin: 0 8px 0 0;
+}
+.pallazo-versace-left-sec p {
+  color: #212121;
+  font-family: "proxima_nova_condensedlight";
+  font-size: 17px;
+  line-height: 20px;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.pallazo-versace-rigth-sec2
+{
+	text-align:right;
+}
+
+.accomdation-bbok-now-button {
+  background: #d91725 none repeat scroll 0 0;
+  border: 0 none;
+  border-radius: 5px;
+  box-shadow: 0 5px 0 0 #8e0f18;
+  color: #ffffff;
+  display: inline-block;
+  float: right;
+  font-family: "proxima_novabold";
+  font-size: 13px;
+  margin: 0;
+  padding: 15px 35px !important;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 1s ease 0s;
+}
+.accomdation-bbok-now-button:hover {
+  text-decoration: none;
+  background:#f5ba13 ;
+  box-shadow:0 5px 0 0 #a1790c;
+  transition: all 1s ease 0s;
+  color:#fff;
+}
+.pallazo-versace-rigth-sec2 p {
+ 
+  color: #474747;
+  float: right;
+  font-family: "proxima_nova_condensedlight";
+  font-size: 17px;
+  line-height: 25px;
+  margin: 14px 0px 0 0;
+  padding: 0 20px 0 0 !important;
+  text-transform: capitalize;
+}
+
+.pallazo-versace-rigth-sec2 p a
+{
+	text-decoration:none;
+	color:#474747;
+}
+.pallazo-versace-rigth-sec2 p a samp {
+  border-left: 1px solid #adadad;
+  color: #d91725;
+  font-family: "proxima_nova_condensedregular";
+  font-size: 24px;
+  padding-left: 20px;
+}
+
+
+
+/* slider */
+  /* jssor slider arrow navigator skin 05 css */
+        /*
+        .jssora05l                  (normal)
+        .jssora05r                  (normal)
+        .jssora05l:hover            (normal mouseover)
+        .jssora05r:hover            (normal mouseover)
+        .jssora05l.jssora05ldn      (mousedown)
+        .jssora05r.jssora05rdn      (mousedown)
+        */
+        .jssora05l, .jssora05r {
+            display: block;
+            position: absolute;
+            /* size of arrow element */
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            background: url('img/a17.png') no-repeat;
+            overflow: hidden;
+        }
+        .jssora05l { background-position: -10px -40px; }
+        .jssora05r { background-position: -70px -40px; }
+        .jssora05l:hover { background-position: -130px -40px; }
+        .jssora05r:hover { background-position: -190px -40px; }
+        .jssora05l.jssora05ldn { background-position: -250px -40px; }
+        .jssora05r.jssora05rdn { background-position: -310px -40px; }
+
+        /* jssor slider thumbnail navigator skin 01 css */
+        /*
+        .jssort01 .p            (normal)
+        .jssort01 .p:hover      (normal mouseover)
+        .jssort01 .p.pav        (active)
+        .jssort01 .p.pdn        (mousedown)
+        */
+        .jssort01 .p {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 72px;
+            height: 72px;
+        }
+        
+        .jssort01 .t {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .jssort01 .w {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+        }
+		.jssort01 .c {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border: 0 none;
+  box-sizing: content-box;
+  height: 68px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 68px;
+  cursor: pointer;
+}
+        
+        
+        .jssort01 .pav .c {
+            top: 2px;
+            _top: 0px;
+            left: 2px;
+            _left: 0px;
+            width: 68px;
+            height: 68px;
+            border: #000 0px solid;
+            _border: #fff 2px solid;
+            background-position: 50% 50%;
+        }
+        
+        .jssort01 .p:hover .c {
+            top: 0px;
+            left: 0px;
+            width: 70px;
+            height: 70px;
+           
+        }
+        
+        .jssort01 .p.pdn .c {
+            background-position: 50% 50%;
+            width: 68px;
+            height: 68px;
+          
+        }
+      
+.fa-angle-left2
+{
+	font-size:45px !important;
+	color:#fff !important;
+}
+
+.angle-right2
+{
+	font-size:45px !important;
+	color:#fff !important;
+}
+.jssora05l {
+  height: auto;
+  text-align: center;
+}	
+
+.more-photo-heading3
+{
+	text-align:left;
+} 
+
+.more-photo-heading3 h5
+{
+  color: #212121;
+  font-family: 'proxima_nova_condensedlight';
+  font-size:17px;
+  font-weight: 500;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+
+.luxury-class-img2 {
+  left: -11px;
+  position: absolute;
+  top: 115px;
+  z-index: 9;
+}
+/* slider */
+
+
+.defination-luxury-out2 {
+  background: rgba(0, 0, 0, 0) url("../images/luxury-class-info-bg2.png") no-repeat scroll center top;
+  padding: 30px 0 80px 0 !important;
+  background-size: 47%;
+}
+.defination-luxury-inner-left
+{
+	text-align:left;
+}
+.defination-luxury-inner-left h6
+{
+	color: #212121;
+	font-family: 'proxima_nova_condensedregular';
+	font-size: 19px;
+	font-weight: 500;
+	margin:0 0 20px 0;
+	text-transform:uppercase;
+}
+.defination-luxury-inner-left p {
+  color: #212121;
+  font-family: "proxima_nova_condensedlight";
+  font-size: 19px;
+  line-height: 30px;
+  margin: 0 0 1px;
+  text-align: left;
+}
+
+.defination-luxury-inner-left p  strong
+{
+	 font-family: 'proxima_nova_condensedSBd';
+	 font-weight:400;
+}
+
+.defination-luxury-inner-right2
+{
+	text-align:right;
+	padding-left:20px !important;
+}
+.defination-luxury-inner-right2 img{
+	max-width:100%;
+}
+
+/* hotel views address */
+
+.details-feature-out2
+{
+	margin-bottom:35px;
+}
+
+
+.details-feature-out2 h3
+{
+  color: #212121;
+   font-family: 'proxima_nova_condensedSBd';
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+}
+
+.details-out-inner2
+{
+	background:#fff;
+	box-shadow:0 0 5px #dcdcdc;
+}
+
+.details-out-inner-left2 {
+  background: rgba(0, 0, 0, 0) url("../images/detail-border-bg2.png") no-repeat scroll left 2px;
+  padding: 25px 2% 25px 10% !important;
+}
+.details-out-inner-left2 p {
+  color: #212121;
+  font-family: "proxima_nova_condensedlight";
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0 0 14px;
+  text-align: left;
+  text-transform: capitalize;
+}
+
+.details-out-inner-left2 p:last-child
+{
+	margin: 0 0 0px;
+}
+.details-out-inner-left2 p strong {
+  color: #212121;
+  font-family: "proxima_nova_condensedregular";
+  font-size: 18px;
+  font-weight: 300;
+  margin: 0 5px 0 0;
+}
+.room-type-img03 {
+  float: left;
+  text-align: center;
+  width: 20%;
+  margin: -4px 0 0 0;
+}
+
+
+.details-out-inner-left2.details-out-inner-right2 {
+  padding: 25px 11% 25px 2% !important;
+}
+
+
+.features-inner-main2
+{
+	
+}
+
+.features-inner-main2
+{
+	border-bottom:1px solid #e8e7e7;
+	display:table;
+}
+.feauture-first03 {
+  float: left;
+  padding:10px 10px !important;
+  text-align: center;
+  width: 16.66%;
+}
+
+
+.feauture-first-inner2 {
+  display: table-cell;
+  float: none;
+  vertical-align: middle;
+  height: 170px;
+}
+.feauture-first-inner2  p {
+  color: #898888;
+   font-family: 'proxima_nova_condensedlight';
+  font-size: 18px;
+  line-height: 24px;
+  margin: 10px 0 0 0;
+  text-transform: capitalize;
+}
+.feauture-conditining0main
+{
+	display:inline-block;
+	width:auto;
+}
+
+.feauture-bg-border
+{
+	 background: rgba(0, 0, 0, 0) url("../images/feature-border-bg.png") no-repeat scroll left 18px;
+}
+.feture-note-out3 {
+  background: #dff6e1 none repeat scroll 0 0;
+  border-radius: 2px;
+  margin-top: 20px;
+  padding: 35px 20px !important;
+}
+
+#active-drop
+{
+	background:#e1e1e1 !important;
+	color:#303030 !important;
+}
+
+#active-nav
+{
+	color:#f5ba13 !important;
+}
+
+.feture-note-out3  p {
+  color: #617765;
+  font-family: 'proxima_novaregular';
+  font-size: 19px;
+  line-height: 26px;
+  margin: 0px 0 0 0;
+  text-transform: capitalize;
+}
+
+.feture-note-out3  p strong
+{
+	font-weight:600;
+}
+
+.details-feature-out2:last-child
+{
+	margin:0px !important;
+}
+.margin-none2{
+	margin:0px;
+}
+
+footer.accomdation-footer2 {
+  background:url(../images/acomdation-footerbg.jpg) center top no-repeat;
+  background-size:cover;
+}
+
+.accomdation-footer2  .footer-inner-section1 p {
+  color: #fff;
+}
+
+.accomdation-footer2 .footer-inner-section2 li a {
+  color: #ffffff;
+}
+.accomdation-footer2 .map-marker-footer {
+  color: #fff !important;
+}
+
+.accomdation-footer2 .phone3 {
+  color: #fff !important;
+}
+
+.accomdation-footer2 .envelope2 {
+  color: #fff !important;
+}
+.accomdation-footer2 .contact2-footer p {
+  color: #fff;
+}
+.accomdation-footer2 .contact2-footer p a {
+  color: #fff;
+}
+.accomdation-footer2 .follow-us-main2 samp {
+  color: #fff;
+}
+.accomdation-footer2 .copy-right-out p {
+  color: #fff;
+}
+
+.accomdation-footer2 .footer-inner-section2 li {
+  background: rgba(0, 0, 0, 0) url("../images/footer-arrow-white-img.png") no-repeat scroll left 5px;
+}
+
+.accomdation-footer2  .footer-inner-section2 h2 {
+  color: #fff;
+}
+
+.accomdation-footer2 .footer-inner-section2 h2::after {
+  background: #fff ;
+}
+
+.accomdation-footer2 .copy-right-out {
+  border-top: 1px solid #e6666f;
+}
+.accomdation-footer2  .copy-right-out p {
+  color: #fff;
+}
+/* =================== 18 April 2017 ACCOMODATION PAGE END ============================== */
+
+
+
+/* =================== 19 April 2017 EVENTS TICKETS PAGE START ============================== */
+
+.banner-main.event-tickets-banner {
+  background: rgba(0, 0, 0, 0) url("../images/event-tickets-banner2.jpg") no-repeat scroll center top / cover ;
+  float: left;
+  padding: 240px 0 130px !important;
+  position: relative;
+  width: 100%;
+  z-index: 9;
+}
+
+footer.accomdation-footer2.event-tickets-footer2 {
+  background: rgba(0, 0, 0, 0) url("../images/event-ticket-footer-bg.jpg") no-repeat scroll center top / cover ;
+}
+.accomdation-footer2.event-tickets-footer2  .copy-right-out {
+  border-top: 1px solid #9271ab;
+}
+
+.event-ticket-inner3  .exclusive-reprensentatio-inner h2 samp {
+  font-family: 'proxima_nova_condensedlight';
+}
+
+.event-ticket-main-out4 {
+  text-align: center;
+  margin-top: 20px;
+}
+.accommodation-main-outer4.event-ticket-inner3 {
+  background: #ffffff url("../images/events2-design-bgnw.png") no-repeat scroll left 50px / 26% auto;
+  padding: 50px 0 30px !important;
+}
+.event-ticket-main-out4 p {
+  color: #212121;
+ font-family: 'proxima_nova_condensedregular';
+  font-size: 19px;
+  line-height: 30px;
+  margin: 0;
+  text-align: center;
+  padding: 0 11% !important;
+}
+
+.event-ticket-main-out4 p  strong
+{
+	  font-family: 'proxima_nova_condensedSBd';
+	  font-weight:400;
+}
+
+.event-ticket-main-out4 h5 
+{
+  color: #212121;
+ font-family: 'proxima_nova_condensedregular';
+  font-size: 19px;
+  line-height: 30px;
+  margin:10px 0;
+  text-align: center;
+}
+
+
+
+.purpel-check-img3 {
+  margin: -6px 10px 0 0;
+}
+
+.info-by0check-Commonwealth2 {
+  padding: 0 10%;
+}
+
+.info-by0check-Commonwealth2 h5 
+{
+  color: #212121;
+ font-family: 'proxima_nova_condensedregular';
+  font-size: 19px;
+  line-height: 30px;
+  margin:10px 0 30px 0;
+  text-align: left;
+}
+
+
+
+.info-first-contry2 {
+  text-align: left;
+  margin-bottom:30px;
+}
+.info-first-contry2 span
+{
+	color: #212121;
+  font-family: 'proxima_nova_condensedlight';
+  font-size: 19px;
+  line-height: 30px;
+  margin:10px 0;
+  text-align: center;
+  text-transform:capitalize;
+}
+
+
+.ticket-applications-main2
+{
+	float:left;
+	width:100%;
+	background:#f8f8f8;
+	padding:60px 0 !important;
+	position:relative;
+}
+
+
+.ticket-info-design-img3 {
+  position: absolute;
+  right: 0;
+  top: -165px;
+  width: 288px;
+}
+.ticket-applications-inner2
+{
+	text-align:center;
+}
+
+
+
+.ticket-applications-inner2 h2::after {
+  background: #f5ba13 none repeat scroll 0 0;
+  bottom: -4px;
+  color: #f5ba13;
+  content: "";
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%);
+  width: 200px;
+}
+
+.ticket-applications-inner2 h2 {
+  color: #323232;
+  font-family: "proxima_novabold";
+  font-size: 50px;
+  font-weight: normal;
+  line-height: 47px;
+  margin: 0 0 30px;
+  padding-bottom: 28px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.ticket-applications-inner2 h2 samp {
+  font-family: "proxima_nova_condensedlight";
+}
+
+.ticket2-applications-lottery-out
+{
+	
+}
+.ticket2-applications-fisrt {
+  margin: 0 0 10px;
+}
+
+
+.ticket2-applications-calender2 {
+  background: #009615 none repeat scroll 0 0;
+  padding: 35px 0 !important;
+  position: relative;
+  text-align: center;
+  width: 160px;
+}
+
+.ticket2-applications-calender2 h4 {
+  color: #ffffff;
+  font-family: "proxima_novaregular";
+  font-size: 30px;
+  font-weight: normal;
+  margin: 5px 0 0;
+  text-align: center;
+  text-transform: capitalize;
+}
+.ticket2-applications-calender2 h4 strong
+ {
+  color: #fff;
+  font-family: "proxima_novabold";
+  font-size: 45px;
+  font-weight: bold;
+  line-height: 42px;
+  text-align: center;
+}
+
+
+.ticket2-applications-right-purpel2 {
+  background: rgba(0, 0, 0, 0) url("../images/ticket-clender-purpel-bg1.png") no-repeat center top;
+  display: table;
+  padding: 10px 10px 10px 50px !important;
+  background-size: cover;
+   width: 86%;
+}
+.ticket2-applications3-right-inner
+{
+	float:none;
+	display:table-cell;
+	vertical-align:middle;
+	height:159px;
+	text-align:left;
+}
+
+
+
+.ticket2-applications3-right-inner h5 {
+  color: #ffffff;
+  font-family: "proxima_novaregular";
+  font-size: 19px;
+  font-weight: normal;
+  font-weight:500;
+  margin:0px;
+}
+.ticket2-applications3-right-inner p {
+  color: #ffffff;
+  font-family: "proxima_nova_condensedlight";
+  font-size: 19px;
+  font-weight: normal;
+  line-height: 25px;
+  margin: 6px 0 0 0;
+}
+
+
+
+.right-green-arow2 {
+  position: absolute;
+  right: -16px;
+  top: 78px;
+  z-index: 99;
+}
+
+
+.condition-of-sale-main-outer2
+{
+	float:left;
+	width:100%;
+	padding:0px 0 !important;
+	background:url(../images/conditon-of-sale-out2.jpg) center top no-repeat;
+	background-size:cover;
+}
+
+.condition-of-sale-main-inner
+{
+	text-align:center;
+}
+
+.condition-of-sale-main-inner h2::after {
+  background: #f5ba13 none repeat scroll 0 0;
+  bottom: -4px;
+  color: #f5ba13;
+  content: "";
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%);
+  width: 200px;
+}
+.condition-of-sale-main-inner h2 {
+  color: #323232;
+  font-family: "proxima_novabold";
+  font-size: 50px;
+  font-weight: normal;
+  line-height: 47px;
+  margin: 0 0 30px;
+  padding-bottom: 28px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.condition-of-sale-main-inner  p {
+  color: #212121;
+    font-family: 'proxima_nova_condensedregular';
+  font-size: 19px;
+  font-weight: normal;
+  line-height: 25px;
+  margin:45px 0 65px 0;
+}
+
+.condition-of-sale-main-inner  p a
+{
+	text-decoration:none;
+	 font-family: 'proxima_nova_condensedSBd';
+	  color: #212121;
+	  border-bottom:1px solid #b9b9b9;
+}
+.condition-of-sale-main-inner h2 samp {
+  font-family: "proxima_nova_condensedlight";
+}
+
+/* TABLE START */
+.condition-of-sale-table-out {
+  background: #fff;
+  position:relative;
+}
+
+.table-heading-bg2 
+{
+  background: #f5ba13;
+}
+
+.condition-of-sale-table-out th {
+  color: #022121;
+ font-family: 'proxima_novaregular';
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 13px !important;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.condition-of-sale-table-out td 
+{
+  color: #022121;
+   font-family: 'proxima_nova_condensedregular';
+  font-size: 13px;
+  font-weight: 400;
+  padding: 20px 10px !important;
+  text-align: center;
+  text-transform:capitalize;
+}
+
+
+.gray-bg-bottom4 {
+  background: #f8f8f8;
+}
+.table-white-bg2
+{
+	background:#fff;
+}
+.boxing-img2 {
+  margin: -3px 6px 0 0;
+}
+/* TABLE END */
+
+.condition-of-sale-table-out.content
+{
+	width:100% !important;
+}
+.condition-of-sale-table-out.mCSB_scrollTools, .condition-of-sale-table-out .mCSB_dragger , .condition-of-sale-table-out.mCSB_dragger_bar {
+  background: #f5ba13 !important;
+    border-radius: 5px;
+}
+.condition-of-sale-table-out.mCSB_scrollTools,  .condition-of-sale-table-out .mCSB_dragger .mCSB_dragger_bar {
+  background:  #f5ba13 !important;
+  border-radius: 5px;
+}
+.condition-of-sale-table-out .mCSB_container {
+  margin-right: 0px;
+  overflow: hidden;
+  width: auto;
+}
+
+/* .condition-of-sale-table-out .mCustomScrollBox > .mCSB_scrollTools {
+  height: 100%;
+  right: 3px;
+  top: 0;
+  width: 8px;
+}
+ */
+.condition-of-sale-table-out .mCustomScrollBox > .mCSB_scrollTools {
+  height: 86%;
+  right: 3px;
+  top: 66px;
+  width: 8px;
+}
+
+
+
+
+/*-- 20 April 2017 start css ---*/
+
+.event-datetime-category-out2 {
+  float: right;
+  width: auto;
+  margin-bottom:20px;
+}
+
+/* Dropdown style */
+
+
+.event-datetime-category-out2 .dropdown {
+  float: left;
+  margin: 0 0 0 8px;
+  width: 200px;
+}
+.event-datetime-category-out2 .dropdown dt a {
+	background: #ffffff none repeat scroll 0 0;
+	border: 1px solid #e5e5e5;
+	border-radius: 2px;
+	color: #818181;
+	display: block;
+	font-family: 'proxima_nova_condensedregular';
+	/*  font-family: "proxima_nova_condensedlight"; */
+	font-size: 14px;
+	font-weight: 100;
+	height: auto;
+	padding: 11px 6px;
+	text-align: left;
+	text-decoration: none;
+	text-transform: capitalize;
+	width: 100%;
+}
+
+.event-datetime-category-out2 .dropdown dt a:hover, .dropdown dt a:active {
+  border-color: #bdc3c7;
+}
+
+
+.event-datetime-category-out2 .dropdown dt span {
+  background: rgba(0, 0, 0, 0) url("../images/controlar-on-table-bg2.png") no-repeat scroll right center;
+  border-right: 4px solid rgba(0, 0, 0, 0);
+  cursor: pointer;
+  display: block;
+  padding: 0 5px;
+  font-weight: normal;
+}
+.dropdown .hasDatepicker {
+  border: medium none;
+  width: 100%;
+    background:url(../images/controlar-on-table-bg2.png) no-repeat right center;
+}
+.event-datetime-category-out2 .dropdown dd {
+  position: relative;
+}
+.event-datetime-category-out2 .dropdown dd ul {
+  background: #ffffff none repeat scroll 0 0;
+  border: 0px;
+  border-radius: 2px;
+  display: none;
+  left: 0;
+  list-style: outside none none;
+  position: absolute;
+  top: 14px;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 0 0 8px #eaeaea;
+}
+.event-datetime-category-out2 .dropdown dd ul li:first-child a:hover {
+  border-radius: 3px 3px 0 0;
+}
+.event-datetime-category-out2 .dropdown dd ul li:last-child a:hover {
+  border-radius: 0 0 3px 3px;
+}
+
+.check-purpel-sports-bg2-slected {
+  float: right;
+  margin: 4px 8px 0 0;
+}
+
+.event-datetime-category-out2 .dropdown dd li a {
+	display: block;
+	padding: 6px 10px;
+	text-align: left;
+	text-decoration: none;
+	color: #717171;
+	font-size:14px;
+	text-transform:uppercase;
+	display: block;
+	font-family: 'proxima_nova_condensedregular';
+}
+.event-datetime-category-out2 .dropdown dd ul p {
+  background: #5a277f none repeat scroll 0 0;
+  color: #ffffff;
+  display: block;
+  font-family: "proxima_nova_condensedregular";
+  font-size: 14px;
+  margin: 0;
+  padding: 6px 10px;
+  text-align: left;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius:2px;
+  position:relative;
+}
+
+.event-code-arrow-bg2 
+{
+  position: absolute;
+  right: 8px;
+  top: -8px;
+}
+.event-datetime-category-out2 .dropdown dd li a:hover {
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+.event-datetime-category-out2 .selected {
+  font-weight: 700;
+}
+.boxing-event-code2 {
+  margin: -2px 10px 0 0;
+  width: 19px;
+}
+
+
+ .box_check_txt input[type="checkbox"] {
+    display:none;
+}
+
+.box_check_txt input[type="checkbox"] + label span.green {
+    display:inline-block;
+    width:28px;
+    height:24px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    background:url(../images/check-gray-sports-bg.png) left top no-repeat;
+    cursor:pointer;
+}
+.box_check_txt input[type="checkbox"]:checked + label span.green {
+    background:url(../images/check-purpel-sports-bg2.png) left top no-repeat;
+}
+
+.box_check_txt {
+  float: right;
+  position: relative;
+  top: -22px;
+}
+
+/* 
+.ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span {
+  display: none !important;
+}
+
+.ui-widget-header {
+  background: #5a277f !important;
+  border: 0px solid #dddddd !important;
+  color: #ffffff !important;
+  font-weight: bold;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+  background: #5a277f none repeat scroll 0 0 !important;
+  border: 0 none;
+  color: #ffffff !important;
+  padding: 4px !important;
+  text-align: center;
+}
+.ui-datepicker.ui-widget.ui-widget-content.ui-helper-clearfix.ui-corner-all {
+  border: 0 none !important;
+  border-radius: 0 !important;
+  box-shadow: 0 0 5px #000000;
+  padding: 0 !important;
+}
+.ui-datepicker td {
+  border: 0 none;
+  padding: 0px !important;
+}
+ */
+.scroll-insert4 {
+  display: block;
+  float: left;
+ 
+  width: 100%;
+
+}
+.scroll-insert4.content{
+	 height: 132px;
+}
+
+/*-- 20 April 2017 end css ---*/
+
+
+
+
+/* =================== 19 April 2017 EVENTS TICKETS PAGE END ============================== */
+
+
+
+
+
+/* =================== 21 April 2017 FAQ PAGE START ============================ */
+
+.banner-main.faq-banner {
+  background: rgba(0, 0, 0, 0) url("../images/faq-banner2.jpg") no-repeat scroll center top / cover ;
+  float: left;
+  padding: 240px 0 130px !important;
+  position: relative;
+  width: 100%;
+  z-index: 9;
+}
+
+.faq-main-outer4 {
+  background: #f8f8f8 url("../images/faq2-design-bgnw.png") no-repeat scroll left 0 / cover ;
+  float: left;
+  padding: 100px 0 80px !important;
+  position: relative;
+  width: 100%;
+  background-size: 41%;
+}
+
+/* 
+
+.faq-main-outer4 {
+  background: #f8f8f8 url("../images/faq2-design-bgnw.png") no-repeat scroll left 0px / 26% auto;
+  float: left;
+  padding: 100px 0 80px !important;
+  position: relative;
+  width: 100%;
+} */
+
+
+
+.faq2-design-in-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 25%;
+}
+.faq-main-inner-part2
+{
+	padding: 0 7% !important;
+}
+
+.faq-main-inner-part2 .panel-group {
+  text-align: left;
+}
+.faq-main-inner-part2 .panel {
+  background-color: rgba(0, 0, 0, 0);
+  border-color: currentcolor currentcolor #e4e4e4;
+  border-radius: 4px;
+  border-style: none none solid;
+  border-width: 0 0 1px;
+  box-shadow: none;
+  margin-bottom: 0px;
+}
+/* .faq-main-inner-part2 .panel-heading .accordion-toggle.collapsed::after {
+  content: "";
+  background:url(../images/yallow-accordian-bg.png) center right no-repeat;
+  height:30px;
+  width:30px; 
+
+} */
+/* .accordion-toggle{
+ background:url(../images/yallow-accordian-bg.png) center top no-repeat;
+  height:30px;
+  width:30px; 
+}
+.accordion-toggle.bg-none{
+	background:url(../images/black-plus-img2.png) center top no-repeat;
+  height:30px;
+  width:30px; 
+} */
+/* .faq-main-inner-part2 .panel-heading .accordion-toggle::after {
+  content: "";
+  float: right;
+  font-family: "Glyphicons Halflings";
+  background:url(../images/black-plus-img2.png) center top no-repeat;
+  height:30px;
+  width:30px; 
+}
+ */
+
+.faq-bottom-desihnew1 {
+  bottom: 0;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%);
+  width: 33%;
+}
+.faq-main-inner-part2 .accordion-toggle.content-add
+{
+	color: #313131;
+	float: left;
+	font-family: "sabadoregular";
+	font-size: 20px;
+	font-weight: 700;
+	letter-spacing: 6px;
+	margin: 0;
+	text-transform: uppercase;
+	width: 100%;
+}
+.faq-main-inner-part2 .accordion-toggle.collapsed {
+   background: rgba(0, 0, 0, 0) url("../images/black-plus-img2.png") no-repeat scroll center right;
+  color: #f5ba13 ;
+  display: block;
+}
+.faq-main-inner-part2 .accordion-toggle {
+  background: rgba(0, 0, 0, 0) url("../images/yallow-accordian-bg.png") no-repeat scroll center right;
+  color: #323232 !important;
+  display: block;
+  font-family: "proxima_nova_condensedSBd";
+  font-size: 24px;
+  padding: 15px 0;
+  text-decoration: none !important;
+}
+.faq-main-inner-part2 .panel-body p {
+  color: #696969;
+  float: right;
+  font-family: "proxima_nova_condensedlight";
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 26px;
+  margin: 0;
+  width: 95%;
+}
+
+.faq-main-inner-part2 .panel-body p a {
+  color: #f5ba13;
+  text-decoration: underline;
+}
+.faq-main-inner-part2 .panel-body  p span 
+{
+  color: #6f265b;
+  font-family: "Roboto",sans-serif;
+  font-size: 16px;
+  font-weight: bolder;
+  line-height: 26px;
+  margin: 0 0 0px;
+  text-transform: capitalize;
+}
+
+.faq-main-inner-part2 .panel-body  p span a
+{
+	color: #6f265b;
+	text-decoration:none;
+	font-weight:600px;
+}
+
+.faq-main-inner-part2 .faq-main-outer .contact-us-message-part 
+{
+  margin-bottom:0px;
+}
+
+.faq-main-inner-part2 .panel-default .panel-heading {
+  background-color: rgba(0, 0, 0, 0) !important;
+  border-color: #dddddd;
+  color: #333333;
+  padding: 0px;
+}
+
+.faq-main-inner-part2 .bg-none {
+  background: rgba(0, 0, 0, 0) url("../images/black-plus-img2.png") no-repeat scroll center right;
+}
+
+/* .faq-main-inner-part2 .accordion-toggle.collapsed {
+  background: rgba(0, 0, 0, 0) url("../images/black-plus-img2.png") no-repeat scroll center right;
+} */
+.faq-main-inner-part2 .faq-inner-part-out2 {
+  text-align: left;
+}
+
+
+.heading-faq-question {
+  color: #323232;
+  float: left;
+  	font-family: 'proxima_novaregular';
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: -5px 10px 0 0;
+}
+
+.heading-faq-answer {
+  color: #323232;
+  float: left;
+  font-family: "proxima_novaregular";
+  font-size: 30px;
+  font-weight: bold;
+  margin: -13px 10px 0 0;
+  text-transform: uppercase;
+}
+.faq-main-inner-part2 .panel-body {
+  padding: 20px 0 30px !important;
+}
+.bg-none {
+    background: none;
+	color:#808080 !important ;
+}
+
+
+/* =================== 21 April 2017 FAQ PAGE START ============================ */
+
+
+
+/* =================== 24 April 2017 Privacy Policy PAGE START ========================= */
+
+.banner-main.Privacy-policy-banner {
+  background: rgba(0, 0, 0, 0) url("../images/privacy-policy-banner2.jpg") no-repeat scroll center top / cover ;
+  float: left;
+  padding: 240px 0 130px !important;
+  position: relative;
+  width: 100%;
+  z-index: 9;
+}
+
+.privacy-policy-main-outer4
+ {
+  background: #fff url("../images/privacy-policy3-design2-bgnw.png") no-repeat scroll left 110px / 25% auto;
+  float: left;
+  padding: 100px 0 80px !important;
+  position: relative;
+  width: 100%;
+}
+
+.privacy-policy-main-inner-part2
+{
+	padding:0 12% !important;
+}
+.privacy-policy3-inner-bottom  ul
+{
+	float:left;
+	padding:0 0 0 17% !important;
+}
+
+.privacy-policy3-inner-bottom   li
+{
+	background:url(../images/check-yellow-icon2.png) -1px 5px no-repeat;
+	float:left;
+	width:100%;
+	padding-left:25px !important;
+	 color: #212121;
+  font-family: "proxima_nova_condensedlight";
+  font-size: 19px;
+  line-height: 30px;
+  text-align: left;
+}
+
+
+.privacy-policy-main-inner-part2 p {
+  color: #212121;
+  font-family: "proxima_nova_condensedlight";
+  font-size: 19px;
+  line-height: 30px;
+  text-align: center;
+  margin:0px;
+}
+.privacy-policy3-inner-bottom {
+  border-top: 1px solid #ebebeb;
+  margin-top: 50px;
+  padding-top: 50px !important;
+}
+
+.privacy-policy3-inner-bottom p {
+  color: #212121;
+  font-family: "proxima_nova_condensedlight";
+  font-size: 19px;
+  line-height: 30px;
+  text-align: left;
+  margin:0px 0 15px 0;
+}
+.privacy-policy3-inner-bottom h4 {
+  color: #212121;
+  font-family: "proxima_nova_condensedlight";
+  font-size: 30px;
+  line-height: 30px;
+  margin: 20px 0 10px;
+  text-align: left;
+}
+
+.active-footer
+{
+	color:#000;
+}
+
+
+footer.pravacy-policy-bg-footer2 {
+  background: rgba(0, 0, 0, 0) url("../images/footer-pravacy-policy-bg.jpg") no-repeat scroll center top / cover ;
+}
+
+.pravacy-policy-bg-footer2 .copy-right-out {
+  border-top: 1px solid #adafac;
+  float: left;
+  margin-top: 30px;
+  padding: 25px 0 !important;
+  width: 100%;
+}
+.pravacy-policy-bg-footer2 .footer-inner-section2 li a {
+  color: #414141;
+}
+
+.pravacy-policy-bg-footer2  .copy-right-out p {
+  color: #414141;
+}
+#active-footer-nav {
+  color: #000000;
+  font-weight: bold;
+}
+.pravacy-policy-bg-footer2 .footer-inner-section2 h2::after {
+  background: #3c3c3c none repeat scroll 0 0;
+}
+.pravacy-policy-bg-footer2  .map-marker-footer {
+  color: #3c3c3c !important;
+  font-size: 16px !important;
+}
+
+.pravacy-policy-bg-footer2 .phone3 {
+  color: #3c3c3c !important;
+  font-size: 16px !important;
+}
+
+.pravacy-policy-bg-footer2 .envelope2 {
+  color: #3c3c3c !important;
+  font-size: 16px !important;
+}
+
+/* =================== 24 April 2017 Privacy Policy PAGE END ============================ */
+
+
+
+/* =================== 24 April 2017 TOUR PAGE START ===================================*/
+.banner-main.tour-banner 
+{
+  background: rgba(0, 0, 0, 0) url("../images/tour-banner2.jpg") no-repeat scroll center top / cover ;
+  float: left;
+  padding: 240px 0 130px !important;
+  position: relative;
+  width: 100%;
+  z-index: 9;
+}
+
+
+.tour-main-outer4 
+{
+  background: #ffffff;
+  float: left;
+  padding: 100px 0 80px !important;
+  position: relative;
+  width: 100%;
+}
+
+.tour2-design-bgnw {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+.tour-main-inner-part2 {
+  margin: 20px 0 0 0;
+}
+
+
+.tour-main-inner-part2 .tabs-menu {
+  clear: both;
+  float: left;
+  margin: 0 0 30px;
+  width: 100%;
+}
+.tour-main-inner-part2 .tabs-menu li {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0 none;
+  box-shadow: none;
+  float: left;
+  height: auto;
+  line-height: 28px;
+  /*margin-right: 10px;*/
+  position: relative;
+  /*width: 16%;*/
+}
+.tour-main-inner-part2 .tabs-menu li:last-child
+{
+	margin-right: 0px;
+}
+
+
+.tour-main-inner-part2  .tour-tabs2 .tabs-menu li.current {
+    position: relative;
+    background-color: #fff;
+    border-bottom: 1px solid #fff;
+    z-index: 5;
+}
+
+.tour-main-inner-part2 .tour-tabs2  .tabs-menu li a {
+    padding: 10px;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none; 
+	box-shadow: none;
+	 border: 0 none;
+}
+
+.tour-main-inner-part2  .tabs-menu .current a {
+    color: #2e7da3;
+}
+.tour-main-inner-part2 .tab {
+  background-color: #ffffff;
+  border: 0px;
+  float: left;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.tour-main-inner-part2  .tab-content 
+{
+  /*   padding: 20px; */
+    display: none;
+}
+
+.tour-main-inner-part2  #tab-1 {
+ display: block;   
+}
+
+.glorious-gold-coast-img1
+{
+	position:relative;
+	top:0;
+	left:0;
+	max-width:100%;
+}
+
+.glorious-gold-coast-heading {
+  bottom: 5px;
+  color: #ffffff;
+  font-family: "proxima_novabold";
+  font-size: 16px;
+  line-height: 18px;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.glorious-gold-coast-hover {
+  left: 0;
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  display: none;
+}
+
+.tour-main-inner-part2 .tabs-menu. li a:hover .glorious-gold-coast-hover {
+  left: 0;
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  display: block;
+}
+
+.current .glorious-gold-coast-hover {
+    left: 0;
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  display: block;
+}
+
+
+
+
+.glorious-gold-coast-hover h3 {
+  color: #ffffff;
+  font-family: "proxima_novabold";
+  font-size: 16px;
+  line-height: 18px;
+  margin: 0;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  top: 42px;
+  width: 100%;
+}
+.tour-cairns-out2
+{
+	margin-top:40px;
+	text-align:left;
+}
+
+
+.tour-cairns-out2 h3 {
+  color: #212121;
+  font-family: "proxima_nova_condensedSBd";
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+}
+
+.col-xs-12.pad_none.tour-cairns-out2 p {
+  color: #212121;
+  float:left;
+  font-family: "proxima_nova_condensedlight";
+  font-size: 19px;
+  line-height: 24px;
+  margin: 10px 0 0;
+  text-transform: capitalize;
+}
+
+.tour-cairns-out2 .tour-heihligted-part2 .tour-heigh-day1 p {
+  color: #ffffff;
+  font-family: "proxima_nova_condensedlight";
+  font-size: 15px;
+  line-height: 20px;
+  margin: 0 0 1px;
+  text-align: center;
+  float: none;
+}
+.tour-heihligted-part2-left {
+  
+  padding: 0 70px 0 0 !important;
+}
+/* .tour-heigh-day1 {
+  background: rgba(0, 0, 0, 0) url("../images/day1-bg-heihlited.png") no-repeat scroll center top;
+  border-radius: 50%;
+  float: left;
+  padding: 37px 29px !important;
+  text-align: center;
+  margin-bottom: 15px;
+} */
+.tour-heigh-day1 {
+  background: rgba(0, 0, 0, 0) url("../images/day1-bg-heihlited.png") no-repeat scroll center top;
+  border-radius: 50%;
+  float: left;
+  height: 160px;
+  margin: 0 20px 20px 0;
+  padding: 37px 29px;
+  position: relative;
+  text-align: center;
+  width: 160px;
+}
+.hightour_inner {
+  left: 50%;
+  padding: 0 11px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+.tour-heigh-day1 h3
+{
+  margin-top: 35px;
+	text-transform:capitalize;
+	font-size:22px;
+	color:#fff; 
+	font-family: 'proxima_novabold';
+	font-weight:bold;
+}
+
+.tour-heihligted-part2-right p {
+  color: #696969;
+  float: left;
+  font-family: "proxima_nova_condensedregular";
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 33px;
+  text-align: center;
+  text-transform: capitalize;
+  width: 100%;
+  margin: 10px 0 0 0;
+}
+
+.col-xs-12.col-md-7.col-sm-7.pad_none.tour-heihligted-part2-right {
+  border-left: 1px solid #d8d8d9;
+  padding:20px 100px !important;
+  margin: 30px 0 0 0;
+}
+.adult-twin-out2 {
+  margin-bottom: 55px;
+  text-align: left;
+}
+.adult-twin-out2:last-child
+{
+	margin-bottom:0px;
+}
+.adult-twin-first2 {
+  color: #696969;
+  float: left;
+  font-family: "proxima_nova_condensedregular";
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 33px;
+  margin-right: 60px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.adult-twin-first2:last-child
+{
+	 margin-right:0px;
+}
+.adult-twin-first2 strong
+{
+	color: #212121;
+	 font-family: 'proxima_novabold';
+	font-size: 36px;
+}
+
+
+.tour-heihligted-part2-right p {
+  color: #696969;
+  float: left;
+  font-family: "proxima_nova_condensedregular";
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 33px;
+  text-align: center;
+  text-transform: capitalize;
+  width: 100%;
+}
+.tour-heihligted-part2-right p strong
+{
+	color: #414141;
+}
+.inclusions-main2-out {
+  /*background: #f8f8f8 url(../images/tour-bring-lrft-design01.png) left bottom no-repeat;*/
+  float: left;
+  padding: 40px 0 60px !important;
+  position: relative;
+  width: 100%;
+  background-size: 78px;
+}
+
+.tour-designbg-bottom {
+  position: absolute;
+  right: 0;
+  top: -212px;
+  width: 310px;
+}
+.inclusions-sec .feauture-first03 {
+  border-bottom: 1px solid #e8e7e7;
+  float: left;
+  padding: 10px !important;
+  text-align: center;
+  width: 20%;
+}
+.tour-what-to-bring-out2
+{
+	
+}
+.tour-what-to-bring-out2 h3 {
+  color: #212121;
+  font-family: "proxima_nova_condensedSBd";
+  font-size: 20px;
+  font-weight: 400;
+  margin: 40px 0 15px 0;
+  text-transform: uppercase;
+}
+
+.what-to-bring-firts1 {
+  background: rgba(0, 0, 0, 0) url("../images/toor-to-bring-bg2.png") no-repeat scroll center top;
+  border-radius: 7px;
+  float: left;
+  margin: 0 10px 0 0;
+  padding: 0 !important;
+  text-align: center;
+  width: 19.3% !important;
+}
+.what-to-bring-firts1:last-child
+{
+	margin:0 0 0 0;
+}
+.what-to-bring-firts1 p samp {
+  margin: 0 5px 1px 0;
+  float: left;
+}
+
+.what-to-bring-firts1 p {
+  color: #ffffff;
+  display: inline-block;
+  float: none;
+  font-family: "proxima_nova_condensedlight";
+  font-size: 16px;
+  line-height: 17px;
+  margin: 9px 0 0;
+  min-height: 30px;
+  width: auto;
+  padding: 9px 20px;
+  min-height: 64px;
+}
+
+.tour-main-outer4 .jssort01 {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  left: 46% !important;
+  overflow: hidden;
+  top: 79%;
+  transform: translate(-50%) !important;
+  width: 74% !important;
+}
+/* .tour-main-outer4 .hotel-images-outer > div {
+  height: 521px !important;
+} */
+
+footer.accomdation-footer2.tour-footer-bg2 {
+  background: rgba(0, 0, 0, 0) url("../images/footer-tour2-bg.jpg") no-repeat scroll center top / cover ;
+}
+
+.tour-footer-bg2.accomdation-footer2 .copy-right-out {
+  border-top: 1px solid #7379b1;
+}
+
+.tour-main-inner-part2 .p.pav 
+{
+  border: 2px solid #c6950c;
+  border-radius: 2px;
+}
+
+
+/* =================== 24 April 2017 TOUR PAGE END ====================================== */
+
+
+
+/* =================== 24 April 2017 CONTACT US PAGE START =============================== */
+.banner-main.contact-us-banner {
+  background: rgba(0, 0, 0, 0) url("../images/contact-us-banner2.jpg") no-repeat scroll center top / cover ;
+  float: left;
+  padding: 240px 0 130px !important;
+  position: relative;
+  width: 100%;
+  z-index: 9;
+}
+.contact-us-main-outer4 {
+  background: #ffffff url("../images/contact-us-design-bgnw.png") no-repeat scroll right 0px / 45% auto;
+  float: left;
+  padding: 100px 0 80px !important;
+  position: relative;
+  width: 100%;
+}
+
+.contact-us-main-inner-part2
+{
+	padding:0 10% !important;
+	margin-top:40px;
+}
+
+.contact-address-icon2
+{
+	float:none;
+	width:95px;
+	height:95px;
+	text-align:center;
+	border:1px solid #f5ba13;
+	background:transparent;
+	display:table;
+	border-radius:50%;
+	margin:auto;
+	   transition: all 1s ease 0s;
+}
+
+
+.contact-us-address02:hover .contact-address-icon2
+{
+	background:#f5ba13;
+	transition: all 1s ease 0s;
+}
+
+.contact-us-address02:hover .contact-us02-marker
+{
+	 color: #fff !important;
+	 transition: all 1s ease 0s;
+}
+
+
+.contact-address-icon2 span {
+  display: table-cell;
+  float: none;
+  vertical-align: middle;
+}
+.contact-us02-marker {
+  color: #f5ba13 !important;
+  font-size: 40px !important;
+  transition: all 1s ease 0s;
+}
+
+.contact-us-address02
+{
+	text-align:center;
+}
+.contact-us-address02 h3 {
+  color: #212121;
+  font-family: "proxima_nova_condensedSBd";
+  font-size: 22px;
+  font-weight: 400;
+  margin:30px 0 15px 0;
+  text-transform: capitalize;
+}
+
+.contact-us-address02 p {
+  color: #212121;
+  font-family: "proxima_nova_condensedlight";
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 29px;
+  text-align: center;
+  text-transform: capitalize;
+  width: 100%;
+}
+
+.contact-us-address02 p a
+{
+	text-decoration:none;
+	 color:#212121;
+}
+.contact-us-address02 p a:hover
+{
+	text-decoration:underline;
+	 color:#f5ba13;
+}
+
+.contact-us-send-message-out
+{
+	float:left;
+	width:100%;
+    background: #f8f8f8 url("../images/contact-send-message-bg2.png") no-repeat scroll left bottom;
+}
+
+
+.contact2-send-message-left {
+  padding:60px 60px 80px 0 !important;
+}
+
+.contact2-send-message-inner1 {
+  text-align: left;
+  float: right;
+  width: 85%;
+}
+.contact2-send-message-left h2 {
+  color: #323232;
+  font-family: 'proxima_nova_condensedlight';
+  font-size: 40px;
+  font-weight: 100;
+  line-height: 34px;
+  text-transform: uppercase;
+  margin-bottom:40px;
+}
+
+.contact2-send-message-left h2 strong{
+  color: #323232;
+  font-family: 'proxima_novabold';
+}
+
+
+.contact2-map1-right {
+  padding: 0 0 0 30px !important;
+}
+.contact2-map1-right iframe {
+  float: left;
+  width: 100%;
+  height: 627px;
+}
+
+
+.map_bar iframe
+{
+	pointer-events:none;
+}
+
+.sendus-message-field-out {
+  border-bottom: 1px solid #dcdcdc;
+  margin-bottom: 12px;
+  padding: 8px 0 !important;
+}
+.col-xs-12.pad_none.sendus-message-field-out > span {
+  float: left;
+  text-align: center;
+  width: 5%;
+}
+
+.sendus-message-field-out input
+{
+	float:left;
+	width:94%;
+	font-size:14px;
+	 font-family: 'proxima_nova_condensedlight';
+	 color:#a7a7a7;
+	 background:transparent;
+	 border:0px;
+}
+
+
+
+.sendus-message-field-out textarea
+{
+	float:left;
+	width:94%;
+	font-size:14px;
+	 font-family: 'proxima_nova_condensedlight';
+	 color:#a7a7a7;
+	 background:transparent;
+	 border:0px;
+	 resize:none;
+	 max-width:100%;
+	 min-height:80px;
+}
+.nobody img {
+	float: left;
+    margin: 2px 0 0 6px;
+}
+.invalop img {
+	float: left;
+    margin: 6px 0 0 6px;
+}
+.telephone img {
+	float: left;
+    margin: 4px 0 0 6px;
+}
+.message_pen img {
+	float: left;
+    margin: 3px 0 0 5px;
+}
+.otr_send_clear {
+	margin:38px 0 0 0;
+}
+.send_clear {
+  background: #f5ba13 none repeat scroll 0 0;
+  border: 1px solid #f5ba13;
+  border-radius: 5px;
+  box-shadow: 0 5px 0 0 #a1790c;
+  color: #000000;
+  display: inline-block;
+  float: none;
+  font-family: "proxima_novabold";
+  font-size: 18px;
+  margin: 0 5px 0 0;
+  padding: 18px 28px !important;
+  transition: all 1s ease 0s;
+  width: 168px;
+}
+.send_clear:hover {
+  background: #fff;
+  border: 1px solid #303030;
+  box-shadow: none;
+}
+
+
+/* =================== 24 April 2017 CONTACT US PAGE END ================================= */
+
+
+
+/*gold-coast-sports*/
+
+.banner-main.gold_coast_banner {
+  background: url(../images/gold-img-banner.jpg) no-repeat center top / cover ;
+  float: left;
+  padding: 240px 0 130px !important;
+  position: relative;
+  width: 100%;
+  z-index: 9;
+}
+
+
+.gold_sports_tabs_outer
+{
+	background:url(../images/gold-inner.png) center 93px no-repeat;
+	float:left;
+	width:100%;
+	background-size: cover;
+}
+
+.gold_sports_tabs_inner
+{
+	padding:93px 0 77px !important;
+}
+.tabs_gold_outer
+{
+	width:100%;
+	text-align:center;
+	float:left;
+}
+
+.tabs_gold_outer ul
+{
+	margin:0;
+	padding:0;
+	border-bottom: 3px solid #f5ba13;
+}
+.tabs_gold_outer li
+{
+	display:inline-block;
+	float:none;
+	width:auto;
+	font-size:18px;
+	font-family: 'proxima_novabold';
+	text-transform:uppercase;
+	color:#000000;
+	line-height:20px;
+	margin-bottom: 0;
+}
+.tabs_gold_outer li a
+{
+	color:#000000;
+	padding:15px 60px;
+	background:#ececec;
+	border:none;
+}
+.active > a
+{
+	color:#000000 !important;
+	background:#f5ba13 !important;
+	border:none !important;
+}
+
+.gold_tab_one_outer {
+  padding: 90px 0 0 !important;
+  text-align: center;
+}
+.gold_tab_one_inner_out
+{
+	width:25%;
+	height:auto;
+	display:inline-block;
+	padding:0 26px 34px 0;
+	position:relative;
+	cursor: pointer;
+}
+.gold_tab_one_inner
+{
+	width:100%;
+	display:inline-block;
+	position:relative;
+}
+.gold_tab_one_inner img
+{
+	width:100%;
+	height:auto;
+}
+.gold_tab_one_inner_hover
+{
+	visibility:hidden;
+	opacity:0;
+}
+.gold_tab_one_inner:hover .gold_tab_one_inner_hover
+{
+	width:100%;
+	height:100%;
+	position:absolute;
+	background:rgba(245, 186, 19, 0.8);
+	visibility:visible;
+	opacity:1;
+	top:0;
+	left:0;
+	border-radius:50%;
+	-webkit-border-radius:50%;
+	-moz-border-radius:50%;
+	border: 9px solid #ffffff;
+	box-shadow: 6px 2px 9px #b7b5b6;
+	-webkit-box-shadow: 6px 2px 9px #b7b5b6;
+	-moz-box-shadow: 6px 2px 9px #b7b5b6;
+
+}
+.hover_gold_text
+{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+.hover_gold_text img
+{
+	width:auto;
+	height:auto;
+}
+.hover_gold_text span
+{
+	font-size:36px;
+	font-family: 'proxima_novabold';
+	color:#212121;
+	padding:10px 0 0;
+	display:inline-block;
+	width:100%;
+	text-align:center;
+	line-height:30px;
+}
+
+.gold_tab_one_inner_out:nth-child(4), .gold_tab_one_inner_out:nth-child(8), .gold_tab_one_inner_out:nth-child(12), .gold_tab_one_inner_out:nth-child(16), .gold_tab_one_inner_out:nth-child(20) {
+  padding: 0 0 34px;
+  width: 23%;
+}
+.complete_text p
+{
+	font-size:17px;
+	font-family: 'proxima_nova_condensedlight';
+	color:#474747;
+	text-align:center;
+	margin:0;
+}
+.complete_text {
+  padding: 30px 0 0 !important;
+  text-align:center;
+}
+.complete_text a
+{
+	font-size:12.55px;
+	color:#fff;
+	font-family: 'proxima_novabold';
+	background:#d91725;
+	text-transform:uppercase;
+	box-shadow: 0 5px 0 0 #8e0f18;
+	-webkit-box-shadow: 0 5px 0 0 #8e0f18;
+	-moz-box-shadow: 0 5px 0 0 #8e0f18;
+	padding:12px 40px 13px;
+	display:inline-block;
+	margin:12px 0 0;
+	border-radius:4px; 
+	-webkit-border-radius:4px; 
+	-moz-border-radius:4px; 
+}
+
+.complete_text a:hover {
+  background: #e63c48;
+  box-shadow: 0 5px 0 0 #8e0f18;
+	-webkit-box-shadow: 0 5px 0 0 #8e0f18;
+	-moz-box-shadow: 0 5px 0 0 #8e0f18;
+  transition: all 1s ease 0s;
+}
+
+/*gold-coast-sports-end*/
+
+
+
+
+
+/* =================== 26 April 2017 LOOK AND BRAND START ================================= */
+
+.banner-main.look-and-brand-banner {
+  background: rgba(0, 0, 0, 0) url("../images/look-brand-banner2.jpg") no-repeat scroll center top / cover ;
+  float: left;
+  padding: 240px 0 130px !important;
+  position: relative;
+  width: 100%;
+  z-index: 9;
+}
+
+.look-brand-main-outer4 {
+  /*background: #ffffff url("../images/brand-look-right-bg-design-bgnw.png") no-repeat scroll right 0px / 26% auto;*/
+  float: left;
+  padding: 100px 0 80px !important;
+  position: relative;
+  width: 100%;
+}
+
+.peta-joy-main-outr2.athletics-packages_inner {
+  margin-top: 20px;
+  padding: 0 10px !important;
+  text-align: left;
+}
+.peta-joy-main-outr2 p {
+  color: #212121;
+  font-family: "proxima_novaregular";
+  font-size: 19px;
+  font-weight: normal;
+  line-height: 29px;
+  margin: 0 0 22px 0;
+}
+.peta-joy-main-outr2 p  strong
+{
+	font-weight:bold;
+}
+.look-bgnw-in-content2 {
+  float: left;
+  margin: 24px 30px 10px 10px;
+  width: 400px;
+}
+
+
+
+.brand-look-slider-bg2
+{
+	float:left;
+	width:100%;
+	/*background:url(../images/look-brand-slider-bg-main2.jpg) center top no-repeat;*/
+  background: #ffffff url("../images/brand-look-right-bg-design-bgnw.png") no-repeat scroll right 0px / 26% auto;
+	padding:80px 0 70px !important;
+	/*background-size:cover;*/
+}
+
+
+.brand-look-slider-bg2 .jssort01 .pav .c {
+  
+  background: #c6950c;
+  opacity: 0.52;
+}
+
+/* .brand-look-slider-bg2  #jssor_1 div {
+  background: none !important;
+} */
+
+
+
+/* =================== 26 April 2017 LOOK AND BRAND END ================================= */
+
+
+/* =================== 26 April 2017 CREAT YOUR OWN PACKAGES PAGE START ================================= */
+
+
+.brand-look-slider-bg2.create-own-packages-includes-main-bg {
+  /*background: rgba(0, 0, 0, 0) url("../images/create-newf-sale-out2.jpg") no-repeat scroll center top / cover ;*/
+  float: left;
+  padding: 70px 0 100px !important;
+  width: 100%;
+}
+.banner-main.creat-own-packages-banner {
+  background: rgba(0, 0, 0, 0) url("../images/creat-own-packages-banner2.jpg") no-repeat scroll center top / cover ;
+  float: left;
+  padding: 240px 0 130px !important;
+  position: relative;
+  width: 100%;
+  z-index: 9;
+}
+
+
+.create-your-own-packages-main-outer4 
+{
+  background: #ffffff url("../images/create-own-packeges-design-bgnw.png") no-repeat scroll left 0 / 26% auto;
+  float:left;
+  padding: 100px 0 80px !important;
+  position: relative;
+  width: 100%;
+}
+
+
+.create-own-packages-includes-outer
+{
+	text-align:center;
+}
+
+
+
+.create-own-packages-includes-outer h2 {
+  color: #323232;
+  font-family: "proxima_novabold";
+  font-size: 50px;
+  font-weight: normal;
+  line-height: 47px;
+  margin: 0 0 30px;
+  padding-bottom: 28px;
+  position: relative;
+  text-transform: uppercase;
+}
+.create-own-packages-includes-outer h2::after {
+  background: #f5ba13 none repeat scroll 0 0;
+  bottom: -4px;
+  color: #f5ba13;
+  content: "";
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%);
+  width: 200px;
+}
+
+.create-own-packages-includes-outer h2 samp {
+  font-family: "proxima_nova_condensedlight";
+}
+
+.every-package-includes-bottom2 {
+  padding: 0 4% !important;
+}
+.col-xs-12.col-md-6.col-sm-6.pad_none.every-package-space-same {
+  padding: 0 20px !important;
+}
+.every-package-includes-left-sec
+{
+	/*border-bottom:7px solid #e8e8e8;*/
+	background:rgba(255,255,255,0.80);
+	padding:30px 50px 60px 50px !important;
+}
+
+
+.every-package-includes-left-sec.every-package-yelloy-bg2 {
+  background: rgba(253, 204, 69, 0.8) none repeat scroll 0 0;
+  border-bottom: 7px solid #e8bc43;
+  padding: 30px 30px 10px !important;
+}
+
+
+
+.every-package-includes-left-sec ul
+{
+	list-style:none;
+	padding:0px !important;
+	margin:0px;
+}
+.every-package-includes-left-sec li {
+  background: rgba(0, 0, 0, 0) url("../images/black-bg-check-arow.png") no-repeat scroll left 5px;
+  color: #323232;
+  float: left;
+  font-family: "proxima_novaregular";
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 25px;
+  margin: 0 0 16px;
+  padding: 0 0 0 28px !important;
+  text-align: left;
+  width: 100%;
+}
+
+.every-package-includes-left-sec li span
+{
+	color:#f5ba13;
+	font-weight:bold;
+}
+
+
+
+
+.every-package-includes-right-sec
+{
+	
+}
+.peta-joy-main-outr2 .athletics-border  p {
+  width: 68%;
+  line-height: 23px;
+  float: none;
+  display: inline-block;
+}
+
+.accommodation-main-inner4.athletics-packages_inner .athletics-packages_inner .dropdown {
+  border-radius: 4px;
+  box-shadow: 0 1px 1px #cfcfcf;
+  margin: 20px auto;
+  width: 196px;
+}
+
+.exclusive-reprensentatio-inner.accommodation-main-inner4 .athletics-yello-border {
+  background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #999998 0%, #f9dc89 100%) repeat scroll 0 0;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 15px 0px;
+  padding: 10px;
+  width: 282px;
+}
+.create-your-own-packages-main-outer4 .athletics-yello-border {
+ 
+  vertical-align: top;
+}
+
+/* .create-your-own-packages-main-outer4 .ui-datepicker.ui-widget.ui-widget-content.ui-helper-clearfix.ui-corner-all {
+  background: #ffffff none repeat scroll 0 0;
+  border: 0 none !important;
+  border-radius: 6px !important;
+  box-shadow: 0 0 5px #000000;
+  padding: 10px;
+} */
+/* =================== 26 April 2017 CREAT YOUR OWN PACKAGES PAGE END ================================= */
+
+
+.banner-main.opening-packages-banner {
+  background: url(../images/opening-banner.jpg) no-repeat center top / cover ;
+  float: left;
+  padding: 240px 0 130px !important;
+  position: relative;
+  width: 100%;
+  z-index: 9;
+}
+
+.banner-main.swimming-packages-banner {
+  background: url(../images/swimming-banner.jpg) no-repeat center top / cover ;
+  float: left;
+  padding: 240px 0 130px !important;
+  position: relative;
+  width: 100%;
+  z-index: 9;
+}
+
+
+.banner-main.rugby-packages-banner {
+  background: url(../images/rugby-banner.jpg) no-repeat center top / cover ;
+  float: left;
+  padding: 240px 0 130px !important;
+  position: relative;
+  width: 100%;
+  z-index: 9;
+}
+
+
+/*athletics-packages*/
+
+
+.banner-main.athletics-packages-banner {
+  background: url(../images/alhletics-banner.jpg) no-repeat center top / cover ;
+  float: left;
+  padding: 240px 0 130px !important;
+  position: relative;
+  width: 100%;
+  z-index: 9;
+}
+
+.athletics-packages-banner .banner-inner {
+  text-align: left;
+  width: 52%;
+}
+.athletics-packages_outer
+{
+	background:url(../images/alhletics-right-img.png) left top no-repeat;
+	float:left;
+	width:100%;
+	background-size: 22% auto;
+	position:relative;
+}
+.athletics-packages_inner
+{
+	padding:90px 0 0 !important;
+}
+.athletics-packages_inner h2
+{
+	font-size:50px;
+	color:#323232;
+	font-family: 'proxima_novabold';
+	margin:0;
+	text-align:center;
+	position:relative;
+	text-transform:uppercase;
+	padding-bottom:41px;
+}
+.athletics-packages_inner h2::before
+{
+	position:absolute;
+	background:#f5ba13;
+	 bottom: 14px;
+    content: "";
+    height: 2px;
+    left: 42%;
+    position: absolute;
+    width: 181px;
+}
+.athletics-packages_inner01
+{
+	padding:40px 0 0 !important;
+	text-align:center;
+}
+.athletics-yello-border
+{
+	display:inline-block;
+	width:282px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#999998+0,f9dc89+100 */
+background: #999998; /* Old browsers */
+background: -moz-linear-gradient(top, #999998 0%, #f9dc89 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #999998 0%,#f9dc89 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #999998 0%,#f9dc89 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#999998', endColorstr='#f9dc89',GradientType=0 ); /* IE6-9 */
+border-radius:50%;
+ padding: 10px;
+ margin:0 15px 45px;
+}
+.athletics-border
+{
+	width:100%;
+	height:258px;
+	background:#fff;
+	border-radius:50%;
+}
+.athletics-border h3
+{
+	font-size:24px;
+	color:#212121;
+	font-family: 'proxima_nova_condensedSBd';
+	margin:0;
+	padding:49px 0 0;
+	line-height:30px;
+} 
+
+.athletics-border p
+{
+	font-size:17px;
+	color:#212121;
+	font-family: 'proxima_nova_condensedlight';
+	margin:0;
+	line-height:30px;
+} 
+
+
+
+
+
+
+
+
+/* Dropdown style */
+.athletics-packages_inner .dropdown {
+	margin: 20px auto;
+	width: 196px;
+	box-shadow: 0px 1px 1px #000;
+	-webkit-box-shadow: 0px 1px 1px #000;
+	-moz-box-shadow: 0px 1px 1px #000;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+}
+.athletics-packages_inner .dropdown dt a {
+  display: block;
+  height: 41px;
+  width: 100%;
+  border: 1px solid #d4d4d4;
+  border-radius: 3px;
+  text-decoration: none;
+  color:#9d9d9d;
+  font-size:17px;
+  font-family: 'proxima_nova_condensedlight';
+}
+.athletics-packages_inner .dropdown dt a:hover, .dropdown dt a:active {
+  border-color: #bdc3c7;
+}
+.athletics-packages_inner .dropdown dt span {
+  display: block;
+  padding: 0 1em;
+  line-height: 40px;
+  cursor: pointer;
+  background:url(../images/alhletics-drop.png) right center no-repeat;
+  text-align:left;
+}
+.athletics-packages_inner .dropdown dd {
+  position: relative;
+}
+.athletics-packages_inner .dropdown dd ul {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  list-style: none;
+  background:#fff url(../images/alhletics-drop01.png) center top no-repeat;
+  border: 1px solid #d4d4d4;
+  border-radius: 3px;
+  margin:0;
+  background-size:cover;
+  box-shadow: 0 1px 1px #000;
+  -webkit-box-shadow: 0 1px 1px #000;
+  -moz-box-shadow: 0 1px 1px #000;
+}
+.athletics-packages_inner .dropdown dd ul li:first-child a:hover {
+  border-radius: 3px 3px 0 0;
+}
+.athletics-packages_inner .dropdown dd ul li:last-child a:hover {
+  border-radius: 0 0 3px 3px;
+}
+.athletics-packages_inner .dropdown dd li a {
+  color:#212121;
+  display: block;
+   line-height: 35px;
+  padding: 0 1em;
+  text-align: left;
+  text-decoration: none;
+  font-size:17px;
+  font-family: 'proxima_nova_condensedregular';
+}
+.athletics-packages_inner .dropdown dd li a:hover {
+  color: #000;
+  cursor: pointer;
+}
+
+
+.athletics-yello-border .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+  background: hsl(0, 0%, 96%) !important;
+  border: 1px solid hsl(0, 0%, 77%) !important;
+  color: hsl(0, 0%, 27%) !important;
+  font-weight: normal;
+}
+
+.athletics-yello-border input
+{
+	width: 196px;
+	padding:0 10px;
+	height:40px;
+	font-size:17px;
+	font-family: 'proxima_nova_condensedregular';
+	border: 1px solid #d4d4d4;
+	margin:20px 0 0;
+	background:url(../images/calender-.png) right center no-repeat;
+	box-shadow: 0px 1px 1px #000;
+	-webkit-box-shadow: 0px 1px 1px #000;
+	-moz-box-shadow: 0px 1px 1px #000;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	
+}
+.athletics-package-table
+{
+	padding:20px 0 0;
+}
+.athletics-package-tr
+{
+	background:url(../images/alhletics-table-bg.png) center top no-repeat;
+	background-size: cover;
+	width:100%;
+}
+.athletics-package-table table
+{
+	width:100%;
+}
+.athletics-package-table .athletics-package-tr td
+{
+	color:#fff;
+	font-size:14px;
+	font-family: 'proxima_nova_condensedSBd';
+	text-transform:uppercase;
+	padding:22px 0 22px 30px;
+}
+.athletics-package-tr02
+{
+	background:#f3f3f3 ;
+}
+.athletics-package-table .athletics-package-tr02 td
+{
+	color:#022121;
+	font-size:13px;
+	font-family: 'proxima_nova_condensedSBd';
+	padding:22px 0 22px 30px;
+}
+.remove_button
+{
+	font-size:16px;
+	color:#fff;
+	font-family: 'proxima_novaregular';
+	padding:13px 26px 13px 40px;
+	border-radius:4px;
+	background:#d91725 url(../images/remove-img.png) 22px center no-repeat;
+}
+.remove_button:hover
+{
+	color:#fff;
+}
+.athletics-right-img {
+  position: absolute;
+  right: 0;
+  top: 100px;
+  width: 200px;
+}
+.athletics-right-img > img {
+  width: 100%;
+}
+.book_now_athletics {
+  padding: 40px 0 60px;
+  text-align: center;
+}
+.book_now_athletics a
+{
+	display:inline-block;
+	width:255px;
+	margin:0 5px;
+	font-size:20px;
+	color:#fff;
+	font-family: 'proxima_novabold';
+	background:#008c41;
+	padding:25px 0;
+	text-transform:uppercase;
+	line-height:20px;
+	border-radius:4px;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	box-shadow: 0 5px 0 0 #005b2a;
+	-webkit-box-shadow: 0 5px 0 0 #005b2a;
+	-moz-box-shadow: 0 5px 0 0 #005b2a;
+}
+.book_now_athletics a:hover
+{
+	background:#4f504f;
+	box-shadow: 0 5px 0 0 #343433;
+	-webkit-box-shadow: 0 5px 0 0 #343433;
+	-moz-box-shadow: 0 5px 0 0 #343433;
+}
+a.package_athletics
+{
+	background:#4f504f;
+	box-shadow: 0 5px 0 0 #343433;
+	-webkit-box-shadow: 0 5px 0 0 #343433;
+	-moz-box-shadow: 0 5px 0 0 #343433;
+}
+a.package_athletics:hover
+{
+	background:#008c41;
+	box-shadow: 0 5px 0 0 #005b2a;
+	-webkit-box-shadow: 0 5px 0 0 #005b2a;
+	-moz-box-shadow: 0 5px 0 0 #005b2a;
+}
+.book_now_athletics p
+{
+	font-size:19px;
+	color:#212121;
+	line-height:30px;
+	font-family: 'proxima_nova_condensedlight';
+	margin:57px 0 0;
+}
+/*alhletics-packages-end*/
+
+
+
+/* =================== 27 April 2017 WHO WE ARE PAGE START =============================== */
+
+.banner-main.who-we-are-banner {
+   background: rgba(0, 0, 0, 0) url("../images/who-we-are-banner2.jpg") no-repeat scroll center top / cover ; 
+  float: left;
+  padding: 240px 0 130px !important;
+  position: relative;
+  width: 100%;
+  z-index: 9;
+}
+
+.who-we-are-main-outer4 {
+  background: #ffffff /* url("../images/brand-look-right-bg-design-bgnw.png") no-repeat scroll right 0 / 26% auto */;
+  float: left;
+  padding: 100px 0 80px !important;
+  position: relative;
+  width: 100%;
+}
+
+
+
+.who-we-are-right-design {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 18%;
+}
+
+.who-we-are-main-inner2
+{
+	text-align:left;
+	margin-top:10px;
+}
+
+.who-we-are-main-inner2 p
+ {
+  color: #212121;
+  font-family: "proxima_novaregular";
+  font-size: 19px;
+  font-weight: normal;
+  line-height: 29px;
+  margin: 0 0 22px;
+}
+
+.who-we-are-main-inner2 p strong 
+{
+  font-weight: bold;
+}
+
+.officaly-ticketing-agancy-left2
+{
+	text-align:left;
+}
+
+.officaly-ticketing-agancy-left2 ul
+{
+	list-style:none;
+	margin:0px;
+	padding:0px !important;
+}
+
+
+
+.officaly-ticketing-agancy-left2 li {
+  background: rgba(0, 0, 0, 0) url("../images/check-yellow-icon2.png") no-repeat scroll left 2px;
+  color: #323232;
+  float: left;
+  font-family: "proxima_novaregular";
+  font-size: 19px;
+  font-weight: normal;
+  line-height: 25px;
+  margin: 0 0 10px;
+  padding: 0 0 0 28px !important;
+  text-align: left;
+  width: 100%;
+}
+
+.officaly-ticketing-img-right {
+  padding: 5% 0 0 !important;
+  text-align: center;
+}
+
+.officaly-ticketing-img-right  img
+{
+	max-width:100%;
+}
+
+/* official ticketing agent */
+
+.tickrting-agent-main-out2 {
+  background: rgba(0, 0, 0, 0) url("../images/tickrting-agent-main-out2-baner.jpg") no-repeat scroll center top;
+  float: left;
+  padding: 60px 0 !important;
+  width: 100%;
+  background-size: cover;
+}
+
+.tickrting-agent-main-inner02
+{
+	text-align:center;
+}
+
+.tickrting-agent-main-inner02 h2::after {
+  background: #212121 none repeat scroll 0 0;
+  bottom: -4px;
+  color: #212121;
+  content: "";
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%);
+  width: 200px;
+}
+
+
+.tickrting-agent-main-inner02 h2 {
+  color: #323232;
+  font-family: "proxima_novabold";
+  font-size: 50px;
+  font-weight: normal;
+  line-height: 47px;
+  margin: 0 0 30px;
+  padding-bottom: 28px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+
+
+.tickrting-agent-main-inner02  h2 samp 
+{
+  font-family: "proxima_nova_condensedlight";
+}
+
+.tickrting-agent-main-inner02 p {
+  color: #212121;
+  float: left;
+  font-family: "proxima_nova_condensedlight";
+  font-size: 19px;
+  font-weight: normal;
+  line-height: 29px;
+  margin: 15px 0 0;
+  text-align: left;
+  width: 100%;
+}
+
+/* official ticketing agent */
+
+
+
+.travel-hospitality-program-outr4
+{
+	background:#e4e4e4;
+}
+
+.hospitality-new-design-bgnw {
+  bottom:-171px;
+  left: 0;
+  position: absolute;
+  width: 11%;
+  z-index: 99;
+}
+
+.who-we-are-main-outer4.promotional-work2-main-outer4 {
+  padding: 60px 0 !important;
+}
+
+.hospitality-new-design-next
+{
+	bottom: 0;
+  right: 0;
+  position: absolute;
+  width: 11%;
+  z-index: 99;
+}
+
+
+/* =================== 27 April 2017 WHO WE ARE PAGE END ================================= */
+
+
+
+
+
+/* -------------27april2017 tour page(ms) start------------------- */
+
+.bring_txt {
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+  margin: 12px 0 0;
+  font-size: 16px;
+}
+.gold_coast_tabs .btn-primary {
+  background-color: #242424;
+  border-color: #545454;
+  color: #fff;
+}
+.gold_coast_tabs{
+  margin: 21px 0 26px;
+  padding: 0;
+  text-align: left;
+}
+.tour-cairns-out2.gold_coast > h3 {
+  float: left;
+}
+.gold_coast .gold_coast_tabs {
+  float: right;
+  margin: 0;
+  z-index: 9;
+  position:relative;
+}
+.tour_inner {
+  background: #28378C none repeat scroll 0 0;
+  border-radius: 4px;
+  display: none;
+  padding: 11px 13px;
+  width: 240px;
+  display:none;
+}
+.gold_coast_tabs span {
+  background: #28378C;
+  border: medium none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  padding: 12px 25px;
+  position: relative;
+}
+.gold_coast_tabs:hover .tour_inner {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  z-index:9;
+}
+.tour_inner .sub-menu{
+	padding:0 0 0 21px;
+}
+.tour_inner .sub-menu li a{
+	font-size:14px;
+}
+.tour_inner li a{
+	color:#fff;
+	font-size:15px;
+}
+.tour_inner li a:hover{
+	color:#ffc00f;
+}
+.tour_inner li.active > a {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0 !important;
+  color: #ffc00f !important;
+}
+.tour_inner > li {
+  border-bottom: 1px solid #6d6d6d;
+  margin: 8px 0;
+  padding: 0 0 8px;
+}
+.tour_inner > li:last-child{
+	border:none;
+	margin-bottom:0;
+}
+.sub-menu > li{
+  border-bottom: 1px solid #6d6d6d;
+  margin: 8px 0;
+  padding: 0 0 8px;
+}
+.tour-cairns-out2 p {
+  color: #212121;
+  float: left;
+  font-family: "proxima_nova_condensedlight";
+  font-size: 19px;
+  line-height: 24px;
+  margin: 10px 0 0;
+  text-transform: capitalize;
+}
+.margnone {
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+.tribal li,.margnone.blue_mount_01 li,.bridge_climb li  {
+  list-style: outside none disc;
+  margin: 0 0 9px;
+  width: 100%;
+  font-size: 19px;
+  color: #212121;
+  list-style-position:inside;
+  font-family: "proxima_nova_condensedlight";
+}
+.tribal ul {
+  display: inline-block;
+  width: 100%;
+}
+.tribal ul p {
+  padding: 0 0 4px;
+  width: 100%;
+}
+.adult-twin-out2.bluemountain {
+  margin-bottom: 0;
+}
+.tour-cairns-out2.margnone.blue_mount_01 > ul ,.bridge_climb ul{
+  display: inline-block;
+  margin: 9px 0 0;
+  width: 100%;
+}
+.bridge_climb p{
+	width:100%;
+}
+.what-to-bring-firts1 {
+  background-size:cover ;
+ }
+.what-to-bring-firts1 {
+	position:relative;
+	min-height: 90px;
+}
+ .what-to-bring-firts1 p {
+  color: #ffffff;
+  display: inline-block;
+  float: none;
+  font-family: "proxima_nova_condensedlight";
+  font-size: 16px;
+  left: 50%;
+  line-height: 17px;
+  margin: 0;
+  min-height: 2px;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  vertical-align: middle;
+  width: 85%;
+}
+.what-to-bring-firts1 p samp {
+  float: none;
+}
+.details-feature-out2 h3 {
+  text-align: left;
+}
+.tour-what-to-bring-out2 h3 {
+  text-align: left;
+}
+.adult-twin-out2 .adult-twin-first2:last-of-type {
+  margin: 0;
+}
+.adult-twin-out2 {
+  text-align: center !important;
+}
+.adult-twin-first2 {
+  display: inline-block;
+  float: none !important;
+  }
+  .gold_coast h3 span {
+  color: #28378c;
+}
+.details-out-inner2.inclusions-sec.inclusion-center {
+  text-align: center;
+}
+.inclusions-sec.inclusion-center .feauture-first03 {
+  display: inline-block;
+  float: none;
+  width: 20%;
+}
+
+
+
+/* -------------26april2017 tour page end (ms)------------------- */
+
+
+
+/* -----------------package page rules------------------------- */
+
+.packages h2::after {
+  background: #f5ba13 none repeat scroll 0 0;
+  bottom: -4px;
+  color: #f5ba13;
+  content: "";
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%);
+  width: 200px;
+}
+.packages h2 {
+  color: #323232;
+  font-family: "proxima_novabold";
+  font-size: 50px;
+  font-weight: normal;
+  line-height: 47px;
+  margin: 0 0 30px;
+  padding-bottom: 28px;
+  position: relative;
+  text-transform: uppercase;
+}
+.packages {
+  background: rgba(0, 0, 0, 0) url("../images/gold-inner.png") no-repeat scroll center 93px / cover ;
+  float: left;
+  width: 100%;
+  padding: 84px 0;
+}
+.packages .gold_tab_one_inner_out {
+  padding: 0 26px 0 0;
+}
+.packages h3 {
+  color: #212121;
+  display: inline-block;
+  font-family: "proxima_novabold";
+  font-size: 24px;
+  line-height: 30px;
+  padding: 10px 0 0;
+  text-align: center;
+  width: 100%;
+}
+.packages_inner_blk:hover h3{
+	color:#f5ba13;
+}
+.packages_inner_blk {
+  cursor: pointer;
+  display: inline-block;
+  height: auto;
+  margin: 0 26px 0 0;
+  position: relative;
+  width: 23%;
+}
+.packages_inner_blk:last-of-type{
+	margin-right:0;
+}
+.banner-main.packages_banner {
+  background: rgba(0, 0, 0, 0) url("../images/package_banner.png") no-repeat scroll center  / cover ;
+  float: left;
+  padding: 240px 0 130px;
+  position: relative;
+  width: 100%;
+  z-index: 9;
+}
+/* -----------------package page rules ends------------------------- */
+
+
+
+
+
+/* =================== 3 MAY 2017 THE CITY PAGE START ================================= */
+.banner-main.the-city-banner {
+  background: rgba(0, 0, 0, 0) url("../images/the-city-banner2.jpg") no-repeat scroll center top / cover ;
+  float: left;
+  padding: 240px 0 130px ;
+  position: relative;
+  width: 100%;
+  z-index: 9;
+}
+
+
+.the-city-main-outer4 {
+  /*background: #ffffff url("../images/the-city-design-bgnw.png") no-repeat scroll left top / 20% auto;*/
+  float: left;
+  padding: 50px 0 0 0px !important;
+  position: relative;
+  width: 100%;
+}
+
+.exclusive-reprensentatio-inner.the-city-main-inner4
+{
+   text-align: center;
+}
+
+.exclusive-reprensentatio-inner.the-city-main-inner4 h2::after {
+  background: #f5ba13 none repeat scroll 0 0;
+  bottom: -4px;
+  color: #f5ba13;
+  content: "";
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%);
+  width: 200px;
+}
+.exclusive-reprensentatio-inner.the-city-main-inner4 h2 {
+  color: #323232;
+  font-family: "proxima_novabold";
+  font-size: 50px;
+  font-weight: normal;
+  line-height: 47px;
+  margin: 0 0 30px;
+  padding-bottom: 28px;
+  position: relative;
+  text-transform: none;
+}
+
+.exclusive-reprensentatio-inner.the-city-main-inner4 h2 samp {
+  font-family: "proxima_nova_condensedlight";
+  text-transform:uppercase;
+}
+
+.the-city-doorstep-inner3 {
+  /*background: rgba(0, 0, 0, 0) url("../images/the-city-doorstep-design-img.png") no-repeat scroll center 262px / cover ;*/
+  padding-bottom: 30px !important;
+}
+
+.the-city-doorstep-bottom2
+{
+	text-align:left;
+}
+
+.the-city-doorstep-bottom2 p {
+  color: #212121;
+  font-family: "proxima_novaregular";
+  font-size: 19px;
+  font-weight: normal;
+  line-height: 29px;
+  margin: 0 0 22px;
+}
+
+
+
+
+/* =================== 3 MAY 2017 THE CITY PAGE END ================================= */
+
+
+
+
+
+
+/* 4 MAY 2017 SPORTS PAGE- PENDING CSS START */ 
+
+.sports-map-tab2-out
+{
+	padding:0 70px !important;
+	
+}
+
+
+.sports-map-tab2-out img {
+  border: 10px solid #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 7px #929292;
+  max-width: 100%;
+}
+
+
+.sports-please-see-site-out2 {
+  background: #00b3ca none repeat scroll 0 0;
+  margin: 7px 0 0;
+  padding: 14px 10px !important;
+  text-align: center;
+}
+.sports-please-see-site-out2 p 
+{
+  color: #fff;
+  font-family: 'proxima_novaregular';
+  font-size: 18px;
+  text-align: center;
+  text-transform:none;
+  margin:0px;
+}
+
+.sports-please-see-site-out2 p span
+{
+	text-transform:uppercase;
+}
+
+.sports-please-see-site-out2 p a {
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+}
+.sports-please-see-site-out2 p a:hover
+{
+	color:#f5ba13;
+}
+
+
+.sports-venues2-outer-main
+{
+	text-align:center;
+}
+
+
+.sports-venues2-outer-main p {
+  color: #474747;
+  font-family: "proxima_nova_condensedlight";
+  font-size: 17px;
+  margin: 0;
+  text-align: center;
+  padding: 0 4% !important;
+}
+.sports-venues2-inner {
+  margin-top: 40px;
+}
+.sports-venues2-adress{
+	padding-right:20px !important;
+	
+}
+
+.sports-venues2-adress-first2
+{
+	position:relative;
+}
+
+.sports-venues2-adress-first2 img {
+  max-width: 100%;
+  border-radius: 4px;
+  position:relative;
+}
+
+
+.marker-sports-map {
+  color: #f5ba13 !important;
+  font-size: 13px !important;
+  margin: 0px 5px 0 0;
+}
+.sports-venues2-space {
+  padding: 0 10px !important;
+  margin: 0 0 20px 0;
+}
+
+.sports-venues2-adress-overlay {
+  background: rgba(0, 0, 0, 0.68) none repeat scroll 0 0;
+  border-radius: 4px;
+  bottom: 0;
+  display: none;
+  margin: 12px;
+  position: absolute;
+  text-align: center;
+}
+.sports-venues2-adress-first2:hover .sports-venues2-adress-overlay
+{
+	display:block;
+}
+
+
+.sports-venues2-adress-first2:hover .sports-venues2-adress-content
+{
+	display:none;
+}
+
+
+.sports-venues2-adress-overlay p {
+  color: #ffffff;
+  display: table-cell;
+  font-family: "proxima_nova_condensedregular";
+  font-size: 12px;
+  height: 289px;
+  margin: 0;
+  padding: 0 !important;
+  text-align: center;
+  vertical-align: middle;
+  width: 262px;
+}
+.sports-venues2-adress-overlay p strong {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.sports-venues2-adress-content {
+  bottom: 18px;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+
+.sports-venues2-adress-content p {
+  color: #ffffff;
+  font-family: "proxima_nova_condensedregular";
+  font-size: 12px;
+  margin: 0;
+  padding: 0 0 !important;
+  text-align: center;
+}
+
+.sports-venues2-adress-content p strong
+{
+	font-weight:600;
+	text-transform:uppercase;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sports-venues2-map-sec  {
+  
+  padding-left:20px !important;
+}
+
+
+
+
+.sports-venues2-map-firts-map
+{
+	border: 10px solid #ffffff;
+  border-radius: 2px;
+  box-shadow: 0 0 7px #929292;
+}
+.sports-venues2-map-firts-map iframe {
+  float: left;
+  height: 624px;
+  width: 100%;
+}
+
+
+
+
+/* 4 MAY 2017 SPORTS PAGE- PENDING CSS END */ 
+
+.scrollbox {
+    overflow: auto; /* Start writing your markup with this style */
+    width: 315px;   /* The dimensions of your content pane */
+    height: 350px;
+    border: 1px solid #b7b7b7;
+    padding: 0 5px;
+}
+.vertical-track {
+  background-color: #c1c1c1;
+  border-radius: 4px;
+  width: 8px;
+  right: 15px;
+}
+.vertical-handle {
+  background-color: #f5ba13;
+  border-radius: 5px;
+  left: 0;
+  width: 100%;
+}
+.sports-venues2-adress.scrollbox {
+  border: 0 none;
+  height: 640px;
+  padding: 0 20px 0 0 !important;
+  width: 50% !important;
+}
+
+/* 4 MAY 2017 SPORTS PAGE- PENDING CSS END */ 
+
+
+
+
+
+/* 5 MAY 2017 gold-coast-event-tickets table css add  start */ 
+.condition-of-sale-table-new2
+{
+	position:relative;
+	border:1px solid #e5e5e5;
+}
+
+
+.condition-of-sale-heading-yellow-out {
+  background: #f5ba13 none repeat scroll 0 0;
+  display: table;
+  padding: 0 15px !important;
+  text-align: left;
+  transition: all 1s ease 0s;
+}
+
+.condition-of-sale-heading-yellow-out span {
+  color: #022121;
+  display: table-cell;
+  float: none;
+  font-family: "proxima_novaregular";
+  font-size: 14px;
+  font-weight: 600;
+  height: 63px;
+  padding: 0 5px !important;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  width: 20%;
+  transition: all 1s ease 0s;
+}
+
+.condition-of-sale-table-fist-sec
+{
+	padding: 24px 15px !important;
+	
+}
+
+
+
+.condition-of-sale-table-fist-sec p {
+  color: #022121;
+  float: left;
+  font-family: "proxima_nova_condensedregular";
+  font-size: 13px;
+  font-weight: 400;
+  padding: 0 15px !important;
+  text-align: center;
+  text-transform: capitalize;
+  width: 20%;
+  transition: all 1s ease 0s;
+}
+.condition-of-sale-table-scroll-out .panel-default {
+  border: 0 none;
+}
+/* .condition-of-sale-table-scroll-out .panel-heading {
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  padding: 24px 0px !important;
+} */
+.condition-of-sale-table-scroll-out .panel-heading {
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  padding: 0px 0 !important;
+  background: none;
+  border: 0px !important;
+}
+.condition-of-sale-table-scroll-out .accordion-toggle p {
+  color: #022121;
+  font-family: "proxima_nova_condensedregular";
+  font-size: 13px;
+  font-weight: 400;
+  padding: 0 5px !important;
+  text-align: center;
+  text-transform: capitalize;
+  float: left;
+  width:20%;
+  margin: 0px;
+  transition: all 1s ease 0s;
+}
+.condition-of-sale-table-scroll-out .accordion-toggle {
+  float: left;
+  padding: 25px 10px !important;
+  width: 100%;
+  transition: all 1s ease 0s;
+}
+.condition-of-sale-table-scroll-out .accordion-toggle {
+  background: #f3f3f3 none repeat scroll 0 0;
+  float: left;
+  padding: 25px 10px !important;
+  width: 100%;
+  border-bottom: 1px solid #e6e6e6;
+  transition: all 1s ease 0s;
+}
+
+.condition-of-sale-table-scroll-out .panel-body.panel-content02 h5 {
+  color: #022121;
+  float: left;
+  font-family: "proxima_nova_condensedregular";
+  font-size: 13px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0 5px !important;
+  text-align: center;
+  text-transform: capitalize;
+  width: 20%;
+  transition: all 1s ease 0s;
+}
+
+
+.condition-of-sale-table-scroll-out .panel-collapse.collapse.in {
+  background: #ffffff none repeat scroll 0 0;
+  border: 0 none;
+  float: left;
+  padding: 25px 10px !important;
+  width: 100%;
+}
+
+
+.condition-of-sale-table-scroll-out .panel-content02 {
+  border: 0 none !important;
+  padding: 0 !important;
+}
+
+
+.condition-of-sale-table-scroll-out .panel-group .panel + .panel {
+  margin-top: 0;
+}
+.col-xs-12.pad_none.condition-of-sale-table-scroll-out.scrollbox {
+  border: 0 none;
+  padding: 0 !important;
+  width: 100% !important;
+  height: 476px;
+}
+/* .condition-of-sale-table-scroll-out .accordion-toggle:hover
+{
+	background:#fff;
+}
+ */
+
+
+
+.condition-of-sale-table-scroll-out.vertical-track {
+  background-color: #c1c1c1;
+  border-radius: 4px;
+  right: 3px;
+  top: 3px;
+  width: 8px;
+}
+
+.condition-of-sale-table-scroll-out.vertical-handle {
+  background-color: #f5ba13;
+  border-radius: 5px;
+  left: 0;
+  width: 100%;
+}
+
+.table-iner-slect-value-out {
+    background: transparent;
+    padding: 3px 6px !important;
+    margin: 0 0 0 8px;
+	font-family: "proxima_nova_condensedregular";
+  font-size: 13px;
+}
+/* 5 MAY 2017 gold-coast-event-tickets table css add  end */ 
+
+
+/* 6 MAY 2017 Ethletics-packages start */ 
+
+.athletics-tabs-outer3-new  .tabs_gold_outer li a {
+  background: #ececec none repeat scroll 0 0;
+  border: medium none;
+  color: #000000;
+  padding: 15px 60px;
+  
+}
+
+.athletics-tabs-outer3-new .nav.nav-tabs li
+{
+	position:relative;
+}
+.athletics-tabs-outer3-new .nav.nav-tabs li.active::after {
+  background: rgba(0, 0, 0, 0) url("../images/ethlatic2_arrow_bottom.png") no-repeat scroll center top;
+  bottom: -34px;
+  content: "";
+  height: 40px;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%);
+  width: 40px;
+  z-index: 99;
+}
+
+.athletics-tabs-outer3-new h2 {
+  color: #323232;
+  font-family: "proxima_novabold";
+  font-size: 50px;
+  font-weight: normal;
+  line-height: 47px;
+  margin: 0 0 45px;
+  padding-bottom:0px;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+}
+/* .athletics-tabs-outer3-new h2::after {
+  background: #f5ba13 none repeat scroll 0 0;
+  bottom: -4px;
+  color: #f5ba13;
+  content: "";
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%);
+  width: 200px;
+} */
+
+.ethaletic-packeges-hotel-outer4
+{
+	
+}
+
+.ethaletic-packeges-same-space
+{
+	padding:0 10px !important;
+	margin:0 0 20px 0;
+}
+
+.ethaletic-packeges-outer4-inner
+{
+	position:relative;
+}
+.ethaletic-packeges-outer4-inner img {
+  border: 6px solid #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 7px #929292;
+  width: 100%;
+  position: relative;
+}
+
+
+
+
+.ethletics3-hotel-rating-sec {
+  bottom: 20px;
+  float: none;
+  position: absolute;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+  z-index: 9;
+}
+.ethletics3-hotel-rating-sec h3 {
+  color: #f4f4f4;
+  font-family: "proxima_novabold";
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 23px;
+  margin: 0 0 8px;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0 10px !important;
+}
+
+
+
+.ethletics3-hotel-rating-sec span {
+  text-align: center;
+}
+
+.ethletics3-hotel-rating-sec .sim-stars {
+  color: #f5b913;
+  font-size: 15px;
+  padding: 0 1px;
+}
+
+
+.ethletics3-hotel-rating-sec-black-overlay {
+  background: rgba(0, 0, 0, 0.68) none repeat scroll 0 0;
+  border-radius: 4px;
+  display: none;
+  margin: 15px;
+  padding: 100px 20px !important;
+  position: absolute;
+  top: 0;
+  width: 92%;
+}
+.ethletics3-hotel-rating-sec-black-overlay-content-sec {
+  display: table-cell;
+  float: none;
+  height: 140px;
+  text-align: center;
+  vertical-align: middle;
+  width: 296px;
+}
+
+.athaletcis-hotels-details3::after {
+  display: none;
+}
+
+.ethletics3-hotel-rating-sec-black-overlay-content-sec h3 {
+  color: #f4f4f4;
+  font-family: "proxima_novabold";
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 22px;
+  margin: 0 0 8px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.ethletics3-hotel-rating-sec-black-overlay-content-sec span {
+  float: left;
+  margin: 0 0 20px;
+  text-align: center;
+  width: 100%;
+}
+.ethletics3-hotel-rating-sec-black-overlay-content-sec {
+  color: #f5b913;
+  font-size: 15px;
+  padding: 0 1px;
+}
+.athaletcis-hotels-details3 
+{
+  background: #d91725 none repeat scroll 0 0;
+  border: 0 none;
+  border-radius: 5px;
+  box-shadow: 0 5px 0 0 #8e0f18;
+  color: #ffffff;
+  display: inline-block;
+  float: none;
+  font-family: "proxima_novabold";
+  font-size: 12px;
+  margin: 0 0 0 5px;
+  padding: 16px 30px !important;
+  transition: all 1s ease 0s;
+}
+
+.athaletcis-hotels-details3:hover
+{
+	color:#fff;
+}
+
+.ethaletic-packeges-outer4-inner:hover .ethletics3-hotel-rating-sec 
+{
+  display: none;
+}
+
+.ethaletic-packeges-outer4-inner:hover .ethletics3-hotel-rating-sec-black-overlay
+{
+  display: block;
+}
+
+.banner-main.athletics-packages-details-banner {
+  background: rgba(0, 0, 0, 0) url("../images/athletic-baner-details-banner2.jpg") no-repeat scroll center top / cover ;
+  float: left;
+  padding: 240px 0 130px !important;
+  position: relative;
+  width: 100%;
+  z-index: 9;
+}
+
+.banner-main.athletics-packages-details-banner .gold-cost-right img {
+  width: auto;
+}
+
+.athletics-packages-details-outr
+{
+  float: left;
+  position: relative;
+  width: 100%;
+  padding:90px 0 !important; 
+}
+
+
+.athletics-packages-details-inner2
+{
+	text-align:center;
+}
+
+.athletics-packages-details-inner2h2 samp {
+  font-family: "proxima_nova_condensedlight";
+}
+
+.athletics-packages-details-inner2 h2  {
+   color: #323232;
+  font-family: "proxima_novabold";
+  font-size: 50px;
+  font-weight: normal;
+  line-height: 47px;
+  margin: 0 0 30px;
+  padding-bottom: 28px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.athletics-packages-details-inner2 h2::after {
+  background: #f5ba13 none repeat scroll 0 0;
+  bottom: -4px;
+  color: #f5ba13;
+  content: "";
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%);
+  width: 200px;
+}
+
+.athletics-packages-details-inner2-main-out2 {
+  margin-top: 50px;
+}
+
+.go-back-print-out2-baner{
+	
+}
+
+
+.go-back-athletics-page-out
+{
+	float:left;
+	width:auto;
+}
+
+.go-back4 {
+  background: #ffc00f none repeat scroll 0 0;
+  border-radius: 50%;
+  color: #212121;
+  float: left;
+  font-family: "proxima_novabold";
+  font-size: 18px !important;
+  padding: 9px 0 !important;
+  text-align: center;
+  width: 35px;
+}
+.go-back-athletics-page-out span {
+  color: #212121;
+  float: left;
+  font-family: "proxima_novabold";
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 16px;
+  margin: 10px 0 0 10px;
+  text-align: center;
+  text-transform: capitalize;
+}
+.print-out-main3 {
+  background: #1d8337;
+  border: 0 none;
+  border-radius: 5px;
+  box-shadow: 0 5px 0 0 #135524;
+  color: #ffffff;
+  display: inline-block;
+  float: right;
+  font-family: "proxima_novabold";
+  font-size: 12px;
+  margin: 0 0 0 5px;
+  padding: 11px 27px !important;
+  transition: all 1s ease 0s;
+  cursor:pointer;
+}
+.print-out-main3:hover
+ {
+  background: #ffc00f;
+  box-shadow: 0 5px 0 0 #a07703;
+  color: #000000;
+  text-decoration: none;
+  transition: all 1s ease 0s;
+}
+
+
+.print-new3
+{
+	color:#fff !important;
+	font-size:18px !important;
+	float: left;
+}
+.print-out-main3 span {
+  color: #ffffff;
+  float: left;
+  font-family: "proxima_novabold";
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16px;
+  margin: 2px 0 0 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
+.athletics-hotel-packages-view-outer3 {
+  margin: 23px 0 50px;
+}
+
+
+.athletics-hotel-img04-new {
+  padding: 0 24px 0 0 !important;
+  text-align: left;
+}
+
+.athletics-hotel-img04-new img
+{
+	max-width:100%;
+	border-radius:4px;
+	border:5px solid #fff;
+	box-shadow: 0 0 7px #929292;
+	position: relative;
+}
+
+.athletics-new-hotel-right2
+{
+	
+}
+.athletics-supporters-packages-out-rigt2 {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 20px 0 !important;
+  margin-bottom: 30px;
+}
+.athletics-supporters-packages-out-rigt2 h4
+{
+
+  color: #1d8337;
+  font-family: "proxima_novabold";
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0 0 0px;
+  text-align: left;
+  text-transform: capitalize;
+}
+
+.athletics-supporters-packages-out-rigt2 span {
+  float: right;
+  text-align: right;
+}
+
+
+.athletics-supporters-packages-out-rigt2 .sim-stars {
+  color: #f5b913;
+  font-size: 15px;
+  padding: 0 1px;
+}
+
+
+.athletics-supporters-packages-out-rigt2 p {
+  color: #474747;
+  float: left;
+  font-family: "proxima_nova_condensedSBd";
+  font-size: 16px;
+  margin: 6px 0 0;
+  text-align: left;
+  text-transform: capitalize;
+  width: 100%;
+}
+.athletics-supporters-packages-out-rigt2 p samp
+{
+	font-family: 'proxima_nova_condensedlight';
+	font-size:15px;
+	float:right;
+}
+
+
+.athletics-new-hotel-right2 h5
+{
+
+  color: #212121;
+  font-family: 'proxima_novaregular';
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0 0 0px;
+  text-align: left;
+  text-transform: uppercase;
+}
+.athletics-new-hotel-right2 h5 span {
+  color: #212121;
+  float: left;
+  font-family: "proxima_nova_condensedlight";
+  font-size: 18px;
+  font-weight: normal;
+  margin: 8px 0 0;
+  text-align: left;
+  text-transform: none;
+  width: 100%;
+  line-height: 23px;
+}
+
+.athletics-packages-inclusions2-out
+{
+	
+}
+
+.athletics-packages-inclusions2-out h4 {
+  color: #212121;
+  font-family: "proxima_novabold";
+  font-size: 20px;
+  font-weight: normal;
+  margin: 0 0 20px 0 ;
+  text-align: left;
+  text-transform: uppercase;
+}
+.athletics-packages-inclusions2-out ul
+{
+	list-style:none;
+	padding:0px !important;
+	margin:0px;
+}
+
+
+
+.athletics-packages-inclusions2-out li {
+  background: rgba(0, 0, 0, 0) url("../images/green-arrow-new02.png") no-repeat scroll left 5px;
+  color: #212121;
+  float: left;
+  font-family: "proxima_nova_condensedlight";
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 20px;
+  margin: 0 0 15px;
+  padding-left: 20px;
+  text-align: left;
+  width: 100%;
+}
+
+.athletics-packages-inclusions2-out li:last-child
+{
+	margin:0px;
+}
+
+.athletics-packages-inclusions2-out p strong {
+  color: #212121;
+  float: left;
+  font-family: "proxima_nova_condensedSBd";
+  font-size: 18px;
+  margin: 35px 0;
+  text-align: left;
+  text-transform: capitalize;
+  width: 100%;
+  font-weight: normal;
+}
+
+.optional-extras-price-outer2
+{
+	margin:60px 0;
+}
+
+
+.optional-extras-price-outer2-left-usd {
+  background: #f7f7f7 none repeat scroll 0 0;
+  padding: 40px 30px !important;
+}
+
+
+
+.optional-extras-price-outer2-left-usd h6 {
+  color: #212121;
+   font-family: "proxima_novaregular";
+  font-size: 18px;
+  margin: 0 0 30px;
+  font-weight:600;
+  text-align: left;
+}
+.price0-detils-packages-out {
+  border: 6px solid #46a455;
+  border-radius: 50%;
+  display: table;
+  float: left;
+  margin: 0 20px 0 0;
+  padding: 10px !important;
+  text-align: center;
+  width: 150px;
+}
+
+.price0-detils-packages-out:last-child
+{
+	margin:0px;
+}
+
+.price0-detils-packages-inner-new {
+  display: table-cell;
+  height: 120px;
+  vertical-align: middle;
+}
+
+
+.price0-detils-packages-inner-new p {
+  color: #212121;
+  float: left;
+  font-family: "proxima_novaregular";
+  font-size: 14px;
+  font-weight: 700;
+  margin: 8px 0 0 0;
+  width: 100%;
+}
+
+.user-icon-green02 {
+  color: #1d8337 !important;
+  font-size: 30px !important;
+  margin: 0 -3px !important;
+}
+
+.price0-detils-packages-inner-new h6 {
+  color: #212121;
+  float: left;
+  font-family: 'proxima_novaregular';
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+
+
+.price0-detils-packages-inner-new samp {
+  color: #8a8a8a;
+  float: left;
+   font-family: 'proxima_nova_condensedlight';
+  font-size: 12px;
+  font-weight: 700;
+  margin: 0px 0 0 0;
+  width: 100%;
+}
+
+.optional-extras-price-outer2-step-for-booking
+{
+	background:#f1f1f1;
+	padding:40px 30px 30px 30px !important;
+}
+
+
+.optional-extras-price-outer2-step-for-booking h6 {
+  color: #212121;
+ font-family: 'proxima_novaregular';
+  font-size: 18px;
+  margin: 0 0 30px;
+  text-align: left;
+   font-weight: 700;
+}
+
+
+.optional-desired-occupancy-out2 {
+  padding: 0 4px !important;
+  text-align: left;
+  width: 50% !important;
+}
+
+
+.optional-desired-occupancy-out2 p {
+  color: #212121;
+  float: left;
+  font-family: "proxima_nova_condensedlight";
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0 0 4px 0;
+  width: 100%;
+}
+
+.optional-desired-occupancy-slect-value {
+  appearance:none;
+-moz-appearance:none; /* Firefox */
+-webkit-appearance:none; /* Safari and Chrome */
+  background: #ffffff url(../images/packeges-slect-bg-arrow2.png) 97% 16px no-repeat;
+  border: 1px solid #d4d4d4;
+  font-family: "proxima_nova_condensedlight";
+  font-size: 14px;
+  padding: 10px !important;
+  text-transform: capitalize;
+  width: 100%;
+}
+.optional-desired-occupancy-slect-value option
+{
+	padding:0 10px !important;
+}
+
+.request-accessible-rooms-slect {
+  margin: 20px 0 24px;
+  text-align: left;
+}
+.request-accessible-rooms-slect input {
+  margin: 0px 0 0px;
+  text-align: left;
+  float:left;
+}
+
+
+.request-accessible-rooms-slect p {
+  color: #212121;
+  float: left;
+  font-family: "proxima_nova_condensedlight";
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+  width: auto;
+}
+
+.request-accessible-rooms-slect input {
+  float: left;
+  margin: 3px 10px 0 0;
+  text-align: left;
+}
+
+
+.optional-extras-price-outer2-step-for-booking h3 {
+  color: #212121;
+  font-family: "proxima_nova_condensedSBd";
+  font-size: 30px;
+  margin: 0 0 0px;
+  text-align: left;
+  text-transform: uppercase;
+  float: left;
+  width: 100%;
+}
+
+.optional-extras-price-outer2-step-for-booking h3 span
+{
+	color:#008c41;
+	float:right;
+}
+
+.request-accessible-add-cart2
+{
+	text-align:center;
+}
+.request-accessible-add-cart2 a 
+{
+  background: #008c41 ;
+  border: 0 none;
+  border-radius: 5px;
+  box-shadow: 0 5px 0 0 #005b2a;
+  color: #ffffff;
+  display: inline-block;
+  float: none;
+  font-family: "proxima_novabold";
+  font-size: 20px;
+  margin:10px 0 0 0;
+  padding: 30px 10px !important;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 1s ease 0s;
+  width: 285px;
+}
+.request-accessible-add-cart2 a:hover {
+  background: #ffc00f;
+  box-shadow: 0 5px 0 0 #b78806;
+  color: #212121;
+  text-decoration: none;
+  transition: all 1s ease 0s;
+}
+
+
+/* 6 MAY 2017 Ethletics-packages end */ 
+
+
+
+/* 7 MAY 2017 uesful information page new start */ 
+
+
+.banner-main.useful-information_banner {
+  background: rgba(0, 0, 0, 0) url("../images/useful-infornmation-banner2.jpg") no-repeat scroll center top / cover ;
+  float: left;
+  padding: 240px 0 130px;
+  position: relative;
+  width: 100%;
+  z-index: 9;
+}
+.athletics-packages_outer.useful-informtion-outr {
+  background-image: none;
+  float: left;
+  padding: 100px 0 50px 0 !important;
+  width: 100%;
+}
+.useful-information-inner-main4
+{
+	text-align:center;
+}
+.useful-information-inner-main4 h2 {
+  color: #323232;
+  float: left;
+  font-family: "proxima_novabold";
+  font-size: 50px;
+  font-weight: normal;
+  line-height: 47px;
+  margin: 0 0 30px;
+  padding-bottom: 28px;
+  position: relative;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.useful-information-inner-main4 h2::after {
+  background: #f5ba13 none repeat scroll 0 0;
+  bottom: -4px;
+  color: #f5ba13;
+  content: "";
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%);
+  width: 200px;
+}
+
+.useful-information-getting-here2 {
+  text-align: left;
+  margin-bottom: 60px;
+}
+
+
+.useful-information-getting-here2 h5 {
+  color: #212121;
+  float: left;
+  font-family: "proxima_nova_condensedlight";
+  font-size: 19px;
+  font-weight: normal;
+  line-height: 23px;
+  margin: 0 0 20px;
+  text-transform: none;
+  width: 100%;
+}
+
+.useful-information-getting-here2 h3 {
+  color: #212121;
+  float: left;
+  font-family: "proxima_novaregular";
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 23px;
+  margin: 20px 0;
+  text-transform: capitalize;
+  width: 100%;
+}
+.useful-information-getting-here2 p {
+  color: #212121;
+  float: left;
+  font-family: "proxima_nova_condensedlight";
+  font-size: 19px;
+  font-weight: normal;
+  line-height: 32px;
+  margin: 0 0 0px;
+  text-transform: none;
+  width: 100%;
+}
+
+.useful-information-getting-here2 p a
+{
+	color:#ffc00f;
+}
+.useful-information-getting-here2 p samp
+{
+	color:#0270b7;
+}
+
+
+
+.getting-around-sec02-images-sec {
+  margin: 15px 0 0;
+}
+
+.getting-around-sec02-images-left-content {
+  text-align: left;
+  padding:  0 20px 0 0 !important;
+}
+.getting-around-sec02-images-left-content p {
+  color: #212121;
+  float: left;
+  font-family: "proxima_nova_condensedlight";
+  font-size: 19px;
+  font-weight: normal;
+  line-height: 32px;
+  margin: 20px 0 0 ;
+  text-transform: none;
+  width: 100%;
+}
+.getting-around-sec02-images-left-content p samp
+{
+	color:#0270b7;
+}
+
+
+.getting-around-img2-new
+{
+	 padding:0 0  0 20px !important;
+}
+.getting-around-img2-new img {
+  border: 7px solid #fff;
+  border-radius: 4px;
+  box-shadow: 0 0 7px #929292;
+  max-width: 100%;
+  position: relative;
+  max-width: 100%;
+}
+/* 7 MAY 2017 uesful information page new end */
+
+@media only screen and (max-width: 765px) {
+    .guaranteed-part1-main-left {
+      padding: 0px 7.5px 0px 7.5px!important;
+    }
+    .guaranteed-part1-main-center {
+      padding: 0px 7.5px 0px 7.5px!important;
+    }
+    .guaranteed-part1-main-right {
+      padding: 0px 7.5px 0px 7.5px!important;
+    }
+}
+
+
+

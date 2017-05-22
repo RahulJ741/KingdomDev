@@ -1,0 +1,2519 @@
+
+*{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.pad_none{
+	padding:0 !important;
+}
+
+body{
+	font-weight:400;font-family: 'Roboto', sans-serif;
+}
+
+a:focus,a:hover{
+	text-decoration:none;
+}
+a{
+	transition: all 1s ease 0s;
+}
+
+main
+{
+	position:relative;
+}
+
+/* ---------------------header part start------------------ */
+header {
+  float: left;
+  padding: 20px 0;
+  position: absolute;
+  width: 100%;
+  z-index: 9999;
+   transition: all 1s ease 0s;
+}
+
+header.fixed {
+  background: rgba(0, 0, 0, 0.8) none repeat scroll 0 0;
+  box-shadow: 0 0 4px;
+  left: 0;
+  padding: 7px 0;
+  position: fixed;
+  top: 0;
+  transition: all 1s ease 0s;
+  z-index: 99999;
+}
+
+.header_main-part
+{
+	
+}
+
+.logo-main
+{
+}
+
+
+header.fixed .logo-main img {
+  width: 310px;
+   transition: all 1s ease 0s;
+}
+
+header.fixed .navigation-part .nav_bar li {
+  margin-right: 33px !important;
+   transition: all 1s ease 0s;
+}
+header.fixed  .navigation-part .nav_bar li a {
+  font-size: 18px;
+  transition: all 1s ease 0s;
+}
+.logo-main img 
+{
+  width: 390px;
+  transition: all 1s ease 0s;
+}
+.navbar-collapse 
+{
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+.navigation-part 
+{
+  margin-top: 30px;
+  text-align:right;
+  
+}
+.navbar-default {
+  background-color: rgba(0, 0, 0, 0);
+  border-color: rgba(0, 0, 0, 0);
+  float: right;
+}
+.navigation-part .nav_bar li 
+{
+  float: left;
+  margin-right:38px !important;
+  position:relative;
+   transition: all 1s ease 0s;
+}
+
+.navigation-part .nav_bar li a {
+  color: #ffffff;
+  font-family: "proxima_nova_condensedregular";
+  font-size: 20px;
+  padding: 6px 0 !important;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 1s ease 0s;
+}
+
+
+.navigation-part .dropdown-menu {
+  border-radius: 6px;
+  display: none;
+  padding:0px !important;
+  min-width: 200px;
+  top: 28px;
+  
+}
+
+.dropdown-menu::after {
+  background: rgba(0, 0, 0, 0) url("../images/sub-menu-bg.png") no-repeat center top;
+  content: "";
+  height: 10px;
+  left: 17px;
+  position: absolute;
+  top:-9px;
+  width: 17px;
+}
+
+.navigation-part .nav_bar li:hover .dropdown-menu
+{
+	display:block;
+}
+
+.navigation-part .dropdown-menu li
+{
+	float:left;
+	width:100%;
+	margin:0px !important;
+}
+.navigation-part .dropdown-menu li a
+{
+	float:left;
+	width:100%;
+	padding:10px 15px !important;
+	background:#fff;
+	font-family: 'proxima_nova_condensedregular';
+	color:#303030;
+	font-size:20px;
+	text-transform:capitalize;
+	 border-radius: 5px ;
+}
+
+.navigation-part .dropdown-menu li a:hover
+{
+	background:#e1e1e1;
+	color:#303030 !important;
+}
+
+
+.navigation-part .nav_bar li a:hover .dropdown-menu
+{
+  display: block !important;
+}
+
+.navigation-part .nav_bar li:last-child
+{
+	margin-right:0px !important;
+}
+.navigation-part .nav_bar li a:hover
+{
+	color:#f5c438;
+	
+}
+
+
+
+
+
+/* ---------------------header part end------------------ */
+
+
+/* ---------------------Banner part start------------------ */
+.banner-main {
+  background: rgba(0, 0, 0, 0) url("../images/main-banner.jpg") no-repeat scroll center top / cover ;
+  float: left;
+  padding: 240px 0 130px !important;
+  position: relative;
+  width: 100%;
+  z-index: 9;
+}
+
+.banner-inner
+{
+	text-align:left;
+	width:45%;
+}
+.banner-inner h2 {
+  color: #ffffff;
+  font-family: "bebas_neuebold";
+  font-size: 94px;
+  font-weight: normal;
+  line-height: 80px;
+  margin: 0 0 20px 0;
+  padding-bottom: 20px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.banner-inner h2 span
+{
+	color:#f5ba13;
+}
+
+.banner-inner h2::after {
+  background: #ffffff none repeat scroll 0 0;
+  bottom: 0;
+  color: #ffffff;
+  content: "";
+  height: 1px;
+  left: 5px;
+  position: absolute;
+  width: 121px;
+}
+
+.banner-inner p {
+  color: #ffffff;
+  font-family: "proxima_nova_condensedSBd";
+  font-size: 16px;
+  line-height: 23px;
+  margin: 0;
+}
+
+.banner-inner p strong
+{
+	color:#f5ba13;
+	font-size:16px;
+	text-transform:uppercase;
+}
+.banner-inner h5
+{
+	color:#fff;
+	font-size:16px;
+	margin:0px;
+	font-family: 'proxima_nova_condensedSBd';
+	text-transform:capitalize;
+	 line-height: 23px;
+}
+.read-more-banner {
+  background: #f5ba13 none repeat scroll 0 0;
+  border-radius: 5px;
+  color: #000000;
+  float: left;
+  font-family: "proxima_novabold";
+  font-size: 18px;
+  margin-top: 20px;
+  padding: 13px 28px !important;
+  box-shadow: 0px 5px 0px 0 #a1790c;
+  transition: all 1s ease 0s;
+}
+
+.read-more-banner:hover
+{
+	text-decoration:none;
+	background:#fff;
+	color:#000;
+	 box-shadow: 0px 5px 0px 0 #a1790c;
+	  transition: all 1s ease 0s;
+}
+
+.banr-readmore3 {
+  margin: -5px 0 0 10px;
+}
+
+
+.gold-cost-right {
+  position: absolute;
+  right: 30px;
+  top: 43%;
+}
+
+.gold-cost-right img
+{
+	width:100px;
+}
+
+
+/* ---------------------Banner part end------------------ */
+
+
+/* --------exclusive-reprensentatio part start ----------- */
+.exclusive-reprensentatio-main
+{
+	float:left;
+	width:100%;
+	background:#fff;
+	padding:100px 0 80px 0 !important;
+}
+.exclusive-reprensentatio-inner
+{
+	text-align:center;
+}
+
+
+
+.exclusive-reprensentatio-inner h2 {
+  color: #323232;
+  font-family: "proxima_novabold";
+  font-size: 50px;
+  font-weight: normal;
+  line-height: 47px;
+  margin: 0 0 30px;
+  padding-bottom: 28px;
+  position: relative;
+  text-transform: uppercase;
+}
+.exclusive-reprensentatio-inner h2::after {
+  background: #f5ba13 none repeat scroll 0 0;
+  bottom: -4px;
+  color: #f5ba13;
+  content: "";
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%);
+  width: 200px;
+}
+
+.exclusive-flages-out
+{
+	
+}
+.exclusive-firts-country {
+  background: #ffffff none repeat scroll 0 0;
+  border-radius: 5px;
+  box-shadow: 0 0 8px #eaeaea;
+  display: table;
+  float: left;
+  margin: 0 10px 20px;
+  padding: 14px 17px !important;
+  width: 18.22%;
+}
+
+.exclusive-firts-country:hover
+{
+	 box-shadow: 0 0 8px #f5ba13 ;
+}
+.exclusive-firts-country span
+{
+	float:left;
+	margin-right:10px;
+}
+
+.exclusive-firts-country p {
+  color: #414141;
+  display: table-cell;
+  float: none;
+  font-family: "proxima_novabold";
+  font-size: 16px;
+  margin: 0;
+  text-align: left;
+  text-transform: uppercase;
+  vertical-align: middle;
+  width: auto;
+  line-height: 18px;
+}
+
+.exclusive-reprensentatio-main.authoriesde-part-main
+{
+	background:#e7e7e7;
+}
+
+
+
+/* -------------exclusive-reprensentatio part end ------------ */
+
+
+
+/* ------------- shopping cart part start ------------ */
+.shopping-cart-main
+{
+	float:left;
+	width:100%;
+	background:url(../images/shopping-bg-main.jpg) center top no-repeat;
+	background-size:cover;
+	padding:170px 0 125px !important;
+}
+.shopping_cart_top {
+  float: right;
+  margin: 0 0 48px;
+  padding: 0 0 0 0px !important;
+  text-align: left;
+}
+.shopping_cart_top h2 {
+  color: #323232;
+  font-family: "proxima_novabold";
+  font-size: 80px;
+  font-weight: bold;
+  line-height: 68px;
+  margin: 0 0 20px;
+  padding-bottom: 20px;
+  position: relative;
+  text-transform: uppercase;
+}
+.shopping_cart_top h2::after {
+  background: #f5ba13 none repeat scroll 0 0;
+  bottom: -4px;
+  color: #f5ba13;
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
+  width: 182px;
+}
+.shopping_cart_top p {
+  color: #414141;
+  font-family: 'proxima_nova_condensedlight';
+  font-size: 16px;
+  line-height: 23px;
+  margin: 0;
+}
+
+.shopping_cart_inner
+{
+	background:#f5ba13;
+	position:relative;
+}
+.guaranteed-part1 {
+  margin:-310px 0 0;
+  position: relative;
+}
+
+/* .guaranteed-part1 {
+  background: rgba(0, 0, 0, 0) url("../images/shopping-big-img2.jpg") no-repeat scroll center top / cover ; 
+  border-radius: 4px;
+  margin: -324px 0 0;
+  padding: 20px !important;
+  position: relative;
+} */
+
+.guaranteed-part1-imgnew2 {
+  height: 780px;
+  position: relative;
+}
+
+.guaranteed-part1-imgnew2 img 
+{
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.guaranteed-part1-imgnew2:hover .guaranteed-part1-content-main2
+{
+	display:none;
+}
+.guaranteed-part1-imgnew2:hover .guaranteed-part1-inner
+{
+	display:block;
+}
+
+
+
+
+.guaranteed-part1-content-main2 > samp {
+  float: left;
+  text-align: center;
+  width: 100%;
+}
+.col-xs-12.pad_none.guaranteed-part1-content-main2 samp img {
+  width: auto;
+}
+.guaranteed-part1-content-main2 {
+  bottom:10px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  z-index: 99;
+}
+.guaranteed-part1-content-main2 h3 {
+  color: #f4f4f4;
+  font-family: "proxima_novabold";
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 28px;
+  margin: 0 0 14px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.guaranteed-part1-content-main2 h3 span
+{
+	font-size:14px;
+	text-transform:uppercase;
+	font-weight:normal;
+	  font-family: 'proxima_nova_condensedlight';
+	  position:relative;
+}
+.guaranteed-part1-content-main2 h3 span::after {
+  background: #f4f4f4 none repeat scroll 0 0;
+  content: "";
+  height: 1px;
+  left: -23px;
+  position: absolute;
+  top: 7px;
+  width: 12px;
+}
+
+.guaranteed-part1-content-main2 h3 span::before {
+  background: #f4f4f4 none repeat scroll 0 0;
+  content: "";
+  height: 1px;
+  right: -23px;
+  position: absolute;
+  top: 7px;
+  width: 12px;
+}
+.guaranteed-part1-inner {
+  background: rgba(0, 0, 0, 0.68) none repeat scroll 0 0;
+  border-radius: 4px;
+  display: none;
+  padding: 100px 20px !important;
+  position: absolute;
+  top: 0;
+  margin: 20px;
+  width: auto;
+}
+.authprised-territories-img {
+  position: absolute;
+  right: 20px;
+  top: 27px;
+}
+.guaranteed-content-sec {
+  display: table-cell;
+  float: none;
+  height: 540px;
+  text-align: center;
+  vertical-align: middle;
+}
+.guaranteed-content-sec h3 {
+  color: #f4f4f4;
+  font-family: "proxima_novabold";
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0 0 18px;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 28px;
+}
+.guaranteed-content-sec h3 span
+{
+	font-size:14px;
+	text-transform:uppercase;
+	font-weight:normal;
+	  font-family: 'proxima_nova_condensedlight';
+	  position:relative;
+}
+.guaranteed-content-sec h3 span::after {
+  background: #f4f4f4 none repeat scroll 0 0;
+  content: "";
+  height: 1px;
+  left: -23px;
+  position: absolute;
+  top: 7px;
+  width: 12px;
+}
+
+.guaranteed-content-sec h3 span::before {
+  background: #f4f4f4 none repeat scroll 0 0;
+  content: "";
+  height: 1px;
+  right: -23px;
+  position: absolute;
+  top: 7px;
+  width: 12px;
+}
+.guaranteed-content-sec p {
+  color: #ffffff;
+  font-family: "proxima_nova_condensedregular";
+  font-size: 16px;
+  font-weight: normal;
+  text-transform: capitalize;
+  padding: 0 8% !important;
+  margin: 0px;
+}
+.guaranteed-part1-overlay.overlay3 .guaranteed-content-sec {
+  display: table-cell;
+  float: none;
+  height: 185px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.guaranteed-part1-overlay.overlay5 .guaranteed-content-sec {
+  display: table-cell;
+  float: none;
+  height: 200px;
+  text-align: center;
+  vertical-align: middle;
+}
+.col-xs-12.pad_none.guaranteed-part1-overlay.overlay3 {
+  height: 185px;
+  width: 91%;
+}
+.accommodation1-main.space4 {
+  display: block;
+  height: 235px;
+  overflow: hidden;
+  padding: 4px !important;
+}
+/* .space4.accommodation1-main a img {
+  border-radius: 4px;
+  height: auto;
+  width: 100%;
+} */
+.guaranteed-part1-overlay.overlay4 {
+  height: 430px;
+  width: 92%;
+}
+/* 
+.sales-permitted-outer {
+   background: rgba(0, 0, 0, 0) url("../images/sales-permitted-img2.png") no-repeat scroll center top / cover ; 
+  display: table;
+  margin: 20px 0 8px;
+  text-align: center;
+  border-radius: 4px;
+} */
+.guaranteed-part1-main {
+  padding-right: 30px !important;
+}
+.col-xs-12.pad_none.accommodation1-main.sales-permitted-outer {
+  margin-top:30px;
+}
+
+.sales3-permitted-inner {
+  display: table-cell;
+  height: 248px;
+  text-align: center;
+  vertical-align: middle;
+  float: none;
+}
+
+.sales3-permitted-inner h3 
+{
+  color: #f4f4f4;
+  font-family: "proxima_novabold";
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 28px;
+  margin: 123px 0 12px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.sales3-permitted-inner h3 span {
+  font-family: "proxima_nova_condensedlight";
+  font-size: 14px;
+  font-weight: normal;
+  position: relative;
+  text-transform: uppercase;
+}
+.sales3-permitted-inner h3 span::before {
+  background: #f4f4f4 none repeat scroll 0 0;
+  content: "";
+  height: 1px;
+  position: absolute;
+  right: -23px;
+  top: 7px;
+  width: 12px;
+}
+
+.sales3-permitted-inner h3 span::after {
+  background: #f4f4f4 none repeat scroll 0 0;
+  content: "";
+  height: 1px;
+  left: -23px;
+  position: absolute;
+  top: 7px;
+  width: 12px;
+}
+.sales3-permitted-inner
+{
+	text-align:center;
+}
+
+
+.guaranteed-part2-main-right
+{
+	padding-left:50px !important;
+}
+.accommodation1-main {
+ /*  background: rgba(0, 0, 0, 0) url("../images/accomodation-img2.png") no-repeat scroll center top / cover ; */
+  display: table;
+  margin: 0;
+  text-align: center;
+  padding: 0 0 0px 0 !important;
+ 
+  position:relative;
+}
+
+.accommodation1-main a img 
+{
+  border-radius: 4px 0 0 0;
+  height: auto;
+  width: 100%;
+}
+.col-xs-12.pad_none.accommodation1-main-inner > samp img
+{
+	width:auto;
+}
+
+
+.accommodation1-main:hover .accommodation1-main-inner
+{
+	display:none;
+}
+
+.authprised-territories-img.short-new {
+  position: absolute;
+  right: 15px;
+  top: 18px;
+}
+.guaranteed-part1-overlay.overlay2 .guaranteed-content-sec {
+  height: 270px;
+}
+.accommodation1-main:hover .guaranteed-part1-overlay
+{
+	display:block;
+}
+.authprised-territories-img.short-new > img {
+  width: 50px;
+}
+
+.guaranteed-part1-overlay {
+  background: rgba(0, 0, 0, 0.68) none repeat scroll 0 0;
+  border-radius: 1px;
+  float: none;
+  height:auto;
+  display:none;
+  margin: 20px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  vertical-align: middle;
+  width: 88%;
+}
+.guaranteed-part1-overlay .guaranteed-content-sec {
+  display: table-cell;
+  float: none;
+  height: 390px;
+  text-align: center;
+  vertical-align: middle;
+}
+/* black overlay*/
+
+.accommodation-overlay2
+{
+	position:absolute;
+	background:rgba(0,0,0,.44);
+	top:0;
+	left:0;
+	float:left;
+	width:100%;
+	display:none;
+}
+.accommodation1-main:hover .accommodation-overlay2
+{
+	display:block;
+}
+/* .accommodation1-main:hover .accommodation1-main-inner h3
+{
+	display:none;
+}
+ */
+
+/* black overlay */
+
+.accommodation1-main-inner {
+  bottom: 12px;
+  float: none;
+  position: absolute;
+  text-align: center;
+  vertical-align: middle;
+  z-index: 9;
+}
+.accommodation1-main-inner h3 {
+  color: #f4f4f4;
+  font-family: "proxima_novabold";
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 28px;
+  margin: 0 0 13px 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+.accommodation1-main-inner h3 span {
+  font-family: "proxima_nova_condensedlight";
+  font-size: 14px;
+  font-weight: normal;
+  position: relative;
+  text-transform: uppercase;
+}
+.accommodation1-main-inner h3 span::before {
+  background: #f4f4f4 none repeat scroll 0 0;
+  content: "";
+  height: 1px;
+  position: absolute;
+  right: -23px;
+  top: 7px;
+  width: 12px;
+}
+
+.accommodation1-main-inner h3 span::after {
+  background: #f4f4f4 none repeat scroll 0 0;
+  content: "";
+  height: 1px;
+  left: -23px;
+  position: absolute;
+  top: 7px;
+  width: 12px;
+}
+
+
+.hospitality1-main
+{
+	background: rgba(0, 0, 0, 0) url("../images/hospital-img2.png") no-repeat center top / cover ;
+  display: table;
+  margin: 0;
+  text-align: center;
+  padding: 0 0 6px 0 !important;
+  border-radius: 0px 4px 0 0px;
+}
+
+.hospitality1-inner
+ {
+   display: table-cell;
+  float: none;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.hospitality1-inner h3 {
+  color: #f4f4f4;
+  font-family: "proxima_novabold";
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 28px;
+  margin: 300px 0 12px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.hospitality1-inner h3 span {
+  font-family: "proxima_nova_condensedlight";
+  font-size: 14px;
+  font-weight: normal;
+  position: relative;
+  text-transform: uppercase;
+}
+.hospitality1-inner h3 span::before {
+  background: #f4f4f4 none repeat scroll 0 0;
+  content: "";
+  height: 1px;
+  position: absolute;
+  right: -23px;
+  top: 7px;
+  width: 12px;
+}
+
+.hospitality1-inner h3 span::after {
+  background: #f4f4f4 none repeat scroll 0 0;
+  content: "";
+  height: 1px;
+  left: -23px;
+  position: absolute;
+  top: 7px;
+  width: 12px;
+}
+
+
+
+
+.create-own-program2-main
+{
+	background: rgba(0, 0, 0, 0) url("../images/your-own-program-img2.png") no-repeat scroll center top / cover ;
+  display: table;
+  margin: 0;
+  text-align: center;
+  padding: 0 0 6px 0 !important;
+  border-radius: 4px 0 0px 4px;
+}
+.create-own-program2-inner
+ {
+  display: table-cell;
+  float: none;
+  text-align: center;
+  vertical-align: middle;
+}
+.create-own-program2-inner h3 {
+  color: #f4f4f4;
+  font-family: "proxima_novabold";
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 28px;
+  margin: 200px 0 12px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.create-own-program2-inner  h3 span::before {
+  background: #f4f4f4 none repeat scroll 0 0;
+  content: "";
+  height: 1px;
+  position: absolute;
+  right: -23px;
+  top: 7px;
+  width: 12px;
+}
+.create-own-program2-inner h3 span::after {
+  background: #f4f4f4 none repeat scroll 0 0;
+  content: "";
+  height: 1px;
+  left: -23px;
+  position: absolute;
+  top: 7px;
+  width: 12px;
+}
+.create-own-program2-inner h3 span {
+  font-family: "proxima_nova_condensedlight";
+  font-size: 14px;
+  font-weight: normal;
+  position: relative;
+  text-transform: uppercase;
+}
+
+
+
+
+.create-own-program2-new-right
+{
+  background: rgba(0, 0, 0, 0) url("../images/create-new-img4.png") no-repeat scroll center top / cover ;
+  display: table;
+  margin: 0;
+  text-align: center;
+  padding: 0 0 6px 0 !important;
+  border-radius:0 0 4px 0;
+}
+
+
+.create-own-program2-new-right-inner
+ {
+  display: table-cell;
+  float: none;
+  text-align: center;
+  vertical-align: middle;
+}
+.create-own-program2-new-right-inner h3 {
+  color: #f4f4f4;
+  font-family: "proxima_novabold";
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 28px;
+  margin: 207px 0 12px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.create-own-program2-new-right-inner  h3 span::before {
+  background: #f4f4f4 none repeat scroll 0 0;
+  content: "";
+  height: 1px;
+  position: absolute;
+  right: -23px;
+  top: 7px;
+  width: 12px;
+}
+.create-own-program2-new-right-inner h3 span::after {
+  background: #f4f4f4 none repeat scroll 0 0;
+  content: "";
+  height: 1px;
+  left: -23px;
+  position: absolute;
+  top: 7px;
+  width: 12px;
+}
+.create-own-program2-new-right-inner h3 span {
+  font-family: "proxima_nova_condensedlight";
+  font-size: 14px;
+  font-weight: normal;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.green-ring-bg2
+{
+	position:absolute;
+	right:0;
+	bottom:120px;
+}
+.green-ring-bg2  img {
+  width: 65px;
+}
+
+
+
+.shopping-botttom2-inner
+{
+	margin-top:40px;
+}
+
+.accomdation-sales-permited-main
+{
+	
+}
+
+.accomdation-sales-inner-left
+{
+	padding-right:10px !important;
+	background: rgba(0, 0, 0, 0) url("../images/accomdation-sales-inner-left2.png") no-repeat center top / cover ;
+	display: table;
+	margin: 0;
+	text-align: center;
+	padding: 0 0 6px 0 !important;
+	border-radius:0 0 4px 0;
+	border-radius:4px;
+}
+.accomdation-sales-inner-left-bottom
+{
+display: table-cell;
+  float: none;
+  text-align: center;
+  vertical-align: middle;	
+}
+.accomdation-sales-inner-left-bottom h3 {
+  color: #f4f4f4;
+  font-family: "proxima_novabold";
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 28px;
+  margin: 386px 0 12px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.accomdation-sales-inner-left-bottom h3 span::before {
+  background: #f4f4f4 none repeat scroll 0 0;
+  content: "";
+  height: 1px;
+  position: absolute;
+  right: -23px;
+  top: 7px;
+  width: 12px;
+}
+.accomdation-sales-inner-left-bottom h3 span::after {
+  background: #f4f4f4 none repeat scroll 0 0;
+  content: "";
+  height: 1px;
+  left: -23px;
+  position: absolute;
+  top: 7px;
+  width: 12px;
+}
+.accomdation-sales-inner-left-bottom h3 span {
+  font-family: "proxima_nova_condensedlight";
+  font-size: 14px;
+  font-weight: normal;
+  position: relative;
+  text-transform: uppercase;
+}
+
+
+.accomdation-sales-inner-right {
+  padding: 0 0 0 25px !important;
+}
+
+.create-own-space-outer2
+{
+	padding:0 5px !important;
+	margin-bottom:10px;
+}
+
+
+
+.sydney-program2-main2 {
+  background: rgba(0, 0, 0, 0) url("../images/sydney-ticket2.png") no-repeat center top / cover ;
+  border-radius:4px;
+  display: table;
+  margin: 0;
+  padding: 0 0 6px !important;
+  text-align: center;
+}
+
+.new-zealand-program2-main2 {
+  background: rgba(0, 0, 0, 0) url("../images/newziland-ticket2.png") no-repeat center top / cover ;
+ border-radius:4px;
+  display: table;
+  margin: 0;
+  padding: 0 0 6px !important;
+  text-align: center;
+}
+
+.cairns-program2-main2
+{
+	background: rgba(0, 0, 0, 0) url("../images/chairn-ticket2.png") no-repeat center top / cover ;
+   border-radius:4px;
+  display: table;
+  margin: 0;
+  padding: 0 0 6px !important;
+  text-align: center;
+}
+
+.melbourne-program2-main2
+{
+	 background: rgba(0, 0, 0, 0) url("../images/malbourn-ticket2.png") no-repeat center top / cover ;
+  border-radius:4px;
+  display: table;
+  margin: 0;
+  padding: 0 0 6px !important;
+  text-align: center;
+}
+
+.create-own-program2-inner.sydney-program2-same2 h3 {
+  margin: 140px 0 12px;
+}
+
+
+/* ------------- shopping cart part end ------------ */
+
+
+
+/* ------------- subscribe part start ------------ */
+.subcribe-main-out
+{
+	float:left;
+	width:100%;
+	padding:120px 0 !important;
+	background:url(../images/subscribe-bg.jpg) center top no-repeat;
+	background-size:cover;
+}
+
+.subscribe-inner-main2
+{
+	text-align:center;
+}
+
+.subscribe-inner-main2 h2 {
+  color: #f4f4f4;
+  font-family: "proxima_novabold";
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 28px;
+  text-align: center;
+  margin:0px 0 50px 0;
+  text-transform: uppercase;
+}
+.subscribe-inner-main2 h2 span {
+  float: left;
+  text-align: center;
+  width: 100%;
+  margin: 0 0 30px 0;
+}
+
+.sbscribe2-field-outer{
+	text-align:center;
+	float:left;
+	width:100%;
+}
+.sbscribe2-field-outer input
+{
+	border:1px solid #fff;
+	background:transparent;
+	border-radius:4px;
+	padding:20px 25px !important;
+	font-family: 'proxima_nova_condensedlight';
+	font-size:16px;
+	color:#fff;
+	width:37%;
+	 margin: 0 5px 0 0;
+}
+
+.subscribe-submit {
+  background: #f5ba13 none repeat scroll 0 0;
+  border: 0 none;
+  border-radius: 5px;
+  box-shadow: 0 5px 0 0 #a1790c;
+  color: #000000;
+  display: inline-block;
+  float: none;
+  font-family: "proxima_novabold";
+  font-size: 18px;
+  margin: 0 0 0 5px;
+  padding: 18px 28px !important;
+  transition: all 1s ease 0s;
+  width: 200px;
+}
+
+.subscribe-submit:hover {
+  background: #ffffff none repeat scroll 0 0;
+  box-shadow: 0 5px 0 0 #a1790c;
+  color: #000000;
+  text-decoration: none;
+  transition: all 1s ease 0s;
+}
+
+/* ------------- subscribe part end ------------ */
+
+
+
+
+
+
+/* ------------- footer part start ------------ */
+footer
+{
+	float:left;
+	width:100%;
+	background:#fff;
+	padding:50px 0 0 0 !important;
+}
+
+.footer-inner-section1
+{
+	text-align:left;
+}
+
+
+.footer-inner-section1 p
+{
+	color:#646464;
+	font-size:#13px;
+	font-family: 'proxima_nova_condensedlight';
+	margin-top:20px;
+}
+.footer-inner-section1 p strong
+{
+	  font-family: 'proxima_nova_condensedSBd';
+}
+
+
+
+.footer-inner-section2
+{
+	text-align:left;
+	
+}
+
+
+.footer-inner-section2 h2
+{
+  color: #3c3c3c;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 28px;
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  position:relative;
+  margin:0px 0 25px 0;
+  position:relative;
+  padding: 0 0 10px 0 !important;
+}
+.footer-inner-section2 h2::after {
+  background: #f5ba13 none repeat scroll 0 0;
+  content: "";
+  height: 1px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 24px;
+}
+.footer-inner-section2 ul
+{
+	list-style:none;
+	margin:0px;
+	padding:0px !important;
+}
+.footer-inner-section2 li
+{
+	float:left;
+	width:100%;
+	margin-bottom:4px;
+	background:url(../images/footer-arrow-img.png) left 5px no-repeat;
+	padding-left:15px !important;
+}
+
+.footer-inner-section2 li a
+{
+	float:left;
+	color:#646464;
+	font-size:13px;
+	 font-family: 'Roboto', sans-serif;
+	 font-weight:300;
+	 text-transform:capitalize;
+}
+.footer-inner-section2 li a:hover
+{
+	color:#f5ba12;
+}
+.contact2-footer
+{
+	margin-bottom:15px;
+}
+.contact2-footer span {
+  float: left;
+  margin: 0 0px 0 0;
+  text-align: left;
+  width: 30px;
+}
+.contact2-footer p
+{
+	color:#646464;
+	float:left;
+	width:87%;
+	font-size:#13px;
+	font-family: 'proxima_nova_condensedlight';
+	margin-top:20px;
+	margin:0px;
+}
+.contact2-footer p a{
+	text-decoration:none;
+	color:#646464;
+}
+
+.map-marker-footer
+{
+	color:#f5ba12 !important; 
+	font-size:16px !important;
+}
+
+.phone3
+{
+	color:#f5ba12 !important; 
+	font-size:16px !important;
+}
+
+.envelope2
+{
+	color:#f5ba12 !important; 
+	font-size:16px !important;
+}
+.follow-us-main2
+{
+	margin-top:15px;
+}
+.follow-us-main2 samp
+{
+	color: #646464;
+  float: left;
+  font-family: "proxima_nova_condensedlight";
+  margin: 0;
+  width: auto;
+  font-size:18px;
+  margin:10px 15px 0 0;
+}
+
+.follow-us-main2 ul
+{
+	list-style:none;
+	padding:0px !important;
+	margin:0px;
+}
+.follow-us-main2 li {
+  background-image: none !important; 
+  float: left;
+  margin: 0 4px 0 0;
+  padding: 0 !important;
+  width: auto;
+}
+
+.copy-right-out
+{
+	float:left;
+	width:100%;
+	padding:25px 0 !important;
+	border-top:1px solid #ebebeb;
+	margin-top:30px;
+}
+.copy-right-out p
+{
+  color: #a8a8a8;
+ text-align:center;
+ font-size:13px;
+  font-family: "proxima_nova_condensedlight";
+  margin: 0;
+}
+
+/* ------- footer part end ------ */
+
+
+
+
+/* =================== 18 April 2017 ACCOMODATION PAGE START ============================ */
+
+.banner-main.accomodation-banner {
+  background: rgba(0, 0, 0, 0) url("../images/accomodation-banner2.jpg") no-repeat scroll center top / cover ;
+  float: left;
+  padding: 240px 0 130px !important;
+  position: relative;
+  width: 100%;
+  z-index: 9;
+}
+
+.accommodation-main-outer4 {
+  background: #ffffff url("../images/accomidatio-design-bgnw.png") no-repeat scroll left 50px;
+  float: left;
+  padding: 100px 0 80px !important;
+  width: 100%;
+  background-size: 26%;
+  position:relative;
+}
+
+
+.accommodation-hotels-main-out4
+{
+	
+}
+.accommodation-scrolling-out {
+  margin-bottom: 15px;
+  padding: 0 0 0 20px !important;
+}
+.accommodation-scrolling-out p {
+  color: #212121;
+  font-family: "proxima_nova_condensedlight";
+  font-size: 19px;
+  line-height: 30px;
+  margin: 0 0 8px;
+  text-align: left;
+}
+.accommodation-scrolling-out p  samp
+{
+	font-family: 'proxima_novaregular';
+	font-weight:600;
+	text-transform:uppercase;
+}
+.puschase-icon4 {
+  float: left;
+  margin: 0px 15px 0 0;
+}
+
+/*---- scroll ---*/
+.accommodation-scrolling-out .content {
+  height: 340px;
+  overflow: auto;
+  width: 100%;
+}
+.mCSB_container{
+	width:auto;
+	margin-right:30px;
+	overflow:hidden;
+}
+.mCS_disabled>.mCustomScrollBox>.mCSB_container.mCS_no_scrollbar,
+.mCS_destroyed>.mCustomScrollBox>.mCSB_container.mCS_no_scrollbar{
+	margin-right:30px;
+}
+.mCustomScrollBox > .mCSB_scrollTools {
+  height: 100%;
+  right: 0;
+  top: 0;
+  width:8px;
+}
+.mCSB_scrollTools .mCSB_draggerContainer{
+	position:absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0; 
+	height:auto;
+}
+.mCSB_scrollTools .mCSB_draggerRail {
+  background-color: #dedede;
+  border-radius: 5px;
+  height: 100%;
+  margin: 0 auto;
+  width: 8px;
+}
+/* .mCSB_scrollTools .mCSB_dragger{
+	cursor:pointer;
+	width:100%;
+	height:30px;
+} */
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+	width:8px;
+	height:100%;
+	margin:0 auto;
+}
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+	background:#fff; /* rgba fallback */
+}
+.content{width:409px; height:500px; overflow:auto; }
+
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  background: #f5ba13 none repeat scroll 0 0;
+  border-radius: 5px;
+  /* height: 40px; */
+ 
+}
+
+/*--- scroll ---*/
+
+
+.pallazo-versace-hotel-main {
+  margin-top: 20px;
+  position: relative;
+}
+.pallazo4-versace-img3 {
+  border: 7px solid #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 0 5px #dcdcdc;
+  height: auto;
+  position: relative;
+  width: 100%;
+}
+
+
+.pallazo-versace-ratig-out4 {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border: 7px solid rgba(0, 0, 0, 0);
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  padding: 221px 0 !important;
+}
+.pallazo-versace-ratig-out4 h3 {
+  color: #fff;
+  font-family: "proxima_novabold";
+  font-size: 50px;
+  font-weight: normal;
+  line-height: 69px;
+  margin: 0 0 0px;
+  text-transform: transparent;
+}
+.pallazo-versace-ratig-out4 span
+{
+	float:left;
+	width:100%;
+	cursor:pointer;
+}
+
+.pallazo-versace-ratig-out4:hover
+{
+	background:rgba(217,23,37,0.72);
+	 border: 7px solid #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 0 5px #dcdcdc;
+}
+
+.hover6:hover
+{
+	background:rgba(217,23,37,0.72);
+}
+
+.jupiter3-hotel-rating-sec:hover h4
+{
+  margin: 57% 0 0;
+
+}
+.accomdtion-design2-bg {
+  position: absolute;
+  right: 0;
+  top: 62%;
+  width: 88px;
+}
+
+.accomdation-hotels-view-out {
+  margin-top: 20px;
+}
+
+.hotels-first4-outer
+{
+	padding:10px !important;
+}
+
+.jupiter-hotel-first
+{
+	position:relative;
+}
+.hotels-first4-outer {
+  min-height: 350px;
+}
+
+.jupiter-hotel-first img
+{
+	position:relative;
+	max-width:100%;
+	/* 
+	border-radius:4px; */
+}
+
+
+.jupiter3-hotel-rating-sec {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+.jupiter3-hotel-rating-sec:hover
+{
+	background:rgba(217, 23, 37, 0.72) none repeat scroll 0 0;
+}
+
+.jupiter3-hotel-rating-sec h4 {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  color: #ffffff;
+  font-family: "proxima_novabold";
+  font-size: 16px;
+  font-weight: normal;
+  margin: 0;
+  text-transform: uppercase;
+  margin: 98% 0 0 0;
+}
+.jupiter3-hotel-rating-sec span
+{
+	text-align:center;
+}
+
+
+.jupiter3-hotel-rating-sec-new {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  top: 0;
+}
+
+.jupiter3-hotel-rating-sec-new h4 {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  color: #ffffff;
+  font-family: "proxima_novabold";
+  font-size: 33px;
+  font-weight: bold;
+  margin: 0;
+  text-transform: uppercase;
+  margin:22% 0 0 0;
+}
+.jupiter3-hotel-rating-sec-new span
+{
+	text-align:center;
+}
+
+
+.jupiter3-hotel-rating-sec-new:hover
+{
+	background:rgba(217, 23, 37, 0.72) none repeat scroll 0 0;
+}
+
+.seaworl-overlay3
+{
+	position:relative;
+}
+
+.jupiter3-hotel-rating-sec-new
+{
+	display:none;
+}
+
+.seaworl-overlay3:hover .jupiter3-hotel-rating-sec-new
+{
+	display:block;
+	background:url(../images/seaworl-overlay3-hover.png) center top no-repeat;
+}
+
+
+
+/* hotel views address start*/
+
+
+.accomodation0details-view-out
+{
+	float:left;
+	width:100%;
+	background:#f8f8f8;
+	padding:90px 0 80px 0 !important;
+}
+
+.accomodation0details-view-iiner
+{
+	
+}
+
+.pallazo-versace-out3 {
+  margin-bottom: 30px;
+}
+
+.pallazo-versace-left-sec
+{
+	text-align:left;
+}
+
+.pallazo-versace-left-sec h3{
+  color: #323232;
+  font-family: "proxima_novabold";
+  font-size:40px;
+  font-weight: 500;
+  margin:0px;
+  text-transform: capitalize;
+}
+.jssort01 {
+  background: #f8f8f8;
+}
+
+.pallazo-versace-left-sec span
+{
+	margin:0 0 0 10px;
+}
+
+.map-marker-new3 {
+  color: #474747;
+  font-family: "proxima_nova_condensedlight";
+  margin: 0 8px 0 0;
+}
+.pallazo-versace-left-sec p {
+  color: #212121;
+  font-family: "proxima_nova_condensedlight";
+  font-size: 17px;
+  line-height: 20px;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.pallazo-versace-rigth-sec2
+{
+	text-align:right;
+}
+
+.accomdation-bbok-now-button {
+  background: #d91725 none repeat scroll 0 0;
+  border: 0 none;
+  border-radius: 5px;
+  box-shadow: 0 5px 0 0 #8e0f18;
+  color: #ffffff;
+  display: inline-block;
+  float: right;
+  font-family: "proxima_novabold";
+  font-size: 13px;
+  margin: 0;
+  padding: 15px 35px !important;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 1s ease 0s;
+}
+.accomdation-bbok-now-button:hover {
+  text-decoration: none;
+  background:#f5ba13 ;
+  box-shadow:0 5px 0 0 #a1790c;
+  transition: all 1s ease 0s;
+  color:#fff;
+}
+.pallazo-versace-rigth-sec2 p {
+ 
+  color: #474747;
+  float: right;
+  font-family: "proxima_nova_condensedlight";
+  font-size: 17px;
+  line-height: 25px;
+  margin: 14px 0px 0 0;
+  padding: 0 20px 0 0 !important;
+  text-transform: capitalize;
+}
+
+.pallazo-versace-rigth-sec2 p a
+{
+	text-decoration:none;
+	color:#474747;
+}
+.pallazo-versace-rigth-sec2 p a samp {
+  border-left: 1px solid #adadad;
+  color: #d91725;
+  font-family: "proxima_nova_condensedregular";
+  font-size: 24px;
+  padding-left: 20px;
+}
+
+
+
+/* slider */
+  /* jssor slider arrow navigator skin 05 css */
+        /*
+        .jssora05l                  (normal)
+        .jssora05r                  (normal)
+        .jssora05l:hover            (normal mouseover)
+        .jssora05r:hover            (normal mouseover)
+        .jssora05l.jssora05ldn      (mousedown)
+        .jssora05r.jssora05rdn      (mousedown)
+        */
+        .jssora05l, .jssora05r {
+            display: block;
+            position: absolute;
+            /* size of arrow element */
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            background: url('img/a17.png') no-repeat;
+            overflow: hidden;
+        }
+        .jssora05l { background-position: -10px -40px; }
+        .jssora05r { background-position: -70px -40px; }
+        .jssora05l:hover { background-position: -130px -40px; }
+        .jssora05r:hover { background-position: -190px -40px; }
+        .jssora05l.jssora05ldn { background-position: -250px -40px; }
+        .jssora05r.jssora05rdn { background-position: -310px -40px; }
+
+        /* jssor slider thumbnail navigator skin 01 css */
+        /*
+        .jssort01 .p            (normal)
+        .jssort01 .p:hover      (normal mouseover)
+        .jssort01 .p.pav        (active)
+        .jssort01 .p.pdn        (mousedown)
+        */
+        .jssort01 .p {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 72px;
+            height: 72px;
+        }
+        
+        .jssort01 .t {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .jssort01 .w {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+        }
+		.jssort01 .c {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border: 0 none;
+  box-sizing: content-box;
+  height: 68px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 68px;
+  cursor: pointer;
+}
+        
+        
+        .jssort01 .pav .c {
+            top: 2px;
+            _top: 0px;
+            left: 2px;
+            _left: 0px;
+            width: 68px;
+            height: 68px;
+            border: #000 0px solid;
+            _border: #fff 2px solid;
+            background-position: 50% 50%;
+        }
+        
+        .jssort01 .p:hover .c {
+            top: 0px;
+            left: 0px;
+            width: 70px;
+            height: 70px;
+           
+        }
+        
+        .jssort01 .p.pdn .c {
+            background-position: 50% 50%;
+            width: 68px;
+            height: 68px;
+          
+        }
+      
+.fa-angle-left2
+{
+	font-size:45px !important;
+	color:#fff !important;
+}
+
+.angle-right2
+{
+	font-size:45px !important;
+	color:#fff !important;
+}
+.jssora05l {
+  height: auto;
+  text-align: center;
+}	
+
+.more-photo-heading3
+{
+	text-align:left;
+} 
+
+.more-photo-heading3 h5
+{
+  color: #212121;
+  font-family: 'proxima_nova_condensedlight';
+  font-size:17px;
+  font-weight: 500;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+
+.luxury-class-img2 {
+  left: -11px;
+  position: absolute;
+  top: 115px;
+  z-index: 9;
+}
+/* slider */
+
+
+.defination-luxury-out2 {
+  background: rgba(0, 0, 0, 0) url("../images/luxury-class-info-bg2.png") no-repeat scroll center top;
+  padding: 30px 0 80px 0 !important;
+  background-size: 47%;
+}
+.defination-luxury-inner-left
+{
+	text-align:left;
+}
+.defination-luxury-inner-left h6
+{
+	color: #212121;
+	font-family: 'proxima_nova_condensedregular';
+	font-size: 19px;
+	font-weight: 500;
+	margin:0 0 20px 0;
+	text-transform:uppercase;
+}
+.defination-luxury-inner-left p {
+  color: #212121;
+  font-family: "proxima_nova_condensedlight";
+  font-size: 19px;
+  line-height: 30px;
+  margin: 0 0 1px;
+  text-align: left;
+}
+
+.defination-luxury-inner-left p  strong
+{
+	 font-family: 'proxima_nova_condensedSBd';
+	 font-weight:400;
+}
+
+.defination-luxury-inner-right2
+{
+	text-align:right;
+	padding-left:20px !important;
+}
+.defination-luxury-inner-right2 img{
+	max-width:100%;
+}
+
+/* hotel views address */
+
+.details-feature-out2
+{
+	margin-bottom:35px;
+}
+
+
+.details-feature-out2 h3
+{
+  color: #212121;
+   font-family: 'proxima_nova_condensedSBd';
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+}
+
+.details-out-inner2
+{
+	background:#fff;
+	box-shadow:0 0 5px #dcdcdc;
+}
+
+.details-out-inner-left2 {
+  background: rgba(0, 0, 0, 0) url("../images/detail-border-bg2.png") no-repeat scroll left 2px;
+  padding: 25px 2% 25px 20% !important;
+}
+.details-out-inner-left2 p {
+  color: #212121;
+  font-family: "proxima_nova_condensedlight";
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0 0 14px;
+  text-align: left;
+  text-transform: capitalize;
+}
+
+.details-out-inner-left2 p:last-child
+{
+	margin: 0 0 0px;
+}
+.details-out-inner-left2 p strong {
+  color: #212121;
+  font-family: "proxima_nova_condensedregular";
+  font-size: 18px;
+  font-weight: 300;
+  margin: 0 5px 0 0;
+}
+.room-type-img03 {
+  float: left;
+  text-align: center;
+  width: 20%;
+  margin: -4px 0 0 0;
+}
+
+
+.details-out-inner-left2.details-out-inner-right2 {
+  padding: 25px 11% 25px 2% !important;
+}
+
+
+.features-inner-main2
+{
+	
+}
+
+.features-inner-main2
+{
+	border-bottom:1px solid #e8e7e7;
+	display:table;
+}
+.feauture-first03 {
+  float: left;
+  padding:10px 10px !important;
+  text-align: center;
+  width: 16.66%;
+}
+
+
+.feauture-first-inner2 {
+  display: table-cell;
+  float: none;
+  vertical-align: middle;
+  height: 170px;
+}
+.feauture-first-inner2  p {
+  color: #898888;
+   font-family: 'proxima_nova_condensedlight';
+  font-size: 18px;
+  line-height: 24px;
+  margin: 10px 0 0 0;
+  text-transform: capitalize;
+}
+.feauture-conditining0main
+{
+	display:inline-block;
+	width:auto;
+}
+
+.feauture-bg-border
+{
+	 background: rgba(0, 0, 0, 0) url("../images/feature-border-bg.png") no-repeat scroll left 18px;
+}
+.feture-note-out3 {
+  background: #dff6e1 none repeat scroll 0 0;
+  border-radius: 2px;
+  margin-top: 20px;
+  padding: 35px 20px !important;
+}
+
+#active-drop
+{
+	background:#e1e1e1 !important;
+	color:#303030 !important;
+}
+
+#active-nav
+{
+	color:#f5ba13 !important;
+}
+
+.feture-note-out3  p {
+  color: #617765;
+  font-family: 'proxima_novaregular';
+  font-size: 19px;
+  line-height: 26px;
+  margin: 0px 0 0 0;
+  text-transform: capitalize;
+}
+
+.feture-note-out3  p strong
+{
+	font-weight:600;
+}
+
+.details-feature-out2:last-child
+{
+	margin:0px !important;
+}
+.margin-none2{
+	margin:0px;
+}
+
+footer.accomdation-footer2 {
+  background:url(../images/acomdation-footerbg.jpg) center top no-repeat;
+  background-size:cover;
+}
+
+.accomdation-footer2  .footer-inner-section1 p {
+  color: #fff;
+}
+
+.accomdation-footer2 .footer-inner-section2 li a {
+  color: #ffffff;
+}
+.accomdation-footer2 .map-marker-footer {
+  color: #fff !important;
+}
+
+.accomdation-footer2 .phone3 {
+  color: #fff !important;
+}
+
+.accomdation-footer2 .envelope2 {
+  color: #fff !important;
+}
+.accomdation-footer2 .contact2-footer p {
+  color: #fff;
+}
+.accomdation-footer2 .contact2-footer p a {
+  color: #fff;
+}
+.accomdation-footer2 .follow-us-main2 samp {
+  color: #fff;
+}
+.accomdation-footer2 .copy-right-out p {
+  color: #fff;
+}
+
+.accomdation-footer2 .footer-inner-section2 li {
+  background: rgba(0, 0, 0, 0) url("../images/footer-arrow-white-img.png") no-repeat scroll left 5px;
+}
+
+.accomdation-footer2  .footer-inner-section2 h2 {
+  color: #fff;
+}
+
+.accomdation-footer2 .footer-inner-section2 h2::after {
+  background: #fff ;
+}
+
+.accomdation-footer2 .copy-right-out {
+  border-top: 1px solid #e6666f;
+}
+.accomdation-footer2  .copy-right-out p {
+  color: #fff;
+}
+/* =================== 18 April 2017 ACCOMODATION PAGE END ============================== */
+
+
+
+/* =================== 19 April 2017 EVENTS TICKETS PAGE START ============================== */
+
+.banner-main.event-tickets-banner {
+  background: rgba(0, 0, 0, 0) url("../images/event-tickets-banner2.jpg") no-repeat scroll center top / cover ;
+  float: left;
+  padding: 240px 0 130px !important;
+  position: relative;
+  width: 100%;
+  z-index: 9;
+}
+
+footer.accomdation-footer2.event-tickets-footer2 {
+  background: rgba(0, 0, 0, 0) url("../images/event-ticket-footer-bg.jpg") no-repeat scroll center top / cover ;
+}
+.accomdation-footer2.event-tickets-footer2  .copy-right-out {
+  border-top: 1px solid #9271ab;
+}
+
+.event-ticket-inner3  .exclusive-reprensentatio-inner h2 samp {
+  font-family: 'proxima_nova_condensedlight';
+}
+
+.event-ticket-main-out4 {
+  text-align: center;
+  margin-top: 20px;
+}
+.accommodation-main-outer4.event-ticket-inner3 {
+  background: #ffffff url("../images/events2-design-bgnw.png") no-repeat scroll left 50px / 26% auto;
+  padding: 100px 0 30px !important;
+}
+.event-ticket-main-out4 p {
+  color: #212121;
+ font-family: 'proxima_nova_condensedregular';
+  font-size: 19px;
+  line-height: 30px;
+  margin: 0;
+  text-align: center;
+  padding: 0 11% !important;
+}
+
+.event-ticket-main-out4 p  strong
+{
+	  font-family: 'proxima_nova_condensedSBd';
+	  font-weight:400;
+}
+
+.event-ticket-main-out4 h5 
+{
+  color: #212121;
+ font-family: 'proxima_nova_condensedregular';
+  font-size: 19px;
+  line-height: 30px;
+  margin:10px 0;
+  text-align: center;
+}
+
+
+
+.purpel-check-img3 {
+  margin: -6px 10px 0 0;
+}
+
+.info-by0check-Commonwealth2 {
+  padding: 0 10%;
+}
+
+.info-by0check-Commonwealth2 h5 
+{
+  color: #212121;
+ font-family: 'proxima_nova_condensedregular';
+  font-size: 19px;
+  line-height: 30px;
+  margin:10px 0 30px 0;
+  text-align: left;
+}
+
+
+
+.info-first-contry2 {
+  text-align: left;
+  margin-bottom:30px;
+}
+.info-first-contry2 span
+{
+	color: #212121;
+  font-family: 'proxima_nova_condensedlight';
+  font-size: 19px;
+  line-height: 30px;
+  margin:10px 0;
+  text-align: center;
+  text-transform:capitalize;
+}
+
+
+.ticket-applications-main2
+{
+	float:left;
+	width:100%;
+	background:#f8f8f8;
+	padding:60px 0 !important;
+	position:relative;
+}
+
+
+.ticket-info-design-img3 {
+  position: absolute;
+  right: 0;
+  top: -165px;
+  width: 288px;
+}
+.ticket-applications-inner2
+{
+	text-align:center;
+}
+
+
+
+.ticket-applications-inner2 h2::after {
+  background: #f5ba13 none repeat scroll 0 0;
+  bottom: -4px;
+  color: #f5ba13;
+  content: "";
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%);
+  width: 200px;
+}
+
+.ticket-applications-inner2 h2 {
+  color: #323232;
+  font-family: "proxima_novabold";
+  font-size: 50px;
+  font-weight: normal;
+  line-height: 47px;
+  margin: 0 0 30px;
+  padding-bottom: 28px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.ticket-applications-inner2 h2 samp {
+  font-family: "proxima_nova_condensedlight";
+}
+
+.ticket2-applications-lottery-out
+{
+	
+}
+.ticket2-applications-fisrt {
+  margin: 0 0 10px;
+}
+
+
+.ticket2-applications-calender2 {
+  background: #009615 none repeat scroll 0 0;
+  padding: 35px 0 !important;
+  position: relative;
+  text-align: center;
+  width: 160px;
+}
+
+.ticket2-applications-calender2 h4 {
+  color: #ffffff;
+  font-family: "proxima_novaregular";
+  font-size: 30px;
+  font-weight: normal;
+  margin: 5px 0 0;
+  text-align: center;
+  text-transform: capitalize;
+}
+.ticket2-applications-calender2 h4 strong
+ {
+  color: #fff;
+  font-family: "proxima_novabold";
+  font-size: 45px;
+  font-weight: bold;
+  line-height: 42px;
+  text-align: center;
+}
+
+
+.ticket2-applications-right-purpel2 {
+  background: rgba(0, 0, 0, 0) url("../images/ticket-clender-purpel-bg1.png") no-repeat center top;
+  display: table;
+  padding: 10px 10px 10px 50px !important;
+  background-size: cover;
+   width: 86%;
+}
+.ticket2-applications3-right-inner
+{
+	float:none;
+	display:table-cell;
+	vertical-align:middle;
+	height:159px;
+	text-align:left;
+}
+
+
+
+.ticket2-applications3-right-inner h5 {
+  color: #ffffff;
+  font-family: "proxima_novaregular";
+  font-size: 19px;
+  font-weight: normal;
+  font-weight:500;
+  margin:0px;
+}
+.ticket2-applications3-right-inner p {
+  color: #ffffff;
+  font-family: "proxima_nova_condensedlight";
+  font-size: 19px;
+  font-weight: normal;
+  line-height: 25px;
+  margin: 6px 0 0 0;
+}
+
+
+
+.right-green-arow2 {
+  position: absolute;
+  right: -16px;
+  top: 78px;
+  z-index: 99;
+}
+
+
+.condition-of-sale-main-outer2
+{
+	float:left;
+	width:100%;
+	padding:60px 0 !important;
+	background:url(../images/conditon-of-sale-out2.jpg) center top no-repeat;
+	background-size:cover;
+}
+
+.condition-of-sale-main-inner
+{
+	text-align:center;
+}
+
+.condition-of-sale-main-inner h2::after {
+  background: #f5ba13 none repeat scroll 0 0;
+  bottom: -4px;
+  color: #f5ba13;
+  content: "";
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%);
+  width: 200px;
+}
+.condition-of-sale-main-inner h2 {
+  color: #323232;
+  font-family: "proxima_novabold";
+  font-size: 50px;
+  font-weight: normal;
+  line-height: 47px;
+  margin: 0 0 30px;
+  padding-bottom: 28px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.condition-of-sale-main-inner  p {
+  color: #212121;
+    font-family: 'proxima_nova_condensedregular';
+  font-size: 19px;
+  font-weight: normal;
+  line-height: 25px;
+  margin:45px 0 73px 0;
+}
+
+.condition-of-sale-main-inner  p a
+{
+	text-decoration:none;
+	 font-family: 'proxima_nova_condensedSBd';
+	  color: #212121;
+	  border-bottom:1px solid #b9b9b9;
+}
+.condition-of-sale-main-inner h2 samp {
+  font-family: "proxima_nova_condensedlight";
+}
+
+/* TABLE START */
+.condition-of-sale-table-out {
+  background: #fff;
+  position:relative;
+}
+
+.table-heading-bg2 
+{
+  background: #f5ba13;
+}
+
+.condition-of-sale-table-out th {
+  color: #022121;
+ font-family: 'proxima_novaregular';
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 13px !important;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.condition-of-sale-table-out td 
+{
+  color: #022121;
+   font-family: 'proxima_nova_condensedregular';
+  font-size: 13px;
+  font-weight: 400;
+  padding: 20px 10px !important;
+  text-align: center;
+  text-transform:capitalize;
+}
+
+
+.gray-bg-bottom4 {
+  background: #f8f8f8;
+}
+.table-white-bg2
+{
+	background:#fff;
+}
+.boxing-img2 {
+  margin: -3px 6px 0 0;
+}
+/* TABLE END */
+
+.condition-of-sale-table-out.content
+{
+	width:100% !important;
+}
+.condition-of-sale-table-out.mCSB_scrollTools, .condition-of-sale-table-out .mCSB_dragger , .condition-of-sale-table-out.mCSB_dragger_bar {
+  background: #f5ba13 !important;
+    border-radius: 5px;
+}
+.condition-of-sale-table-out.mCSB_scrollTools,  .condition-of-sale-table-out .mCSB_dragger .mCSB_dragger_bar {
+  background:  #f5ba13 !important;
+  border-radius: 5px;
+}
+.condition-of-sale-table-out .mCSB_container {
+  margin-right: 0px;
+  overflow: hidden;
+  width: auto;
+}
+
+.condition-of-sale-table-out .mCustomScrollBox > .mCSB_scrollTools {
+  height: 100%;
+  right: 3px;
+  top: 0;
+  width: 8px;
+}
+/* =================== 19 April 2017 EVENTS TICKETS PAGE END ============================== */
+
+
+
+
+
+
+
+
+

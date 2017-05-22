@@ -1,0 +1,62 @@
+  [1m[35m (20.7ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (15.8ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT GET_LOCK('6587066433366227340', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2017-05-22 07:15:43', '2017-05-22 07:15:43')[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('6587066433366227340')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `athletics_supporters_package_price_list_all`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'athletics_supporters_package_price_list_all'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `country`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'country'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `db_event_data`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'db_event_data'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `event_ticket_request`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'event_ticket_request'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `exclisive_second`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'exclisive_second'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `exclusive`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'exclusive'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `groups`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'groups'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `hotels_amenities`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'hotels_amenities'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `hotels_images`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'hotels_images'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `kngd_hotels`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'kngd_hotels'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'kngdm_hotels'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `kngdm_hotels`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'kngdsg_hotels'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `kngdsg_hotels`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `login_attempts`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'login_attempts'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `mytable`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'mytable'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `newsletter`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'newsletter'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `own_package_price_list`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'own_package_price_list'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `packages_opening_dual_price_list`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'packages_opening_dual_price_list'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `packages_rugby_dual_price_list`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'packages_rugby_dual_price_list'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `packages_swimming_dual_price`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'packages_swimming_dual_price'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `settings`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'settings'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `users`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'users'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `users_groups`[0m
+Started GET "/" for 127.0.0.1 at 2017-05-22 12:47:57 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/infiny/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.0.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/infiny/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.0.3/lib/rails/templates/rails/welcome/index.html.erb (1.6ms)
+Completed 200 OK in 10ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+
+
