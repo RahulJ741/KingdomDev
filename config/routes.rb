@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   get 'privacy' => 'staticpage#privacy'
   get 'lookandbrand' => 'staticpage#lookandbrand'
   get 'whoweare' => 'staticpage#whoweare'
+  get 'contact' => 'staticpage#contact'
+  get 'sports' => 'staticpage#sports'
 end
