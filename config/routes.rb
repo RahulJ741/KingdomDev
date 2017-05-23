@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   get 'createownpackage' => 'staticpage#createownpackage'
   get 'accommodation' => 'staticpage#accommodation'
   get 'swimmingpackages/details' => 'staticpage#swimmingpackages'
-  get 'athleticspackages' => 'staticpage#athleticspackages'
+  get 'athleticspackages' => 'staticpage#athleticspackagesss'
 end

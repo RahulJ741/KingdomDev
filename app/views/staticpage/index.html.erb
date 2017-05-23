@@ -1,11 +1,11 @@
 <%= render 'header'%>
 
-<section class="banner-main" style="background: rgba(0, 0, 0, 0) url(<?php echo base_url('upload/').$b_img; ?>) no-repeat scroll center top / cover;">
+<section class="banner-main" style="background: rgba(0, 0, 0, 0) url('upload/'+<%= @b_img %>;) no-repeat scroll center top / cover;">
 	<div class="container">
 		<div class="row">
 			<div class=" pad_none banner-inner">
-				<h2 class="fadeInUp wow" data-wow-duration="2s" data-wow-delay="0s"><?php echo $bhead; ?></h2>
-				<?php echo $bstext; ?>
+				<h2 class="fadeInUp wow" data-wow-duration="2s" data-wow-delay="0s"><%= @bhead.html_safe %></h2>
+				<p class="fadeInUp wow" data-wow-duration="2s" data-wow-delay="0.3s"><%= @bstext.html_safe %></p>
 				<!--<a href="<?php echo $bblink; ?>" class="read-more-banner fadeInUp wow" data-wow-duration="2s" data-wow-delay="0.3s">READ MORE <img src="<?php echo base_url();?>assets/images/banner-readmore-bg.png" class="banr-readmore3"></a>-->
 			</div>
 		</div>
