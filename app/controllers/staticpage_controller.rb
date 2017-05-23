@@ -21,4 +21,15 @@ class StaticpageController < ApplicationController
   def sports
   end
 
+  def package
+
+  end
+
+  def event
+  end
+
+  def createownpackage
+
+  end
+
 end

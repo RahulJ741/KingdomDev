@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   get 'whoweare' => 'staticpage#whoweare'
   get 'contact' => 'staticpage#contact'
   get 'sports' => 'staticpage#sports'
+  get 'package' => 'staticpage#package'
+  get 'event' => 'staticpage#event'
+  get 'createownpackage' => 'staticpage#createownpackage'
 end
