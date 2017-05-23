@@ -32,4 +32,16 @@ class StaticpageController < ApplicationController
 
   end
 
+  def accommodation
+
+  end
+
+  def swimmingpackages
+
+  end
+
+  def athleticspackages
+
+  end
+
 end

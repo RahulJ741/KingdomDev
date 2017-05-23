@@ -10,4 +10,7 @@ Rails.application.routes.draw do
   get 'package' => 'staticpage#package'
   get 'event' => 'staticpage#event'
   get 'createownpackage' => 'staticpage#createownpackage'
+  get 'accommodation' => 'staticpage#accommodation'
+  get 'swimmingpackages/details' => 'staticpage#swimmingpackages'
+  get 'athleticspackages' => 'staticpage#athleticspackages'
 end
