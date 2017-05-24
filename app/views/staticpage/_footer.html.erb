@@ -356,7 +356,7 @@ $(document).ready(function(){
 
 		$('#nws_btn').click(function(){
 			var email = $('#email').val();
-			alert('in');
+			
 			$.ajax({
 				url: "https://kingdomsg.com/kingdomsg2018/home/newsletter",
 				type: 'post',
@@ -365,7 +365,7 @@ $(document).ready(function(){
 				dataType: "jsonp",
 				crossDomain:true,
 				success: function(data){
-					alert(data);
+					
 					if(data == 1){
 						$('#email').val('');
 						$('#msg').show().html('Subscription is completed.').css('color','#fff');
@@ -374,7 +374,7 @@ $(document).ready(function(){
 					}
 				},
 				error: function(data){
-					alert('ere');
+					
 					$('#msg').show().html('somthing went wrong').css('color','red');
 				} 
 			});
