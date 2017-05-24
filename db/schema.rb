@@ -322,7 +322,10 @@ ActiveRecord::Schema.define(version: 20170524083114) do
   end
 
   create_table "users", unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string  "ip_address",      limit: 45,  null: false
+    t.string  "username",        limit: 100
     t.string  "password",                    null: false
+    t.string  "salt"
     t.string  "email",           limit: 100, null: false
     t.string  "activation_code", limit: 40
     t.integer "created_on",                  null: false, unsigned: true
