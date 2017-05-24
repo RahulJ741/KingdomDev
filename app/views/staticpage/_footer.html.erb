@@ -356,20 +356,27 @@ $(document).ready(function(){
 
 		$('#nws_btn').click(function(){
 			var email = $('#email').val();
-
+			alert('in');
 			$.ajax({
 				url: "https://kingdomsg.com/kingdomsg2018/home/newsletter",
 				type: 'post',
+				
 				data: {'email':email},
+				dataType: "jsonp",
+				crossDomain:true,
 				success: function(data){
-					//alert(data);
+					alert(data);
 					if(data == 1){
 						$('#email').val('');
 						$('#msg').show().html('Subscription is completed.').css('color','#fff');
 					}else{
 						$('#msg').show().html(data).css('color','red');
 					}
-				}
+				},
+				error: function(data){
+					alert('ere');
+					$('#msg').show().html('somthing went wrong').css('color','red');
+				} 
 			});
 		});
 
