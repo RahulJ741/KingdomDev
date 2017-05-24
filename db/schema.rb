@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170522085748) do
+ActiveRecord::Schema.define(version: 20170524083114) do
 
   create_table "athletics_supporters_package_price_list_all", primary_key: "serial_no", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string  "athletics_supporter_packages", limit: 10, null: false
@@ -322,22 +322,14 @@ ActiveRecord::Schema.define(version: 20170522085748) do
   end
 
   create_table "users", unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string  "ip_address",              limit: 45,  null: false
-    t.string  "username",                limit: 100
-    t.string  "password",                            null: false
-    t.string  "salt"
-    t.string  "email",                   limit: 100, null: false
-    t.string  "activation_code",         limit: 40
-    t.string  "forgotten_password_code", limit: 40
-    t.integer "forgotten_password_time",                          unsigned: true
-    t.string  "remember_code",           limit: 40
-    t.integer "created_on",                          null: false, unsigned: true
-    t.integer "last_login",                                       unsigned: true
-    t.boolean "active",                                           unsigned: true
-    t.string  "first_name",              limit: 50
-    t.string  "last_name",               limit: 50
-    t.string  "company",                 limit: 100
-    t.string  "phone",                   limit: 20
+    t.string  "password",                    null: false
+    t.string  "email",           limit: 100, null: false
+    t.string  "activation_code", limit: 40
+    t.integer "created_on",                  null: false, unsigned: true
+    t.boolean "active",                                   unsigned: true
+    t.string  "first_name",      limit: 50
+    t.string  "last_name",       limit: 50
+    t.string  "phone",           limit: 20
   end
 
   create_table "users_groups", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

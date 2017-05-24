@@ -75,6 +75,224 @@
 		</div>
 </footer>
 
+<!-- -Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true" style="z-index: 99999;">
+	<div class="modal-dialog">
+    	<div class="modal-content login-modal">
+      		<div class="modal-header login-modal-header">
+        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        		<h4 class="modal-title text-center" id="loginModalLabel">USER AUTHENTICATION</h4>
+      		</div>
+      		<div class="modal-body">
+      			<div class="text-center">
+	      			<div role="tabpanel" class="login-tab">
+					  	<!-- Nav tabs -->
+					  	<ul class="nav nav-tabs" role="tablist">
+					    	<li role="presentation" class="active"><a id="signin-taba" href="#home" aria-controls="home" role="tab" data-toggle="tab">Sign In</a></li>
+					    	<li role="presentation"><a id="signup-taba" href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Sign Up</a></li>
+					    	<li role="presentation"><a id="forgetpass-taba" href="#forget_password" aria-controls="forget_password" role="tab" data-toggle="tab">Forget Password</a></li>
+					  	</ul>
+					
+					  	<!-- Tab panes -->
+					 	<div class="tab-content">
+					    	<div role="tabpanel" class="tab-pane active text-center" id="home">
+					    		&nbsp;&nbsp;
+					    		<span id="login_fail" class="response_error" style="display: none;">Loggin failed, please try again.</span>
+					    		<div class="clearfix"></div>
+					    		<form>
+									<div class="form-group">
+								    	<div class="input-group">
+								      		<div class="input-group-addon"><i class="fa fa-user"></i></div>
+								      		<input type="text" class="form-control" id="login_username" placeholder="Email">
+								    	</div>
+								    	<span class="help-block has-error" id="email-error"></span>
+								  	</div>
+								  	<div class="form-group">
+								    	<div class="input-group">
+								      		<div class="input-group-addon"><i class="fa fa-lock"></i></div>
+								      		<input type="password" class="form-control" id="password" placeholder="Password">
+								    	</div>
+								    	<span class="help-block has-error" id="password-error"></span>
+								  	</div>
+						  			<button type="button" id="login_btn" class="btn btn-block bt-login" data-loading-text="Signing In....">Login</button>
+						  			<div class="clearfix"></div>
+						  			<div class="login-modal-footer">
+						  				<div class="row">
+											<div class="col-xs-8 col-sm-8 col-md-8">
+												<i class="fa fa-lock"></i>
+												<a href="javascript:;" class="forgetpass-tab"> Forgot password? </a>
+											
+											</div>
+											
+											<div class="col-xs-4 col-sm-4 col-md-4">
+												<i class="fa fa-check"></i>
+												<a href="javascript:;" class="signup-tab"> Sign Up </a>
+											</div>
+										</div>
+						  			</div>
+								</form>
+					    	</div>
+					    	<div role="tabpanel" class="tab-pane" id="profile">
+					    	    &nbsp;&nbsp;
+					    	    <span id="registration_fail" class="response_error" style="display: none;">Registration failed, please try again.</span>
+					    		<div class="clearfix"></div>
+					    		<form id="sign_up_form" action="/session/create/" method="post">
+										<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+								  	<div class="form-group">
+								    			
+								      <input type="text" class="form-control" name="email"  placeholder="Email">
+								    	
+								    	
+								  	</div>
+								  	<div class="form-group">
+								    			
+								      <input type="text" class="form-control" name="first_name" placeholder="First Name">
+								    	
+								    	
+								  	</div>
+								  	<div class="form-group">
+								    	
+								      		
+								      <input type="text" class="form-control" name="last_name"  placeholder="Last Name">
+								    	
+								    	
+								  	</div>
+								  	<div class="form-group">
+								    	
+								      	<input type="text" class="form-control" name="password" id="pwd" placeholder="Password">
+								  
+								    
+								  	</div>
+								  	<div class="form-group">
+								      <input type="text" class="form-control" name="conpass"  placeholder="Confirm Password">
+								    	
+								    
+								  	</div>
+						  			<button type="submit" id="register_btn" class="btn btn-block bt-login" data-loading-text="Registering....">Register</button>
+									<div class="clearfix"></div>
+									<div class="login-modal-footer">
+						  				<div class="row">
+											<div class="col-xs-8 col-sm-8 col-md-8">
+												<i class="fa fa-lock"></i>
+												<a href="javascript:;" class="forgetpass-tab"> Forgot password? </a>
+											
+											</div>
+											
+											<div class="col-xs-4 col-sm-4 col-md-4">
+												<i class="fa fa-check"></i>
+												<a href="javascript:;" class="signin-tab"> Sign In </a>
+											</div>
+										</div>
+						  			</div>
+								</form>
+					    	</div>
+					    	<div role="tabpanel" class="tab-pane text-center" id="forget_password">
+					    		&nbsp;&nbsp;
+					    	    <span id="reset_fail" class="response_error" style="display: none;"></span>
+						    		<div class="clearfix"></div>
+						    		<form>
+										<div class="form-group">
+									    	<div class="input-group">
+									      		<div class="input-group-addon"><i class="fa fa-user"></i></div>
+									      		<input type="text" class="form-control" id="femail" placeholder="Email">
+									    	</div>
+									    	<span class="help-block has-error" data-error='0' id="femail-error"></span>
+									  	</div>
+									  	
+							  			<button type="button" id="reset_btn" class="btn btn-block bt-login" data-loading-text="Please wait....">Forget Password</button>
+										<div class="clearfix"></div>
+										<div class="login-modal-footer">
+							  				<div class="row">
+												<div class="col-xs-6 col-sm-6 col-md-6">
+													<i class="fa fa-lock"></i>
+													<a href="javascript:;" class="signin-tab"> Sign In </a>
+												
+												</div>
+												
+												<div class="col-xs-6 col-sm-6 col-md-6">
+													<i class="fa fa-check"></i>
+													<a href="javascript:;" class="signup-tab"> Sign Up </a>
+												</div>
+											</div>
+							  			</div>
+									</form>
+						    	</div>
+						  	</div>
+						</div>
+	      				
+	      			</div>
+	      		</div>
+	      		
+	    	</div>
+	   </div>
+ 	</div>
+ 	<!-- - Login Model Ends Here -->
+
+
+<style>
+.bt-login,.bt-login:hover, .bt-login:active, .bt-login:focus {
+    background-color: #ff8627;
+    color: #ffffff;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    transition: background-color 300ms linear 0s;
+}
+
+
+.login-tab {
+	margin: 0 auto;
+	max-width: 380px;
+}
+
+.login-modal-header {
+	background: #27ae60;
+	color: #fff;
+}
+
+.login-modal-header .modal-title {
+	color: #fff;
+}
+
+.login-modal-header .close {
+	color: #fff;
+}
+
+.login-modal i {
+	color: #000;
+}
+
+.login-modal form {
+	max-width: 340px;
+}
+
+.tab-pane form {
+	margin: 0 auto;
+}
+.login-modal-footer{
+	margin-top:15px;
+	margin-bottom:15px;
+}
+</style>
+<script>
+$(document).ready(function(){
+	$(document).on('click','.signup-tab',function(e){
+		e.preventDefault();
+	    $('#signup-taba').tab('show');
+	});	
+	
+	$(document).on('click','.signin-tab',function(e){
+	   	e.preventDefault();
+	    $('#signin-taba').tab('show');
+	});
+	    	
+	$(document).on('click','.forgetpass-tab',function(e){
+	 	e.preventDefault();
+	   	$('#forgetpass-taba').tab('show');
+	});
+});	
+</script>
+
+
     <script src="/assets/js/wow.js"></script>
 		<script src="/assets/js/bootstrap.js"></script>
 		<script src="/assets/js/owl.carousel.js"></script>
@@ -85,12 +303,56 @@
 		<script src="/assets/js/jquery-3.js" type="text/javascript"></script>
 		<script src="/assets/js/carousel-j.js" type="text/javascript"></script>
 		<script src="/assets/js/owl.carousel.js"></script>
+		<script src="/assets/js/jquery.validate.min.js"></script>
 
 
 
 		<script>
-      $(document).ready(function(){
+    $(document).ready(function(){
 		//alert('debug');
+		$("#sign_up_form").validate({
+	    rules: {
+	      first_name: {
+	        required: true
+	        
+	      },
+	      last_name: {
+	        required:true
+	      },
+	      password: {
+	        required:true,
+	         minlength: 8
+	      },
+	      conpass: {
+	        required:true,
+	         minlength: 8,
+	         equalTo : "#pwd"
+	       
+	    },
+	    email: {
+	      required: true,
+	      email: true      
+	    }
+
+	    },
+	    messages: {
+	         password :{
+	            required: "Please enter password",
+	            minlength: "Password must be at least 8 characters"
+	         },
+	         email:{
+	            required: "email required",
+	            email: "invalid formate"
+	         },
+	         conpass: {
+	            required:"Please enter password to match",
+	            minlength: "Enter the same password",
+	            equalTo : "Passwords do not match"
+	          }
+	        
+	        }
+	    });
+
 
 		$('#nws_btn').click(function(){
 			var email = $('#email').val();
