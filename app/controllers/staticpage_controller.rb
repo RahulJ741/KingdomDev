@@ -46,4 +46,46 @@ class StaticpageController < ApplicationController
 
   end
 
+  def rugbypackages
+
+  end
+
+  def openingpackages
+
+  end
+
+  def rugbypackages_gold
+
+  end
+
+  def rugbypackages_silver
+
+  end
+
+  def rugbypackages_bronze
+
+  end
+
+  def athleticspackages_platinum
+
+  end
+
+  def athleticspackages_gold
+
+  end
+
+  def athleticspackages_silver
+
+  end
+
+  def athleticspackages_silver_brisbane
+
+  end
+
+  def athleticspackages_bronze
+
+  end
+
+
+
 end
