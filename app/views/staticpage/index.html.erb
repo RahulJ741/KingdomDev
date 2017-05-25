@@ -1,4 +1,6 @@
 <%= render 'header'%>
+<%= flash[:notice]%>
+<!-- toastr.success('Have fun storming the castle!', 'Miracle Max Says') -->
 
 <section class="banner-main" style="background: rgba(0, 0, 0, 0) url('upload/'+<%= @b_img %>;) no-repeat scroll center top / cover;">
 	<div class="container">
@@ -14,6 +16,8 @@
 		<img src="assets/images/gold-cost-img.png">
 	</div>
 </section>
+
+
 <!---- Banner END ------>
 
 

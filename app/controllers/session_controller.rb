@@ -2,10 +2,17 @@ class SessionController < ApplicationController
 
   def authentication
     @user = User.find_by_email(params[:email])
-    if @user && @user.authenticate(params[:password]) && @user.active == 'true'
+
+    puts params[:email]
+    puts @user.inspect
+    puts params[:password]
+    puts @user.active
+    puts @user.authenticate(params[:password])
+    if @user &&  @user.authenticate(params[:password]) && @user.active
       session[:user_id] = @user.id
       redirect_to root_url, :notice => "Login Successfull"
       puts "1111111111111111111111111111111111111"
+      puts session[:user_id]
     else
       redirect_to root_url, :notice => "wrong Creds. Try again"
       puts "2222222222222222222222222222222222222222"
@@ -14,7 +21,7 @@ class SessionController < ApplicationController
 
   def sign_up
     @user = User.create(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], active: 'false')
-    @user.password = BCrypt::Password.create(params[:password])
+    @user.password_digest = BCrypt::Password.create(params[:password])
     @user.activation_code = SecureRandom.urlsafe_base64
     if @user.save
       redirect_to root_url, :notice => "User created"
@@ -27,8 +34,10 @@ class SessionController < ApplicationController
   def activate_user
     @codes = params[:activation_code]
     @user = User.find_by_activation_code(params[:activation_code])
-    if @user.activation_code == @codes
+    if @user
+      puts @user.inspect
       @user.active = 'true'
+      @user.save
       redirect_to root_url
     else
       @user.active = 'false'
@@ -60,11 +69,27 @@ class SessionController < ApplicationController
   end
 
   def logout
-    reset_session
-    @user = nil
+    session[:user_id] = nil
+    redirect_to root_url
   end
 
   def change_pass
+
+  end
+
+
+  def authf
+    @user = User.find_by_email(params[:email])
+    data={}
+    if @user.present?
+        data['response']=true
+    else
+        data['response']=false
+    end
+
+    respond_to do |format|
+                    format.json { render json: data }
+              end
 
   end
 end

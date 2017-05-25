@@ -26,11 +26,14 @@ Rails.application.routes.draw do
   get 'athleticspackages/bronze' => 'staticpage#athleticspackages_bronze'
 
   post 'sign_up' => 'session#sign_up'
-  post 'activate_user/:activation_code' => 'session#activate_user'
+  match 'activate_user/:activation_code' => 'session#activate_user', :via => [:get, :post]
   post 'reset' => 'session#reset'
   post 'authentication' => 'session#authentication'
-  post 'reset_password/:activation_code' => 'session#reset_password'
+  match 'reset_password/:activation_code' => 'session#reset_password' , :via => [:get, :post]
   get 'change_pass' => 'session#change_pass'
+  get 'logout' => 'session#logout'
+
+  get 'authf' => 'session#authf'
 
 
 
