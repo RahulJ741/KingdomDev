@@ -90,40 +90,41 @@
 					  	<ul class="nav nav-tabs" role="tablist">
 					    	<li role="presentation" class="active"><a id="signin-taba" href="#home" aria-controls="home" role="tab" data-toggle="tab">Sign In</a></li>
 					    	<li role="presentation"><a id="signup-taba" href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Sign Up</a></li>
-					    	<li role="presentation"><a id="forgetpass-taba" href="#forget_password" aria-controls="forget_password" role="tab" data-toggle="tab">Forget Password</a></li>
+					    	<li role="presentation"><a id="forgetpass-taba" href="#forget_password" aria-controls="forget_password" role="tab" data-toggle="tab">Forgot Password</a></li>
 					  	</ul>
-					
+
 					  	<!-- Tab panes -->
 					 	<div class="tab-content">
 					    	<div role="tabpanel" class="tab-pane active text-center" id="home">
 					    		&nbsp;&nbsp;
-					    		<span id="login_fail" class="response_error" style="display: none;">Loggin failed, please try again.</span>
+					    		<span id="login_fail" class="response_error" style="display: none;">Login failed, please try again.</span>
 					    		<div class="clearfix"></div>
-					    		<form>
+					    		<form action="/authentication" method="post">
+										<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 									<div class="form-group">
 								    	<div class="input-group">
 								      		<div class="input-group-addon"><i class="fa fa-user"></i></div>
-								      		<input type="text" class="form-control" id="login_username" placeholder="Email">
+								      		<input type="text" class="form-control" id="login_username"  name="email" placeholder="Email">
 								    	</div>
 								    	<span class="help-block has-error" id="email-error"></span>
 								  	</div>
 								  	<div class="form-group">
 								    	<div class="input-group">
 								      		<div class="input-group-addon"><i class="fa fa-lock"></i></div>
-								      		<input type="password" class="form-control" id="password" placeholder="Password">
+								      		<input type="password" class="form-control" id="password" name="password" placeholder="Password">
 								    	</div>
 								    	<span class="help-block has-error" id="password-error"></span>
 								  	</div>
-						  			<button type="button" id="login_btn" class="btn btn-block bt-login" data-loading-text="Signing In....">Login</button>
+						  			<button type="submit" id="login_btn" class="btn btn-block bt-login" data-loading-text="Signing In....">Login</button>
 						  			<div class="clearfix"></div>
 						  			<div class="login-modal-footer">
 						  				<div class="row">
 											<div class="col-xs-8 col-sm-8 col-md-8">
 												<i class="fa fa-lock"></i>
 												<a href="javascript:;" class="forgetpass-tab"> Forgot password? </a>
-											
+
 											</div>
-											
+
 											<div class="col-xs-4 col-sm-4 col-md-4">
 												<i class="fa fa-check"></i>
 												<a href="javascript:;" class="signup-tab"> Sign Up </a>
@@ -136,37 +137,37 @@
 					    	    &nbsp;&nbsp;
 					    	    <span id="registration_fail" class="response_error" style="display: none;">Registration failed, please try again.</span>
 					    		<div class="clearfix"></div>
-					    		<form id="sign_up_form" action="/session/create/" method="post">
+					    		<form id="sign_up_form" action="/sign_up" method="post">
 										<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 								  	<div class="form-group">
-								    			
+
 								      <input type="text" class="form-control" name="email"  placeholder="Email">
-								    	
-								    	
+
+
 								  	</div>
 								  	<div class="form-group">
-								    			
+
 								      <input type="text" class="form-control" name="first_name" placeholder="First Name">
-								    	
-								    	
+
+
 								  	</div>
 								  	<div class="form-group">
-								    	
-								      		
+
+
 								      <input type="text" class="form-control" name="last_name"  placeholder="Last Name">
-								    	
-								    	
+
+
 								  	</div>
 								  	<div class="form-group">
-								    	
+
 								      	<input type="text" class="form-control" name="password" id="pwd" placeholder="Password">
-								  
-								    
+
+
 								  	</div>
 								  	<div class="form-group">
 								      <input type="text" class="form-control" name="conpass"  placeholder="Confirm Password">
-								    	
-								    
+
+
 								  	</div>
 						  			<button type="submit" id="register_btn" class="btn btn-block bt-login" data-loading-text="Registering....">Register</button>
 									<div class="clearfix"></div>
@@ -175,9 +176,9 @@
 											<div class="col-xs-8 col-sm-8 col-md-8">
 												<i class="fa fa-lock"></i>
 												<a href="javascript:;" class="forgetpass-tab"> Forgot password? </a>
-											
+
 											</div>
-											
+
 											<div class="col-xs-4 col-sm-4 col-md-4">
 												<i class="fa fa-check"></i>
 												<a href="javascript:;" class="signin-tab"> Sign In </a>
@@ -190,25 +191,26 @@
 					    		&nbsp;&nbsp;
 					    	    <span id="reset_fail" class="response_error" style="display: none;"></span>
 						    		<div class="clearfix"></div>
-						    		<form>
+						    		<form action="/reset" method="post">
+											<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 										<div class="form-group">
 									    	<div class="input-group">
 									      		<div class="input-group-addon"><i class="fa fa-user"></i></div>
-									      		<input type="text" class="form-control" id="femail" placeholder="Email">
+									      		<input type="text" class="form-control" id="femail" name="email" placeholder="Email">
 									    	</div>
 									    	<span class="help-block has-error" data-error='0' id="femail-error"></span>
 									  	</div>
-									  	
-							  			<button type="button" id="reset_btn" class="btn btn-block bt-login" data-loading-text="Please wait....">Forget Password</button>
+
+							  			<button type="submit" id="reset_btn" class="btn btn-block bt-login" data-loading-text="Please wait....">Forget Password</button>
 										<div class="clearfix"></div>
 										<div class="login-modal-footer">
 							  				<div class="row">
 												<div class="col-xs-6 col-sm-6 col-md-6">
 													<i class="fa fa-lock"></i>
 													<a href="javascript:;" class="signin-tab"> Sign In </a>
-												
+
 												</div>
-												
+
 												<div class="col-xs-6 col-sm-6 col-md-6">
 													<i class="fa fa-check"></i>
 													<a href="javascript:;" class="signup-tab"> Sign Up </a>
@@ -219,10 +221,10 @@
 						    	</div>
 						  	</div>
 						</div>
-	      				
+
 	      			</div>
 	      		</div>
-	      		
+
 	    	</div>
 	   </div>
  	</div>
@@ -278,18 +280,18 @@ $(document).ready(function(){
 	$(document).on('click','.signup-tab',function(e){
 		e.preventDefault();
 	    $('#signup-taba').tab('show');
-	});	
-	
+	});
+
 	$(document).on('click','.signin-tab',function(e){
 	   	e.preventDefault();
 	    $('#signin-taba').tab('show');
 	});
-	    	
+
 	$(document).on('click','.forgetpass-tab',function(e){
 	 	e.preventDefault();
 	   	$('#forgetpass-taba').tab('show');
 	});
-});	
+});
 </script>
 
 
@@ -314,7 +316,7 @@ $(document).ready(function(){
 	    rules: {
 	      first_name: {
 	        required: true
-	        
+
 	      },
 	      last_name: {
 	        required:true
@@ -327,11 +329,11 @@ $(document).ready(function(){
 	        required:true,
 	         minlength: 8,
 	         equalTo : "#pwd"
-	       
+
 	    },
 	    email: {
 	      required: true,
-	      email: true      
+	      email: true
 	    }
 
 	    },
@@ -349,23 +351,23 @@ $(document).ready(function(){
 	            minlength: "Enter the same password",
 	            equalTo : "Passwords do not match"
 	          }
-	        
+
 	        }
 	    });
 
 
 		$('#nws_btn').click(function(){
 			var email = $('#email').val();
-			
+
 			$.ajax({
 				url: "https://kingdomsg.com/kingdomsg2018/home/newsletter",
 				type: 'post',
-				
+
 				data: {'email':email},
 				// dataType: "jsonp",
 				crossDomain:true,
 				success: function(data){
-					
+
 					if(data == 1){
 						$('#email').val('');
 						$('#msg').show().html('Subscription is completed.').css('color','#fff');
@@ -374,9 +376,9 @@ $(document).ready(function(){
 					}
 				},
 				error: function(data){
-					
+
 					$('#msg').show().html('somthing went wrong').css('color','red');
-				} 
+				}
 			});
 		});
 

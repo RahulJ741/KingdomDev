@@ -1,6 +1,4 @@
-require 'bcrypt'
-class User < ActiveRecord::Base
-  has_secure_password
+class Country < ActiveRecord::Base
   # devise :database_authenticatable, :registerable,
   #          :recoverable, :rememberable, :trackable, :validatable
 end

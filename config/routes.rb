@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   post 'activate_user/:activation_code' => 'session#activate_user'
   post 'reset' => 'session#reset'
   post 'authentication' => 'session#authentication'
-  post 'reset_password' => 'session#reset_password'
+  post 'reset_password/:activation_code' => 'session#reset_password'
   get 'change_pass' => 'session#change_pass'
 
 

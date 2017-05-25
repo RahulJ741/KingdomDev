@@ -4,7 +4,7 @@ class UserMailer < ApplicationMailer
   def user_activation(user)
     @greeting = "Hi"
     @user = user
-    mail :to => user.email, :subject => "Password Reset"
+    mail :to => user.email, :subject => "Account Confirmation"
 
   end
 end

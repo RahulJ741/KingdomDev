@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170524115343) do
+ActiveRecord::Schema.define(version: 20170525061904) do
 
   create_table "athletics_supporters_package_price_list_all", primary_key: "serial_no", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string  "athletics_supporter_packages", limit: 10, null: false
@@ -322,7 +322,7 @@ ActiveRecord::Schema.define(version: 20170524115343) do
   end
 
   create_table "users", unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string  "password",                    null: false
+    t.string  "password"
     t.string  "email",           limit: 100, null: false
     t.string  "activation_code", limit: 40
     t.integer "created_on",                  null: false, unsigned: true
@@ -330,6 +330,7 @@ ActiveRecord::Schema.define(version: 20170524115343) do
     t.string  "first_name",      limit: 50
     t.string  "last_name",       limit: 50
     t.string  "phone",           limit: 20
+    t.string  "password_digest"
   end
 
   create_table "users_groups", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
