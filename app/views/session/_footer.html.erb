@@ -421,7 +421,7 @@ $(document).ready(function(){
 	         },
 	         email:{
 	            required: "email required",
-	            email: "invalid format"
+	            email: "invalid formate"
 	         },
 	         conpass: {
 	            required:"Please enter password to match",
@@ -432,39 +432,35 @@ $(document).ready(function(){
 	        }
 	    });
 
-			$("#update_info").validate({
-				onfocusout: function(e) {
-						 this.element(e);
-					},
-					 onkeyup: false,
-				rules:{
-					first_name:{
-						required: true
-					},
-					last_name: {
-						required: true
-					},
-					email: {
-						required: true,
-						email: true
-					},
-					phone: {
-						maxlength: 10
-					}
-				},
-				messages:{
-					first_name: {
-						required: "First Name cannot be empty"
-					},
-					last_name: {
-						required: "This is required"
-					},
-					email: {
-						required: "not a valid email"
-					}
-				}
-			});
 
+			$("#change_pass").validate({
+				onfocusout: function(e) {
+                this.element(e);
+             },
+              onkeyup: false,
+							rules: {
+								password: {
+									required: true,
+									minlength: 8
+								},
+								cpassword:{
+									required: true,
+									minlength:8,
+									equalTo: "#password"
+								}
+							},
+							messages:{
+								password:{
+									required : "Password is required",
+									minlength: "Password must have minimum 8 characters"
+								},
+								cpassword:{
+									required: "Confirmation password is required",
+									minlength: "Password must have minimum 8 characters",
+									equalTo: "Password does not match"
+								}
+							}
+			});
 
 			// $('#reset').validate({
       //            onfocusout: function(e) {
@@ -541,7 +537,7 @@ $(document).ready(function(){
     })  ;
   </script>
 
-	<!-- <script type="text/javascript">
+	<script type="text/javascript">
 	toastr.options = {
 "closeButton": true,
 "debug": false,
@@ -558,7 +554,7 @@ $(document).ready(function(){
 };
 
 // toastr.success('Have fun storming the castle!', 'Miracle Max Says');
-	</script> -->
+	</script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyAsowX76foG-80TNWehN5siv96XN8sF_gk"></script>
 <script>
 

@@ -1,0 +1,61 @@
+<%= render 'header'%>
+
+<section class="banner-main" style="background: rgba(0, 0, 0, 0) url('upload/'+<%= @b_img %>;) no-repeat scroll center top / cover;">
+	<div class="container">
+		<div class="row">
+			<div class=" pad_none banner-inner">
+
+			</div>
+		</div>
+	</div>
+	<div class="gold-cost-right" >
+		<img src="assets/images/gold-cost-img.png">
+	</div>
+</section>
+
+
+<section>
+
+  <div class="row">
+    <div class="col col-md-3">
+
+    </div>
+    <div class="col col-md-6">
+      <br><br>
+      <h2>Update Information</h2>
+      <form action="/change_info" method="post" id="update_info">
+        <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+        <div class="form-group">
+          <label for="first_name">First Name</label>
+          <input type="text" class="form-control" id="first_name" name="first_name" value="<%= @user.first_name%>" required="true">
+          <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+        </div>
+        <div class="form-group">
+          <label for="last_name">Last Name</label>
+          <input type="text" class="form-control" id="last_name" name="last_name" value="<%= @user.last_name %>" required="true">
+          <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+        </div>
+
+        <div class="form-group">
+          <!-- <label for="email">Email address</label> -->
+          <input type="hidden" class="form-control" id="email"  name="email" value="<%= @user.email%>" required="true">
+
+        </div>
+      <div class="form-group">
+        <label for="phone">Contact</label>
+        <input type="text" class="form-control" id="phone" name="phone" value="<%= @user.phone %>" required="true">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <br><br>
+    </form>
+
+    </div>
+    <div class="col col-md-3">
+
+    </div>
+
+  </div>
+
+</section>
+<%= render 'footer'%>

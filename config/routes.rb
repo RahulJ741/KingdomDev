@@ -30,8 +30,10 @@ Rails.application.routes.draw do
   post 'reset' => 'session#reset'
   post 'authentication' => 'session#authentication'
   match 'reset_password/:activation_code' => 'session#reset_password' , :via => [:get, :post]
-  get 'change_pass' => 'session#change_pass'
+  match 'change_pass' => 'session#change_pass', :via => [:get,:post]
   get 'logout' => 'session#logout'
+  get 'update_profile' => 'session#update_profile'
+  post 'change_info' => 'session#change_info'
 
   get 'authf' => 'session#authf'
 
