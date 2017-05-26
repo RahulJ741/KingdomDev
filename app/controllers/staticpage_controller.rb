@@ -3,8 +3,8 @@ class StaticpageController < ApplicationController
   def index
 
     puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<"
-    puts session.inspect
-    puts session[:user_id].inspect
+    # puts session.inspect
+    puts session[:user_id]
 
     if session[:user_id]
       @current_user = User.find(session["user_id"])

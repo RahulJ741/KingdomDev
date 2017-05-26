@@ -80,10 +80,13 @@ class SessionController < ApplicationController
   end
 
   def change_pass
-    @user = User.find_by_activation_code(params[:activation_code])
     @current_user = User.find_by_activation_code(params[:activation_code])
+    @user = User.find_by_activation_code(params[:activation_code])
+
     if @user.update(:first_name => params[:first_name], :last_name => params[:last_name],:email => params[:email] ,:phone => params[:phone])
-      @user.password = BCrypt::Password.create(params[:password])
+      puts "5555555555555555555555555"
+      puts params[:password]
+      @user.password_digest = BCrypt::Password.create(params[:password])
       @user.save
       redirect_to root_url, :notice => "password updated"
       # reset_session
