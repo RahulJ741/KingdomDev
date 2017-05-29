@@ -130,10 +130,10 @@ class SessionController < ApplicationController
     # end
     if @user.update(:first_name => params[:first_name], :last_name => params[:last_name],:email => params[:email] ,:phone => params[:phone])
       @user.save
-      redirect_to root_url, :flash => {:success => "Info updated"}
+      redirect_to root_url, :flash => {:success => "Profile updated"}
       # reset_session
     else
-      redirect_to :back, :flash => {:error => "Info cannot be updated"}
+      redirect_to :back, :flash => {:error => "Profile cannot be updated"}
     end
   end
 
