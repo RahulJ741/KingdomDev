@@ -23,7 +23,7 @@ class SessionController < ApplicationController
     @user.password_digest = BCrypt::Password.create(params[:password])
     @user.activation_code = SecureRandom.urlsafe_base64
     if @user.save
-      redirect_to root_url, :flash => {:success => "User created"}
+      redirect_to root_url, :flash => {:success => "Please check your email for verification"}
       UserMailer.user_activation(@user).deliver_now
     else
       redirect_to root_url, :flash => {:error => "Try again"}
