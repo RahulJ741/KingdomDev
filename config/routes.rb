@@ -35,7 +35,9 @@ Rails.application.routes.draw do
   get 'update_profile' => 'session#update_profile'
   post 'change_info' => 'session#change_info'
 
-  get 'authf' => 'session#authf'
+  match 'findemail' => 'session#findemail', :via => [:get, :post]
+  match 'reset_user' => 'session#reset_user', :via => [:get, :post]
+  # get 'authf' => 'session#authf'
 
 
 

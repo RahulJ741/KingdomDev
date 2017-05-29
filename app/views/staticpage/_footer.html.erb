@@ -140,10 +140,10 @@
 					    	    <span id="registration_fail" class="response_error" style="display: none;">Registration failed, please try again.</span>
 					    		<div class="clearfix"></div>
 					    		<form id="sign_up_form" action="/sign_up" method="post">
-										<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+										<input name="authenticity_token" id="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 								  	<div class="form-group">
 
-								      <input type="email" class="form-control" name="email"  placeholder="Email">
+								      <input type="email" class="form-control" name="email" id="sign_up_email" placeholder="Email">
 
 
 								  	</div>
@@ -335,7 +335,7 @@ $(document).ready(function(){
     <script src="/assets/js/wow.js"></script>
 		<script src="/assets/js/bootstrap.js"></script>
 		<script src="/assets/js/owl.carousel.js"></script>
-		<script src="/assets/js/jssor.slider.mini.js"></script>
+		<!-- <script src="/assets/js/jssor.slider.mini.js"></script> -->
 		<script src="/assets/js/jquery.scrollTo-min.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script src="/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
@@ -351,17 +351,28 @@ $(document).ready(function(){
 
 		<script>
     $(document).ready(function(){
+			$.ajaxSetup({
+           headers: { 'X-CSRF-Token' : $('#authenticity_token').val() }
+        });
+			var email_val = $("#sign_up_email").val();
+
 		//alert('debug');
 		$("#reset").validate({
 			rules:{
 				email:{
 					required: true,
-					email: true
+					email: true,
+					remote:{
+						url: '/reset_user/',
+            type: "POST",
+            dataType: "json"
+					}
 				}
 			},
 			messages:{
 				email:{
-					required: "Please enter a valid email"
+					required: "Please enter a valid email",
+					remote: "Not a user yet, Please sign up first"
 				}
 			}
 		});
@@ -371,7 +382,12 @@ $(document).ready(function(){
 			rules:{
 				email: {
 					required :true,
-					email: true
+					email: true,
+					remote:{
+						url: '/reset_user/',
+            type: "POST",
+            dataType: "json"
+					}
 				},
 				password:{
 					required:true
@@ -379,7 +395,8 @@ $(document).ready(function(){
 			},
 			messages:{
 				email: {
-					required: "Please enter email"
+					required: "Please enter email",
+					remote: "Not a user yet, Please sign up"
 				},
 				password:{
 					required: "Please enter password",
@@ -410,7 +427,12 @@ $(document).ready(function(){
 	    },
 	    email: {
 	      required: true,
-	      email: true
+	      email: true,
+				remote: {
+            url: '/findemail/',
+            type: "POST",
+            dataType: "json"
+        }
 	    }
 
 	    },
@@ -421,7 +443,8 @@ $(document).ready(function(){
 	         },
 	         email:{
 	            required: "email required",
-	            email: "invalid format"
+	            email: "invalid format",
+							remote: "email already exixts"
 	         },
 	         conpass: {
 	            required:"Please enter password to match",
@@ -463,6 +486,35 @@ $(document).ready(function(){
 						required: "not a valid email"
 					}
 				}
+			});
+
+			$("#change_pass").validate({
+				onfocusout: function(e) {
+                this.element(e);
+             },
+              onkeyup: false,
+							rules: {
+								password: {
+									required: true,
+									minlength: 8
+								},
+								cpassword:{
+									required: true,
+									minlength:8,
+									equalTo: "#password"
+								}
+							},
+							messages:{
+								password:{
+									required : "Password is required",
+									minlength: "Password must have minimum 8 characters"
+								},
+								cpassword:{
+									required: "Confirmation password is required",
+									minlength: "Password must have minimum 8 characters",
+									equalTo: "Password does not match"
+								}
+							}
 			});
 
 
@@ -537,11 +589,11 @@ $(document).ready(function(){
                 }
 
   });
-	map();
+	// map();
     })  ;
   </script>
 
-	<!-- <script type="text/javascript">
+	<script type="text/javascript">
 	toastr.options = {
 "closeButton": true,
 "debug": false,
@@ -556,10 +608,20 @@ $(document).ready(function(){
 "showMethod": "fadeIn",
 "hideMethod": "fadeOut"
 };
-
-// toastr.success('Have fun storming the castle!', 'Miracle Max Says');
-	</script> -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyAsowX76foG-80TNWehN5siv96XN8sF_gk"></script>
+var msg = '<%= flash[:success]  %>'
+var msg1 = '<%= flash[:error] %>'
+var msg2 = '<%= flash[:notice] %>'
+if(msg){
+	toastr.success(msg);
+}else if (msg1) {
+	toastr.error(msg1);
+}else if (msg2) {
+	toastr.info(msg2);
+}
+	// <% if flash[:success].present? %><%end%>
+	// toastr.success('<%= flash[:success]%>');
+	</script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyA7_RijdhWBW5ErhunL2NWwGVWJM2MD65g"></script>
 <script>
 
 var map;
@@ -635,7 +697,7 @@ function toggleBounce() {
       }
 </script>
 
-		<script>
+<script>
 
 
 jQuery(document).ready(function ($) {
@@ -681,79 +743,80 @@ jQuery(document).ready(function ($) {
 
 			});
 
-				var jssor_1_SlideshowTransitions = [
-				  {$Duration:1200,x:0.3,$During:{$Left:[0.3,0.7]},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,x:-0.3,$SlideOut:true,$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,x:-0.3,$During:{$Left:[0.3,0.7]},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,x:0.3,$SlideOut:true,$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,y:0.3,$During:{$Top:[0.3,0.7]},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,y:-0.3,$SlideOut:true,$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,y:-0.3,$During:{$Top:[0.3,0.7]},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,y:0.3,$SlideOut:true,$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,x:0.3,$Cols:2,$During:{$Left:[0.3,0.7]},$ChessMode:{$Column:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,x:0.3,$Cols:2,$SlideOut:true,$ChessMode:{$Column:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,y:0.3,$Rows:2,$During:{$Top:[0.3,0.7]},$ChessMode:{$Row:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,y:0.3,$Rows:2,$SlideOut:true,$ChessMode:{$Row:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,y:0.3,$Cols:2,$During:{$Top:[0.3,0.7]},$ChessMode:{$Column:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,y:-0.3,$Cols:2,$SlideOut:true,$ChessMode:{$Column:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,x:0.3,$Rows:2,$During:{$Left:[0.3,0.7]},$ChessMode:{$Row:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,x:-0.3,$Rows:2,$SlideOut:true,$ChessMode:{$Row:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,x:0.3,y:0.3,$Cols:2,$Rows:2,$During:{$Left:[0.3,0.7],$Top:[0.3,0.7]},$ChessMode:{$Column:3,$Row:12},$Easing:{$Left:$Jease$.$InCubic,$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,x:0.3,y:0.3,$Cols:2,$Rows:2,$During:{$Left:[0.3,0.7],$Top:[0.3,0.7]},$SlideOut:true,$ChessMode:{$Column:3,$Row:12},$Easing:{$Left:$Jease$.$InCubic,$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,$Delay:20,$Clip:3,$Assembly:260,$Easing:{$Clip:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,$Delay:20,$Clip:3,$SlideOut:true,$Assembly:260,$Easing:{$Clip:$Jease$.$OutCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,$Delay:20,$Clip:12,$Assembly:260,$Easing:{$Clip:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,$Delay:20,$Clip:12,$SlideOut:true,$Assembly:260,$Easing:{$Clip:$Jease$.$OutCubic,$Opacity:$Jease$.$Linear},$Opacity:2}
-				];
+				// var jssor_1_SlideshowTransitions = [
+				//   {$Duration:1200,x:0.3,$During:{$Left:[0.3,0.7]},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,x:-0.3,$SlideOut:true,$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,x:-0.3,$During:{$Left:[0.3,0.7]},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,x:0.3,$SlideOut:true,$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,y:0.3,$During:{$Top:[0.3,0.7]},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,y:-0.3,$SlideOut:true,$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,y:-0.3,$During:{$Top:[0.3,0.7]},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,y:0.3,$SlideOut:true,$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,x:0.3,$Cols:2,$During:{$Left:[0.3,0.7]},$ChessMode:{$Column:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,x:0.3,$Cols:2,$SlideOut:true,$ChessMode:{$Column:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,y:0.3,$Rows:2,$During:{$Top:[0.3,0.7]},$ChessMode:{$Row:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,y:0.3,$Rows:2,$SlideOut:true,$ChessMode:{$Row:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,y:0.3,$Cols:2,$During:{$Top:[0.3,0.7]},$ChessMode:{$Column:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,y:-0.3,$Cols:2,$SlideOut:true,$ChessMode:{$Column:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,x:0.3,$Rows:2,$During:{$Left:[0.3,0.7]},$ChessMode:{$Row:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,x:-0.3,$Rows:2,$SlideOut:true,$ChessMode:{$Row:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,x:0.3,y:0.3,$Cols:2,$Rows:2,$During:{$Left:[0.3,0.7],$Top:[0.3,0.7]},$ChessMode:{$Column:3,$Row:12},$Easing:{$Left:$Jease$.$InCubic,$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,x:0.3,y:0.3,$Cols:2,$Rows:2,$During:{$Left:[0.3,0.7],$Top:[0.3,0.7]},$SlideOut:true,$ChessMode:{$Column:3,$Row:12},$Easing:{$Left:$Jease$.$InCubic,$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,$Delay:20,$Clip:3,$Assembly:260,$Easing:{$Clip:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,$Delay:20,$Clip:3,$SlideOut:true,$Assembly:260,$Easing:{$Clip:$Jease$.$OutCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,$Delay:20,$Clip:12,$Assembly:260,$Easing:{$Clip:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,$Delay:20,$Clip:12,$SlideOut:true,$Assembly:260,$Easing:{$Clip:$Jease$.$OutCubic,$Opacity:$Jease$.$Linear},$Opacity:2}
+				// ];
 
-				var jssor_1_options = {
-				  $AutoPlay: true,
-				  $SlideshowOptions: {
-					$Class: $JssorSlideshowRunner$,
-					$Transitions: jssor_1_SlideshowTransitions,
-					$TransitionsOrder: 1
-				  },
-				  $ArrowNavigatorOptions: {
-					$Class: $JssorArrowNavigator$
-				  },
-				  $ThumbnailNavigatorOptions: {
-					$Class: $JssorThumbnailNavigator$,
-					$Cols: 10,
-					$SpacingX: 8,
-					$SpacingY: 8,
-					$Align: 360
-				  }
-				};
+				// var jssor_1_options = {
+				//   $AutoPlay: true,
+				//   $SlideshowOptions: {
+				// 	$Class: $JssorSlideshowRunner$,
+				// 	$Transitions: jssor_1_SlideshowTransitions,
+				// 	$TransitionsOrder: 1
+				//   },
+				//   $ArrowNavigatorOptions: {
+				// 	$Class: $JssorArrowNavigator$
+				//   },
+				//   $ThumbnailNavigatorOptions: {
+				// 	$Class: $JssorThumbnailNavigator$,
+				// 	$Cols: 10,
+				// 	$SpacingX: 8,
+				// 	$SpacingY: 8,
+				// 	$Align: 360
+				//   }
+				// };
+			});
 
-				var jssor_5_slider = new $JssorSlider$("jssor_5", jssor_1_options);
-				var jssor_4_slider = new $JssorSlider$("jssor_4", jssor_1_options);
-				var jssor_3_slider = new $JssorSlider$("jssor_3", jssor_1_options);
-				var jssor_2_slider = new $JssorSlider$("jssor_2", jssor_1_options);
-				var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+				// var jssor_5_slider = new $JssorSlider$("jssor_5", jssor_1_options);
+				// var jssor_4_slider = new $JssorSlider$("jssor_4", jssor_1_options);
+				// var jssor_3_slider = new $JssorSlider$("jssor_3", jssor_1_options);
+				// var jssor_2_slider = new $JssorSlider$("jssor_2", jssor_1_options);
+				// var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
 
 				//responsive code begin
 				//you can remove responsive code if you don't want the slider scales while window resizes
-				function ScaleSlider() {
-					var refSize = jssor_2_slider.$Elmt.parentNode.clientWidth;
-					var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
-					if (refSize) {
-						refSize = Math.min(refSize, 1200);
-						jssor_5_slider.$ScaleWidth(refSize);
-						jssor_4_slider.$ScaleWidth(refSize);
-						jssor_3_slider.$ScaleWidth(refSize);
-						jssor_2_slider.$ScaleWidth(refSize);
-						jssor_1_slider.$ScaleWidth(refSize);
-					}
-					else {
-						window.setTimeout(ScaleSlider, 30);
-					}
-				}
-				ScaleSlider();
-				$(window).bind("load", ScaleSlider);
-				$(window).bind("resize", ScaleSlider);
-				$(window).bind("orientationchange", ScaleSlider);
-				//responsive code end
-			});
+			// 	function ScaleSlider() {
+			// 		var refSize = jssor_2_slider.$Elmt.parentNode.clientWidth;
+			// 		var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+			// 		if (refSize) {
+			// 			refSize = Math.min(refSize, 1200);
+			// 			jssor_5_slider.$ScaleWidth(refSize);
+			// 			jssor_4_slider.$ScaleWidth(refSize);
+			// 			jssor_3_slider.$ScaleWidth(refSize);
+			// 			jssor_2_slider.$ScaleWidth(refSize);
+			// 			jssor_1_slider.$ScaleWidth(refSize);
+			// 		}
+			// 		else {
+			// 			window.setTimeout(ScaleSlider, 30);
+			// 		}
+			// 	}
+			// 	ScaleSlider();
+			// 	$(window).bind("load", ScaleSlider);
+			// 	$(window).bind("resize", ScaleSlider);
+			// 	$(window).bind("orientationchange", ScaleSlider);
+			// 	//responsive code end
+			// });
 </script>
 
 		<script>

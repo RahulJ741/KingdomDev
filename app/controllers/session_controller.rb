@@ -8,11 +8,11 @@ class SessionController < ApplicationController
     if @user &&  @user.authenticate(params[:password]) && @user.active
       puts @user.active
       session[:user_id] = @user.id
-      redirect_to root_url, :notice => "Login Successfull"
+      redirect_to root_url, :flash => {:success => "Login Successfull"}
       puts "1111111111111111111111111111111111111"
       puts session[:user_id]
     else
-      redirect_to root_url, :notice => "Wrong creds. Try again"
+      redirect_to root_url, :flash => {:error => "Wrong creds. Try again"}
       puts "2222222222222222222222222222222222222222"
       session[:user_id] = nil
     end
@@ -23,10 +23,10 @@ class SessionController < ApplicationController
     @user.password_digest = BCrypt::Password.create(params[:password])
     @user.activation_code = SecureRandom.urlsafe_base64
     if @user.save
-      redirect_to root_url, :notice => "User created"
+      redirect_to root_url, :flash => {:success => "User created"}
       UserMailer.user_activation(@user).deliver_now
     else
-      redirect_to root_url, :notice => "Try again"
+      redirect_to root_url, :flash => {:error => "Try again"}
     end
   end
 
@@ -37,21 +37,21 @@ class SessionController < ApplicationController
       puts @user.inspect
       @user.active = 'true'
       @user.save
-      redirect_to root_url, :notice => "User activated"
+      redirect_to root_url, :flash => {:success => "User activated"}
     else
       @user.active = 'false'
-      redirect_to :back, :notice => 'cannot activate_user'
+      redirect_to :back, :flash => {:error => 'cannot activate_user'}
     end
   end
 
   def reset
     @user = User.find_by_email(params[:email])
-    if @user.present?
+    if @user.present? && @user.active
       ForgetPassMailer.password_reset(@user).deliver_now
-      redirect_to root_url, :notice => 'please check your email'
+      redirect_to root_url, :flash => {:notice => 'Please check your email'}
       puts 'user'
     else
-      redirect_to root_url, :notice => 'user does not exixts'
+      redirect_to root_url, :flash =>{:notice => 'User does not exixts'}
       puts "not a user"
     end
 
@@ -65,7 +65,7 @@ class SessionController < ApplicationController
       # @dialog = true
 
     else
-      redirect_to root_url, :notice => 'try again'
+      redirect_to root_url, :flash => {:error => 'try again'}
     end
   end
 
@@ -76,7 +76,7 @@ class SessionController < ApplicationController
     # session[:user_id] = nil
     # session.delete(:user_id)
     reset_session
-    redirect_to root_url, :notice => "User logout Successfull"
+    redirect_to root_url, :flash=> {:error => "User logout Successfull"}
   end
 
   def change_pass
@@ -88,10 +88,10 @@ class SessionController < ApplicationController
       puts params[:password]
       @user.password_digest = BCrypt::Password.create(params[:password])
       @user.save
-      redirect_to root_url, :notice => "password updated"
+      redirect_to root_url, :flash => {:notice => "Password updated"}
       # reset_session
     else
-      redirect_to :back, :notice => "cannot change info"
+      redirect_to :back, :flash => {:error => "Password not changed"}
     end
   end
 
@@ -130,10 +130,10 @@ class SessionController < ApplicationController
     # end
     if @user.update(:first_name => params[:first_name], :last_name => params[:last_name],:email => params[:email] ,:phone => params[:phone])
       @user.save
-      redirect_to root_url, :notice => "info updated"
+      redirect_to root_url, :flash => {:success => "Info updated"}
       # reset_session
     else
-      redirect_to :back, :notice => "cannot change info"
+      redirect_to :back, :flash => {:error => "Info cannot be updated"}
     end
   end
 
@@ -150,5 +150,35 @@ class SessionController < ApplicationController
   #     redirect_to :back, :notice => "cannot change info"
   #   end
   # end
+
+
+  def findemail
+
+    begin
+    #  response.headers['X-CSRF-Token'] = form_authenticity_token
+     User.find_by_email(params[:email]).id
+     render :json => false
+   rescue Exception => e
+     render :json => true
+   end
+      # @user = User.find_by_email(params[:email])
+      # puts params([:email])
+      # respond_to do |format|
+      #   format.json {render :json => {email_exists: @user.present?}}
+  end
+
+
+  def reset_user
+    begin
+    #  response.headers['X-CSRF-Token'] = form_authenticity_token
+     User.find_by_email(params[:email]).id
+     puts "55555555555555555555555555555555555555555555"
+     puts params[:email]
+     render :json => true
+    rescue Exception => e
+     render :json => false
+    end
+
+  end
 
 end

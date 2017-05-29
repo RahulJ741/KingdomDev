@@ -143,7 +143,7 @@
 										<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 								  	<div class="form-group">
 
-								      <input type="email" class="form-control" name="email"  placeholder="Email">
+								      <input type="email" class="form-control" name="email"  id="sign_up_email" placeholder="Email">
 
 
 								  	</div>
@@ -351,7 +351,8 @@ $(document).ready(function(){
 
 		<script>
     $(document).ready(function(){
-		//alert('debug');
+			var email_val = ('#sign_up_email').val()
+		alert(email_val);
 		$("#reset").validate({
 			rules:{
 				email:{
@@ -389,6 +390,7 @@ $(document).ready(function(){
 		});
 
 		$("#sign_up_form").validate({
+
 	    rules: {
 	      first_name: {
 	        required: true
@@ -410,7 +412,13 @@ $(document).ready(function(){
 	    },
 	    email: {
 	      required: true,
-	      email: true
+	      email: true,
+				remote: {
+            url: '/findemail/'+("#sign_up_email").val(),
+            type: "POST",
+            dataType: "json"
+        }
+
 	    }
 
 	    },
@@ -533,7 +541,7 @@ $(document).ready(function(){
                 }
 
   });
-	map();
+	// map();
     })  ;
   </script>
 
@@ -553,9 +561,9 @@ $(document).ready(function(){
 "hideMethod": "fadeOut"
 };
 
-// toastr.success('Have fun storming the castle!', 'Miracle Max Says');
+toastr.success('<%= flash[:success]%>');
 	</script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyAsowX76foG-80TNWehN5siv96XN8sF_gk"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyA7_RijdhWBW5ErhunL2NWwGVWJM2MD65g"></script>
 <script>
 
 var map;
@@ -677,79 +685,80 @@ jQuery(document).ready(function ($) {
 
 			});
 
-				var jssor_1_SlideshowTransitions = [
-				  {$Duration:1200,x:0.3,$During:{$Left:[0.3,0.7]},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,x:-0.3,$SlideOut:true,$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,x:-0.3,$During:{$Left:[0.3,0.7]},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,x:0.3,$SlideOut:true,$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,y:0.3,$During:{$Top:[0.3,0.7]},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,y:-0.3,$SlideOut:true,$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,y:-0.3,$During:{$Top:[0.3,0.7]},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,y:0.3,$SlideOut:true,$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,x:0.3,$Cols:2,$During:{$Left:[0.3,0.7]},$ChessMode:{$Column:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,x:0.3,$Cols:2,$SlideOut:true,$ChessMode:{$Column:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,y:0.3,$Rows:2,$During:{$Top:[0.3,0.7]},$ChessMode:{$Row:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,y:0.3,$Rows:2,$SlideOut:true,$ChessMode:{$Row:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,y:0.3,$Cols:2,$During:{$Top:[0.3,0.7]},$ChessMode:{$Column:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,y:-0.3,$Cols:2,$SlideOut:true,$ChessMode:{$Column:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,x:0.3,$Rows:2,$During:{$Left:[0.3,0.7]},$ChessMode:{$Row:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,x:-0.3,$Rows:2,$SlideOut:true,$ChessMode:{$Row:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,x:0.3,y:0.3,$Cols:2,$Rows:2,$During:{$Left:[0.3,0.7],$Top:[0.3,0.7]},$ChessMode:{$Column:3,$Row:12},$Easing:{$Left:$Jease$.$InCubic,$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,x:0.3,y:0.3,$Cols:2,$Rows:2,$During:{$Left:[0.3,0.7],$Top:[0.3,0.7]},$SlideOut:true,$ChessMode:{$Column:3,$Row:12},$Easing:{$Left:$Jease$.$InCubic,$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,$Delay:20,$Clip:3,$Assembly:260,$Easing:{$Clip:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,$Delay:20,$Clip:3,$SlideOut:true,$Assembly:260,$Easing:{$Clip:$Jease$.$OutCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,$Delay:20,$Clip:12,$Assembly:260,$Easing:{$Clip:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-				  {$Duration:1200,$Delay:20,$Clip:12,$SlideOut:true,$Assembly:260,$Easing:{$Clip:$Jease$.$OutCubic,$Opacity:$Jease$.$Linear},$Opacity:2}
-				];
+				// var jssor_1_SlideshowTransitions = [
+				//   {$Duration:1200,x:0.3,$During:{$Left:[0.3,0.7]},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,x:-0.3,$SlideOut:true,$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,x:-0.3,$During:{$Left:[0.3,0.7]},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,x:0.3,$SlideOut:true,$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,y:0.3,$During:{$Top:[0.3,0.7]},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,y:-0.3,$SlideOut:true,$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,y:-0.3,$During:{$Top:[0.3,0.7]},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,y:0.3,$SlideOut:true,$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,x:0.3,$Cols:2,$During:{$Left:[0.3,0.7]},$ChessMode:{$Column:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,x:0.3,$Cols:2,$SlideOut:true,$ChessMode:{$Column:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,y:0.3,$Rows:2,$During:{$Top:[0.3,0.7]},$ChessMode:{$Row:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,y:0.3,$Rows:2,$SlideOut:true,$ChessMode:{$Row:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,y:0.3,$Cols:2,$During:{$Top:[0.3,0.7]},$ChessMode:{$Column:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,y:-0.3,$Cols:2,$SlideOut:true,$ChessMode:{$Column:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,x:0.3,$Rows:2,$During:{$Left:[0.3,0.7]},$ChessMode:{$Row:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,x:-0.3,$Rows:2,$SlideOut:true,$ChessMode:{$Row:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,x:0.3,y:0.3,$Cols:2,$Rows:2,$During:{$Left:[0.3,0.7],$Top:[0.3,0.7]},$ChessMode:{$Column:3,$Row:12},$Easing:{$Left:$Jease$.$InCubic,$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,x:0.3,y:0.3,$Cols:2,$Rows:2,$During:{$Left:[0.3,0.7],$Top:[0.3,0.7]},$SlideOut:true,$ChessMode:{$Column:3,$Row:12},$Easing:{$Left:$Jease$.$InCubic,$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,$Delay:20,$Clip:3,$Assembly:260,$Easing:{$Clip:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,$Delay:20,$Clip:3,$SlideOut:true,$Assembly:260,$Easing:{$Clip:$Jease$.$OutCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,$Delay:20,$Clip:12,$Assembly:260,$Easing:{$Clip:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+				//   {$Duration:1200,$Delay:20,$Clip:12,$SlideOut:true,$Assembly:260,$Easing:{$Clip:$Jease$.$OutCubic,$Opacity:$Jease$.$Linear},$Opacity:2}
+				// ];
 
-				var jssor_1_options = {
-				  $AutoPlay: true,
-				  $SlideshowOptions: {
-					$Class: $JssorSlideshowRunner$,
-					$Transitions: jssor_1_SlideshowTransitions,
-					$TransitionsOrder: 1
-				  },
-				  $ArrowNavigatorOptions: {
-					$Class: $JssorArrowNavigator$
-				  },
-				  $ThumbnailNavigatorOptions: {
-					$Class: $JssorThumbnailNavigator$,
-					$Cols: 10,
-					$SpacingX: 8,
-					$SpacingY: 8,
-					$Align: 360
-				  }
-				};
-
-				var jssor_5_slider = new $JssorSlider$("jssor_5", jssor_1_options);
-				var jssor_4_slider = new $JssorSlider$("jssor_4", jssor_1_options);
-				var jssor_3_slider = new $JssorSlider$("jssor_3", jssor_1_options);
-				var jssor_2_slider = new $JssorSlider$("jssor_2", jssor_1_options);
-				var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
-
-				//responsive code begin
-				//you can remove responsive code if you don't want the slider scales while window resizes
-				function ScaleSlider() {
-					var refSize = jssor_2_slider.$Elmt.parentNode.clientWidth;
-					var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
-					if (refSize) {
-						refSize = Math.min(refSize, 1200);
-						jssor_5_slider.$ScaleWidth(refSize);
-						jssor_4_slider.$ScaleWidth(refSize);
-						jssor_3_slider.$ScaleWidth(refSize);
-						jssor_2_slider.$ScaleWidth(refSize);
-						jssor_1_slider.$ScaleWidth(refSize);
-					}
-					else {
-						window.setTimeout(ScaleSlider, 30);
-					}
-				}
-				ScaleSlider();
-				$(window).bind("load", ScaleSlider);
-				$(window).bind("resize", ScaleSlider);
-				$(window).bind("orientationchange", ScaleSlider);
-				//responsive code end
+				// var jssor_1_options = {
+				//   $AutoPlay: true,
+				//   $SlideshowOptions: {
+				// 	$Class: $JssorSlideshowRunner$,
+				// 	$Transitions: jssor_1_SlideshowTransitions,
+				// 	$TransitionsOrder: 1
+				//   },
+				//   $ArrowNavigatorOptions: {
+				// 	$Class: $JssorArrowNavigator$
+				//   },
+				//   $ThumbnailNavigatorOptions: {
+				// 	$Class: $JssorThumbnailNavigator$,
+				// 	$Cols: 10,
+				// 	$SpacingX: 8,
+				// 	$SpacingY: 8,
+				// 	$Align: 360
+				//   }
+				// };
 			});
+
+			// 	var jssor_5_slider = new $JssorSlider$("jssor_5", jssor_1_options);
+			// 	var jssor_4_slider = new $JssorSlider$("jssor_4", jssor_1_options);
+			// 	var jssor_3_slider = new $JssorSlider$("jssor_3", jssor_1_options);
+			// 	var jssor_2_slider = new $JssorSlider$("jssor_2", jssor_1_options);
+			// 	var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+			//
+			// 	//responsive code begin
+			// 	//you can remove responsive code if you don't want the slider scales while window resizes
+			// 	function ScaleSlider() {
+			// 		var refSize = jssor_2_slider.$Elmt.parentNode.clientWidth;
+			// 		var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+			// 		if (refSize) {
+			// 			refSize = Math.min(refSize, 1200);
+			// 			jssor_5_slider.$ScaleWidth(refSize);
+			// 			jssor_4_slider.$ScaleWidth(refSize);
+			// 			jssor_3_slider.$ScaleWidth(refSize);
+			// 			jssor_2_slider.$ScaleWidth(refSize);
+			// 			jssor_1_slider.$ScaleWidth(refSize);
+			// 		}
+			// 		else {
+			// 			window.setTimeout(ScaleSlider, 30);
+			// 		}
+			// 	}
+			// 	ScaleSlider();
+			// 	$(window).bind("load", ScaleSlider);
+			// 	$(window).bind("resize", ScaleSlider);
+			// 	$(window).bind("orientationchange", ScaleSlider);
+			// 	//responsive code end
+			// });
 </script>
 
 		<script>
