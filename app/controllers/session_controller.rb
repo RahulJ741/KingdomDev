@@ -8,7 +8,7 @@ class SessionController < ApplicationController
     if @user &&  @user.authenticate(params[:password]) && @user.active
       puts @user.active
       session[:user_id] = @user.id
-      redirect_to root_url, :flash => {:success => "Login Successfull"}
+      redirect_to root_url, :flash => {:success => "Login Successfully"}
       puts "1111111111111111111111111111111111111"
       puts session[:user_id]
     else
@@ -76,7 +76,7 @@ class SessionController < ApplicationController
     # session[:user_id] = nil
     # session.delete(:user_id)
     reset_session
-    redirect_to root_url, :flash=> {:error => "User logout Successfull"}
+    redirect_to root_url, :flash=> {:error => "User logout Successfully"}
   end
 
   def change_pass
