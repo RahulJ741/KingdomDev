@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170525061904) do
+ActiveRecord::Schema.define(version: 20170529121327) do
 
   create_table "athletics_supporters_package_price_list_all", primary_key: "serial_no", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string  "athletics_supporter_packages", limit: 10, null: false
@@ -23,8 +23,12 @@ ActiveRecord::Schema.define(version: 20170525061904) do
     t.string  "price_gbp",                    limit: 8,  null: false
   end
 
-  create_table "country", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.string "name", limit: 50, null: false
+  create_table "countries", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string   "name",              limit: 50, null: false
+    t.string   "pics_file_name"
+    t.string   "pics_content_type"
+    t.integer  "pics_file_size"
+    t.datetime "pics_updated_at"
   end
 
   create_table "db_event_data", primary_key: "ev_id", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
@@ -62,7 +66,7 @@ ActiveRecord::Schema.define(version: 20170525061904) do
     t.boolean  "req_status",                       default: false,                      null: false
   end
 
-  create_table "exclisive_second", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "exclisive_second_old", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "country",    limit: 50, null: false
     t.string   "thumb",      limit: 50, null: false
     t.string   "is_active",  limit: 50, null: false
@@ -70,10 +74,33 @@ ActiveRecord::Schema.define(version: 20170525061904) do
     t.integer  "ord_by"
   end
 
-  create_table "exclusive", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "exclusive_old", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "country",   limit: 50, null: false
     t.string "thumb",     limit: 50, null: false
     t.string "is_active", limit: 50, null: false
+  end
+
+  create_table "exclusive_seconds", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string   "country",           null: false
+    t.boolean  "is_active"
+    t.string   "pics_file_name"
+    t.string   "pics_content_type"
+    t.integer  "pics_file_size"
+    t.datetime "pics_updated_at"
+    t.integer  "order_by"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  create_table "exclusives", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string   "name",              null: false
+    t.boolean  "is_active"
+    t.string   "pics_file_name"
+    t.string   "pics_content_type"
+    t.integer  "pics_file_size"
+    t.datetime "pics_updated_at"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "groups", unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
