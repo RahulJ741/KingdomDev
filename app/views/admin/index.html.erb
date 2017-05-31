@@ -1,0 +1,29 @@
+  <%= render 'header'%>
+        <!--/span-->
+        <div class="col-md-12">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <td>Name</td>
+              <td>Email</td>
+              <td>phone</td>
+              <td>created_at</td>
+              <td>Active</td>
+            </tr>
+          </thead>
+          <tbody>
+            <% @users.each do |y|%>
+            <tr>
+              <td><%= y.first_name + y.last_name %></td>
+              <td><%= y.email %></td>
+              <td><%= y.phone %></td>
+              <td><%= y.created_on %></td>
+              <td><%= y.active %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+        </div>
+    </div>
+  </div>
+<%= render 'footer'%>

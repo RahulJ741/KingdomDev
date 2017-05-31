@@ -41,5 +41,12 @@ Rails.application.routes.draw do
   # get 'authf' => 'session#authf'
 
 
+  # get "admin" => 'admin#index'
+  # get 'room' => 'admin#rooms'
+  # get 'hotels' => 'admin#hotels'
+  # get 'features' => 'admin#features'
+  # get 'room_feature' => 'admin#room_feature'
+
+
 
 end

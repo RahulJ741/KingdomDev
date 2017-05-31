@@ -35,9 +35,45 @@
           <p><samp><img src="/assets/images/cart-img-4.png" class="puschase-icon4" alt=""> WHY PURCHASE FROM KSG  &nbsp;    &nbsp;  &nbsp;  &nbsp; </samp>We are a registered travel agency with our head office in Australia. We have personally inspected each and every property we are offering to ensure the standards and expectations are to our clients expectations. </p>
 
 
+					<% @hotels.each do |g| %>
+					<!-- <div class="col-xs-12 col-sm-3 col-md-3 pad_none">
+						<a href="Javascript:void(0)" onclick="getHotel('synergy-broadbeach')">
+							<div class="col-md-12 pad_none pallazo-versace-hotel-main">
+								<img src="<%= g.pics %>" alt="" class="pallazo4-versace-img3">
+								<div class="col-xs-12 pad_none pallazo-versace-ratig-out4">
+									<h4><%= g.name %></h4>
+										<span>
+											<% for i in 1..g.star_rating%>
+											<i class="fa fa-star sim-stars" aria-hidden="true"></i>
+											<%end%>
+										</span>
+								</div>
+							</div>
+						</a>
+						</div> -->
+						<div class="col-xs-12 pad_none pallazo-versace-hotel-main">
+							<a href="Javascript:void(0)" onclick="getHotel('palazzo-versace')">
+							<img src="<%= g.pics %>" alt="" class="pallazo4-versace-img3">
+							<div class="col-xs-12 pad_none pallazo-versace-ratig-out4">
+								<h3><%= g.name %></h3>
+								<span>
+									<% for i in 1..g.star_rating%>
+									<i class="fa fa-star sim-stars" aria-hidden="true"></i>
+									<%end%>
+								</span>
+							</div>
+							</a>
+						</div>
+					<%end%>
+
 
 
           </div>
 
         </div>
+
+			</div>
+	</div>
+</div>
+</div>
 <%= render 'footer'%>

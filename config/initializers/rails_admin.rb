@@ -38,4 +38,6 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+  config.excluded_models = ["RoomsFeature", "Room"]
+  # config.excluded_models = ["Room"]
 end

@@ -107,9 +107,11 @@ class StaticpageController < ApplicationController
   end
 
   def accommodation
+    @hotels = Hotel.all
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
+
     else
       @current_user = nil
     end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170529121327) do
+ActiveRecord::Schema.define(version: 20170531115518) do
 
   create_table "athletics_supporters_package_price_list_all", primary_key: "serial_no", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string  "athletics_supporter_packages", limit: 10, null: false
@@ -103,9 +103,43 @@ ActiveRecord::Schema.define(version: 20170529121327) do
     t.datetime "updated_at",        null: false
   end
 
+  create_table "features", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string   "name",              null: false
+    t.string   "pics_file_name"
+    t.string   "pics_content_type"
+    t.integer  "pics_file_size"
+    t.datetime "pics_updated_at"
+    t.string   "description"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
   create_table "groups", unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name",        limit: 20,  null: false
     t.string "description", limit: 100, null: false
+  end
+
+  create_table "hotel_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.integer  "hotel_id",          null: false
+    t.string   "pics_file_name"
+    t.string   "pics_content_type"
+    t.integer  "pics_file_size"
+    t.datetime "pics_updated_at"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  create_table "hotels", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string   "name",                            null: false
+    t.string   "address",                         null: false
+    t.integer  "star_rating"
+    t.text     "description",       limit: 65535
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "pics_file_name"
+    t.string   "pics_content_type"
+    t.integer  "pics_file_size"
+    t.datetime "pics_updated_at"
   end
 
   create_table "hotels_amenities", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
@@ -172,7 +206,7 @@ ActiveRecord::Schema.define(version: 20170529121327) do
     t.integer "UpperFloorsStairs"
   end
 
-  create_table "hotels_images", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "hotels_images_old", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer "for_hotel_id",               null: false
     t.string  "for_hotel_name", limit: 100, null: false
     t.string  "image1",         limit: 100, null: false
@@ -324,6 +358,27 @@ ActiveRecord::Schema.define(version: 20170529121327) do
     t.string  "aud_total",            limit: 11, null: false
     t.string  "gbp_price_per_person", limit: 10, null: false
     t.string  "gbp_total",            limit: 11, null: false
+  end
+
+  create_table "rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string   "name",                        null: false
+    t.text     "description",   limit: 65535
+    t.integer  "hotel_id"
+    t.text     "details",       limit: 65535
+    t.string   "type"
+    t.integer  "size"
+    t.string   "layout"
+    t.boolean  "breakfast"
+    t.integer  "max_occupancy"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  create_table "rooms_features", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.integer  "room_id"
+    t.integer  "feature_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "settings", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
