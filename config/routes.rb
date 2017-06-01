@@ -38,6 +38,8 @@ Rails.application.routes.draw do
 
   match 'findemail' => 'session#findemail', :via => [:get, :post]
   match 'reset_user' => 'session#reset_user', :via => [:get, :post]
+
+  get 'hotel_info/:id' => 'hotel#info'
   # get 'authf' => 'session#authf'
 
 

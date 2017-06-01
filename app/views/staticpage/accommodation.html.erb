@@ -2,7 +2,7 @@
 <section class="banner-main accomodation-banner">
 	<div class="container">
 		<div class="row">
-			<div class=" pad_none banner-inner">
+			<div class=" pad_none banner-inner"><br><br>
 				<h2 class="fadeInUp wow" data-wow-duration="2s" data-wow-delay="0s">ACCOMMODATION </h2>
 				<p class="fadeInUp wow" data-wow-duration="2s" data-wow-delay="0.3s">KSG has sourced 15 properties ranging from 3.5* to luxury 5*. With both hotels and self-service apartments KSG has the right home away from home for everyone. </p>
 				<!--
@@ -15,65 +15,80 @@
 	</div>
 </section>
 
-<div class="container">
-<div class="row">
-  <div class="exclusive-reprensentatio-inner accommodation-main-inner4">
-    <h2 class="fadeInUp wow" data-wow-duration="2s" data-wow-delay="0s">Accommodation</h2>
-      <div class="col-xs-12 pad_none accommodation-hotels-main-out4">
-        <!-- scroll -->
-        <div class="col-xs-12 pad_none accommodation-scrolling-out">
-          <div class="site_fixed_left">
-          <p>Kingdom Sports Group has established itself as one of the leading agents that can offer an affordable and a diverse range of accommodation for the Gold Coast 2018 Commonwealth Games.</p>
-          <p>For the last two years, we have been working on the ground in Australia with various partners and properties in securing the necessary accommodation that our clients need and had requested in advance.</p>
-          <p>Already before we have gone on public release, over 35% of our existing inventory was pre-sold in advance of the launch, but do not despair, we still have a large section of accommodation on both the Gold Coast and Brisbane we can offer our clients.</p>
-          <p>One thing to remember about the Gold Coast is it is a family and fun destination within Australia. This means although there might be a large variety of accommodation available, sometimes the quality and standard below a certain level is not always the best. This is why we decided to not offer any accommodation lower than 3.5 Stars. Below this star rating we unfortunately cannot guarantee either the service or the cleanliness of a property.</p>
-          <p>There are two locations we can offer for accommodation. </p>
-          <p>If you select Brisbane (pop. 2.35 million), it will take approximately 1 hour to travel to some of the venues (apart from Cycling and Shooting which are held in Brisbane), and is a cheaper and more affordable option for some clients and groups.</p>
-          <p>The city of the Gold Coast (pop. 570,000), as host city of the Commonwealth Games is more expensive, but your travel times to the various sports are much less, and we have a variety of accommodation to suit all tastes.</p>
+<div class="container" id="accommodation_body" style="background-color: #F0F0F0;">
+	<div class="row">
+		<div class="col col-md-3" style="padding-top:2%;">
+			<div id="panel" class="">
+          <div class="well">
+            <form class="" action="index.html" method="post">
+							<% if @current_user.present? %>
+            	<input type="text" placeholder="<%= @current_user.first_name + @current_user.last_name %>" disabled="true" style="border:none; background:transparent;"><br>
+							<%else%>
+							<input type="text" placeholder="" disabled="true" style="border:none; background:transparent;"><br>
+							<%end%>
+							<label for="event">Stars</label><br>
+								<select>
+									<option value="">Choose</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
 
-          <p><samp><img src="/assets/images/person-icon-img.png" class="puschase-icon4" alt=""> WHO CAN PURCHASE  &nbsp;    &nbsp;  &nbsp;  &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp; &nbsp;</samp> Anyone in the world</p>
-          <p><samp><img src="/assets/images/cart-img-4.png" class="puschase-icon4" alt=""> WHY PURCHASE FROM KSG  &nbsp;    &nbsp;  &nbsp;  &nbsp; </samp>We are a registered travel agency with our head office in Australia. We have personally inspected each and every property we are offering to ensure the standards and expectations are to our clients expectations. </p>
+								</select><br><hr>
+								<!-- <label for="start_date">Start Date</label>
+								<input type="date" name="start_date" id="start_date"><br>
+								<label for="end_date">End Date</label><br>
+								<input type="date" name="end_date" id="end_date"> -->
 
-
-					<% @hotels.each do |g| %>
-					<!-- <div class="col-xs-12 col-sm-3 col-md-3 pad_none">
-						<a href="Javascript:void(0)" onclick="getHotel('synergy-broadbeach')">
-							<div class="col-md-12 pad_none pallazo-versace-hotel-main">
-								<img src="<%= g.pics %>" alt="" class="pallazo4-versace-img3">
-								<div class="col-xs-12 pad_none pallazo-versace-ratig-out4">
-									<h4><%= g.name %></h4>
-										<span>
-											<% for i in 1..g.star_rating%>
-											<i class="fa fa-star sim-stars" aria-hidden="true"></i>
-											<%end%>
-										</span>
-								</div>
-							</div>
-						</a>
-						</div> -->
-						<div class="col-xs-12 pad_none pallazo-versace-hotel-main">
-							<a href="Javascript:void(0)" onclick="getHotel('palazzo-versace')">
-							<img src="<%= g.pics %>" alt="" class="pallazo4-versace-img3">
-							<div class="col-xs-12 pad_none pallazo-versace-ratig-out4">
-								<h3><%= g.name %></h3>
-								<span>
-									<% for i in 1..g.star_rating%>
-									<i class="fa fa-star sim-stars" aria-hidden="true"></i>
-									<%end%>
-								</span>
-							</div>
-							</a>
-						</div>
-					<%end%>
-
-
-
+								<button type="button" name="button" class="btn btn-warning btn-block" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;">Apply</button>
+            </form>
           </div>
+      </div>
+		</div>
+		<div class="col col-md-9" >
+			<% @hotels.each do |g| %>
+			<div class="row" style="background-color:white; margin-top:3%; margin-bottom:2%; margin-right:0%;">
+				<div class="col col-md-4">
+					<img width="150" height="150" alt="<%= g.pics_file_name %>" src="<%= g.pics%>" style="width:100%; padding-top:4%; padding-bottom:4%;">
+				</div>
 
-        </div>
+				<div class="col col-md-8">
+					<div class="clearfix">
+					<h3 class="box-title pull-left"><%= g.name %></h3>
+					</div>
+
+					<div class="col-xs-5 date">
+					 <div>
+								<address class="">
+									<%= g.address %>
+								</address>
+					 </div>
+
+					</div>
+					<div class="col-xs-5 date">
+						 <span class="skin-color">
+							 <% for i in 1..g.star_rating%>
+									<i class="fa fa-star sim-stars" aria-hidden="true"></i>
+								<%end%>
+							</span><br>
+
+					</div>
+					<div class="col xs-4 pull-right">
+						<a href="/hotel_info/<%= g.id %>"><button type="button" class="btn btn-warning" name="button" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;"><i class="fa fa-eye" aria-hidden="true"></i>
+ View</button></a>
+					</div>
+				</div>
+
+
 
 			</div>
+					<%end%>
+
 	</div>
-</div>
+
+
+	</div>
+
 </div>
 <%= render 'footer'%>

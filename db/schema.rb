@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170531115518) do
+ActiveRecord::Schema.define(version: 20170601103408) do
 
   create_table "athletics_supporters_package_price_list_all", primary_key: "serial_no", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string  "athletics_supporter_packages", limit: 10, null: false
@@ -140,6 +140,7 @@ ActiveRecord::Schema.define(version: 20170531115518) do
     t.string   "pics_content_type"
     t.integer  "pics_file_size"
     t.datetime "pics_updated_at"
+    t.string   "video_link"
   end
 
   create_table "hotels_amenities", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
@@ -365,7 +366,7 @@ ActiveRecord::Schema.define(version: 20170531115518) do
     t.text     "description",   limit: 65535
     t.integer  "hotel_id"
     t.text     "details",       limit: 65535
-    t.string   "type"
+    t.string   "rooms_type"
     t.integer  "size"
     t.string   "layout"
     t.boolean  "breakfast"
