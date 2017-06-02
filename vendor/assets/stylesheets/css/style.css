@@ -47,7 +47,7 @@ header.fixed {
 
 .header_main-part
 {
-	
+
 }
 
 .logo-main
@@ -68,28 +68,28 @@ header.fixed  .navigation-part .nav_bar li a {
   font-size: 18px;
   transition: all 1s ease 0s;
 }
-.logo-main img 
+.logo-main img
 {
   width: 390px;
   transition: all 1s ease 0s;
 }
-.navbar-collapse 
+.navbar-collapse
 {
   padding-left: 0px !important;
   padding-right: 0px !important;
 }
-.navigation-part 
+.navigation-part
 {
   margin-top: 30px;
   text-align:right;
-  
+
 }
 .navbar-default {
   background-color: rgba(0, 0, 0, 0);
   border-color: rgba(0, 0, 0, 0);
   float: right;
 }
-.navigation-part .nav_bar li 
+.navigation-part .nav_bar li
 {
   float: left;
   margin-right:38px !important;
@@ -114,7 +114,7 @@ header.fixed  .navigation-part .nav_bar li a {
   padding:0px !important;
   min-width: 200px;
   top: 28px;
-  
+
 }
 
 .dropdown-menu::after {
@@ -170,7 +170,7 @@ header.fixed  .navigation-part .nav_bar li a {
 .navigation-part .nav_bar li a:hover
 {
 	color:#f5c438;
-	
+
 }
 
 
@@ -349,7 +349,7 @@ header.fixed  .navigation-part .nav_bar li a {
 
 .exclusive-flages-out
 {
-	
+
 }
 .exclusive-firts-country {
   background: #ffffff none repeat scroll 0 0;
@@ -452,7 +452,7 @@ header.fixed  .navigation-part .nav_bar li a {
 }
 
 /* .guaranteed-part1 {
-  background: rgba(0, 0, 0, 0) url("../images/shopping-big-img2.jpg") no-repeat scroll center top / cover ; 
+  background: rgba(0, 0, 0, 0) url("../images/shopping-big-img2.jpg") no-repeat scroll center top / cover ;
   border-radius: 4px;
   margin: -324px 0 0;
   padding: 20px !important;
@@ -464,7 +464,7 @@ header.fixed  .navigation-part .nav_bar li a {
   position: relative;
 }
 
-.guaranteed-part1-imgnew2 img 
+.guaranteed-part1-imgnew2 img
 {
   height: 100%;
   width: 100%;
@@ -644,9 +644,9 @@ header.fixed  .navigation-part .nav_bar li a {
   height: 525px;
   width: 92%;
 }
-/* 
+/*
 .sales-permitted-outer {
-   background: rgba(0, 0, 0, 0) url("../images/sales-permitted-img2.png") no-repeat scroll center top / cover ; 
+   background: rgba(0, 0, 0, 0) url("../images/sales-permitted-img2.png") no-repeat scroll center top / cover ;
   display: table;
   margin: 20px 0 8px;
   text-align: center;
@@ -673,7 +673,7 @@ header.fixed  .navigation-part .nav_bar li a {
   float: none;
 }
 
-.sales3-permitted-inner h3 
+.sales3-permitted-inner h3
 {
   color: #f4f4f4;
   font-family: "proxima_novabold";
@@ -728,7 +728,7 @@ header.fixed  .navigation-part .nav_bar li a {
   position:relative;
 }
 
-.accommodation1-main a img 
+.accommodation1-main a img
 {
   border-radius: 4px 0 0 0;
   height: auto;
@@ -1038,7 +1038,7 @@ header.fixed  .navigation-part .nav_bar li a {
 
 .accomdation-sales-permited-main
 {
-	
+
 }
 
 .accomdation-sales-inner-left
@@ -1057,7 +1057,7 @@ header.fixed  .navigation-part .nav_bar li a {
 display: table-cell;
   float: none;
   text-align: center;
-  vertical-align: middle;	
+  vertical-align: middle;
 }
 .accomdation-sales-inner-left-bottom h3 {
   color: #f4f4f4;
@@ -1276,7 +1276,7 @@ footer
 .footer-inner-section2
 {
 	text-align:left;
-	
+
 }
 
 
@@ -1358,19 +1358,19 @@ footer
 
 .map-marker-footer
 {
-	color:#f5ba12 !important; 
+	color:#f5ba12 !important;
 	font-size:16px !important;
 }
 
 .phone3
 {
-	color:#f5ba12 !important; 
+	color:#f5ba12 !important;
 	font-size:16px !important;
 }
 
 .envelope2
 {
-	color:#f5ba12 !important; 
+	color:#f5ba12 !important;
 	font-size:16px !important;
 }
 .follow-us-main2
@@ -1395,7 +1395,7 @@ footer
 	margin:0px;
 }
 .follow-us-main2 li {
-  background-image: none !important; 
+  background-image: none !important;
   float: left;
   margin: 0 4px 0 0;
   padding: 0 !important;
@@ -1447,7 +1447,7 @@ footer
 
 .accommodation-hotels-main-out4
 {
-	
+
 }
 .accommodation-scrolling-out {
   margin-bottom: 15px;
@@ -1498,7 +1498,7 @@ footer
 	top:0;
 	left:0;
 	bottom:0;
-	right:0; 
+	right:0;
 	height:auto;
 }
 .mCSB_scrollTools .mCSB_draggerRail {
@@ -1529,7 +1529,7 @@ footer
   background: #f5ba13 none repeat scroll 0 0;
   border-radius: 5px;
   /* height: 40px; */
- 
+
 }
 
 /*--- scroll ---*/
@@ -1620,7 +1620,7 @@ footer
 {
 	position:relative;
 	max-width:100%;
-	/* 
+	/*
 	border-radius:4px; */
 }
 
@@ -1713,7 +1713,7 @@ footer
 
 .accomodation0details-view-iiner
 {
-	
+
 }
 
 .pallazo-versace-out3 {
@@ -1786,7 +1786,7 @@ footer
   color:#fff;
 }
 .pallazo-versace-rigth-sec2 p {
- 
+
   color: #474747;
   float: right;
   font-family: "proxima_nova_condensedlight";
@@ -1853,7 +1853,7 @@ footer
             width: 72px;
             height: 72px;
         }
-        
+
         .jssort01 .t {
             position: absolute;
             top: 0;
@@ -1862,7 +1862,7 @@ footer
             height: 100%;
             border: none;
         }
-        
+
         .jssort01 .w {
             position: absolute;
             top: 0px;
@@ -1881,8 +1881,8 @@ footer
   width: 68px;
   cursor: pointer;
 }
-        
-        
+
+
         .jssort01 .pav .c {
             top: 2px;
             _top: 0px;
@@ -1894,22 +1894,22 @@ footer
             _border: #fff 2px solid;
             background-position: 50% 50%;
         }
-        
+
         .jssort01 .p:hover .c {
             top: 0px;
             left: 0px;
             width: 70px;
             height: 70px;
-           
+
         }
-        
+
         .jssort01 .p.pdn .c {
             background-position: 50% 50%;
             width: 68px;
             height: 68px;
-          
+
         }
-      
+
 .fa-angle-left2
 {
 	font-size:45px !important;
@@ -1924,12 +1924,12 @@ footer
 .jssora05l {
   height: auto;
   text-align: center;
-}	
+}
 
 .more-photo-heading3
 {
 	text-align:left;
-} 
+}
 
 .more-photo-heading3 h5
 {
@@ -2057,7 +2057,7 @@ footer
 
 .features-inner-main2
 {
-	
+
 }
 
 .features-inner-main2
@@ -2241,7 +2241,7 @@ footer.accomdation-footer2.event-tickets-footer2 {
 	  font-weight:400;
 }
 
-.event-ticket-main-out4 h5 
+.event-ticket-main-out4 h5
 {
   color: #212121;
  font-family: 'proxima_nova_condensedregular';
@@ -2261,7 +2261,7 @@ footer.accomdation-footer2.event-tickets-footer2 {
   padding: 0 10%;
 }
 
-.info-by0check-Commonwealth2 h5 
+.info-by0check-Commonwealth2 h5
 {
   color: #212121;
  font-family: 'proxima_nova_condensedregular';
@@ -2342,7 +2342,7 @@ footer.accomdation-footer2.event-tickets-footer2 {
 
 .ticket2-applications-lottery-out
 {
-	
+
 }
 .ticket2-applications-fisrt {
   margin: 0 0 10px;
@@ -2354,7 +2354,7 @@ footer.accomdation-footer2.event-tickets-footer2 {
   padding: 35px 0 !important;
   position: relative;
   text-align: center;
-  width: 160px;
+  /*width: 125px;*/
 }
 
 .ticket2-applications-calender2 h4 {
@@ -2380,9 +2380,10 @@ footer.accomdation-footer2.event-tickets-footer2 {
 .ticket2-applications-right-purpel2 {
   background: rgba(0, 0, 0, 0) url("../images/ticket-clender-purpel-bg1.png") no-repeat center top;
   display: table;
-  padding: 10px 10px 10px 50px !important;
+  /*padding: 10px 10px 10px 50px !important;*/
+	padding: 0px 10px 4px 50px !important;
   background-size: cover;
-   width: 86%;
+   /*width: 86%;*/
 }
 .ticket2-applications3-right-inner
 {
@@ -2406,7 +2407,7 @@ footer.accomdation-footer2.event-tickets-footer2 {
 .ticket2-applications3-right-inner p {
   color: #ffffff;
   font-family: "proxima_nova_condensedlight";
-  font-size: 19px;
+  font-size: 18px;
   font-weight: normal;
   line-height: 25px;
   margin: 6px 0 0 0;
@@ -2485,7 +2486,7 @@ footer.accomdation-footer2.event-tickets-footer2 {
   position:relative;
 }
 
-.table-heading-bg2 
+.table-heading-bg2
 {
   background: #f5ba13;
 }
@@ -2500,7 +2501,7 @@ footer.accomdation-footer2.event-tickets-footer2 {
   text-transform: uppercase;
 }
 
-.condition-of-sale-table-out td 
+.condition-of-sale-table-out td
 {
   color: #022121;
    font-family: 'proxima_nova_condensedregular';
@@ -2665,7 +2666,7 @@ footer.accomdation-footer2.event-tickets-footer2 {
   position:relative;
 }
 
-.event-code-arrow-bg2 
+.event-code-arrow-bg2
 {
   position: absolute;
   right: 8px;
@@ -2708,7 +2709,7 @@ footer.accomdation-footer2.event-tickets-footer2 {
   top: -22px;
 }
 
-/* 
+/*
 .ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span {
   display: none !important;
 }
@@ -2740,7 +2741,7 @@ footer.accomdation-footer2.event-tickets-footer2 {
 .scroll-insert4 {
   display: block;
   float: left;
- 
+
   width: 100%;
 
 }
@@ -2779,7 +2780,7 @@ footer.accomdation-footer2.event-tickets-footer2 {
   background-size: 41%;
 }
 
-/* 
+/*
 
 .faq-main-outer4 {
   background: #f8f8f8 url("../images/faq2-design-bgnw.png") no-repeat scroll left 0px / 26% auto;
@@ -2818,18 +2819,18 @@ footer.accomdation-footer2.event-tickets-footer2 {
   content: "";
   background:url(../images/yallow-accordian-bg.png) center right no-repeat;
   height:30px;
-  width:30px; 
+  width:30px;
 
 } */
 /* .accordion-toggle{
  background:url(../images/yallow-accordian-bg.png) center top no-repeat;
   height:30px;
-  width:30px; 
+  width:30px;
 }
 .accordion-toggle.bg-none{
 	background:url(../images/black-plus-img2.png) center top no-repeat;
   height:30px;
-  width:30px; 
+  width:30px;
 } */
 /* .faq-main-inner-part2 .panel-heading .accordion-toggle::after {
   content: "";
@@ -2837,7 +2838,7 @@ footer.accomdation-footer2.event-tickets-footer2 {
   font-family: "Glyphicons Halflings";
   background:url(../images/black-plus-img2.png) center top no-repeat;
   height:30px;
-  width:30px; 
+  width:30px;
 }
  */
 
@@ -2889,7 +2890,7 @@ footer.accomdation-footer2.event-tickets-footer2 {
   color: #f5ba13;
   text-decoration: underline;
 }
-.faq-main-inner-part2 .panel-body  p span 
+.faq-main-inner-part2 .panel-body  p span
 {
   color: #6f265b;
   font-family: "Roboto",sans-serif;
@@ -2907,7 +2908,7 @@ footer.accomdation-footer2.event-tickets-footer2 {
 	font-weight:600px;
 }
 
-.faq-main-inner-part2 .faq-main-outer .contact-us-message-part 
+.faq-main-inner-part2 .faq-main-outer .contact-us-message-part
 {
   margin-bottom:0px;
 }
@@ -3089,7 +3090,7 @@ footer.pravacy-policy-bg-footer2 {
 
 
 /* =================== 24 April 2017 TOUR PAGE START ===================================*/
-.banner-main.tour-banner 
+.banner-main.tour-banner
 {
   background: rgba(0, 0, 0, 0) url("../images/tour-banner2.jpg") no-repeat scroll center top / cover ;
   float: left;
@@ -3100,7 +3101,7 @@ footer.pravacy-policy-bg-footer2 {
 }
 
 
-.tour-main-outer4 
+.tour-main-outer4
 {
   background: #ffffff;
   float: left;
@@ -3154,7 +3155,7 @@ footer.pravacy-policy-bg-footer2 {
     padding: 10px;
     text-transform: uppercase;
     color: #fff;
-    text-decoration: none; 
+    text-decoration: none;
 	box-shadow: none;
 	 border: 0 none;
 }
@@ -3170,14 +3171,14 @@ footer.pravacy-policy-bg-footer2 {
   width: 100%;
 }
 
-.tour-main-inner-part2  .tab-content 
+.tour-main-inner-part2  .tab-content
 {
   /*   padding: 20px; */
     display: none;
 }
 
 .tour-main-inner-part2  #tab-1 {
- display: block;   
+ display: block;
 }
 
 .glorious-gold-coast-img1
@@ -3275,7 +3276,7 @@ footer.pravacy-policy-bg-footer2 {
   float: none;
 }
 .tour-heihligted-part2-left {
-  
+
   padding: 0 70px 0 0 !important;
 }
 /* .tour-heigh-day1 {
@@ -3310,7 +3311,7 @@ footer.pravacy-policy-bg-footer2 {
   margin-top: 35px;
 	text-transform:capitalize;
 	font-size:22px;
-	color:#fff; 
+	color:#fff;
 	font-family: 'proxima_novabold';
 	font-weight:bold;
 }
@@ -3403,7 +3404,7 @@ footer.pravacy-policy-bg-footer2 {
 }
 .tour-what-to-bring-out2
 {
-	
+
 }
 .tour-what-to-bring-out2 h3 {
   color: #212121;
@@ -3466,7 +3467,7 @@ footer.accomdation-footer2.tour-footer-bg2 {
   border-top: 1px solid #7379b1;
 }
 
-.tour-main-inner-part2 .p.pav 
+.tour-main-inner-part2 .p.pav
 {
   border: 2px solid #c6950c;
   border-radius: 2px;
@@ -3869,9 +3870,9 @@ footer.accomdation-footer2.tour-footer-bg2 {
 	padding:12px 40px 13px;
 	display:inline-block;
 	margin:12px 0 0;
-	border-radius:4px; 
-	-webkit-border-radius:4px; 
-	-moz-border-radius:4px; 
+	border-radius:4px;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
 }
 
 .complete_text a:hover {
@@ -3944,7 +3945,7 @@ footer.accomdation-footer2.tour-footer-bg2 {
 
 
 .brand-look-slider-bg2 .jssort01 .pav .c {
-  
+
   background: #c6950c;
   opacity: 0.52;
 }
@@ -3977,7 +3978,7 @@ footer.accomdation-footer2.tour-footer-bg2 {
 }
 
 
-.create-your-own-packages-main-outer4 
+.create-your-own-packages-main-outer4
 {
   background: #ffffff url("../images/create-own-packeges-design-bgnw.png") no-repeat scroll left 0 / 26% auto;
   float:left;
@@ -4074,7 +4075,7 @@ footer.accomdation-footer2.tour-footer-bg2 {
 
 .every-package-includes-right-sec
 {
-	
+
 }
 .peta-joy-main-outr2 .athletics-border  p {
   width: 68%;
@@ -4099,7 +4100,7 @@ footer.accomdation-footer2.tour-footer-bg2 {
   width: 282px;
 }
 .create-your-own-packages-main-outer4 .athletics-yello-border {
- 
+
   vertical-align: top;
 }
 
@@ -4226,7 +4227,7 @@ border-radius:50%;
 	margin:0;
 	padding:49px 0 0;
 	line-height:30px;
-} 
+}
 
 .athletics-border p
 {
@@ -4235,7 +4236,7 @@ border-radius:50%;
 	font-family: 'proxima_nova_condensedlight';
 	margin:0;
 	line-height:30px;
-} 
+}
 
 
 
@@ -4341,7 +4342,7 @@ border-radius:50%;
 	border-radius: 4px;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
-	
+
 }
 .athletics-package-table
 {
@@ -4457,7 +4458,7 @@ a.package_athletics:hover
 /* =================== 27 April 2017 WHO WE ARE PAGE START =============================== */
 
 .banner-main.who-we-are-banner {
-   background: rgba(0, 0, 0, 0) url("../images/who-we-are-banner2.jpg") no-repeat scroll center top / cover ; 
+   background: rgba(0, 0, 0, 0) url("../images/who-we-are-banner2.jpg") no-repeat scroll center top / cover ;
   float: left;
   padding: 240px 0 130px !important;
   position: relative;
@@ -4498,7 +4499,7 @@ a.package_athletics:hover
   margin: 0 0 22px;
 }
 
-.who-we-are-main-inner2 p strong 
+.who-we-are-main-inner2 p strong
 {
   font-weight: bold;
 }
@@ -4583,7 +4584,7 @@ a.package_athletics:hover
 
 
 
-.tickrting-agent-main-inner02  h2 samp 
+.tickrting-agent-main-inner02  h2 samp
 {
   font-family: "proxima_nova_condensedlight";
 }
@@ -4978,12 +4979,12 @@ a.package_athletics:hover
 
 
 
-/* 4 MAY 2017 SPORTS PAGE- PENDING CSS START */ 
+/* 4 MAY 2017 SPORTS PAGE- PENDING CSS START */
 
 .sports-map-tab2-out
 {
 	padding:0 70px !important;
-	
+
 }
 
 
@@ -5001,7 +5002,7 @@ a.package_athletics:hover
   padding: 14px 10px !important;
   text-align: center;
 }
-.sports-please-see-site-out2 p 
+.sports-please-see-site-out2 p
 {
   color: #fff;
   font-family: 'proxima_novaregular';
@@ -5046,7 +5047,7 @@ a.package_athletics:hover
 }
 .sports-venues2-adress{
 	padding-right:20px !important;
-	
+
 }
 
 .sports-venues2-adress-first2
@@ -5158,7 +5159,7 @@ a.package_athletics:hover
 
 
 .sports-venues2-map-sec  {
-  
+
   padding-left:20px !important;
 }
 
@@ -5180,7 +5181,7 @@ a.package_athletics:hover
 
 
 
-/* 4 MAY 2017 SPORTS PAGE- PENDING CSS END */ 
+/* 4 MAY 2017 SPORTS PAGE- PENDING CSS END */
 
 .scrollbox {
     overflow: auto; /* Start writing your markup with this style */
@@ -5208,13 +5209,13 @@ a.package_athletics:hover
   width: 50% !important;
 }
 
-/* 4 MAY 2017 SPORTS PAGE- PENDING CSS END */ 
+/* 4 MAY 2017 SPORTS PAGE- PENDING CSS END */
 
 
 
 
 
-/* 5 MAY 2017 gold-coast-event-tickets table css add  start */ 
+/* 5 MAY 2017 gold-coast-event-tickets table css add  start */
 .condition-of-sale-table-new2
 {
 	position:relative;
@@ -5249,7 +5250,7 @@ a.package_athletics:hover
 .condition-of-sale-table-fist-sec
 {
 	padding: 24px 15px !important;
-	
+
 }
 
 
@@ -5380,17 +5381,17 @@ a.package_athletics:hover
 	font-family: "proxima_nova_condensedregular";
   font-size: 13px;
 }
-/* 5 MAY 2017 gold-coast-event-tickets table css add  end */ 
+/* 5 MAY 2017 gold-coast-event-tickets table css add  end */
 
 
-/* 6 MAY 2017 Ethletics-packages start */ 
+/* 6 MAY 2017 Ethletics-packages start */
 
 .athletics-tabs-outer3-new  .tabs_gold_outer li a {
   background: #ececec none repeat scroll 0 0;
   border: medium none;
   color: #000000;
   padding: 15px 60px;
-  
+
 }
 
 .athletics-tabs-outer3-new .nav.nav-tabs li
@@ -5435,7 +5436,7 @@ a.package_athletics:hover
 
 .ethaletic-packeges-hotel-outer4
 {
-	
+
 }
 
 .ethaletic-packeges-same-space
@@ -5537,7 +5538,7 @@ a.package_athletics:hover
   font-size: 15px;
   padding: 0 1px;
 }
-.athaletcis-hotels-details3 
+.athaletcis-hotels-details3
 {
   background: #d91725 none repeat scroll 0 0;
   border: 0 none;
@@ -5558,7 +5559,7 @@ a.package_athletics:hover
 	color:#fff;
 }
 
-.ethaletic-packeges-outer4-inner:hover .ethletics3-hotel-rating-sec 
+.ethaletic-packeges-outer4-inner:hover .ethletics3-hotel-rating-sec
 {
   display: none;
 }
@@ -5586,7 +5587,7 @@ a.package_athletics:hover
   float: left;
   position: relative;
   width: 100%;
-  padding:90px 0 !important; 
+  padding:90px 0 !important;
 }
 
 
@@ -5628,7 +5629,7 @@ a.package_athletics:hover
 }
 
 .go-back-print-out2-baner{
-	
+
 }
 
 
@@ -5725,7 +5726,7 @@ a.package_athletics:hover
 
 .athletics-new-hotel-right2
 {
-	
+
 }
 .athletics-supporters-packages-out-rigt2 {
   border-bottom: 1px solid #e0e0e0;
@@ -5801,7 +5802,7 @@ a.package_athletics:hover
 
 .athletics-packages-inclusions2-out
 {
-	
+
 }
 
 .athletics-packages-inclusions2-out h4 {
@@ -6037,7 +6038,7 @@ a.package_athletics:hover
 {
 	text-align:center;
 }
-.request-accessible-add-cart2 a 
+.request-accessible-add-cart2 a
 {
   background: #008c41 ;
   border: 0 none;
@@ -6064,11 +6065,11 @@ a.package_athletics:hover
 }
 
 
-/* 6 MAY 2017 Ethletics-packages end */ 
+/* 6 MAY 2017 Ethletics-packages end */
 
 
 
-/* 7 MAY 2017 uesful information page new start */ 
+/* 7 MAY 2017 uesful information page new start */
 
 
 .banner-main.useful-information_banner {
@@ -6217,6 +6218,3 @@ a.package_athletics:hover
       padding: 0px 7.5px 0px 7.5px!important;
     }
 }
-
-
-

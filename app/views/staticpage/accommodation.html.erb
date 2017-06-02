@@ -21,6 +21,7 @@
 			<div id="panel" class="">
           <div class="well">
             <form class="" action="index.html" method="post">
+							<label for="session">Session Code</label>
 							<% if @current_user.present? %>
             	<input type="text" placeholder="<%= @current_user.first_name + @current_user.last_name %>" disabled="true" style="border:none; background:transparent;"><br>
 							<%else%>
@@ -34,13 +35,11 @@
 									<option value="3">3</option>
 									<option value="4">4</option>
 									<option value="5">5</option>
-
 								</select><br><hr>
-								<!-- <label for="start_date">Start Date</label>
-								<input type="date" name="start_date" id="start_date"><br>
+								<label for="start_date">Start Date</label>
+								<input type="date" name="start_date" id="start_date"><br><hr>
 								<label for="end_date">End Date</label><br>
-								<input type="date" name="end_date" id="end_date"> -->
-
+								<input type="date" name="end_date" id="end_date"><hr>
 								<button type="button" name="button" class="btn btn-warning btn-block" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;">Apply</button>
             </form>
           </div>
@@ -49,8 +48,8 @@
 		<div class="col col-md-9" >
 			<% @hotels.each do |g| %>
 			<div class="row" style="background-color:white; margin-top:3%; margin-bottom:2%; margin-right:0%;">
-				<div class="col col-md-4">
-					<img width="150" height="150" alt="<%= g.pics_file_name %>" src="<%= g.pics%>" style="width:100%; padding-top:4%; padding-bottom:4%;">
+				<div class="col col-md-4" style="text-align:center;">
+					<img width="150" height="150" alt="<%= g.pics_file_name %>" src="<%= g.pics%>" style="width:auto;padding-top:4%; padding-bottom:4%;">
 				</div>
 
 				<div class="col col-md-8">
@@ -80,8 +79,6 @@
 					</div>
 				</div>
 
-
-
 			</div>
 					<%end%>
 
@@ -91,4 +88,12 @@
 	</div>
 
 </div>
+
+<style media="screen">
+.btn-warning:hover {
+		color: black !important;
+		background-color: transparent !important;
+	}
+
+</style>
 <%= render 'footer'%>
