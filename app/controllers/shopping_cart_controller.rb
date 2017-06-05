@@ -15,4 +15,10 @@ class ShoppingCartController < ApplicationController
     @cart.save()
     redirect_to :back
   end
+
+  def remove_from_cart
+    @cart = ShoppingCart.where(:user_id => session[:user_id])
+    @cart.find_by_room_id(params[:room_id]).destroy
+    redirect_to :back
+  end
 end

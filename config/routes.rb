@@ -42,6 +42,7 @@ Rails.application.routes.draw do
   get 'hotel_info/:id' => 'hotel#info'
   get 'cart' => 'shopping_cart#index'
   match 'add_cart' => 'shopping_cart#add_cart', :via => [:get, :post]
+  match 'remove_from_cart/:room_id' => 'shopping_cart#remove_from_cart', :via => [:get, :post]
   # get 'authf' => 'session#authf'
 
 
