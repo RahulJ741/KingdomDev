@@ -249,6 +249,8 @@
 						<li role="presentation"><a role="menuitem" tabindex="-1" href="/update_profile"><i class="fa fa-info-circle" aria-hidden="true"></i> Update Profile</a></li>
 						<li role="presentation" class="divider"></li>
 						<li role="presentation"><a role="menuitem" tabindex="-1" href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+						<!-- <li role="presentation" class="divider"></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="/cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i>ShoppingCart</a></li> -->
 					</ul>
         </div>
         <!-- <div class="modal-footer">
@@ -258,11 +260,44 @@
 
     </div>
 
-
-
-
   </div>
 	<!-- User Modal ends -->
+
+
+<!-- ShoppingCart Modal start -->
+<div class="modal fade" id="ShopModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true" style="z-index: 99999;">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class=" modal-header login-modal-header" style="background-color: #27ae60;">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title text-center" id="ShopModalLabel"> Add to cart </h4>
+			</div>
+			<div class="modal-body" style="padding-left: 10%">
+				<h4>Are you sure add this room to cart</h4>
+			</div>
+			<div class="modal-footer" style="">
+				<button type="button" class="btn btn-default" data-dismiss="modal" style="float:right;">Close</button>
+				<form class="" action="/add_cart" method="post" enctype="multipart/form-data">
+					<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+					<input type="hidden" name="user_id" value="<%= session[:user_id] %>">
+					<input type="hidden" id="shop_room_id" name="room_id">
+					<button type="submit" class="btn btn-warning" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000; float:right; margin-right:7px;">Ok</button>
+				</form>&ensp;
+
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+
+
+<!-- ShoppingCart Modal end -->
+
+
 
 <style>
 .bt-login,.bt-login:hover, .bt-login:active, .bt-login:focus {
@@ -356,6 +391,16 @@ $(document).ready(function(){
 		<script>
 
     $(document).ready(function(){
+
+			$("#Shopcart").click(function(){
+				var room_i = $.parseJSON($(this).attr('data-button'));
+  			// alert(room_i.room_id)
+				$("#shop_room_id").val(room_i.room_id);
+			});
+
+
+
+
 			$.ajaxSetup({
            headers: { 'X-CSRF-Token' : $('#authenticity_token').val() }
         });
@@ -600,8 +645,8 @@ $(document).ready(function(){
   </script>
 
 	<script type="text/javascript">
-	$('#start_date').bootstrapMaterialDatePicker({ weekStart : 0, time: false });
-	$('#end_date').bootstrapMaterialDatePicker({ weekStart : 0, time: false });
+	$('#from_date_shop').bootstrapMaterialDatePicker({ weekStart : 0, time: false });
+	$('#to_date_shop').bootstrapMaterialDatePicker({ weekStart : 0, time: false });
 	toastr.options = {
 		"closeButton": false,
 		  "debug": false,

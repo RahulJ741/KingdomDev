@@ -68,6 +68,13 @@
                     <a href="javascript:void(0)"><span class="glyphicon glyphicon-user"></span></a>
                   </li>
                 <%end%>
+
+                <% if @current_user.present? %>
+                  <li>
+                    <a href="/cart"><span class="fa fa-shopping-cart"><sup style="color:red;"><%= @cart.count %></sup></span></a>
+                  </li>
+                <% else %>
+                <% end %>
   						</ul>
   						</div>
   						</div>

@@ -1,4 +1,5 @@
 class ShoppingCart < ApplicationRecord
-  has_many :rooms
+
+  belongs_to :room
   belongs_to :user
 end

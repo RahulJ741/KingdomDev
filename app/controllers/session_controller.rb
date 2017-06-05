@@ -115,8 +115,9 @@ class SessionController < ApplicationController
   def update_profile
     @user = User.find(session[:user_id])
 
-    @current_user = User.find(session["user_id"])
 
+    @current_user = User.find(session["user_id"])
+    @cart = ShoppingCart.where(:user_id => session[:user_id])
   end
 
   def change_info

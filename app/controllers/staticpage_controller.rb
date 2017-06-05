@@ -12,6 +12,8 @@ class StaticpageController < ApplicationController
     else
       @current_user = nil
     end
+    @cart = ShoppingCart.where(:user_id => session[:user_id])
+
     # @current_user = User.find(session[:user_id])
 
     # @county = Country.where(is_active: true).all
@@ -26,6 +28,7 @@ class StaticpageController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
+      @cart = ShoppingCart.where(:user_id => session[:user_id])
     else
       @current_user = nil
     end
@@ -35,6 +38,7 @@ class StaticpageController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
+      @cart = ShoppingCart.where(:user_id => session[:user_id])
     else
       @current_user = nil
     end
@@ -44,6 +48,7 @@ class StaticpageController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
+      @cart = ShoppingCart.where(:user_id => session[:user_id])
     else
       @current_user = nil
     end
@@ -54,6 +59,7 @@ class StaticpageController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
+      @cart = ShoppingCart.where(:user_id => session[:user_id])
     else
       @current_user = nil
     end
@@ -63,6 +69,7 @@ class StaticpageController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
+      @cart = ShoppingCart.where(:user_id => session[:user_id])
     else
       # @current_user = nil
     end
@@ -72,6 +79,7 @@ class StaticpageController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
+      @cart = ShoppingCart.where(:user_id => session[:user_id])
     else
       # @current_user = nil
     end
@@ -81,6 +89,7 @@ class StaticpageController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
+      @cart = ShoppingCart.where(:user_id => session[:user_id])
     else
       # @current_user = nil
     end
@@ -91,15 +100,18 @@ class StaticpageController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
+      @cart = ShoppingCart.where(:user_id => session[:user_id])
     else
       @current_user = nil
     end
   end
 
   def createownpackage
+
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
+      @cart = ShoppingCart.where(:user_id => session[:user_id])
     else
       @current_user = nil
     end
@@ -108,6 +120,7 @@ class StaticpageController < ApplicationController
 
   def accommodation
     @hotels = Hotel.all
+    @cart = ShoppingCart.where(:user_id => session[:user_id])
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
@@ -119,6 +132,7 @@ class StaticpageController < ApplicationController
   end
 
   def swimmingpackages
+    @cart = ShoppingCart.where(:user_id => session[:user_id])
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
@@ -132,6 +146,7 @@ class StaticpageController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
+      @cart = ShoppingCart.where(:user_id => session[:user_id])
     else
       @current_user = nil
     end
@@ -142,6 +157,7 @@ class StaticpageController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
+      @cart = ShoppingCart.where(:user_id => session[:user_id])
     else
       @current_user = nil
     end
@@ -152,6 +168,7 @@ class StaticpageController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
+      @cart = ShoppingCart.where(:user_id => session[:user_id])
     else
       @current_user = nil
     end
@@ -162,6 +179,7 @@ class StaticpageController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
+      @cart = ShoppingCart.where(:user_id => session[:user_id])
     else
       @current_user = nil
     end
@@ -172,6 +190,7 @@ class StaticpageController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
+      @cart = ShoppingCart.where(:user_id => session[:user_id])
     else
       @current_user = nil
     end
@@ -182,6 +201,7 @@ class StaticpageController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
+      @cart = ShoppingCart.where(:user_id => session[:user_id])
     else
       @current_user = nil
     end
@@ -192,6 +212,7 @@ class StaticpageController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
+      @cart = ShoppingCart.where(:user_id => session[:user_id])
     else
       @current_user = nil
     end
@@ -202,6 +223,7 @@ class StaticpageController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
+      @cart = ShoppingCart.where(:user_id => session[:user_id])
     else
       @current_user = nil
     end
@@ -211,6 +233,7 @@ class StaticpageController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
+      @cart = ShoppingCart.where(:user_id => session[:user_id])
     else
       @current_user = nil
     end
@@ -221,6 +244,7 @@ class StaticpageController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
+      @cart = ShoppingCart.where(:user_id => session[:user_id])
     else
       @current_user = nil
     end
@@ -231,6 +255,7 @@ class StaticpageController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
+      @cart = ShoppingCart.where(:user_id => session[:user_id])
     else
       @current_user = nil
     end
