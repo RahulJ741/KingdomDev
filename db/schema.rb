@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170601103408) do
+ActiveRecord::Schema.define(version: 20170605084833) do
 
   create_table "athletics_supporters_package_price_list_all", primary_key: "serial_no", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string  "athletics_supporter_packages", limit: 10, null: false
@@ -397,6 +397,16 @@ ActiveRecord::Schema.define(version: 20170601103408) do
     t.text "facebook",           limit: 65535, null: false
     t.text "instagram",          limit: 65535, null: false
     t.text "twitter",            limit: 65535, null: false
+  end
+
+  create_table "shopping_carts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "room_id"
+    t.datetime "from_date"
+    t.datetime "to_date"
+    t.integer  "rate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "staticpages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|

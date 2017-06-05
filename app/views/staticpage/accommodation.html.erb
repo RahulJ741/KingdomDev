@@ -40,7 +40,7 @@
 								<input type="date" name="start_date" id="start_date"><br><hr>
 								<label for="end_date">End Date</label><br>
 								<input type="date" name="end_date" id="end_date"><hr>
-								<button type="button" name="button" class="btn btn-warning btn-block" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;">Apply</button>
+								<button type="button" name="button" class="btn btn-warning btn-block" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;">Apply</button>
             </form>
           </div>
       </div>
@@ -74,7 +74,7 @@
 
 					</div>
 					<div class="col xs-4 pull-right">
-						<a href="/hotel_info/<%= g.id %>"><button type="button" class="btn btn-warning" name="button" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;"><i class="fa fa-eye" aria-hidden="true"></i>
+						<a href="/hotel_info/<%= g.id %>"><button type="button" class="btn btn-warning" name="button" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;"><i class="fa fa-eye" aria-hidden="true"></i>
  View</button></a>
 					</div>
 				</div>
@@ -93,6 +93,7 @@
 .btn-warning:hover {
 		color: black !important;
 		background-color: transparent !important;
+		transition: all 2s ease 0s;
 	}
 
 </style>
