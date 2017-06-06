@@ -23,7 +23,7 @@
             <form class="" action="" method="post">
 							<label for="session">Session Code</label>
 							<% if @current_user.present? %>
-            	<input type="text" placeholder="<%= @current_user.first_name + @current_user.last_name %>" disabled="true" style="border:none; background:transparent;"><br>
+            	<input type="text" placeholder="<%= @current_user.first_name+" "+@current_user.last_name %>" disabled="true" style="border:none; background:transparent;"><br>
 							<%else%>
 							<input type="text" placeholder="" disabled="true" style="border:none; background:transparent;"><br>
 							<%end%>

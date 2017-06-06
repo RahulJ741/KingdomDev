@@ -8,7 +8,7 @@ class SessionController < ApplicationController
     if @user &&  @user.authenticate(params[:password]) && @user.active
       puts @user.active
       session[:user_id] = @user.id
-      redirect_to root_url, :flash => {:success => "Login Successfully"}
+      redirect_to :back, :flash => {:success => "Login Successfully"}
       puts "1111111111111111111111111111111111111"
       puts session[:user_id]
     else
