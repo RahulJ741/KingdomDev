@@ -13,12 +13,12 @@ class ShoppingCartController < ApplicationController
   def add_cart
     @cart = ShoppingCart.create(:user_id => params[:user_id], :room_id => params[:room_id])
     @cart.save()
-    redirect_to :back
+    redirect_to :back, :flash => {:success => 'Added to cart'}
   end
 
   def remove_from_cart
     @cart = ShoppingCart.where(:user_id => session[:user_id])
     @cart.find_by_room_id(params[:room_id]).destroy
-    redirect_to :back
+    redirect_to :back, :flash => {:error => 'Removed from cart'}
   end
 end

@@ -40,7 +40,7 @@ Rails.application.routes.draw do
   match 'reset_user' => 'session#reset_user', :via => [:get, :post]
 
   get 'hotel_info/:id' => 'hotel#info'
-  get 'cart' => 'shopping_cart#index'
+  match 'cart' => 'shopping_cart#index', :via => [:get, :post]
   match 'add_cart' => 'shopping_cart#add_cart', :via => [:get, :post]
   match 'remove_from_cart/:room_id' => 'shopping_cart#remove_from_cart', :via => [:get, :post]
   # get 'authf' => 'session#authf'
