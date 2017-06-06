@@ -15,33 +15,34 @@
 </section>
 
 
-<section class=" packages" style="padding-top:2px;">
+<section class="accommodation-main-outer4" style="padding-top:2px;">
   <div class="container">
      <div class="row">
+			 <div class="exclusive-reprensentatio-inner accommodation-main-inner4">
+	 			<h2 class="fadeInUp wow" data-wow-duration="2s" data-wow-delay="0s">INCLUSIVE PACKAGES</h2>
 			 <div class="col col-md-3" style="padding-top:2%;">
 				 <div id="panel" class="">
-							<div class="well">
+							<div class="well" style="background-color: #fff;">
 								<form class="" action="index.html" method="post">
-								 <label for="session">Session Code</label>
+								 <label for="session" class="pull-left">Session Code</label>
 								 <% if @current_user.present? %>
-								 <input type="text" placeholder="<%= @current_user.first_name + @current_user.last_name %>" disabled="true" style="border:none; background:transparent; margin-bottom:3%;"><br>
+								 <input type="text" placeholder="<%= @current_user.first_name+" "+@current_user.last_name %>" disabled="true" style="border:none; background: #f5f5f5; text-align:left;"><br>
 								 <%else%>
 								 <input type="text" placeholder="" disabled="true" style="border:none; background:transparent; margin-bottom:3%;"><br>
 								 <%end%>
-								 <label for="event">Event</label><br>
-									 <select>
+								 <label for="event" class="pull-left">Event</label><br>
+									 <select class="custom-select form-control">
 										 <option value="">Choose</option>
 										 <option value="rugby">Rugby</option>
 										 <option value="athletics">Athletics</option>
 										 <option value="opening">Opening</option>
 										 <option value="swimming">Swimming</option>
-
-									 </select><br><hr>
-									 <label for="start_date">Start Date</label>
-									 <input type="date" name="start_date" id="start_date"><br><hr>
-									 <label for="end_date">End Date</label><br>
-									 <input type="date" name="end_date" id="end_date"><hr>
-									 <button type="button" name="button" class="btn btn-warning btn-block" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;">Apply</button>
+									 </select><br>
+									 <label for="start_date" class="pull-left">START DATE</label>
+	 								<input type="date" name="start_date" id="start_date" class="form-control"><br>
+	 								<label for="end_date" class="pull-left">END DATE</label><br>
+	 								<input type="date" name="end_date" id="end_date" class="form-control"><hr>
+	 								<button type="button" name="button" class="btn btn-warning btn-block" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;">Apply</button>
 								</form>
 							</div>
 					</div>
@@ -50,8 +51,8 @@
 			 <div class="col col-md-9 " style="padding-top:2%;">
 				 <div class="row">
 
-
-							 <div class="col col-md-10 col-sm-10 col-xs-10  pad_none ticket2-applications3-right-inner">
+					 <div class="col packg">
+							 <div class="col col-md-10 col-sm-10 col-xs-10  pad_none ticket2-applications3-right-inner listpack">
   							 <h5 style="margin-bottom: 10px;">Rugby – Gold Package</h5>
   							 <div class="col-xs-12 col-md-12 col-sm-12 pad_none officaly-ticketing-agancy-left2">
   							 <ul>
@@ -67,12 +68,12 @@
   							 </ul>
   						 </div>
   					 </div>
-  						<a href="/rugbypackages/gold"><div class="col col-md-2 col-sm-2 col-xs-2 right-yellow"><i class="fa fa-cart-plus fa-3x" style="color:black;"></i></div></a><hr>
+  						<div class="col col-md-2 col-sm-2 col-xs-2 right-yellow"><a href="/rugbypackages/gold"><i class="fa fa-cart-plus fa-3x" style="color:black;"></i></a></div><hr>
+							 </div>
 
 
-
-
-					 <div class="col col-md-10 col-sm-10 col-xs-10 pad_none ticket2-applications3-right-inner">
+					<div class="col packg">
+					 <div class="col col-md-10 col-sm-10 col-xs-10 pad_none ticket2-applications3-right-inner listpack">
 						 <h5 style="margin-bottom: 10px;">Rugby – Silver Package</h5>
 						 <div class="col-xs-12 col-md-12 col-sm-12 pad_none officaly-ticketing-agancy-left2">
 						 <ul>
@@ -91,9 +92,12 @@
 						 </ul>
 					 </div>
 					 </div>
-					 <a href="/rugbypackages/silver"><div class="col col-md-2 col-sm-2 col-xs-2 right-yellow"><i class="fa fa-cart-plus fa-3x" style="color:black;"></i></div></a> <hr>
+					 <div class="col col-md-2 col-sm-2 col-xs-2 right-yellow"><a href="/rugbypackages/silver"><i class="fa fa-cart-plus fa-3x" style="color:black;"></i></a></div><hr>
+					 </div>
 
- 					 <div class="col col-md-10 col-sm-10 col-xs-10  pad_none ticket2-applications3-right-inner">
+					 <div class="col packg">
+
+ 					 <div class="col col-md-10 col-sm-10 col-xs-10  pad_none ticket2-applications3-right-inner listpack">
  						 <h5 style="margin-bottom: 10px;">Rugby – Bronze Package</h5>
  						 <div class="col-xs-12 col-md-12 col-sm-12 pad_none officaly-ticketing-agancy-left2">
  						 <ul>
@@ -112,10 +116,14 @@
  						 </ul>
  					 </div>
 				 </div>
-				 <a href="/rugbypackages/bronze"><div class="col col-md-2 col-sm-2 col-xs-2 right-yellow"><i class="fa fa-cart-plus fa-3x" style="color:black;"></i></div></a><hr>
+				 <div class="col col-md-2 col-sm-2 col-xs-2 right-yellow"><a href="/rugbypackages/bronze"><i class="fa fa-cart-plus fa-3x" style="color:black;"></a></i></div><hr>
+			 </div>
 
 
-				 <div class="col col-md-10 col-sm-10 col-xs-10 pad_none ticket2-applications3-right-inner">
+			 <div class="col packg">
+
+
+				 <div class="col col-md-10 col-sm-10 col-xs-10 pad_none ticket2-applications3-right-inner listpack">
 					 <h5 style="margin-bottom: 10px;">Athletics – Platinum Package</h5>
 					 <div class="col-xs-12 col-md-12 col-sm-12 pad_none officaly-ticketing-agancy-left2">
 					 <ul>
@@ -131,10 +139,14 @@
 					 </ul>
 				 </div>
 				 </div>
-				 <a href="/athleticspackages/platinum"><div class="col col-md-2 col-sm-2 col-xs-2 right-yellow"><i class="fa fa-cart-plus fa-3x" style="color:black;"></i></div></a><hr>
+				 <div class="col col-md-2 col-sm-2 col-xs-2 right-yellow"><a href="/athleticspackages/platinum"><i class="fa fa-cart-plus fa-3x" style="color:black;"></i></a></div><hr>
+				 </div>
 
 
-				 <div class="col col-md-10 col-sm-10 col-xs-10 pad_none ticket2-applications3-right-inner">
+				 <div class="col packg">
+
+
+				 <div class="col col-md-10 col-sm-10 col-xs-10 pad_none ticket2-applications3-right-inner listpack">
 					 <h5 style="margin-bottom: 10px;">Athletics – Gold Package</h5>
 					 <div class="col-xs-12 col-md-12 col-sm-12 pad_none officaly-ticketing-agancy-left2">
 					 <ul>
@@ -150,10 +162,14 @@
 					 </ul>
 				 </div>
 				 </div>
-					<a href="/athleticspackages/gold"><div class="col col-md-2 col-sm-2 col-xs-2 right-yellow"><i class="fa fa-cart-plus fa-3x" style="color:black;"></i></div></a><hr>
+					<div class="col col-md-2 col-sm-2 col-xs-2 right-yellow"><a href="/athleticspackages/gold"><i class="fa fa-cart-plus fa-3x" style="color:black;"></i></a></div><hr>
+				</div>
 
 
-				 <div class="col col-md-10 col-sm-10 col-xs-10 pad_none ticket2-applications3-right-inner">
+				<div class="col packg">
+
+
+				 <div class="col col-md-10 col-sm-10 col-xs-10 pad_none ticket2-applications3-right-inner listpack">
 					 <h5 style="margin-bottom: 10px;">Athletics – Silver Package</h5>
 					 <div class="col-xs-12 col-md-12 col-sm-12 pad_none officaly-ticketing-agancy-left2">
 					 <ul>
@@ -172,10 +188,13 @@
 					 </ul>
 				 </div>
 				 </div>
-				 <a href="/athleticspackages/silver"><div class="col col-md-2 col-sm-2 col-xs-2 right-yellow"><i class="fa fa-cart-plus fa-3x" style="color:black;"></i></div></a> <hr>
+				 <div class="col col-md-2 col-sm-2 col-xs-2 right-yellow"><a href="/athleticspackages/silver"><i class="fa fa-cart-plus fa-3x" style="color:black;"></i></a> </div><hr>
+				 </div>
+
+				 <div class="col packg">
 
 
-				 <div class=" col col-md-10 col-sm-10 col-xs-10 pad_none ticket2-applications3-right-inner">
+				 <div class=" col col-md-10 col-sm-10 col-xs-10 pad_none ticket2-applications3-right-inner listpack">
 					 <h5 style="margin-bottom: 10px;">Athletics – Silver Brisbane Package</h5>
 					 <div class="col-xs-12 col-md-12 col-sm-12 pad_none officaly-ticketing-agancy-left2">
 					 <ul>
@@ -194,12 +213,13 @@
 					 </ul>
 				 </div>
 				 </div>
-				 <a href="/athleticspackages/silver_brisbane"><div class="col col-md-2 col-sm-2 col-xs-2 right-yellow"><i class="fa fa-cart-plus fa-3x" style="color:black;"></i></div></a><hr>
+				 <div class="col col-md-2 col-sm-2 col-xs-2 right-yellow"><a href="/athleticspackages/silver_brisbane"><i class="fa fa-cart-plus fa-3x" style="color:black;"></i></a></div><hr>
+				 </div>
 
-
-				 <div class="col col-md-10 col-sm-10 col-xs-10 pad_none ticket2-applications3-right-inner">
+				 <div class="col packg">
+				 <div class="col col-md-10 col-sm-10 col-xs-10 pad_none ticket2-applications3-right-inner listpack">
 					 <h5 style="margin-bottom: 10px;">Athletics – Bronze Package</h5>
-					 <div class="col-xs-12 col-md-12 col-sm-12 pad_none officaly-ticketing-agancy-left2">
+					 <div class="col-xs-12 col-md-12height: 159px; col-sm-12 pad_none officaly-ticketing-agancy-left2">
 					 <ul>
 						 <li style="color: white; line-height: 22px; font-size: 14px; margin-bottom: 0px;">
 							 All Athletics sessions
@@ -217,9 +237,13 @@
 				 </div>
 				 </div>
 				 <div class="col col-md-2 col-sm-2 col-xs-2 right-yellow"><i class="fa fa-cart-plus fa-3x" style="color:black;"></i></div><hr>
+				 </div>
 
 
-				 <div class="col col-md-10 col-sm-10 col-xs-10 pad_none ticket2-applications3-right-inner">
+				 <div class="col packg">
+
+
+				 <div class="col col-md-10 col-sm-10 col-xs-10 pad_none ticket2-applications3-right-inner listpack">
 					 <h5 style="margin-bottom: 10px;">Opening Ceremony Program – Silver</h5>
 					 <div class="col-xs-12 col-md-12 col-sm-12 pad_none officaly-ticketing-agancy-left2">
 					 <ul>
@@ -238,10 +262,14 @@
 					 </ul>
 				 </div>
 				 </div>
-				<a href="/openingpackages/details"><div class="col col-md-2 col-sm-2 col-xs-2 right-yellow"><i class="fa fa-cart-plus fa-3x" style="color:black;"></i></div></a> <hr>
+				<div class="col col-md-2 col-sm-2 col-xs-2 right-yellow"><a href="/openingpackages/details"><i class="fa fa-cart-plus fa-3x" style="color:black;"></i></a> </div><hr>
+				</div>
 
 
-				 <div class="col col-md-10 col-sm-10 col-xs-10 pad_none ticket2-applications3-right-inner">
+				<div class="col packg">
+
+
+				 <div class="col col-md-10 col-sm-10 col-xs-10 pad_none ticket2-applications3-right-inner listpack">
 					 <h5 style="margin-bottom: 10px;">Swimming Supporter Program - Silver</h5>
 					 <div class="col-xs-12 col-md-12 col-sm-12 pad_none officaly-ticketing-agancy-left2">
 					 <ul>
@@ -260,15 +288,15 @@
 					 </ul>
 				 </div>
 				 </div>
-				 <a href="/swimmingpackages/details"><div class="col col-md-2 col-sm-2 col-xs-2 right-yellow"><i class="fa fa-cart-plus fa-3x" style="color:black;"></i></div></a> <hr>
-
+				 <div class="col col-md-2 col-sm-2 col-xs-2 right-yellow"><a href="/swimmingpackages/details"><i class="fa fa-cart-plus fa-3x" style="color:black;"></i></a> </div><hr>
+				 </div>
 
 
 
 
 		 </div>
 					 <!-- <div class="col col-md-2 col-sm-2 col-xs-2">
-					 	<i class="fa fa-eye"></i>
+					 	<i class="fa fa-eye"></i>height: 159px;
 					 </div> -->
 
 
@@ -287,11 +315,18 @@
 </section>
 
 <style media="screen">
+
 	.ticket2-applications3-right-inner{
-		background-image: url("/assets/images/ticket-clender-purpel-bg1.png");
+		/*background-image: url("/assets/images/ticket-clender-purpel-bg1.png");*/
+		background: rgba(0, 0, 0, 0) url(/assets/images/ticket-clender-purpel-bg1.png) no-repeat center top;
 	 	padding: 10px 10px 10px 50px !important;
 		float: left !important;
 		margin-bottom: 1%;
+		display: table;
+		background-size: cover;
+		vertical-align: middle;
+		text-align: left;
+		height: 159px;
 	}
 	/*rgba(0, 0, 0, 0) url("../images/ticket-clender-purpel-bg1.png") no-repeat center top*/
 	.right-yellow{
@@ -300,5 +335,17 @@
     padding-top: 7%;
 		margin-bottom: 1%;
 	}
+	.btn-warning:hover {
+			color: black !important;
+			background-color: transparent !important;
+			transition: all 2s ease 0s;
+		}
+		.packg{
+			display: flex;
+		}
+		.listpack{
+			padding-top: 30px !important;
+    padding-bottom: 30px !important;
+		}
 </style>
 <%= render 'footer'%>

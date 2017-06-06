@@ -32,35 +32,37 @@
 	</div>
 </section> -->
 
-<section class="ticket-applications-main2">
+<section class="accommodation-main-outer4 event-ticket-inner3">
 <img src="assets/images/ticket-info-design-img3.png" class="ticket-info-design-img3">
 	<div class="container">
 		<div class="row">
+			<div class="exclusive-reprensentatio-inner accommodation-main-inner4">
+				<h2 class="fadeInUp wow" data-wow-duration="2s" data-wow-delay="0s"><samp>EVENT TICKET</samp> <br>INFORMATION </h2>
 			<div class="col col-md-3" style="padding-top:2%;">
 				<div id="panel" class="">
-						<div class="well">
-							<form class="" action="index.html" method="post">
-								<label for="session">Session Code</label>
-								<% if @current_user.present? %>
-								<input type="text" placeholder="<%= @current_user.first_name + @current_user.last_name %>" disabled="true" style="border:none; background:transparent;"><br>
-								<%else%>
-								<input type="text" placeholder="" disabled="true" style="border:none; background:transparent;"><br>
-								<%end%>
-								<label for="event">Stars</label><br>
-									<select>
-										<option value="">Choose</option>
-										<option value="1">1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-										<option value="4">4</option>
-										<option value="5">5</option>
-									</select><br><hr>
-									<label for="start_date">Start Date</label>
-									<input type="date" name="start_date" id="start_date"><br><hr>
-									<label for="end_date">End Date</label><br>
-									<input type="date" name="end_date" id="end_date"><hr>
-									<button type="button" name="button" class="btn btn-warning btn-block">Apply</button>
-							</form>
+					<div class="well" style="background-color: #fff;">
+						<form class="" action="" method="post">
+							<label for="session" class="pull-left">Session Code</label>
+							<% if @current_user.present? %>
+							<input type="text" placeholder="<%= @current_user.first_name+" "+@current_user.last_name %>" disabled="true" style="border:none; background: #f5f5f5; text-align:left;"><br>
+							<%else%>
+							<input type="text" placeholder="" disabled="true" style="border:none; background:transparent;"><br>
+							<%end%>
+							<label for="event" class="pull-left">Stars</label><br>
+								<select class="custom-select form-control">
+									<option value="">Choose</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select><br>
+								<label for="start_date" class="pull-left">START DATE</label>
+								<input type="date" name="start_date" id="start_date" class="form-control"><br>
+								<label for="end_date" class="pull-left">END DATE</label><br>
+								<input type="date" name="end_date" id="end_date" class="form-control"><hr>
+								<button type="button" name="button" class="btn btn-warning btn-block" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;">Apply</button>
+						</form>
 						</div>
 				</div>
 			</div>
@@ -152,21 +154,20 @@
 
 
 <style media="screen">
-	.btn-warning{
+	/*.btn-warning{
 		bottom: 5% !important;
 		right: 2% !important;
 		position: absolute;
 		background: #f5ba13;
 		box-shadow: 0 3px 0 0 #a1790c;
 		color: black;
-	}
+	}*/
 
 	.btn-warning:hover {
-    color: black !important;
-    background-color: transparent;
-    border-color: #d58512;
-
-}
+			color: black !important;
+			background-color: transparent !important;
+			transition: all 2s ease 0s;
+		}
 
 	.right-yellow{
 		background-color: #f5ba13;
