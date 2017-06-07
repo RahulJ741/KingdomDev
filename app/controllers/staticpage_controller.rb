@@ -120,11 +120,16 @@ class StaticpageController < ApplicationController
 
   def accommodation
     @hotels = Hotel.all
+
+    if request.post?
+      @hotels = Hotel.star_rating(params[:star_rating]) if params[:star_rating].present?
+      @opt_val = params[:star_rating]
+    end
+
     @cart = ShoppingCart.where(:user_id => session[:user_id])
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
-
     else
       @current_user = nil
     end

@@ -21,7 +21,7 @@
   padding: 14px 17px !important;
   width: 22.88%;
 }
-.contact2-footer p 
+.contact2-footer p
 {
   width: 85%;
 }
@@ -43,7 +43,7 @@
 }
 .guaranteed-part1-overlay .guaranteed-content-sec {
   height: 313px;
-  
+
 }
 
 .guaranteed-part1-overlay.overlay2 .guaranteed-content-sec {
@@ -76,7 +76,7 @@
   width: 94%;
   margin: 10px;
 }
-.guaranteed-part1-overlay 
+.guaranteed-part1-overlay
 {
   width: 84%;
 }
@@ -110,7 +110,7 @@
 
 /*==== EVENTS TICKET PAGE START ====*/
 
-.ticket2-applications-right-purpel2 
+.ticket2-applications-right-purpel2
 {
   width: 83%;
 }
@@ -125,7 +125,7 @@
 .tour-main-inner-part2 .tabs-menu li {
   width: 186px;
 }
-.glorious-gold-coast-heading 
+.glorious-gold-coast-heading
 {
   font-size: 13px;
   line-height: 14px;
@@ -146,7 +146,7 @@
 .banner-main.tour-banner {
   padding: 180px 0 104px !important;
 }
-.tour-designbg-bottom 
+.tour-designbg-bottom
 {
   top: -162px;
   width: 196px;
@@ -174,7 +174,7 @@
   width: 24%;
 }
 .gold_tab_one_inner_out:nth-child(4), .gold_tab_one_inner_out:nth-child(8) {
-  padding: 0 5px 20px 5px !important; 
+  padding: 0 5px 20px 5px !important;
   width: 24%;
 }
 .gold_tab_one_outer {
@@ -189,11 +189,11 @@
 .gold_sports_tabs_inner {
   padding: 63px 0 57px !important;
 }
- 
- 
+
+
  /*gold-coast-css-end*/
- 
- 
+
+
  /*alhletics-packages*/
 
 
@@ -208,7 +208,7 @@
 }
 
 .dropdown-menu li:hover .dropdown02 {
-  
+
   left: -173px;
   width: 174px;
 }
@@ -217,7 +217,7 @@
 
 
 /*==== 26 April 2017 CREAT YOUR OWN PACKAGES PAGE START ==== */
-.every-package-includes-bottom2 
+.every-package-includes-bottom2
 {
   padding: 0 0 !important;
 }
@@ -233,19 +233,19 @@
 /*==== 27 April 2017 WHO WE ARE PAGE END ==== */
 
 
- 
+
 }
 
 
 
 
 
-@media only screen and (min-width: 767px) and (max-width: 991px) 
+@media only screen and (min-width: 767px) and (max-width: 991px)
 {
 /* body{border:1px solid #f00;} */
 
 .dropdown-menu li:hover .dropdown02 {
-  
+
   left: -173px;
   width: 174px;
 }
@@ -291,7 +291,7 @@ header.fixed .navigation-part .nav_bar li a {
   font-size: 14px;
   line-height: 21px
 }
-.contact2-footer p 
+.contact2-footer p
 {
   width: 85%;
 }
@@ -350,7 +350,7 @@ header.fixed .navigation-part .nav_bar li a {
   display: none;
 }
 .sales3-permitted-inner h3 {
-  
+
   font-size: 27px;
   line-height: 28px;
   margin: 98px 0 12px;
@@ -362,7 +362,7 @@ header.fixed .navigation-part .nav_bar li a {
   padding: 170px 0 80px !important;
 }
 .accomdation-sales-inner-left-bottom h3 {
- 
+
   font-size: 28px;
   line-height: 28px;
   margin: 315px 0 12px;
@@ -427,9 +427,9 @@ header.fixed .navigation-part .nav_bar li a {
   display: none;
 }
 .guaranteed-part1-inner {
- 
+
   margin: 10px;
-  
+
 }
 
 .guaranteed-part1-overlay .guaranteed-content-sec {
@@ -491,7 +491,7 @@ header.fixed .navigation-part .nav_bar li a {
   top: 5px;
   width: 5px;
 }
-.guaranteed-content-sec h3 span::after 
+.guaranteed-content-sec h3 span::after
 {
   left: -13px;
   top: 5px;
@@ -733,7 +733,7 @@ header.fixed .navigation-part .nav_bar li a {
 .tour-main-inner-part2 .tabs-menu li {
   width: 142px;
 }
-.glorious-gold-coast-heading 
+.glorious-gold-coast-heading
 {
   font-size: 13px;
   line-height: 14px;
@@ -757,7 +757,7 @@ header.fixed .navigation-part .nav_bar li a {
 .banner-main.tour-banner {
   padding: 140px 0 60px !important;
 }
-.tour-designbg-bottom 
+.tour-designbg-bottom
 {
   top: -162px;
   width: 196px;
@@ -841,18 +841,18 @@ header.fixed .navigation-part .nav_bar li a {
   line-height: 16px;
   padding: 8px 0 0;
 }
- 
+
  /*gold-coast-css-end*/
 
 
- 
- 
+
+
  /*==== LOOK AND BRAND PAGE START ====*/
  .banner-main.look-and-brand-banner {
   padding: 140px 0 60px !important;
 }
  /*==== LOOK AND BRAND PAGE END ====*/
- 
+
  /*athletics-packages*/
 .athletics-packages-banner .banner-inner {
   width: 56%;
@@ -926,7 +926,7 @@ header.fixed .navigation-part .nav_bar li a {
 
 
 /*==== 26 April 2017 CREAT YOUR OWN PACKAGES PAGE START ==== */
-.every-package-includes-bottom2 
+.every-package-includes-bottom2
 {
   padding: 0 0 !important;
 }
@@ -962,7 +962,7 @@ header.fixed .navigation-part .nav_bar li a {
   bottom: -115px;
   width: 13%;
 }
-.banner-main.who-we-are-banner 
+.banner-main.who-we-are-banner
 {
   padding: 140px 0 60px !important;
   position: relative;
@@ -986,15 +986,15 @@ header.fixed .navigation-part .nav_bar li a {
 }
 
 
-@media only screen and (min-width: 620px) and (max-width: 766px) 
+@media only screen and (min-width: 620px) and (max-width: 766px)
 
 {
-	
+
 /* body{border:1px solid #f00;}
  */
- 
+
  .dropdown-menu li:hover .dropdown02 {
- 
+
   position: relative;
   width: 174px;
 }
@@ -1035,7 +1035,7 @@ header.fixed .navigation-part .nav_bar li a {
   line-height: 21px
 }
 
-.contact2-footer p 
+.contact2-footer p
 {
   width: 85%;
 }
@@ -1071,7 +1071,7 @@ header.fixed .navigation-part .nav_bar li a {
 .authprised-territories-img > img {
   width: 80px;
 }
-.shopping_cart_top h2::after 
+.shopping_cart_top h2::after
 {
   left: 50%;
   transform: translate(-50%);
@@ -1146,7 +1146,7 @@ header.fixed .navigation-part .nav_bar li a {
   display: none;
 }
 .sales3-permitted-inner h3 {
-  
+
   font-size: 27px;
   line-height: 28px;
   margin: 98px 0 12px;
@@ -1161,7 +1161,7 @@ header.fixed .navigation-part .nav_bar li a {
   padding: 80px 0 80px !important;
 }
 .accomdation-sales-inner-left-bottom h3 {
- 
+
   font-size: 28px;
   line-height: 28px;
   margin: 315px 0 12px;
@@ -1304,9 +1304,9 @@ header.fixed {
   display: none;
 }
 .guaranteed-part1-inner {
- 
+
   margin: 10px;
-  
+
 }
 .guaranteed-part1-overlay .guaranteed-content-sec {
   height: 370px;
@@ -1373,7 +1373,7 @@ header.fixed {
   top: 5px;
   width: 5px;
 }
-.guaranteed-content-sec h3 span::after 
+.guaranteed-content-sec h3 span::after
 {
   left: -13px;
   top: 5px;
@@ -1688,7 +1688,7 @@ header.fixed {
   width: 120px;
   margin-right: 5px;
 }
-.glorious-gold-coast-heading 
+.glorious-gold-coast-heading
 {
    font-size: 10px;
   line-height: 11px;
@@ -1820,7 +1820,7 @@ header.fixed {
 }
 
 /*==== CONTACT US PAGE END ====*/
- 
+
  /*gold-coast-css*/
  .gold_tab_one_inner_out {
   padding: 0 5px 20px 5px !important;
@@ -1851,11 +1851,11 @@ header.fixed {
   line-height: 16px;
   padding: 8px 0 0;
 }
- 
+
  /*gold-coast-css-end*/
 
-  
- 
+
+
  /*==== LOOK AND BRAND PAGE START ====*/
  .banner-main.look-and-brand-banner {
   padding: 140px 0 60px !important;
@@ -1882,8 +1882,8 @@ header.fixed {
   width: 100%;
 }
  /*==== LOOK AND BRAND PAGE END ====*/
- 
- 
+
+
 /*athletics-packages*/
 .athletics-packages-banner .banner-inner {
   width: 56%;
@@ -1968,13 +1968,13 @@ header.fixed {
 .athletics-package-table table {
   width: 700px;
 }
-/*athletics-packages-end*/  
+/*athletics-packages-end*/
 
 
 
 
 /*==== 26 April 2017 CREAT YOUR OWN PACKAGES PAGE START ==== */
-.every-package-includes-bottom2 
+.every-package-includes-bottom2
 {
   padding: 0 0 !important;
 }
@@ -2015,7 +2015,7 @@ header.fixed {
   bottom: -115px;
   width: 13%;
 }
-.banner-main.who-we-are-banner 
+.banner-main.who-we-are-banner
 {
   padding: 140px 0 60px !important;
   position: relative;
@@ -2026,7 +2026,7 @@ header.fixed {
   padding: 70px 0 30px !important;
 }
 .who-we-are-main-inner2 {
-  
+
   padding: 0 10px !important;
   text-align: left;
 }
@@ -2053,14 +2053,14 @@ header.fixed {
 
 }
 
-@media only screen and (min-width: 480px) and (max-width: 619px) 
+@media only screen and (min-width: 480px) and (max-width: 619px)
 {
-	
-/* 		
+
+/*
 body{border:1px solid #f00;}
  */
 .dropdown-menu li:hover .dropdown02 {
- 
+
   position: relative;
   width: 174px;
 }
@@ -2110,7 +2110,7 @@ header.fixed {
 #active-nav {
   color: #303030 !important;
 }
-.contact2-footer p 
+.contact2-footer p
 {
   width: 85%;
 }
@@ -2144,7 +2144,7 @@ header.fixed {
 .authprised-territories-img > img {
   width: 80px;
 }
-.shopping_cart_top h2::after 
+.shopping_cart_top h2::after
 {
   left: 50%;
   transform: translate(-50%);
@@ -2230,7 +2230,7 @@ header.fixed {
   display: none;
 }
 .sales3-permitted-inner h3 {
-  
+
   font-size: 27px;
   line-height: 28px;
   margin: 98px 0 12px;
@@ -2246,7 +2246,7 @@ header.fixed {
   padding: 50px 0 !important;
 }
 .accomdation-sales-inner-left-bottom h3 {
- 
+
   font-size: 28px;
   line-height: 28px;
   margin: 315px 0 12px;
@@ -2314,7 +2314,7 @@ header.fixed {
   right: 14px;
   width: 301px;
   padding: 4px 15px !important;
-}	
+}
 
 .navigation-part .nav_bar li {
   margin-bottom: 0;
@@ -2388,9 +2388,9 @@ header {
   display: none;
 }
 .guaranteed-part1-inner {
- 
+
   margin: 10px;
-  
+
 }
 .guaranteed-part1-overlay.overlay2 .guaranteed-content-sec {
   height: 197px;
@@ -2468,7 +2468,7 @@ header {
   top: 5px;
   width: 5px;
 }
-.guaranteed-content-sec h3 span::after 
+.guaranteed-content-sec h3 span::after
 {
   left: -13px;
   top: 5px;
@@ -2811,7 +2811,7 @@ header {
   margin-right: 5px;
   width: 92px;
 }
-.glorious-gold-coast-heading 
+.glorious-gold-coast-heading
 {
    font-size: 8px;
   line-height: 9px;
@@ -2988,12 +2988,12 @@ header {
   line-height: 16px;
   padding: 8px 0 0;
 }
- 
+
  /*gold-coast-css-end*/
 
 
- 
- 
+
+
  /*==== LOOK AND BRAND PAGE START ====*/
  .banner-main.look-and-brand-banner {
   padding: 140px 0 60px !important;
@@ -3028,7 +3028,7 @@ header {
 }
 
  /*==== LOOK AND BRAND PAGE END ====*/
- 
+
 /*athletics-packages*/
 .athletics-packages-banner .banner-inner {
   width: 70%;
@@ -3116,13 +3116,13 @@ header {
 .athletics-right-img {
   z-index: -1;
 }
-/*athletics-packages-end*/  
+/*athletics-packages-end*/
 
 
 
 
 /*==== 26 April 2017 CREAT YOUR OWN PACKAGES PAGE START ==== */
-.every-package-includes-bottom2 
+.every-package-includes-bottom2
 {
   padding: 0 0 !important;
 }
@@ -3161,7 +3161,7 @@ header {
   bottom: -115px;
   width: 13%;
 }
-.banner-main.who-we-are-banner 
+.banner-main.who-we-are-banner
 {
   padding: 140px 0 60px !important;
   position: relative;
@@ -3172,7 +3172,7 @@ header {
   padding: 70px 0 30px !important;
 }
 .who-we-are-main-inner2 {
-  
+
   padding: 0 10px !important;
   text-align: left;
 }
@@ -3205,14 +3205,14 @@ header {
 
 
 
-@media only screen and (max-width: 479px) 
+@media only screen and (max-width: 479px)
 {
-			
+
 /* body{border:1px solid #f00;} */
 
 
 .dropdown-menu li:hover .dropdown02 {
- 
+
   position: relative;
   width: 174px;
 }
@@ -3262,7 +3262,7 @@ header.fixed .logo-main img {
   line-height: 21px
 }
 .exclusive-firts-country p {
-  
+
   float: none;
   font-size: 13px;
   height: 49px;
@@ -3272,7 +3272,7 @@ header.fixed .logo-main img {
   float: left;
   margin-right: 18px;
 }
-.contact2-footer p 
+.contact2-footer p
 {
   width: 85%;
 }
@@ -3330,7 +3330,7 @@ header.fixed .logo-main img {
   width: 80px;
 }
 
-.shopping_cart_top h2::after 
+.shopping_cart_top h2::after
 {
   left: 50%;
   transform: translate(-50%);
@@ -3421,7 +3421,7 @@ header.fixed .logo-main img {
   display: none;
 }
 .sales3-permitted-inner h3 {
-  
+
   font-size: 27px;
   line-height: 28px;
   margin: 98px 0 12px;
@@ -3437,7 +3437,7 @@ header.fixed .logo-main img {
   padding: 50px 0 !important;
 }
 .accomdation-sales-inner-left-bottom h3 {
- 
+
   font-size: 28px;
   line-height: 28px;
   margin: 315px 0 12px;
@@ -3451,7 +3451,7 @@ header.fixed .logo-main img {
 }
 .subscribe-inner-main2 h2 {
   font-size: 33px;
-  line-height: 12px;
+  /*line-height: 12px;*/
   margin: 0 0 31px;
 }
 .sbscribe2-field-outer input {
@@ -3501,7 +3501,7 @@ header.fixed .logo-main img {
   position: relative;
   right: 0;
   width: 100%;
-}	
+}
 .navigation-part .nav_bar li {
   margin-bottom: 0px;
   margin-right: 0 !important;
@@ -3552,8 +3552,8 @@ header {
 }*/
 .dropdown-menu::after {
   display: none;
-} 
-header.fixed 
+}
+header.fixed
 {
    position: absolute;
   }
@@ -3585,9 +3585,9 @@ header.fixed
   display: none;
 }
 .guaranteed-part1-inner {
- 
+
   margin: 10px;
-  
+
 }
 .guaranteed-part1-overlay.overlay2 .guaranteed-content-sec {
   height: 263px;
@@ -3665,7 +3665,7 @@ header.fixed
   top: 5px;
   width: 5px;
 }
-.guaranteed-content-sec h3 span::after 
+.guaranteed-content-sec h3 span::after
 {
   left: -13px;
   top: 5px;
@@ -3710,7 +3710,7 @@ header.fixed
   width: 100%;
 }
 .pallazo-versace-left-sec h3 {
-  
+
   font-size: 33px;
 }
 .pallazo-versace-rigth-sec2 {
@@ -4006,7 +4006,7 @@ main {
 }
 
 .privacy-policy3-inner-bottom p {
-  
+
   font-size: 18px;
   line-height: 28px;
 }
@@ -4060,7 +4060,7 @@ main {
   width: 92px;
   margin-bottom: 6px;
 }
-.glorious-gold-coast-heading 
+.glorious-gold-coast-heading
 {
    font-size: 8px;
   line-height: 9px;
@@ -4252,11 +4252,11 @@ main {
   font-size: 16px;
   line-height: 20px;
 }
- 
+
  /*gold-coast-css-end*/
 
 
- 
+
  /*==== LOOK AND BRAND PAGE START ====*/
  .banner-main.look-and-brand-banner {
   padding: 140px 0 60px !important;
@@ -4292,9 +4292,9 @@ main {
 }
 
  /*==== LOOK AND BRAND PAGE END ====*/
- 
- 
- 
+
+
+
  /*athletics-packages*/
 .athletics-packages-banner .banner-inner {
   width: 100%;
@@ -4385,13 +4385,13 @@ main {
 .athletics-right-img {
   z-index: -1;
 }
-/*athletics-packages-end*/  
+/*athletics-packages-end*/
 
 
 
 
 /*==== 26 April 2017 CREAT YOUR OWN PACKAGES PAGE START ==== */
-.every-package-includes-bottom2 
+.every-package-includes-bottom2
 {
   padding: 0 0 !important;
 }
@@ -4431,7 +4431,7 @@ main {
   bottom: -115px;
   width: 13%;
 }
-.banner-main.who-we-are-banner 
+.banner-main.who-we-are-banner
 {
   padding: 140px 0 60px !important;
   position: relative;
@@ -4442,7 +4442,7 @@ main {
   padding: 70px 0 30px !important;
 }
 .who-we-are-main-inner2 {
-  
+
   padding: 0 10px !important;
   text-align: left;
 }
