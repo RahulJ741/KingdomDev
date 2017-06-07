@@ -47,7 +47,7 @@
 							</div>
 					</div>
 			 </div>
-
+			 <meta name="viewport" content="width=device-width" />
 			 <div class="col col-md-9 " style="padding-top:2%;">
 				 <div class="row">
 
@@ -102,7 +102,7 @@
  						 <div class="col-xs-12 col-md-12 col-sm-12 pad_none officaly-ticketing-agancy-left2">
  						 <ul>
  							 <li style="color: white; line-height: 22px; font-size: 14px; margin-bottom: 0px;">
- 								 All Rugby sessions
+ 								 All Rugby sessionspackg
  							 </li>
  							 <li style="color: white; line-height: 22px; font-size: 14px; margin-bottom: 0px;">
  								 4 Nights
@@ -162,7 +162,7 @@
 					 </ul>
 				 </div>
 				 </div>
-					<div class="col col-md-2 col-sm-2 col-xs-2 right-yellow"><a href="/athleticspackages/gold"><i class="fa fa-cart-plus fa-3x" style="color:black;"></i></a></div><hr>
+					<div class="col col-md-2 col-sm-2 col-xs-2 right-yellow" ><a href="/athleticspackages/gold"><i class="fa fa-cart-plus fa-3x" style="color:black;"></i></a></div><hr>
 				</div>
 
 
@@ -316,12 +316,37 @@
 
 <style media="screen">
 
+	@media screen and (max-width: 980px) and (min-width: 741px) {
+		.col-md-9{
+			padding-left: 4%;
+			padding-right: 4%;
+		}
+
+	}
+
+	@media screen and (max-width: 652px) and (min-width: 477px) {
+		.col-md-9{
+			padding-left: 5%;
+			padding-right: 4%;
+		}
+
+	}
+
+	@media screen and (max-width: 740px) and (min-width: 652px) {
+		.col-md-9{
+			padding-left: 5%;
+			padding-right: 4%;
+		}
+
+	}
+
+
 	.ticket2-applications3-right-inner{
 		/*background-image: url("/assets/images/ticket-clender-purpel-bg1.png");*/
 		background: rgba(0, 0, 0, 0) url(/assets/images/ticket-clender-purpel-bg1.png) no-repeat center top;
 	 	padding: 10px 10px 10px 50px !important;
 		float: left !important;
-		margin-bottom: 1%;
+		/*margin-bottom: 1%;*/
 		display: table;
 		background-size: cover;
 		vertical-align: middle;
@@ -332,8 +357,15 @@
 	.right-yellow{
 		background-color: #f5ba13;
 		text-align: center;
-    padding-top: 7%;
-		margin-bottom: 1%;
+		position: relative;
+    /*padding-top: 7%;*/
+		/*margin-bottom: 1%;*/
+	}
+
+	.right-yellow a {
+		position: absolute;
+		top: 40%;
+		left: 40%;
 	}
 	.btn-warning:hover {
 			color: black !important;
@@ -342,6 +374,7 @@
 		}
 		.packg{
 			display: flex;
+			margin-bottom: 10px;
 		}
 		.listpack{
 			padding-top: 30px !important;
