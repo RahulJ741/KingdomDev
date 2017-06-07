@@ -93,14 +93,63 @@
 						                </h4>
 						            </div>
 						            <div id="collapseOne" class="panel-collapse collapse">
-						                <div class="panel-body">
-						                    <p>HTML stands for HyperText Markup Language. HTML is the main markup language for describing the structure of Web pages. <a href="http://www.tutorialrepublic.com/html-tutorial/" target="_blank">Learn more.</a></p>
-						                </div>
+													<div class="col col-md-12" style="padding-top:2%; background-color:#F5F5F5;">
+														<div id="panel" class="">
+																<div class="row">
+																	<form class="" action="/hotel_info/<%= @hotel.id %>" method="post">
+																		<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+																		<input type="hidden" name="hotel_id" value="<%= @hotel.id %>">
+
+																		<div class="col col-md-3 col-sm-3 col-xs-3">
+																			<label for="features">Features</label>
+																			<select class="custom-select form-control" id="features" name="features">
+																				<option value="">Choose</option>
+																				<option value="1">1</option>
+																				<option value="2">2</option>
+																				<option value="3">3</option>
+																				<option value="4">4</option>
+																				<option value="5">5</option>
+																			</select>
+																		</div>
+																		<div class="col col-md-3 col-sm-3 col-xs-3">
+																			<label for="room_type">Room Type</label>
+																			<select class="custom-select form-control" id="rooms_type" name="rooms_type">
+																				<option value="">Choose</option>
+																				<% @room_type.each do |rt| %>
+																					<option value="<%= rt %>"><%= rt %></option>
+																				<% end %>
+
+																			</select>
+																		</div>
+																		<div class="col col-md-3 col-sm-3 col-xs-3">
+																			<label for="room_size"> Room Size</label>
+																			<select class="custom-select form-control" id="room_size" name="room_size">
+																				<option value="">Choose</option>
+																				<% @room_size.each do |rs| %>
+																					<option value="<%= rs %>"><%= rs %></option>
+																				<%end%>
+																			</select>
+																		</div>
+																		<div class="col col-md-3 col-sm-3 col-xs-3">
+																			<label for="max_occupancy">Max Occupancy</label>
+																			<select class="custom-select form-control" id="max_occupancy" name="max_occupancy">
+																				<option value="">Choose</option>
+																				<% @max_occupancy.each do |mo| %>
+																					<option value="<%= mo %>"><%= mo %></option>
+																				<% end %>
+																			</select>
+																		</div>
+																		<button type="submit" class="btn btn-warning pull-right" name="button">Apply</button>
+																	</form>
+
+																</div>
+														</div>
+													</div>
 						            </div>
 						        </div>
 
 						    </div>
-							<p><strong>Note:</strong> Click on the linked heading text to expand or collapse accordion panels.</p>
+
 						</div>
 					</div>
 
