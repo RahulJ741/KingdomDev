@@ -88,10 +88,10 @@
       <div class="col-xs-12 col-sm-12 col-md-12 pad_none defination-luxury-inner-left" style="margin-bottom: 20px !important;">
 				<h6 style="text-decoration: underline; font-weight: bold;"><%= hg.name %></h6>
 				<% if @current_user.present? %>
-				<button type="button" id="Shopcart" class="btn btn-warning pull-right" name="button" data-button='{"room_id": "<%= hg.id %>"}' style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;" data-toggle="modal" data-target="#ShopModal"><i class="fa fa-cart-plus" aria-hidden="true"></i>
+				<button type="button" class="btn btn-warning pull-right Shopcart" name="button" data-button='{"room_id": "<%= hg.id %>"}' style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;" data-toggle="modal" data-target="#ShopModal"><i class="fa fa-cart-plus" aria-hidden="true"></i>
  Add to cart</button>
 				<% else %>
-				<button type="button" id="Shopcart" class="btn btn-warning pull-right" name="button" data-button='{"room_id": "<%= hg.id %>"}' style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;" data-toggle="modal" data-target="#loginModal"><i class="fa fa-cart-plus" aria-hidden="true"></i>
+				<button type="button" class="btn btn-warning pull-right" name="button" data-button='{"room_id": "<%= hg.id %>"}' style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;" data-toggle="modal" data-target="#loginModal"><i class="fa fa-cart-plus" aria-hidden="true"></i>
  Add to cart</button>
  				<% end %>
 			</div>
