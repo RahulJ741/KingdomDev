@@ -64,4 +64,10 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   config.action_mailer.default_url_options = { :host => "localhost:3000/activate_user" }
+
+
+
+  # MAILCHIMP_API_KEY = "5d371e6e82ff1626abafa1021e2fe76e-us4"
+  # MAILCHIMP_LIST_ID = "8edfee3c52"
+
 end

@@ -1,7 +1,7 @@
 class StaticpageController < ApplicationController
 
   def index
-
+      # @lists = Gibbon::API.lists
     puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<"
     # puts session.inspect
     puts session[:user_id]
@@ -264,6 +264,33 @@ class StaticpageController < ApplicationController
     else
       @current_user = nil
     end
+
+  end
+
+
+  def subscribe
+    # list_id = "8edfee3c52"
+
+    gibbon = Gibbon::Request.new(api_key: ENV["MAILCHIMP_API_KEY"], debug: true)
+    puts "5555555555555564646466546"
+    puts ENV["MAILCHIMP_LIST_ID"]
+    # gibbon.lists(list_id).members.create(body: {email_address: params[:email], status: "subscribed", merge_fields: {FNAME: "First Name", LNAME: "Last Name",MESSAGE: "done"}})
+    tivd = gibbon.lists(ENV["MAILCHIMP_LIST_ID"]).members.create(body: {email_address: params[:email], status: "subscribed"})
+    # vids = Net::HTTP.get_response(tivd)
+    puts "88888888888888888888888888888888888888888888888888888888888888888888"
+    flash[:notice] = "Subscription complete"
+    # puts vids
+    # if (response.status).to eq 400
+    #     redirect_back(fallback_location: root_path)
+    #     puts "hihihihiihihihii"
+    # else
+    #   redirect_back(fallback_location: root_path)
+    #   puts "iiiiiiiiiiiiiiiiiiiiiiiiiii"
+    # end
+
+    puts "doooooooooooooooooooooooooooooooooo"
+
+    redirect_back(fallback_location: root_path)
 
   end
 

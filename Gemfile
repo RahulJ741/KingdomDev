@@ -35,6 +35,13 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'paperclip'
 gem 'toastr-rails'
 gem 'rails_admin', '~> 1.1.1'
+gem 'dotenv-rails', :groups => [:development,:test]
+# gem "gibbon"
+gem 'gibbon', :git => 'https://github.com/amro/gibbon.git'
+
+gem 'faraday'
+gem 'faraday_middleware'
+
 # gem 'geocoder'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

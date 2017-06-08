@@ -44,7 +44,7 @@ Rails.application.routes.draw do
   match 'add_cart' => 'shopping_cart#add_cart', :via => [:get, :post]
   match 'remove_from_cart/:room_id' => 'shopping_cart#remove_from_cart', :via => [:get, :post]
   # get 'authf' => 'session#authf'
-
+  post 'subscribe' => 'staticpage#subscribe'
 
   # get "admin" => 'admin#index'
   # get 'room' => 'admin#rooms'

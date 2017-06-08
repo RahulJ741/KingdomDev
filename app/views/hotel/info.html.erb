@@ -104,11 +104,9 @@
 																			<label for="features">Features</label>
 																			<select class="custom-select form-control" id="features" name="features">
 																				<option value="">Choose</option>
-																				<option value="1">1</option>
-																				<option value="2">2</option>
-																				<option value="3">3</option>
-																				<option value="4">4</option>
-																				<option value="5">5</option>
+																				<% @features.each do |f|%>
+																				<option value="<%= f.name %>"><%= f.name %></option>
+																				<%end%>
 																			</select>
 																		</div>
 																		<div class="col col-md-3 col-sm-3 col-xs-3">
@@ -154,6 +152,7 @@
 					</div>
 
 				</div><hr>
+
 
       <% @hotel.rooms.each do |hg| %>
 
@@ -216,6 +215,7 @@
 
 		</div>
     <br>
+		
 	</div>
 <!-- </div> -->
 <style media="screen">
