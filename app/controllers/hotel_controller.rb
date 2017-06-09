@@ -1,6 +1,5 @@
 class HotelController < ApplicationController
-  # require 'faraday'
-  # require 'faraday_middleware'
+
   require 'uri'
   require 'net/http'
 
@@ -19,6 +18,27 @@ class HotelController < ApplicationController
     @features = Feature.all
     # Room.where(:hotel_id => params[:id]).distinct.pluck(:features)
 
+   
+
+
+    if request.post?
+      # room = Room.find(params[:])
+      @roomsf = Room.rooms_type()
+      # @rooms = @hotel.rooms.rooms_type(params[:rooms_type]).room_size(params[:room_size]).max_occupancy(params[:max_occupancy]).hotel_id(params[:hotel_id])
+    end
+
+    if session[:user_id]
+      @current_user = User.find(session["user_id"])
+      puts session[:user_id]
+      @cart = ShoppingCart.where(:user_id => session[:user_id])
+    else
+      @current_user = nil
+    end
+  end
+
+  def accommodation
+
+    # @hotels = Hotel.all
     url = URI("https://kingdomsg.eventsair.com/ksgapi/test-imports/ksgapi/ksgapi/GetHotels")
 
     http = Net::HTTP.new(url.host, url.port)
@@ -36,37 +56,23 @@ class HotelController < ApplicationController
     response = http.request(request1)
     # puts response.read_body
     data = JSON.parse(response.body)
-    gitt = data.first
-    gitt.second.pluck('Name')
-    puts gitt.second.pluck('Name')#data['Hotels']['Id']
-
-    # response.(only: [:Id])
-    # puts response.read_body(only: [:Id])
-    puts "[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]"
-
-
-
-
-    # events.each do |event_hash|
-    #    event_hash.keep_if { |key, _| [:event_name, :cruise_ship_name].include?(key) }
-    # end
-    #
-    # puts events
-
-
+    @hotels = data['Hotels'].pluck('Id','Name','Stars')
+    # @hotels[11][2]=2
+    puts @hotels.inspect
     if request.post?
-      # room = Room.find(params[:])
-      @roomsf = Room.rooms_type()
-      # @rooms = @hotel.rooms.rooms_type(params[:rooms_type]).room_size(params[:room_size]).max_occupancy(params[:max_occupancy]).hotel_id(params[:hotel_id])
+      @hotels = @hotels.select{ |h| h[2].to_i== params[:star_rating].to_i }
+      # @hotels = Hotel.star_rating(params[:star_rating]) if params[:star_rating].present?
+      @opt_val = params[:star_rating]
     end
 
+    @cart = ShoppingCart.where(:user_id => session[:user_id])
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
-      @cart = ShoppingCart.where(:user_id => session[:user_id])
     else
       @current_user = nil
     end
+
   end
 
 end

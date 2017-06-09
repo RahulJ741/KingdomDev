@@ -69,72 +69,45 @@
 
 			<div class="col col-md-9">
 				<div class="row" style="background-color:white; margin-top:3%; margin-bottom:2%; margin-right:0%;">
-					<div class="col evnt">
-						<div class="col col-md-12 col-xs-12 pad_none ticket2-applications-fisrt" style="display:flex;">
-							<div class="col col-md-2 col-sm-2 col-xs-2 pad_none ticket2-applications-calender2" style="padding: 27px 0 !important;">
-								<span><img src="/assets/images/clender-icon-img1.png" alt=""></span>
-								<h4>15 May <br> <strong>2017</strong></h4>
-								<img src="/assets/images/gree-right-arrow2.png" class="right-green-arow2"/>
-							</div>
-							<div class="col col-md-9 col-sm-8 col-xs-8 pad_none ticket2-applications-right-purpel2" style="display: initial;">
-								<div class="col col-md-12 pad_none ticket2-applications3-right-inner">
-									<h5>Event Tickets lottery – Application phase opens </h5>
-									<p>(Note Travel Packages including tickets and accommodation, create your own packages including tickets and accommodation, and standalone accommodation are all available for immediate purchase) </p>
+					<% @events.each do |i| %>
+						<div class="row" style="margin-bottom: 15px">
+							<div class="col col-md-12 col-xs-12 " style="display:flex;">
+								<div class="col col-md-2 col-sm-2 col-xs-2 pad_none ticket2-applications-calender2" style="padding: 27px 0 !important;">
+									<span><img src="/assets/images/clender-icon-img1.png" alt=""></span>
+									<h4><%= i['date'] %> <br> <strong>2018</strong></h4>
+									<img src="/assets/images/gree-right-arrow2.png" class="right-green-arow2"/>
 								</div>
-								<!-- <button type="button" class="btn btn-warning" name="button"><i class="fa fa-eye" aria-hidden="true"></i> View</button> -->
-							</div>
-							<div class="col col-md-1 col-sm-2 col-xs-2 right-yellow ">
-								<i class="fa fa-cart-plus fa-3x"></i>
-							</div>
-							</div>
-					</div>
+								<div class="col col-md-10 col-sm-10 col-xs-10 pad_none ticket2-applications-right-purpel2" style="display: initial;">
+									<div class="col col-md-12 pad_none ticket2-applications3-right-inner">
+										<h5><%= i['name'] %></h5>
+										
+									</div>
+									<!-- <button type="button" class="btn btn-warning" name="button"><i class="fa fa-eye" aria-hidden="true"></i> View</button> -->
+								</div>
 
-					<div class="col evnt">
-						<div class="col col-md-12 col-xs-12 pad_none ticket2-applications-fisrt" style="display:flex;">
-							<div class="col col-md-2 col-sm-2 col-xs-2 pad_none ticket2-applications-calender2" style="padding: 27px 0 !important;">
-								<span><img src="/assets/images/clender-icon-img1.png" alt=""></span>
-								<h4>5 Jun <br> <strong>2017</strong></h4>
-								<img src="/assets/images/gree-right-arrow2.png" class="right-green-arow2"/>
 							</div>
-							<div class="col col-md-9  col-sm-8 col-xs-8 pad_none ticket2-applications-right-purpel2" style="display: initial;">
-								<div class="col col-md-12 pad_none ticket2-applications3-right-inner">
-									<h5>Event Tickets lottery – Application phase temporarily closes </h5>
-									<!-- <p>(Note Travel Packages including tickets and accommodation, create your own packages including tickets and accommodation, and standalone accommodation are all available for immediate purchase) </p> -->
+							<div class="col col-md-12 col-sm-12 col-xs-12 ">
+								
+								<div class="row" style="margin: 0px;color: white">
+									<% i['cat'].each do |j| %>
+										<div class="col-xs-6 col-sm-4 col-md-4" style="background-color: #f5ba13;border: 1px solid black;">
+											<i class="fa fa-cart-plus " style="font-size: 24px;"></i>
+											<p style="font-weight: bold;"><%= j['name'] %></p>
+										</div>
+									<% end %>
 								</div>
-								<!-- <button type="button" class="btn btn-warning" name="button"><i class="fa fa-eye" aria-hidden="true"></i> View</button> -->
-							</div>
-							<div class="col col-md-1 col-xs-2 col-sm-2 right-yellow">
-								<i class="fa fa-cart-plus fa-3x"></i>
+								
 							</div>
 						</div>
-					</div>
+					<% end %>
 
-							<div class="col evnt">
-								<div class="col col-md-12 col-xs-12 pad_none ticket2-applications-fisrt" style="display:flex;">
-									<div class="col col-md-2 col-sm-2 col-xs-2 pad_none ticket2-applications-calender2" style="padding: 27px 0 !important;">
-										<span><img src="/assets/images/clender-icon-img1.png" alt=""></span>
-										<h4>12 Jun <br> <strong>2017</strong></h4>
-										<img src="/assets/images/gree-right-arrow2.png" class="right-green-arow2"/>
-									</div>
-									<div class="col col-md-9 col-sm-8 col-xs-8 pad_none ticket2-applications-right-purpel2" style="display: initial;">
-										<div class="col col-md-12 pad_none ticket2-applications3-right-inner">
-											<p>Event Tickets results are complete, payment is automatically charged for successful results to all
-												card holders under AU$2,500 and over AU$2,500 an invoice for payment within 7 days is issued.
-											</p>
-											<p>For any tickets that are <a target="_blank" href="/assets/upload/GC2018_Waitlisted_Event_Tickets_T&C_KSG_v1.pdf" style="color: white; text-decoration: underline;">waitlisted / backordered</a>, standalone event ticket clients have 7 days
-												in which to accept the terms of sale and make the necessary 50% payment deposit. Please refer
-												to the terms and conditions of sale for further information.
-											</p>
-										</div>
-										<!-- <button type="button" class="btn btn-warning" name="button"><i class="fa fa-eye" aria-hidden="true"></i> View</button> -->
-									</div>
-									<div class="col col-md-1  col-sm-2 col-xs-2 right-yellow">
-										<i class="fa fa-cart-plus fa-3x"></i>
-									</div>
-								</div>
-							</div>
+					
 
-								<div class="col evnt">
+				
+
+							
+
+								<!-- <div class="col evnt">
 									<div class="col col-md-12 col-xs-12 pad_none ticket2-applications-fisrt" style="display:flex;">
 										<div class="col col-md-2 col-sm-2 col-xs-2 pad_none ticket2-applications-calender2" style="padding: 27px 0 !important;">
 											<span><img src="/assets/images/clender-icon-img1.png" alt=""></span>
@@ -145,13 +118,13 @@
 											<div class="col col-md-12 pad_none ticket2-applications3-right-inner">
 												<h5>Event Tickets general release</h5>
 											</div>
-											<!-- <button type="button" class="btn btn-warning" name="button"><i class="fa fa-eye" aria-hidden="true"></i> View</button> -->
+											
 										</div>
 										<div class="col col-md-1 col-sm-2 col-xs-2 right-yellow">
 											<i class="fa fa-cart-plus fa-3x"></i>
 										</div>
 									</div>
-								</div>
+								</div> -->
 
 					</div>
 				</div>

@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'package' => 'staticpage#package'
   get 'event' => 'staticpage#event'
   get 'createownpackage' => 'staticpage#createownpackage'
-  match 'accommodation' => 'staticpage#accommodation', :via => [:get, :post]
+  
   get 'swimmingpackages/details' => 'staticpage#swimmingpackages'
   get 'athleticspackages' => 'staticpage#athleticspackages'
   get 'rugbypackages' => 'staticpage#rugbypackages'
@@ -40,6 +40,8 @@ Rails.application.routes.draw do
   match 'reset_user' => 'session#reset_user', :via => [:get, :post]
 
   match 'hotel_info/:id' => 'hotel#info', :via => [:get, :post]
+  match 'accommodation' => 'hotel#accommodation', :via => [:get, :post]
+
   match 'cart' => 'shopping_cart#index', :via => [:get, :post]
   match 'add_cart' => 'shopping_cart#add_cart', :via => [:get, :post]
   match 'remove_from_cart/:room_id' => 'shopping_cart#remove_from_cart', :via => [:get, :post]
