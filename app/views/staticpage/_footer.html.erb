@@ -666,8 +666,10 @@ $(document).ready(function(){
   </script>
 
 	<script type="text/javascript">
-	$('#from_date_shop').bootstrapMaterialDatePicker({ weekStart : 0, time: false });
-	$('#to_date_shop').bootstrapMaterialDatePicker({ weekStart : 0, time: false });
+	$('#from_date_shop').bootstrapMaterialDatePicker({ format : 'DD/MM/YYYY', weekStart : 0, time: false });
+	
+	$('#from_date_shop').bootstrapMaterialDatePicker('setMinDate', '01/01/2018');
+    $('#from_date_shop').bootstrapMaterialDatePicker('setMaxDate','31/12/2018');
 	toastr.options = {
 		"closeButton": false,
 		  "debug": false,

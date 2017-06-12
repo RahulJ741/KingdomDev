@@ -41,27 +41,24 @@
 			<div class="col col-md-3" style="padding-top:2%;">
 				<div id="panel" class="">
 					<div class="well" style="background-color: #fff;">
-						<form class="" action="" method="post">
+						<form class="" action="/event/" method="get">
 							<label for="session" class="pull-left">Session Code</label>
 							<% if @current_user.present? %>
 							<input type="text" placeholder="<%= @current_user.first_name+" "+@current_user.last_name %>" disabled="true" style="border:none; background: #f5f5f5; text-align:left;"><br>
 							<%else%>
 							<input type="text" placeholder="" disabled="true" style="border:none; background:transparent;"><br>
 							<%end%>
-							<label for="event" class="pull-left">Stars</label><br>
-								<select class="custom-select form-control">
+							<label for="event" class="pull-left">Events</label><br>
+								<select name="event" class="custom-select form-control">
 									<option value="">Choose</option>
-									<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5</option>
+									<% @all_events.each do |i| %>
+										<option <% if params[:event] == i %>selected=""<% end %> value="<%= i %>"><%= i %></option>
+									<% end %>
 								</select><br>
-								<label for="start_date" class="pull-left">START DATE</label>
-								<input type="date" name="start_date" id="start_date" class="form-control"><br>
-								<label for="end_date" class="pull-left">END DATE</label><br>
-								<input type="date" name="end_date" id="end_date" class="form-control"><hr>
-								<button type="button" name="button" class="btn btn-warning btn-block" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;">Apply</button>
+								<label for="start_date" class="pull-left">Event DATE</label>
+								<input type="date" id="from_date_shop" name="start_date" id="start_date" class="form-control" value="<%= params[:start_date] %>"><br>
+							
+								<button type="submit" name="button" class="btn btn-warning btn-block" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;">Apply</button>
 						</form>
 						</div>
 				</div>
@@ -174,6 +171,10 @@
 		position: absolute;
 		left: 23%;
     top: 39%;
+	}
+
+	.dtp-header{
+		position: unset !important;
 	}
 </style>
 

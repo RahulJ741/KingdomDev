@@ -132,7 +132,17 @@ class StaticpageController < ApplicationController
       end
       @events.push(data1)
     end
-    puts @events
+
+    @all_events = @events.map { |h| h['name'] }.uniq
+
+    if not params[:event].blank?
+      @events = @events.select {|a| a["name"] == params[:event] }
+    end
+
+    if not params[:start_date].blank?
+      @events = @events.select {|a| a["date"] == params[:start_date][0..4] }
+    end
+    
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
