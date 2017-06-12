@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170608132714) do
+ActiveRecord::Schema.define(version: 20170612063415) do
 
   create_table "athletics_supporters_package_price_list_all", primary_key: "serial_no", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string  "athletics_supporter_packages", limit: 10, null: false
@@ -374,6 +374,7 @@ ActiveRecord::Schema.define(version: 20170608132714) do
     t.integer  "max_occupancy"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.string   "unique_id"
   end
 
   create_table "rooms_features", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|

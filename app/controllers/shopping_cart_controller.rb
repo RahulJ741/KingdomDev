@@ -5,6 +5,7 @@ class ShoppingCartController < ApplicationController
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
       @cart = ShoppingCart.where(:user_id => session[:user_id])
+      @events = ShoppingCart.where(:user_id => session[:user_id])
     else
       @current_user = nil
     end
@@ -13,6 +14,8 @@ class ShoppingCartController < ApplicationController
   def add_cart
     @cart = ShoppingCart.create(:user_id => params[:user_id], :room_id => params[:room_id])
     @cart.save()
+    puts "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH"
+    puts @cart.errors.full_messages
     redirect_to :back, :flash => {:success => 'Added to cart'}
   end
 

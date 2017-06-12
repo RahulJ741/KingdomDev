@@ -142,7 +142,7 @@ class StaticpageController < ApplicationController
     if not params[:start_date].blank?
       @events = @events.select {|a| a["date"] == params[:start_date][0..4] }
     end
-    
+
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
@@ -305,7 +305,7 @@ class StaticpageController < ApplicationController
     puts "5555555555555564646466546"
     puts ENV["MAILCHIMP_LIST_ID"]
     # gibbon.lists(list_id).members.create(body: {email_address: params[:email], status: "subscribed", merge_fields: {FNAME: "First Name", LNAME: "Last Name",MESSAGE: "done"}})
-    tivd = gibbon.lists(ENV["MAILCHIMP_LIST_ID"]).members.create(body: {email_address: params[:email], status: "subscribed"})
+    tivd = gibbon.lists(ENV["MAILCHIMP_LIST_ID"]).members.create(body: {email_address: params[:email], status: "PENDING"})
     # vids = Net::HTTP.get_response(tivd)
     puts "88888888888888888888888888888888888888888888888888888888888888888888"
     flash[:notice] = "Subscription complete"

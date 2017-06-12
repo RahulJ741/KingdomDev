@@ -16,51 +16,90 @@
 
 
 
+				<h3 class="pull-left" style="padding-left:10px;">Hotel</h3>
+				<div class="col-xs-12 pad_none condition-of-sale-table-new2">
+					<div class="col-xs-12 pad_none condition-of-sale-heading-yellow-out">
+						<span style="width: 40%;">Hotel</span>
+						<span style="width: 15%;">In</span>
+						<span style="width: 15%;">Out</span>
+						<span style="width: 15%;">Rate</span>
+						<span style="width: 15%;"></span>
+					</div>
 
-		<div class="col-xs-12 pad_none condition-of-sale-table-new2">
-			<div class="col-xs-12 pad_none condition-of-sale-heading-yellow-out">
-				<span style="width: 40%;">Hotel</span>
-				<span style="width: 15%;">In</span>
-				<span style="width: 15%;">Out</span>
-				<span style="width: 15%;">Rate</span>
-				<span style="width: 15%;"></span>
-			</div>
-
-			<div class="col-xs-12 pad_none condition-of-sale-table-scroll-out scrollbox" style="height: auto;">
-				<div class="panel-group" id="accordion">
-					<% @cart.each do |h| %>
-						<div class="panel panel-default">
-						<div class="panel-heading">
-					  		<!-- <h4 class="panel-title "> -->
-								<div class="accordion-toggle " >
-									<p style="width: 40%;">
-										<%= h.room.hotel.name %>, <%= h.room.rooms_type%>
-									</p>
-									<p style="width: 15%;">7/1/2017</p>
-									<p style="width: 15%;">31/3/18</p>
-									<p style="width: 15%;">50$</p>
-									<p style="width: 15%;">
-										<a href="/remove_from_cart/<%= h.room_id %>"><i class="fa fa-times"></i>Remove</u></a>
-									</p>
+					<div class="col-xs-12 pad_none condition-of-sale-table-scroll-out scrollbox" style="height: auto;">
+						<div class="panel-group" id="accordion">
+							<% @cart.each do |h| %>
+								<div class="panel panel-default">
+								<div class="panel-heading">
+							  		<!-- <h4 class="panel-title "> -->
+										<div class="accordion-toggle " >
+											<p style="width: 40%;">
+												<%= h.room.hotel.name %>, <%= h.room.rooms_type%>
+											</p>
+											<p style="width: 15%;">7/1/2017</p>
+											<p style="width: 15%;">31/3/18</p>
+											<p style="width: 15%;">50$</p>
+											<p style="width: 15%;">
+												<a href="/remove_from_cart/<%= h.room_id %>"><i class="fa fa-times"></i>Remove</u></a>
+											</p>
+										</div>
+							  		<!-- </h4> -->
 								</div>
-					  		<!-- </h4> -->
+						  	</div>
+								<%end%>
 						</div>
-				  	</div>
-						<%end%>
+					</div>
 				</div>
-			</div>
-		</div>
 
-		<div class="col col-xs-12" style="text-align:right;">
-			<a class="subscribe-submit" href="/accommodation" style="padding: 10px 15px !important; width: auto !important; margin: 9px 0px 10px 0px !important; font-size: 14px;">
-				Continue Shopping
-			</a>
 
-			<a class="subscribe-submit" href="" style="padding: 10px 15px !important; width: 100PX !important; margin: 9px 0px 10px 0px !important; font-size: 14px;">
-				Checkout
-			</a>
 
-		</div>
+				<h3 class="pull-left" style="padding-left:10px;">Events</h3>
+				<div class="col-xs-12 pad_none condition-of-sale-table-new2">
+					<div class="col-xs-12 pad_none condition-of-sale-heading-yellow-out">
+						<span style="width: 40%;">Event</span>
+						<span style="width: 15%;">Date</span>
+						<span style="width: 15%;">Category</span>
+						<span style="width: 15%;">Rate</span>
+						<span style="width: 15%;"></span>
+					</div>
+
+					<div class="col-xs-12 pad_none condition-of-sale-table-scroll-out scrollbox" style="height: auto;">
+						<div class="panel-group" id="accordion">
+							<% @events.each do |ev| %>
+								<div class="panel panel-default">
+								<div class="panel-heading">
+										<!-- <h4 class="panel-title "> -->
+										<div class="accordion-toggle " >
+											<p style="width: 40%;">
+												<%= ev['name'] %>Netball
+											</p>
+											<p style="width: 15%;"><%= ev['date'] %>17/5/2018</p>
+											<p style="width: 15%;"><%= ev['cat'] %>A</p>
+											<p style="width: 15%;">50$</p>
+											<p style="width: 15%;">
+												<a href="/remove_from_cart_event/<%= ev['name'] %>/<%= ev['date']%>"><i class="fa fa-times"></i>Remove</u></a>
+											</p>
+										</div>
+										<!-- </h4> -->
+								</div>
+								</div>
+								<%end%>
+						</div>
+					</div>
+				</div>
+
+
+
+				<div class="col col-xs-12" style="text-align:right;">
+					<a class="subscribe-submit" href="/accommodation" style="padding: 10px 15px !important; width: auto !important; margin: 9px 0px 10px 0px !important; font-size: 14px;">
+						Continue Shopping
+					</a>
+
+					<a class="subscribe-submit" href="" style="padding: 10px 15px !important; width: 100PX !important; margin: 9px 0px 10px 0px !important; font-size: 14px;">
+						Checkout
+					</a>
+
+				</div>
 
 
         </div>

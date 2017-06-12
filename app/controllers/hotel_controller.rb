@@ -8,6 +8,7 @@ class HotelController < ApplicationController
     @hotel = Hotel.find(params[:id])
     @rooms = @hotel.rooms
     @room_type = Room.where(:hotel_id => params[:id]).distinct.pluck(:rooms_type)
+
     # puts "pppppppppppppppppppp"
     # puts params[:id]
     # puts @room_type
@@ -18,12 +19,45 @@ class HotelController < ApplicationController
     @features = Feature.all
     # Room.where(:hotel_id => params[:id]).distinct.pluck(:features)
 
-   
+    puts "||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"
+    puts @hotel.unique_id
+    url = URI("https://kingdomsg.eventsair.com/ksgapi/test-imports/ksgapi/ksgapi/GetHotelInfo?hotelid=#{@hotel.unique_id}")
+    puts url
+    http = Net::HTTP.new(url.host, url.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
+    request2 = Net::HTTP::Get.new(url)
+    request2["apikey"] = 'wmQ87NZhMvWx5ZvrrStJPr9FG9WQ0wOSGVXxbUKDbjAuZC6k42M3x9GOzFt2umSQhRGylMwmBmlcU'
+    request2["appusername"] = 'aaa@aaa.com'
+    request2["apppassword"] = 'aaa@aaa.com'
+    request2["content-type"] = 'application/json'
+    request2["cache-control"] = 'no-cache'
+    # request2["postman-token"] = '91a73d67-63ec-a9b0-819d-39b4ce08f3b9'
+
+    response = http.request(request2)
+    puts "<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<>>>>>>>>>>>>"
+    puts response.read_body
+    puts "{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}"
+    data = JSON.parse(response.body)
+    @rooms_data = data['HotelInfo']['Rooms'].pluck('Id', 'Name','Description', 'MaxOccupancy')
+    puts @rooms_data
+    puts @rooms_data.length
+    puts "{{}{}{}{}{}{}{}{}{}{}{}{}{}{{{}}}}"
+    puts @rooms_data.first.second.split.first
+    puts ':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'
+
+    # for i in 0..@rooms_data.length
+    #   if Room.find
+    #     continue
+    #   else
+    #     Room.create(unique_id:@rooms_data.first ,name:@rooms_data.second, max_occupancy:@rooms_data.third,hotel_id:@hotel.id)
+    #   end
+    # end
 
     if request.post?
-      # room = Room.find(params[:])
-      @roomsf = Room.rooms_type()
+      @rooms_data = @rooms_data.select{|d| d[1] == params[:rooms_type]}
+      # @roomsf = Room.rooms_type()
       # @rooms = @hotel.rooms.rooms_type(params[:rooms_type]).room_size(params[:room_size]).max_occupancy(params[:max_occupancy]).hotel_id(params[:hotel_id])
     end
 
@@ -35,6 +69,12 @@ class HotelController < ApplicationController
       @current_user = nil
     end
   end
+
+
+
+
+
+
 
   def accommodation
 
