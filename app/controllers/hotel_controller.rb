@@ -64,7 +64,7 @@ class HotelController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
-      @cart = ShoppingCart.where(:user_id => session[:user_id])
+       @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
     else
       @current_user = nil
     end
@@ -105,7 +105,7 @@ class HotelController < ApplicationController
       @opt_val = params[:star_rating]
     end
 
-    @cart = ShoppingCart.where(:user_id => session[:user_id])
+     @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]

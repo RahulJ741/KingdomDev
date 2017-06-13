@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  # mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'staticpage#index'
   get 'city' => 'staticpage#city'
@@ -44,15 +44,13 @@ Rails.application.routes.draw do
 
   match 'cart' => 'shopping_cart#index', :via => [:get, :post]
   match 'add_cart' => 'shopping_cart#add_cart', :via => [:get, :post]
+  match 'event_add_cart' => 'shopping_cart#event_add_cart', :via => [:get, :post]
   match 'remove_from_cart/:room_id' => 'shopping_cart#remove_from_cart', :via => [:get, :post]
+  match 'remove_from_cart_event/:id' => 'shopping_cart#remove_from_cart_event', :via => [:get, :post]
   # get 'authf' => 'session#authf'
   post 'subscribe' => 'staticpage#subscribe'
 
-  # get "admin" => 'admin#index'
-  # get 'room' => 'admin#rooms'
-  # get 'hotels' => 'admin#hotels'
-  # get 'features' => 'admin#features'
-  # get 'room_feature' => 'admin#room_feature'
+  get "admin" => 'admin#index'
 
 
 

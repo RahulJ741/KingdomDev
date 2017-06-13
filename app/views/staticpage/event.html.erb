@@ -87,9 +87,19 @@
 								
 								<div class="row" style="margin: 0px;color: white">
 									<% i['cat'].each do |j| %>
-										<div class="col-xs-6 col-sm-4 col-md-4" style="background-color: #f5ba13;border: 1px solid black;">
-											<i class="fa fa-cart-plus " style="font-size: 24px;"></i>
-											<p style="font-weight: bold;"><%= j['name'] %></p>
+										<div class="col-xs-6 col-sm-4 col-md-4 add_to_cart" style="background-color: #f5ba13;border: 1px solid black;cursor:pointer" data-event_id="<%= i['event_id'] %>" data-event_name="<%= i['name'] %>" data-event_date="<%= i['date'] %>" <% if @current_user.present? %>data-toggle="modal" data-target="#eventModal"<% else %>data-toggle="modal" data-target="#loginModal"<%end%>>
+											<div class="row">
+
+												<div class="col-xs-8">
+													<p class="event_cat" style="font-weight: bold;margin-top: 5px;margin-bottom: 5px;" data-event_cat="<%= j['name'] %>"><%= j['name'] %></p>
+													<p class="event_rate" style="font-weight: bold;" data-event_rate="<%= j['rate'] %>">Rate : <%= j['rate'] %></p>
+													
+												</div>
+												<div class="col-xs-4">
+													<i class="fa fa-cart-plus " style="font-size: 24px;margin-top: 15px;"></i>
+													
+												</div>
+											</div>
 										</div>
 									<% end %>
 								</div>
@@ -177,5 +187,16 @@
 		position: unset !important;
 	}
 </style>
+<script>
+	$(document).ready(function(){
+		$(document).on('click','.add_to_cart',function(){
+			$('#eventModal').find('#event_id').val($(this).data('event_id'));
+			$('#eventModal').find('#event_name').val($(this).data('event_name'));
+			$('#eventModal').find('#event_date').val($(this).data('event_date'));
+			$('#eventModal').find('#event_cat').val($(this).find('.event_cat').data('event_cat'));
+			$('#eventModal').find('#event_rate').val($(this).find('.event_rate').data('event_rate'));
 
+		});
+	});
+</script>
 <%= render 'footer'%>

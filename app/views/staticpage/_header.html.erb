@@ -71,7 +71,7 @@
 
                 <% if @current_user.present? %>
                   <li>
-                    <a href="/cart" style="margin-top:-8px; display: block;"><span class="fa fa-shopping-cart fa-lg"><sup style="font-size: 16px;margin: 5px;"><%= @cart.count %></sup></span></a>
+                    <a href="/cart" style="margin-top:-8px; display: block;"><span class="fa fa-shopping-cart fa-lg"><sup style="font-size: 16px;margin: 5px;"><%= @cart_count %></sup></span></a>
                   </li>
                 <% else %>
                 <% end %>
