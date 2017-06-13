@@ -49,7 +49,9 @@ class ShoppingCartController < ApplicationController
       @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
       total = ((HotelShoppingCart.sum('rate') + EventShoppingCart.sum('rate')).round(2))
       if total > 2500
-        redirect_to :back, :flash => {:error => 'Somthing went wrong'}
+        puts "--------------------"
+        @msg = "Since your billing amount exceeds 2500$ we have informed admin they will contact you regarding your order"
+        redirect_to :back, :flash => {:msg => @msg}
       end
     else
       @current_user = nil
