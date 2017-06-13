@@ -46,7 +46,7 @@ Rails.application.routes.draw do
   match 'cart' => 'shopping_cart#index', :via => [:get, :post]
   match 'add_cart' => 'shopping_cart#add_cart', :via => [:get, :post]
   match 'event_add_cart' => 'shopping_cart#event_add_cart', :via => [:get, :post]
-  match 'remove_from_cart/:room_id' => 'shopping_cart#remove_from_cart', :via => [:get, :post]
+  match 'remove_from_cart_hotel/:id' => 'shopping_cart#remove_from_cart_hotel', :via => [:get, :post]
   match 'remove_from_cart_event/:id' => 'shopping_cart#remove_from_cart_event', :via => [:get, :post]
   get '/checkout/' => 'shopping_cart#checkout'
   post '/make_payment/' => 'shopping_cart#make_payment'

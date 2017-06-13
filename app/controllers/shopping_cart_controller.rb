@@ -12,17 +12,17 @@ class ShoppingCartController < ApplicationController
   end
 
   def add_cart
-    @cart = HotelShoppingCart.create(:user_id => params[:user_id], :room_id => params[:room_id])
+    @cart = HotelShoppingCart.create(:user_id => params[:user_id],:room_type => params[:room_type],rate: params[:rate],hotel_id: params[:hotel_id],room_unique_id: params[:room_unique_id])
     @cart.save()
     puts "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH"
     puts @cart.errors.full_messages
     redirect_to :back, :flash => {:success => 'Added to cart'}
   end
 
-  def remove_from_cart
-    @cart = ShoppingCart.where(:user_id => session[:user_id])
-    @cart.find_by_room_id(params[:room_id]).destroy
-    redirect_to :back, :flash => {:error => 'Removed from cart'}
+  def remove_from_cart_hotel
+    @cart = HotelShoppingCart.find(params[:id]).destroy
+
+    redirect_to :back, :flash => {:error => 'Room removed from cart'}
   end
 
   def remove_from_cart_event

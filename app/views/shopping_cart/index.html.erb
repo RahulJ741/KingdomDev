@@ -36,13 +36,13 @@
 								  		<!-- <h4 class="panel-title "> -->
 											<div class="accordion-toggle " >
 												<p style="width: 40%;">
-													<%= h.room.hotel.name %>, <%= h.room.rooms_type%>
+													<%= h.hotel.name %>, <%= h.room_type%>
 												</p>
 												<p style="width: 15%;">7/1/2017</p>
 												<p style="width: 15%;">31/3/18</p>
-												<p style="width: 15%;">50$</p>
+												<p style="width: 15%;"><%= h.rate %>$</p>
 												<p style="width: 15%;">
-													<a href="/remove_from_cart/<%= h.room_id %>"><i class="fa fa-times"></i>Remove</u></a>
+													<a href="/remove_from_cart_hotel/<%= h.id %>"><i class="fa fa-times"></i>Remove</u></a>
 												</p>
 											</div>
 								  		<!-- </h4> -->

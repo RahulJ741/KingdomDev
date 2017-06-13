@@ -320,9 +320,11 @@
 				<form class="" action="/add_cart" method="post" enctype="multipart/form-data">
 					<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 					<input type="hidden" name="user_id" value="<%= session[:user_id] %>">
-					<input type="hidden" id="shop_room_id" name="room_id">
+					<input type="hidden" id="hotel_id" name="hotel_id">
 					<input type="hidden" name="rate" id="hotel_rate">
 					<input type="hidden" name="room_unique_id" id="room_unique_id">
+					<input type="hidden" name="room_type" id="room_type">
+					
 					<button type="submit" class="btn btn-warning" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000; float:right; margin-right:7px;">Ok</button>
 				</form>&ensp;
 
@@ -454,12 +456,14 @@ $(document).ready(function(){
 
 			$(".Shopcart").click(function(){
 				var room_i = $.parseJSON($(this).attr('data-button'));
-  			// alert(room_i.room_id)
-				$("#shop_room_id").val(room_i.room_id);
+  			console.log(room_i);
+				$("#hotel_id").val(room_i.hotel_id);
 				// alert(room_i.rate);
 				$("#hotel_rate").val(room_i.rate);
 				// alert(room_i.room_unique_id);
 				$("#room_unique_id").val(room_i.room_unique_id);
+				$("#room_type").val(room_i.room_type);
+
 			});
 
 

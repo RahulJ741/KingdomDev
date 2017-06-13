@@ -67,19 +67,7 @@ class StaticpageController < ApplicationController
     @exclusive = Exclusive.where(is_active: true).all
     @exclusive_second = ExclusiveSecond.where(is_active: true).order('order_by asc')
 
-    @bhead = 'Gold Coast <span> 2018 </sdef check_user
-    gibbon = Gibbon::Request.new(api_key: ENV["MAILCHIMP_API_KEY"], debug: true)
-    begin
-      check_user = gibbon.lists(ENV["MAILCHIMP_LIST_ID"]).retrieve(params: {"email": params[:email]})
-      puts "||||||||||||||||||||||||||\\\\\\\\\\\\\\\\\\"
-      puts check_user.inspect
-
-      render :json => false
-    rescue Exception => e
-      render :json => true
-    end
-  end
-pan> Commonwealth games'
+    @bhead = 'Gold Coast <span> 2018 </span> Commonwealth games'
     @bstext = 'Travel Packages and Event Tickets are now available for the Gold Coast 2018 Commonwealth Games. <strong> Kingdom Sports Group is an Exclusive Authorised Ticket Reseller </strong> for 28 countries as well as an Authorised Ticket Reseller for Malta and Cyprus and all EU / EEA countries.'
   end
 
@@ -201,18 +189,7 @@ pan> Commonwealth games'
     if not params[:start_date].blank?
       @events = @events.select {|a| a["date"] == params[:start_date][0..4] }
     end
-def check_user
-    gibbon = Gibbon::Request.new(api_key: ENV["MAILCHIMP_API_KEY"], debug: true)
-    begin
-      check_user = gibbon.lists(ENV["MAILCHIMP_LIST_ID"]).retrieve(params: {"email": params[:email]})
-      puts "||||||||||||||||||||||||||\\\\\\\\\\\\\\\\\\"
-      puts check_user.inspect
 
-      render :json => false
-    rescue Exception => e
-      render :json => true
-    end
-  end
 
     if session[:user_id]
       @current_user = User.find(session["user_id"])
@@ -239,18 +216,7 @@ def check_user
 
   def swimmingpackages
     @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
-    if session[:user_id]def check_user
-    gibbon = Gibbon::Request.new(api_key: ENV["MAILCHIMP_API_KEY"], debug: true)
-    begin
-      check_user = gibbon.lists(ENV["MAILCHIMP_LIST_ID"]).retrieve(params: {"email": params[:email]})
-      puts "||||||||||||||||||||||||||\\\\\\\\\\\\\\\\\\"
-      puts check_user.inspect
-
-      render :json => false
-    rescue Exception => e
-      render :json => true
-    end
-  end
+    if session[:user_id]
 
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
@@ -298,18 +264,8 @@ def check_user
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
        @cart_count = HotelShoppingdef check_user
-    gibbon = Gibbon::Request.new(api_key: ENV["MAILCHIMP_API_KEY"], debug: true)
-    begin
-      check_user = gibbon.lists(ENV["MAILCHIMP_LIST_ID"]).retrieve(params: {"email": params[:email]})
-      puts "||||||||||||||||||||||||||\\\\\\\\\\\\\\\\\\"
-      puts check_user.inspect
-
-      render :json => false
-    rescue Exception => e
-      render :json => true
-    end
-  end
-Cart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
+  
+      Cart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
     else
       @current_user = nil
     end
