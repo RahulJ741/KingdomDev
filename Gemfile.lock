@@ -119,6 +119,9 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (~> 0.3.0)
+    paypal-sdk-rest (1.6.0)
+      multi_json (~> 1.0)
+      xml-simple
     puma (3.8.2)
     rack (2.0.3)
     rack-pjax (1.0.0)
@@ -206,6 +209,7 @@ GEM
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
+    xml-simple (1.1.5)
 
 PLATFORMS
   ruby
@@ -223,6 +227,7 @@ DEPENDENCIES
   listen (~> 3.0.5)
   mysql2 (>= 0.3.18, < 0.5)
   paperclip
+  paypal-sdk-rest
   puma (~> 3.0)
   rails (~> 5.0.2)
   rails_admin (~> 1.1.1)

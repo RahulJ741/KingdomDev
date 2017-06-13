@@ -40,8 +40,10 @@ gem 'dotenv-rails', :groups => [:development,:test]
 gem 'gibbon', :git => 'https://github.com/amro/gibbon.git'
 
 gem 'faraday'
+
 gem 'faraday_middleware'
 
+gem 'paypal-sdk-rest'
 # gem 'geocoder'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
