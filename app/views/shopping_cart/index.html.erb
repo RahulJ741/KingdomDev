@@ -42,7 +42,7 @@
 												</p>
 												<p style="width: 15%;">7/1/2017</p>
 												<p style="width: 15%;">31/3/18</p>
-												<p style="width: 15%;"><%= h.rate %>$</p>
+												<p style="width: 15%;">$ <%= h.rate %></p>
 												<p style="width: 15%;">
 													<a href="/remove_from_cart_hotel/<%= h.id %>"><i class="fa fa-times"></i>Remove</u></a>
 												</p>
@@ -79,7 +79,7 @@
 												</p>
 												<p style="width: 15%;"><%= ev.event_date.strftime("%d/%m/%Y") %></p>
 												<p style="width: 15%;"><%= ev.event_cat %></p>
-												<p style="width: 15%;"><%= ev.rate %>$</p>
+												<p style="width: 15%;">$ <%= ev.rate %></p>
 												<p style="width: 15%;">
 													<a href="/remove_from_cart_event/<%= ev.id %>"><i class="fa fa-times"></i>Remove</u></a>
 												</p>
@@ -95,7 +95,7 @@
 				<% end %>
 
 				<div class="col col-xs-12" style="text-align:right;">
-					<h3>Total : <%= (HotelShoppingCart.sum('rate') + EventShoppingCart.sum('rate')).round(2)  %>$</h3>
+					<h3>Total : $ <%= (HotelShoppingCart.sum('rate') + EventShoppingCart.sum('rate')).round(2)  %></h3>
 					<a class="subscribe-submit" href="/accommodation" style="padding: 10px 15px !important; width: auto !important; margin: 9px 0px 10px 0px !important; font-size: 14px;">
 						Continue Shopping
 					</a>

@@ -58,7 +58,7 @@
                                   </p>
                                   <p style="width: 20%;">7/1/2017</p>
                                   <p style="width: 20%;">31/3/18</p>
-                                  <p style="width: 20%;"><%= h.rate %></p>
+                                  <p style="width: 20%;">$ <%= h.rate %></p>
 
                                 </div>
                                 <!-- </h4> -->
@@ -96,7 +96,7 @@
               												</p>
               												<p style="width: 20%;"><%= ev.event_date.strftime("%d/%m/%Y") %></p>
               												<p style="width: 20%;"><%= ev.event_cat %></p>
-              												<p style="width: 20%;"><%= ev.rate %>$</p>
+              												<p style="width: 20%;">$ <%= ev.rate %></p>
 
               											</div>
               											<!-- </h4> -->
@@ -109,7 +109,7 @@
                   <tr>
                     <td>
                       <div class="col col-xs-12" style="text-align:right;">
-                        <h3>Total : <%= (HotelShoppingCart.sum('rate') + EventShoppingCart.sum('rate')).round(2)  %>$</h3>
+                        <h3>Total : $ <%= (HotelShoppingCart.sum('rate') + EventShoppingCart.sum('rate')).round(2)  %></h3>
                       </div>
                     </td>
                   </tr>
