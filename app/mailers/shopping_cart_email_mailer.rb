@@ -4,7 +4,7 @@ class ShoppingCartEmailMailer < ApplicationMailer
     @hotel = hotel
     @event = event
     @user = user
-    mail to: => user.email, :subject => "Your cart details"
+    mail :to => user.email, :subject => "Your cart details"
   end
 
 
