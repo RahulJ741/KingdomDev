@@ -2,6 +2,62 @@ class StaticpageController < ApplicationController
   require 'uri'
   require 'net/http'
 
+  def test_payment
+    require 'paypal-sdk-rest'
+
+    # Update client_id, client_secret and redirect_uri
+    # PayPal::SDK.configure({
+    #   :openid_client_id     => "client_id",
+    #   :openid_client_secret => "client_secret",
+    #   :openid_redirect_uri  => "http://localhost:3000/"
+    # })
+    # include PayPal::SDK::OpenIDConnect
+    @payment = PayPal::SDK::REST::Payment.new({
+          :intent => "sale",
+          :payer => {
+            :payment_method => "credit_card",
+            :funding_instruments => [{
+              :credit_card => {
+                :type => "visa",
+                :number => "4916550067336072",
+                :expire_month => "11",
+                :expire_year => "2019",
+                :cvv2 => "874",
+                :first_name => "Joe",
+                :last_name => "Shopper",
+                :billing_address => {
+                  :line1 => "52 N Main ST",
+                  :city => "Johnstown",
+                  :state => "OH",
+                  :postal_code => "43210",
+                  :country_code => "US" }}}]},
+          :transactions => [{
+            :item_list => {
+              :items => [{
+                :name => "item",
+                :sku => "item",
+                :price => "1",
+                :currency => "USD",
+                :quantity => 1 }]},
+            :amount => {
+              :total => "1.00",
+              :currency => "USD" },
+            :description => "This is the payment transaction description." }]})
+
+        # Create Payment and return the status(true or false)
+        puts "==============="
+        if @payment.create
+          puts "done"
+          puts @payment.inspect     # Payment Id
+        else
+          puts "not deone"
+          puts @payment.error  # Error Hash
+        end
+    #   puts "}}}}}}}}}"
+    # puts PayPal::SDK::REST::Payment.find("PAY-6ML74144SL1948036LE74JCA").inspect 
+        # redirect_to '/'   
+  end
+
   def index
       # @lists = Gibbon::API.lists
     puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<"

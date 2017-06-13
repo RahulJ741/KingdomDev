@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   get 'package' => 'staticpage#package'
   get 'event' => 'staticpage#event'
   get 'createownpackage' => 'staticpage#createownpackage'
-  
+  get 'test_payment' => 'staticpage#test_payment'
+
   get 'swimmingpackages/details' => 'staticpage#swimmingpackages'
   get 'athleticspackages' => 'staticpage#athleticspackages'
   get 'rugbypackages' => 'staticpage#rugbypackages'
@@ -47,6 +48,8 @@ Rails.application.routes.draw do
   match 'event_add_cart' => 'shopping_cart#event_add_cart', :via => [:get, :post]
   match 'remove_from_cart/:room_id' => 'shopping_cart#remove_from_cart', :via => [:get, :post]
   match 'remove_from_cart_event/:id' => 'shopping_cart#remove_from_cart_event', :via => [:get, :post]
+  get '/checkout/' => 'shopping_cart#checkout'
+  post '/make_payment/' => 'shopping_cart#make_payment'
   # get 'authf' => 'session#authf'
   post 'subscribe' => 'staticpage#subscribe'
 
