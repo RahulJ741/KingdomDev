@@ -52,7 +52,7 @@ Rails.application.routes.draw do
   post '/make_payment/' => 'shopping_cart#make_payment'
   # get 'authf' => 'session#authf'
   post 'subscribe' => 'staticpage#subscribe'
-
+  match 'check_user' => 'staticpage#check_user', :via => [:get, :post]
   get "admin" => 'admin#index'
 
 

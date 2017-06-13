@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="subscribe-inner-main2">
-			<form class="footer_form" action="/subscribe" method="post">
+			<form class="footer_form" id="subscribe_to_email" action="/subscribe" method="post">
 				<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 				<h2 class="fadeInUp wow" data-wow-duration="2s" data-wow-delay="0s">
 					<span><img src="/assets/images/subscribe-icon0img.png"></span>
@@ -10,8 +10,10 @@
 				</h2>
 				<div class="sbscribe2-field-outer fadeInUp wow" data-wow-duration="2s" data-wow-delay="0s">
 					<input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
 					<button type="submit" id="nws_btn" class="subscribe-submit">SUBMIT</button>
 				</div>
+				<label id="email-error" class="error" for="email" style="display:none; color:red; padding-right:24%;">Enter a valid email</label>
 				<span id="msg"></span>
 			</form>
 			</div>
@@ -319,6 +321,8 @@
 					<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 					<input type="hidden" name="user_id" value="<%= session[:user_id] %>">
 					<input type="hidden" id="shop_room_id" name="room_id">
+					<input type="hidden" name="rate" id="hotel_rate">
+					<input type="hidden" name="room_unique_id" id="room_unique_id">
 					<button type="submit" class="btn btn-warning" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000; float:right; margin-right:7px;">Ok</button>
 				</form>&ensp;
 
@@ -452,6 +456,10 @@ $(document).ready(function(){
 				var room_i = $.parseJSON($(this).attr('data-button'));
   			// alert(room_i.room_id)
 				$("#shop_room_id").val(room_i.room_id);
+				// alert(room_i.rate);
+				$("#hotel_rate").val(room_i.rate);
+				// alert(room_i.room_unique_id);
+				$("#room_unique_id").val(room_i.room_unique_id);
 			});
 
 
@@ -461,6 +469,30 @@ $(document).ready(function(){
            headers: { 'X-CSRF-Token' : $('#authenticity_token').val() }
         });
 			var email_val = $("#sign_up_email").val();
+
+
+			$("#subscribe_to_email").validate({
+				rules:{
+					email:{
+						required: true,
+						email: true,
+						remote:{
+							url: "/check_user",
+							type: 'POST',
+							dataType: "json"
+						}
+					}
+				},
+				messages:{
+					email:{
+						required: "This field is required",
+						email: "Enter a valid email",
+						remote: "Already subscribed"
+					}
+				}
+			});
+
+
 
 		//alert('debug');
 		$("#reset").validate({

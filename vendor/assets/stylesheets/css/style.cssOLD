@@ -47,7 +47,7 @@ header.fixed {
 
 .header_main-part
 {
-	
+
 }
 
 .logo-main
@@ -68,28 +68,28 @@ header.fixed  .navigation-part .nav_bar li a {
   font-size: 18px;
   transition: all 1s ease 0s;
 }
-.logo-main img 
+.logo-main img
 {
   width: 390px;
   transition: all 1s ease 0s;
 }
-.navbar-collapse 
+.navbar-collapse
 {
   padding-left: 0px !important;
   padding-right: 0px !important;
 }
-.navigation-part 
+.navigation-part
 {
   margin-top: 30px;
   text-align:right;
-  
+
 }
 .navbar-default {
   background-color: rgba(0, 0, 0, 0);
   border-color: rgba(0, 0, 0, 0);
   float: right;
 }
-.navigation-part .nav_bar li 
+.navigation-part .nav_bar li
 {
   float: left;
   margin-right:38px !important;
@@ -115,7 +115,7 @@ header.fixed  .navigation-part .nav_bar li a {
   padding:0px !important;
   min-width: 200px;
   top: 35px;
-  
+
 }
 
 .dropdown-menu::after {
@@ -171,7 +171,7 @@ header.fixed  .navigation-part .nav_bar li a {
 .navigation-part .nav_bar li a:hover
 {
 	color:#f5c438;
-	
+
 }
 
 
@@ -329,7 +329,7 @@ header.fixed  .navigation-part .nav_bar li a {
 
 .exclusive-flages-out
 {
-	
+
 }
 .exclusive-firts-country {
   background: #ffffff none repeat scroll 0 0;
@@ -432,7 +432,7 @@ header.fixed  .navigation-part .nav_bar li a {
 }
 
 /* .guaranteed-part1 {
-  background: rgba(0, 0, 0, 0) url("../images/shopping-big-img2.jpg") no-repeat scroll center top / cover ; 
+  background: rgba(0, 0, 0, 0) url("../images/shopping-big-img2.jpg") no-repeat scroll center top / cover ;
   border-radius: 4px;
   margin: -324px 0 0;
   padding: 20px !important;
@@ -444,7 +444,7 @@ header.fixed  .navigation-part .nav_bar li a {
   position: relative;
 }
 
-.guaranteed-part1-imgnew2 img 
+.guaranteed-part1-imgnew2 img
 {
   height: 100%;
   width: 100%;
@@ -618,9 +618,9 @@ header.fixed  .navigation-part .nav_bar li a {
   height: 430px;
   width: 92%;
 }
-/* 
+/*
 .sales-permitted-outer {
-   background: rgba(0, 0, 0, 0) url("../images/sales-permitted-img2.png") no-repeat scroll center top / cover ; 
+   background: rgba(0, 0, 0, 0) url("../images/sales-permitted-img2.png") no-repeat scroll center top / cover ;
   display: table;
   margin: 20px 0 8px;
   text-align: center;
@@ -641,7 +641,7 @@ header.fixed  .navigation-part .nav_bar li a {
   float: none;
 }
 
-.sales3-permitted-inner h3 
+.sales3-permitted-inner h3
 {
   color: #f4f4f4;
   font-family: "proxima_novabold";
@@ -694,11 +694,11 @@ header.fixed  .navigation-part .nav_bar li a {
   margin: 0;
   text-align: center;
   padding: 0 0 0px 0 !important;
- 
+
   position:relative;
 }
 
-.accommodation1-main a img 
+.accommodation1-main a img
 {
   border-radius: 4px 0 0 0;
   height: auto;
@@ -1008,7 +1008,7 @@ header.fixed  .navigation-part .nav_bar li a {
 
 .accomdation-sales-permited-main
 {
-	
+
 }
 
 .accomdation-sales-inner-left
@@ -1027,7 +1027,7 @@ header.fixed  .navigation-part .nav_bar li a {
 display: table-cell;
   float: none;
   text-align: center;
-  vertical-align: middle;	
+  vertical-align: middle;
 }
 .accomdation-sales-inner-left-bottom h3 {
   color: #f4f4f4;
@@ -1238,7 +1238,7 @@ footer
 .footer-inner-section2
 {
 	text-align:left;
-	
+
 }
 
 
@@ -1319,19 +1319,19 @@ footer
 
 .map-marker-footer
 {
-	color:#f5ba12 !important; 
+	color:#f5ba12 !important;
 	font-size:16px !important;
 }
 
 .phone3
 {
-	color:#f5ba12 !important; 
+	color:#f5ba12 !important;
 	font-size:16px !important;
 }
 
 .envelope2
 {
-	color:#f5ba12 !important; 
+	color:#f5ba12 !important;
 	font-size:16px !important;
 }
 .follow-us-main2
@@ -1405,7 +1405,7 @@ footer
 
 .accommodation-hotels-main-out4
 {
-  
+
 }
 .accommodation-scrolling-out {
   margin-bottom: 15px;
@@ -1456,7 +1456,7 @@ footer
   top:0;
   left:0;
   bottom:0;
-  right:0; 
+  right:0;
   height:auto;
 }
 .mCSB_scrollTools .mCSB_draggerRail {
@@ -1487,7 +1487,7 @@ footer
   background: #f5ba13 none repeat scroll 0 0;
   border-radius: 5px;
   /* height: 40px; */
- 
+
 }
 
 /*--- scroll ---*/
@@ -1578,7 +1578,7 @@ footer
 {
   position:relative;
   max-width:100%;
-  /* 
+  /*
   border-radius:4px; */
 }
 
@@ -1671,7 +1671,7 @@ footer
 
 .accomodation0details-view-iiner
 {
-  
+
 }
 
 .pallazo-versace-out3 {
@@ -1743,7 +1743,7 @@ footer
   color:#fff;
 }
 .pallazo-versace-rigth-sec2 p {
- 
+
   color: #474747;
   float: right;
   font-family: "proxima_nova_condensedlight";
@@ -1810,7 +1810,7 @@ footer
             width: 72px;
             height: 72px;
         }
-        
+
         .jssort01 .t {
             position: absolute;
             top: 0;
@@ -1819,7 +1819,7 @@ footer
             height: 100%;
             border: none;
         }
-        
+
         .jssort01 .w {
             position: absolute;
             top: 0px;
@@ -1838,8 +1838,8 @@ footer
   width: 68px;
   cursor: pointer;
 }
-        
-        
+
+
         .jssort01 .pav .c {
             top: 2px;
             _top: 0px;
@@ -1851,22 +1851,22 @@ footer
             _border: #fff 2px solid;
             background-position: 50% 50%;
         }
-        
+
         .jssort01 .p:hover .c {
             top: 0px;
             left: 0px;
             width: 70px;
             height: 70px;
-           
+
         }
-        
+
         .jssort01 .p.pdn .c {
             background-position: 50% 50%;
             width: 68px;
             height: 68px;
-          
+
         }
-      
+
 .fa-angle-left2
 {
   font-size:45px !important;
@@ -1881,12 +1881,12 @@ footer
 .jssora05l {
   height: auto;
   text-align: center;
-} 
+}
 
 .more-photo-heading3
 {
   text-align:left;
-} 
+}
 
 .more-photo-heading3 h5
 {
@@ -2014,7 +2014,7 @@ footer
 
 .features-inner-main2
 {
-  
+
 }
 
 .features-inner-main2

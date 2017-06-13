@@ -9,11 +9,8 @@ class HotelController < ApplicationController
     @rooms = @hotel.rooms
     @room_type = Room.where(:hotel_id => params[:id]).distinct.pluck(:rooms_type)
 
-    # puts "pppppppppppppppppppp"
-    # puts params[:id]
-    # puts @room_type
-    @room_size = Room.where(:hotel_id => params[:id]).distinct.pluck(:size)
-    @max_occupancy = Room.where(:hotel_id => params[:id]).distinct.pluck(:max_occupancy)
+    # @room_size = Room.where(:hotel_id => params[:id]).distinct.pluck(:size)
+    # @max_occupancy = Room.where(:hotel_id => params[:id]).distinct.pluck(:max_occupancy)
     # @room_ids = Room.where(:hotel_id => params[:id]).pluck(:id)
     # @rf_ids =  RoomsFeature.where(room_id: @room_ids)
     @features = Feature.all
@@ -40,7 +37,7 @@ class HotelController < ApplicationController
     puts response.read_body
     puts "{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}"
     data = JSON.parse(response.body)
-    @rooms_data = data['HotelInfo']['Rooms'].pluck('Id', 'Name','Description', 'MaxOccupancy')
+    @rooms_data = data['HotelInfo']['Rooms'].pluck('Id', 'Name','Description', 'Range')
     puts @rooms_data
     puts @rooms_data.length
     puts "{{}{}{}{}{}{}{}{}{}{}{}{}{}{{{}}}}"
