@@ -10,10 +10,26 @@
     <title></title>
   </head>
   <body>
-    <h2>Welcome to Kingdom Sports</h2>
-    <h4>Hi,<%= @user.first_name %></h4>
-    <p>To activate  your account click the button</p>
-    <a href="http://dev2.infiny.in:3333/activate_user/<%= @user.activation_code %>"><button type="button" name="button">Activate</button></a>
+    <!-- <h2>Welcome to Kingdom Sports</h2> -->
+    <h2>Hi,<%= @user.first_name %></h2>
+
+    <table>
+      <tbody>
+        <tr>
+          <td align="center" valign="top">
+            <table align="center" style="text-align:center; padding-right:5%; padding-left:5%;">
+              <tbody>
+                <tr>
+                  <td><p>To activate  your account click the button</p>
+                  <a href="http://dev2.infiny.in:3333/activate_user/<%= @user.activation_code %>" style="text-decoration:none; padding:10px; height:30px; width:40px;  "><button type="button" name="button" style="border-radius:4px;"><font color="black">Activate</font></button></a></td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
     <!-- <a href="http://localhost:3000/activate_user/<%= @user.activation_code %>"><button type="button" name="button">Activate</button></a> -->
   </body>
 </html>

@@ -38,6 +38,7 @@ class SessionController < ApplicationController
       @user.active = 'true'
       @user.save
       redirect_to root_url, :flash => {:success => "User activated"}
+      WelcomeEmailMailer.welcomeemail(@user).deliver_now
     else
       @user.active = 'false'
       redirect_to :back, :flash => {:error => 'Cannot activate user'}
@@ -117,7 +118,8 @@ class SessionController < ApplicationController
 
 
     @current_user = User.find(session["user_id"])
-    @cart = ShoppingCart.where(:user_id => session[:user_id])
+    # @cart = ShoppingCart.where(:user_id => session[:user_id])
+    @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
   end
 
   def change_info
