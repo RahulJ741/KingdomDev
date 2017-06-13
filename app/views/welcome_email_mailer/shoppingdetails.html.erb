@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body bgcolor="#FFFFFF">
+    <table class="head-wrap" bgcolor="#999999">
+    	<tr>
+    		<td></td>
+    		<td class="header container" >
+
+    				<div class="content">
+    				<table bgcolor="#999999">
+    					<tr>
+    						<td><img src="http://dev2.infiny.in:3333/assets/upload/logo.png" /></td>
+    						<!-- <td align="right"><h6 class="collapse">Basic</h6></td> -->
+    					</tr>
+    				</table>
+    				</div>
+
+    		</td>
+    		<td></td>
+    	</tr>
+    </table>
+
+    <!-- email body -->
+
+    <table>
+      <tbody>
+        <tr>
+          <td class="container" bgcolor="#FFFFFF">
+            <div class="content">
+            <% if not @hotel.blank? %>
+              <table>
+                <thead>
+                  <tr>
+                     <th style="width: 40%;">Hotel</th>
+                        <th style="width: 15%;">In</th>
+                        <th style="width: 15%;">Out</th>
+                        <th style="width: 15%;">Rate</th>
+                        <th style="width: 15%;"></th>
+                      </tr>
+                </thead>
+                <tbody>
+                  
+                    
+                  <% @hotel.each do |h| %>
+                      <tr>
+                    
+                          <td style="width: 40%;">
+                            <%= h.hotel.name %>, <%= h.room_type%>
+                          </td>
+                          <td style="width: 20%;">7/1/2017</td>
+                          <td style="width: 20%;">31/3/18</td>
+                          <td style="width: 20%;"><%= h.rate %></td>
+
+                        </div>
+                        <!-- </h4> -->
+                    </tr>
+                    <%end%>
+                  </tbody>
+                </table>
+                       
+                  <% end %>
+
+
+                  <% if not @event.blank? %>
+                  <table>
+                    <thead>
+                      <tr>
+                            <td style="width: 40%;">Name</td>
+                            <td style="width: 15%;">Date</td>
+                            <td style="width: 15%;">Category</td>
+                            <td style="width: 15%;">Rate</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% @event.each do |ev| %>
+                        <p style="width: 40%;"><%= ev.event_name %></p>
+                        <p style="width: 20%;"><%= ev.event_date.strftime("%d/%m/%Y") %></p>
+                        <p style="width: 20%;"><%= ev.event_cat %></p>
+                        <p style="width: 20%;"><%= ev.rate %>$</p>
+                      <% end -%>
+                    </tbody>
+                  </table>
+                  <%end%>
+
+                  
+                      <div class="col col-xs-12" style="text-align:right;">
+                        <h3>Total : <%= (HotelShoppingCart.sum('rate') + EventShoppingCart.sum('rate')).round(2)  %>$</h3>
+                      </div>
+                  
+                  
+                
+              </table>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </body>
+</html>

@@ -67,6 +67,7 @@ class ShoppingCartController < ApplicationController
     user = User.find(session[:user_id])
     @hotels = HotelShoppingCart.where(:user_id => session[:user_id])
     @events = EventShoppingCart.where(:user_id => session[:user_id])
+    
     # Update client_id, client_secret and redirect_uri
     # PayPal::SDK.configure({
     #   :openid_client_id     => "client_id",
@@ -104,11 +105,12 @@ class ShoppingCartController < ApplicationController
         puts "==============="
         if @payment.create
           puts "done"
-          puts @payment.inspect     # Payment Id
+          puts @payment.inspect # Payment Id
+          WelcomeEmailMailer.shoppingdetails(@hotels, @events,user).deliver_now    
           HotelShoppingCart.where(user_id: user.id).destroy_all
           EventShoppingCart.where(user_id: user.id).destroy_all
           redirect_to '/', :flash => {:success => 'Payment Successfull'}
-          ShoppingCartEmailMailer.shoppingdetails(@hotels, @events,user)
+
         else
           puts "not deone"
           puts @payment.error  # Error Hash
