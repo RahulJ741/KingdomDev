@@ -90,13 +90,7 @@ class ShoppingCartController < ApplicationController
                   :postal_code => "43210",
                   :country_code => "US" }}}]},
           :transactions => [{
-            :item_list => {
-              :items => [{
-                :name => "item",
-                :sku => "item",
-                :price => total,
-                :currency => "USD",
-                :quantity => 1 }]},
+           
             :amount => {
               :total => total,
               :currency => "USD" },

@@ -24,21 +24,10 @@ class StaticpageController < ApplicationController
                 :expire_year => "2019",
                 :cvv2 => "874",
                 :first_name => "Joe",
-                :last_name => "Shopper",
-                :billing_address => {
-                  :line1 => "52 N Main ST",
-                  :city => "Johnstown",
-                  :state => "OH",
-                  :postal_code => "43210",
-                  :country_code => "US" }}}]},
+                :last_name => "Shopper"
+                }}]},
           :transactions => [{
-            :item_list => {
-              :items => [{
-                :name => "item",
-                :sku => "item",
-                :price => "1",
-                :currency => "USD",
-                :quantity => 1 }]},
+            
             :amount => {
               :total => "1.00",
               :currency => "USD" },
