@@ -47,7 +47,7 @@ class ShoppingCartController < ApplicationController
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
       @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
-      total = ((HotelShoppingCart.sum('rate') + EventShoppingCart.sum('rate')).round(2))
+      total = ((HotelShoppingCart.where(user_id: session[:user_id]).sum('rate') + EventShoppingCart.where(user_id: session[:user_id]).sum('rate')).round(2))
       if total > 2500
         puts "--------------------"
         @msg = "Since your billing amount exceeds 2500$ we have informed admin they will contact you regarding your order"
