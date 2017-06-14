@@ -59,7 +59,7 @@ class ShoppingCartController < ApplicationController
   end
 
   def make_payment
-    total = ((HotelShoppingCart.sum('rate') + EventShoppingCart.sum('rate')).round(2))
+    total = ((HotelShoppingCart.where(user_id: session[:user_id]).sum('rate') + EventShoppingCart.where(user_id: session[:user_id]).sum('rate')).round(2))
     puts params[:cardNumber].delete(' ')
     total = sprintf("%.2f",total)
     puts "=================="
