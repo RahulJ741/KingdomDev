@@ -83,8 +83,9 @@
 	<div class="modal-dialog">
     	<div class="modal-content login-modal">
       		<div class="modal-header login-modal-header">
-        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        		<h4 class="modal-title text-center" id="loginModalLabel">USER AUTHENTICATION</h4>
+        		<button type="button" class="close" data-dismiss="modal" aria-label="Close" style="Opacity:1;"><span aria-hidden="true" style="color:white;"><i class="fa fa-times" aria-hidden="true" style="color:white;"></i>
+</span></button>
+        		<h4 class="modal-title text-center" id="loginModalLabel">Account</h4>
       		</div>
       		<div class="modal-body">
       			<div class="text-center">
@@ -93,7 +94,7 @@
 					  	<ul class="nav nav-tabs" role="tablist">
 					    	<li role="presentation" class="active"><a id="signin-taba" href="#home" aria-controls="home" role="tab" data-toggle="tab">Sign In</a></li>
 					    	<li role="presentation"><a id="signup-taba" href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Sign Up</a></li>
-					    	<li role="presentation"><a id="forgetpass-taba" href="#forget_password" aria-controls="forget_password" role="tab" data-toggle="tab">Forgot Password</a></li>
+					    	<li role="presentation"><a id="forgetpass-taba" href="#forget_password" aria-controls="forget_password" role="tab" data-toggle="tab">Forgot Password?</a></li>
 					  	</ul>
 
 					  	<!-- Tab panes -->
@@ -120,19 +121,19 @@
 								    	<span class="help-block has-error" id="password-error"></span>
 								  	</div>
 										<label id="password-error" class="error" for="password" style="display: none;">Please enter password</label>
-						  			<button type="submit" id="login_btn" class="btn btn-block bt-login" data-loading-text="Signing In....">Login</button>
+						  			<button type="submit" id="login_btn" class="btn btn-block bt-login" data-loading-text="Signing In...." style="background:#27ae60; color:white;">Login</button>
 						  			<div class="clearfix"></div>
 						  			<div class="login-modal-footer">
 						  				<div class="row">
 											<div class="col-xs-8 col-sm-8 col-md-8">
-												<i class="fa fa-lock"></i>
-												<a href="javascript:;" class="forgetpass-tab"> Forgot password? </a>
+												<!-- <i class="fa fa-lock"></i>
+												<a href="javascript:;" class="forgetpass-tab"> Forgot password? </a> -->
 
 											</div>
 
 											<div class="col-xs-4 col-sm-4 col-md-4">
-												<i class="fa fa-check"></i>
-												<a href="javascript:;" class="signup-tab"> Sign Up </a>
+												<!-- <i class="fa fa-check"></i>
+												<a href="javascript:;" class="signup-tab"> Sign Up </a> -->
 											</div>
 										</div>
 						  			</div>
@@ -174,19 +175,19 @@
 
 
 								  	</div>
-						  			<button type="submit" id="register_btn" class="btn btn-block bt-login" data-loading-text="Registering....">Register</button>
+						  			<button type="submit" id="register_btn" class="btn btn-block bt-login" data-loading-text="Registering...." style="background:#27ae60; color:white;">Register</button>
 									<div class="clearfix"></div>
 									<div class="login-modal-footer">
 						  				<div class="row">
 											<div class="col-xs-8 col-sm-8 col-md-8">
-												<i class="fa fa-lock"></i>
-												<a href="javascript:;" class="forgetpass-tab"> Forgot password? </a>
+												<!-- <i class="fa fa-lock"></i>
+												<a href="javascript:;" class="forgetpass-tab"> Forgot password? </a> -->
 
 											</div>
 
 											<div class="col-xs-4 col-sm-4 col-md-4">
-												<i class="fa fa-check"></i>
-												<a href="javascript:;" class="signin-tab"> Sign In </a>
+												<!-- <i class="fa fa-check"></i>
+												<a href="javascript:;" class="signin-tab"> Sign In </a> -->
 											</div>
 										</div>
 						  			</div>
@@ -207,19 +208,19 @@
 									  	</div>
 											<label id="femail-error" class="error" for="femail" style="display:none;">Please enter a valid email address.</label>
 
-							  			<button type="submit" id="reset_btn" class="btn btn-block bt-login" data-loading-text="Please wait....">Forgot Password</button>
+							  			<button type="submit" id="reset_btn" class="btn btn-block bt-login" data-loading-text="Please wait...." style="background:#27ae60; color:white;">Submit</button>
 										<div class="clearfix"></div>
 										<div class="login-modal-footer">
 							  				<div class="row">
 												<div class="col-xs-6 col-sm-6 col-md-6">
-													<i class="fa fa-lock"></i>
-													<a href="javascript:;" class="signin-tab"> Sign In </a>
+													<!-- <i class="fa fa-lock"></i>
+													<a href="javascript:;" class="signin-tab"> Sign In </a> -->
 
 												</div>
 
 												<div class="col-xs-6 col-sm-6 col-md-6">
-													<i class="fa fa-check"></i>
-													<a href="javascript:;" class="signup-tab"> Sign Up </a>
+													<!-- <i class="fa fa-check"></i>
+													<a href="javascript:;" class="signup-tab"> Sign Up </a> -->
 												</div>
 											</div>
 										</div>
@@ -324,7 +325,7 @@
 					<input type="hidden" name="rate" id="hotel_rate">
 					<input type="hidden" name="room_unique_id" id="room_unique_id">
 					<input type="hidden" name="room_type" id="room_type">
-					
+
 					<button type="submit" class="btn btn-warning" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000; float:right; margin-right:7px;">Ok</button>
 				</form>&ensp;
 
