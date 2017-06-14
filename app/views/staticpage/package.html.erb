@@ -24,12 +24,12 @@
 				 <div id="panel" class="">
 							<div class="well" style="background-color: #fff;">
 								<form class="" action="index.html" method="post">
-								 <label for="session" class="pull-left">Session Code</label>
+								 <!-- <label for="session" class="pull-left">Session Code</label>
 								 <% if @current_user.present? %>
 								 <input type="text" placeholder="<%= @current_user.first_name+" "+@current_user.last_name %>" disabled="true" style="border:none; background: #f5f5f5; text-align:left;"><br>
 								 <%else%>
 								 <input type="text" placeholder="" disabled="true" style="border:none; background:transparent; margin-bottom:3%;"><br>
-								 <%end%>
+								 <%end%> -->
 								 <label for="event" class="pull-left">Event</label><br>
 									 <select class="custom-select form-control">
 										 <option value="">Choose</option>
@@ -236,7 +236,7 @@
 					 </ul>
 				 </div>
 				 </div>
-				 <div class="col col-md-2 col-sm-2 col-xs-2 right-yellow"><i class="fa fa-cart-plus fa-3x" style="color:black;"></i></div><hr>
+				 <div class="col col-md-2 col-sm-2 col-xs-2 right-yellow"><a href="#"><i class="fa fa-cart-plus fa-3x" style="color:black;"></i></a></div><hr>
 				 </div>
 
 

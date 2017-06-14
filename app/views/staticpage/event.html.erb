@@ -67,7 +67,59 @@
 			<div class="col col-md-9">
 				<div class="row" style="background-color:white; margin-top:3%; margin-bottom:2%; margin-right:0%;">
 					<% @events.each do |i| %>
-						<div class="row" style="margin-bottom: 15px">
+					<div class="row" style="box-shadow: 2px 2px 2px 2px #a9a9a9; margin-bottom:30px; display:flex;">
+						<div class="col col-md-3 col-sm-3 col-xs-3" style="padding-left:0px;">
+							<img src="/assets/images/games/KSGAthletics.jpg" alt="" style="width:auto; height:200px;">
+						</div>
+						<div class="col col-md-8 col-sm-8 col-xs-8">
+							<div class="row">
+								<div class="col col-md-6 col-sm-6 col-xs-6 pull-left">
+									<h6 style="text-decoration: underline; font-weight: bold; padding-left:10px; padding-top: 25px; font-size: 22px; text-align:left;"><%= i['name'] %></h6>
+									<!-- <h6><%= i['name'] %></h6> -->
+								</div>
+								<div class="col col-md-6 col-sm-6 col-xs-6">
+
+								</div>
+							</div>
+							<div class="row">
+								<div class="col col-md-12 col-sm-12 col-xs-12">
+									<table class="table">
+										<thead>
+											<tr>
+												<th>Event Date:</th>
+												<th>Event Time:</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr style="text-align:left;">
+												<td><%= i['date'] %></td>
+												<td><%= Time.strptime(i['time'], "%H:%M").strftime("%I:%M %P") %></td>
+											</tr>
+										</tbody>
+									</table>
+
+									<button type="button" class="btn btn-warning pull-right" name="button" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;">View</button>
+									<!-- <h5>Event Date: <%= i['date'] %> </h5>
+									<h5>Event Time: <%= Time.strptime(i['time'], "%H:%M").strftime("%I:%M %P") %></h5> -->
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+						<!-- <div class="row" style="margin-bottom: 15px">
 							<div class="col col-md-12 col-xs-12 " style="display:flex;">
 								<div class="col col-md-2 col-sm-2 col-xs-2 pad_none ticket2-applications-calender2" style="padding: 27px 0 !important;">
 									<span><img src="/assets/images/clender-icon-img1.png" alt=""></span>
@@ -79,7 +131,6 @@
 										<h5><%= i['name'] %></h5><br>
 										<h5>Event Time: <%= Time.strptime(i['time'], "%H:%M").strftime("%I:%M %P") %></h5>
 									</div>
-									<!-- <button type="button" class="btn btn-warning" name="button"><i class="fa fa-eye" aria-hidden="true"></i> View</button> -->
 								</div>
 
 							</div>
@@ -105,7 +156,7 @@
 								</div>
 
 							</div>
-						</div>
+						</div> -->
 					<% end %>
 
 
