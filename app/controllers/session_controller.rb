@@ -77,7 +77,7 @@ class SessionController < ApplicationController
     # session[:user_id] = nil
     # session.delete(:user_id)
     reset_session
-    redirect_to root_url, :flash=> {:error => "User logout Successfully"}
+    redirect_to root_url, :flash=> {:error => "You have been successfully logged out!"}
   end
 
   def change_pass

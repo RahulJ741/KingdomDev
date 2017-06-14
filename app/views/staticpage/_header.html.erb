@@ -60,9 +60,14 @@
                 <% if @current_user.present? %>
                   <%= puts @current_user.inspect %>
                   <%= puts "?????????????????????????????"%>
-                  <li data-toggle="modal" data-target="#idModal">
-                    <a href="javascript:void(0)" style="text-transform: none;">Account</a>
-                  </li>
+                  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="text-transform: none;">Account</a>
+    								<ul class="dropdown-menu ">
+    									<li role="presentation"><a role="menuitem" tabindex="-1" href="/my_transaction"><i class="fa fa-credit-card" aria-hidden="true"></i> My Transaction</a></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="/update_profile"><i class="fa fa-info-circle" aria-hidden="true"></i> Update Profile</a></li>
+          						<li role="presentation" class="divider"></li>
+          						<li role="presentation"><a role="menuitem" tabindex="-1" href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+    								</ul>
+    							</li>
                 <%else%>
                   <li data-toggle="modal" data-target="#loginModal">
                     <a href="javascript:void(0)" style="text-transform: none;">Account</a>
