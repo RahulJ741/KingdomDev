@@ -124,7 +124,7 @@
                               
                               <td><%= i.pay_id %></td>
                               <td><%= i.user.first_name %> <%= i.user.last_name %></td>
-                              <td><%= ((HotelTransaction.where(pay_id: i.pay_id).sum('rate') + EventTransaction.where(pay_id: i.pay_id).sum('rate')).round(2)) %></td>
+                              <td>$<%= ((HotelTransaction.where(pay_id: i.pay_id).sum('rate') + EventTransaction.where(pay_id: i.pay_id).sum('rate')).round(2)) %></td>
                               <td><%= i.created_at.strftime('%d/%m/%Y') %></td>
                               <td><a href="/admin/transaction/show/<%= i.pay_id %>">
                                   <button class="btn btn-primary" type="button">
