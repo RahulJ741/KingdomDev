@@ -28,13 +28,13 @@
       <div class="container">
   			<div class="row">
   				<div class="col-xs-12 pad_none header_inner-part">
-  					<div class="col-md-4 col-sm-4 col-xs-12 pad_none logo-main">
+  					<div class="col-md-4 col-sm-3 col-xs-12 pad_none logo-main">
   						<a href="/">
   							<img src="/assets/upload/logo.png" alt="site logo"/>
   						</a>
   					</div>
 
-  					<div class="col-md-8 col-sm-8 col-xs-12 pad_none navigation-part">
+  					<div class="col-md-8 col-sm-9 col-xs-12 pad_none navigation-part">
   						<div class="navbar-default nav_main">
   						<div class="navbar-header">
   						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
@@ -44,9 +44,9 @@
   						<div class="collapse navbar-collapse pad_none bg_none" id="bs-example-navbar-collapse-1">
   						<div class="col-sm-12 pad_none nav_bar">
   						<ul>
-                <li><a href="/city">Gold Coast</a></li>
-  							<li><a href="/sports">The Games</a></li>
-  							<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Shop</a>
+                <li><a href="/city" style="text-transform: none;">Gold Coast</a></li>
+  							<li><a href="/sports" style="text-transform: none;">The Games</a></li>
+  							<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="text-transform: none;">Shop</a>
   								<ul class="dropdown-menu ">
   									<li><a href="/package">Inclusive Packages</a></li>
   									<li><a href="/createownpackage">Create your own Packages</a></li>
@@ -55,17 +55,17 @@
   									<li><a href="">Tours</a></li>
   								</ul>
   							</li>
-  							<li><a href="/whoweare">About Us </a></li>
-  							<li><a href="/lookandbrand">Look and Brand</a></li>
+  							<li><a href="/whoweare" style="text-transform: none;">About Us </a></li>
+  							<li><a href="/lookandbrand" style="text-transform: none;">Look & Brand</a></li>
                 <% if @current_user.present? %>
                   <%= puts @current_user.inspect %>
                   <%= puts "?????????????????????????????"%>
                   <li data-toggle="modal" data-target="#idModal">
-                    <a href="javascript:void(0)">Account</a>
+                    <a href="javascript:void(0)" style="text-transform: none;">Account</a>
                   </li>
                 <%else%>
                   <li data-toggle="modal" data-target="#loginModal">
-                    <a href="javascript:void(0)">Account</a>
+                    <a href="javascript:void(0)" style="text-transform: none;">Account</a>
                   </li>
                 <%end%>
 
