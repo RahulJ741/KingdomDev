@@ -164,11 +164,12 @@ class StaticpageController < ApplicationController
     # @hotels = data['Hotels'].pluck('Id','Name','Stars')
     puts "==========="
     @events = []
-    for i in data['Functions'][0..10]
+    for i in data['Functions'][0..50]
       data1 = {}
       n = i['Name'].index('/')-3
       data1['name'] = i['Name'][0..n]
       data1['date'] = i['Name'][n+1..n+5]
+      data1["time"] = i['Name'][n+7..n+11]
       data1['event_id'] = i['Id']
       data1['cat'] =[]
       for j in i['FeeTypes']
@@ -264,7 +265,7 @@ class StaticpageController < ApplicationController
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
        @cart_count = HotelShoppingdef check_user
-  
+
       Cart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
     else
       @current_user = nil
