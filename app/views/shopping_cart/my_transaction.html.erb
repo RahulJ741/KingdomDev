@@ -10,12 +10,12 @@
   <div class="container">
     <div class="row">
 			<div class="exclusive-reprensentatio-inner accommodation-main-inner4">
-				<h2 class="fadeInUp wow" data-wow-duration="2s" data-wow-delay="0s">My Transaction</h2>
+				<h2 class="fadeInUp wow" data-wow-duration="2s" data-wow-delay="0s">My Transactions</h2>
 
         <div class="col-sm-12 col-md-10 col-md-offset-1">
         	
         	<% if @hotels.blank? and @events.blank? %>
-        		<h3 style="text-align: center;font-size: 32px;">You have not booked nything yet</h3>
+        		<h3 style="text-align: center;font-size: 32px;">No bookings found</h3>
         	<% else %>
 	        	<% if not @hotels.blank? %>
 					<h3 class="pull-left" style="padding-left:10px;">Hotels</h3>
