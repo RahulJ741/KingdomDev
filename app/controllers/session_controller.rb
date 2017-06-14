@@ -37,7 +37,7 @@ class SessionController < ApplicationController
       puts @user.inspect
       @user.active = 'true'
       @user.save
-      redirect_to root_url, :flash => {:success => "User activated"}
+      redirect_to root_url, :flash => {:success => "Thank you for verifying your email. Please sign in to continue"}
       WelcomeEmailMailer.welcomeemail(@user).deliver_now
     else
       @user.active = 'false'
