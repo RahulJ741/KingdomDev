@@ -25,7 +25,7 @@
 							<span style="width: 15%;">In</span>
 							<span style="width: 15%;">Out</span>
 							<span style="width: 15%;">Rate</span>
-							<span style="width: 15%;"></span>
+							<span style="width: 15%;">Booking Date</span>
 						</div>
 
 						<div class="col-xs-12 pad_none condition-of-sale-table-scroll-out scrollbox" style="height: auto;">
@@ -42,7 +42,7 @@
 												<p style="width: 15%;">31/3/18</p>
 												<p style="width: 15%;">$ <%= h.rate %></p>
 												<p style="width: 15%;">
-													<a href="/remove_from_cart_hotel/<%= h.id %>"><i class="fa fa-times"></i>Remove</u></a>
+													<%= h.created_at.strftime('%d/%m/%Y') %>
 												</p>
 											</div>
 								  		<!-- </h4> -->
@@ -62,7 +62,7 @@
 							<span style="width: 15%;">Date</span>
 							<span style="width: 15%;">Category</span>
 							<span style="width: 15%;">Rate</span>
-							<span style="width: 15%;"></span>
+							<span style="width: 15%;">Booking Date</span>
 						</div>
 
 						<div class="col-xs-12 pad_none condition-of-sale-table-scroll-out scrollbox" style="height: auto;">
@@ -79,7 +79,7 @@
 												<p style="width: 15%;"><%= ev.event_cat %></p>
 												<p style="width: 15%;">$ <%= ev.rate %></p>
 												<p style="width: 15%;">
-													<a href="/remove_from_cart_event/<%= ev.id %>"><i class="fa fa-times"></i>Remove</u></a>
+													<%= ev.created_at.strftime('%d/%m/%Y') %>
 												</p>
 											</div>
 											<!-- </h4> -->

@@ -131,8 +131,8 @@ class ShoppingCartController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
-      @hotels = HotelShoppingCart.where(:user_id => session[:user_id])
-      @events = EventShoppingCart.where(:user_id => session[:user_id])
+      @hotels = HotelTransaction.where(:user_id => session[:user_id])
+      @events = EventTransaction.where(:user_id => session[:user_id])
     else
       @current_user = nil
     end
