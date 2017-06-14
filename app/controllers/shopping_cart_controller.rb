@@ -105,14 +105,14 @@ class ShoppingCartController < ApplicationController
         puts "==============="
         if @payment.create
           puts "done"
-          puts @payment.inspect # Payment Id
+          puts @payment.id # Payment Id
           WelcomeEmailMailer.shoppingdetails(@hotels, @events,user).deliver_now
           for i in HotelShoppingCart.where(user_id: user.id)
-              HotelTransaction.create(:user_id => i.user_id,:room_type => i.room_type,rate: i.rate,hotel_id: i.hotel_id,room_unique_id: i.room_unique_id,from_date: i.from_date,to_date: i.to_date,status: 'completed')
+              HotelTransaction.create(:user_id => i.user_id,:room_type => i.room_type,rate: i.rate,hotel_id: i.hotel_id,room_unique_id: i.room_unique_id,from_date: i.from_date,to_date: i.to_date,status: 'completed',pay_id: @payment.id)
           end  
-
+          
           for i in EventShoppingCart.where(user_id: user.id)
-              EventTransaction.create(:user_id => i.user_id, :event_id => i.event_id, :event_name => i.event_name, :event_date =>  i.event_date, :event_cat => i.event_cat, :rate => i.rate,status: 'completed')
+              EventTransaction.create(:user_id => i.user_id, :event_id => i.event_id, :event_name => i.event_name, :event_date =>  i.event_date, :event_cat => i.event_cat, :rate => i.rate,status: 'completed',pay_id: @payment.id)
           end     
           
           HotelShoppingCart.where(user_id: user.id).destroy_all
