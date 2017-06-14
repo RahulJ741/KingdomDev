@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'staticpage#index'
   get 'city' => 'staticpage#city'
@@ -54,7 +54,7 @@ Rails.application.routes.draw do
   # get 'authf' => 'session#authf'
   post 'subscribe' => 'staticpage#subscribe'
   match 'check_user' => 'staticpage#check_user', :via => [:get, :post]
-  get "admin" => 'admin#index'
+  # get "admin" => 'admin#index'
 
 
 
