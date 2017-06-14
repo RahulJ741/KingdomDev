@@ -1,11 +1,14 @@
 class CreateShoppingCarts < ActiveRecord::Migration[5.0]
   def change
-    create_table :shopping_carts do |t|
+    change_column :hotel_shopping_carts, :rate, :float
+    create_table :hotel_transactions do |t|
       t.column :user_id, :integer, :null => false
-      t.column :room_id, :integer
+      t.column :hotel_id, :integer
       t.column :from_date, :datetime
       t.column :to_date, :datetime
-      t.column :rate, :integer
+      t.column :rate, :float
+      t.column :status, :string
+      t.column :room_unique_id, :string
       t.timestamps
     end
   end

@@ -49,6 +49,7 @@ Rails.application.routes.draw do
   match 'remove_from_cart_hotel/:id' => 'shopping_cart#remove_from_cart_hotel', :via => [:get, :post]
   match 'remove_from_cart_event/:id' => 'shopping_cart#remove_from_cart_event', :via => [:get, :post]
   get '/checkout/' => 'shopping_cart#checkout'
+  get '/my_transaction/' => 'shopping_cart#my_transaction'
   post '/make_payment/' => 'shopping_cart#make_payment'
   # get 'authf' => 'session#authf'
   post 'subscribe' => 'staticpage#subscribe'

@@ -106,7 +106,15 @@ class ShoppingCartController < ApplicationController
         if @payment.create
           puts "done"
           puts @payment.inspect # Payment Id
-          WelcomeEmailMailer.shoppingdetails(@hotels, @events,user).deliver_now    
+          WelcomeEmailMailer.shoppingdetails(@hotels, @events,user).deliver_now
+          for i in HotelShoppingCart.where(user_id: user.id)
+              HotelTransaction.create(:user_id => i.user_id,:room_type => i.room_type,rate: i.rate,hotel_id: i.hotel_id,room_unique_id: i.room_unique_id,from_date: i.from_date,to_date: i.to_date,status: 'completed')
+          end  
+
+          for i in EventShoppingCart.where(user_id: user.id)
+              EventTransaction.create(:user_id => i.user_id, :event_id => i.event_id, :event_name => i.event_name, :event_date =>  i.event_date, :event_cat => i.event_cat, :rate => i.rate,status: 'completed')
+          end     
+          
           HotelShoppingCart.where(user_id: user.id).destroy_all
           EventShoppingCart.where(user_id: user.id).destroy_all
           redirect_to '/', :flash => {:success => 'Payment Successfull'}
@@ -116,6 +124,18 @@ class ShoppingCartController < ApplicationController
           puts @payment.error  # Error Hash
           redirect_to :back, :flash => {:error => 'Somthing went wrong'}
         end
+  end
+
+  def my_transaction
+    @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
+    if session[:user_id]
+      @current_user = User.find(session["user_id"])
+      puts session[:user_id]
+      @hotels = HotelShoppingCart.where(:user_id => session[:user_id])
+      @events = EventShoppingCart.where(:user_id => session[:user_id])
+    else
+      @current_user = nil
+    end
   end
 
 end
