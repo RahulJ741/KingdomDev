@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170613142358) do
+ActiveRecord::Schema.define(version: 20170614060705) do
 
   create_table "athletics_supporters_package_price_list_all", primary_key: "serial_no", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string  "athletics_supporter_packages", limit: 10, null: false
@@ -77,6 +77,18 @@ ActiveRecord::Schema.define(version: 20170613142358) do
     t.boolean  "req_status",                       default: false,                      null: false
   end
 
+  create_table "event_transactions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.integer  "user_id",    null: false
+    t.string   "event_id"
+    t.string   "event_cat"
+    t.datetime "event_date"
+    t.integer  "rate"
+    t.string   "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "event_name"
+  end
+
   create_table "exclisive_second_old", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "country",    limit: 50, null: false
     t.string   "thumb",      limit: 50, null: false
@@ -91,7 +103,7 @@ ActiveRecord::Schema.define(version: 20170613142358) do
     t.string "is_active", limit: 50, null: false
   end
 
-  create_table "exclusive_seconds", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "exclusive_seconds", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "country",           null: false
     t.boolean  "is_active"
     t.string   "pics_file_name"
@@ -103,7 +115,7 @@ ActiveRecord::Schema.define(version: 20170613142358) do
     t.datetime "updated_at",        null: false
   end
 
-  create_table "exclusives", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "exclusives", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",              null: false
     t.boolean  "is_active"
     t.string   "pics_file_name"
@@ -114,7 +126,7 @@ ActiveRecord::Schema.define(version: 20170613142358) do
     t.datetime "updated_at",        null: false
   end
 
-  create_table "features", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "features", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",              null: false
     t.string   "pics_file_name"
     t.string   "pics_content_type"
@@ -130,7 +142,7 @@ ActiveRecord::Schema.define(version: 20170613142358) do
     t.string "description", limit: 100, null: false
   end
 
-  create_table "hotel_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "hotel_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "hotel_id",          null: false
     t.string   "pics_file_name"
     t.string   "pics_content_type"
@@ -140,7 +152,7 @@ ActiveRecord::Schema.define(version: 20170613142358) do
     t.datetime "updated_at",        null: false
   end
 
-  create_table "hotel_shopping_carts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "hotel_shopping_carts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",        null: false
     t.integer  "hotel_id"
     t.datetime "from_date"
@@ -152,7 +164,17 @@ ActiveRecord::Schema.define(version: 20170613142358) do
     t.string   "room_type"
   end
 
-  create_table "hotels", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "hotel_transactions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.integer  "user_id",               null: false
+    t.integer  "hotel_id"
+    t.datetime "from_date"
+    t.datetime "to_date"
+    t.float    "rate",       limit: 24
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  create_table "hotels", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                            null: false
     t.string   "address",                         null: false
     t.integer  "star_rating"
@@ -231,7 +253,7 @@ ActiveRecord::Schema.define(version: 20170613142358) do
     t.integer "UpperFloorsStairs"
   end
 
-  create_table "hotels_images_old", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "hotels_images", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer "for_hotel_id",               null: false
     t.string  "for_hotel_name", limit: 100, null: false
     t.string  "image1",         limit: 100, null: false
@@ -385,7 +407,7 @@ ActiveRecord::Schema.define(version: 20170613142358) do
     t.string  "gbp_total",            limit: 11, null: false
   end
 
-  create_table "rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                        null: false
     t.text     "description",   limit: 65535
     t.integer  "hotel_id"
@@ -400,7 +422,7 @@ ActiveRecord::Schema.define(version: 20170613142358) do
     t.string   "unique_id"
   end
 
-  create_table "rooms_features", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "rooms_features", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "room_id"
     t.integer  "feature_id"
     t.datetime "created_at", null: false
@@ -424,7 +446,7 @@ ActiveRecord::Schema.define(version: 20170613142358) do
     t.text "twitter",            limit: 65535, null: false
   end
 
-  create_table "staticpages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "staticpages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
