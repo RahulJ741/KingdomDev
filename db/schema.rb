@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170614060705) do
+ActiveRecord::Schema.define(version: 20170614065806) do
 
   create_table "athletics_supporters_package_price_list_all", primary_key: "serial_no", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string  "athletics_supporter_packages", limit: 10, null: false
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20170614060705) do
     t.boolean "ev_status",                       null: false
   end
 
-  create_table "event_shopping_carts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "event_shopping_carts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",               null: false
     t.string   "event_id"
     t.string   "event_cat"
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 20170614060705) do
     t.boolean  "req_status",                       default: false,                      null: false
   end
 
-  create_table "event_transactions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "event_transactions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",    null: false
     t.string   "event_id"
     t.string   "event_cat"
@@ -164,14 +164,17 @@ ActiveRecord::Schema.define(version: 20170614060705) do
     t.string   "room_type"
   end
 
-  create_table "hotel_transactions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.integer  "user_id",               null: false
+  create_table "hotel_transactions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",                   null: false
     t.integer  "hotel_id"
     t.datetime "from_date"
     t.datetime "to_date"
-    t.float    "rate",       limit: 24
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.float    "rate",           limit: 24
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.string   "room_unique_id"
+    t.string   "room_type"
+    t.string   "status"
   end
 
   create_table "hotels", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

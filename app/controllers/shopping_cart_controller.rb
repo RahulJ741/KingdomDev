@@ -47,7 +47,7 @@ class ShoppingCartController < ApplicationController
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
       @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
-      total = ((HotelShoppingCart.sum('rate') + EventShoppingCart.sum('rate')).round(2))
+      total = ((HotelShoppingCart.where(user_id: session[:user_id]).sum('rate') + EventShoppingCart.where(user_id: session[:user_id]).sum('rate')).round(2))
       if total > 2500
         puts "--------------------"
         @msg = "Since your billing amount exceeds 2500$ we have informed admin they will contact you regarding your order"
@@ -59,7 +59,7 @@ class ShoppingCartController < ApplicationController
   end
 
   def make_payment
-    total = ((HotelShoppingCart.sum('rate') + EventShoppingCart.sum('rate')).round(2))
+    total = ((HotelShoppingCart.where(user_id: session[:user_id]).sum('rate') + EventShoppingCart.where(user_id: session[:user_id]).sum('rate')).round(2))
     puts params[:cardNumber].delete(' ')
     total = sprintf("%.2f",total)
     puts "=================="
@@ -131,8 +131,8 @@ class ShoppingCartController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
-      @hotels = HotelShoppingCart.where(:user_id => session[:user_id])
-      @events = EventShoppingCart.where(:user_id => session[:user_id])
+      @hotels = HotelTransaction.where(:user_id => session[:user_id])
+      @events = EventTransaction.where(:user_id => session[:user_id])
     else
       @current_user = nil
     end
