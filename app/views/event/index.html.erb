@@ -74,7 +74,7 @@
 						<div class="col col-md-3 col-sm-3 col-xs-3" style="padding-left:0px;">
 							<img src="/assets/event_img/<%= i['name'].tr(' ','_') %>.jpg" alt="" style="width:auto; height:210px;">
 						</div>
-						<div class="col col-md-8 col-sm-8 col-xs-8">
+						<div class="col col-md-9 col-sm-9 col-xs-9">
 							<div class="row">
 								<div class="col col-md-6 col-sm-6 col-xs-6 pull-left">
 									<h6 style="text-decoration: underline; font-weight: bold; padding-left:10px; padding-top: 25px; font-size: 22px; text-align:left;"><%= i['name'] %></h6>
@@ -92,15 +92,21 @@
 											<tr>
 												<th>Event Date:</th>
 												<th>Event Time:</th>
+												<th>Venue:</th>
+												<th>Gender:</th>
 											</tr>
 										</thead>
 										<tbody>
 											<tr style="text-align:left;">
 												<td><%= i['date'] %></td>
 												<td><%= i['time'] %></td>
+												<td><%= i['venue'] %></td>
+												<td><%= i['gender'] %></td>
 											</tr>
 										</tbody>
 									</table>
+
+							
 
 									<a href="/event_detail/"><button type="button" class="btn btn-warning pull-right" name="button" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;"><i class="fa fa-eye" aria-hidden="true"></i>
  									View</button></a>

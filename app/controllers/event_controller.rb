@@ -11,6 +11,8 @@ class EventController < ApplicationController
         if event
 	        data1 = {}
 	        data1['name'] = event.name
+	        data1['venue'] = event.venue
+	        data1['gender'] = event.gender
 	        data1['date'] = event.date.strftime("%d %b %y") 
 	        data1["time"] = event.start_time.strftime("%I:%M %p")+" - "+event.end_time.strftime("%I:%M %p")
 	        data1['event_id'] = event.id

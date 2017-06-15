@@ -16,9 +16,11 @@ namespace :import do
         prime_event = row['Prime Event']
         gender = row['Gender']
         detail = row['Details']
-        if not Event.find_by_event_code(event_code)
+        venue = row['Venue']
+        event = Event.find_by_event_code(event_code)
+        if not event
             puts event_code
-            Event.create(name: name,date:date,start_time:start_time,end_time:end_time,event_code:event_code,session_type:session_type,prime_event:prime_event,gender:gender,detail:detail)
+            Event.create(name: name,date:date,start_time:start_time,end_time:end_time,event_code:event_code,session_type:session_type,prime_event:prime_event,gender:gender,detail:detail,venue:venue)
         end
         puts "===============" 
         puts x
