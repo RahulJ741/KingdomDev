@@ -22,7 +22,7 @@ class EventController < ApplicationController
 	           
 	          amt.push(j['Amount'])
 	        end
-	        data1['start_rate'] = amt.min
+	        data1['start_rate'] = amt.min.to_i
 	        @events.push(data1)
 	    end
 
