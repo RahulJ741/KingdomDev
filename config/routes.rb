@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'contact' => 'staticpage#contact'
   get 'sports' => 'staticpage#sports'
   get 'package' => 'staticpage#package'
-  get 'event' => 'staticpage#event'
+  
   get 'createownpackage' => 'staticpage#createownpackage'
   get 'test_payment' => 'staticpage#test_payment'
 
@@ -55,6 +55,7 @@ Rails.application.routes.draw do
   post 'subscribe' => 'staticpage#subscribe'
   match 'check_user' => 'staticpage#check_user', :via => [:get, :post]
   
+  get '/event/index/' => 'event#index'
 
   get "kingxadminp" => 'admin#index'
   get "admin/index_ajax" => 'admin#index_ajax'
