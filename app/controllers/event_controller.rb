@@ -3,7 +3,7 @@ class EventController < ApplicationController
   def index
     url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetFunctions")
     data = kingdomsg_api(url)
-    puts data['Functions']
+    
     puts "==========="
     @events = []
     for i in data['Functions']
@@ -24,17 +24,19 @@ class EventController < ApplicationController
 	        # end
 	        @events.push(data1)
 	    end
-    end
 
+    end
+    puts @events.count
+	puts data['Functions'].count
     @all_events = @events.map { |h| h['name'] }.uniq
 
-    if not params[:event].blank?
-      @events = @events.select {|a| a["name"] == params[:event] }
-    end
+    # if not params[:event].blank?
+    #   @events = @events.select {|a| a["name"] == params[:event] }
+    # end
 
-    if not params[:start_date].blank?
-      @events = @events.select {|a| a["date"] == params[:start_date][0..4] }
-    end
+    # if not params[:start_date].blank?
+    #   @events = @events.select {|a| a["date"] == params[:start_date][0..4] }
+    # end
 
 
     if session[:user_id]
