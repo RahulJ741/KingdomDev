@@ -30,7 +30,7 @@ class EventController < ApplicationController
     puts @events.count
 	puts data['Functions'].count
     @all_events = @events.map { |h| h['name'] }.uniq
-
+    puts @all_events.count
     # if not params[:event].blank?
     #   @events = @events.select {|a| a["name"] == params[:event] }
     # end
@@ -50,7 +50,7 @@ class EventController < ApplicationController
   end
 
   def show
-  	
+
   end
 
 end
