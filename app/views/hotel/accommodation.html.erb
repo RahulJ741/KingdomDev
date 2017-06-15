@@ -1,8 +1,13 @@
-<%= render 'staticpage/header'%>
+<%= render 'layouts/header'%>
+<!----- Header End ----->
+
+
+
+<!---- Banner Start ----->
 <section class="banner-main accomodation-banner">
 	<div class="container">
 		<div class="row">
-			<div class=" pad_none banner-inner"><br><br>
+			<div class=" pad_none banner-inner">
 				<h2 class="fadeInUp wow" data-wow-duration="2s" data-wow-delay="0s">ACCOMMODATION </h2>
 				<p class="fadeInUp wow" data-wow-duration="2s" data-wow-delay="0.3s">KSG has sourced 15 properties ranging from 3.5* to luxury 5*. With both hotels and self-service apartments KSG has the right home away from home for everyone. </p>
 				<!--
@@ -14,113 +19,423 @@
 		<img src="/assets/images/gold-cost-img.png" alt="">
 	</div>
 </section>
+<!---- Banner END ------>
 
+
+
+<!----- Accommodation start ------->
 <section class="accommodation-main-outer4">
+<!--<img src="<?php echo base_url();?>assets/images/accomidatio-design2-bgnw.png" class="accomdtion-design2-bg" alt="">-->
+	<div class="container">
+		<div class="row">
+			<div class="exclusive-reprensentatio-inner accommodation-main-inner4">
+				<h2 class="fadeInUp wow" data-wow-duration="2s" data-wow-delay="0s">Accommodation</h2>
+					<div class="col-xs-12 pad_none accommodation-hotels-main-out4">
+						<!-- scroll -->
+						<div class="col-xs-12 pad_none accommodation-scrolling-out">
+							<div class="site_fixed_left">
+							<p>Kingdom Sports Group has established itself as one of the leading agents that can offer an affordable and a diverse range of accommodation for the Gold Coast 2018 Commonwealth Games.</p>
+							<p>For the last two years, we have been working on the ground in Australia with various partners and properties in securing the necessary accommodation that our clients need and had requested in advance.</p>
+							<p>Already before we have gone on public release, over 35% of our existing inventory was pre-sold in advance of the launch, but do not despair, we still have a large section of accommodation on both the Gold Coast and Brisbane we can offer our clients.</p>
+							<p>One thing to remember about the Gold Coast is it is a family and fun destination within Australia. This means although there might be a large variety of accommodation available, sometimes the quality and standard below a certain level is not always the best. This is why we decided to not offer any accommodation lower than 3.5 Stars. Below this star rating we unfortunately cannot guarantee either the service or the cleanliness of a property.</p>
+							<p>There are two locations we can offer for accommodation. </p>
+							<p>If you select Brisbane (pop. 2.35 million), it will take approximately 1 hour to travel to some of the venues (apart from Cycling and Shooting which are held in Brisbane), and is a cheaper and more affordable option for some clients and groups.</p>
+							<p>The city of the Gold Coast (pop. 570,000), as host city of the Commonwealth Games is more expensive, but your travel times to the various sports are much less, and we have a variety of accommodation to suit all tastes.</p>
 
-<div class="container" id="accommodation_body" style="">
-	<div class="row">
-		<div class="exclusive-reprensentatio-inner accommodation-main-inner4">
-			<h2 class="fadeInUp wow" data-wow-duration="2s" data-wow-delay="0s">ACCOMMODATION</h2>
-		<div class="col col-md-3" style="padding-top:2%;">
-			<div id="panel" class="">
-          <div class="well" style="background-color: #fff;box-shadow: 1px 1px 1px 1px #a9a9a9;>
-            <form class="form" action="/accommodation" method="post" enctype="multipart/form-data">
-							<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+							<p><samp><img src="/assets/images/person-icon-img.png" class="puschase-icon4" alt=""> WHO CAN PURCHASE  &nbsp;    &nbsp;  &nbsp;  &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp; &nbsp;</samp> Anyone in the world</p>
+							<p><samp><img src="/assets/images/cart-img-4.png" class="puschase-icon4" alt=""> WHY PURCHASE FROM KSG  &nbsp;    &nbsp;  &nbsp;  &nbsp; </samp>We are a registered travel agency with our head office in Australia. We have personally inspected each and every property we are offering to ensure the standards and expectations are to our clients expectations. </p>
+							<!-- ------------------------------------ -->
 
-							<label for="event" class="pull-left">Stars</label><br>
-							<% if @opt_val.present? %>
-								<input type="hidden" id="opt_val" value="<%= @opt_val %>">
-							<%end%>
 
-								<select class="custom-select form-control" id="star_rating" name="star_rating">
-									<option value="">Choose</option>
-									<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5</option>
-								</select><br>
-								<label for="start_date" class="pull-left">START DATE</label>
-								<input type="date" name="start_date" id="start_date" class="form-control"><br>
-								<label for="end_date" class="pull-left">END DATE</label><br>
-								<input type="date" name="end_date" id="end_date" class="form-control"><hr>
-								<button type="submit" name="button" class="btn btn-warning btn-block" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;">Apply</button>
-            </form>
-          </div>
-      </div>
-		</div>
-		<div class="col col-md-9" >
-			<% @hotels.each do |g| %>
-				<% if Hotel.find_by_unique_id(g[0]) %>
-					<div class="row list_accomodation" style="background-color:white; margin-top:3%; margin-bottom:2%; margin-right:0%;box-shadow: 2px 2px 2px 2px #a9a9a9;border-radius: 4px; display:flex;">
-						<div class="col col-md-3 col-sm-3" style="text-align:left; padding-left:0px;">
-							<img  height="150" alt="<%= Hotel.find_by_unique_id(g[0]).pics_file_name %>" src="<%= Hotel.find_by_unique_id(g[0]).pics%>" style="width:auto;">
+
+							</div>
+
+						</div>
+						<!-- scroll -->
+
+						<div class="col-xs-12 pad_none pallazo-versace-hotel-main">
+							<a href="Javascript:void(0)" onclick="getHotel('palazzo-versace')">
+							<img src="/assets/images/pallazo-versace-hotel01.jpg" alt="" class="pallazo4-versace-img3" style="height: 546px;">
+							<div class="col-xs-12 pad_none pallazo-versace-ratig-out4">
+								<h3>Palazzo Versace</h3>
+								<span><!--<img src="< ?php echo base_url();?>assets/images/hotel-rating-full-img.png" alt="">-->
+                                  <i class="fa fa-star big-stars" aria-hidden="true"></i>
+                                 <i class="fa fa-star big-stars" aria-hidden="true"></i>
+                                 <i class="fa fa-star big-stars" aria-hidden="true"></i>
+                                 <i class="fa fa-star big-stars" aria-hidden="true"></i>
+                                 <i class="fa fa-star big-stars" aria-hidden="true"></i>
+                                 <i class="fa fa-plus big-stars" aria-hidden="true"></i>
+                                </span>
+							</div>
+							</a>
 						</div>
 
-						<div class="col col-md-9 col-sm-9" style="text-align:left;">
-							<div class="clearfix">
-							<h3 class="box-title pull-left" style="margin-top:10px;"><%= g[1] %></h3>
+						<!--<div class="col-xs-12 pad_none pallazo-versace-hotel-main">
+							<a href="Javascript:void(0)" onclick="getHotel('QT Gold Coast')">
+							<img src="<?php echo base_url();?>assets/images/qt4-hotel01.jpg" alt="" class="pallazo4-versace-img3">
+							<div class="col-xs-12 pad_none pallazo-versace-ratig-out4">
+								<h3>QT HOTEL</h3>
+								<!--<span><img src="< ?php echo base_url();?>assets/images/hotel-rating-full-img.png" alt=""></span>
+                                <span>
+                                  <i class="fa fa-star big-stars" aria-hidden="true"></i>
+                                 <i class="fa fa-star big-stars" aria-hidden="true"></i>
+                                 <i class="fa fa-star big-stars" aria-hidden="true"></i>
+                                 <i class="fa fa-star big-stars" aria-hidden="true"></i>
+                                 <i class="fa fa-star big-stars" aria-hidden="true"></i>
+                                </span>
+							</div>
+							</a>
+						</div>-->
+						<!-- all hotel review -->
+						<div class="col-xs-12 pad_none accomdation-hotels-view-out">
+
+
+							<!--<div class="col-xs-12 col-sm-12 col-md-6 pad_none hotels-first4-outer">
+							<a href="Javascript:void(0)" onclick="getHotel('The Star')">
+								<div class="col-xs-12 pad_none seaworl-overlay3">
+									<div class="col-md-6 col-sm-6 pad_none jupiter-hotel-first">
+									<img src="<?php echo base_url();?>assets/images/jupiter-hotel01.png" alt="">
+									<div class="col-xs-12 pad_none jupiter3-hotel-rating-sec">
+										<h4>jupitar casino</h4>
+										<!--<span><img src="< ?php echo base_url();?>assets/images/rating2-img.png" alt=""></span>
+                                        <span>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        </span>
+									</div>
+									</div>
+									<div class="col-md-6 col-sm-6 pad_none jupiter-hotel-first">
+									<img src="<?php echo base_url();?>assets/images/jupiter-hotel2-icon.png" alt="">
+								</div>
+									<div class="col-xs-12 pad_none jupiter3-hotel-rating-sec-new">
+										<h4>jupitar casino</h4>
+										<!--<span><img src="< ?php echo base_url();?>assets/images/rating2-img-new.png" alt=""></span>
+                                        <span>
+                                        <i class="fa fa-star sim-stars01" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars01" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars01" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars01" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars01" aria-hidden="true"></i>
+                                        </span>
+									</div>
+								</div>
+							</a>
 							</div>
 
-							<div class="col-xs-5 date" style="padding-left:0px;">
-							 <div>
-										<address class=""     style="margin-top: 10px;">
-											<%= Hotel.find_by_unique_id(g[0]).address %>
-										</address>
-							 </div>
+							<div class="col-xs-12 col-sm-12 col-md-6 pad_none hotels-first4-outer">
+							<a href="Javascript:void(0)" onclick="getHotel('Seaworld Resort')">
+								<div class="col-xs-12 pad_none seaworl-overlay3">
+									<div class="col-md-6 col-sm-6 pad_none jupiter-hotel-first">
+										<img src="<?php echo base_url();?>assets/images/seaworl-hottle02.png" alt="">
+										<div class="col-xs-12 pad_none jupiter3-hotel-rating-sec">
+										<h4>seaworld resort</h4>
+										<!--<span><img src="< ?php echo base_url();?>assets/images/rating2-img.png" alt=""></span>
+                                         <span>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star-half-o sim-stars" aria-hidden="true"></i>
+                                        </span>
+									</div>
+									</div>
+									<div class="col-md-6 col-sm-6 pad_none jupiter-hotel-first">
+										<img src="<?php echo base_url();?>assets/images/jupiter-hotel2-icon.png" alt="">
+									</div>
+									<div class="col-xs-12 pad_none jupiter3-hotel-rating-sec-new">
+										<h4>seaworld resort</h4>
+										<!--<span><img src="< ?php echo base_url();?>assets/images/rating2-img-new.png" alt=""></span>
+                                        <span>
+                                        <i class="fa fa-star sim-stars01" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars01" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars01" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars01" aria-hidden="true"></i>
+                                        <i class="fa fa-star-half-o sim-stars01" aria-hidden="true"></i>
+                                        </span>
+									</div>
+								</div>
+							</a>
+							</div>-->
 
-							</div>
-							<div class="col-xs-5 date" >
-								 <span class="skin-color">
-									 <% for i in 1..g[2]%>
-											<i class="fa fa-star sim-stars" aria-hidden="true"></i>
-										<%end%>
-									</span><br>
 
+							<!-- <div class="col-xs-12 col-sm-6 col-md-6 pad_none hotels-first4-outer">
+							<a href="#">
+								<div class="col-xs-12 pad_none jupiter-hotel-first">
+									<img src="<?php echo base_url();?>assets/images/jupiter-hotel2-new-img.png" alt="">
+									<div class="col-xs-12 pad_none jupiter3-hotel-rating-sec-new">
+										<h4>seaworld resort</h4>
+										<span><img src="<?php echo base_url();?>assets/images/rating2-img-new.png"></span>
+									</div>
+								</div>
+
+							</a>
+							</div> -->
+
+							<div class="col-xs-12 col-sm-3 col-md-3 pad_none hotels-first4-outer">
+							<a href="Javascript:void(0)" onclick="getHotel('synergy-broadbeach')">
+								<div class="col-md-12 pad_none jupiter-hotel-first">
+									<img src="/assets/images/synergy-broadbeach-hotel02.png" alt="">
+									<div class="col-xs-12 pad_none jupiter3-hotel-rating-sec">
+										<h4>Synergy Broadbeach</h4>
+										<!--<span><img src="< ?php echo base_url();?>assets/images/ratings2w.png" alt=""></span>-->
+                                         <span>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star-half-o sim-stars" aria-hidden="true"></i>
+                                        </span>
+									</div>
+								</div>
+							</a>
 							</div>
-							<div class="col xs-4 pull-right">
-								<a href="/hotel_info/<%= Hotel.find_by_unique_id(g[0]).id %>"><button type="button" class="btn btn-warning" name="button" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;"><i class="fa fa-eye" aria-hidden="true"></i>
-		 						 View</button></a>
+
+							<div class="col-xs-12 col-sm-3 col-md-3 pad_none hotels-first4-outer">
+							<a href="Javascript:void(0)" onclick="getHotel('artique-resort')">
+								<div class="col-md-12 pad_none jupiter-hotel-first">
+									<img src="/assets/images/artique-resort-hotel023.jpg" alt="">
+									<div class="col-xs-12 pad_none jupiter3-hotel-rating-sec">
+										<h4>Artique Resort</h4>
+										<!--<span><img src="< ?php echo base_url();?>assets/images/ratings2w.png" alt=""></span>-->
+                                         <span>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star-half-o sim-stars" aria-hidden="true"></i>
+                                        </span>
+									</div>
+								</div>
+							</a>
 							</div>
+
+							<div class="col-xs-12 col-sm-3 col-md-3 pad_none hotels-first4-outer">
+							<a href="Javascript:void(0)" onclick="getHotel('ocean-pacific-resort')">
+								<div class="col-md-12 pad_none jupiter-hotel-first">
+									<img src="/assets/images/ocean-pacific-resort022.jpg" alt="">
+									<div class="col-xs-12 pad_none jupiter3-hotel-rating-sec">
+										<h4>Ocean Pacific Resort</h4>
+										<!--<span><img src="< ?php echo base_url();?>assets/images/ratings2w.png" alt=""></span>-->
+                                        <span>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star-half-o sim-stars" aria-hidden="true"></i>
+                                        </span>
+									</div>
+								</div>
+							</a>
+							</div>
+
+								<div class="col-xs-12 col-sm-3 col-md-3 pad_none hotels-first4-outer">
+							<a href="Javascript:void(0)" onclick="getHotel('south-pacific-plaza')">
+								<div class="col-md-12 pad_none jupiter-hotel-first">
+									<img src="/assets/images/south-pacific-plaza021.jpg" alt="" >
+									<div class="col-xs-12 pad_none jupiter3-hotel-rating-sec">
+										<h4>South Pacific Plaza</h4>
+										<!--<span><img src="< ?php echo base_url();?>assets/images/ratings2w.png" alt=""></span>-->
+                                        <span>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star-half-o sim-stars" aria-hidden="true"></i>
+                                        </span>
+									</div>
+								</div>
+							</a>
+							</div>
+
+							<div class="col-xs-12 col-sm-3 col-md-3 pad_none hotels-first4-outer">
+							<a href="Javascript:void(0)" onclick="getHotel('the-chancellor-executive-and-lakeside')">
+								<div class="col-md-12 pad_none jupiter-hotel-first">
+									<img src="/assets/images/chancellor-executive02.png" alt="">
+									<div class="col-xs-12 pad_none jupiter3-hotel-rating-sec">
+										<h4>The Chancellor Executive And Lakeside</h4>
+										<!--<span><img src="< ?php echo base_url();?>assets/images/ratings2w.png" alt=""></span>-->
+                                        <span>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        </span>
+									</div>
+								</div>
+							</a>
+							</div>
+
+							<div class="col-xs-12 col-sm-3 col-md-3 pad_none hotels-first4-outer">
+							<a href="Javascript:void(0)" onclick="getHotel('maldives-resort')">
+								<div class="col-md-12 pad_none jupiter-hotel-first">
+									<img src="/assets/images/pacific-resort-broadbeach.jpg" alt="">
+									<div class="col-xs-12 pad_none jupiter3-hotel-rating-sec">
+										<h4>Pacific Resort Broadbeach</h4>
+										<!--<span><img src="< ?php echo base_url();?>assets/images/ratings2w.png" alt=""></span>-->
+                                        <span>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        </span>
+									</div>
+								</div>
+							</a>
+							</div>
+
+
+							<div class="col-xs-12 col-sm-12 col-md-6 pad_none hotels-first4-outer">
+							<a href="Javascript:void(0)" onclick="getHotel('swiss-belhotel')">
+								<div class="col-xs-12 pad_none seaworl-overlay3">
+									<div class="col-md-6 col-sm-6 pad_none jupiter-hotel-first">
+									<img src="/assets/images/swiss-belhotelo02.png" alt="">
+									<div class="col-xs-12 pad_none jupiter3-hotel-rating-sec">
+										<h4>Swiss-Belhotel</h4>
+										<!--<span><img src="< ?php echo base_url();?>assets/images/rating2-img.png" alt=""></span>-->
+                                        <span>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star-half-o sim-stars" aria-hidden="true"></i>
+                                        </span>
+									</div>
+								</div>
+									<div class="col-md-6 col-sm-6 pad_none jupiter-hotel-first">
+								<img src="/assets/images/jupiter-hotel2-icon.png" alt="">
+								</div>
+									<div class="col-xs-12 pad_none jupiter3-hotel-rating-sec-new">
+										<h4>Swiss-Belhotel</h4>
+										<!--<span><img src="< ?php echo base_url();?>assets/images/rating2-img-new.png"></span>-->
+                                        <span>
+                                        <i class="fa fa-star sim-stars01" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars01" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars01" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars01" aria-hidden="true"></i>
+                                        <i class="fa fa-star-half-o sim-stars01" aria-hidden="true"></i>
+                                        </span>
+									</div>
+								</div>
+							</a>
+							</div>
+
+
+							<div class="col-xs-12 col-sm-12 col-md-6 pad_none hotels-first4-outer">
+							<a href="Javascript:void(0)" onclick="getHotel('quest-spring-hill-brisbane')">
+								<div class="col-xs-12 pad_none seaworl-overlay3">
+									<div class="col-md-6 col-sm-6 pad_none jupiter-hotel-first">
+									<img src="/assets/images/Quest-spring-hill-brisbane02.png" alt="">
+									<div class="col-xs-12 pad_none jupiter3-hotel-rating-sec">
+										<h4>Quest Spring Hill Brisbane</h4>
+										<!--<span><img src="< ?php echo base_url();?>assets/images/rating2-img.png"></span>-->
+                                        <span>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star-half-o sim-stars" aria-hidden="true"></i>
+                                        </span>
+									</div>
+								</div>
+									<div class="col-md-6 col-sm-6 pad_none jupiter-hotel-first">
+									<img src="/assets/images/jupiter-hotel2-icon.png" alt="">
+								</div>
+									<div class="col-xs-12 pad_none jupiter3-hotel-rating-sec-new">
+										<h4>Quest Spring Hill Brisbane</h4>
+										<!--<span><img src="< ?php echo base_url();?>assets/images/rating2-img-new.png" alt=""></span>-->
+                                        <span>
+                                        <i class="fa fa-star sim-stars01" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars01" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars01" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars01" aria-hidden="true"></i>
+                                        <i class="fa fa-star-half-o sim-stars01" aria-hidden="true"></i>
+                                        </span>
+									</div>
+								</div>
+							</a>
+							</div>
+
+
+							<div class="col-xs-12 col-sm-3 col-md-3 pad_none hotels-first4-outer">
+							<a href="Javascript:void(0)" onclick="getHotel('baronnet-apartments')">
+
+
+								<div class="col-md-12 pad_none jupiter-hotel-first">
+									<img src="/assets/images/baronnet-apartments02.png" alt="">
+									<div class="col-xs-12 pad_none jupiter3-hotel-rating-sec">
+										<h4>Baronnet Apartments</h4>
+										<!--<span><img src="< ?php echo base_url();?>assets/images/ratings2w.png" alt=""></span>-->
+                                        <span>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        </span>
+									</div>
+								</div>
+							</a>
+							</div>
+
+							<div class="col-xs-12 col-sm-3 col-md-3 pad_none hotels-first4-outer">
+							<a href="Javascript:void(0)" onclick="getHotel('the-bay-apartments')">
+								<div class="col-md-12 pad_none jupiter-hotel-first">
+									<img src="/assets/images/bay-apartments02.png" alt="">
+									<div class="col-xs-12 pad_none jupiter3-hotel-rating-sec">
+										<h4>The Bay Apartments</h4>
+										<!--<span><img src="< ?php echo base_url();?>assets/images/ratings2w.png" alt=""></span>-->
+                                        <span>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
+                                        <i class="fa fa-star-half-o sim-stars" aria-hidden="true"></i>
+                                        </span>
+									</div>
+								</div>
+							</a>
+							</div>
+
+
+
 						</div>
-
+						<!-- all hotel review -->
 					</div>
-				<%end%>
-			<%end%>
-
+			</div>
+		</div>
 	</div>
-
-
-	</div>
-
-</div>
-</div>
 </section>
-<style media="screen">
 
-@media (max-width: 991px) and (min-width: 775px) {
-	.list_accomodation{
-		margin-left: 0%;
-	}
+
+<!---- Accommodation end ------>
+
+
+<!---- hotels views start ------>
+<section class="accomodation0details-view-out" id="bottom">
+
+</section>
+<!---- hotels views end ------>
+
+
+
+<script>
+
+function getHotel(name){
+
+ // var xhttp = new XMLHttpRequest();
+  // xhttp.onreadystatechange = function() {
+    // if (this.readyState == 4 && this.status == 200) {
+      // document.getElementById("bottom").innerHTML = this.responseText;
+    // }
+  // };
+  // xhttp.open("GET", "<?php echo base_url('accommodation/ajax') ?>?id="+name, true);
+  // xhttp.send();
+	 $('html,body').animate({
+        scrollTop: $("#bottom").offset().top},
+        'slow');
+
 }
 
-
-@media (max-width: 775px) and (min-width: 447px) {
-	.list_accomodation{
-		margin-left: 0%;
-	}
-}
-
-.btn-warning:hover {
-		color: black !important;
-		background-color: transparent !important;
-		transition: all 2s ease 0s;
-	}
-
-</style>
-<script type="text/javascript">
-	var opt_val = $("#opt_val").val();
-	// alert(opt_val);
-	$('.custom-select ').val(opt_val);
 </script>
-<%= render 'staticpage/footer'%>
+<%= render 'layouts/footer'%>

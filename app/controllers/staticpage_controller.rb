@@ -410,6 +410,10 @@ class StaticpageController < ApplicationController
   end
 
 
+  def tour
+
+  end
+
 
 
 end

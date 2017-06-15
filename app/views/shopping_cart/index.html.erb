@@ -13,9 +13,15 @@
 				<h2 class="fadeInUp wow" data-wow-duration="2s" data-wow-delay="0s">Cart Details</h2>
 
         <div class="col-sm-12 col-md-10 col-md-offset-1">
-        	<% if not flash[:msg].blank? %>
-        		<h3 style="text-align: center;font-size: 32px;"><%= flash[:msg] %></h3>
-        	<% end %>
+        	
+        		<!-- <h3 style="text-align: center;font-size: 32px;"><%= flash[:msg] %></h3> -->
+						<div class="alert alert-info alert-dismissable">
+		          <!-- <a class="panel-close close" data-dismiss="alert">×</a> -->
+		          <i class="fa fa-info-circle"></i>
+		          <!-- This is an <strong>.alert</strong>. Use this to show important messages to the user. -->
+							<%= @msg %>
+		        </div>
+
         	<% if @hotels.blank? and @events.blank? %>
         		<h3 style="text-align: center;font-size: 32px;">You have not added nothing to cart yet</h3>
         	<% else %>

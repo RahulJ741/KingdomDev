@@ -66,7 +66,7 @@ class HotelController < ApplicationController
       @current_user = nil
     end
 
-    
+
 
   end
 
@@ -78,40 +78,40 @@ class HotelController < ApplicationController
 
   def accommodation
 
-    # @hotels = Hotel.all
-    url = URI("https://kingdomsg.eventsair.com/ksgapi/test-imports/ksgapi/ksgapi/GetHotels")
 
-    http = Net::HTTP.new(url.host, url.port)
-    http.use_ssl = true
-    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-
-    request1 = Net::HTTP::Get.new(url)
-    request1["apikey"] = 'wmQ87NZhMvWx5ZvrrStJPr9FG9WQ0wOSGVXxbUKDbjAuZC6k42M3x9GOzFt2umSQhRGylMwmBmlcU'
-    request1["appusername"] = 'aaa@aaa.com'
-    request1["apppassword"] = 'aaa@aaa.com'
-    request1["content-type"] = 'application/json'
-    request1["cache-control"] = 'no-cache'
-    request1["postman-token"] = '91a73d67-63ec-a9b0-819d-39b4ce08f3b9'
-
-    response = http.request(request1)
-    # puts response.read_body
-    data = JSON.parse(response.body)
-    @hotels = data['Hotels'].pluck('Id','Name','Stars')
-    # @hotels[11][2]=2
-    puts @hotels.inspect
-    if request.post?
-      @hotels = @hotels.select{ |h| h[2].to_i== params[:star_rating].to_i }
-      # @hotels = Hotel.star_rating(params[:star_rating]) if params[:star_rating].present?
-      @opt_val = params[:star_rating]
-    end
-
-     @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
-    if session[:user_id]
-      @current_user = User.find(session["user_id"])
-      puts session[:user_id]
-    else
-      @current_user = nil
-    end
+    # url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetHotels")
+    #
+    # http = Net::HTTP.new(url.host, url.port)
+    # http.use_ssl = true
+    # http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    #
+    # request1 = Net::HTTP::Get.new(url)
+    # request1["apikey"] = 'wmQ87NZhMvWx5ZvrrStJPr9FG9WQ0wOSGVXxbUKDbjAuZC6k42M3x9GOzFt2umSQhRGylMwmBmlcU'
+    # request1["appusername"] = 'aaa@aaa.com'
+    # request1["apppassword"] = 'aaa@aaa.com'
+    # request1["content-type"] = 'application/json'
+    # request1["cache-control"] = 'no-cache'
+    #
+    #
+    # response = http.request(request1)
+    # # puts response.read_body
+    # data = JSON.parse(response.body)
+    # @hotels = data['Hotels'].pluck('Id','Name','Stars')
+    # # @hotels[11][2]=2
+    # puts @hotels.inspect
+    # if request.post?
+    #   @hotels = @hotels.select{ |h| h[2].to_i== params[:star_rating].to_i }
+    #   # @hotels = Hotel.star_rating(params[:star_rating]) if params[:star_rating].present?
+    #   @opt_val = params[:star_rating]
+    # end
+    #
+    #  @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
+    # if session[:user_id]
+    #   @current_user = User.find(session["user_id"])
+    #   puts session[:user_id]
+    # else
+    #   @current_user = nil
+    # end
 
   end
 

@@ -1,8 +1,10 @@
 class ShoppingCartController < ApplicationController
   def index
     @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
+    @msg = "Note: All orders above $2500 will be checked by the site admins and the customer will be contacted offline"
     if session[:user_id]
       @current_user = User.find(session["user_id"])
+
       puts session[:user_id]
       @hotels = HotelShoppingCart.where(:user_id => session[:user_id])
       @events = EventShoppingCart.where(:user_id => session[:user_id])
@@ -48,9 +50,11 @@ class ShoppingCartController < ApplicationController
       puts session[:user_id]
       @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
       total = ((HotelShoppingCart.where(user_id: session[:user_id]).sum('rate') + EventShoppingCart.where(user_id: session[:user_id]).sum('rate')).round(2))
+
+      # redirect_to :back,:flash => {:msg => @msg}
       if total > 2500
         puts "--------------------"
-        @msg = "Since your billing amount exceeds 2500$ we have informed admin they will contact you regarding your order"
+        @msg = "Note: All orders above $2500 will be checked by the site admins and the customer will be contacted offline"
         redirect_to :back, :flash => {:msg => @msg}
       end
     else
@@ -67,7 +71,7 @@ class ShoppingCartController < ApplicationController
     user = User.find(session[:user_id])
     @hotels = HotelShoppingCart.where(:user_id => session[:user_id])
     @events = EventShoppingCart.where(:user_id => session[:user_id])
-    
+
     # Update client_id, client_secret and redirect_uri
     # PayPal::SDK.configure({
     #   :openid_client_id     => "client_id",
@@ -109,12 +113,12 @@ class ShoppingCartController < ApplicationController
           WelcomeEmailMailer.shoppingdetails(@hotels, @events,user).deliver_now
           for i in HotelShoppingCart.where(user_id: user.id)
               HotelTransaction.create(:user_id => i.user_id,:room_type => i.room_type,rate: i.rate,hotel_id: i.hotel_id,room_unique_id: i.room_unique_id,from_date: i.from_date,to_date: i.to_date,status: 'completed',pay_id: @payment.id)
-          end  
-          
+          end
+
           for i in EventShoppingCart.where(user_id: user.id)
               EventTransaction.create(:user_id => i.user_id, :event_id => i.event_id, :event_name => i.event_name, :event_date =>  i.event_date, :event_cat => i.event_cat, :rate => i.rate,status: 'completed',pay_id: @payment.id)
-          end     
-          
+          end
+
           HotelShoppingCart.where(user_id: user.id).destroy_all
           EventShoppingCart.where(user_id: user.id).destroy_all
           redirect_to '/', :flash => {:success => 'Payment Successfull'}

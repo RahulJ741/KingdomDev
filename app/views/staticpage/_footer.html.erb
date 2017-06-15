@@ -282,7 +282,7 @@
 				<h4>Are you sure add this event to cart</h4>
 			</div>
 			<div class="modal-footer" style="">
-				<button type="button" class="btn btn-default" data-dismiss="modal" style="float:right;">Close</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal" style="float:right;">No</button>
 				<form class="" action="/event_add_cart/" method="post" enctype="multipart/form-data">
 					<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 					<input type="hidden" name="user_id" value="<%= session[:user_id] %>">
@@ -291,7 +291,7 @@
 					<input type="hidden" id="event_rate" name="event_rate">
 					<input type="hidden" id="event_date" name="event_date">
 					<input type="hidden" id="event_cat" name="event_cat">
-					<button type="submit" class="btn btn-warning" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000; float:right; margin-right:7px;">Ok</button>
+					<button type="submit" class="btn btn-warning" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000; float:right; margin-right:7px;">Yes</button>
 				</form>&ensp;
 
 			</div>
@@ -318,7 +318,7 @@
 				<h4>Are you sure add this room to cart</h4>
 			</div>
 			<div class="modal-footer" style="">
-				<button type="button" class="btn btn-default" data-dismiss="modal" style="float:right;">Close</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal" style="float:right;">No</button>
 				<form class="" action="/add_cart" method="post" enctype="multipart/form-data">
 					<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 					<input type="hidden" name="user_id" value="<%= session[:user_id] %>">
@@ -327,7 +327,7 @@
 					<input type="hidden" name="room_unique_id" id="room_unique_id">
 					<input type="hidden" name="room_type" id="room_type">
 
-					<button type="submit" class="btn btn-warning" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000; float:right; margin-right:7px;">Ok</button>
+					<button type="submit" class="btn btn-warning" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000; float:right; margin-right:7px;">Yes</button>
 				</form>&ensp;
 
 			</div>

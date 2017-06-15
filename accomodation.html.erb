@@ -1,0 +1,127 @@
+<%= render 'staticpage/header'%>
+<section class="banner-main accomodation-banner">
+	<div class="container">
+		<div class="row">
+			<div class=" pad_none banner-inner"><br><br>
+				<h2 class="fadeInUp wow" data-wow-duration="2s" data-wow-delay="0s">ACCOMMODATION </h2>
+				<p class="fadeInUp wow" data-wow-duration="2s" data-wow-delay="0.3s">KSG has sourced 15 properties ranging from 3.5* to luxury 5*. With both hotels and self-service apartments KSG has the right home away from home for everyone. </p>
+				<!--
+				<a href="#" class="read-more-banner fadeInUp wow" data-wow-duration="2s" data-wow-delay="0.3s">READ MORE <img src="<?php echo base_url();?>assets/images/banner-readmore-bg.png" class="banr-readmore3"></a> -->
+			</div>
+		</div>
+	</div>
+	<div class="gold-cost-right" >
+		<img src="/assets/images/gold-cost-img.png" alt="">
+	</div>
+</section>
+
+<section class="accommodation-main-outer4">
+
+<div class="container" id="accommodation_body" style="">
+	<div class="row">
+		<div class="exclusive-reprensentatio-inner accommodation-main-inner4">
+			<h2 class="fadeInUp wow" data-wow-duration="2s" data-wow-delay="0s">ACCOMMODATION</h2>
+		<div class="col col-md-3" style="padding-top:2%;">
+			<div id="panel" class="">
+          <div class="well" style="background-color: #fff;box-shadow: 1px 1px 1px 1px #a9a9a9;>
+            <form class="form" action="/accommodation" method="post" enctype="multipart/form-data">
+							<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
+							<label for="event" class="pull-left">Stars</label><br>
+							<% if @opt_val.present? %>
+								<input type="hidden" id="opt_val" value="<%= @opt_val %>">
+							<%end%>
+
+								<select class="custom-select form-control" id="star_rating" name="star_rating">
+									<option value="">Choose</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select><br>
+								<label for="start_date" class="pull-left">START DATE</label>
+								<input type="date" name="start_date" id="start_date" class="form-control"><br>
+								<label for="end_date" class="pull-left">END DATE</label><br>
+								<input type="date" name="end_date" id="end_date" class="form-control"><hr>
+								<button type="submit" name="button" class="btn btn-warning btn-block" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;">Apply</button>
+            </form>
+          </div>
+      </div>
+		</div>
+		<div class="col col-md-9" >
+			<% @hotels.each do |g| %>
+				<% if Hotel.find_by_unique_id(g[0]) %>
+					<div class="row list_accomodation" style="background-color:white; margin-top:3%; margin-bottom:2%; margin-right:0%;box-shadow: 2px 2px 2px 2px #a9a9a9;border-radius: 4px; display:flex;">
+						<div class="col col-md-3 col-sm-3" style="text-align:left; padding-left:0px;">
+							<img  height="150" alt="<%= Hotel.find_by_unique_id(g[0]).pics_file_name %>" src="<%= Hotel.find_by_unique_id(g[0]).pics%>" style="width:auto;">
+						</div>
+
+						<div class="col col-md-9 col-sm-9" style="text-align:left;">
+							<div class="clearfix">
+							<h3 class="box-title pull-left" style="margin-top:10px;"><%= g[1] %></h3>
+							</div>
+
+							<div class="col-xs-5 date" style="padding-left:0px;">
+							 <div>
+										<address class=""     style="margin-top: 10px;">
+											<%= Hotel.find_by_unique_id(g[0]).address %>
+										</address>
+							 </div>
+
+							</div>
+							<div class="col-xs-5 date" >
+								 <span class="skin-color">
+									 <% for i in 1..g[2]%>
+											<i class="fa fa-star sim-stars" aria-hidden="true"></i>
+										<%end%>
+									</span><br>
+
+							</div>
+							<div class="col xs-4 pull-right">
+								<a href="/hotel_info/<%= Hotel.find_by_unique_id(g[0]).id %>"><button type="button" class="btn btn-warning" name="button" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;"><i class="fa fa-eye" aria-hidden="true"></i>
+		 						 View</button></a>
+							</div>
+						</div>
+
+					</div>
+				<%end%>
+			<%end%>
+
+	</div>
+
+
+	</div>
+
+</div>
+</div>
+</section>
+<style media="screen">
+
+@media (max-width: 991px) and (min-width: 775px) {
+	.list_accomodation{
+		margin-left: 0%;
+	}
+}
+
+
+@media (max-width: 775px) and (min-width: 447px) {
+	.list_accomodation{
+		margin-left: 0%;
+	}
+}
+
+.btn-warning:hover {
+		color: black !important;
+		background-color: transparent !important;
+		transition: all 2s ease 0s;
+	}
+
+</style>
+<script type="text/javascript">
+	var opt_val = $("#opt_val").val();
+	// alert(opt_val);
+	$('.custom-select ').val(opt_val);
+</script>
+<%= render 'staticpage/footer'%>
+
