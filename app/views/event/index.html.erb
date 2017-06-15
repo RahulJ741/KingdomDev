@@ -71,11 +71,11 @@
 
 					<% @events.each do |i| %>
 						<div class="row" style="box-shadow: 0px 0px 1px 2px #b3b3af ; margin-bottom: 30px; border-radius: 6px; display: flex;">
-                            
+
                             <div class="col col-md-3 col-sm-3 col-xs-3" style="padding: 0px;">
                                 <img src="/assets/event_img/<%= i['name'].tr(' ','_') %>.jpg" alt="" style="width: auto; height: 150px; margin: 15px;">
                             </div>
-                            
+
                             <div class="col col-md-7 col-sm-7 col-xs-7">
                                 <div class="row" style="margin-top: 15px;">
                                     <div class="col-md-12 col-sm-12 col-xs-12">
@@ -109,7 +109,7 @@
                                 <div style="color: white; margin-bottom: 20px; font-size: 20px;">
                                     <h4>Starting <br />from <br /> <strong>$<%= i['start_rate'] %></strong><h4>
                                 </div>
-                                <a href="http://dev2.infiny.in:3333/event_detail/">
+                                <a href="/event_detail/">
                                         <button type="button" class="btn btn-default" name="button">
                                              Details
                                          </button>
@@ -117,7 +117,7 @@
                             </div>
 
                         </div>
-					
+
 
 				<% end %>
 
