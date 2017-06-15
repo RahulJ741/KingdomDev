@@ -23,7 +23,7 @@
 
     </div>
     <div class="col col-md-6">
-    
+
       <form action="/change_info" method="post" id="update_info">
         <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
         <div class="form-group">
@@ -31,6 +31,12 @@
           <input type="text" class="form-control" id="first_name" name="first_name" value="<%= @user.first_name%>" required="true">
           <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
         </div>
+
+				<div class="form-group">
+	        <label for="middle_name">Middle Name</label>
+	        <input type="text" class="form-control" id="middle_name" name="middle_name" value="<%= @user.middle_name %>" required="true">
+	      </div>
+
         <div class="form-group">
           <label for="last_name">Last Name</label>
           <input type="text" class="form-control" id="last_name" name="last_name" value="<%= @user.last_name %>" required="true">
@@ -42,12 +48,59 @@
           <input type="hidden" class="form-control" id="email"  name="email" value="<%= @user.email%>" required="true">
 
         </div>
+
       <div class="form-group">
         <label for="phone">Contact</label>
         <input type="text" class="form-control" id="phone" name="phone" value="<%= @user.phone %>" required="true">
       </div>
 
-      <button type="submit" class="btn btn-primary">Submit</button>
+
+			<div class="form-group">
+        <label for="address">Address</label>
+				<textarea class="form-control" name="address" id="address" rows="5" cols="80"><%= @user.address %></textarea>
+        <!-- <input type="text" class="form-control" id="address" name="address" value="<%= @user.address %>" required="true"> -->
+      </div>
+
+			<div class="form-group">
+        <label for="city">City</label>
+        <input type="text" class="form-control" id="city" name="city" value="<%= @user.city %>" required="true">
+      </div>
+
+			<div class="form-group">
+        <label for="state">State</label>
+        <input type="text" class="form-control" id="state" name="state" value="<%= @user.state %>" required="true">
+      </div>
+
+			<div class="form-group">
+        <label for="post_code">Pincode</label>
+        <input type="text" class="form-control" id="post_code" name="post_code" value="<%= @user.post_code %>" required="true">
+      </div>
+
+
+			
+
+			<% if @user.country.present? %>
+				<input type="hidden" id="country_selected" value="<%= @user.country %>">
+			<%end%>
+
+
+			<div class="form-group">
+        <label for="country">Country</label>
+
+
+        <!-- <input type="text" class="form-control" id="country" name="country" value="<%= @user.country %>" required="true"> -->
+				<select class="custom-select form-control" name="country">
+					<option value="">Choose</option>
+					<% @country.each do |c| %>
+
+					<option value="<%= c.name %>"><%= c.name %></option>
+					<%end%>
+				</select>
+      </div>
+
+
+
+      <button type="submit" class="subscribe-submit subscribe-submit-new">Submit</button>
       <br><br>
     </form>
 
@@ -61,4 +114,10 @@
 
 </div>
 </section>
+
+<script type="text/javascript">
+	var opt_country = $("#country_selected").val();
+	// alert(opt_country);
+	$(".form-group select").val(opt_country);
+</script>
 <%= render 'staticpage/footer'%>

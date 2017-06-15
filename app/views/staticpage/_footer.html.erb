@@ -343,6 +343,39 @@
 
 
 
+
+
+
+
+
+
+<div class="modal fade" id="UpdateprofileModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true" style="z-index: 99999;">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class=" modal-header login-modal-header" style="background-color: #27ae60;">
+				<button type="button" class="close" data-dismiss="modal" style="Opacity:1;">&times;</button>
+				<h4 class="modal-title text-center" id="ShopModalLabel"> Update Profile </h4>
+			</div>
+			<div class="modal-body" style="padding-left: 10%">
+				<h4>As your profile is not updated please update it first to make any purchase</h4>
+			</div>
+			<div class="modal-footer" style="">
+				<button type="button" class="btn btn-default" data-dismiss="modal" style="float:right;">Close</button>
+				<a href="/update_profile"><button type="submit" class="btn btn-warning" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000; float:right; margin-right:7px;">Ok</button></a>
+
+
+
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+
+
 <style>
 
 
@@ -618,6 +651,24 @@ $(document).ready(function(){
 					},
 					phone: {
 						maxlength: 10
+					},
+					address:{
+						required:true
+					},
+					city:{
+						required:true
+					},
+					state:{
+						required:true
+					},
+					post_code:{
+						required:true
+					},
+					country:{
+						required:true
+					},
+					middle_name:{
+						required: true
 					}
 				},
 				messages:{
@@ -628,6 +679,27 @@ $(document).ready(function(){
 						required: "This field is required"
 					},
 					email: {
+						required: "This field is required"
+					},
+					phone:{
+						required: "This field is required"
+					},
+					address:{
+						required: "This field is required"
+					},
+					city:{
+						required: "This field is required"
+					},
+					state:{
+						required: "This field is required"
+					},
+					post_code:{
+						required: "This field is required"
+					},
+					country:{
+						required: "This field is required"
+					},
+					middle_name:{
 						required: "This field is required"
 					}
 				}

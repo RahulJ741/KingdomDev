@@ -54,12 +54,13 @@ Rails.application.routes.draw do
   # get 'authf' => 'session#authf'
   post 'subscribe' => 'staticpage#subscribe'
   match 'check_user' => 'staticpage#check_user', :via => [:get, :post]
-  
+
 
   get "kingxadminp" => 'admin#index'
   get "admin/index_ajax" => 'admin#index_ajax'
   get "/admin/transaction/show/:pay_id" => 'admin#transaction_detail'
 
+  get 'event_detail' => 'staticpage#event_detail'
 
 
 

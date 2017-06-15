@@ -65,6 +65,9 @@ class HotelController < ApplicationController
     else
       @current_user = nil
     end
+
+    
+
   end
 
 

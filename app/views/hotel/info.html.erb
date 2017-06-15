@@ -158,7 +158,12 @@
 								</div>
 								<div class="col col-xs-6" style="padding-right: 25px; padding-top:25px;">
 									<% if @current_user.present? %>
-									<button type="button" class="btn btn-warning pull-right Shopcart" name="button" data-button='{"hotel_id": "<%= @hotel.id %>","room_unique_id": "<%= rmf.first %>","rate":"<%= rmf.fourth.pluck("Rate").first %>", "room_type":"<%= rmf.second.split("-").first %>"}' style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;" data-toggle="modal" data-target="#ShopModal"><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to cart</button>
+
+										<% if @current_user.middle_name.present? && @current_user.address.present? && @current_user.city.present? && @current_user.state.present? && @current_user.country.present? && @current_user.post_code.present? && @current_user.first_name.present? && @current_user.last_name.present? %>
+											<button type="button" class="btn btn-warning pull-right Shopcart" name="button" data-button='{"hotel_id": "<%= @hotel.id %>","room_unique_id": "<%= rmf.first %>","rate":"<%= rmf.fourth.pluck("Rate").first %>", "room_type":"<%= rmf.second.split("-").first %>"}' style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;" data-toggle="modal" data-target="#ShopModal"><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to cart</button>
+										<%else%>
+											<button type="button" class="btn btn-warning pull-right Shopcart" name="button" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;" data-toggle="modal" data-target="#UpdateprofileModal"><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to cart</button>
+										<%end%>
 									<% else %>
 									<button type="button" class="btn btn-warning pull-right" name="button" data-button='{"room_id":"19","room_unique_id": "<%= rmf.first %>","rate":"<%= rmf.fourth.pluck("Rate").first %>"}' style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;" data-toggle="modal" data-target="#loginModal"><i class="fa fa-cart-plus" aria-hidden="true"></i>
 					 Add to cart</button>

@@ -115,7 +115,7 @@ class SessionController < ApplicationController
 
   def update_profile
     @user = User.find(session[:user_id])
-
+    @country = Country.all
 
     @current_user = User.find(session["user_id"])
     # @cart = ShoppingCart.where(:user_id => session[:user_id])
@@ -131,7 +131,7 @@ class SessionController < ApplicationController
     # else
     #   av = @user.email_was
     # end
-    if @user.update(:first_name => params[:first_name], :last_name => params[:last_name],:email => params[:email] ,:phone => params[:phone])
+    if @user.update(:first_name => params[:first_name], :last_name => params[:last_name],:email => params[:email] ,:phone => params[:phone], :address => params[:address], :city => params[:city], :state => params[:state], :post_code => params[:post_code], :country => params[:country], :middle_name => params[:middle_name] )
       @user.save
       redirect_to root_url, :flash => {:success => "Profile updated"}
       # reset_session
