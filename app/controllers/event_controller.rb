@@ -17,13 +17,12 @@ class EventController < ApplicationController
 	        data1["time"] = event.start_time.strftime("%I:%M %p")+" - "+event.end_time.strftime("%I:%M %p")
 	        data1['event_id'] = event.id
 	        data1['event_uid'] = i['Id']
-	        # data1['cat'] =[]
-	        # for j in i['FeeTypes']
-	        #   data2 ={}
-	        #   data2['name'] = j['Name']
-	        #   data2['rate'] = j['Amount']
-	        #   data1['cat'].push(data2)
-	        # end
+	        amt  =[]
+	        for j in i['FeeTypes']
+	           
+	          amt.push(j['Amount'])
+	        end
+	        data1['start_rate'] = amt.min
 	        @events.push(data1)
 	    end
 
