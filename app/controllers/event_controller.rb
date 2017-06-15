@@ -48,4 +48,9 @@ class EventController < ApplicationController
       @current_user = nil
     end
   end
+
+  def show
+  	
+  end
+
 end
