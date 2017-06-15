@@ -405,5 +405,11 @@ class StaticpageController < ApplicationController
   end
 
 
+  def event_detail
+
+  end
+
+
+
 
 end

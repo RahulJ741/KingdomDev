@@ -64,25 +64,30 @@
 				</div>
 			</div>
 
-			<div class="col col-md-9">
+			<div class="col col-md-9 col-sm-12">
 				<div class="row" style="background-color:white; margin-top:3%; margin-bottom:2%; margin-right:0%;">
+					<div class="col col-md-12 col-sm-12">
+
+
 					<% @events.each do |i| %>
-					<div class="row" style="box-shadow: 2px 2px 2px 2px #a9a9a9; margin-bottom:30px; display:flex;">
+					<div class="row" style="box-shadow: 2px 2px 2px 2px #a9a9a9; margin-bottom:30px; display:flex; border-radius: 6px;">
 						<div class="col col-md-3 col-sm-3 col-xs-3" style="padding-left:0px;">
-							<img src="/assets/images/games/KSGAthletics.jpg" alt="" style="width:auto; height:200px;">
+							<img src="/assets/images/games/KSGAthletics.jpg" alt="" style="width:auto; height:210px;">
 						</div>
 						<div class="col col-md-8 col-sm-8 col-xs-8">
 							<div class="row">
 								<div class="col col-md-6 col-sm-6 col-xs-6 pull-left">
 									<h6 style="text-decoration: underline; font-weight: bold; padding-left:10px; padding-top: 25px; font-size: 22px; text-align:left;"><%= i['name'] %></h6>
 									<!-- <h6><%= i['name'] %></h6> -->
+									<%= puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>" %>
+									<%= puts i['name'].downcase.tr(" ", "_")%>
 								</div>
 								<div class="col col-md-6 col-sm-6 col-xs-6">
 
 								</div>
 							</div>
 							<div class="row">
-								<div class="col col-md-12 col-sm-12 col-xs-12">
+								<div class="col col-md-12 col-sm-12 col-xs-12" style="padding-bottom: 16px;">
 									<table class="table">
 										<thead>
 											<tr>
@@ -98,7 +103,8 @@
 										</tbody>
 									</table>
 
-									<button type="button" class="btn btn-warning pull-right" name="button" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;">View</button>
+									<a href="/event_detail/"><button type="button" class="btn btn-warning pull-right" name="button" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;"><i class="fa fa-eye" aria-hidden="true"></i>
+ View</button></a>
 									<!-- <h5>Event Date: <%= i['date'] %> </h5>
 									<h5>Event Time: <%= Time.strptime(i['time'], "%H:%M").strftime("%I:%M %P") %></h5> -->
 								</div>
@@ -159,7 +165,7 @@
 						</div> -->
 					<% end %>
 
-
+</div>
 
 
 
