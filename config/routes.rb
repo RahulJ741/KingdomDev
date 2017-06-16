@@ -58,4 +58,16 @@ Rails.application.routes.draw do
 
   get '/tour' => 'staticpage#tour'
 
+
+  # comment after demo
+  get 'hotel/plazzo' => 'staticpage#plazzo'
+  get 'hotel/synergy' => 'staticpage#synergy'
+  get 'hotel/artique_resort' => 'staticpage#artique_resort'
+  get 'hotel/ocean_pacific' => 'staticpage#ocean_pacific'
+  get 'hotel/south_pacific_plaza' => 'staticpage#south_pacific_plaza'
+  get 'hotel/chancellor_executive' => 'staticpage#chancellor_executive'
+  get 'hotel/swiss_belhotel' => 'staticpage#swiss_belhotel'
+  get 'hotel/quest_spring_hill' => 'staticpage#quest_spring_hill'
+  get 'hotel/baronnet_apartment' => 'staticpage#baronnet_apartment'
+  get 'hotel/bay_apartments' => 'staticpage#bay_apartments'
 end

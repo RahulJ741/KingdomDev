@@ -414,6 +414,48 @@ class StaticpageController < ApplicationController
 
   end
 
+  # comment out after demo
+
+ def plazzo
+
+ end
+
+ def synergy
+
+ end
+
+ def artique_resort
+
+ end
+
+ def ocean_pacific
+
+ end
+
+ def south_pacific_plaza
+
+ end
+
+ def chancellor_executive
+
+ end
+
+ def swiss_belhotel
+
+ end
+
+ def quest_spring_hill
+
+ end
+
+ def baronnet_apartment
+
+ end
+
+ def bay_apartments
+
+ end
+
 
 
 end

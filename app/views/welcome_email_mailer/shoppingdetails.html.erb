@@ -860,7 +860,7 @@
 
 														</table>
 														<h3 class="mb_xxs" style="color: #262626;margin-left: 0;margin-right: 0;margin-top: 20px;margin-bottom: 4px;padding: 0;font-weight: 700;font-size: 21px;line-height: 28px;">Hi, <%= @user.first_name %></h3>
-														<p class="tm" style="font-family: Helvetica,Arial,sans-serif;font-size: 16px;line-height: 23px;color: #999999;mso-line-height-rule: exactly;display: block;margin-top: 0;margin-bottom: 16px;">Thanks for booking with kingdomsport</p>
+														<p class="tm" style="font-family: Helvetica,Arial,sans-serif;font-size: 16px;line-height: 23px;color: #999999;mso-line-height-rule: exactly;display: block;margin-top: 0;margin-bottom: 16px;">Thank you for your order</p>
 													</td>
 												</tr>
 											</tbody>
@@ -897,7 +897,7 @@
                                                   </td>
                                                   <td style="width: 20%;">7/1/2017</td>
                                                   <td style="width: 20%;">31/3/18</td>
-                                                  <td style="width: 20%;"><%= h.rate %></td>
+                                                  <td style="width: 20%;">$ <%= h.rate %></td>
                                                 </div>
                                                 <!-- </h4> -->
                                             </tr>
@@ -925,7 +925,7 @@
                                         <p style="width: 40%;"><%= ev.event_name %></p>
                                         <p style="width: 20%;"><%= ev.event_date.strftime("%d/%m/%Y") %></p>
                                         <p style="width: 20%;"><%= ev.event_cat %></p>
-                                        <p style="width: 20%;"><%= ev.rate %>$</p>
+                                        <p style="width: 20%;">$ <%= ev.rate %></p>
                                       <% end -%>
                                     </tbody>
                                   </table>
@@ -933,7 +933,7 @@
 
 
                                       <div class="col col-xs-12" style="text-align:right;">
-                                        <h3>Total : <%= (HotelShoppingCart.sum('rate') + EventShoppingCart.sum('rate')).round(2)  %>$</h3>
+                                        <h3>Total :$ <%= (HotelShoppingCart.sum('rate') + EventShoppingCart.sum('rate')).round(2)  %></h3>
                                       </div>
 
 

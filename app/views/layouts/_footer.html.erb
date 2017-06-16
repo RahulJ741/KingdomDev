@@ -285,14 +285,14 @@
 				<button type="button" class="btn btn-default" data-dismiss="modal" style="float:right;">No</button>
 				<form class="" action="/event_add_cart/" method="post" enctype="multipart/form-data">
 					<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-					
-					
+
+
 					<input type="hidden" id="item_id" name="item_id">
 					<input type="hidden" id="item_uid" name="item_uid">
 					<input type="hidden" id="item_cat_code" name="item_cat_code">
 					<input type="hidden" id="quantity" name="quantity">
-					
-					
+
+
 					<button type="submit" class="btn btn-warning" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000; float:right; margin-right:7px;">Yes</button>
 				</form>&ensp;
 
@@ -317,7 +317,7 @@
 				<h4 class="modal-title text-center" id="ShopModalLabel"> Add to cart </h4>
 			</div>
 			<div class="modal-body" style="padding-left: 10%">
-				<h4>Are you sure add this room to cart</h4>
+				<h4>Add room to cart?</h4>
 			</div>
 			<div class="modal-footer" style="">
 				<button type="button" class="btn btn-default" data-dismiss="modal" style="float:right;">No</button>
@@ -361,11 +361,11 @@
 				<h4 class="modal-title text-center" id="ShopModalLabel"> Update Profile </h4>
 			</div>
 			<div class="modal-body" style="padding-left: 10%">
-				<h4>As your profile is not updated please update it first to make any purchase</h4>
+				<h4>Your profile is incomplete. We need more details about you in order to process your request. Do it now?</h4>
 			</div>
 			<div class="modal-footer" style="">
-				<button type="button" class="btn btn-default" data-dismiss="modal" style="float:right;">Close</button>
-				<a href="/update_profile"><button type="submit" class="btn btn-warning" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000; float:right; margin-right:7px;">Ok</button></a>
+				<button type="button" class="btn btn-default" data-dismiss="modal" style="float:right;">No</button>
+				<a href="/update_profile"><button type="submit" class="btn btn-warning" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000; float:right; margin-right:7px;">Yes</button></a>
 
 
 
