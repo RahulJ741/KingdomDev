@@ -37,23 +37,17 @@
             <div class="col col-md-3" style="padding-top:2%;">
                 <div id="panel" class="">
                     <div class="well" style="background-color: #fff;">
-                        <form class="" action="/event/index/" method="get">
-                            <label for="session" class="pull-left">Session Code</label>
-                            <% if @current_user.present? %>
-                            <input type="text" placeholder="<%= @current_user.first_name+" "+@current_user.last_name %>" disabled="true" style="border:none; background: #f5f5f5; text-align:left;"><br>
-                            <%else%>
-                            <input type="text" placeholder="" disabled="true" style="border:none; background:transparent;"><br>
-                            <%end%>
+                        <form id="filter_form" action="/event/index/" method="get">
+                            
                             <label for="event" class="pull-left">Events</label><br>
                                 <select name="event" class="custom-select form-control">
-                                    <option value="">Choose</option>
+                                    <option value="">All Events</option>
                                     <% @all_events.each do |i| %>
                                         <option <% if params[:event] == i %>selected=""<% end %> value="<%= i %>"><%= i %></option>
                                     <% end %>
                                 </select><br>
-                                <label for="start_date" class="pull-left">Event DATE</label>
-                                <input type="date" id="from_date_shop" name="start_date" id="start_date" class="form-control" value="<%= params[:start_date] %>"><br>
-                                <button type="submit" name="button" class="btn btn-warning btn-block" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;">Apply</button>
+        
+                                <button type="submit" name="button" class="btn btn-block sub-btn" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;">Apply</button>
                         </form>
                         </div>
                 </div>
@@ -61,55 +55,59 @@
             <div class="col col-md-9 col-sm-12">
                 <div class="row" style="background-color:white; margin-top:3%; margin-bottom:2%; margin-right:0%;">
                     <div class="col col-md-12 col-sm-12">
-                        <% @events.each do |i| %>
+                        <% if @events.blank? %>
+                            <h3 style="font-size:">No results found! Please Try Again</h3>
+                        <% else %>
+                            <% @events.each do |i| %>
                             <div class="row" style="box-shadow: 0px 0px 1px 2px #b3b3af ; margin-bottom: 30px; display: flex;">
-                            
-                            <div class="col col-md-3 col-sm-3 col-xs-3" style="padding: 0px;">
-                                <img src="/assets/event_img/<%= i['name'].tr(' ','_') %>.jpg" alt="" style="width: auto; height: 150px; margin: 15px;">
-                            </div>
-                            
-                            <div class="col col-md-7 col-sm-7 col-xs-7">
-                                <div class="row" style="margin-top: 15px;">
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <div class="col col-md-12 col-sm-12 col-xs-12 pull-left" style="padding: 0px 5px;">
-                                            <h6 style="font-family: 'proxima_novaregular'; text-decoration: none; font-weight: bold; font-size: 22px; text-align:left;"><%= i['name'] %></h6>
+                                
+                                <div class="col col-md-3 col-sm-3 col-xs-3" style="padding: 0px;">
+                                    <img src="/assets/event_img/<%= i['name'].tr(' ','_') %>.jpg" alt="" style="width: auto; height: 150px; margin: 15px;">
+                                </div>
+                                
+                                <div class="col col-md-7 col-sm-7 col-xs-7">
+                                    <div class="row" style="margin-top: 15px;">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="col col-md-12 col-sm-12 col-xs-12 pull-left" style="padding: 0px 5px;">
+                                                <h6 style="font-family: 'proxima_novaregular'; text-decoration: none; font-weight: bold; font-size: 22px; text-align:left;"><%= i['name'] %> - <%= i['event_code'] %></h6>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
+                                    <div class="row">
 
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <div class="col-md-6 col-sm-6 col-xs-6" style="text-align: left; margin: 3px 0px; font-size: 12px; padding: 0px 5px;">
-                                            <span class="<%= i['name'].tr(' ','_') %>_arr" style="font-size: 14px;">Date:</span> <%= i['date'] %>
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="col-md-6 col-sm-6 col-xs-6" style="text-align: left; margin: 3px 0px; font-size: 12px; padding: 0px 5px;">
+                                                <span class="<%= i['name'].tr(' ','_') %>_arr" style="font-size: 14px;">Date:</span> <%= i['date'] %>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6" style="text-align: left; margin: 3px 0px; font-size: 12px; padding: 0px 5px;">
+                                                <span class="<%= i['name'].tr(' ','_') %>_arr" style="font-size: 14px;">Time:</span> <%= i['time'] %>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6" style="text-align: left; margin: 3px 0px; font-size: 12px; padding: 0px 5px;">
+                                                <span class="<%= i['name'].tr(' ','_') %>_arr" style="font-size: 14px;">Venue:</span> <%= i['venue'] %>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6" style="text-align: left; margin: 3px 0px; font-size: 12px; padding: 0px 5px;">
+                                                <span class="<%= i['name'].tr(' ','_') %>_arr" style="font-size: 14px;">Gender:</span> <%= i['gender'] %>
+                                            </div>
                                         </div>
-                                        <div class="col-md-6 col-sm-6 col-xs-6" style="text-align: left; margin: 3px 0px; font-size: 12px; padding: 0px 5px;">
-                                            <span class="<%= i['name'].tr(' ','_') %>_arr" style="font-size: 14px;">Time:</span> <%= i['time'] %>
-                                        </div>
-                                        <div class="col-md-6 col-sm-6 col-xs-6" style="text-align: left; margin: 3px 0px; font-size: 12px; padding: 0px 5px;">
-                                            <span class="<%= i['name'].tr(' ','_') %>_arr" style="font-size: 14px;">Venue:</span> <%= i['venue'] %>
-                                        </div>
-                                        <div class="col-md-6 col-sm-6 col-xs-6" style="text-align: left; margin: 3px 0px; font-size: 12px; padding: 0px 5px;">
-                                            <span class="<%= i['name'].tr(' ','_') %>_arr" style="font-size: 14px;">Gender:</span> <%= i['gender'] %>
-                                        </div>
+
                                     </div>
-
                                 </div>
+
+                                <div class="col-md-2 col-sm-2 col-xs-2 ticket2-applications-calender2 <%= i['name'].tr(' ','_') %>" style="padding: 15px 0px !important;position: relative;left: 2px;">
+                                    <div class="arrow-left <%= i['name'].tr(' ','_') %>_arr"></div>
+                                    <div style="color: white; font-size: 20px;">
+                                        <h4 style="font-size: 25px;">Starting <br />from <br /> <strong style="font-size: 25px;">$<%= i['start_rate'] %></strong><h4>
+                                    </div>
+                                    <a href="/event/show/<%= i['event_uid'] %>">
+                                        <button type="button" class="btn btn-default">
+                                             Details
+                                         </button>
+                                    </a>
+                                </div>
+
                             </div>
 
-                            <div class="col-md-2 col-sm-2 col-xs-2 ticket2-applications-calender2 <%= i['name'].tr(' ','_') %>" style="padding: 15px 0px !important;position: relative;left: 2px;">
-                                <div class="arrow-left <%= i['name'].tr(' ','_') %>_arr"></div>
-                                <div style="color: white; font-size: 20px;">
-                                    <h4 style="font-size: 25px;">Starting <br />from <br /> <strong style="font-size: 25px;">$<%= i['start_rate'] %></strong><h4>
-                                </div>
-                                <a href="/event/show/">
-                                    <button type="button" class="btn btn-default" name="button">
-                                         Details
-                                     </button>
-                                </a>
-                            </div>
-
-                        </div>
-
+                            <% end %>
                         <% end %>
                     </div> 
                     
@@ -228,6 +226,7 @@
         color: #672c86;
     }
 
+
     .Gymnastics_Rhythmic{
         background-color: #008b42;
     }
@@ -321,6 +320,21 @@
             $('#eventModal').find('#event_cat').val($(this).find('.event_cat').data('event_cat'));
             $('#eventModal').find('#event_rate').val($(this).find('.event_rate').data('event_rate'));
         });
+
+        // $(document).on('change',"select[name='event']",function(){
+        //     if($(this).val()){
+        //         $(this).parents('.well').find('.sub-btn').removeClass('disabled');
+        //     }
+        //     else{
+        //         $(this).parents('.well').find('.sub-btn').addClass('disabled');
+        //     }
+        // });
+
+        // $(document).on('click',".sub-btn",function(){
+        //     if($("select[name='event']").val()){
+        //         $('#filter_form').submit();
+        //     }
+        // });
     });
 </script>
 <%= render 'layouts/footer'%>

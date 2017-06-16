@@ -33,7 +33,7 @@
 </section> -->
 
 <section class="accommodation-main-outer4 event-ticket-inner3">
-<img src="/assets/images/ticket-info-design-img3.png" class="ticket-info-design-img3">
+<img src="" class="ticket-info-design-img3">
 	<div class="container">
 		<div class="row">
 			<div class="exclusive-reprensentatio-inner accommodation-main-inner4">
@@ -46,136 +46,86 @@
 						<div class="row" style="box-shadow: 0px 0px 1px 2px #b3b3af;  margin:  0px 10px 30px 10px; display: flex;">
                             
                             <div class="col col-md-3 col-sm-3 col-xs-3" style="padding: 0px;">
-                                <img src="http://dev2.infiny.in:3333/assets/event_img/Cycling_Mountain_Bike.jpg" alt="" style="width: auto; height: 150px; margin: 15px;">
+                                <img src="/assets/event_img/<%= @event.name.tr(' ','_') %>.jpg" alt="" style="width: auto; height: 150px; margin: 15px;">
                             </div>
                             
                             <div class="col col-md-9 col-sm-9 col-xs-9">
                                 <div class="row" style="margin-top: 15px;">
                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                         <div class="col col-md-12 col-sm-12 col-xs-12 pull-left" style="padding: 0px 5px;">
-                                            <h6 style="font-family: 'proxima_novaregular'; text-decoration: none; font-weight: bold; font-size: 22px; text-align:left;">Ski Jumping - SJ1103</h6>
+                                            <h6 style="font-family: 'proxima_novaregular'; text-decoration: none; font-weight: bold; font-size: 22px; text-align:left;"><%= @event.name %> - <%= @event.event_code %></h6>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row" style="margin: 10px -15px">
                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                         <div class="col-md-12 col-sm-12 col-xs-12" style="text-align: left; padding: 0px 5px;">
-                                            <span style="color: #27ae60; font-size: 14px;">Details:</span> 
-                                            These are the details. These are the details. These are the details. 
-                                            These are the details. These are the details. These are the details. 
-                                            These are the details. These are the details. These are the details. 
-                                            These are the details. These are the details. These are the details. 
-                                            These are the details. 
+                                            <span class="<%= @event.name.tr(' ','_') %>_arr" style="font-size: 14px;">Details:</span> 
+                                            <%= @event.detail %> 
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row" style="margin: 20px -15px;">
                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                         <div class="col-md-6 col-sm-6 col-xs-6" style="text-align: left; margin: 3px 0px; font-size: 12px; padding: 0px 5px;">
-                                            <span style="color: #27ae60; font-size: 14px;">Date:</span> 12/12/12
+                                            <span class="<%= @event.name.tr(' ','_') %>_arr" style="font-size: 14px;">Date:</span> <%= @event.date.strftime("%d %b %y")  %>
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-6" style="text-align: left; margin: 3px 0px; font-size: 12px; padding: 0px 5px;">
-                                            <span style="color: #27ae60; font-size: 14px;">Time:</span> 12:12 to 12:12
+                                            <span class="<%= @event.name.tr(' ','_') %>_arr" style="font-size: 14px;">Time:</span> <%= @event.start_time.strftime("%I:%M %p") %> - <%= @event.end_time.strftime("%I:%M %p") %>
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-6" style="text-align: left; margin: 3px 0px; font-size: 12px; padding: 0px 5px;">
-                                            <span style="color: #27ae60; font-size: 14px;">Venue:</span> Oxenford Studios
+                                            <span class="<%= @event.name.tr(' ','_') %>_arr" style="font-size: 14px;">Venue:</span> <%= @event.venue %>
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-6" style="text-align: left; margin: 3px 0px; font-size: 12px; padding: 0px 5px;">
-                                            <span style="color: #27ae60; font-size: 14px;">Gender:</span> M/W
+                                            <span class="<%= @event.name.tr(' ','_') %>_arr" style="font-size: 14px;">Gender:</span> <%= @event.gender %>
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-6" style="text-align: left; margin: 3px 0px; font-size: 12px; padding: 0px 5px;">
-                                            <span style="color: #27ae60; font-size: 14px;">Session Type:</span> Prelim
+                                            <span class="<%= @event.name.tr(' ','_') %>_arr" style="font-size: 14px;">Session Type:</span> <%= @event.session_type %>
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-6" style="text-align: left; margin: 3px 0px; font-size: 12px; padding: 0px 5px;">
-                                            <span style="color: #27ae60; font-size: 14px;">Prime Event:</span> Yes
+                                            <span class="<%= @event.name.tr(' ','_') %>_arr" style="font-size: 14px;">Prime Event:</span> <%= @event.prime_event %>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row" style="margin-bottom: 30px; display: flex;margin: 0px -5px 30px -5px;">
-                            <div class="col-md-4 col-sm-6 col-xs-12" >
-		                        <div class="row" style="margin-bottom:10px;box-shadow: 0px 0px 1px 2px #b3b3af;margin: 0px 0px 10px 0px;">
-		      						
-	                                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 10px 15px; border-bottom: 1px solid #cccccc;font-weight:bold">
-	                                    CAT A - SJ1103A
-	                                </div>
-	                                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 10px 15px; border-bottom: 1px solid #cccccc;">
-	                                    Tickets Avialable: 99
-	                                </div>
-	                                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 10px 15px; border-bottom: 1px solid #cccccc;">
-	                                    <input type="number" name="event_user_email" required="" class="form-control" placeholder="Enter Quantity" style="width: 50%; margin: auto;">
-	                                </div>
-	                                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 10px 15px; border-bottom: 1px solid #cccccc;">
-	                                    Cost: $45
-	                                </div>
-			                         
-			                       
-		                        </div>
-		                        <div class="row">    
-		                            <div class="col-xs-12">
-		                                <button type="button" class="btn btn-warning pull-right Shopcart" name="button" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;width: 100%;" data-toggle="modal" data-target="#UpdateprofileModal"><i class="fa fa-cart-plus" aria-hidden="true" style="margin-right: 10px;"></i>Add to cart</button>
-		                        	</div>
-		                        </div>
+	                        <% @event_cats.each do |i| %>
+	                            <div class="col-md-4 col-sm-6 col-xs-12 cat_box" >
+			                        <div class="row" style="margin-bottom:10px;box-shadow: 0px 0px 1px 2px #b3b3af;margin: 0px 0px 10px 0px;">
+			      						
+		                                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 10px 15px; border-bottom: 1px solid #cccccc;font-weight:bold">
+		                                    <%= i['Name'] %> - <%= i['Code'] %>
+		                                </div>
+		                                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 10px 15px; border-bottom: 1px solid #cccccc;">
+		                                    Tickets Available: <%= i['Available'] %>
+		                                </div>
+		                                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 10px 15px; border-bottom: 1px solid #cccccc;">
+		                                    <input type="number"  min="1" max="<%= i['Available'] %>" class="form-control quantity" placeholder="Enter Quantity" style="width: 50%; margin: auto;">
+		                                </div>
+		                                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 10px 15px; border-bottom: 1px solid #cccccc;">
+		                                    Cost: <strong>$<%= i['Amount'] %></strong>
+		                                </div>
+				                         
+				                       
+			                        </div>
+			                        <div class="row">    
+			                          <div class="col-xs-12">
+			                            <% if @current_user.present? %>
+																		<% if @current_user.middle_name.present? && @current_user.address.present? && @current_user.city.present? && @current_user.state.present? && @current_user.country.present? && @current_user.post_code.present? && @current_user.first_name.present? && @current_user.last_name.present? %>
+																			<button type="button" data-item_id='<%= @event.id %>' data-item_uid='<%= params[:event_uid] %>' data-item_cat_code='<%= i['Code'] %>' class="btn pull-right eventcart disabled" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;width: 100%;" ><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to cart</button>
+																		<%else%>
+																			<button type="button" class="btn pull-right Shopcart disabled" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;width: 100%;"data-toggle="modal" data-target="#UpdateprofileModal"><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to cart</button>
+																		<%end%>
+																	<% else %>
+																		<button type="button" class="btn pull-right Shopcart disabled" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;width: 100%;" data-toggle="modal" data-target="#loginModal"><i class="fa fa-cart-plus" aria-hidden="true"></i>
+																			Add to cart</button>
+																	<% end %>
+			                        	</div>
+			                        </div>
 
-                            </div>
-
-                            <div class="col-md-4 col-sm-6 col-xs-12" >
-		                        <div class="row" style="margin-bottom:10px;box-shadow: 0px 0px 1px 2px #b3b3af;margin: 0px 0px 10px 0px;">
-		      						
-	                                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 10px 15px; border-bottom: 1px solid #cccccc;font-weight:bold">
-	                                    CAT A - SJ1103A
-	                                </div>
-	                                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 10px 15px; border-bottom: 1px solid #cccccc;">
-	                                    Tickets Avialable: 99
-	                                </div>
-	                                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 10px 15px; border-bottom: 1px solid #cccccc;">
-	                                    <input type="number" name="event_user_email" required="" class="form-control" placeholder="Enter Quantity" style="width: 50%; margin: auto;">
-	                                </div>
-	                                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 10px 15px; border-bottom: 1px solid #cccccc;">
-	                                    Cost: $45
-	                                </div>
-			                         
-			                       
-		                        </div>
-		                        <div class="row">    
-		                            <div class="col-xs-12">
-		                                <button type="button" class="btn btn-warning pull-right Shopcart" name="button" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;width: 100%;" data-toggle="modal" data-target="#UpdateprofileModal"><i class="fa fa-cart-plus" aria-hidden="true" style="margin-right: 10px;"></i>Add to cart</button>
-		                        	</div>
-		                        </div>
-
-                            </div>
-
-                            <div class="col-md-4 col-sm-6 col-xs-12" >
-		                        <div class="row" style="margin-bottom:10px;box-shadow: 0px 0px 1px 2px #b3b3af;margin: 0px 0px 10px 0px;">
-		      						
-	                                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 10px 15px; border-bottom: 1px solid #cccccc;font-weight:bold">
-	                                    CAT A - SJ1103A
-	                                </div>
-	                                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 10px 15px; border-bottom: 1px solid #cccccc;">
-	                                    Tickets Avialable: 99
-	                                </div>
-	                                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 10px 15px; border-bottom: 1px solid #cccccc;">
-	                                    <input type="number" name="event_user_email" required="" class="form-control" placeholder="Enter Quantity" style="width: 50%; margin: auto;">
-	                                </div>
-	                                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 10px 15px; border-bottom: 1px solid #cccccc;">
-	                                    Cost: $45
-	                                </div>
-			                         
-			                       
-		                        </div>
-		                        <div class="row">    
-		                            <div class="col-xs-12">
-		                                <button type="button" class="btn btn-warning pull-right Shopcart" name="button" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;width: 100%;" data-toggle="modal" data-target="#UpdateprofileModal"><i class="fa fa-cart-plus" aria-hidden="true" style="margin-right: 10px;"></i>Add to cart</button>
-		                        	</div>
-		                        </div>
-
-                            </div>
-
-           
-
-
-                            
+	                            </div>
+                            <% end %>           
                         </div>
 					
 
@@ -258,21 +208,101 @@
 		position: unset !important;
 	}
 
-	.{
-		color: #27ae60; 
-		font-size: 14px;
-	}
+	.Gymnastics_Rhythmic_arr{
+        color: #008b42;
+    }
+    .Badminton_arr{
+        color: #263c91;
+    }
+    .Lawn_Bowls_arr{
+        color: #ee1c25;
+    }
+    .Squash_arr{
+        color: #672c86;
+    }
+    .Weightlifting_arr{
+        color: #9d8046;
+    }
+    .Shooting_arr{
+        color: #008b42;
+    }
+    .Table_Tennis_arr{
+        color: #263c91;
+    }
+    .Cycling_Mountain_Bike_arr{
+        color: #ee1c25;
+    }
+    .Diving_arr{
+        color: #672c86;
+    }
+    .Beach_Volleyball_arr{
+        color: #9d8046;
+    }
+   
+    .Swimming_arr{
+        color: #008b42;
+    }
+    .Basketball_arr{
+        color: #263c91;
+    }
+    .Closing_Ceremony_arr{
+        color: #ee1c25;
+    }
+    .Boxing_arr{
+        color: #672c86;
+    }
+    .Hockey_arr{
+        color: #9d8046;
+    }
+    .Netball_arr{
+        color: #008b42;
+    }
+    .Cycling_Track_arr{
+        color: #263c91;
+    }
+    .Wrestling_arr{
+        color: #ee1c25;
+    }
+    .Gymnastics_Artistic_arr{
+        color: #672c86;
+    }
+    .Athletics_arr{
+        color: #9d8046;
+    }
+    .Rugby_Sevens_arr{
+        color: #008b42;
+    }
+    .Para_Powerlifting_arr{
+        color: #263c91;
+    }
+    .Triathlon_arr{
+        color: #ee1c25;
+    }
+    .Opening_Ceremony_arr{
+        color: #672c86;
+    }
 </style>
 <script>
 	$(document).ready(function(){
-		$(document).on('click','.add_to_cart',function(){
-			$('#eventModal').find('#event_id').val($(this).data('event_id'));
-			$('#eventModal').find('#event_name').val($(this).data('event_name'));
-			$('#eventModal').find('#event_date').val($(this).data('event_date'));
-			$('#eventModal').find('#event_cat').val($(this).find('.event_cat').data('event_cat'));
-			$('#eventModal').find('#event_rate').val($(this).find('.event_rate').data('event_rate'));
-
+		$(document).on('click','.eventcart',function(){
+			if($(this).parents('.cat_box').find('.quantity').val()){
+				$('#eventModal').find('#item_id').val($(this).data('item_id'));
+				$('#eventModal').find('#item_uid').val($(this).data('item_uid'));
+				$('#eventModal').find('#item_cat_code').val($(this).data('item_cat_code'));
+				$('#eventModal').find('#quantity').val($(this).parents('.cat_box').find('.quantity').val());
+				$('#eventModal').modal('show');
+			}
 		});
+		$("[type='number']").keypress(function (evt) {
+	      evt.preventDefault();
+	    });
+
+	    $(document).on('change',"[type='number']",function(){
+	    	if($(this).val() > 0){
+	    		$(this).parents('.cat_box').find('button').removeClass('disabled');
+	    	}
+	    });
+
 	});
 </script>
 <%= render 'layouts/footer'%>

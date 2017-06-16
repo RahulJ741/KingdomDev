@@ -50,7 +50,7 @@ Rails.application.routes.draw do
   match 'check_user' => 'staticpage#check_user', :via => [:get, :post]
 
   get '/event/index/' => 'event#index'
-  get '/event/show' => 'event#show'
+  get '/event/show/:event_uid' => 'event#show'
 
   get "kingxadminp" => 'admin#index'
   get "admin/index_ajax" => 'admin#index_ajax'

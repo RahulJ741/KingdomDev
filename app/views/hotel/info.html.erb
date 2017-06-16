@@ -165,8 +165,8 @@
 											<button type="button" class="btn btn-warning pull-right Shopcart" name="button" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;" data-toggle="modal" data-target="#UpdateprofileModal"><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to cart</button>
 										<%end%>
 									<% else %>
-									<button type="button" class="btn btn-warning pull-right" name="button" data-button='{"room_id":"19","room_unique_id": "<%= rmf.first %>","rate":"<%= rmf.fourth.pluck("Rate").first %>"}' style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;" data-toggle="modal" data-target="#loginModal"><i class="fa fa-cart-plus" aria-hidden="true"></i>
-					 Add to cart</button>
+										<button type="button" class="btn btn-warning pull-right" name="button" data-button='{"room_id":"19","room_unique_id": "<%= rmf.first %>","rate":"<%= rmf.fourth.pluck("Rate").first %>"}' style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;" data-toggle="modal" data-target="#loginModal"><i class="fa fa-cart-plus" aria-hidden="true"></i>
+					 					Add to cart</button>
 									<% end %>
 								</div>
 							</div>

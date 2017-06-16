@@ -1,25 +1,43 @@
 class ShoppingCartController < ApplicationController
   def index
-    @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
+    @cart_count = Cart.where(:user_id => session[:user_id]).count
     @msg = "Note: All orders above $2500 will be checked by the site admins and the customer will be contacted offline"
     if session[:user_id]
       @current_user = User.find(session["user_id"])
 
       puts session[:user_id]
-      @hotels = HotelShoppingCart.where(:user_id => session[:user_id])
-      @events = EventShoppingCart.where(:user_id => session[:user_id])
+      cart = Cart.where(:user_id => session[:user_id])
+      puts cart.inspect
+      @cart_data = [] 
+      for i in cart
+        data1 = {}
+        if i.item == 'event'
+          url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetFunctionInfo?functionid="+i.item_uid)
+          data = kingdomsg_api(url)
+          catagory =  (data['FunctionInfo']['FeeTypes'].select {|cat| cat["Code"] == i.item_cat_code })[0]
+
+          event = Event.find(i.item_id)
+          data1['item_type'] = 'Event'
+          data1['name'] = event.name+", "+catagory['Name']
+          data1['available'] = catagory['Available']
+          data1['amount'] = catagory['Amount']
+          data1['quantity'] = i.quantity
+          data1['event_date'] = event.date.strftime("%d %b %y")
+        end
+        @cart_data.push(data1)
+      end
     else
       @current_user = nil
     end
   end
 
-  def add_cart
-    @cart = HotelShoppingCart.create(:user_id => params[:user_id],:room_type => params[:room_type],rate: params[:rate],hotel_id: params[:hotel_id],room_unique_id: params[:room_unique_id])
-    @cart.save()
-    puts "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH"
-    puts @cart.errors.full_messages
-    redirect_to :back, :flash => {:success => 'Added to cart'}
-  end
+  # def add_cart
+  #   @cart = HotelShoppingCart.create(:user_id => params[:user_id],:room_type => params[:room_type],rate: params[:rate],hotel_id: params[:hotel_id],room_unique_id: params[:room_unique_id])
+  #   @cart.save()
+  #   puts "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH"
+  #   puts @cart.errors.full_messages
+  #   redirect_to :back, :flash => {:success => 'Added to cart'}
+  # end
 
   def remove_from_cart_hotel
     @cart = HotelShoppingCart.find(params[:id]).destroy
@@ -34,12 +52,7 @@ class ShoppingCartController < ApplicationController
   end
 
   def event_add_cart
-    edate = (params[:event_date]+'/2018').to_s
-
-    @cart = EventShoppingCart.create(:user_id => params[:user_id], :event_id => params[:event_id], :event_name => params[:event_name], :event_date =>  Date.strptime(edate,"%d/%m/%Y"), :event_cat => params[:event_cat], :rate => params[:event_rate])
-    @cart.save
-
-    puts @cart.errors.full_messages
+    Cart.create(:user_id => session[:user_id],:item => 0,:item_id => params[:item_id],:item_uid => params[:item_uid],:item_cat_code => params[:item_cat_code],:quantity => params[:quantity])
     redirect_to :back, :flash => {:success => 'Added to cart'}
   end
 
