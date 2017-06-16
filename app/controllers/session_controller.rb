@@ -119,7 +119,7 @@ class SessionController < ApplicationController
 
     @current_user = User.find(session["user_id"])
     # @cart = ShoppingCart.where(:user_id => session[:user_id])
-    @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
+    @cart_count = Cart.where(:user_id => session[:user_id]).count
   end
 
   def change_info

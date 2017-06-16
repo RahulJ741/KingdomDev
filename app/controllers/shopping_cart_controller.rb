@@ -61,7 +61,7 @@ class ShoppingCartController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
-      @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
+      @cart_count = Cart.where(:user_id => session[:user_id]).count
       total = ((HotelShoppingCart.where(user_id: session[:user_id]).sum('rate') + EventShoppingCart.where(user_id: session[:user_id]).sum('rate')).round(2))
 
       # redirect_to :back,:flash => {:msg => @msg}
@@ -146,7 +146,7 @@ class ShoppingCartController < ApplicationController
   end
 
   def my_transaction
-    @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
+    @cart_count = Cart.where(:user_id => session[:user_id]).count
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]

@@ -59,7 +59,7 @@ class StaticpageController < ApplicationController
     else
       @current_user = nil
     end
-     @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
+     @cart_count = Cart.where(:user_id => session[:user_id]).count
 
     # @current_user = User.find(session[:user_id])
 
@@ -75,7 +75,7 @@ class StaticpageController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
-       @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
+       @cart_count = Cart.where(:user_id => session[:user_id]).count
     else
       @current_user = nil
     end
@@ -85,7 +85,7 @@ class StaticpageController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
-       @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
+       @cart_count = Cart.where(:user_id => session[:user_id]).count
     else
       @current_user = nil
     end
@@ -95,7 +95,7 @@ class StaticpageController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
-       @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
+       @cart_count = Cart.where(:user_id => session[:user_id]).count
     else
       @current_user = nil
     end
@@ -106,7 +106,7 @@ class StaticpageController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
-       @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
+       @cart_count = Cart.where(:user_id => session[:user_id]).count
     else
       @current_user = nil
     end
@@ -116,7 +116,7 @@ class StaticpageController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
-       @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
+       @cart_count = Cart.where(:user_id => session[:user_id]).count
     else
       # @current_user = nil
     end
@@ -126,7 +126,7 @@ class StaticpageController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
-       @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
+       @cart_count = Cart.where(:user_id => session[:user_id]).count
     else
       # @current_user = nil
     end
@@ -136,7 +136,7 @@ class StaticpageController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
-       @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
+       @cart_count = Cart.where(:user_id => session[:user_id]).count
     else
       # @current_user = nil
     end
@@ -195,7 +195,7 @@ class StaticpageController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
-      @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
+      @cart_count = Cart.where(:user_id => session[:user_id]).count
     else
       @current_user = nil
     end
@@ -206,7 +206,7 @@ class StaticpageController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
-      @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
+      @cart_count = Cart.where(:user_id => session[:user_id]).count
     else
       @current_user = nil
     end
@@ -216,7 +216,7 @@ class StaticpageController < ApplicationController
 
 
   def swimmingpackages
-    @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
+    @cart_count = Cart.where(:user_id => session[:user_id]).count
     if session[:user_id]
 
       @current_user = User.find(session["user_id"])
@@ -231,7 +231,7 @@ class StaticpageController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
-       @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
+       @cart_count = Cart.where(:user_id => session[:user_id]).count
     else
       @current_user = nil
     end
@@ -242,7 +242,7 @@ class StaticpageController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
-       @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
+       @cart_count = Cart.where(:user_id => session[:user_id]).count
     else
       @current_user = nil
     end
@@ -253,7 +253,7 @@ class StaticpageController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
-       @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
+       @cart_count = Cart.where(:user_id => session[:user_id]).count
     else
       @current_user = nil
     end
@@ -264,7 +264,7 @@ class StaticpageController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
-       @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
+       @cart_count = Cart.where(:user_id => session[:user_id]).count
 
       #  def check_user
 
@@ -279,7 +279,7 @@ class StaticpageController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
-       @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
+       @cart_count = Cart.where(:user_id => session[:user_id]).count
     else
       @current_user = nil
     end
@@ -290,7 +290,7 @@ class StaticpageController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
-      @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
+      @cart_count = Cart.where(:user_id => session[:user_id]).count
 
       # @cart = ShoppingCart.where(:user_id => session[:user_id])
     else
@@ -303,7 +303,7 @@ class StaticpageController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
-      @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
+      @cart_count = Cart.where(:user_id => session[:user_id]).count
 
       # @cart = ShoppingCart.where(:user_id => session[:user_id])
     else
@@ -317,7 +317,7 @@ class StaticpageController < ApplicationController
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
       # @cart = ShoppingCart.where(:user_id => session[:user_id])
-      @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
+      @cart_count = Cart.where(:user_id => session[:user_id]).count
 
     else
       @current_user = nil
@@ -329,7 +329,7 @@ class StaticpageController < ApplicationController
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
       # @cart = ShoppingCart.where(:user_id => session[:user_id])
-      @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
+      @cart_count = Cart.where(:user_id => session[:user_id]).count
 
     else
       @current_user = nil
@@ -342,7 +342,7 @@ class StaticpageController < ApplicationController
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
       # @cart = ShoppingCart.where(:user_id => session[:user_id])
-      @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
+      @cart_count = Cart.where(:user_id => session[:user_id]).count
 
     else
       @current_user = nil
@@ -355,7 +355,7 @@ class StaticpageController < ApplicationController
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
       # @cart = ShoppingCart.where(:user_id => session[:user_id])
-      @cart_count = HotelShoppingCart.where(:user_id => session[:user_id]).count + EventShoppingCart.where(:user_id => session[:user_id]).count
+      @cart_count = Cart.where(:user_id => session[:user_id]).count
 
     else
       @current_user = nil
