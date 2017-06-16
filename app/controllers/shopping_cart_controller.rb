@@ -54,8 +54,10 @@ class ShoppingCartController < ApplicationController
       # redirect_to :back,:flash => {:msg => @msg}
       if total > 2500
         puts "--------------------"
-        @msg = "Note: All orders above $2500 will be checked by the site admins and the customer will be contacted offline"
-        redirect_to :back, :flash => {:msg => @msg}
+        WelcomeEmailMailer.rate_exteted(@current_user).deliver_now
+        # @msg = "Note: All orders above $2500 will be checked by the site admins and the customer will be contacted offline"
+        # redirect_to :back, :flash => {:msg => @msg}
+
       end
     else
       @current_user = nil
