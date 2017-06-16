@@ -8,7 +8,7 @@ class ShoppingCartController < ApplicationController
       puts session[:user_id]
       cart = Cart.where(:user_id => session[:user_id])
       puts cart.inspect
-      @cart_data = [] 
+      @cart_data = []
       for i in cart
         data1 = {}
         if i.item == 'event'
@@ -52,7 +52,7 @@ class ShoppingCartController < ApplicationController
   end
 
   def event_add_cart
-    Cart.create(:user_id => session[:user_id],:item => 0,:item_id => params[:item_id],:item_uid => params[:item_uid],:item_cat_code => params[:item_cat_code],:quantity => params[:quantity])
+    Cart.create(:user_id => session[:user_id],:item => 0,:item_id => params[:item_id],:item_uid => params[:item_uid],:item_cat_code => params[:item_cat_code],:quantity => ((params[:quantity]).to_i).abs )
     redirect_to :back, :flash => {:success => 'Added to cart'}
   end
 

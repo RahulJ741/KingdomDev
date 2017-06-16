@@ -27,19 +27,19 @@
       <form action="/change_info" method="post" id="update_info">
         <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
         <div class="form-group">
-          <label for="first_name">First Name</label>
-          <input type="text" class="form-control" id="first_name" name="first_name" value="<%= @user.first_name%>" required="true">
+          <!-- <label for="first_name">First Name</label> -->
+          <input type="text" class="form-control" id="first_name" name="first_name" value="<%= @user.first_name%>" required="true" placeholder="First Name">
           <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
         </div>
 
 				<div class="form-group">
-	        <label for="middle_name">Middle Name</label>
-	        <input type="text" class="form-control" id="middle_name" name="middle_name" value="<%= @user.middle_name %>" required="true">
+	        <!-- <label for="middle_name">Middle Name</label> -->
+	        <input type="text" class="form-control" id="middle_name" name="middle_name" value="<%= @user.middle_name %>" required="true" placeholder="Middle Name">
 	      </div>
 
         <div class="form-group">
-          <label for="last_name">Last Name</label>
-          <input type="text" class="form-control" id="last_name" name="last_name" value="<%= @user.last_name %>" required="true">
+          <!-- <label for="last_name">Last Name</label> -->
+          <input type="text" class="form-control" id="last_name" name="last_name" value="<%= @user.last_name %>" required="true" placeholder="Last Name">
           <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
         </div>
 
@@ -50,34 +50,34 @@
         </div>
 
       <div class="form-group">
-        <label for="phone">Contact</label>
-        <input type="text" class="form-control" id="phone" name="phone" value="<%= @user.phone %>" required="true">
+        <!-- <label for="phone">Contact</label> -->
+        <input type="text" class="form-control" id="phone" name="phone" value="<%= @user.phone %>" required="true" placeholder="Contact">
       </div>
 
 
 			<div class="form-group">
-        <label for="address">Address</label>
-				<textarea class="form-control" name="address" id="address" rows="5" cols="80"><%= @user.address %></textarea>
+        <!-- <label for="address">Address</label> -->
+				<textarea class="form-control" name="address" id="address" rows="5" cols="80" placeholder="Address"><%= @user.address %></textarea>
         <!-- <input type="text" class="form-control" id="address" name="address" value="<%= @user.address %>" required="true"> -->
       </div>
 
 			<div class="form-group">
-        <label for="city">City</label>
-        <input type="text" class="form-control" id="city" name="city" value="<%= @user.city %>" required="true">
+        <!-- <label for="city">City</label> -->
+        <input type="text" class="form-control" id="city" name="city" value="<%= @user.city %>" required="true" placeholder="City">
       </div>
 
 			<div class="form-group">
-        <label for="state">State</label>
-        <input type="text" class="form-control" id="state" name="state" value="<%= @user.state %>" required="true">
+        <!-- <label for="state">State</label> -->
+        <input type="text" class="form-control" id="state" name="state" value="<%= @user.state %>" required="true" placeholder="State">
       </div>
 
 			<div class="form-group">
-        <label for="post_code">Pincode</label>
-        <input type="text" class="form-control" id="post_code" name="post_code" value="<%= @user.post_code %>" required="true">
+        <!-- <label for="post_code">Pincode</label> -->
+        <input type="text" class="form-control" id="post_code" name="post_code" value="<%= @user.post_code %>" required="true" placeholder="Pincode">
       </div>
 
 
-			
+
 
 			<% if @user.country.present? %>
 				<input type="hidden" id="country_selected" value="<%= @user.country %>">
@@ -85,7 +85,7 @@
 
 
 			<div class="form-group">
-        <label for="country">Country</label>
+        <!-- <label for="country">Country</label> -->
 
 
         <!-- <input type="text" class="form-control" id="country" name="country" value="<%= @user.country %>" required="true"> -->
