@@ -58,7 +58,7 @@ Rails.application.routes.draw do
 
   get '/tour' => 'staticpage#tour'
 
-
+  post '/book_function' => 'staticpage#book_function'
   # comment after demo
   get 'hotel/plazzo' => 'staticpage#plazzo'
   get 'hotel/synergy' => 'staticpage#synergy'

@@ -62,8 +62,10 @@ class ShoppingCartController < ApplicationController
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
       @cart_count = Cart.where(:user_id => session[:user_id]).count
-      total = ((HotelShoppingCart.where(user_id: session[:user_id]).sum('rate') + EventShoppingCart.where(user_id: session[:user_id]).sum('rate')).round(2))
-
+      puts "hihihihiihihihii"
+      @cart = Cart.where(:user_id => session[:user_id])
+      puts @cart.inspect
+      # total = ((HotelShoppingCart.where(user_id: session[:user_id]).sum('rate') + EventShoppingCart.where(user_id: session[:user_id]).sum('rate')).round(2))
       # redirect_to :back,:flash => {:msg => @msg}
       if total > 2500
         puts "--------------------"
