@@ -37,14 +37,16 @@ Rails.application.routes.draw do
   match 'reset_user' => 'session#reset_user', :via => [:get, :post]
   match 'hotel_info/:id' => 'hotel#info', :via => [:get, :post]
   match 'accommodation' => 'hotel#accommodation', :via => [:get, :post]
+  
   match 'cart' => 'shopping_cart#index', :via => [:get, :post]
   match 'add_cart' => 'shopping_cart#add_cart', :via => [:get, :post]
   match 'event_add_cart' => 'shopping_cart#event_add_cart', :via => [:get, :post]
   match 'remove_from_cart_hotel/:id' => 'shopping_cart#remove_from_cart_hotel', :via => [:get, :post]
-  match 'remove_from_cart_event/:id' => 'shopping_cart#remove_from_cart_event', :via => [:get, :post]
+  match '/cart/remove/:id' => 'shopping_cart#remove', :via => [:get, :post]
   get '/checkout/' => 'shopping_cart#checkout'
   get '/my_transaction/' => 'shopping_cart#my_transaction'
   post '/make_payment/' => 'shopping_cart#make_payment'
+  post '/cart/update/' => 'shopping_cart#update'
   # get 'authf' => 'session#authf'
   post 'subscribe' => 'staticpage#subscribe'
   match 'check_user' => 'staticpage#check_user', :via => [:get, :post]

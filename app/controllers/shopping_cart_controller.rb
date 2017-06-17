@@ -8,6 +8,7 @@ class ShoppingCartController < ApplicationController
       puts session[:user_id]
       cart = Cart.where(:user_id => session[:user_id])
       puts cart.inspect
+      @is_exceed = false
       @cart_data = []
       for i in cart
         data1 = {}
@@ -17,12 +18,19 @@ class ShoppingCartController < ApplicationController
           catagory =  (data['FunctionInfo']['FeeTypes'].select {|cat| cat["Code"] == i.item_cat_code })[0]
 
           event = Event.find(i.item_id)
+          data1['cart_id'] = i.id
           data1['item_type'] = 'Event'
           data1['name'] = event.name+", "+catagory['Name']
           data1['available'] = catagory['Available']
           data1['amount'] = catagory['Amount']
           data1['quantity'] = i.quantity
           data1['event_date'] = event.date.strftime("%d %b %y")
+          if i.quantity.to_i > catagory['Available'].to_i
+            data1['is_exceed'] = true
+            @is_exceed = true
+          else
+            data1['is_exceed'] = false
+          end
         end
         @cart_data.push(data1)
       end
@@ -45,10 +53,17 @@ class ShoppingCartController < ApplicationController
     redirect_to :back, :flash => {:error => 'Room removed from cart'}
   end
 
-  def remove_from_cart_event
-    @cart = EventShoppingCart.find(params[:id]).destroy
+  def remove
+    @cart = Cart.find(params[:id]).destroy
 
-    redirect_to :back, :flash => {:error => 'Event removed from cart'}
+    redirect_to :back, :flash => {:success => 'Item removed from cart'}
+  end
+
+  def update
+    cart = Cart.find(params[:item_id])
+    cart.quantity = params[:quantity]
+    cart.save
+    render :json => true
   end
 
   def event_add_cart

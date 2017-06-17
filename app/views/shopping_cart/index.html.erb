@@ -16,11 +16,15 @@
 
       		<!-- <h3 style="text-align: center;font-size: 32px;"><%= flash[:msg] %></h3> -->
 			<div class="alert alert-info alert-dismissable">
-	          <!-- <a class="panel-close close" data-dismiss="alert">×</a> -->
 	          <i class="fa fa-info-circle"></i>
-	          <!-- This is an <strong>.alert</strong>. Use this to show important messages to the user. -->
-						<%= @msg %>
+			   <%= @msg %>
 	        </div>
+	        <% if @is_exceed %>
+	        	<div class="alert alert-danger alert-dismissable">
+		          <i class="fa fa-info-circle"></i>
+				   Alert : No. of quantity is exceed available quatity for particular booking please update or remove Item
+		        </div>
+	        <% end %>
 
         	<% if @cart_data.blank? %>
         		<h3 style="text-align: center;font-size: 32px;">You have not added nothing to cart yet</h3>
@@ -39,17 +43,19 @@
 							        <th>Quantity</th>
 							        <th>Rate</th>
 							        <th>Total</th>
+							        <th></th>
 							      </tr>
 							    </thead>
 							    <tbody>
 							    	<% @cart_data.each do |i| %>
-								      <tr>
+								      <tr <% if i['is_exceed'] %>style="background-color: #f2dede;" class="is_exceed" <% end %>>
 								        <td><%= i['item_type'] %></td>
-												<td><%= i['name'] %></td>
-												<td><%= i['event_date'] %></td>
-												<td><%= i['quantity'] %></td>
-												<td>$ <%= i['amount'] %></td>
-												<td>$ <%= i['amount'].to_f * i['quantity'].to_f %></td>
+											<td><%= i['name'] %></td>
+											<td><%= i['event_date'] %></td>
+											<td style="padding-top: 2px;padding-bottom: 2px;"><input type="number" data-amount="<%= i['amount'] %>" data-item_id="<%= i['cart_id'] %>" min="1" max="<%= i['available'] %>" class="form-control quantity" placeholder="Enter Quantity" style="width: 50%; margin: auto;" value="<%= i['quantity'] %>"></td>
+											<td>$ <%= i['amount'] %></td>
+											<td >$ <span class="row_total"><%= i['amount'].to_f * i['quantity'].to_f %></span></td>
+											<td><a href="/cart/remove/<%= i['cart_id'] %>"><i class="fa fa-trash" style="margin-right:5px"> </i>Rmove</a></td>
 								      </tr>
 							      <% end %>
 							    </tbody>
@@ -62,12 +68,12 @@
 
 					<div class="col col-xs-12" style="text-align:right;">
 
-						<h3>Total : $ <%=  @cart_data.map {|s| s['amount'].to_f * s['quantity'].to_f}.reduce(0, :+) %></h3>
+						<h3>Total : $ <span id="grand_total"><%=  @cart_data.map {|s| s['amount'].to_f * s['quantity'].to_f}.reduce(0, :+) %></span></h3>
 						<a class="subscribe-submit" href="/accommodation" style="padding: 10px 15px !important; width: auto !important; margin: 9px 0px 10px 0px !important; font-size: 14px;">
 							Continue Shopping
 						</a>
 
-						<a class="subscribe-submit" href="/checkout/" style="padding: 10px 15px !important; width: 100PX !important; margin: 9px 0px 10px 0px !important; font-size: 14px;">
+						<a id="checkout_btn" <% if @is_exceed %>class="btn subscribe-submit disabled" href="javascript:void(0)" <%else%>class="subscribe-submit" href="/checkout/" <% end %>style="padding: 10px 15px !important; width: 100PX !important; margin: 9px 0px 10px 0px !important; font-size: 14px;box-shadow: 0 5px 0 0 #a1790c;">
 							Checkout
 						</a>
 
@@ -92,5 +98,62 @@
 		background-color: white !important;
 		color:  black !important;
 	}
+	
 </style>
+<script>
+	$(document).ready(function(){
+		$(document).on('click','.eventcart',function(){
+			if($(this).parents('.cat_box').find('.quantity').val()){
+				$('#eventModal').find('#item_id').val($(this).data('item_id'));
+				$('#eventModal').find('#item_uid').val($(this).data('item_uid'));
+				$('#eventModal').find('#item_cat_code').val($(this).data('item_cat_code'));
+				$('#eventModal').find('#quantity').val($(this).parents('.cat_box').find('.quantity').val());
+				$('#eventModal').modal('show');
+			}
+		});
+		$("[type='number']").keypress(function (evt) {
+	      evt.preventDefault();
+	    });
+			$("[type='number']").bind("cut copy paste",function(evt) {
+		      evt.preventDefault();
+		    });
+
+
+	    $(document).on('change',"[type='number']",function(){
+	    	if(parseInt($(this).val()) <= parseInt($(this).attr('max')) ){
+	    		var item_id = $(this).data('item_id');
+	    		var quantity = $(this).val();
+	    		var this1 = $(this);
+	    		$.ajax({
+		          url : "/cart/update/", // the endpoint
+		          type : "post", // http method
+		          data : { item_id : item_id,quantity : quantity }, // data sent with the post request
+		          dataType: 'json',
+		          success : function(msg) {
+		            this1.parents('tr').find('.row_total').html(parseFloat(this1.val())*parseFloat(this1.data('amount')));
+		            this1.parents('tr').removeClass('is_exceed');
+	    			this1.parents('tr').css('background-color','white');
+		          	var g_total = 0
+		          	$( ".row_total" ).each(function( index ) {
+					  g_total = g_total + parseFloat($(this).html());
+					});
+					$('#grand_total').html(g_total);
+		          },
+		          error : function(xhr,errmsg,err) {
+		            
+		            alert("xhr:"+xhr+" errmsg:"+errmsg+" err:"+err);
+		          }
+		        });
+
+	    		
+	    	}
+	    	if ($('.yourclass').length == 0){
+	    		$('#checkout_btn').removeClass('disabled');
+	    		$('#checkout_btn').attr('href','/checkout/');
+	    		$('.alert-danger').hide();
+	    	}
+	    });
+
+	});
+</script>
 <%= render 'staticpage/footer'%>
