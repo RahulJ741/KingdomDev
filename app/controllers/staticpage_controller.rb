@@ -437,6 +437,19 @@ class StaticpageController < ApplicationController
 
   # comment out after demo
 
+def thank_you
+  if session[:user_id]
+    @current_user = User.find(session["user_id"])
+    puts session[:user_id]
+    # @cart = ShoppingCart.where(:user_id => session[:user_id])
+    @cart_count = Cart.where(:user_id => session[:user_id]).count
+
+  else
+    @current_user = nil
+  end
+
+end
+
  def plazzo
 
  end
