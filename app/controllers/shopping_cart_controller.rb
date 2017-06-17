@@ -206,7 +206,7 @@ class ShoppingCartController < ApplicationController
           #
           # HotelShoppingCart.where(user_id: user.id).destroy_all
           # EventShoppingCart.where(user_id: user.id).destroy_all
-          redirect_to '/', :flash => {:success => 'Payment Successfull'}
+          redirect_to '/thank_you', :flash => {:success => 'Payment Successfull'}
 
         else
           puts "not deone"

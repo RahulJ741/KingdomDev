@@ -55,7 +55,7 @@ Rails.application.routes.draw do
   get "kingxadminp" => 'admin#index'
   get "admin/index_ajax" => 'admin#index_ajax'
   get "/admin/transaction/show/:pay_id" => 'admin#transaction_detail'
-
+  get '/thank_you' => 'staticpage#thank_you'
   get '/tour' => 'staticpage#tour'
 
   post '/book_function' => 'staticpage#book_function'
