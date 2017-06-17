@@ -140,16 +140,7 @@ class ShoppingCartController < ApplicationController
     puts "=================="
     require 'paypal-sdk-rest'
     user = User.find(session[:user_id])
-    # @hotels = HotelShoppingCart.where(:user_id => session[:user_id])
-    # @events = EventShoppingCart.where(:user_id => session[:user_id])
-
-    # Update client_id, client_secret and redirect_uri
-    # PayPal::SDK.configure({
-    #   :openid_client_id     => "client_id",
-    #   :openid_client_secret => "client_secret",
-    #   :openid_redirect_uri  => "http://localhost:3000/"
-    # })
-    # include PayPal::SDK::OpenIDConnect
+    
     @payment = PayPal::SDK::REST::Payment.new({
           :intent => "sale",
           :payer => {
@@ -185,13 +176,13 @@ class ShoppingCartController < ApplicationController
           puts "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
           # my paymment update after making a payment
           @del_cart = Cart.where(user_id: session[:user_id])
-          @del_cart.each do |mo|
-            MyOrder.create(user_id: session[:user_id], item: mo.item, item_id: mo.item_id, item_uid: mo.item_uid, item_cat_code: mo.item_cat_code, quantity: mo.quantity, payment_id: @payment.id)
-          end
+          
           # WelcomeEmailMailer.shoppingdetails(@hotels, @events,user).deliver_now
 
-            MyPayment.create(user_id: session[:user_id], payment_id: @payment.id, total: total, date: Time.current.to_date)
-
+            pymt = MyPayment.create(user_id: session[:user_id], payment_id: @payment.id, total: total, date: Time.current.to_date)
+            @del_cart.each do |mo|
+            MyOrder.create(user_id: session[:user_id], item: mo.item, item_id: mo.item_id, item_uid: mo.item_uid, item_cat_code: mo.item_cat_code, quantity: mo.quantity, payment_id: pymt.id)
+          end
 
             @del_cart.destroy_all
 
@@ -240,7 +231,7 @@ class ShoppingCartController < ApplicationController
         end
         @my_order.push(data1)
       end
-        @total = @my_order.map {|s| s['amount'].to_f * s['quantity'].to_f}.reduce(0, :+)
+        
       # @hotels = HotelTransaction.where(:user_id => session[:user_id])
       # @events = EventTransaction.where(:user_id => session[:user_id])
     else
