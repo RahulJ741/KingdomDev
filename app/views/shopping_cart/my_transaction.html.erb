@@ -13,87 +13,52 @@
 				<h2 class="fadeInUp wow" data-wow-duration="2s" data-wow-delay="0s">My Transactions</h2>
 
         <div class="col-sm-12 col-md-10 col-md-offset-1">
-        	
-        	<% if @hotels.blank? and @events.blank? %>
+
+        	<% if @my_order.blank? %>
         		<h3 style="text-align: center;font-size: 32px;">No bookings found</h3>
         	<% else %>
-	        	<% if not @hotels.blank? %>
-					<h3 class="pull-left" style="padding-left:10px;">Hotels</h3>
-					<div class="col-xs-12 pad_none condition-of-sale-table-new2">
-						<div class="col-xs-12 pad_none condition-of-sale-heading-yellow-out">
-							<span style="width: 40%;">Hotel</span>
-							<span style="width: 15%;">In</span>
-							<span style="width: 15%;">Out</span>
-							<span style="width: 15%;">Rate</span>
-							<span style="width: 15%;">Booking Date</span>
-						</div>
+	        	<% if not @my_order.blank? %>
+							<h3 class="pull-left" style="padding-left:10px;">Bookings</h3>
+							<div class="col-xs-12 pad-none">
 
-						<div class="col-xs-12 pad_none condition-of-sale-table-scroll-out scrollbox" style="height: auto;">
-							<div class="panel-group" id="accordion">
-								<% @hotels.each do |h| %>
-									<div class="panel panel-default">
-									<div class="panel-heading">
-								  		<!-- <h4 class="panel-title "> -->
-											<div class="accordion-toggle " >
-												<p style="width: 40%;">
-													<%= h.hotel.name %>, <%= h.room_type%>
-												</p>
-												<p style="width: 15%;">7/1/2017</p>
-												<p style="width: 15%;">31/3/18</p>
-												<p style="width: 15%;">$ <%= h.rate %></p>
-												<p style="width: 15%;">
-													<%= h.created_at.strftime('%d/%m/%Y') %>
-												</p>
-											</div>
-								  		<!-- </h4> -->
-									</div>
-							  	</div>
-									<%end%>
+
+									<table class="table table-hover">
+								    <thead>
+								      <tr>
+								        <th>Item</th>
+								        <th>Name</th>
+								        <th>Date</th>
+								        <th>Quantity</th>
+								        <th>Rate</th>
+								        <th>Total</th>
+								      </tr>
+								    </thead>
+								    <tbody>
+								    	<% @my_order.each do |i| %>
+									      <tr>
+									        <td><%= i['item_type'] %></td>
+													<td><%= i['name'] %></td>
+													<td><%= i['event_date'] %></td>
+													<td><%= i['quantity'] %></td>
+													<td>$ <%= i['amount'] %></td>
+													<td>$ <%= i['amount'].to_f * i['quantity'].to_f %></td>
+									      </tr>
+								      <% end %>
+								    </tbody>
+								  </table>
+
+
 							</div>
-						</div>
-					</div>
-				<% end %>
+						<% end %>
 
-				<% if not @events.blank? %>
-					<h3 class="pull-left" style="padding-left:10px;">Events</h3>
-					<div class="col-xs-12 pad_none condition-of-sale-table-new2">
-						<div class="col-xs-12 pad_none condition-of-sale-heading-yellow-out">
-							<span style="width: 40%;">Name</span>
-							<span style="width: 15%;">Date</span>
-							<span style="width: 15%;">Category</span>
-							<span style="width: 15%;">Rate</span>
-							<span style="width: 15%;">Booking Date</span>
+						<div class="col col-xs-12" style="text-align:right;">
+
+							<h3>Total : $ <%= @total %></h3>
+
 						</div>
 
-						<div class="col-xs-12 pad_none condition-of-sale-table-scroll-out scrollbox" style="height: auto;">
-							<div class="panel-group" id="accordion">
-								<% @events.each do |ev| %>
-									<div class="panel panel-default">
-									<div class="panel-heading">
-											<!-- <h4 class="panel-title "> -->
-											<div class="accordion-toggle " >
-												<p style="width: 40%;">
-													<%= ev.event_name %>
-												</p>
-												<p style="width: 15%;"><%= ev.event_date.strftime("%d/%m/%Y") %></p>
-												<p style="width: 15%;"><%= ev.event_cat %></p>
-												<p style="width: 15%;">$ <%= ev.rate %></p>
-												<p style="width: 15%;">
-													<%= ev.created_at.strftime('%d/%m/%Y') %>
-												</p>
-											</div>
-											<!-- </h4> -->
-									</div>
-									</div>
-									<%end%>
-							</div>
-						</div>
-					</div>
 
 				<% end %>
-
-				
-			<% end %>
 
         </div>
     </div>

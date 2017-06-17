@@ -414,6 +414,27 @@ class StaticpageController < ApplicationController
 
   end
 
+  def self.book_function
+
+    # url = URI("https://kingdomsg.eventsair.com/ksgapi/test-imports/ksgapi/ksgapi/BookFunction")
+    #
+    # http = Net::HTTP.new(url.host, url.port)
+    # http.use_ssl = true
+    # http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    #
+    # request = Net::HTTP::Post.new(url)
+    # request["apikey"] = 'wmQ87NZhMvWx5ZvrrStJPr9FG9WQ0wOSGVXxbUKDbjAuZC6k42M3x9GOzFt2umSQhRGylMwmBmlcU'
+    # request["appusername"] = 'aaa@aaa.com'
+    # request["apppassword"] = 'aaa@aaa.com'
+    # request["content-type"] = 'application/json'
+    # request["cache-control"] = 'no-cache'
+    # # request["postman-token"] = '9799d4ab-7369-8113-027e-ae2ed424b049'
+    # request.body = "{\n  \"ContactComponentSubmission\": {\n    \"Title\": \"Mr\",\n    \"Position\": \"CTO\",\n    \"FirstName\": \"John\",\n    \"MiddleName\": \"\",\n    \"LastName\": \"Singleton\",\n    \"Email\": \"xxx@jxxx.com\",\n    \"Organization\": \"Centium Software\",\n    \"AddressLineOne\": \"15 Miles Platting Road\",\n    \"AddressLineTwo\": \"\",\n    \"City\": \"Eight Mile Plains\",\n    \"State\": \"QLD\",\n    \"Postcode\": \"4213\",\n    \"Country\": \"Australia\"\n\n},\n    \"Functions\": [\n    {\n      \"UniqueFunctionCode\": \"IHO16C\",\n      \"FunctionPaycode\": \"No Charge\",\n      \"NoTickets\": 4\n    },\n    {\n      \"UniqueFunctionCode\": \"HO0703A\",\n      \"FunctionPaycode\": \"No Charge\",\n      \"NoTickets\": 6\n    }\n  ]\n}"
+    #
+    # response = http.request(request)
+    # puts response.read_body
+  end
+
   # comment out after demo
 
  def plazzo
