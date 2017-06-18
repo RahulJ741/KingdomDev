@@ -1,4 +1,4 @@
-<%= render 'staticpage/header'%>
+<%= render 'layouts/header'%>
 <section class="banner-main" style="background: rgba(0, 0, 0, 0) url('/assets/images/rooms.jpg') no-repeat scroll center top / cover;">
 	<div class="gold-cost-right" >
 		<img src="/assets/images/gold-cost-img.png" alt="">
@@ -51,7 +51,7 @@
 				<div class="col-xs-12 col-sm-12 col-md-12 pad_none defination-luxury-inner-left">
 					<h6 style="text-align: center;"><%= @hotel.name %></h6>
 
-					<!-- <p style="text-align: center;">Palazzo â€“ the definition of luxury, glamour and sophistication.</p> -->
+					<!-- <p style="text-align: center;">Palazzo – the definition of luxury, glamour and sophistication.</p> -->
           <% if @hotel.video_link.present? %>
 					<div style="text-align: center; margin: 30px 0px;">
 						<iframe width="560" height="315" src="<%= @hotel.video_link %>" frameborder="0" allowfullscreen></iframe>
@@ -282,4 +282,4 @@
 		$(window).bind("orientationchange", ScaleSlider);
 	});
 </script>
-<%= render 'staticpage/footer'%>
+<%= render 'layouts/footer'%>
