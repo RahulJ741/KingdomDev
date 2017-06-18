@@ -1,7 +1,7 @@
 class ShoppingCartController < ApplicationController
   def index
     @cart_count = Cart.where(:user_id => session[:user_id]).count
-    @msg = "Note: All orders above $2500 will be checked by the site admins and the customer will be contacted offline"
+    @msg = "Note: All requests above $2,500 will be checked by the KSG Team and you will be contacted offline for payment via bank transfer. Transactions under $2,500 will be processed online (with an additional 2.5% credit card surcharge). Transactions found to have breached the terms and conditions of sale may be cancelled by the KSG Team. For more information on the Terms and Conditions please download them <a href= "https://www.dropbox.com/s/aeej5d6w4mqvprc/Terms%20and%20Conditions%20of%20Sale%20-%20KSG%20LEGAL%20POLICY%20v3.pdf?dl=0">here<a>"
     if session[:user_id]
       @current_user = User.find(session["user_id"])
 
