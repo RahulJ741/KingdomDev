@@ -53,8 +53,8 @@
 											<td><%= i['name'] %></td>
 											<td><%= i['event_date'] %></td>
 											<td style="padding-top: 2px;padding-bottom: 2px;"><input type="number" data-amount="<%= i['amount'] %>" data-item_id="<%= i['cart_id'] %>" min="1" max="<%= i['available'] %>" class="form-control quantity" placeholder="Enter Quantity" style="width: 50%; margin: auto;" value="<%= i['quantity'] %>"></td>
-											<td>$ <%= i['amount'] %></td>
-											<td >$ <span class="row_total"><%= i['amount'].to_f * i['quantity'].to_f %></span></td>
+											<td>AUD <%= i['amount'] %></td>
+											<td >AUD <span class="row_total"><%= i['amount'].to_f * i['quantity'].to_f %></span></td>
 											<td><a href="/cart/remove/<%= i['cart_id'] %>"><i class="fa fa-trash" style="margin-right:5px"> </i>Rmove</a></td>
 								      </tr>
 							      <% end %>
@@ -68,7 +68,7 @@
 
 					<div class="col col-xs-12" style="text-align:right;">
 
-						<h3>Total : $ <span id="grand_total"><%=  @cart_data.map {|s| s['amount'].to_f * s['quantity'].to_f}.reduce(0, :+) %></span></h3>
+						<h3>Total : AUD <span id="grand_total"><%=  @cart_data.map {|s| s['amount'].to_f * s['quantity'].to_f}.reduce(0, :+) %></span></h3>
 						<a class="subscribe-submit" href="/accommodation" style="padding: 10px 15px !important; width: auto !important; margin: 9px 0px 10px 0px !important; font-size: 14px;">
 							Continue Shopping
 						</a>
