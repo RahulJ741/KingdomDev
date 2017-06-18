@@ -110,7 +110,7 @@ class ShoppingCartController < ApplicationController
 
       # total = ((HotelShoppingCart.where(user_id: session[:user_id]).sum('rate') + EventShoppingCart.where(user_id: session[:user_id]).sum('rate')).round(2))
       # redirect_to :back,:flash => {:msg => @msg}
-      if total > 2500
+      if total.to_f > 2500
         puts "--------------------"
         WelcomeEmailMailer.rate_exteted(@current_user).deliver_now
         # @msg = "Note: All orders above $2500 will be checked by the site admins and the customer will be contacted offline"
@@ -194,24 +194,13 @@ class ShoppingCartController < ApplicationController
           
           # WelcomeEmailMailer.shoppingdetails(@hotels, @events,user).deliver_now
 
-            pymt = MyPayment.create(user_id: session[:user_id], payment_id: @payment.id, total: total, date: Time.current.to_date)
-            @del_cart.each do |mo|
+          pymt = MyPayment.create(user_id: session[:user_id], payment_id: @payment.id, total: total, date: Time.current.to_date)
+          @del_cart.each do |mo|
             MyOrder.create(user_id: session[:user_id], item: mo.item, item_id: mo.item_id, item_uid: mo.item_uid, item_cat_code: mo.item_cat_code, quantity: mo.quantity, payment_id: pymt.id)
           end
 
             @del_cart.destroy_all
 
-          # end
-          # for i in HotelShoppingCart.where(user_id: user.id)
-          #     HotelTransaction.create(:user_id => i.user_id,:room_type => i.room_type,rate: i.rate,hotel_id: i.hotel_id,room_unique_id: i.room_unique_id,from_date: i.from_date,to_date: i.to_date,status: 'completed',pay_id: @payment.id)
-          # end
-          #
-          # for i in EventShoppingCart.where(user_id: user.id)
-          #     EventTransaction.create(:user_id => i.user_id, :event_id => i.event_id, :event_name => i.event_name, :event_date =>  i.event_date, :event_cat => i.event_cat, :rate => i.rate,status: 'completed',pay_id: @payment.id)
-          # end
-          #
-          # HotelShoppingCart.where(user_id: user.id).destroy_all
-          # EventShoppingCart.where(user_id: user.id).destroy_all
           redirect_to '/thank_you', :flash => {:success => 'Payment Successfull'}
 
         else
@@ -227,7 +216,7 @@ class ShoppingCartController < ApplicationController
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
       my_order = MyOrder.where(user_id: session[:user_id])
-      #delete from here
+
       @my_order = []
       for i in my_order
         data1 = {}
@@ -246,9 +235,7 @@ class ShoppingCartController < ApplicationController
         end
         @my_order.push(data1)
       end
-        
-      # @hotels = HotelTransaction.where(:user_id => session[:user_id])
-      # @events = EventTransaction.where(:user_id => session[:user_id])
+
     else
       @current_user = nil
     end
