@@ -60,7 +60,7 @@
                                 <div class="row" style="margin: 10px -15px">
                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                         <div class="col-md-12 col-sm-12 col-xs-12" style="text-align: left; padding: 0px 5px;">
-                                            <span class="<%= @event.name.tr(' ','_') %>_arr" style="font-size: 14px;">Details:</span>
+                                            <span style="color:black;font-size: 14px;font-weight: bold;">Details:</span>
                                             <%= @event.detail %>
                                         </div>
                                     </div>
@@ -68,22 +68,22 @@
                                 <div class="row" style="margin: 20px -15px;">
                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                         <div class="col-md-6 col-sm-6 col-xs-6" style="text-align: left; margin: 3px 0px; font-size: 12px; padding: 0px 5px;">
-                                            <span class="<%= @event.name.tr(' ','_') %>_arr" style="font-size: 14px;">Date:</span> <%= @event.date.strftime("%d %b %y")  %>
+                                            <span style="color:black;font-size: 14px;font-weight: bold;">Date:</span> <%= @event.date.strftime("%d %b %y")  %>
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-6" style="text-align: left; margin: 3px 0px; font-size: 12px; padding: 0px 5px;">
-                                            <span class="<%= @event.name.tr(' ','_') %>_arr" style="font-size: 14px;">Time:</span> <%= @event.start_time.strftime("%I:%M %p") %> - <%= @event.end_time.strftime("%I:%M %p") %>
+                                            <span style="color:black;font-size: 14px;font-weight: bold;">Time:</span> <%= @event.start_time.strftime("%I:%M %p") %> - <%= @event.end_time.strftime("%I:%M %p") %>
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-6" style="text-align: left; margin: 3px 0px; font-size: 12px; padding: 0px 5px;">
-                                            <span class="<%= @event.name.tr(' ','_') %>_arr" style="font-size: 14px;">Venue:</span> <%= @event.venue %>
+                                            <span style="color:black;font-size: 14px;font-weight: bold;">Venue:</span> <%= @event.venue %>
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-6" style="text-align: left; margin: 3px 0px; font-size: 12px; padding: 0px 5px;">
-                                            <span class="<%= @event.name.tr(' ','_') %>_arr" style="font-size: 14px;">Gender:</span> <%= @event.gender %>
+                                            <span style="color:black;font-size: 14px;font-weight: bold;">Gender:</span> <%= @event.gender %>
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-6" style="text-align: left; margin: 3px 0px; font-size: 12px; padding: 0px 5px;">
-                                            <span class="<%= @event.name.tr(' ','_') %>_arr" style="font-size: 14px;">Session Type:</span> <%= @event.session_type %>
+                                            <span style="color:black;font-size: 14px;font-weight: bold;">Session Type:</span> <%= @event.session_type %>
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-6" style="text-align: left; margin: 3px 0px; font-size: 12px; padding: 0px 5px;">
-                                            <span class="<%= @event.name.tr(' ','_') %>_arr" style="font-size: 14px;">Prime Event:</span> <%= @event.prime_event %>
+                                            <span style="color:black;font-size: 14px;font-weight: bold;">Prime Event:</span> <%= @event.prime_event %>
                                         </div>
                                     </div>
                                 </div>
