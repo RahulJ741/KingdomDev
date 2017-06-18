@@ -97,12 +97,23 @@
 		                                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 10px 15px; border-bottom: 1px solid #cccccc;font-weight:bold">
 		                                    <%= i['Name'] %> - <%= i['Code'] %>
 		                                </div>
-		                                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 10px 15px; border-bottom: 1px solid #cccccc;">
-		                                    Tickets Available: <%= i['Available'] %>
-		                                </div>
-		                                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 10px 15px; border-bottom: 1px solid #cccccc;">
-		                                    <input type="number"  min="1" max="<%= i['Available'] %>" class="form-control quantity" placeholder="Enter Quantity" style="width: 50%; margin: auto;">
-		                                </div>
+		                                <% if i['Available'].to_i > 0 %>
+			                                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 10px 15px; border-bottom: 1px solid #cccccc;">
+			                                    In Stock
+			                                </div>
+			                                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 10px 15px; border-bottom: 1px solid #cccccc;">
+			                                    <input type="number"  min="1" max="<%= i['Available'] %>" class="form-control quantity" placeholder="Enter Quantity" style="width: 50%; margin: auto;">
+			                                </div>
+			                            <% else %>
+			                            	<div class="col-md-12 col-sm-12 col-xs-12" style="padding: 10px 15px; border-bottom: 1px solid #cccccc;background-color: #f2dede;">
+			                                    Out Of Stock
+			                                </div>
+			                                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 10px 15px; border-bottom: 1px solid #cccccc;">
+			                                    <input type="number"  min="1" max="<%= i['Available'] %>" class="form-control quantity" placeholder="Enter Quantity" style="width: 50%; margin: auto;" disabled>
+			                                </div>
+			                           	<% end %>
+		                                
+		                                
 		                                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 10px 15px; border-bottom: 1px solid #cccccc;">
 		                                    Cost: <strong>$<%= i['Amount'] %></strong>
 		                                </div>
@@ -293,12 +304,12 @@
 				$('#eventModal').modal('show');
 			}
 		});
-		$("[type='number']").keypress(function (evt) {
+		// $("[type='number']").keypress(function (evt) {
+	 //      evt.preventDefault();
+	 //    });
+		$("[type='number']").bind("cut copy paste",function(evt) {
 	      evt.preventDefault();
 	    });
-			$("[type='number']").bind("cut copy paste",function(evt) {
-		      evt.preventDefault();
-		    });
 
 
 	    $(document).on('change',"[type='number']",function(){
