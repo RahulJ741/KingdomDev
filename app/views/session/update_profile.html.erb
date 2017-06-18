@@ -1,4 +1,4 @@
-<%= render 'staticpage/header'%>
+<%= render 'layouts/header'%>
 
 <section class="banner-main" style="background: rgba(0, 0, 0, 0) url('upload/'+<%= @b_img %>;) no-repeat scroll center top / cover;">
 	<div class="container">
@@ -51,7 +51,7 @@
 
       <div class="form-group">
         <!-- <label for="phone">Contact</label> -->
-        <input type="text" class="form-control" id="phone" name="phone" value="<%= @user.phone %>" required="true" placeholder="Contact">
+        <input type="text" class="form-control" id="phone" name="phone" value="<%= @user.phone %>" required="true" placeholder="Phone">
       </div>
 
 
@@ -73,7 +73,7 @@
 
 			<div class="form-group">
         <!-- <label for="post_code">Pincode</label> -->
-        <input type="text" class="form-control" id="post_code" name="post_code" value="<%= @user.post_code %>" required="true" placeholder="Pincode">
+        <input type="text" class="form-control" id="post_code" name="post_code" value="<%= @user.post_code %>" required="true" placeholder="Postcode">
       </div>
 
 
@@ -120,4 +120,4 @@
 	// alert(opt_country);
 	$(".form-group select").val(opt_country);
 </script>
-<%= render 'staticpage/footer'%>
+<%= render 'layouts/footer'%>
