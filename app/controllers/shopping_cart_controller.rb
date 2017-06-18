@@ -22,7 +22,7 @@ class ShoppingCartController < ApplicationController
           data1['item_type'] = 'Event'
           data1['name'] = event.name+", "+catagory['Name']
           data1['available'] = catagory['Available']
-          data1['amount'] = catagory['Amount']
+          data1['amount'] =  "%g" % ("%.2f" % catagory['Amount'].to_f)
           data1['quantity'] = i.quantity
           data1['event_date'] = event.date.strftime("%d %b %y")
           if i.quantity.to_i > catagory['Available'].to_i
