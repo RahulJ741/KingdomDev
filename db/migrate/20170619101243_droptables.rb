@@ -1,6 +1,6 @@
 class Droptables < ActiveRecord::Migration[5.0]
   def change
-    drop_table :athletics_supporters_package_price_list_all
+    # drop_table :athletics_supporters_package_price_list_all
     drop_table :event_shopping_carts
     drop_table :event_ticket_request
     drop_table :events
