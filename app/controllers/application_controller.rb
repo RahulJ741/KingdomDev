@@ -18,4 +18,7 @@ class ApplicationController < ActionController::Base
     data = JSON.parse(response.body)
     return data
   end
+
+ 
+
 end

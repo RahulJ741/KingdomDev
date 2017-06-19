@@ -1,7 +1,12 @@
 class ShoppingCartController < ApplicationController
+
+  def helpers
+    ActionController::Base.helpers
+  end
+
   def index
     @cart_count = Cart.where(:user_id => session[:user_id]).count
-    @msg = "Note: All requests above $2,500 will be checked by the KSG Team and you will be contacted offline for payment via bank transfer. Transactions under $2,500 will be processed online (with an additional 2.5% credit card surcharge). Transactions found to have breached the terms and conditions of sale may be cancelled by the KSG Team. For more information on the Terms and Conditions please download them <a href= "https://www.dropbox.com/s/aeej5d6w4mqvprc/Terms%20and%20Conditions%20of%20Sale%20-%20KSG%20LEGAL%20POLICY%20v3.pdf?dl=0">here<a>"
+    @msg = "Note: All requests above $2,500 will be checked by the KSG Team and you will be contacted offline for payment via bank transfer. Transactions under $2,500 will be processed online (with an additional 2.5% credit card surcharge). Transactions found to have breached the terms and conditions of sale may be cancelled by the KSG Team. For more information on the Terms and Conditions please download them <a href= 'https://www.dropbox.com/s/aeej5d6w4mqvprc/Terms%20and%20Conditions%20of%20Sale%20-%20KSG%20LEGAL%20POLICY%20v3.pdf?dl=0'>here<a>"
     if session[:user_id]
       @current_user = User.find(session["user_id"])
 
@@ -22,7 +27,7 @@ class ShoppingCartController < ApplicationController
           data1['item_type'] = 'Event'
           data1['name'] = event.name+", "+catagory['Name']
           data1['available'] = catagory['Available']
-          data1['amount'] =  "%g" % ("%.2f" % catagory['Amount'].to_f)
+          data1['amount'] =  catagory['Amount'].to_f % 1 == 0 ? catagory['Amount'].to_i : helpers.number_with_precision(catagory['Amount'].to_f, :precision => 2)
           data1['quantity'] = i.quantity
           data1['event_date'] = event.date.strftime("%d %b %y")
           if i.quantity.to_i > catagory['Available'].to_i
