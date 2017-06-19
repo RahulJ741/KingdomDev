@@ -88,7 +88,7 @@ class AdminController < ApplicationController
 			end
 			data1.append('<a href="/admin/transaction/show/'+i['id'].to_s+'">
 				<button class="btn btn-primary" type="button">
-					Show Transactions
+					View
 				</button>
 			</a>')
 			data.append(data1)
