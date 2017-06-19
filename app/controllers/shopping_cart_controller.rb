@@ -124,10 +124,12 @@ class ShoppingCartController < ApplicationController
         else
           order_id = (MyPayment.all.last.order_id)+1
         end
+        pymt = MyPayment.create(user_id: session[:user_id], order_id: order_id, total: total, date: Time.current.to_date)
         @del_cart.each do |mo|
-          pymt = MyPayment.create(user_id: session[:user_id], order_id: order_id, total: total, date: Time.current.to_date)
+          
           MyOrder.create(user_id: session[:user_id], item: mo.item, item_id: mo.item_id, item_uid: mo.item_uid, item_cat_code: mo.item_cat_code, quantity: mo.quantity, my_payment_id: pymt.id)
         end
+
         @del_cart.destroy_all
         WelcomeEmailMailer.rate_exteted(@current_user).deliver_now
        redirect_to :back, :flash => {:success => 'Your Is Transaction Under Review'}
