@@ -1,8 +1,8 @@
     <%= render 'header'%>
 
     <%= render 'sidebar'%>
-    
-    
+
+
     <!-- MAIN PANEL -->
     <div id="main" role="main">
 
@@ -33,37 +33,144 @@
       <!-- MAIN CONTENT -->
       <div id="content">
 
+
         <div class="row">
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
             <h1 class="page-title txt-color-blueDark">
-              <i class="fa fa-fw fa-credit-card"></i> 
-                Transaction Detail 
+              <i class="fa fa-fw fa-user"></i>
+                User Detail
+            </h1>
+          </div>
+
+        </div>
+
+        <section>
+          <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding:0px;">
+            <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-colorbutton="false"
+              data-widget-editbutton="false"
+              data-widget-togglebutton="false"
+              data-widget-deletebutton="false"
+              data-widget-fullscreenbutton="false"
+              data-widget-custombutton="false"
+              data-widget-collapsed="false"
+              data-widget-sortable="false">
+              <!-- widget options:
+              usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+              data-widget-colorbutton="false"
+              data-widget-editbutton="false"
+              data-widget-togglebutton="false"
+              data-widget-deletebutton="false"
+              data-widget-fullscreenbutton="false"
+              data-widget-custombutton="false"
+              data-widget-collapsed="true"
+              data-widget-sortable="false"
+
+              -->
+              <header>
+                <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                <h2>User info</h2>
+
+              </header>
+
+              <!-- widget div-->
+              <div>
+
+                <!-- widget edit box -->
+                <div class="jarviswidget-editbox">
+                  <!-- This area used as dropdown edit box -->
+
+                </div>
+                <!-- end widget edit box -->
+
+                <!-- widget content -->
+                <div class="widget-body no-padding">
+
+                  <table class="table table-striped table-bordered table-hover" width="100%">
+                    <thead>
+                      <tr>
+                        <td>User Name:</td>
+                        <td><%= @user.first_name%> <%= @user.middle_name %> <%= @user.last_name %></td>
+                      </tr>
+                      <tr>
+                        <td>Email:</td>
+                        <td><%= @user.email %></td>
+                      </tr>
+                      <tr>
+                        <td>Phone:</td>
+                        <td><%= @user.phone %></td>
+                      </tr>
+                      <tr>
+                        <td>Address:</td>
+                        <td><%= @user.address %></td>
+                      </tr>
+                      <tr>
+                        <td>City:</td>
+                        <td><%= @user.city %></td>
+                      </tr>
+                      <tr>
+                        <td>State:</td>
+                        <td><%= @user.state %></td>
+                      </tr>
+                      <tr>
+                        <td>Postcode:</td>
+                        <td><%= @user.post_code %></td>
+                      </tr>
+                      <tr>
+                        <td>Country:</td>
+                        <td><%= @user.country %></td>
+                      </tr>
+                    </thead>
+
+                  </table>
+
+                </div>
+                <!-- end widget content -->
+
+              </div>
+              <!-- end widget div -->
+
+            </div>
+
+          </article>
+        </section>
+
+
+
+
+
+
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <h1 class="page-title txt-color-blueDark">
+              <i class="fa fa-fw fa-credit-card"></i>
+                Transaction Detail
             </h1>
           </div>
           <!-- <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" align="right">
             <a href="/admin/export.xlsx/">
               <button type="button" class="page-title btn btn-primary">
-                Export to Excel 
+                Export to Excel
               </button>
             </a>
           </div> -->
-          
+
         </div>
-        
+
         <!-- widget grid -->
         <section id="widget-grid" class="">
           <% if flash[:msg] %>
               <div class="alert alert-success delete-alert" style="text-align: center;">
                 <a href="#" class="close" data-dismiss="alert">&times;</a>
-                <%= flash[:msg] %>  
+                <%= flash[:msg] %>
               </div>
             <% end %>
           <!-- row -->
           <div class="row">
-        
+
             <!-- NEW WIDGET START -->
             <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        
+
               <!-- Widget ID (each widget will need unique ID)-->
               <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-colorbutton="false"
                 data-widget-editbutton="false"
@@ -75,7 +182,7 @@
                 data-widget-sortable="false">
                 <!-- widget options:
                 usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-        
+
                 data-widget-colorbutton="false"
                 data-widget-editbutton="false"
                 data-widget-togglebutton="false"
@@ -84,29 +191,29 @@
                 data-widget-custombutton="false"
                 data-widget-collapsed="true"
                 data-widget-sortable="false"
-        
+
                 -->
                 <header>
                   <span class="widget-icon"> <i class="fa fa-table"></i> </span>
                   <h2>Transaction info</h2>
-        
+
                 </header>
-        
+
                 <!-- widget div-->
                 <div>
-        
+
                   <!-- widget edit box -->
                   <div class="jarviswidget-editbox">
                     <!-- This area used as dropdown edit box -->
-        
+
                   </div>
                   <!-- end widget edit box -->
-        
+
                   <!-- widget content -->
                   <div class="widget-body no-padding">
-        
+
                     <table id="dt_basic" class="table table-striped table-bordered table-hover" width="100%">
-                      <thead>                     
+                      <thead>
                         <tr>
                           <th data-class="expand">Name</th>
                           <th>Date</th>
@@ -116,9 +223,9 @@
                         </tr>
                       </thead>
                       <tbody>
-                        
+
                           <% @my_order.each do |i| %>
-                            <tr>     
+                            <tr>
                               <td><%= i['name'] %></td>
                               <td><%= i['event_date'] %></td>
                               <td><%= i['quantity'] %></td>
@@ -126,28 +233,28 @@
                               <td>AUD <%= i['amount'].to_f * i['quantity'].to_f %></td>
                             </tr>
                           <% end %>
-                        
+
                       </tbody>
                     </table>
 
                   </div>
                   <!-- end widget content -->
-        
+
                 </div>
                 <!-- end widget div -->
-        
+
               </div>
               <!-- end widget -->
-        
+
             </article>
             <!-- WIDGET END -->
-        
+
           </div>
-        
+
           <!-- end row -->
-        
+
           <!-- end row -->
-        
+
         </section>
         <!-- end widget grid -->
 
@@ -172,7 +279,7 @@
     </style>
     <!-- END PAGE FOOTER -->
 
-    
+
     <!-- END SHORTCUT AREA -->
 
     <!--================================================== -->
@@ -199,7 +306,7 @@
     <script src="/assets/js_a/app.config.js"></script>
 
     <!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
-    <script src="/assets/js_a/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> 
+    <script src="/assets/js_a/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script>
 
     <!-- BOOTSTRAP JS -->
     <script src="/assets/js_a/bootstrap/bootstrap.min.js"></script>
@@ -260,42 +367,42 @@
     <script src="/assets/js_a/plugin/datatable-responsive/datatables.responsive.min.js"></script>
 
     <script type="text/javascript">
-    
+
     // DO NOT REMOVE : GLOBAL FUNCTIONS!
-    
+
     $(document).ready(function() {
-      
+
       pageSetUp();
       $('.side_tab').removeClass('active');
       $('.home_tab').addClass('active');
       jQuery("div.alert").delay(3000).fadeOut("slow");
       /* // DOM Position key index //
-    
+
       l - Length changing (dropdown)
       f - Filtering input (search)
       t - The Table! (datatable)
       i - Information (records)
       p - Pagination (paging)
-      r - pRocessing 
+      r - pRocessing
       < and > - div elements
       <"#id" and > - div with an id
       <"class" and > - div with a class
       <"#id.class" and > - div with an id and class
-      
+
       Also see: http://legacy.datatables.net/usage/features
-      */  
-  
+      */
+
       /* BASIC ;*/
         var responsiveHelper_dt_basic = undefined;
         var responsiveHelper_dt_basic1 = undefined;
-        
+
         var breakpointDefinition = {
           tablet : 1024,
           phone : 480
         };
 
         var table = $('#dt_basic').dataTable({
-          
+
         "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-4'f><'col-xs-12 col-sm-6 date_picker'><'col-sm-2 col-xs-12 hidden-xs'l>r>"+
           "t"+
           "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
@@ -333,11 +440,11 @@
           "drawCallback" : function(oSettings) {
             responsiveHelper_dt_basic.respond();
           }
-          
+
         });
 
     var table = $('#dt_basic1').dataTable({
-          
+
         "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-4'f><'col-xs-12 col-sm-6 date_picker'><'col-sm-2 col-xs-12 hidden-xs'l>r>"+
           "t"+
           "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
@@ -375,10 +482,10 @@
           "drawCallback" : function(oSettings) {
             responsiveHelper_dt_basic1.respond();
           }
-          
+
         });
       /* END BASIC */
-      
+
     })
 
 
