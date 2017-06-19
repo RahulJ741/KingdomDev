@@ -101,8 +101,25 @@ class AdminController < ApplicationController
 	end
 
 	def transaction_detail
-		@items = MyOrder.where(:my_payment_id => params[:my_payment_id])
-      	
+		items = MyOrder.where(:my_payment_id => params[:my_payment_id])
+      	@my_order = []
+      	for i in items
+          data1 = {}
+          if i.item == 'event'
+            url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetFunctionInfo?functionid="+i.item_uid)
+            data = kingdomsg_api(url)
+            catagory =  (data['FunctionInfo']['FeeTypes'].select {|cat| cat["Code"] == i.item_cat_code })[0]
+
+            event = Event.find(i.item_id)
+            data1['item_type'] = 'Event'
+            data1['name'] = event.name+", "+catagory['Name']
+            data1['available'] = catagory['Available']
+            data1['amount'] = catagory['Amount']
+            data1['quantity'] = i.quantity
+            data1['event_date'] = event.date.strftime("%d %b %y")
+          end
+          @my_order.push(data1)
+        end
 		if session[:user_id]
 	      @current_user = User.find(session["user_id"])
 	    else
