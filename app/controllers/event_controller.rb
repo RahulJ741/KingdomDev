@@ -39,7 +39,8 @@ class EventController < ApplicationController
     url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetFunctionGroups")
     data = kingdomsg_api(url)
     @all_events = (data['FunctionGroups'].pluck('Name')).sort
-   
+    @all_events.delete('Tours')
+    @all_events.delete('Functions')
     puts @all_events.count
     # if not params[:event].blank?
     #   @events = @events.select {|a| a["name"] == params[:event] }
@@ -64,6 +65,7 @@ class EventController < ApplicationController
     data = kingdomsg_api(url)
     @event = Event.find_by_event_code(data['FunctionInfo']['Code'])
     @event_cats = data['FunctionInfo']['FeeTypes']
+    @event_cats = @event_cats.sort_by { |hsh| hsh['Name'] }
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
