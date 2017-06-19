@@ -140,6 +140,38 @@ class ShoppingCartController < ApplicationController
     end
   end
 
+  def review_order
+    if session[:user_id]
+      @current_user = User.find(session["user_id"])
+      @cart_count = Cart.where(:user_id => session[:user_id]).count
+      
+    else
+      @current_user = nil
+    end
+    cart = Cart.where(:user_id => session[:user_id])
+    puts cart.inspect
+
+    @cart_data = []
+    for i in cart
+      data1 = {}
+      if i.item == 'event'
+        url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetFunctionInfo?functionid="+i.item_uid)
+        data = kingdomsg_api(url)
+        catagory =  (data['FunctionInfo']['FeeTypes'].select {|cat| cat["Code"] == i.item_cat_code })[0]
+
+        event = Event.find(i.item_id)
+        data1['item_type'] = 'Event'
+        data1['name'] = event.name+", "+catagory['Name']
+        data1['available'] = catagory['Available']
+        data1['amount'] = catagory['Amount']
+        data1['quantity'] = i.quantity
+        data1['event_date'] = event.date.strftime("%d %b %y")
+      end
+      @cart_data.push(data1)
+    end
+    @total = @cart_data.map {|s| s['amount'].to_f * s['quantity'].to_f}.reduce(0, :+)
+  end
+
   def make_payment
     # delete this Code
     cart = Cart.where(:user_id => session[:user_id])
@@ -163,7 +195,7 @@ class ShoppingCartController < ApplicationController
       end
       @cart_data.push(data1)
     end
-      total = @cart_data.map {|s| s['amount'].to_f * s['quantity'].to_f}.reduce(0, :+)
+    total = @cart_data.map {|s| s['amount'].to_f * s['quantity'].to_f}.reduce(0, :+)
       puts "|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\\\\\\\\\\\\\\\\\\\\\\"
       puts total
       # delete this Code

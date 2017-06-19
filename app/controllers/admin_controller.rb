@@ -77,7 +77,7 @@ class AdminController < ApplicationController
 			data1=[]
 			data1.append(i.id)
 			data1.append(i.user.first_name+" "+i.user.last_name)
-			data1.append(i.total)
+			data1.append("AUD "+i.total.to_s)
 			data1.append(i.date)
 			if not i.payment_id.blank?
 				data1.append('Paypal')
