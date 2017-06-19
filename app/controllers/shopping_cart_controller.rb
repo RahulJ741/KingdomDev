@@ -115,11 +115,22 @@ class ShoppingCartController < ApplicationController
 
       # total = ((HotelShoppingCart.where(user_id: session[:user_id]).sum('rate') + EventShoppingCart.where(user_id: session[:user_id]).sum('rate')).round(2))
       # redirect_to :back,:flash => {:msg => @msg}
-      if total.to_f > 2500
+      if total.to_f >= 2500
         puts "--------------------"
+
+        @del_cart = Cart.where(user_id: session[:user_id])
+        if MyPayment.where('order_id Is NOT NULL').last.blank?
+          order_id = 1
+        else
+          order_id = (MyPayment.all.last.order_id)+1
+        end
+        @del_cart.each do |mo|
+          pymt = MyPayment.create(user_id: session[:user_id], order_id: order_id, total: total, date: Time.current.to_date)
+          MyOrder.create(user_id: session[:user_id], item: mo.item, item_id: mo.item_id, item_uid: mo.item_uid, item_cat_code: mo.item_cat_code, quantity: mo.quantity, my_payment_id: pymt.id)
+        end
+        @del_cart.destroy_all
         WelcomeEmailMailer.rate_exteted(@current_user).deliver_now
-        # @msg = "Note: All orders above $2500 will be checked by the site admins and the customer will be contacted offline"
-        # redirect_to :back, :flash => {:msg => @msg}
+       redirect_to :back, :flash => {:success => 'Your Is Transaction Under Review'}
 
       end
     else
@@ -201,7 +212,7 @@ class ShoppingCartController < ApplicationController
 
           pymt = MyPayment.create(user_id: session[:user_id], payment_id: @payment.id, total: total, date: Time.current.to_date)
           @del_cart.each do |mo|
-            MyOrder.create(user_id: session[:user_id], item: mo.item, item_id: mo.item_id, item_uid: mo.item_uid, item_cat_code: mo.item_cat_code, quantity: mo.quantity, payment_id: pymt.id)
+            MyOrder.create(user_id: session[:user_id], item: mo.item, item_id: mo.item_id, item_uid: mo.item_uid, item_cat_code: mo.item_cat_code, quantity: mo.quantity, my_payment_id: pymt.id)
           end
 
             @del_cart.destroy_all
@@ -220,27 +231,51 @@ class ShoppingCartController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
-      my_order = MyOrder.where(user_id: session[:user_id])
+
+      my_order1 = MyPayment.where("user_id = ? AND payment_id IS NOT NULL",session[:user_id])
 
       @my_order = []
-      for i in my_order
-        data1 = {}
-        if i.item == 'event'
-          url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetFunctionInfo?functionid="+i.item_uid)
-          data = kingdomsg_api(url)
-          catagory =  (data['FunctionInfo']['FeeTypes'].select {|cat| cat["Code"] == i.item_cat_code })[0]
+      for p in my_order1
+        for i in p.my_orders
+          data1 = {}
+          if i.item == 'event'
+            url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetFunctionInfo?functionid="+i.item_uid)
+            data = kingdomsg_api(url)
+            catagory =  (data['FunctionInfo']['FeeTypes'].select {|cat| cat["Code"] == i.item_cat_code })[0]
 
-          event = Event.find(i.item_id)
-          data1['item_type'] = 'Event'
-          data1['name'] = event.name+", "+catagory['Name']
-          data1['available'] = catagory['Available']
-          data1['amount'] = catagory['Amount']
-          data1['quantity'] = i.quantity
-          data1['event_date'] = event.date.strftime("%d %b %y")
+            event = Event.find(i.item_id)
+            data1['item_type'] = 'Event'
+            data1['name'] = event.name+", "+catagory['Name']
+            data1['available'] = catagory['Available']
+            data1['amount'] = catagory['Amount']
+            data1['quantity'] = i.quantity
+            data1['event_date'] = event.date.strftime("%d %b %y")
+          end
+          @my_order.push(data1)
         end
-        @my_order.push(data1)
       end
+      p_order = MyPayment.where("user_id = ? AND order_id IS NOT NULL",session[:user_id])
 
+      @pending_order = []
+      for o in p_order
+        for i in o.my_orders
+          data1 = {}
+          if i.item == 'event'
+            url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetFunctionInfo?functionid="+i.item_uid)
+            data = kingdomsg_api(url)
+            catagory =  (data['FunctionInfo']['FeeTypes'].select {|cat| cat["Code"] == i.item_cat_code })[0]
+
+            event = Event.find(i.item_id)
+            data1['item_type'] = 'Event'
+            data1['name'] = event.name+", "+catagory['Name']
+            data1['available'] = catagory['Available']
+            data1['amount'] = catagory['Amount']
+            data1['quantity'] = i.quantity
+            data1['event_date'] = event.date.strftime("%d %b %y")
+          end
+          @pending_order.push(data1)
+        end
+      end
     else
       @current_user = nil
     end
