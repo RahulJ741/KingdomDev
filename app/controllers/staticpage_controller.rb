@@ -373,8 +373,9 @@ class StaticpageController < ApplicationController
     puts ENV["MAILCHIMP_LIST_ID"]
     # gibbon.lists(list_id).members.create(body: {email_address: params[:email], status: "subscribed", merge_fields: {FNAME: "First Name", LNAME: "Last Name",MESSAGE: "done"}})
     tivd = gibbon.lists(ENV["MAILCHIMP_LIST_ID"]).members.create(body: {email_address: params[:email], status: "unsubscribed"})
-    redirect_to :back, flash[:notice] = "Please check your email to complete subscription process"
-    WelcomeEmailMailer.complete_subscription(params[:email])
+
+    WelcomeEmailMailer.complete_subscription(params[:email]).deliver_now
+    redirect_to root_path, :flash => {:success => "Please check your email to complete subscription process"}
     # vids = Net::HTTP.get_response(tivd)
     # tivd = gibbon.lists(ENV["MAILCHIMP_LIST_ID"]).members.retrieve
     # tivd = gibbon.lists(ENV["MAILCHIMP_LIST_ID"]).members(9842F915B22D76D38AA32CD4B8C2DE05).retrieve
@@ -391,7 +392,7 @@ class StaticpageController < ApplicationController
 
     puts "doooooooooooooooooooooooooooooooooo"
 
-    redirect_back(fallback_location: root_path)
+    # redirect_back(fallback_location: root_path)
 
   end
 

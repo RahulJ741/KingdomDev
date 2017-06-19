@@ -74,5 +74,5 @@ Rails.application.routes.draw do
   get 'hotel/bay_apartments' => 'staticpage#bay_apartments'
 
 
-  match '/subscribed_user/:email' => 'staticpage#subscribed_user', :via => [:get, :post]
+  get '/subscribed_user/:email' => 'staticpage#subscribed_user'
 end
