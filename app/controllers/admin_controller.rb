@@ -101,6 +101,7 @@ class AdminController < ApplicationController
 	end
 
 	def transaction_detail
+		@user = MyPayment.find(params[:my_payment_id]).user
 		items = MyOrder.where(:my_payment_id => params[:my_payment_id])
       	@my_order = []
       	for i in items
