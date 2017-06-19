@@ -1,5 +1,5 @@
 <%= render 'layouts/header'%>
-<section class="banner-main accomodation-banner" style="background: rgba(0, 0, 0, 0) url('/assets/images/rooms.jpg') no-repeat scroll center top / cover;">
+<section class="banner-main accomodation-banner" style="background: rgba(0, 0, 0, 0) url('/assets/images/star.png') no-repeat scroll center top / cover;">
 	<div class="container">
 	</div>
 	<div class="gold-cost-right" >
@@ -17,7 +17,7 @@
       		<!-- <h3 style="text-align: center;font-size: 32px;"><%= flash[:msg] %></h3> -->
 			<div class="alert alert-info alert-dismissable">
 	          <i class="fa fa-info-circle"></i>
-			   <%= @msg %>
+			   Note: All requests above $2,500 will be checked by the KSG Team and you will be contacted offline for payment via bank transfer. Transactions under $2,500 will be processed online (with an additional 2.5% credit card surcharge). Transactions found to have breached the terms and conditions of sale may be cancelled by the KSG Team. For more information on the Terms and Conditions please download them <a href='https://www.dropbox.com/s/aeej5d6w4mqvprc/Terms%20and%20Conditions%20of%20Sale%20-%20KSG%20LEGAL%20POLICY%20v3.pdf?dl=0'><strong style="text-decoration:underline">here</strong></a>
 	        </div>
 	        <% if @is_exceed %>
 	        	<div class="alert alert-danger alert-dismissable">
@@ -53,8 +53,8 @@
 											<td><%= i['name'] %></td>
 											<td><%= i['event_date'] %></td>
 											<td style="padding-top: 2px;padding-bottom: 2px;"><input type="number" data-amount="<%= i['amount'] %>" data-item_id="<%= i['cart_id'] %>" min="1" max="<%= i['available'] %>" class="form-control quantity" placeholder="Enter Quantity" style="width: 50%; margin: auto;" value="<%= i['quantity'] %>"></td>
-											<td>AUD <%= i['amount'] %></td>
-											<td >AUD <span class="row_total"><%= (i['amount'].to_f * i['quantity'].to_f)% 1 == 0 ? (i['amount'].to_f * i['quantity'].to_f).to_i : helpers.number_with_precision(i['amount'].to_f * i['quantity'].to_f,:precision => 2) %></span></td>
+											<td>AUD <%= i['amount'] %> </td>
+											<td >AUD <span class="row_total"></span></td>
 											<td><a href="/cart/remove/<%= i['cart_id'] %>"><i class="fa fa-trash" style="margin-right:5px"> </i>Remove</a></td>
 								      </tr>
 							      <% end %>
@@ -68,7 +68,7 @@
 
 					<div class="col col-xs-12" style="text-align:right;">
 
-						<h3>Total : AUD <span id="grand_total"><%=  @cart_data.map {|s| s['amount'].to_f * s['quantity'].to_f}.reduce(0, :+) %></span></h3>
+						<h3>Total : AUD <span id="grand_total"></span></h3>
 						<a class="subscribe-submit" href="/event/index/?event=Basketball" style="padding: 10px 15px !important; width: auto !important; margin: 9px 0px 10px 0px !important; font-size: 14px;">
 							Continue Shopping
 						</a>
@@ -114,6 +114,15 @@
 		// $("[type='number']").keypress(function (evt) {
 	 //      evt.preventDefault();
 	 //    });
+	    var grand_total = parseFloat(0.00);
+		$("[type='number']").each(function( index ) {
+		  var row_total = (parseFloat($(this).val())*parseFloat($(this).data('amount'))).toFixed(2);
+		  grand_total = parseFloat(grand_total+parseFloat(row_total));
+		  ~String(parseFloat(row_total)).indexOf(".") ? row_total = parseFloat(row_total).toFixed(2) : row_total = parseFloat(row_total);
+		  $(this).parents('tr').find('.row_total').html(row_total);
+		});
+		~String(parseFloat(grand_total)).indexOf(".") ? grand_total = parseFloat(grand_total).toFixed(2) : grand_total = parseFloat(grand_total);
+		$('#grand_total').html(grand_total);
 		$("[type='number']").bind("cut copy paste",function(evt) {
 	      evt.preventDefault();
 	    });
@@ -130,13 +139,18 @@
 		          data : { item_id : item_id,quantity : quantity }, // data sent with the post request
 		          dataType: 'json',
 		          success : function(msg) {
-		            this1.parents('tr').find('.row_total').html(parseFloat(this1.val())*parseFloat(this1.data('amount')));
+
+		          	var row_total = (parseFloat(this1.val())*parseFloat(this1.data('amount'))).toFixed(2);
+		    		~String(parseFloat(row_total)).indexOf(".") ? row_total = parseFloat(row_total).toFixed(2) : row_total = parseFloat(row_total);
+
+		            this1.parents('tr').find('.row_total').html(row_total);
 		            this1.parents('tr').removeClass('is_exceed');
 	    			this1.parents('tr').css('background-color','white');
 		          	var g_total = 0
 		          	$( ".row_total" ).each(function( index ) {
 					  g_total = g_total + parseFloat($(this).html());
 					});
+					~String(parseFloat(g_total)).indexOf(".") ? g_total = parseFloat(g_total).toFixed(2) : g_total = parseFloat(g_total);
 					$('#grand_total').html(g_total);
 		          },
 		          error : function(xhr,errmsg,err) {

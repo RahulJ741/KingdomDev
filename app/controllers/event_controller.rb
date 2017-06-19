@@ -33,7 +33,7 @@ class EventController < ApplicationController
 	    end
 
     end
-    puts @events.count
+    @events= @events.sort_by { |hsh| hsh['date'] }
 	  puts data['Functions'].count
     
     url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetFunctionGroups")
