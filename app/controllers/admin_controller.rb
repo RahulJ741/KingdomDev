@@ -77,7 +77,7 @@ class AdminController < ApplicationController
 			data1=[]
 			data1.append(i.id)
 			data1.append(i.user.first_name+" "+i.user.last_name)
-			data1.append(i.total)
+			data1.append("AUD "+i.total.to_s)
 			data1.append(i.date)
 			if not i.payment_id.blank?
 				data1.append('Paypal')
@@ -88,7 +88,7 @@ class AdminController < ApplicationController
 			end
 			data1.append('<a href="/admin/transaction/show/'+i['id'].to_s+'">
 				<button class="btn btn-primary" type="button">
-					Show Transactions
+					View
 				</button>
 			</a>')
 			data.append(data1)
@@ -101,6 +101,7 @@ class AdminController < ApplicationController
 	end
 
 	def transaction_detail
+		@user = MyPayment.find(params[:my_payment_id]).user
 		items = MyOrder.where(:my_payment_id => params[:my_payment_id])
       	@my_order = []
       	for i in items

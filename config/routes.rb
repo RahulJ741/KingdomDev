@@ -47,6 +47,7 @@ Rails.application.routes.draw do
   get '/my_transaction/' => 'shopping_cart#my_transaction'
   post '/make_payment/' => 'shopping_cart#make_payment'
   post '/cart/update/' => 'shopping_cart#update'
+  get '/review_order/' => 'shopping_cart#review_order'
   # get 'authf' => 'session#authf'
   post 'subscribe' => 'staticpage#subscribe'
   match 'check_user' => 'staticpage#check_user', :via => [:get, :post]
