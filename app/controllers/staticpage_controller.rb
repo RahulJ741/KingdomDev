@@ -1,6 +1,7 @@
 class StaticpageController < ApplicationController
   require 'uri'
   require 'net/http'
+  require 'digest/md5'
 
   def test_payment
     require 'paypal-sdk-rest'
@@ -371,10 +372,14 @@ class StaticpageController < ApplicationController
     puts "5555555555555564646466546"
     puts ENV["MAILCHIMP_LIST_ID"]
     # gibbon.lists(list_id).members.create(body: {email_address: params[:email], status: "subscribed", merge_fields: {FNAME: "First Name", LNAME: "Last Name",MESSAGE: "done"}})
-    tivd = gibbon.lists(ENV["MAILCHIMP_LIST_ID"]).members.create(body: {email_address: params[:email], status: "PENDING"})
+    tivd = gibbon.lists(ENV["MAILCHIMP_LIST_ID"]).members.create(body: {email_address: params[:email], status: "unsubscribed"})
+    redirect_to :back, flash[:notice] = "Please check your email to complete subscription process"
+    WelcomeEmailMailer.complete_subscription(params[:email])
     # vids = Net::HTTP.get_response(tivd)
+    # tivd = gibbon.lists(ENV["MAILCHIMP_LIST_ID"]).members.retrieve
+    # tivd = gibbon.lists(ENV["MAILCHIMP_LIST_ID"]).members(9842F915B22D76D38AA32CD4B8C2DE05).retrieve
     puts "88888888888888888888888888888888888888888888888888888888888888888888"
-    flash[:notice] = "Subscription complete"
+    # flash[:notice] = "Subscription complete"
     # puts vids
     # if (response.status).to eq 400
     #     redirect_back(fallback_location: root_path)
@@ -394,14 +399,30 @@ class StaticpageController < ApplicationController
   def check_user
     gibbon = Gibbon::Request.new(api_key: ENV["MAILCHIMP_API_KEY"], debug: true)
     begin
-      check_user = gibbon.lists(ENV["MAILCHIMP_LIST_ID"]).retrieve(params: {"email": params[:email]})
       puts "||||||||||||||||||||||||||\\\\\\\\\\\\\\\\\\"
-      puts check_user.inspect
+      user_email = Digest::MD5.hexdigest(params[:email])
+      puts params[:email]
+      puts user_email
+      check_user = gibbon.lists(ENV["MAILCHIMP_LIST_ID"]).members(user_email).retrieve
+      puts check_user
+      # puts check_user.inspect
+
+
+      puts "{{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{{}{}{}{}{}{}{}}}"
 
       render :json => false
     rescue Exception => e
       render :json => true
     end
+  end
+
+
+
+  def subscribed_user
+    gibbon = Gibbon::Request.new(api_key: ENV["MAILCHIMP_API_KEY"], debug: true)
+    user = Digest::MD5.hexdigest(params[:email])
+    subscribed_user = gibbon.lists(ENV["MAILCHIMP_LIST_ID"]).members(user).update(body: {status: "subscribed"})
+    redirect_to root_path, flash[:notice] = "Subscription Complete"
   end
 
 

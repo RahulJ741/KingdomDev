@@ -22,4 +22,9 @@ class WelcomeEmailMailer < ApplicationMailer
     # mail to: => "", :subject => "Payment exteded of user"
   end
 
+  def complete_subscription(email)
+    @email = email
+    mail :to => email, :subject => "Complete Subscription"
+  end
+
 end

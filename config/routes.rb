@@ -37,7 +37,7 @@ Rails.application.routes.draw do
   match 'reset_user' => 'session#reset_user', :via => [:get, :post]
   match 'hotel_info/:id' => 'hotel#info', :via => [:get, :post]
   match 'accommodation' => 'hotel#accommodation', :via => [:get, :post]
-  
+
   match 'cart' => 'shopping_cart#index', :via => [:get, :post]
   match 'add_cart' => 'shopping_cart#add_cart', :via => [:get, :post]
   match 'event_add_cart' => 'shopping_cart#event_add_cart', :via => [:get, :post]
@@ -72,4 +72,7 @@ Rails.application.routes.draw do
   get 'hotel/quest_spring_hill' => 'staticpage#quest_spring_hill'
   get 'hotel/baronnet_apartment' => 'staticpage#baronnet_apartment'
   get 'hotel/bay_apartments' => 'staticpage#bay_apartments'
+
+
+  match '/subscribed_user/:email' => 'staticpage#subscribed_user', :via => [:get, :post]
 end
