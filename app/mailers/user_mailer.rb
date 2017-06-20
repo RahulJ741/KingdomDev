@@ -1,9 +1,11 @@
 class UserMailer < ApplicationMailer
-  default from: 'rahul.j@infiny.in'
+  default from: 'info@kingdomsg.com'
 
   def user_activation(user)
     @greeting = "Hi"
     @user = user
+    puts "454545455454545445454545454545"
+    
     mail :to => user.email, :subject => "Account Confirmation"
 
   end

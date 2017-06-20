@@ -1,5 +1,5 @@
 class ForgetPassMailer < ApplicationMailer
-  default from: 'rahul.j@infiny.in'
+  default from: 'info@kingdomsg.com'
 
   def password_reset(user)
     @greeting = "Hi"

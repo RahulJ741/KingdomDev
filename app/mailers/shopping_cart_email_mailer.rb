@@ -1,5 +1,5 @@
 class ShoppingCartEmailMailer < ApplicationMailer
-  default from: 'rahul.j@infiny.in'
+  default from: 'info@kingdomsg.com'
   def shoppingdetails(hotel, event,user)
     @hotel = hotel
     @event = event

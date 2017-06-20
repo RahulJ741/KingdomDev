@@ -1,5 +1,5 @@
 class WelcomeEmailMailer < ApplicationMailer
-  default from: 'rahul.j@infiny.in'
+  default from: 'info@kingdomsg.com'
 
   def welcomeemail(user)
     @greeting = "Hi"
