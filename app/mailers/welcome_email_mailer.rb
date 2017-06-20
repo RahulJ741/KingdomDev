@@ -34,8 +34,9 @@ class WelcomeEmailMailer < ApplicationMailer
     mail :to => ig_email, :subject => "Complete Subscription"
   end
 
-  def admin_rate_exteted(user)
-    @user_info = user
+  def admin_rate_exteted(cart,user)
+    @cart = cart
+    @user = user
     mail :to => "info@kingdomsg.com", :subject => "User shopping cart rate exceded"
   end
 
