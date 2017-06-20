@@ -18,7 +18,7 @@ class WelcomeEmailMailer < ApplicationMailer
   def rate_exteted(cart, user)
     @cart = cart
     @user = user
-    admin_rate_exteted(@cart_data ,@user)
+    admin_rate_exteted(@cart ,@user)
     mail :to => user.email, :subject => "Your payment exteded"
 
     # mail to: => "", :subject => "Payment exteded of user"
