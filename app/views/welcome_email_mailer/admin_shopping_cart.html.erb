@@ -6,9 +6,30 @@
 <body>
 
 <div>
-	<h3>Hi, <%= @user.first_name %></h3>
-	<p>Thank you for your order.</p>
-
+  <table border="1">
+	  <thead>
+	    <tr>
+	      <td>User</td>
+        <td>Email</td>
+        <td>Phone</td>
+        <td>Address</td>
+        <td>State</td>
+        <td>City</td>
+        <td>Country</td>
+	    </tr>
+	  </thead>
+    <tbody>
+      <tr>
+        <td><%= @user.first_name %> <%= @user.last_name %></td>
+        <td><%= @user.email%></td>
+        <td><%= @user.phone%></td>
+        <td><%= @user.address%></td>
+        <td><%= @user.state%></td>
+        <td><%= @user.city %></td>
+        <td><%= @user.country%></td>
+      </tr>
+    </tbody>
+	</table>
 
   <table border="1">
     <thead>
@@ -39,6 +60,7 @@
         <%end%>
       </tbody>
     </table>
+
 </div>
 
 <div>

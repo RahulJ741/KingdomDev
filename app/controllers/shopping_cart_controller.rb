@@ -6,7 +6,7 @@ class ShoppingCartController < ApplicationController
 
   def index
     @cart_count = Cart.where(:user_id => session[:user_id]).count
-   
+
     if session[:user_id]
       @current_user = User.find(session["user_id"])
 
@@ -127,7 +127,7 @@ class ShoppingCartController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       @cart_count = Cart.where(:user_id => session[:user_id]).count
-      
+
     else
       @current_user = nil
     end
@@ -152,7 +152,7 @@ class ShoppingCartController < ApplicationController
       end
       @cart_data.push(data1)
     end
-    
+
     if not params[:from_cart].blank?
       @card_data={}
       @card_data['cardNumber']=params[:cardNumber]
@@ -187,9 +187,9 @@ class ShoppingCartController < ApplicationController
       @cart_data.push(data1)
     end
     total = @cart_data.map {|s| s['amount'].to_f * s['quantity'].to_f}.reduce(0, :+)
-     
+
     total = sprintf("%.2f",total)
-    
+
     url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/BookFunction")
     if params[:from_card].blank?
       @del_cart = Cart.where(user_id: session[:user_id])
@@ -213,7 +213,7 @@ class ShoppingCartController < ApplicationController
       if not response == "success"
         redirect_to :back, :flash => {:error => 'Somthing went wrong'}
       end
-      # WelcomeEmailMailer.rate_exteted(user).deliver_now
+      WelcomeEmailMailer.rate_exteted(@cart_data,user).deliver_now
     else
       require 'paypal-sdk-rest'
       @payment = PayPal::SDK::REST::Payment.new({
@@ -249,8 +249,8 @@ class ShoppingCartController < ApplicationController
 
         # my paymment update after making a payment
         @del_cart = Cart.where(user_id: session[:user_id])
-        
-        # WelcomeEmailMailer.shoppingdetails(@hotels, @events,user).deliver_now
+
+        WelcomeEmailMailer.shoppingdetails(@cart_data,user).deliver_now
 
         pymt = MyPayment.create(user_id: session[:user_id], payment_id: @payment.id, total: total, date: Time.current.to_date)
         data = []
@@ -272,7 +272,7 @@ class ShoppingCartController < ApplicationController
         puts @payment.error  # Error Hash
         redirect_to :back, :flash => {:error => 'Somthing went wrong'}
       end
-      
+
     end
     redirect_to '/thank_you', :flash => {:success => 'Booking Successfull'}
   end
