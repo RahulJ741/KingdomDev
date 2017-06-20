@@ -56,6 +56,9 @@ Rails.application.routes.draw do
   get '/event/show/:event_uid' => 'event#show'
 
   get "kingxadminp" => 'admin#index'
+  get '/admin/user_list' => 'admin#user_list'
+  get 'admin/user_ajax' => 'admin#user_ajax'
+  get '/admin/user/show/:id' => 'admin#user_show'
   get "admin/index_ajax" => 'admin#index_ajax'
   get "/admin/transaction/show/:my_payment_id" => 'admin#transaction_detail'
   get '/thank_you' => 'staticpage#thank_you'
