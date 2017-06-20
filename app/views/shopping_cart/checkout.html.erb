@@ -29,8 +29,23 @@
                     </div>                    
                 </div>
                 <div class="panel-body">
-                    <form role="form" id="payment-form" method="POST" action="/make_payment/">
+                    <form role="form" id="payment-form" method="POST" action="/review_order/">
                     	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                        <input type="hidden" name="from_cart" value="true" >
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label for="cardNumber">CARD TYPE</label>
+                                    <select class="form-control" name="cardtype">
+                                        <option value="visa">visa</option>
+                                        <option value="mastercard">mastercard</option>
+                                        <option value="amex">amex</option>
+                                        <option value="jcb">jcb</option>
+                                        <option value="discover">discover</option>
+                                    </select>
+                                </div>                            
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="form-group">

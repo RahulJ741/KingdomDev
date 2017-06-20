@@ -115,25 +115,8 @@ class ShoppingCartController < ApplicationController
 
       # total = ((HotelShoppingCart.where(user_id: session[:user_id]).sum('rate') + EventShoppingCart.where(user_id: session[:user_id]).sum('rate')).round(2))
       # redirect_to :back,:flash => {:msg => @msg}
-      if total.to_f >= 2500
-        puts "--------------------"
-
-        @del_cart = Cart.where(user_id: session[:user_id])
-        if MyPayment.where('order_id Is NOT NULL').last.blank?
-          order_id = 1
-        else
-          order_id = (MyPayment.all.last.order_id)+1
-        end
-        pymt = MyPayment.create(user_id: session[:user_id], order_id: order_id, total: total, date: Time.current.to_date)
-        @del_cart.each do |mo|
-          
-          MyOrder.create(user_id: session[:user_id], item: mo.item, item_id: mo.item_id, item_uid: mo.item_uid, item_cat_code: mo.item_cat_code, quantity: mo.quantity, my_payment_id: pymt.id)
-        end
-
-        @del_cart.destroy_all
-        WelcomeEmailMailer.rate_exteted(@current_user).deliver_now
-       redirect_to :back, :flash => {:success => 'Your Is Transaction Under Review'}
-
+      if total.to_f > 2500
+        redirect_to "/review_order/"
       end
     else
       @current_user = nil
@@ -169,14 +152,22 @@ class ShoppingCartController < ApplicationController
       end
       @cart_data.push(data1)
     end
+    
+    if not params[:from_cart].blank?
+      @card_data={}
+      @card_data['cardNumber']=params[:cardNumber]
+      @card_data['cardExpiry']=params[:cardExpiry]
+      @card_data['cardCVC']=params[:cardCVC]
+      @card_data['cardtype']=params[:cardtype]
+    end
     @total = @cart_data.map {|s| s['amount'].to_f * s['quantity'].to_f}.reduce(0, :+)
   end
 
   def make_payment
     # delete this Code
     cart = Cart.where(:user_id => session[:user_id])
-    puts cart.inspect
 
+    user = User.find(session[:user_id])
     @cart_data = []
     for i in cart
       data1 = {}
@@ -196,68 +187,94 @@ class ShoppingCartController < ApplicationController
       @cart_data.push(data1)
     end
     total = @cart_data.map {|s| s['amount'].to_f * s['quantity'].to_f}.reduce(0, :+)
-      puts "|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\\\\\\\\\\\\\\\\\\\\\\"
-      puts total
-      # delete this Code
-    # total = ((HotelShoppingCart.where(user_id: session[:user_id]).sum('rate') + EventShoppingCart.where(user_id: session[:user_id]).sum('rate')).round(2))
-    puts params[:cardNumber].delete(' ')
+     
     total = sprintf("%.2f",total)
-    puts "=================="
-    require 'paypal-sdk-rest'
-    user = User.find(session[:user_id])
     
-    @payment = PayPal::SDK::REST::Payment.new({
-          :intent => "sale",
-          :payer => {
-            :payment_method => "credit_card",
-            :funding_instruments => [{
-              :credit_card => {
-                :type => "visa",
-                :number => params[:cardNumber].delete(' '),
-                :expire_month => params[:cardExpiry].split('/')[0].delete(' '),
-                :expire_year => params[:cardExpiry].split('/')[1].delete(' '),
-                :cvv2 => params[:cardCVC].delete(' '),
-                :first_name => user.first_name,
-                :last_name => user.last_name,
-                :billing_address => {
-                  :line1 => "52 N Main ST",
-                  :city => "Johnstown",
-                  :state => "OH",
-                  :postal_code => "43210",
-                  :country_code => "US" }}}]},
-          :transactions => [{
+    url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/BookFunction")
+    if params[:from_card].blank?
+      @del_cart = Cart.where(user_id: session[:user_id])
+      if MyPayment.where('order_id Is NOT NULL').last.blank?
+        order_id = 1
+      else
+        order_id = (MyPayment.all.last.order_id)+1
+      end
+      pymt = MyPayment.create(user_id: session[:user_id], order_id: order_id, total: total, date: Time.current.to_date)
+      data =[]
+      @del_cart.each do |mo|
+        data1 ={}
+        data1['code'] = mo.item_cat_code
+        data1['quantity'] = mo.quantity
+        data.push(data1)
+        MyOrder.create(user_id: session[:user_id], item: mo.item, item_id: mo.item_id, item_uid: mo.item_uid, item_cat_code: mo.item_cat_code, quantity: mo.quantity, my_payment_id: pymt.id)
+      end
 
-            :amount => {
-              :total => total,
-              :currency => "USD" },
-            :description => "This is the payment transaction description." }]})
+      @del_cart.destroy_all
+      response = kingdomsg_booking_api(url,data)
+      if not response == "success"
+        redirect_to :back, :flash => {:error => 'Somthing went wrong'}
+      end
+      # WelcomeEmailMailer.rate_exteted(user).deliver_now
+    else
+      require 'paypal-sdk-rest'
+      @payment = PayPal::SDK::REST::Payment.new({
+            :intent => "sale",
+            :payer => {
+              :payment_method => "credit_card",
+              :funding_instruments => [{
+                :credit_card => {
+                  :type => params[:cardtype],
+                  :number => params[:cardNumber].delete(' '),
+                  :expire_month => params[:cardExpiry].split('/')[0].delete(' '),
+                  :expire_year => params[:cardExpiry].split('/')[1].delete(' '),
+                  :cvv2 => params[:cardCVC].delete(' '),
+                  :first_name => user.first_name,
+                  :last_name => user.last_name,
+                  :billing_address => {
+                    :line1 => user.address,
+                    :city => user.city,
+                    :state => user.state,
+                    :postal_code => user.post_code,
+                    :country_code => "AU" }}}]},
+            :transactions => [{
 
-        # Create Payment and return the status(true or false)
-        puts "==============="
-        if @payment.create
-          puts "done"
-          puts @payment.id # Payment Id
+              :amount => {
+                :total => total,
+                :currency => "AUD" },
+              :description => "This is the payment transaction description." }]})
 
-          puts "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
-          # my paymment update after making a payment
-          @del_cart = Cart.where(user_id: session[:user_id])
-          
-          # WelcomeEmailMailer.shoppingdetails(@hotels, @events,user).deliver_now
+      # Create Payment and return the status(true or false)
+      if @payment.create
+        puts "done"
+        puts @payment.id # Payment Id
 
-          pymt = MyPayment.create(user_id: session[:user_id], payment_id: @payment.id, total: total, date: Time.current.to_date)
-          @del_cart.each do |mo|
-            MyOrder.create(user_id: session[:user_id], item: mo.item, item_id: mo.item_id, item_uid: mo.item_uid, item_cat_code: mo.item_cat_code, quantity: mo.quantity, my_payment_id: pymt.id)
-          end
+        # my paymment update after making a payment
+        @del_cart = Cart.where(user_id: session[:user_id])
+        
+        # WelcomeEmailMailer.shoppingdetails(@hotels, @events,user).deliver_now
 
-            @del_cart.destroy_all
+        pymt = MyPayment.create(user_id: session[:user_id], payment_id: @payment.id, total: total, date: Time.current.to_date)
+        data = []
+        @del_cart.each do |mo|
+          data1 ={}
+          data1['code'] = mo.item_cat_code
+          data1['quantity'] = mo.quantity
+          data.push(data1)
+          MyOrder.create(user_id: session[:user_id], item: mo.item, item_id: mo.item_id, item_uid: mo.item_uid, item_cat_code: mo.item_cat_code, quantity: mo.quantity, my_payment_id: pymt.id)
+        end
 
-          redirect_to '/thank_you', :flash => {:success => 'Payment Successfull'}
-
-        else
-          puts "not deone"
-          puts @payment.error  # Error Hash
+        @del_cart.destroy_all
+        response = kingdomsg_booking_api(url,data)
+        if not response == "success"
           redirect_to :back, :flash => {:error => 'Somthing went wrong'}
         end
+      else
+        puts "not deone"
+        puts @payment.error  # Error Hash
+        redirect_to :back, :flash => {:error => 'Somthing went wrong'}
+      end
+      
+    end
+    redirect_to '/thank_you', :flash => {:success => 'Booking Successfull'}
   end
 
   def my_transaction

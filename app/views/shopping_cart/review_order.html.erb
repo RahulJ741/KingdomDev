@@ -12,6 +12,8 @@
 		<div class="exclusive-reprensentatio-inner accommodation-main-inner4">
 			<h2 class="fadeInUp wow" data-wow-duration="2s" data-wow-delay="0s">Review Booking</h2>
 
+
+
     	</div>
     </div>
 
@@ -19,7 +21,12 @@
 		<div class="exclusive-reprensentatio-inner accommodation-main-inner4">
 		
 	        <div class="col-sm-12 col-md-10 col-md-offset-1">
-	        
+	        	<% if @card_date.blank? %>
+					<div class="alert alert-info alert-dismissable">
+			          <i class="fa fa-info-circle"></i>
+					   Note: All requests above $2,500 will be checked by the KSG Team and you will be contacted offline for payment via bank transfer. Transactions under $2,500 will be processed online (with an additional 2.5% credit card surcharge). Transactions found to have breached the terms and conditions of sale may be cancelled by the KSG Team. For more information on the Terms and Conditions please download them <a href='https://www.dropbox.com/s/aeej5d6w4mqvprc/Terms%20and%20Conditions%20of%20Sale%20-%20KSG%20LEGAL%20POLICY%20v3.pdf?dl=0'><strong style="text-decoration:underline">here</strong></a>
+			        </div>
+				<% end %>
 				<h3 class="pull-left" style="padding-left:10px;">Your Information</h3>
 				<div class="col-xs-12 pad-none">
 					<table class="table table-hover">
@@ -88,37 +95,66 @@
 				
 
 	        </div>
+	    	</div>
 	    </div>
     <% end %>
 
-    <div class="row">
+    <% if not @card_data.blank? %>
+	    <div class="row">
+			<div class="exclusive-reprensentatio-inner accommodation-main-inner4">
+			
+		        <div class="col-sm-12 col-md-10 col-md-offset-1">
+		        
+					<h3 class="pull-left" style="padding-left:10px;">Card Details</h3>
+					<div class="col-xs-12 pad-none">
+						<table class="table table-hover">
+						    <thead>
+						      <tr>
+						        <th>Card Type</th>
+						        <th>Card Number</th>
+						        <th>Expire Date</th>
+						        <th>CVC Code</th>
+						      </tr>
+						    </thead>
+						    <tbody>	
+						      <tr>
+						        <td><%= @card_data['cardtype'] %></td>
+						        <td><%= @card_data['cardNumber'] %></td>
+								<td><%= @card_data['cardExpiry'] %></td>
+								<td><%= @card_data['cardCVC'] %></td>
+						      </tr>
+						    </tbody>
+						</table>
+					</div>
+			
+		        </div>
+		    </div>
+	    </div>
+	<% end %>
+
+	<div class="row">
 		<div class="exclusive-reprensentatio-inner accommodation-main-inner4">
 		
-	        <div class="col-sm-12 col-md-10 col-md-offset-1">
-	        
-				<h3 class="pull-left" style="padding-left:10px;">Card Details</h3>
-				<div class="col-xs-12 pad-none">
-					<table class="table table-hover">
-					    <thead>
-					      <tr>
-					        <th>Card number</th>
-					        <th>Expire Date</th>
-					        <th>CVC Code</th>
-					      </tr>
-					    </thead>
-					    <tbody>
-					    	
-					      <tr>
-					        <td><%= @card.number %></td>
-							<td><%= @card.date %></td>
-							<td><%= @card.cvv %></td>
-
-					      </tr>
-					    
-					    </tbody>
-					</table>
-				</div>
+	        <div class="col-sm-12 col-md-10 col-md-offset-1" style="text-align:right;">
+	        	<div class="col-xs-12 pad-none">
+				<form role="form" id="payment-form" method="POST" action="/make_payment/">
+					<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+					<% if not @card_data.blank? %>
+						<input type="hidden" name="from_card" value="true">
+						<input type="hidden" name="cardNumber" value="<%= @card_data['cardNumber'] %>">
+						<input type="hidden" name="cardExpiry" value="<%= @card_data['cardExpiry'] %>">
+						<input type="hidden" name="cardCVC" value="<%= @card_data['cardCVC'] %>">
+						<input type="hidden" name="cardtype" value="<%= @card_data['cardtype'] %>">
+					<% end %>
+					<a class="subscribe-submit" href="/cart" style="padding: 10px 15px !important; width: auto !important; margin: 9px 10px 10px 0px !important; font-size: 14px;">
+						Edit
+					</a>
+					<button type="submit" id="checkout_btn" class="subscribe-submit" href="/make_payment/" style="padding: 10px 15px !important; width: 100PX !important; margin: 9px 0px 10px 0px !important; font-size: 14px;box-shadow: 0 5px 0 0 #a1790c;">
+						Confirm
+					</button>
+				</form>
 		
+	        	</div>
 	        </div>
 	    </div>
     </div>
