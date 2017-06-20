@@ -12,11 +12,11 @@ class WelcomeEmailMailer < ApplicationMailer
     @cart  = cart
     @user = user
     admin_shopping_cart(@cart, @user)
-    mail :to => user.email, :subject => "Your cart details"
+    mail :to => user.email, :subject => "Thank you for your order"
   end
 
   def rate_exteted(cart, user)
-    @cart_data = cart
+    @cart = cart
     @user = user
     admin_rate_exteted(@cart_data ,@user)
     mail :to => user.email, :subject => "Your payment exteded"
