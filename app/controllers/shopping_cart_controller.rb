@@ -196,7 +196,7 @@ class ShoppingCartController < ApplicationController
       if MyPayment.where('order_id Is NOT NULL').last.blank?
         order_id = 1
       else
-        order_id = (MyPayment.all.last.order_id)+1
+        order_id = (MyPayment.where('order_id Is NOT NULL').last.order_id)+1
       end
       pymt = MyPayment.create(user_id: session[:user_id], order_id: order_id, total: total, date: Time.current.to_date)
       data =[]
