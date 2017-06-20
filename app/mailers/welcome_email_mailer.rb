@@ -23,8 +23,13 @@ class WelcomeEmailMailer < ApplicationMailer
   end
 
   def complete_subscription(email)
-    @email = email
-    mail :to => email, :subject => "Complete Subscription"
+    ig_email =  email
+    @t_email = email
+    @t_email = @t_email.gsub('.','$')
+    puts "======================="
+
+    puts ig_email
+    mail :to => ig_email, :subject => "Complete Subscription"
   end
 
 end

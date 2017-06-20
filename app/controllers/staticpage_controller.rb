@@ -371,6 +371,7 @@ class StaticpageController < ApplicationController
     gibbon = Gibbon::Request.new(api_key: ENV["MAILCHIMP_API_KEY"], debug: true)
     puts "5555555555555564646466546"
     puts ENV["MAILCHIMP_LIST_ID"]
+    puts params[:email]
     # gibbon.lists(list_id).members.create(body: {email_address: params[:email], status: "subscribed", merge_fields: {FNAME: "First Name", LNAME: "Last Name",MESSAGE: "done"}})
     tivd = gibbon.lists(ENV["MAILCHIMP_LIST_ID"]).members.create(body: {email_address: params[:email], status: "unsubscribed"})
 
@@ -422,10 +423,13 @@ class StaticpageController < ApplicationController
   def subscribed_user
     gibbon = Gibbon::Request.new(api_key: ENV["MAILCHIMP_API_KEY"], debug: true)
     email = params[:email]
-    user_email = email.gsub!('#','.')
+    puts email
+    user_email = email.gsub('$','.')
+    puts "||||||||||||||||||"
+    puts user_email
     user = Digest::MD5.hexdigest(user_email)
     subscribed_user = gibbon.lists(ENV["MAILCHIMP_LIST_ID"]).members(user).update(body: {status: "subscribed"})
-    redirect_to root_path, flash[:notice] = "Subscription Complete"
+    redirect_to root_path, :flash => {:success => "Subscription Complete"}
   end
 
 
