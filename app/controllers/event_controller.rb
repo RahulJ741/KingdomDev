@@ -1,12 +1,12 @@
 class EventController < ApplicationController
-  
+
   def index
     if params[:event].blank? and params[:start_date].blank? and params[:end_date].blank?
       url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetFunctions")
     else
       url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetFunctions?group="+params[:event]+"&startdate="+params[:start_date].to_s+"&enddate="+params[:end_date].to_s)
     end
-   
+
     data = kingdomsg_api(url)
     puts data
     puts "==========="
@@ -18,15 +18,15 @@ class EventController < ApplicationController
 	        data1['name'] = event.name
 	        data1['venue'] = event.venue
 	        data1['gender'] = event.gender
-	        data1['date'] = event.date.strftime("%d %b %y") 
+	        data1['date'] = event.date.strftime("%d %b %y")
 	        data1["time"] = event.start_time.strftime("%I:%M %p")+" - "+event.end_time.strftime("%I:%M %p")
 	        data1['event_id'] = event.id
           data1['event_uid'] = i['Id']
 	        data1['event_code'] = i['Code']
 	        amt  =[]
 	        for j in i['FeeTypes']
-	           
-	          amt.push(j['Amount'])
+
+	          amt.push(j['Amount'].to_f)
 	        end
 	        data1['start_rate'] = amt.min.to_i
 	        @events.push(data1)
@@ -35,7 +35,7 @@ class EventController < ApplicationController
     end
     @events= @events.sort_by { |hsh| hsh['date'] }
 	  puts data['Functions'].count
-    
+
     url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetFunctionGroups")
     data = kingdomsg_api(url)
     @all_events = (data['FunctionGroups'].pluck('Name')).sort
@@ -69,7 +69,7 @@ class EventController < ApplicationController
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
-      @cart_count = Cart.where(:user_id => session[:user_id]).count 
+      @cart_count = Cart.where(:user_id => session[:user_id]).count
     else
       @current_user = nil
     end

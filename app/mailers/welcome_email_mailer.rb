@@ -4,7 +4,7 @@ class WelcomeEmailMailer < ApplicationMailer
   def welcomeemail(user)
     @greeting = "Hi"
     @user = user
-    mail :to => user.email, :subject => "Welcome to Kingdom Sports Group"
+    mail :to => user.email, :subject => " Account Activation – Kingdom Sports Group "
 
   end
 
@@ -19,7 +19,7 @@ class WelcomeEmailMailer < ApplicationMailer
     @cart = cart
     @user = user
     admin_rate_exteted(@cart ,@user)
-    mail :to => user.email, :subject => "Thank you for your order"
+    mail :to => user.email, :subject => " Your order is registered over $2,500 and will be actioned by Kingdom Sports Group"
 
     # mail to: => "", :subject => "Payment exteded of user"
   end

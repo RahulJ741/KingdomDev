@@ -16,13 +16,20 @@
 
       		<!-- <h3 style="text-align: center;font-size: 32px;"><%= flash[:msg] %></h3> -->
 			<div class="alert alert-info alert-dismissable">
-	          <i class="fa fa-info-circle"></i>
-			   Note: All requests above $2,500 will be checked by the KSG Team and you will be contacted offline for payment via bank transfer. Transactions under $2,500 will be processed online (with an additional 2.5% credit card surcharge). Transactions found to have breached the terms and conditions of sale may be cancelled by the KSG Team. For more information on the Terms and Conditions please download them <a href='https://www.dropbox.com/s/aeej5d6w4mqvprc/Terms%20and%20Conditions%20of%20Sale%20-%20KSG%20LEGAL%20POLICY%20v3.pdf?dl=0'><strong style="text-decoration:underline">here</strong></a>
+
+			   <p><i class="fa fa-info-circle"></i> Note: All requests above $2,500 will be checked by the KSG Team and you will be contacted offline for payment via bank transfer. Transactions under $2,500 will be processed online (with an additional 2.5% credit card surcharge).</p>
+				 <p>Transactions found to have breached the terms and conditions of sale may be cancelled by the KSG Team.</p>
+				 <p>For more information on the Terms and Conditions please download them <a href='http://dev2.infiny.in:3333/assets/Terms_and_Conditions_of_Sale_KSG_LEGAL_POLICY_v3.pdf'><strong style="text-decoration:underline">here</strong></a></p>
 	        </div>
 	        <% if @is_exceed %>
 	        	<div class="alert alert-danger alert-dismissable">
-		          <i class="fa fa-info-circle"></i>
-				   Alert : No. of quantity is exceed available quatity for particular booking please update or remove Item
+		          <p><i class="fa fa-info-circle"></i>Alert :Some or all of the quantity for your event selected is not in stock.</p>
+							<p>You can:
+								<ul>
+									<li>Reduce the number of tickets requested </li>
+									<li>Contact KSG on <a href="mailto:info@kingdomsg.com?subject=feedback">info@kingdomsg.com</a> to request a waitlist of these tickets.</li>
+								</ul>
+							</p>
 		        </div>
 	        <% end %>
 
@@ -98,7 +105,7 @@
 		background-color: white !important;
 		color:  black !important;
 	}
-	
+
 </style>
 <script>
 	$(document).ready(function(){
@@ -154,12 +161,12 @@
 					$('#grand_total').html(g_total);
 		          },
 		          error : function(xhr,errmsg,err) {
-		            
+
 		            alert("xhr:"+xhr+" errmsg:"+errmsg+" err:"+err);
 		          }
 		        });
 
-	    		
+
 	    	}
 	    	if ($('.yourclass').length == 0){
 	    		$('#checkout_btn').removeClass('disabled');

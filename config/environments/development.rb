@@ -51,17 +51,29 @@ Rails.application.configure do
    config.action_mailer.perform_deliveries = true
 
    config.action_mailer.default :charset => "utf-8"
-   config.action_mailer.smtp_settings = {
-       :address => "smtp.gmail.com",
-       :port => 587,
-       :user_name => "kuldeep.j@infiny.in",
-       :password => "kuldeep123!@#",
-       # :user_name => "kuldeep.j@infiny.in",
-       # :password => "kuldeep123!@#",
-       :authentication => :plain,
-       :enable_starttls_auto => true
-   }
+  #  config.action_mailer.smtp_settings = {
+  #      :address => "smtp.gmail.com",
+  #      :port => 587,
+  #      :user_name => "kuldeep.j@infiny.in",
+  #      :password => "kuldeep123!@#",
+  #      # :user_name => "kuldeep.j@infiny.in",
+  #      # :password => "kuldeep123!@#",
+  #      :authentication => :plain,
+  #      :enable_starttls_auto => true
+  #  }
+  config.action_mailer.smtp_settings = {
+      :address => "kingdomsg.com",
+      :port => 465,
+      :ssl => true,
+      :user_name => "info@kingdomsg.com",
+      :password => "Neutral2017",
+      # :user_name => "kuldeep.j@infiny.in",
+      # :password => "kuldeep123!@#",
+      :authentication => :plain,
+      :openssl_verify_mode => 'none'
 
+      #:enable_starttls_auto => true
+  }
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
