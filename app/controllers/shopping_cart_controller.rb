@@ -235,6 +235,8 @@ class ShoppingCartController < ApplicationController
       response = kingdomsg_booking_api(url,data)
       if not response == "success"
         redirect_to :back, :flash => {:error => 'Somthing went wrong'}
+      else
+        redirect_to '/thank_you', :flash => {:success => 'Booking Successfull'}
       end
 
 
@@ -290,6 +292,8 @@ class ShoppingCartController < ApplicationController
         response = kingdomsg_booking_api(url,data)
         if not response == "success"
           redirect_to :back, :flash => {:error => 'Somthing went wrong'}
+        else
+          redirect_to '/thank_you', :flash => {:success => 'Booking Successfull'}
         end
       else
         puts "not deone"
@@ -298,7 +302,7 @@ class ShoppingCartController < ApplicationController
       end
 
     end
-    redirect_to '/thank_you', :flash => {:success => 'Booking Successfull'}
+    
   end
 
   def my_transaction
