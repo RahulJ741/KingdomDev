@@ -41,7 +41,7 @@ class WelcomeEmailMailer < ApplicationMailer
   end
 
   def admin_shopping_cart(cart, user)
-    @cart_data = cart
+    @cart = cart
     @user = user
     mail :to => "info@kingdomsg.com", :subject => "User shopping cart details"
   end

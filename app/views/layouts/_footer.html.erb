@@ -688,7 +688,64 @@ $(document).ready(function(){
 
 				}
 			});
+			
+			$("#payment-form").validate({
+				onfocusout: function(e) {
+						 this.element(e);
+					},
+					 onkeyup: false,
+				rules:{
+					first_name:{
+						required: true
+					},
+					last_name: {
+						required: true
+					},
+					email: {
+						required: true,
+						email: true
+					},
+					phone: {
+						maxlength: 10
+					},
+					address:{
+						required:true
+					},
+					city:{
+						required:true
+					},
 
+					country:{
+						required:true
+					}
+
+				},
+				messages:{
+					first_name: {
+						required: "This field is required"
+					},
+					last_name: {
+						required: "This field is required"
+					},
+					email: {
+						required: "This field is required"
+					},
+					phone:{
+						required: "This field is required"
+					},
+					address:{
+						required: "This field is required"
+					},
+					city:{
+						required: "This field is required"
+					},
+
+					country:{
+						required: "This field is required"
+					}
+
+				}
+			});
 			$("#change_pass").validate({
 				onfocusout: function(e) {
                 this.element(e);

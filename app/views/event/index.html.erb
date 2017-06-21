@@ -99,7 +99,7 @@
                                 <div class="col-md-2 col-sm-2 col-xs-2 ticket2-applications-calender2 <%= i['name'].tr(' ','_') %>" style="padding: 15px 0px !important;position: relative;left: 2px;">
                                     <div class="arrow-left <%= i['name'].tr(' ','_') %>_arr"></div>
                                     <div style="color: white; font-size: 20px;">
-                                        <h4 style="font-size: 25px;">Starting <br />from <br /> <strong style="font-size: 25px;">AUD<%= i['start_rate'] %></strong><h4>
+                                        <h4 style="font-size: 25px;">Starting <br />from <br /> <strong style="font-size: 25px;">AUD <%= i['start_rate'] %></strong><h4>
                                     </div>
                                     <a href="/event/show/<%= i['event_uid'] %>">
                                         <button type="button" class="btn btn-default">

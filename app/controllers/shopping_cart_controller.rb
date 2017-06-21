@@ -168,6 +168,8 @@ class ShoppingCartController < ApplicationController
     cart = Cart.where(:user_id => session[:user_id])
 
     user = User.find(session[:user_id])
+    user.update(:first_name => params[:first_name], :last_name => params[:last_name],:email => params[:email] ,:phone => params[:phone], :address => params[:address], :city => params[:city], :state => params[:state], :post_code => params[:post_code], :country => params[:country], :middle_name => params[:middle_name] )
+    
     @cart_data = []
     for i in cart
       data1 = {}
@@ -198,6 +200,9 @@ class ShoppingCartController < ApplicationController
       else
         order_id = (MyPayment.where('order_id Is NOT NULL').last.order_id)+1
       end
+      c_data = @cart_data
+      WelcomeEmailMailer.rate_exteted(c_data,user).deliver_now
+      WelcomeEmailMailer.admin_rate_exteted(c_data,user).deliver_now
       pymt = MyPayment.create(user_id: session[:user_id], order_id: order_id, total: total, date: Time.current.to_date)
       data =[]
       @del_cart.each do |mo|
@@ -213,7 +218,8 @@ class ShoppingCartController < ApplicationController
       if not response == "success"
         redirect_to :back, :flash => {:error => 'Somthing went wrong'}
       end
-      WelcomeEmailMailer.rate_exteted(@cart_data,user).deliver_now
+      
+  
     else
       require 'paypal-sdk-rest'
       @payment = PayPal::SDK::REST::Payment.new({
@@ -249,9 +255,9 @@ class ShoppingCartController < ApplicationController
 
         # my paymment update after making a payment
         @del_cart = Cart.where(user_id: session[:user_id])
-
-        WelcomeEmailMailer.shoppingdetails(@cart_data,user).deliver_now
-
+        c_data = @cart_data
+        WelcomeEmailMailer.shoppingdetails(c_data,user).deliver_now
+        WelcomeEmailMailer.admin_shopping_cart(c_data, user).deliver_now
         pymt = MyPayment.create(user_id: session[:user_id], payment_id: @payment.id, total: total, date: Time.current.to_date)
         data = []
         @del_cart.each do |mo|
