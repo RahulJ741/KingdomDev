@@ -21,17 +21,24 @@ class ApplicationController < ActionController::Base
 
   def kingdomsg_booking_api(url,data)
     user = User.find(session[:user_id])
+
     payload = {}
     payload["ContactComponentSubmission"]={}
+    payload["ContactComponentSubmission"]["LastName"] = user.last_name
     payload["ContactComponentSubmission"]["FirstName"] = user.first_name
-    payload["ContactComponentSubmission"]["MiddleName"] = user.middle_name
-    payload["ContactComponentSubmission"]["email"] = user.email
-    payload["ContactComponentSubmission"]["Organization"] = "Centium Software"
+    payload["ContactComponentSubmission"]["Title"] = "Dr"
+    payload["ContactComponentSubmission"]["Organization"] = ""
+    payload["ContactComponentSubmission"]["EmailAddress"] = user.email
+    payload["ContactComponentSubmission"]["OfficeNumber"] = ""
+    payload["ContactComponentSubmission"]["FaxNumber"] = ""
+    payload["ContactComponentSubmission"]["MobileNumber"] = user.phone
+    payload["ContactComponentSubmission"]["UserDefinedFieldOne"] = ""
     payload["ContactComponentSubmission"]["AddressLineOne"] = user.address
-    payload["ContactComponentSubmission"]["City"] = user.city
-    payload["ContactComponentSubmission"]["State"] = user.state
-    payload["ContactComponentSubmission"]["Postcode"] = user.post_code
-    payload["ContactComponentSubmission"]["Country"] = user.country
+    payload["ContactComponentSubmission"]["AddressLineTwo"] = ""
+    payload["ContactComponentSubmission"]["AddressCity"] = user.city
+    payload["ContactComponentSubmission"]["AddressState"] = user.state
+    payload["ContactComponentSubmission"]["AddressPostcode"] = user.post_code
+    payload["ContactComponentSubmission"]["Privacy"] = "None"
     payload["Functions"] = []
     for i in data
       data1 ={}

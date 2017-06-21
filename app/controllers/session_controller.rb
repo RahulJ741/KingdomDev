@@ -71,12 +71,7 @@ class SessionController < ApplicationController
   end
 
   def logout
-    @user = User.find(session[:user_id])
-    puts "888888888888888888888888"
-    puts session[:user_id]
-    # session[:user_id] = nil
-    # session.delete(:user_id)
-    reset_session
+    session[:user_id] = nil
     redirect_to root_url, :flash=> {:error => "You have been successfully logged out!"}
   end
 
