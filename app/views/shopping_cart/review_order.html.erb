@@ -90,6 +90,30 @@
 							</select>
 					      </div>
 						</div>
+					<% else %>
+						<h3 class="pull-left" style="padding-left:10px;">Your Information</h3>
+						<div class="col-xs-12 pad-none">
+							<table class="table table-hover">
+							    <thead>
+							      <tr>
+							        <th>Name</th>
+							        <th>Email</th>
+							        <th>Phone</th>
+							        <th>Address</th>
+							        <th>Country</th>
+							      </tr>
+							    </thead>
+							    <tbody>
+							      <tr>
+							        <td><%= @current_user.first_name %>  <%= @current_user.last_name %></td>
+							        <td><%= @current_user.email %></td>
+									<td><%= @current_user.phone %></td>
+									<td><%= @current_user.address %></td>
+									<td><%= @current_user.country %></td>
+							      </tr>
+							    </tbody>
+							</table>
+						</div>
 					<% end %>
 		        </div>
 		    </div>
@@ -157,7 +181,7 @@
 							    </thead>
 							    <tbody>
 							      <tr>
-							        <td><%= @card_data['cardtype'] %></td>
+							        <td><%= @card_data['cardtype'].capitalize %></td>
 							        <td><%= @card_data['cardNumber'] %></td>
 									<td><%= @card_data['cardExpiry'] %></td>
 									<td><%= @card_data['cardCVC'] %></td>

@@ -152,6 +152,7 @@ class ShoppingCartController < ApplicationController
         data1['available'] = catagory['Available']
         data1['amount'] = catagory['Amount']
         data1['quantity'] = i.quantity
+       
         data1['event_date'] = event.date.strftime("%d %b %y")
       end
       @cart_data.push(data1)

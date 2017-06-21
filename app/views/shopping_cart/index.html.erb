@@ -159,6 +159,11 @@
 					});
 					~String(parseFloat(g_total)).indexOf(".") ? g_total = parseFloat(g_total).toFixed(2) : g_total = parseFloat(g_total);
 					$('#grand_total').html(g_total);
+					if ($('.is_exceed').length == 0){
+			    		$('#checkout_btn').removeClass('disabled');
+			    		$('#checkout_btn').attr('href','/checkout/');
+			    		$('.alert-danger').hide();
+			    	}
 		          },
 		          error : function(xhr,errmsg,err) {
 
@@ -167,12 +172,16 @@
 		        });
 
 
+	    	}else{
+	    		if(!$(this).parents('tr').hasClass('is_exceed')){
+		    		$(this).parents('tr').addClass('is_exceed');
+		    	    $(this).parents('tr').css('background-color','#f2dede');
+		    		$('#checkout_btn').addClass('disabled');
+		    		$('#checkout_btn').attr('href','javascript:void(0)');
+		    		$('.alert-danger').show();
+			    }
 	    	}
-	    	if ($('.yourclass').length == 0){
-	    		$('#checkout_btn').removeClass('disabled');
-	    		$('#checkout_btn').attr('href','/checkout/');
-	    		$('.alert-danger').hide();
-	    	}
+	    	
 	    });
 
 	});
