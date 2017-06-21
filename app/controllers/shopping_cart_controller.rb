@@ -150,10 +150,21 @@ class ShoppingCartController < ApplicationController
         data1['item_type'] = 'Event'
         data1['name'] = event.name+", "+catagory['Name']
         data1['available'] = catagory['Available']
-        data1['amount'] = catagory['Amount']
+        data1['amount'] = catagory['Amount'].to_f % 1 == 0 ? catagory['Amount'].to_i : helpers.number_with_precision(catagory['Amount'].to_f, :precision => 2)
         data1['quantity'] = i.quantity
-       
+        puts "==================="
+        puts data1['available'].to_i
+        puts data1['quantity'].to_i
+        if data1['available'].to_i < data1['quantity'].to_i
+          puts "==================="
+          data1['is_exceed'] = true
+          @is_exceed = true
+        else
+          data1['is_exceed'] = false
+        end
         data1['event_date'] = event.date.strftime("%d %b %y")
+        data1['row_total'] = data1['quantity'].to_f*data1['amount'].to_f
+        data1['row_total']= data1['row_total'].to_f % 1 == 0 ? data1['row_total'].to_i : helpers.number_with_precision(data1['row_total'].to_f, :precision => 2)
       end
       @cart_data.push(data1)
     end
@@ -166,6 +177,7 @@ class ShoppingCartController < ApplicationController
       @card_data['cardtype']=params[:cardtype]
     end
     @total = @cart_data.map {|s| s['amount'].to_f * s['quantity'].to_f}.reduce(0, :+)
+    @total = @total.to_f % 1 == 0 ? @total.to_i : helpers.number_with_precision(@total.to_f, :precision => 2)
   end
 
   def make_payment

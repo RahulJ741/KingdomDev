@@ -11,7 +11,19 @@
     <div class="row">
 		<div class="exclusive-reprensentatio-inner accommodation-main-inner4">
 			<h2 class="fadeInUp wow" data-wow-duration="2s" data-wow-delay="0s">Review Booking</h2>
-
+			<div class="col-sm-12 col-md-10 col-md-offset-1">
+				<% if @is_exceed %>
+		        	<div class="alert alert-danger alert-dismissable">
+			          <p><i class="fa fa-info-circle"></i>Alert :Some or all of the quantity for your event selected is not in stock.</p>
+								<p>You can:
+									<ul>
+										<li>Reduce the number of tickets requested </li>
+										<li>Contact KSG on <a href="mailto:info@kingdomsg.com?subject=feedback">info@kingdomsg.com</a> to request a waitlist of these tickets.</li>
+									</ul>
+								</p>
+			        </div>
+		        <% end %>
+			</div>
 
 
     	</div>
@@ -141,13 +153,13 @@
 						    </thead>
 						    <tbody>
 						    	<% @cart_data.each do |i| %>
-							      <tr>
+							      <tr <% if i['is_exceed'] %>style="background-color: #f2dede;" <% end %>>
 							        <td><%= i['item_type'] %></td>
 									<td><%= i['name'] %></td>
 									<td><%= i['event_date'] %></td>
 									<td><%= i['quantity'] %></td>
 									<td>AUD <%= i['amount'] %></td>
-									<td>AUD <%= i['amount'].to_f * i['quantity'].to_f %></td>
+									<td>AUD <%= i['row_total'] %></td>
 							      </tr>
 						      <% end %>
 						    </tbody>
@@ -217,7 +229,7 @@
 						<a class="subscribe-submit" href="/cart" style="padding: 10px 15px !important; width: auto !important; margin: 9px 10px 10px 0px !important; font-size: 14px;">
 							Edit
 						</a>
-						<button type="button" id="checkout_btn" class="subscribe-submit" style="padding: 10px 15px !important; width: 100PX !important; margin: 9px 0px 10px 0px !important; font-size: 14px;box-shadow: 0 5px 0 0 #a1790c;">
+						<button type="button"  <% if @is_exceed %>class="btn subscribe-submit disabled" href="javascript:void(0)" <%else%>id="checkout_btn" class="subscribe-submit" <% end %>style="padding: 10px 15px !important; width: 100PX !important; margin: 9px 0px 10px 0px !important; font-size: 14px;box-shadow: 0 5px 0 0 #a1790c;">
 							Confirm
 						</button>
 
