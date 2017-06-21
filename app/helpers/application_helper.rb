@@ -9,4 +9,8 @@ module ApplicationHelper
     end
     flash_messages.join("\n").html_safe
   end
+
+  def helpers
+    ActionController::Base.helpers
+  end
 end

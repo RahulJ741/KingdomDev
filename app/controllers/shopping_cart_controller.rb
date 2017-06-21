@@ -322,9 +322,11 @@ class ShoppingCartController < ApplicationController
             data1['item_type'] = 'Event'
             data1['name'] = event.name+", "+catagory['Name']
             data1['available'] = catagory['Available']
-            data1['amount'] = catagory['Amount']
+            data1['amount'] = catagory['Amount'].to_f % 1 == 0 ? catagory['Amount'].to_i : helpers.number_with_precision(catagory['Amount'].to_f, :precision => 2)
             data1['quantity'] = i.quantity
             data1['event_date'] = event.date.strftime("%d %b %y")
+            data1['row_total'] = data1['quantity'].to_f*data1['amount'].to_f
+            data1['row_total']= data1['row_total'].to_f % 1 == 0 ? data1['row_total'].to_i : helpers.number_with_precision(data1['row_total'].to_f, :precision => 2)
           end
           @my_order.push(data1)
         end
@@ -344,9 +346,11 @@ class ShoppingCartController < ApplicationController
             data1['item_type'] = 'Event'
             data1['name'] = event.name+", "+catagory['Name']
             data1['available'] = catagory['Available']
-            data1['amount'] = catagory['Amount']
+            data1['amount'] = catagory['Amount'].to_f % 1 == 0 ? catagory['Amount'].to_i : helpers.number_with_precision(catagory['Amount'].to_f, :precision => 2)
             data1['quantity'] = i.quantity
             data1['event_date'] = event.date.strftime("%d %b %y")
+            data1['row_total'] = data1['quantity'].to_f*data1['amount'].to_f
+            data1['row_total']= data1['row_total'].to_f % 1 == 0 ? data1['row_total'].to_i : helpers.number_with_precision(data1['row_total'].to_f, :precision => 2)
           end
           @pending_order.push(data1)
         end

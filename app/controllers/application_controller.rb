@@ -65,6 +65,8 @@ class ApplicationController < ActionController::Base
     return data
   end
 
- 
+  def helpers
+    ActionController::Base.helpers
+  end
 
 end

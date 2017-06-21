@@ -115,7 +115,7 @@
 
 
 		                                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 10px 15px; border-bottom: 1px solid #cccccc;">
-		                                    Cost: <strong >AUD <span class="cost" data-amount="<%= i['Amount'] %>"><%= i['Amount'] %></span></strong>
+		                                    Cost: <strong >AUD <span class="cost" data-amount="<%= i['Amount'] %>"><%=i['Amount'].to_f % 1 == 0 ? i['Amount'].to_i : helpers.number_with_precision(i['Amount'].to_f, :precision => 2) %></span></strong>
 		                                </div>
 
 
@@ -317,7 +317,10 @@
 	    		$(this).parents('.cat_box').find('button').removeClass('disabled');
 	    		var cost = $(this).parents('.cat_box').find('.cost');
 
-	    		cost.html(parseFloat($(this).val())*parseFloat(cost.data('amount')));
+	    		var row_total =parseFloat($(this).val())*parseFloat(cost.data('amount'));
+	    		~String(parseFloat(row_total)).indexOf(".") ? row_total = parseFloat(row_total).toFixed(2) : row_total = parseFloat(row_total);
+
+	    		cost.html(row_total);
 	    	}
 	    	else{
 	    		if (! $(this).parents('.cat_box').find('button').hasClass('disabled') ){

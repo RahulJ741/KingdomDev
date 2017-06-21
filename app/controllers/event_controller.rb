@@ -1,5 +1,9 @@
 class EventController < ApplicationController
 
+  def helpers
+    ActionController::Base.helpers
+  end
+  
   def index
     if params[:event].blank? and params[:start_date].blank? and params[:end_date].blank?
       url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetFunctions")
