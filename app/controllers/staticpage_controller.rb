@@ -3,6 +3,15 @@ class StaticpageController < ApplicationController
   require 'net/http'
   require 'digest/md5'
 
+  def add_image
+
+    if request.post?
+      puts "==============="
+      HotelImage.where(hotel_id: params[:hotel_id]).destroy_all
+      HotelImage.create(hotel_id: params[:hotel_id],pics: params[:pics])
+    end
+  end
+
   def test_payment
     
     url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/BookFunction")

@@ -29,12 +29,14 @@ Rails.application.routes.draw do
   post 'reset' => 'session#reset'
   post 'authentication' => 'session#authentication'
   match 'reset_password/:activation_code' => 'session#reset_password' , :via => [:get, :post]
+  
   match 'change_pass' => 'session#change_pass', :via => [:get,:post]
   get 'logout' => 'session#logout'
   get 'update_profile' => 'session#update_profile'
   post 'change_info' => 'session#change_info'
   match 'findemail' => 'session#findemail', :via => [:get, :post]
   match 'reset_user' => 'session#reset_user', :via => [:get, :post]
+  
   match 'hotel_info/:id' => 'hotel#info', :via => [:get, :post]
   match 'accommodation' => 'hotel#accommodation', :via => [:get, :post]
 
@@ -76,6 +78,7 @@ Rails.application.routes.draw do
   get 'hotel/quest_spring_hill' => 'staticpage#quest_spring_hill'
   get 'hotel/baronnet_apartment' => 'staticpage#baronnet_apartment'
   get 'hotel/bay_apartments' => 'staticpage#bay_apartments'
+  match 'add_image' => 'staticpage#add_image', :via => [:get, :post]
 
 
   get '/subscribed_user/:email' => 'staticpage#subscribed_user'

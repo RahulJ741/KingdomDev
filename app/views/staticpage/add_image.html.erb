@@ -1,0 +1,10 @@
+<form action="add_image" method="post" enctype='multipart/form-data'>
+	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+	<select name="hotel_id">
+		<% Hotel.all.each do |i| %>
+			<option value="<%= i.id %>"><%= i.name %></option>
+		<% end %>
+	</select>
+	<input type="file" name="pics">
+	<input type="submit">
+</form>
