@@ -78,8 +78,7 @@ Rails.application.routes.draw do
   get 'hotel/quest_spring_hill' => 'staticpage#quest_spring_hill'
   get 'hotel/baronnet_apartment' => 'staticpage#baronnet_apartment'
   get 'hotel/bay_apartments' => 'staticpage#bay_apartments'
-  match 'add_image' => 'staticpage#add_image', :via => [:get, :post]
-
+  # match 'add_image' => 'staticpage#add_image', :via => [:get, :post]
 
   get '/subscribed_user/:email' => 'staticpage#subscribed_user'
 end

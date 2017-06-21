@@ -26,6 +26,35 @@ namespace :import do
         puts x
         x=x+1  
     end
+  end
+
+  task :hotels => [:environment] do
+    Rails.logger.level = Logger::DEBUG
+    file = "hotel_data.csv"
+    x=1
+    CSV.foreach(file, :headers => true) do |row|
+        name =  row['Hotel']
+        # puts row['Hotel']
+        hotel = Hotel.find_by_name(name)
+        if hotel
+          puts hotel.name
+          hotel_id = hotel.id
+          room_type = row['Room Type']
+          room_code = row['Item Code']
+          check_in_date = Date.parse(row['Check In Date'])
+          check_out_date = Date.parse(row['Check Out Date'])
+          max_person = row['Pax']
+          no_of_night = row['Nights']
+          rate = (row['Daily Rate'].gsub('$','').strip).gsub(',','')
+          Room.create(hotel_id: hotel.id,room_type: room_type,room_code:room_code,check_in_date: check_in_date,check_out_date: check_out_date,max_person: max_person,no_of_night: no_of_night,rate: rate)
+        end
+
+        
+       
+        puts "===============" 
+        puts x
+        x=x+1  
+    end
     
   end
 
