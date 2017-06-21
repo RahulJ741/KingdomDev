@@ -6,7 +6,7 @@
 <body>
 
 <div>
-	<p>A customer has placed an order <2500. Please ensure order is live in EA and follow up payment if it is delayed.</p>
+	<p>A customer has placed an order over $2500, you need to action this immediately by producing an invoice with TT bank transfer details.</p>
 	<table border="1">
 	  <thead>
 	    <tr>
@@ -31,17 +31,16 @@
       </tr>
     </tbody>
 	</table>
-
+<br><br>
   <table border="1">
     <thead>
       <tr>
-         <th >Name</th>
-            <th >Quantity</th>
-            <th >Sessin Type</th>
-            <th >Date</th>
-						<th>Start Time</th>
-						<th>End Time</th>
-
+				<th >Event Type</th>
+					 <th >Name</th>
+					 <th >Date</th>
+					 <th >Quantity</th>
+					 <th>Amount</th>
+					 <th>Total</th>
           </tr>
     </thead>
     <tbody>
@@ -53,8 +52,8 @@
               <td><%= i['name'] %></td>
               <td ><%= i['event_date'] %></td>
               <td ><%= i['quantity'] %></td>
-							<td><%= i['amount'] %></td>
-							<td><%= i['amount'].to_f * i['quantity'].to_f %></td>
+							<td>AUD <%= i['amount'] %></td>
+							<td>AUD <%= i['amount'].to_f * i['quantity'].to_f %></td>
 
             <!-- </h4> -->
         </tr>
