@@ -46,7 +46,10 @@
                                         <option <% if params[:event] == i %>selected=""<% end %> value="<%= i %>"><%= i %></option>
                                     <% end %>
                                 </select><br>
-        
+                                <label for="event" class="pull-left">Start Date</label>
+                                <input type="date" name="start_date" class="form-control datepicker" value="<%= params[:start_date] %>"><br>
+                                <label for="event" class="pull-left">End Date</label><br>
+                                <input type="date" name="end_date" class="form-control datepicker" value="<%= params[:end_date] %>"><br>
                                 <button type="submit" class="btn btn-block sub-btn" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;">Apply</button>
                         </form>
                         </div>

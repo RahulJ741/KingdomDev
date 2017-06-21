@@ -1,10 +1,10 @@
 class EventController < ApplicationController
   
   def index
-    if params[:event].blank?
+    if params[:event].blank? and params[:start_date].blank? and params[:end_date].blank?
       url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetFunctions")
     else
-      url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetFunctions?group="+params[:event])
+      url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetFunctions?group="+params[:event]+"&startdate="+params[:start_date].to_s+"&enddate="+params[:end_date].to_s)
     end
    
     data = kingdomsg_api(url)

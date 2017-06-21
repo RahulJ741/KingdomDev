@@ -799,6 +799,12 @@ $(document).ready(function(){
 
 	$('#from_date_shop').bootstrapMaterialDatePicker('setMinDate', '01/01/2018');
     $('#from_date_shop').bootstrapMaterialDatePicker('setMaxDate','31/12/2018');
+
+    $('.datepicker').bootstrapMaterialDatePicker({ format : 'YYYY-MM-DD', weekStart : 0, time: false });
+
+	$('.datepicker').bootstrapMaterialDatePicker('setMinDate', '2018-01-01');
+    $('.datepicker').bootstrapMaterialDatePicker('setMaxDate','2018-12-31');
+    
 	toastr.options = {
 		"closeButton": false,
 		  "debug": false,
