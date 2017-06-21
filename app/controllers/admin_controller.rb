@@ -83,7 +83,7 @@ class AdminController < ApplicationController
 				data1.append('Paypal')
 				data1.append(i.payment_id)
 			else
-				data1.append('Offline')
+				data1.append('Invoice')
 				data1.append('N/A')
 			end
 			data1.append('<a href="/admin/transaction/show/'+i['id'].to_s+'">
