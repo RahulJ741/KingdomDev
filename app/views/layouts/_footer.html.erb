@@ -374,6 +374,61 @@
 
 
 
+
+
+<div class="modal fade" id="Submit_query" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true" style="z-index: 99999;">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class=" modal-header login-modal-header" style="background-color: #27ae60;">
+				<button type="button" class="close" data-dismiss="modal" style="Opacity:1;">&times;</button>
+				<h4 class="modal-title text-center" id="ShopModalLabel"> Update Profile </h4>
+			</div>
+			<div class="modal-body" style="padding-left: 10%">
+				<div class="row">
+					<div class="col col-md-7 col-sm-7">
+						<h4>Dont forget your home away from home</h4>
+					</div>
+					<div class="col col-md-5 col-sm-5">
+						<a href="/accommodation"><button type="button" class="btn btn-block sub-btn pull-right" style="width: auto; background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;">Add Accommodation</button></a>
+					</div>
+					<div class="col col-md-7 col-sm-7">
+						<h4>See more of Australia since youve come all this way</h4>
+					</div>
+					<div class="col col-md-5 col-sm-5">
+						<a href="/tour"><button type="button" class="btn btn-block sub-btn pull-right" style="width: auto; background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;">Add Tours</button></a>
+					</div>
+					<div class="col col-md-7 col-sm-7">
+						<h4>Sports fanatic</h4>
+					</div>
+					<div class="col col-md-5 col-sm-5">
+						<a href="/event/index/"><button type="button" class="btn btn-block sub-btn pull-right" style="width: auto; background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;">More tickets</button></a>
+					</div>
+					<div class="col col-md-7 col-sm-7">
+						<h4>Want to add all of the above? </h4>
+					</div>
+					<div class="col col-md-5 col-sm-5">
+						<a href="/package"><button type="button" class="btn btn-block sub-btn pull-right" style=" width: auto;background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;">Inclusive Packages</button></a>
+					</div>
+
+				</div>
+
+				
+			</div>
+			<div class="modal-footer" style="">
+				<!-- <button type="button" class="btn btn-default" data-dismiss="modal" style="float:right;">No</button> -->
+				<button type="button" id="submit_cart" class="btn btn-warning btn-block" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000; float:right; ">Proceed & Pay</button>
+
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+
+
 <style>
 
 
@@ -486,6 +541,19 @@ $(document).ready(function(){
 		<script>
 
     $(document).ready(function(){
+
+
+			$("#checkout_btn").click(function(){
+				if ($("#payment-form").valid()){
+					$("#Submit_query").modal('show');
+				}
+			});
+
+
+			$("#submit_cart").click(function(){
+				$("#payment-form").submit();
+			});
+
 
 			$(".Shopcart").click(function(){
 				var room_i = $.parseJSON($(this).attr('data-button'));
