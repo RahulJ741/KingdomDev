@@ -315,7 +315,11 @@ $(document).ready(function() {
       {
          bSortable: false,
          aTargets: [6]
-      }
+      },
+          {
+            "targets": [ 0 ],
+            "visible": false,
+          }
     ],
       "preDrawCallback" : function() {
         // Initialize the responsive datatables helper once.

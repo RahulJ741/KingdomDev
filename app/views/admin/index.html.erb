@@ -109,7 +109,7 @@
                       <thead>
                         <tr>
 
-                          <th data-class="expand">Id</th>
+                          <th data-class="expand">Sr. no.</th>
                           <th >User</th>
                           <th >Amount</th>
                           <th data-hide="phone">Date</th>
@@ -312,6 +312,10 @@
           {
              bSortable: false,
              aTargets: [6]
+          },
+          {
+            "targets": [ 0 ],
+            "visible": false,
           }
         ],
           "preDrawCallback" : function() {
