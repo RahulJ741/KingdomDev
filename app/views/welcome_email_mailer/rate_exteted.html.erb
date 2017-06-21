@@ -6,8 +6,9 @@
 <body>
 
 <div>
-	<h3>Hi, <%= @user.first_name %></h3>
-	<p>Congratulations, your order is successful.</p>
+	<h3>Hi <%= @user.first_name %>,</h3>
+	<p>For security purposes, Kingdom Sports Group process orders over $2,500 because bank transfer is required.</p>
+	<p>One of the dedicated KSG team will email you shortly with complete invoice and bank transfer details.</p>
 	<table border="1">
     <thead>
       <tr>
@@ -29,8 +30,8 @@
               <td><%= i['name'] %></td>
               <td ><%= i['event_date'] %></td>
               <td ><%= i['quantity'] %></td>
-							<td><%= i['amount'] %></td>
-							<td><%= i['amount'].to_f * i['quantity'].to_f %></td>
+							<td>AUD <%= i['amount'] %></td>
+							<td>AUD <%= i['amount'].to_f * i['quantity'].to_f %></td>
         </tr>
         <%end%>
       </tbody>

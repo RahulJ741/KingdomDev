@@ -4,7 +4,7 @@ class WelcomeEmailMailer < ApplicationMailer
   def welcomeemail(user)
     @greeting = "Hi"
     @user = user
-    mail :to => user.email, :subject => "Welcome to kingdomsg2018"
+    mail :to => user.email, :subject => "Welcome to Kingdom Sports Group"
 
   end
 
@@ -37,7 +37,8 @@ class WelcomeEmailMailer < ApplicationMailer
   def admin_rate_exteted(cart,user)
     @cart = cart
     @user = user
-    mail :to => "info@kingdomsg.com", :subject => "User shopping cart rate exceded"
+    mail :to => "info@kingdomsg.com", :subject => "A customer has placed an order over $2500"
+    # info@kingdomsg.com
   end
 
   def admin_shopping_cart(cart, user)
