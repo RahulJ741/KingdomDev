@@ -73,7 +73,7 @@ class ShoppingCartController < ApplicationController
 
   def event_add_cart
     Cart.create(:user_id => session[:user_id],:item => 0,:item_id => params[:item_id],:item_uid => params[:item_uid],:item_cat_code => params[:item_cat_code],:quantity => ((params[:quantity]).to_i).abs )
-    redirect_to :back, :flash => {:success => 'Added to cart'}
+    redirect_to '/event/index/', :flash => {:success => 'Added to cart'}
   end
 
   def checkout
@@ -134,7 +134,7 @@ class ShoppingCartController < ApplicationController
     @is_pro_complete =true
     if @current_user.first_name.blank? or @current_user.last_name.blank? or @current_user.phone.blank? or @current_user.address.blank? or @current_user.city.blank? or @current_user.country.blank?
       @is_pro_complete =false
-    end  
+    end
     cart = Cart.where(:user_id => session[:user_id])
     puts cart.inspect
 
@@ -223,8 +223,8 @@ class ShoppingCartController < ApplicationController
       if not response == "success"
         redirect_to :back, :flash => {:error => 'Somthing went wrong'}
       end
-      
-  
+
+
     else
       require 'paypal-sdk-rest'
       @payment = PayPal::SDK::REST::Payment.new({
