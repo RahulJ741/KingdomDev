@@ -234,7 +234,7 @@ class ShoppingCartController < ApplicationController
       @del_cart.destroy_all
       response = kingdomsg_booking_api(url,data)
       if not response == "success"
-        redirect_to :back, :flash => {:error => 'Somthing went wrong'}
+        redirect_to '/cart', :flash => {:error => 'Somthing went wrong'}
       else
         redirect_to '/thank_you', :flash => {:success => 'Booking Successfull'}
       end
@@ -291,14 +291,14 @@ class ShoppingCartController < ApplicationController
         @del_cart.destroy_all
         response = kingdomsg_booking_api(url,data)
         if not response == "success"
-          redirect_to :back, :flash => {:error => 'Somthing went wrong'}
+          redirect_to '/cart', :flash => {:error => 'Somthing went wrong'}
         else
           redirect_to '/thank_you', :flash => {:success => 'Booking Successfull'}
         end
       else
         puts "not deone"
         puts @payment.error  # Error Hash
-        redirect_to :back, :flash => {:error => 'Somthing went wrong'}
+        redirect_to '/cart', :flash => {:error => 'Somthing went wrong'}
       end
 
     end
