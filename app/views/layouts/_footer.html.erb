@@ -377,7 +377,7 @@
 
 
 <div class="modal fade" id="Submit_query" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true" style="z-index: 99999;">
-	<div class="modal-dialog">
+	<div class="modal-dialog" style="width:59%;">
 
 		<!-- Modal content-->
 		<div class="modal-content">
@@ -388,25 +388,25 @@
 			<div class="modal-body" style="padding-left: 10%">
 				<div class="row">
 					<div class="col col-md-7 col-sm-7">
-						<h4>Dont forget your home away from home</h4>
+						<h4 style="font-size: 16px;">Dont forget your home away from home</h4>
 					</div>
 					<div class="col col-md-5 col-sm-5">
 						<a href="/accommodation"><button type="button" class="btn btn-block sub-btn pull-right" style="width: auto; background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;">Add Accommodation</button></a>
 					</div>
 					<div class="col col-md-7 col-sm-7">
-						<h4>See more of Australia since youve come all this way</h4>
+						<h4 style="font-size: 16px;">See more of Australia since youve come all this way</h4>
 					</div>
 					<div class="col col-md-5 col-sm-5">
 						<a href="/tour"><button type="button" class="btn btn-block sub-btn pull-right" style="width: auto; background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;">Add Tours</button></a>
 					</div>
 					<div class="col col-md-7 col-sm-7">
-						<h4>Sports fanatic</h4>
+						<h4 style="font-size: 16px;">Sports fanatic</h4>
 					</div>
 					<div class="col col-md-5 col-sm-5">
 						<a href="/event/index/"><button type="button" class="btn btn-block sub-btn pull-right" style="width: auto; background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;">More tickets</button></a>
 					</div>
 					<div class="col col-md-7 col-sm-7">
-						<h4>Want to add all of the above? </h4>
+						<h4 style="font-size: 16px;">Want to add all of the above? </h4>
 					</div>
 					<div class="col col-md-5 col-sm-5">
 						<a href="/package"><button type="button" class="btn btn-block sub-btn pull-right" style=" width: auto;background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;">Inclusive Packages</button></a>
@@ -926,12 +926,12 @@ $(document).ready(function(){
   </script>
 
 	<script type="text/javascript">
-	$('#from_date_shop').bootstrapMaterialDatePicker({ format : 'DD/MM/YYYY', weekStart : 0, time: false });
+	$('#from_date_shop').bootstrapMaterialDatePicker({ format : 'DD/MM/YYYY', weekStart : 0, time: false ,startDate: new Date()});
 
 	$('#from_date_shop').bootstrapMaterialDatePicker('setMinDate', '01/01/2018');
     $('#from_date_shop').bootstrapMaterialDatePicker('setMaxDate','31/12/2018');
 
-    $('.datepicker').bootstrapMaterialDatePicker({ format : 'YYYY-MM-DD', weekStart : 0, time: false });
+    $('.datepicker').bootstrapMaterialDatePicker({ format : 'YYYY-MM-DD', weekStart : 0, time: false, startDate: new Date() });
 
 	$('.datepicker').bootstrapMaterialDatePicker('setMinDate', '2018-01-01');
     $('.datepicker').bootstrapMaterialDatePicker('setMaxDate','2018-12-31');

@@ -16,16 +16,17 @@
 
       		<!-- <h3 style="text-align: center;font-size: 32px;"><%= flash[:msg] %></h3> -->
 			<div class="alert alert-info alert-dismissable">
-
-			   <p><i class="fa fa-info-circle"></i> Note: All requests above $2,500 will be checked by the KSG Team and you will be contacted offline for payment via bank transfer. Transactions under $2,500 will be processed online (with an additional 2.5% credit card surcharge).</p>
-				 <p>Transactions found to have breached the terms and conditions of sale may be cancelled by the KSG Team.</p>
-				 <p>For more information on the Terms and Conditions please download them <a href='http://dev2.infiny.in:3333/assets/Terms_and_Conditions_of_Sale_KSG_LEGAL_POLICY_v3.pdf'><strong style="text-decoration:underline">here</strong></a></p>
+				<i class="fa fa-info-circle pull-left" style="padding-top: 3px;"></i>
+			   <p style="text-align: left;padding-left: 10px;"> Note: All requests above $2,500 will be checked by the KSG Team and you will be contacted offline for payment via bank transfer. Transactions under $2,500 will be processed online (with an additional 2.5% credit card surcharge).</p>
+				 <p style="text-align: left;padding-left: 10px;">Transactions found to have breached the terms and conditions of sale may be cancelled by the KSG Team.</p>
+				 <p style="text-align: left;padding-left: 10px;">For more information on the Terms and Conditions please download them <a href='http://dev2.infiny.in:3333/assets/Terms_and_Conditions_of_Sale_KSG_LEGAL_POLICY_v3.pdf'><strong style="text-decoration:underline">here</strong></a></p>
 	        </div>
 	        <% if @is_exceed %>
 	        	<div class="alert alert-danger alert-dismissable">
-		          <p><i class="fa fa-info-circle"></i>Alert :Some or all of the quantity for your event selected is not in stock.</p>
-							<p>You can:
-								<ul>
+							<i class="fa fa-info-circle pull-left" style="padding-top: 3px;"></i>
+		          <p style="text-align: left;padding-left: 10px;">Alert :Some or all of the quantity for your event selected is not in stock.</p>
+							<p style="text-align: left;padding-left: 10px;">You can:
+								<ul style="text-align: left; padding-left: 25px;">
 									<li>Reduce the number of tickets requested </li>
 									<li>Contact KSG on <a href="mailto:info@kingdomsg.com?subject=feedback">info@kingdomsg.com</a> to request a waitlist of these tickets.</li>
 								</ul>
@@ -181,7 +182,7 @@
 		    		$('.alert-danger').show();
 			    }
 	    	}
-	    	
+
 	    });
 
 	});
