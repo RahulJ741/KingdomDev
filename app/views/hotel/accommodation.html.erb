@@ -51,351 +51,43 @@
 							</div>
 
 						</div>
-						<!-- scroll -->
 
-						<div class="col-xs-12 pad_none pallazo-versace-hotel-main">
-							<a href="/hotel/plazzo" >
-							<img src="/assets/images/pallazo-versace-hotel01.jpg" alt="" class="pallazo4-versace-img3" style="height: 546px;">
-							<div class="col-xs-12 pad_none pallazo-versace-ratig-out4">
-								<h3>Palazzo Versace</h3>
-								<span><!--<img src="< ?php echo base_url();?>assets/images/hotel-rating-full-img.png" alt="">-->
-                                  <i class="fa fa-star big-stars" aria-hidden="true"></i>
-                                 <i class="fa fa-star big-stars" aria-hidden="true"></i>
-                                 <i class="fa fa-star big-stars" aria-hidden="true"></i>
-                                 <i class="fa fa-star big-stars" aria-hidden="true"></i>
-                                 <i class="fa fa-star big-stars" aria-hidden="true"></i>
-                                 <i class="fa fa-plus big-stars" aria-hidden="true"></i>
-                                </span>
-							</div>
-							</a>
-						</div>
-
-						<!--<div class="col-xs-12 pad_none pallazo-versace-hotel-main">
-							<a href="Javascript:void(0)" onclick="getHotel('QT Gold Coast')">
-							<img src="/assets/images/qt4-hotel01.jpg" alt="" class="pallazo4-versace-img3">
-							<div class="col-xs-12 pad_none pallazo-versace-ratig-out4">
-								<h3>QT HOTEL</h3>
-								<!--<span><img src="< ?php echo base_url();?>assets/images/hotel-rating-full-img.png" alt=""></span>
-                                <span>
-                                  <i class="fa fa-star big-stars" aria-hidden="true"></i>
-                                 <i class="fa fa-star big-stars" aria-hidden="true"></i>
-                                 <i class="fa fa-star big-stars" aria-hidden="true"></i>
-                                 <i class="fa fa-star big-stars" aria-hidden="true"></i>
-                                 <i class="fa fa-star big-stars" aria-hidden="true"></i>
-                                </span>
-							</div>
-							</a>
-						</div>-->
-						<!-- all hotel review -->
 						<div class="col-xs-12 pad_none accomdation-hotels-view-out">
 
 
-							<!--<div class="col-xs-12 col-sm-12 col-md-6 pad_none hotels-first4-outer">
-							<a href="Javascript:void(0)" onclick="getHotel('The Star')">
-								<div class="col-xs-12 pad_none seaworl-overlay3">
-									<div class="col-md-6 col-sm-6 pad_none jupiter-hotel-first">
-									<img src="/assets/images/jupiter-hotel01.png" alt="">
-									<div class="col-xs-12 pad_none jupiter3-hotel-rating-sec">
-										<h4>jupitar casino</h4>
-										<!--<span><img src="< ?php echo base_url();?>assets/images/rating2-img.png" alt=""></span>
-                                        <span>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        </span>
-									</div>
-									</div>
-									<div class="col-md-6 col-sm-6 pad_none jupiter-hotel-first">
-									<img src="/assets/images/jupiter-hotel2-icon.png" alt="">
-								</div>
-									<div class="col-xs-12 pad_none jupiter3-hotel-rating-sec-new">
-										<h4>jupitar casino</h4>
-										<!--<span><img src="< ?php echo base_url();?>assets/images/rating2-img-new.png" alt=""></span>
-                                        <span>
-                                        <i class="fa fa-star sim-stars01" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars01" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars01" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars01" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars01" aria-hidden="true"></i>
-                                        </span>
-									</div>
-								</div>
-							</a>
-							</div>
 
+						<% @hotel.each do |h|%>
 							<div class="col-xs-12 col-sm-12 col-md-6 pad_none hotels-first4-outer">
-							<a href="Javascript:void(0)" onclick="getHotel('Seaworld Resort')">
+							<a href="/hotel/<%= h['id']%>" >
 								<div class="col-xs-12 pad_none seaworl-overlay3">
 									<div class="col-md-6 col-sm-6 pad_none jupiter-hotel-first">
-										<img src="/assets/images/seaworl-hottle02.png" alt="">
-										<div class="col-xs-12 pad_none jupiter3-hotel-rating-sec">
-										<h4>seaworld resort</h4>
-										<!--<span><img src="< ?php echo base_url();?>assets/images/rating2-img.png" alt=""></span>
-                                         <span>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star-half-o sim-stars" aria-hidden="true"></i>
-                                        </span>
-									</div>
-									</div>
-									<div class="col-md-6 col-sm-6 pad_none jupiter-hotel-first">
-										<img src="/assets/images/jupiter-hotel2-icon.png" alt="">
-									</div>
-									<div class="col-xs-12 pad_none jupiter3-hotel-rating-sec-new">
-										<h4>seaworld resort</h4>
-										<!--<span><img src="< ?php echo base_url();?>assets/images/rating2-img-new.png" alt=""></span>
-                                        <span>
-                                        <i class="fa fa-star sim-stars01" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars01" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars01" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars01" aria-hidden="true"></i>
-                                        <i class="fa fa-star-half-o sim-stars01" aria-hidden="true"></i>
-                                        </span>
-									</div>
-								</div>
-							</a>
-							</div>-->
-
-
-							<!-- <div class="col-xs-12 col-sm-6 col-md-6 pad_none hotels-first4-outer">
-							<a href="#">
-								<div class="col-xs-12 pad_none jupiter-hotel-first">
-									<img src="/assets/images/jupiter-hotel2-new-img.png" alt="">
-									<div class="col-xs-12 pad_none jupiter3-hotel-rating-sec-new">
-										<h4>seaworld resort</h4>
-										<span><img src="/assets/images/rating2-img-new.png"></span>
-									</div>
-								</div>
-
-							</a>
-							</div> -->
-
-							<div class="col-xs-12 col-sm-3 col-md-3 pad_none hotels-first4-outer">
-							<a href="/hotel/synergy" >
-								<div class="col-md-12 pad_none jupiter-hotel-first">
-									<img src="/assets/images/synergy-broadbeach-hotel02.png" alt="">
+									<img src="<%= h['image']%>" alt="">
 									<div class="col-xs-12 pad_none jupiter3-hotel-rating-sec">
-										<h4>Synergy Broadbeach</h4>
-										<!--<span><img src="< ?php echo base_url();?>assets/images/ratings2w.png" alt=""></span>-->
-                                         <span>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star-half-o sim-stars" aria-hidden="true"></i>
-                                        </span>
-									</div>
-								</div>
-							</a>
-							</div>
+										<h4><%= h['name'] %></h4>
 
-							<div class="col-xs-12 col-sm-3 col-md-3 pad_none hotels-first4-outer">
-							<a href="/hotel/artique_resort" >
-								<div class="col-md-12 pad_none jupiter-hotel-first">
-									<img src="/assets/images/artique-resort-hotel023.jpg" alt="">
-									<div class="col-xs-12 pad_none jupiter3-hotel-rating-sec">
-										<h4>Artique Resort</h4>
-										<!--<span><img src="< ?php echo base_url();?>assets/images/ratings2w.png" alt=""></span>-->
-                                         <span>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star-half-o sim-stars" aria-hidden="true"></i>
-                                        </span>
-									</div>
-								</div>
-							</a>
-							</div>
-
-							<div class="col-xs-12 col-sm-3 col-md-3 pad_none hotels-first4-outer">
-							<a href="/hotel/ocean_pacific" >
-								<div class="col-md-12 pad_none jupiter-hotel-first">
-									<img src="/assets/images/ocean-pacific-resort022.jpg" alt="">
-									<div class="col-xs-12 pad_none jupiter3-hotel-rating-sec">
-										<h4>Ocean Pacific Resort</h4>
-										<!--<span><img src="< ?php echo base_url();?>assets/images/ratings2w.png" alt=""></span>-->
-                                        <span>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star-half-o sim-stars" aria-hidden="true"></i>
-                                        </span>
-									</div>
-								</div>
-							</a>
-							</div>
-
-								<div class="col-xs-12 col-sm-3 col-md-3 pad_none hotels-first4-outer">
-							<a href="/hotel/south_pacific_plaza" onclick="getHotel('south-pacific-plaza')">
-								<div class="col-md-12 pad_none jupiter-hotel-first">
-									<img src="/assets/images/south-pacific-plaza021.jpg" alt="" >
-									<div class="col-xs-12 pad_none jupiter3-hotel-rating-sec">
-										<h4>South Pacific Plaza</h4>
-										<!--<span><img src="< ?php echo base_url();?>assets/images/ratings2w.png" alt=""></span>-->
-                                        <span>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star-half-o sim-stars" aria-hidden="true"></i>
-                                        </span>
-									</div>
-								</div>
-							</a>
-							</div>
-
-							<div class="col-xs-12 col-sm-3 col-md-3 pad_none hotels-first4-outer">
-							<a href="/hotel/chancellor_executive" >
-								<div class="col-md-12 pad_none jupiter-hotel-first">
-									<img src="/assets/images/chancellor-executive02.png" alt="">
-									<div class="col-xs-12 pad_none jupiter3-hotel-rating-sec">
-										<h4>The Chancellor Executive And Lakeside</h4>
-										<!--<span><img src="< ?php echo base_url();?>assets/images/ratings2w.png" alt=""></span>-->
-                                        <span>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        </span>
-									</div>
-								</div>
-							</a>
-							</div>
-
-							<div class="col-xs-12 col-sm-3 col-md-3 pad_none hotels-first4-outer">
-							<a href="Javascript:void(0)" onclick="getHotel('maldives-resort')">
-								<div class="col-md-12 pad_none jupiter-hotel-first">
-									<img src="/assets/images/pacific-resort-broadbeach.jpg" alt="">
-									<div class="col-xs-12 pad_none jupiter3-hotel-rating-sec">
-										<h4>Pacific Resort Broadbeach</h4>
-										<!--<span><img src="< ?php echo base_url();?>assets/images/ratings2w.png" alt=""></span>-->
-                                        <span>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        </span>
-									</div>
-								</div>
-							</a>
-							</div>
-
-
-							<div class="col-xs-12 col-sm-12 col-md-6 pad_none hotels-first4-outer">
-							<a href="/hotel/swiss_belhotel" onclick="getHotel('swiss-belhotel')">
-								<div class="col-xs-12 pad_none seaworl-overlay3">
-									<div class="col-md-6 col-sm-6 pad_none jupiter-hotel-first">
-									<img src="/assets/images/swiss-belhotelo02.png" alt="">
-									<div class="col-xs-12 pad_none jupiter3-hotel-rating-sec">
-										<h4>Swiss-Belhotel</h4>
-										<!--<span><img src="< ?php echo base_url();?>assets/images/rating2-img.png" alt=""></span>-->
-                                        <span>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star-half-o sim-stars" aria-hidden="true"></i>
-                                        </span>
+                      <span>
+												<% for i in 0..h['star'].to_i %>
+	                      	<i class="fa fa-star sim-stars" aria-hidden="true"></i>
+												<%end%>
+											</span>
 									</div>
 								</div>
 									<div class="col-md-6 col-sm-6 pad_none jupiter-hotel-first">
-								<img src="/assets/images/jupiter-hotel2-icon.png" alt="">
+								<img src="<%= h['image']%>" alt="">
 								</div>
 									<div class="col-xs-12 pad_none jupiter3-hotel-rating-sec-new">
-										<h4>Swiss-Belhotel</h4>
-										<!--<span><img src="< ?php echo base_url();?>assets/images/rating2-img-new.png"></span>-->
-                                        <span>
-                                        <i class="fa fa-star sim-stars01" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars01" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars01" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars01" aria-hidden="true"></i>
-                                        <i class="fa fa-star-half-o sim-stars01" aria-hidden="true"></i>
-                                        </span>
+										<h4><%= h['name'] %></h4>
+                      <span>
+												<% for i in 0..h['star']%>
+	                      	<i class="fa fa-star sim-stars" aria-hidden="true"></i>
+												<%end%>
+                      </span>
 									</div>
 								</div>
 							</a>
 							</div>
+							<%end%>
 
-
-							<div class="col-xs-12 col-sm-12 col-md-6 pad_none hotels-first4-outer">
-							<a href="/hotel/quest_spring_hill" >
-								<div class="col-xs-12 pad_none seaworl-overlay3">
-									<div class="col-md-6 col-sm-6 pad_none jupiter-hotel-first">
-									<img src="/assets/images/Quest-spring-hill-brisbane02.png" alt="">
-									<div class="col-xs-12 pad_none jupiter3-hotel-rating-sec">
-										<h4>Quest Spring Hill Brisbane</h4>
-										<!--<span><img src="< ?php echo base_url();?>assets/images/rating2-img.png"></span>-->
-                                        <span>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star-half-o sim-stars" aria-hidden="true"></i>
-                                        </span>
-									</div>
-								</div>
-									<div class="col-md-6 col-sm-6 pad_none jupiter-hotel-first">
-									<img src="/assets/images/jupiter-hotel2-icon.png" alt="">
-								</div>
-									<div class="col-xs-12 pad_none jupiter3-hotel-rating-sec-new">
-										<h4>Quest Spring Hill Brisbane</h4>
-										<!--<span><img src="< ?php echo base_url();?>assets/images/rating2-img-new.png" alt=""></span>-->
-                                        <span>
-                                        <i class="fa fa-star sim-stars01" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars01" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars01" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars01" aria-hidden="true"></i>
-                                        <i class="fa fa-star-half-o sim-stars01" aria-hidden="true"></i>
-                                        </span>
-									</div>
-								</div>
-							</a>
-							</div>
-
-
-							<div class="col-xs-12 col-sm-3 col-md-3 pad_none hotels-first4-outer">
-							<a href="/hotel/baronnet_apartment" >
-
-
-								<div class="col-md-12 pad_none jupiter-hotel-first">
-									<img src="/assets/images/baronnet-apartments02.png" alt="">
-									<div class="col-xs-12 pad_none jupiter3-hotel-rating-sec">
-										<h4>Baronnet Apartments</h4>
-										<!--<span><img src="< ?php echo base_url();?>assets/images/ratings2w.png" alt=""></span>-->
-                                        <span>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        </span>
-									</div>
-								</div>
-							</a>
-							</div>
-
-							<div class="col-xs-12 col-sm-3 col-md-3 pad_none hotels-first4-outer">
-							<a href="/hotel/bay_apartments" >
-								<div class="col-md-12 pad_none jupiter-hotel-first">
-									<img src="/assets/images/bay-apartments02.png" alt="">
-									<div class="col-xs-12 pad_none jupiter3-hotel-rating-sec">
-										<h4>The Bay Apartments</h4>
-										<!--<span><img src="< ?php echo base_url();?>assets/images/ratings2w.png" alt=""></span>-->
-                                        <span>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                                        <i class="fa fa-star-half-o sim-stars" aria-hidden="true"></i>
-                                        </span>
-									</div>
-								</div>
-							</a>
-							</div>
 
 
 

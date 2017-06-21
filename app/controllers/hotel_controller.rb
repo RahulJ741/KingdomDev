@@ -106,6 +106,30 @@ class HotelController < ApplicationController
     # end
     #
     #  @cart_count = Cart.where(:user_id => session[:user_id]).count
+
+    hotel = Hotel.all
+
+    @hotel = []
+    for i in hotel
+      data1 = {}
+        # url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetHotels")
+        # data = kingdomsg_api(url)
+        # catagory =  (data['FunctionInfo']['FeeTypes'].select {|cat| cat["Code"] == i.item_cat_code })[0]
+
+        # event = Event.find(i.item_id)
+        data1['id'] = i.id
+        data1['name'] = i.name
+        data1['image'] = i.pics
+        data1['star'] = i.star_rating
+        data1['address'] = i.address
+        # data1['city'] = i.city
+      end
+      @hotel.push(data1)
+
+
+
+
+
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
