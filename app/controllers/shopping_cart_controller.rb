@@ -72,8 +72,9 @@ class ShoppingCartController < ApplicationController
   end
 
   def event_add_cart
+    puts "====asa"
     Cart.create(:user_id => session[:user_id],:item => 0,:item_id => params[:item_id],:item_uid => params[:item_uid],:item_cat_code => params[:item_cat_code],:quantity => ((params[:quantity]).to_i).abs )
-    redirect_to '/event/index/', :flash => {:success => 'Added to cart'}
+    redirect_to params[:prev_url], :flash => {:success => 'Added to cart'}
   end
 
   def checkout

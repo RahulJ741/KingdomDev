@@ -70,6 +70,7 @@ class EventController < ApplicationController
     @event = Event.find_by_event_code(data['FunctionInfo']['Code'])
     @event_cats = data['FunctionInfo']['FeeTypes']
     @event_cats = @event_cats.sort_by { |hsh| hsh['Name'] }
+    @prev_url = request.referrer
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
