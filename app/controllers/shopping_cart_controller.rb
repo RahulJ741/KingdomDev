@@ -131,6 +131,10 @@ class ShoppingCartController < ApplicationController
     else
       @current_user = nil
     end
+    @is_pro_complete =true
+    if @current_user.first_name.blank? or @current_user.last_name.blank? or @current_user.phone.blank? or @current_user.address.blank? or @current_user.city.blank? or @current_user.country.blank?
+      @is_pro_complete =false
+    end  
     cart = Cart.where(:user_id => session[:user_id])
     puts cart.inspect
 
@@ -168,8 +172,9 @@ class ShoppingCartController < ApplicationController
     cart = Cart.where(:user_id => session[:user_id])
 
     user = User.find(session[:user_id])
-    user.update(:first_name => params[:first_name], :last_name => params[:last_name],:email => params[:email] ,:phone => params[:phone], :address => params[:address], :city => params[:city], :state => params[:state], :post_code => params[:post_code], :country => params[:country], :middle_name => params[:middle_name] )
-    
+    if not params[:is_user_update].blank?
+      user.update(:first_name => params[:first_name], :last_name => params[:last_name],:email => params[:email] ,:phone => params[:phone], :address => params[:address], :city => params[:city], :state => params[:state], :post_code => params[:post_code], :country => params[:country], :middle_name => params[:middle_name] )
+    end
     @cart_data = []
     for i in cart
       data1 = {}

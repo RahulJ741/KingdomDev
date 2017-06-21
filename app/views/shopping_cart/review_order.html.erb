@@ -21,75 +21,76 @@
 			<div class="exclusive-reprensentatio-inner accommodation-main-inner4">
 
 		        <div class="col-sm-12 col-md-10 col-md-offset-1">
-		        	<% if @card_date.blank? %>
+		        	<% if not @is_pro_complete %>
+		        		<input type="hidden" name="is_user_update" value="true">
 						<div class="alert alert-info alert-dismissable">
 				          <i class="fa fa-info-circle"></i>
-						   Note: All requests above $2,500 will be checked by the KSG Team and you will be contacted offline for payment via bank transfer. Transactions under $2,500 will be processed online (with an additional 2.5% credit card surcharge). Transactions found to have breached the terms and conditions of sale may be cancelled by the KSG Team. For more information on the Terms and Conditions please download them <a href='https://www.dropbox.com/s/aeej5d6w4mqvprc/Terms%20and%20Conditions%20of%20Sale%20-%20KSG%20LEGAL%20POLICY%20v3.pdf?dl=0'><strong style="text-decoration:underline">here</strong></a>
+						   Note: Your profile is imcomplete. we need more details about you ,to process your order
 				        </div>
-					<% end %>
-					<h3 class="pull-left" style="padding-left:10px;">Your Information</h3>
-					<div class="col-xs-12 pad-none">
-						<div class="form-group">
-				          <!-- <label for="first_name">First Name</label> -->
-				          <input type="text" class="form-control" id="first_name" name="first_name" value="<%= @current_user.first_name%>" required="true" placeholder="First Name">
-				          <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
-				        </div>
-
-						<div class="form-group">
-					        <!-- <label for="middle_name">Middle Name</label> -->
-					        <input type="text" class="form-control" id="middle_name" name="middle_name" value="<%= @current_user.middle_name %>"  placeholder="Middle Name">
-					      </div>
-
-				        <div class="form-group">
-				          <!-- <label for="last_name">Last Name</label> -->
-				          <input type="text" class="form-control" id="last_name" name="last_name" value="<%= @current_user.last_name %>" required="true" placeholder="Last Name">
-				          <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
-				        </div>
-
-				        <div class="form-group">
-				          <!-- <label for="email">Email address</label> -->
-				          <input type="hidden" class="form-control" id="email"  name="email" value="<%= @current_user.email%>" required="true">
-
-				        </div>
-
-				      <div class="form-group">
-				        <!-- <label for="phone">Contact</label> -->
-				        <input type="text" class="form-control" id="phone" name="phone" value="<%= @current_user.phone %>" required="true" placeholder="Phone">
-				      </div>
-
-
-						<div class="form-group">
-				        <!-- <label for="address">Address</label> -->
-								<textarea class="form-control" name="address" id="address" rows="5" cols="80" placeholder="Address"><%= @current_user.address %></textarea>
-				       
-				        </div>
+					
+						<h3 class="pull-left" style="padding-left:10px;">Your Information</h3>
+						<div class="col-xs-12 pad-none">
+							<div class="form-group">
+					          <!-- <label for="first_name">First Name</label> -->
+					          <input type="text" class="form-control" id="first_name" name="first_name" value="<%= @current_user.first_name%>" required="true" placeholder="First Name">
+					          <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+					        </div>
 
 							<div class="form-group">
-				        <!-- <label for="city">City</label> -->
-				        <input type="text" class="form-control" id="city" name="city" value="<%= @current_user.city %>" required="true" placeholder="City">
-				      </div>
+						        <!-- <label for="middle_name">Middle Name</label> -->
+						        <input type="text" class="form-control" id="middle_name" name="middle_name" value="<%= @current_user.middle_name %>"  placeholder="Middle Name">
+						      </div>
 
-					  <div class="form-group">
-				        <!-- <label for="state">State</label> -->
-				        <input type="text" class="form-control" id="state" name="state" value="<%= @current_user.state %>"  placeholder="State">
-				      </div>
+					        <div class="form-group">
+					          <!-- <label for="last_name">Last Name</label> -->
+					          <input type="text" class="form-control" id="last_name" name="last_name" value="<%= @current_user.last_name %>" required="true" placeholder="Last Name">
+					          <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+					        </div>
 
-					  <div class="form-group">
-				        <!-- <label for="post_code">Pincode</label> -->
-				        <input type="text" class="form-control" id="post_code" name="post_code" value="<%= @current_user.post_code %>" required="true" placeholder="Postcode">
-				      </div>
+					        <div class="form-group">
+					          <!-- <label for="email">Email address</label> -->
+					          <input type="hidden" class="form-control" id="email"  name="email" value="<%= @current_user.email%>" required="true">
 
-					  <div class="form-group">
-						<select class="custom-select form-control" name="country">
-							<option value="">Choose</option>
-							<% Country.all.each do |c| %>
+					        </div>
 
-								<option value="<%= c.name %>" <% if @current_user.country == c.name %>selected=""<% end %>><%= c.name %></option>
-							<%end%>
-						</select>
-				      </div>
-					</div>
+					      <div class="form-group">
+					        <!-- <label for="phone">Contact</label> -->
+					        <input type="text" class="form-control" id="phone" name="phone" value="<%= @current_user.phone %>" required="true" placeholder="Phone">
+					      </div>
 
+
+							<div class="form-group">
+					        <!-- <label for="address">Address</label> -->
+									<textarea class="form-control" name="address" id="address" rows="5" cols="80" placeholder="Address"><%= @current_user.address %></textarea>
+					       
+					        </div>
+
+								<div class="form-group">
+					        <!-- <label for="city">City</label> -->
+					        <input type="text" class="form-control" id="city" name="city" value="<%= @current_user.city %>" required="true" placeholder="City">
+					      </div>
+
+						  <div class="form-group">
+					        <!-- <label for="state">State</label> -->
+					        <input type="text" class="form-control" id="state" name="state" value="<%= @current_user.state %>"  placeholder="State">
+					      </div>
+
+						  <div class="form-group">
+					        <!-- <label for="post_code">Pincode</label> -->
+					        <input type="text" class="form-control" id="post_code" name="post_code" value="<%= @current_user.post_code %>" placeholder="Postcode">
+					      </div>
+
+						  <div class="form-group">
+							<select class="custom-select form-control" name="country">
+								<option value="">Choose</option>
+								<% Country.all.each do |c| %>
+
+									<option value="<%= c.name %>" <% if @current_user.country == c.name %>selected=""<% end %>><%= c.name %></option>
+								<%end%>
+							</select>
+					      </div>
+						</div>
+					<% end %>
 		        </div>
 		    </div>
 	    </div>
@@ -176,7 +177,7 @@
 		        <div class="col-sm-12 col-md-10 col-md-offset-1" style="text-align:right;">
 		        	<div class="col-xs-12 pad-none">
 		        		<div style="text-align: left;">
-							<input type="checkbox" name="terms" value="check" id="agree" /> I have read and agree to the <a target="_blank" href="https://www.dropbox.com/s/aeej5d6w4mqvprc/Terms%20and%20Conditions%20of%20Sale%20-%20KSG%20LEGAL%20POLICY%20v3.pdf?dl=0">Terms and Conditions and Privacy Policy</a>
+							<input type="checkbox" name="terms" value="check" id="agree" /> I agree to the <a target="_blank" href="https://www.dropbox.com/s/aeej5d6w4mqvprc/Terms%20and%20Conditions%20of%20Sale%20-%20KSG%20LEGAL%20POLICY%20v3.pdf?dl=0">Terms and Conditions and Privacy Policy</a>
 						    </br>
 							<label id="terms-error" class="error" for="terms" style="display:none"></label>
 						</div>
