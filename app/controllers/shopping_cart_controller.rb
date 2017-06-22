@@ -325,68 +325,69 @@ class ShoppingCartController < ApplicationController
       end
 
     end
-    
+
   end
 
   def my_transaction
-    @cart_count = Cart.where(:user_id => session[:user_id]).count
-    if session[:user_id]
-      @current_user = User.find(session["user_id"])
-      puts session[:user_id]
+  @cart_count = Cart.where(:user_id => session[:user_id]).count
+  if session[:user_id]
+    @current_user = User.find(session["user_id"])
+    puts session[:user_id]
 
-      my_order1 = MyPayment.where("user_id = ? AND payment_id IS NOT NULL",session[:user_id])
+    my_order1 = MyPayment.where("user_id = ?" ,session[:user_id])
 
-      @my_order = []
-      for p in my_order1
-        for i in p.my_orders
-          data1 = {}
-          if i.item == 'event'
-            url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetFunctionInfo?functionid="+i.item_uid)
-            data = kingdomsg_api(url)
-            catagory =  (data['FunctionInfo']['FeeTypes'].select {|cat| cat["Code"] == i.item_cat_code })[0]
+    @my_order = []
+    for p in my_order1
+      for i in p.my_orders
+        data1 = {}
+        if i.item == 'event'
+          url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetFunctionInfo?functionid="+i.item_uid)
+          data = kingdomsg_api(url)
+          catagory =  (data['FunctionInfo']['FeeTypes'].select {|cat| cat["Code"] == i.item_cat_code })[0]
 
-            event = Event.find(i.item_id)
-            data1['item_type'] = 'Event'
-            data1['item_cat_code'] = i.item_cat_code
-            data1['name'] = event.name+", "+catagory['Name']
-            data1['available'] = catagory['Available']
-            data1['amount'] = catagory['Amount'].to_f % 1 == 0 ? catagory['Amount'].to_i : helpers.number_with_precision(catagory['Amount'].to_f, :precision => 2)
-            data1['quantity'] = i.quantity
-            data1['event_date'] = event.date.strftime("%d %b %y")
-            data1['row_total'] = data1['quantity'].to_f*data1['amount'].to_f
-            data1['row_total']= data1['row_total'].to_f % 1 == 0 ? data1['row_total'].to_i : helpers.number_with_precision(data1['row_total'].to_f, :precision => 2)
-          end
-          @my_order.push(data1)
+          event = Event.find(i.item_id)
+          data1['pay_id'] = p.payment_id
+          data1['id'] = p.id
+          data1['item_type'] = 'Event'
+          data1['name'] = event.name+", "+catagory['Name']
+          data1['available'] = catagory['Available']
+          data1['amount'] = catagory['Amount'].to_f % 1 == 0 ? catagory['Amount'].to_i : helpers.number_with_precision(catagory['Amount'].to_f, :precision => 2)
+          data1['quantity'] = i.quantity
+          data1['event_date'] = event.date.strftime("%d %b %y")
+          data1['row_total'] = data1['quantity'].to_f*data1['amount'].to_f
+          data1['row_total']= data1['row_total'].to_f % 1 == 0 ? data1['row_total'].to_i : helpers.number_with_precision(data1['row_total'].to_f, :precision => 2)
         end
+        @my_order.push(data1)
       end
-      p_order = MyPayment.where("user_id = ? AND order_id IS NOT NULL",session[:user_id])
-
-      @pending_order = []
-      for o in p_order
-        for i in o.my_orders
-          data1 = {}
-          if i.item == 'event'
-            url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetFunctionInfo?functionid="+i.item_uid)
-            data = kingdomsg_api(url)
-            catagory =  (data['FunctionInfo']['FeeTypes'].select {|cat| cat["Code"] == i.item_cat_code })[0]
-
-            event = Event.find(i.item_id)
-            data1['item_type'] = 'Event'
-            data1['item_cat_code'] = i.item_cat_code
-            data1['name'] = event.name+", "+catagory['Name']
-            data1['available'] = catagory['Available']
-            data1['amount'] = catagory['Amount'].to_f % 1 == 0 ? catagory['Amount'].to_i : helpers.number_with_precision(catagory['Amount'].to_f, :precision => 2)
-            data1['quantity'] = i.quantity
-            data1['event_date'] = event.date.strftime("%d %b %y")
-            data1['row_total'] = data1['quantity'].to_f*data1['amount'].to_f
-            data1['row_total']= data1['row_total'].to_f % 1 == 0 ? data1['row_total'].to_i : helpers.number_with_precision(data1['row_total'].to_f, :precision => 2)
-          end
-          @pending_order.push(data1)
-        end
-      end
-    else
-      @current_user = nil
     end
+    # p_order = MyPayment.where("user_id = ? AND order_id IS NOT NULL",session[:user_id])
+    #
+    # @pending_order = []
+    # for o in p_order
+    #   for i in o.my_orders
+    #     data1 = {}
+    #     if i.item == 'event'
+    #       url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetFunctionInfo?functionid="+i.item_uid)
+    #       data = kingdomsg_api(url)
+    #       catagory =  (data['FunctionInfo']['FeeTypes'].select {|cat| cat["Code"] == i.item_cat_code })[0]
+    #
+    #       event = Event.find(i.item_id)
+    #       data1['item_type'] = 'Event'
+    #       data1['name'] = event.name+", "+catagory['Name']
+    #       data1['available'] = catagory['Available']
+    #       data1['amount'] = catagory['Amount'].to_f % 1 == 0 ? catagory['Amount'].to_i : helpers.number_with_precision(catagory['Amount'].to_f, :precision => 2)
+    #       data1['quantity'] = i.quantity
+    #       data1['event_date'] = event.date.strftime("%d %b %y")
+    #       data1['row_total'] = data1['quantity'].to_f*data1['amount'].to_f
+    #       data1['row_total']= data1['row_total'].to_f % 1 == 0 ? data1['row_total'].to_i : helpers.number_with_precision(data1['row_total'].to_f, :precision => 2)
+    #     end
+    #     @pending_order.push(data1)
+    #   end
+    # end
+  else
+    @current_user = nil
+  end
+end
   end
 
 end
