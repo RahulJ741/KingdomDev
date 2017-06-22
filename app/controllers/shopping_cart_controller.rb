@@ -77,8 +77,14 @@ class ShoppingCartController < ApplicationController
 
   def event_add_cart
     puts "====asa"
-    Cart.create(:user_id => session[:user_id],:item => 0,:item_id => params[:item_id],:item_uid => params[:item_uid],:item_cat_code => params[:item_cat_code],:quantity => ((params[:quantity]).to_i).abs )
-    redirect_to params[:prev_url], :flash => {:success => 'Added to cart'}
+
+    @cart = Cart.find_by_item_cat_code_and_user_id(params[:item_cat_code],session[:user_id])
+    if @cart.present?
+      redirect_to params[:prev_url], :flash => {:error => 'Event already added to cart'}
+    else
+      Cart.create(:user_id => session[:user_id],:item => 0,:item_id => params[:item_id],:item_uid => params[:item_uid],:item_cat_code => params[:item_cat_code],:quantity => ((params[:quantity]).to_i).abs )
+      redirect_to params[:prev_url], :flash => {:success => 'Added to cart'}
+    end
   end
 
   def checkout
@@ -388,6 +394,6 @@ class ShoppingCartController < ApplicationController
     @current_user = nil
   end
 end
-  end
+
 
 end
