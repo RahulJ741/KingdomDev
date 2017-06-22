@@ -4,8 +4,8 @@ test: &default
   # client_id: AZZisWwctBSGSOMCwWvqWJCAU8gsQXxgD6SYUNhXcj-E_do_ZCfu7wJ0uv9jwuqcDCFT_9S25mtUjBxK
   # client_secret: EH1O8yOpWVn-X_5teg-yNgboqEATWTKvTxABYYJEbG5wYL72iJcnAroO9jeY7RdifBHdExLxekQ5XxxL
 
-  client_id: AWr71GxHJRoZITDthMmbAqVCZkehvLmKoV86aBbDDzQ9LWrVL6v6FVKJsmS7uObsuvxe5G5Yg70EjLgQ
-  client_secret: EPk6FcY5KP_ejeK8uuKDQMbZno_tEf4hhY6sTdIlqReLD75Dsvj8kEdN21IlBhcJSE6SleFRGsLtNkq9
+  client_id: AaVa-io3leksIJCL51QFZq_glgy78IwqocxFQZFvE7KD13JyNELG6ctgmiVDHfkWDcQDpzi1knIe1P1g
+  client_secret: EISGvVbPyrSZ8-mNm8s8QhsHRZGQJjn_Tm9nfMwUP5B-IOCnszaibXqnU_O36jZ94NqPMpQQ1euyFemm
 
 
   # Mode can be 'live' or 'sandbox'
