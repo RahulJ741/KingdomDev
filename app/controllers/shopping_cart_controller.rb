@@ -6,7 +6,11 @@ class ShoppingCartController < ApplicationController
 
   def index
     @cart_count = Cart.where(:user_id => session[:user_id]).count
-
+    if MyPayment.where(user_id: session[:user_id]).all.blank?
+      @is_new =true
+    else
+      @is_new =false
+    end
     if session[:user_id]
       @current_user = User.find(session["user_id"])
 
@@ -178,6 +182,15 @@ class ShoppingCartController < ApplicationController
       @card_data['cardtype']=params[:cardtype]
     end
     @total = @cart_data.map {|s| s['amount'].to_f * s['quantity'].to_f}.reduce(0, :+)
+    if MyPayment.where(user_id: session[:user_id]).all.blank?
+      @freight = 100
+    else
+      @freight = 0
+    end
+    @total = @total.to_f+@freight.to_f
+    @cc_amount = @total*0.025
+    @cc_amount = @cc_amount.to_f % 1 == 0 ? @cc_amount.to_i : helpers.number_with_precision(@cc_amount.to_f, :precision => 2)
+    @total = @total.to_f+@cc_amount.to_f
     @total = @total.to_f % 1 == 0 ? @total.to_i : helpers.number_with_precision(@total.to_f, :precision => 2)
   end
 
@@ -208,8 +221,17 @@ class ShoppingCartController < ApplicationController
       @cart_data.push(data1)
     end
     total = @cart_data.map {|s| s['amount'].to_f * s['quantity'].to_f}.reduce(0, :+)
-
-    total = sprintf("%.2f",total)
+    booking_total = total
+    if MyPayment.where(user_id: session[:user_id]).all.blank?
+      @freight = 100
+    else
+      @freight = 0
+    end
+    total = total.to_f+@freight.to_f
+    @cc_amount = total*0.025
+    @cc_amount = @cc_amount.to_f % 1 == 0 ? @cc_amount.to_i : helpers.number_with_precision(@cc_amount.to_f, :precision => 2)
+    total = total.to_f+@cc_amount.to_f
+    total = total.to_f % 1 == 0 ? total.to_i : helpers.number_with_precision(total.to_f, :precision => 2)
 
     url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/BookFunction")
     if params[:from_card].blank?
@@ -222,7 +244,7 @@ class ShoppingCartController < ApplicationController
       c_data = @cart_data
       WelcomeEmailMailer.rate_exteted(c_data,user).deliver_now
       WelcomeEmailMailer.admin_rate_exteted(c_data,user).deliver_now
-      pymt = MyPayment.create(user_id: session[:user_id], order_id: order_id, total: total, date: Time.current.to_date)
+      pymt = MyPayment.create(user_id: session[:user_id], order_id: order_id, total: booking_total, date: Time.current.to_date,freight: @freight,cc_amount: @cc_amount)
       data =[]
       @del_cart.each do |mo|
         data1 ={}
@@ -233,7 +255,7 @@ class ShoppingCartController < ApplicationController
       end
 
       @del_cart.destroy_all
-      response = kingdomsg_booking_api(url,data)
+      response = kingdomsg_booking_api(url,data,booking_total,@freight,@cc_amount)
       if not response == "success"
         redirect_to '/cart', :flash => {:error => 'Somthing went wrong'}
       else
@@ -279,7 +301,7 @@ class ShoppingCartController < ApplicationController
         c_data = @cart_data
         WelcomeEmailMailer.shoppingdetails(c_data,user).deliver_now
         WelcomeEmailMailer.admin_shopping_cart(c_data, user).deliver_now
-        pymt = MyPayment.create(user_id: session[:user_id], payment_id: @payment.id, total: total, date: Time.current.to_date)
+        pymt = MyPayment.create(user_id: session[:user_id], order_id: order_id, total: booking_total, date: Time.current.to_date,freight: @freight,cc_amount: @cc_amount)
         data = []
         @del_cart.each do |mo|
           data1 ={}
@@ -290,7 +312,7 @@ class ShoppingCartController < ApplicationController
         end
 
         @del_cart.destroy_all
-        response = kingdomsg_booking_api(url,data)
+        response = kingdomsg_booking_api(url,data,booking_total,@freight,@cc_amount)
         if not response == "success"
           redirect_to '/cart', :flash => {:error => 'Somthing went wrong'}
         else

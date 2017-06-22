@@ -164,7 +164,13 @@
 						      <% end %>
 						    </tbody>
 						</table>
-						<h3 style="float: right;">Total : AUD <%= @total %></h3>
+						<div style="text-align: right;">
+							<% if @freight %>
+								<h3 style="font-size: 22px;font-weight: normal;">freight : AUD <span id="freight_amount">100</span></h3>
+							<% end %>
+							<h3 style="font-size: 22px;font-weight: normal;">cc : AUD <span id="cc_amount"><%= @cc_amount %></span></h3>
+							<h3 >Total : AUD <%= @total %></h3>
+						</div>
 					</div>
 
 

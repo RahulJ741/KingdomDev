@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
     return data
   end
 
-  def kingdomsg_booking_api(url,data)
+  def kingdomsg_booking_api(url,data,booking_total,freight,cc_amount)
     user = User.find(session[:user_id])
 
     payload = {}
@@ -47,6 +47,11 @@ class ApplicationController < ActionController::Base
       data1["NoTickets"] = i["quantity"].to_s
       payload["Functions"].push(data1) 
     end
+    payload["Payment"]= {}
+    payload["Payment"]["BookingAmount"]= booking_total.to_f
+    payload["Payment"]["FreightAmount"]= freight
+    payload["Payment"]["CCFeeAmount"]= cc_amount.to_f
+
     puts "====================="
     puts payload
     puts "====================="
