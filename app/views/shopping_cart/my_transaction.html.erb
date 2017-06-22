@@ -39,8 +39,8 @@
 								        <td><%= i['pay_id'] %></td>
 										<td><%= i['date'] %></td>
 										<td>AUD <%= i['total'] %></td>
-										<td><%= i['freight'] %></td>
-										<td><%= i['cc_amount'] %></td>
+										<td>AUD <%= i['freight'].to_i %></td>
+										<td>AUD <%= i['cc_amount'] %></td>
 										<td><a href="/transaction_detail/<%= i['id']%>"><button type="button" class="btn btn-warning" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;" name="button">View</button></a></td>
 								      </tr>
 							      <% end %>
