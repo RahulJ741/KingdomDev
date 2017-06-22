@@ -80,7 +80,7 @@ class ShoppingCartController < ApplicationController
 
     @cart = Cart.find_by_item_cat_code_and_user_id(params[:item_cat_code],session[:user_id])
     if @cart.present?
-      redirect_to params[:prev_url], :flash => {:error => 'Event already added to cart'}
+      redirect_to :back, :flash => {:error => 'Event already added to cart'}
     else
       Cart.create(:user_id => session[:user_id],:item => 0,:item_id => params[:item_id],:item_uid => params[:item_uid],:item_cat_code => params[:item_cat_code],:quantity => ((params[:quantity]).to_i).abs )
       redirect_to params[:prev_url], :flash => {:success => 'Added to cart'}
@@ -318,7 +318,7 @@ class ShoppingCartController < ApplicationController
         c_data = @cart_data
         WelcomeEmailMailer.shoppingdetails(c_data,user).deliver_now
         WelcomeEmailMailer.admin_shopping_cart(c_data, user).deliver_now
-        pymt = MyPayment.create(user_id: session[:user_id], order_id: order_id, total: booking_total, date: Time.current.to_date,freight: @freight,cc_amount: @cc_amount)
+        pymt = MyPayment.create(user_id: session[:user_id], payment_id: @payment.id, total: booking_total, date: Time.current.to_date,freight: @freight,cc_amount: @cc_amount)
         data = []
         @cart_data.each do |mo|
           data1 ={}
