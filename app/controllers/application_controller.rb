@@ -37,14 +37,14 @@ class ApplicationController < ActionController::Base
     payload["ContactComponentSubmission"]["AddressLineTwo"] = ""
     payload["ContactComponentSubmission"]["AddressCity"] = user.city
     payload["ContactComponentSubmission"]["AddressState"] = user.state
-    payload["ContactComponentSubmission"]["AddressPostcode"] = user.post_code
+    payload["ContactComponentSubmission"]["AddressPostcode"] = user.post_code.to_s
     payload["ContactComponentSubmission"]["Privacy"] = "None"
     payload["Functions"] = []
     for i in data
       data1 ={}
       data1["UniqueFunctionCode"] = i["code"]
       data1["FunctionPaycode"] = "No Charge"
-      data1["NoTickets"] = i["quantity"].to_i
+      data1["NoTickets"] = i["quantity"].to_s
       payload["Functions"].push(data1) 
     end
     puts "====================="
