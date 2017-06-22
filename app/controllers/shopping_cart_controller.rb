@@ -117,15 +117,14 @@ class ShoppingCartController < ApplicationController
         end
         @cart_data.push(data1)
       end
-        total = @cart_data.map {|s| s['amount'].to_f * s['quantity'].to_f}.reduce(0, :+)
-        puts "|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\\\\\\\\\\\\\\\\\\\\\\"
-        puts total
-        # remove this code latter just to gete the cart functionality running
-
-
-
-      # total = ((HotelShoppingCart.where(user_id: session[:user_id]).sum('rate') + EventShoppingCart.where(user_id: session[:user_id]).sum('rate')).round(2))
-      # redirect_to :back,:flash => {:msg => @msg}
+      total = @cart_data.map {|s| s['amount'].to_f * s['quantity'].to_f}.reduce(0, :+)
+      
+      if MyPayment.where(user_id: session[:user_id]).all.blank?
+        @freight = 100
+      else
+        @freight = 0
+      end
+      total = total.to_f+@freight.to_f
       if total.to_f > 2500
         redirect_to "/review_order/"
       end
@@ -194,9 +193,12 @@ class ShoppingCartController < ApplicationController
       @freight = 0
     end
     @total = @total.to_f+@freight.to_f
-    @cc_amount = @total*0.025
-    @cc_amount = @cc_amount.to_f % 1 == 0 ? @cc_amount.to_i : helpers.number_with_precision(@cc_amount.to_f, :precision => 2)
-    @total = @total.to_f+@cc_amount.to_f
+    @booking_total = @total
+    if @total.to_f <= 2500
+      @cc_amount = @total*0.025
+      @cc_amount = @cc_amount.to_f % 1 == 0 ? @cc_amount.to_i : helpers.number_with_precision(@cc_amount.to_f, :precision => 2)
+      @total = @total.to_f+@cc_amount.to_f
+    end
     @total = @total.to_f % 1 == 0 ? @total.to_i : helpers.number_with_precision(@total.to_f, :precision => 2)
   end
 
@@ -217,7 +219,11 @@ class ShoppingCartController < ApplicationController
         catagory =  (data['FunctionInfo']['FeeTypes'].select {|cat| cat["Code"] == i.item_cat_code })[0]
 
         event = Event.find(i.item_id)
+        data1['item'] = 0
         data1['item_type'] = 'Event'
+        data1['item_id'] = i.item_id
+        data1['item_uid'] = i.item_uid
+        data1['item_cat_code'] = i.item_cat_code
         data1['name'] = event.name+", "+catagory['Name']
         data1['available'] = catagory['Available']
         data1['amount'] = catagory['Amount']
@@ -234,13 +240,14 @@ class ShoppingCartController < ApplicationController
       @freight = 0
     end
     total = total.to_f+@freight.to_f
-    @cc_amount = total*0.025
-    @cc_amount = @cc_amount.to_f % 1 == 0 ? @cc_amount.to_i : helpers.number_with_precision(@cc_amount.to_f, :precision => 2)
-    total = total.to_f+@cc_amount.to_f
-    total = total.to_f % 1 == 0 ? total.to_i : helpers.number_with_precision(total.to_f, :precision => 2)
+    
 
     url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/BookFunction")
     if params[:from_card].blank?
+      @cc_amount = 0
+      @cc_amount = @cc_amount.to_f % 1 == 0 ? @cc_amount.to_i : helpers.number_with_precision(@cc_amount.to_f, :precision => 2)
+      total = total.to_f+@cc_amount.to_f
+      total = total.to_f % 1 == 0 ? total.to_i : helpers.number_with_precision(total.to_f, :precision => 2)
       @del_cart = Cart.where(user_id: session[:user_id])
       if MyPayment.where('order_id Is NOT NULL').last.blank?
         order_id = 1
@@ -252,12 +259,12 @@ class ShoppingCartController < ApplicationController
       WelcomeEmailMailer.admin_rate_exteted(c_data,user).deliver_now
       pymt = MyPayment.create(user_id: session[:user_id], order_id: order_id, total: booking_total, date: Time.current.to_date,freight: @freight,cc_amount: @cc_amount)
       data =[]
-      @del_cart.each do |mo|
+      @cart_data.each do |mo|
         data1 ={}
-        data1['code'] = mo.item_cat_code
-        data1['quantity'] = mo.quantity
+        data1['code'] = mo['item_cat_code']
+        data1['quantity'] = mo['quantity']
         data.push(data1)
-        MyOrder.create(user_id: session[:user_id], item: mo.item, item_id: mo.item_id, item_uid: mo.item_uid, item_cat_code: mo.item_cat_code, quantity: mo.quantity, my_payment_id: pymt.id)
+        MyOrder.create(user_id: session[:user_id], item: mo['item'], item_id: mo['item_id'], item_uid: mo['item_uid'], item_cat_code: mo['item_cat_code'], quantity: mo['quantity'],rate: mo['amount'], my_payment_id: pymt.id)
       end
 
       @del_cart.destroy_all
@@ -270,6 +277,10 @@ class ShoppingCartController < ApplicationController
 
 
     else
+      @cc_amount = total*0.025
+      @cc_amount = @cc_amount.to_f % 1 == 0 ? @cc_amount.to_i : helpers.number_with_precision(@cc_amount.to_f, :precision => 2)
+      total = total.to_f+@cc_amount.to_f
+      total = total.to_f % 1 == 0 ? total.to_i : helpers.number_with_precision(total.to_f, :precision => 2)
       require 'paypal-sdk-rest'
       @payment = PayPal::SDK::REST::Payment.new({
             :intent => "sale",
@@ -309,12 +320,12 @@ class ShoppingCartController < ApplicationController
         WelcomeEmailMailer.admin_shopping_cart(c_data, user).deliver_now
         pymt = MyPayment.create(user_id: session[:user_id], order_id: order_id, total: booking_total, date: Time.current.to_date,freight: @freight,cc_amount: @cc_amount)
         data = []
-        @del_cart.each do |mo|
+        @cart_data.each do |mo|
           data1 ={}
-          data1['code'] = mo.item_cat_code
-          data1['quantity'] = mo.quantity
+          data1['code'] = mo['item_cat_code']
+          data1['quantity'] = mo['quantity']
           data.push(data1)
-          MyOrder.create(user_id: session[:user_id], item: mo.item, item_id: mo.item_id, item_uid: mo.item_uid, item_cat_code: mo.item_cat_code, quantity: mo.quantity, my_payment_id: pymt.id)
+          MyOrder.create(user_id: session[:user_id], item: mo['item'], item_id: mo['item_id'], item_uid: mo['item_uid'], item_cat_code: mo['item_cat_code'], quantity: mo['quantity'],rate: mo['amount'], my_payment_id: pymt.id)
         end
 
         @del_cart.destroy_all
@@ -335,65 +346,65 @@ class ShoppingCartController < ApplicationController
   end
 
   def my_transaction
-  @cart_count = Cart.where(:user_id => session[:user_id]).count
-  if session[:user_id]
-    @current_user = User.find(session["user_id"])
-    puts session[:user_id]
+    @cart_count = Cart.where(:user_id => session[:user_id]).count
+    if session[:user_id]
+      @current_user = User.find(session["user_id"])
+      puts session[:user_id]
 
-    my_order1 = MyPayment.where("user_id = ?" ,session[:user_id])
+      my_order1 = MyPayment.where("user_id = ?" ,session[:user_id])
 
-    @my_order = []
-    for p in my_order1
-      for i in p.my_orders
-        data1 = {}
-        if i.item == 'event'
-          url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetFunctionInfo?functionid="+i.item_uid)
-          data = kingdomsg_api(url)
-          catagory =  (data['FunctionInfo']['FeeTypes'].select {|cat| cat["Code"] == i.item_cat_code })[0]
+      @my_order = []
+      for p in my_order1
+        for i in p.my_orders
+          data1 = {}
+          if i.item == 'event'
+            url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetFunctionInfo?functionid="+i.item_uid)
+            data = kingdomsg_api(url)
+            catagory =  (data['FunctionInfo']['FeeTypes'].select {|cat| cat["Code"] == i.item_cat_code })[0]
 
-          event = Event.find(i.item_id)
-          data1['pay_id'] = p.payment_id
-          data1['id'] = p.id
-          data1['item_type'] = 'Event'
-          data1['name'] = event.name+", "+catagory['Name']
-          data1['available'] = catagory['Available']
-          data1['amount'] = catagory['Amount'].to_f % 1 == 0 ? catagory['Amount'].to_i : helpers.number_with_precision(catagory['Amount'].to_f, :precision => 2)
-          data1['quantity'] = i.quantity
-          data1['event_date'] = event.date.strftime("%d %b %y")
-          data1['row_total'] = data1['quantity'].to_f*data1['amount'].to_f
-          data1['row_total']= data1['row_total'].to_f % 1 == 0 ? data1['row_total'].to_i : helpers.number_with_precision(data1['row_total'].to_f, :precision => 2)
+            event = Event.find(i.item_id)
+            data1['pay_id'] = p.payment_id
+            data1['id'] = p.id
+            data1['item_type'] = 'Event'
+            data1['name'] = event.name+", "+catagory['Name']
+            data1['available'] = catagory['Available']
+            data1['amount'] = catagory['Amount'].to_f % 1 == 0 ? catagory['Amount'].to_i : helpers.number_with_precision(catagory['Amount'].to_f, :precision => 2)
+            data1['quantity'] = i.quantity
+            data1['event_date'] = event.date.strftime("%d %b %y")
+            data1['row_total'] = data1['quantity'].to_f*data1['amount'].to_f
+            data1['row_total']= data1['row_total'].to_f % 1 == 0 ? data1['row_total'].to_i : helpers.number_with_precision(data1['row_total'].to_f, :precision => 2)
+          end
+          @my_order.push(data1)
         end
-        @my_order.push(data1)
       end
+      # p_order = MyPayment.where("user_id = ? AND order_id IS NOT NULL",session[:user_id])
+      #
+      # @pending_order = []
+      # for o in p_order
+      #   for i in o.my_orders
+      #     data1 = {}
+      #     if i.item == 'event'
+      #       url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetFunctionInfo?functionid="+i.item_uid)
+      #       data = kingdomsg_api(url)
+      #       catagory =  (data['FunctionInfo']['FeeTypes'].select {|cat| cat["Code"] == i.item_cat_code })[0]
+      #
+      #       event = Event.find(i.item_id)
+      #       data1['item_type'] = 'Event'
+      #       data1['name'] = event.name+", "+catagory['Name']
+      #       data1['available'] = catagory['Available']
+      #       data1['amount'] = catagory['Amount'].to_f % 1 == 0 ? catagory['Amount'].to_i : helpers.number_with_precision(catagory['Amount'].to_f, :precision => 2)
+      #       data1['quantity'] = i.quantity
+      #       data1['event_date'] = event.date.strftime("%d %b %y")
+      #       data1['row_total'] = data1['quantity'].to_f*data1['amount'].to_f
+      #       data1['row_total']= data1['row_total'].to_f % 1 == 0 ? data1['row_total'].to_i : helpers.number_with_precision(data1['row_total'].to_f, :precision => 2)
+      #     end
+      #     @pending_order.push(data1)
+      #   end
+      # end
+    else
+      @current_user = nil
     end
-    # p_order = MyPayment.where("user_id = ? AND order_id IS NOT NULL",session[:user_id])
-    #
-    # @pending_order = []
-    # for o in p_order
-    #   for i in o.my_orders
-    #     data1 = {}
-    #     if i.item == 'event'
-    #       url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetFunctionInfo?functionid="+i.item_uid)
-    #       data = kingdomsg_api(url)
-    #       catagory =  (data['FunctionInfo']['FeeTypes'].select {|cat| cat["Code"] == i.item_cat_code })[0]
-    #
-    #       event = Event.find(i.item_id)
-    #       data1['item_type'] = 'Event'
-    #       data1['name'] = event.name+", "+catagory['Name']
-    #       data1['available'] = catagory['Available']
-    #       data1['amount'] = catagory['Amount'].to_f % 1 == 0 ? catagory['Amount'].to_i : helpers.number_with_precision(catagory['Amount'].to_f, :precision => 2)
-    #       data1['quantity'] = i.quantity
-    #       data1['event_date'] = event.date.strftime("%d %b %y")
-    #       data1['row_total'] = data1['quantity'].to_f*data1['amount'].to_f
-    #       data1['row_total']= data1['row_total'].to_f % 1 == 0 ? data1['row_total'].to_i : helpers.number_with_precision(data1['row_total'].to_f, :precision => 2)
-    #     end
-    #     @pending_order.push(data1)
-    #   end
-    # end
-  else
-    @current_user = nil
   end
-end
 
 
 end

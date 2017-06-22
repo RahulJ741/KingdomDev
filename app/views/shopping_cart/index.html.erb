@@ -75,10 +75,12 @@
 
 
 					<div class="col col-xs-12" style="text-align:right;">
+						
 						<% if @is_new %>
 							<h3 style="font-size: 22px;font-weight: normal;">freight : AUD <span id="freight_amount">100</span></h3>
 						<% end %>
-						<h3 style="font-size: 22px;font-weight: normal;">cc : AUD <span id="cc_amount"></span></h3>
+						<h3 style="font-size: 22px;font-weight: normal">total : AUD <span id="table_total"></span></h3>
+						<h3 id="cc_row" style="font-size: 22px;font-weight: normal;display:none">cc : AUD <span id="cc_amount"></span></h3>
 
 						<h3>Grand Total : AUD <span id="grand_total"></span></h3>
 						<a class="subscribe-submit" href="/event/index/?event=Athletics" style="padding: 10px 15px !important; width: auto !important; margin: 9px 0px 10px 0px !important; font-size: 14px;">
@@ -139,11 +141,22 @@
 		  ~String(parseFloat(row_total)).indexOf(".") ? row_total = parseFloat(row_total).toFixed(2) : row_total = parseFloat(row_total);
 		  $(this).parents('tr').find('.row_total').html(row_total);
 		});
+		
 		grand_total = parseFloat(grand_total)+parseFloat(freight);
-		var cc_amount = grand_total*0.025;
-		~String(parseFloat(cc_amount)).indexOf(".") ? cc_amount = parseFloat(cc_amount).toFixed(2) : cc_amount = parseFloat(cc_amount);
-		$("#cc_amount").html(cc_amount);
-		grand_total = parseFloat(grand_total)+parseFloat(cc_amount);
+		$("#table_total").html(grand_total);
+		if (grand_total <= parseFloat(2500.00)){
+			var cc_amount = grand_total*0.025;
+			~String(parseFloat(cc_amount)).indexOf(".") ? cc_amount = parseFloat(cc_amount).toFixed(2) : cc_amount = parseFloat(cc_amount);
+			$("#cc_amount").html(cc_amount);
+			grand_total = parseFloat(grand_total)+parseFloat(cc_amount);
+			$("#cc_row").show();
+
+		}
+		else{
+			$("#cc_row").hide();
+		}
+		
+		
 		~String(parseFloat(grand_total)).indexOf(".") ? grand_total = parseFloat(grand_total).toFixed(2) : grand_total = parseFloat(grand_total);
 		$('#grand_total').html(grand_total);
 		$("[type='number']").bind("cut copy paste",function(evt) {
@@ -173,11 +186,20 @@
 		          	$( ".row_total" ).each(function( index ) {
 					  g_total = g_total + parseFloat($(this).html());
 					});
+					
 					g_total = parseFloat(g_total)+parseFloat(freight);
-					var cc_amount = g_total*0.025;
-					~String(parseFloat(cc_amount)).indexOf(".") ? cc_amount = parseFloat(cc_amount).toFixed(2) : cc_amount = parseFloat(cc_amount);
-					$("#cc_amount").html(cc_amount);
-					g_total = parseFloat(g_total)+parseFloat(cc_amount);
+					$("#table_total").html(g_total);
+					if (g_total <= parseFloat(2500.00)){
+						var cc_amount = g_total*0.025;
+						~String(parseFloat(cc_amount)).indexOf(".") ? cc_amount = parseFloat(cc_amount).toFixed(2) : cc_amount = parseFloat(cc_amount);
+						$("#cc_amount").html(cc_amount);
+						g_total = parseFloat(g_total)+parseFloat(cc_amount);
+						$("#cc_row").show();
+					}
+					else{
+						$("#cc_row").hide();
+					}
+					
 					~String(parseFloat(g_total)).indexOf(".") ? g_total = parseFloat(g_total).toFixed(2) : g_total = parseFloat(g_total);
 					$('#grand_total').html(g_total);
 					if ($('.is_exceed').length == 0){
