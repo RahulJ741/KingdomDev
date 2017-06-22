@@ -19,7 +19,7 @@ class AdminController < ApplicationController
 			searchText = ((params[:search]['value'].to_s).downcase).strip
 			print searchText
 
-			all_data = MyPayment.select('my_payments.*,users.first_name as first_name,users.last_name as last_name').joins(:user).where("my_payments.id LIKE :search or lower(users.first_name) LIKE :search or lower(users.last_name) LIKE :search or lower(total) LIKE :search or lower(date) LIKE :search or lower(payment_id) LIKE :search" , :search => "%"+searchText+"%")
+			all_data = MyPayment.select('my_payments.*,users.first_name as first_name,users.last_name as last_name').joins(:user).where("my_payments.id LIKE :search or lower(users.first_name) LIKE :search or lower(users.last_name) LIKE :search or lower(total) LIKE :search or lower(date) LIKE :search or lower(payment_id) LIKE :search or lower(freight) LIKE :search or lower(cc_amount) LIKE :search" , :search => "%"+searchText+"%")
 			# all_data = all_data.where("lower(comment) LIKE :search or rating::text LIKE :search or lower(first_name) LIKE :search or lower(last_name) LIKE :search or lower(wineries.name) LIKE :search " , :search => "%"+searchText+"%")
 
 		end
@@ -46,27 +46,39 @@ class AdminController < ApplicationController
 			end
 		elsif params[:order]['0']['column'] == "2"
 			if params[:order]['0']['dir'] == "asc"
-				result = all_data.order('total asc').limit(length).offset(start)
+				result = all_data.order('payment_id asc').limit(length).offset(start)
 			else
-				result = all_data.order('total desc').limit(length).offset(start)
+				result = all_data.order('payment_id desc').limit(length).offset(start)
 			end
 		elsif params[:order]['0']['column'] == "3"
+			if params[:order]['0']['dir'] == "asc"
+				result = all_data.order('payment_id asc').limit(length).offset(start)
+			else
+				result = all_data.order('payment_id desc').limit(length).offset(start)
+			end
+		elsif params[:order]['0']['column'] == "4"
 			if params[:order]['0']['dir'] == "asc"
 				result = all_data.order('date asc').limit(length).offset(start)
 			else
 				result = all_data.order('date desc').limit(length).offset(start)
 			end
-		elsif params[:order]['0']['column'] == "4"
-			if params[:order]['0']['dir'] == "asc"
-				result = all_data.order('payment_id asc').limit(length).offset(start)
-			else
-				result = all_data.order('payment_id desc').limit(length).offset(start)
-			end
 		elsif params[:order]['0']['column'] == "5"
 			if params[:order]['0']['dir'] == "asc"
-				result = all_data.order('payment_id asc').limit(length).offset(start)
+				result = all_data.order('total asc').limit(length).offset(start)
 			else
-				result = all_data.order('payment_id desc').limit(length).offset(start)
+				result = all_data.order('total desc').limit(length).offset(start)
+			end
+		elsif params[:order]['0']['column'] == "6"
+			if params[:order]['0']['dir'] == "asc"
+				result = all_data.order('freight asc').limit(length).offset(start)
+			else
+				result = all_data.order('freight desc').limit(length).offset(start)
+			end
+		elsif params[:order]['0']['column'] == "7"
+			if params[:order]['0']['dir'] == "asc"
+				result = all_data.order('cc_amount asc').limit(length).offset(start)
+			else
+				result = all_data.order('cc_amount desc').limit(length).offset(start)
 			end
 		else
 		 	result = all_data.limit(length).offset(start)
@@ -77,8 +89,6 @@ class AdminController < ApplicationController
 			data1=[]
 			data1.append(i.id)
 			data1.append(i.user.first_name+" "+i.user.last_name)
-			data1.append("AUD "+i.total.to_s)
-			data1.append(i.date)
 			if not i.payment_id.blank?
 				data1.append('Paypal')
 				data1.append(i.payment_id)
@@ -86,6 +96,11 @@ class AdminController < ApplicationController
 				data1.append('Invoice')
 				data1.append('N/A')
 			end
+			data1.append(i.date)
+			data1.append("AUD "+i.total.to_s)
+			data1.append("AUD "+i.freight.to_s)
+			data1.append("AUD "+i.cc_amount.to_s)
+			
 			data1.append('<a href="/admin/transaction/show/'+i['id'].to_s+'">
 				<button class="btn btn-primary" type="button">
 					View
@@ -213,15 +228,10 @@ class AdminController < ApplicationController
       	for i in items
           data1 = {}
           if i.item == 'event'
-            url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetFunctionInfo?functionid="+i.item_uid)
-            data = kingdomsg_api(url)
-            catagory =  (data['FunctionInfo']['FeeTypes'].select {|cat| cat["Code"] == i.item_cat_code })[0]
-
             event = Event.find(i.item_id)
             data1['item_type'] = 'Event'
-            data1['name'] = event.name+", "+catagory['Name']
-            data1['available'] = catagory['Available']
-            data1['amount'] = catagory['Amount']
+            data1['name'] = event.name+", "+i.item_cat_code
+            data1['amount'] = i.rate
             data1['quantity'] = i.quantity
             data1['event_date'] = event.date.strftime("%d %b %y")
           end

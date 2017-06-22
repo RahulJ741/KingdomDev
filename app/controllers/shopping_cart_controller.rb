@@ -368,7 +368,8 @@ class ShoppingCartController < ApplicationController
         data1['total'] = p.total
         data1['freight'] = p.freight
         data1['cc_amount'] = p.cc_amount  
-
+        data1['freight']= data1['freight'].to_f % 1 == 0 ? data1['freight'].to_i : helpers.number_with_precision(data1['freight'].to_f, :precision => 2)
+        data1['cc_amount']= data1['cc_amount'].to_f % 1 == 0 ? data1['cc_amount'].to_i : helpers.number_with_precision(data1['cc_amount'].to_f, :precision => 2)
         data1['total']= data1['total'].to_f % 1 == 0 ? data1['total'].to_i : helpers.number_with_precision(data1['total'].to_f, :precision => 2)
 
         @my_payment.push(data1)
@@ -383,9 +384,23 @@ class ShoppingCartController < ApplicationController
     @cart_count = Cart.where(:user_id => session[:user_id]).count
     if session[:user_id]
       @current_user = User.find(session["user_id"])
-      puts session[:user_id]
-      @my_transaction_detail = MyPayment.find(params[:id])
-      @my_orders = MyOrder.where(:my_payment_id => params[:id])
+      items = MyOrder.where(:my_payment_id => params[:id])
+      @my_payment = []
+      for i in items
+        data1 = {}
+        if i.item == 'event'
+          event = Event.find(i.item_id)
+          data1['item_type'] = 'Event'
+          data1['name'] = event.name+", "+i.item_cat_code
+          data1['amount'] = i.rate
+          data1['quantity'] = i.quantity
+          data1['event_date'] = event.date.strftime("%d %b %y")
+          data1['total'] = data1['amount'].to_f*data1['quantity'].to_i
+          data1['amount']= data1['amount'].to_f % 1 == 0 ? data1['amount'].to_i : helpers.number_with_precision(data1['amount'].to_f, :precision => 2)
+          data1['total']= data1['total'].to_f % 1 == 0 ? data1['total'].to_i : helpers.number_with_precision(data1['total'].to_f, :precision => 2)
+        end
+        @my_payment.push(data1)
+      end
     else
       @current_user = nil
     end

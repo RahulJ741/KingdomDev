@@ -47,13 +47,20 @@ class ApplicationController < ActionController::Base
       data1["NoTickets"] = i["quantity"].to_s
       payload["Functions"].push(data1) 
     end
+    if freight.to_i > 0
+      data1 ={}
+      data1["UniqueFunctionCode"] = "FREIGHT"
+      data1["FunctionPaycode"] = "Purchase"
+      data1["NoTickets"] = "1"
+      payload["Functions"].push(data1)
+    end
     payload["Payment"]= {}
     payload["Payment"]["BookingAmount"]= booking_total.to_f
     payload["Payment"]["FreightAmount"]= freight
     payload["Payment"]["CCFeeAmount"]= cc_amount.to_f
 
     puts "====================="
-    puts payload
+    puts payload.to_json
     puts "====================="
     http = Net::HTTP.new(url.host, url.port)
     http.use_ssl = true
