@@ -50,6 +50,8 @@ Rails.application.routes.draw do
   post '/make_payment/' => 'shopping_cart#make_payment'
   post '/cart/update/' => 'shopping_cart#update'
   match '/review_order/' => 'shopping_cart#review_order', :via => [:get, :post]
+  get '/transaction_detail/:id' => 'shopping_cart#transaction_detail'
+
   # get 'authf' => 'session#authf'
   post 'subscribe' => 'staticpage#subscribe'
   match 'check_user' => 'staticpage#check_user', :via => [:get, :post]
@@ -81,5 +83,5 @@ Rails.application.routes.draw do
   # match 'add_image' => 'staticpage#add_image', :via => [:get, :post]
 
   get '/subscribed_user/:email' => 'staticpage#subscribed_user'
-  get '/my_transaction_detail/:id' => 'my_transaction_detail#index'
+  
 end
