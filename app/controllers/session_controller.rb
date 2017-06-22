@@ -12,7 +12,7 @@ class SessionController < ApplicationController
       puts "1111111111111111111111111111111111111"
       puts session[:user_id]
     else
-      redirect_to root_url, :flash => {:error => "Wrong creds. Try again"}
+      redirect_to root_url, :flash => {:error => "Incorrect password please try again"}
       puts "2222222222222222222222222222222222222222"
       session[:user_id] = nil
     end
@@ -111,7 +111,7 @@ class SessionController < ApplicationController
   def update_profile
     @user = User.find(session[:user_id])
     @country = Country.all
-    
+
     @current_user = User.find(session["user_id"])
     # @cart = ShoppingCart.where(:user_id => session[:user_id])
     @cart_count = Cart.where(:user_id => session[:user_id]).count
