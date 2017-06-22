@@ -14,11 +14,11 @@
 
 	        <div class="col-sm-12 col-md-10 col-md-offset-1">
 
-	        	<% if @my_order.blank? %>
-	        		<h3 style="text-align: center;font-size: 32px;">No bookings found</h3>
+	        	<% if @my_payment.blank? %>
+	        		<h3 style="text-align: center;font-size: 32px;">No Transactions found</h3>
 	        	<% else %>
-		        	<% if not @my_order.blank? %>
-						<h3 class="pull-left" style="padding-left:10px;">Paypal Bookings</h3>
+		        	<% if not @my_payment.blank? %>
+						
 						<div class="col-xs-12 pad-none">
 							<table class="table table-hover">
 							    <thead>
@@ -29,19 +29,19 @@
 							        <th>Amount</th>
 							        <th>Freight</th>
 							        <th>CC</th>
-											<th></th>
+									<th></th>
 							      </tr>
 							    </thead>
 							    <tbody>
-							    	<% @my_order.each do |i| %>
+							    	<% @my_payment.each do |i| %>
 								      <tr>
-												<td></td>
+										<td><%= i['pay_type'] %></td>
 								        <td><%= i['pay_id'] %></td>
-												<td><%= i['event_date'] %></td>
-												<td>AUD <%= i['amount'] %></td>
-												<td></td>
-												<td></td>
-												<td><a href="/my_transaction_detail/<%= i['id']%>"><button type="button" class="btn btn-warning" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;" name="button">View</button></a></td>
+										<td><%= i['date'] %></td>
+										<td>AUD <%= i['total'] %></td>
+										<td><%= i['freight'] %></td>
+										<td><%= i['cc_amount'] %></td>
+										<td><a href="/my_transaction_detail/<%= i['id']%>"><button type="button" class="btn btn-warning" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;" name="button">View</button></a></td>
 								      </tr>
 							      <% end %>
 							    </tbody>
@@ -55,47 +55,6 @@
     	</div>
     </div>
 
-    <% if not @pending_order.blank? %>
-    	<div class="row">
-			<div class="exclusive-reprensentatio-inner accommodation-main-inner4">
-
-
-	        <div class="col-sm-12 col-md-10 col-md-offset-1">
-
-				<h3 class="pull-left" style="padding-left:10px;">Offline Bookings</h3>
-				<div class="col-xs-12 pad-none">
-					<table class="table table-hover">
-					    <thead>
-					      <tr>
-					        <th>Name</th>
-					        <th>Date</th>
-					        <th>Rate</th>
-					        <th>Freight</th>
-					        <th>CC</th>
-					        <th></th>
-					      </tr>
-					    </thead>
-					    <tbody>
-					    	<% @pending_order.each do |i| %>
-						      <tr>
-						        <td><%= i['name'] %></td>
-								<td><%= i['event_date'] %></td>
-								<td>AUD <%= i['amount'] %></td>
-								<td></td>
-								<td></td>
-								<td><a href="my_transaction_detail"><button type="button" class="btn btn-warning" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;" name="button">View</button></a></td>
-						      </tr>
-					      <% end %>
-					    </tbody>
-					</table>
-
-				</div>
-
-
-
-	        </div>
-	    </div>
-    <% end %>
 </div>
 </div>
 </section>
