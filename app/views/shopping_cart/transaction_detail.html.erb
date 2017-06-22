@@ -10,13 +10,15 @@
   <div class="container">
     <div class="row">
 		<div class="exclusive-reprensentatio-inner accommodation-main-inner4">
-			<h2 class="fadeInUp wow" data-wow-duration="2s" data-wow-delay="0s">Transaction Details</h2>
+			<h2 class="fadeInUp wow" data-wow-duration="2s" data-wow-delay="0s">My Transactions</h2>
 
 	        <div class="col-sm-12 col-md-10 col-md-offset-1">
 
-
-
-						<!-- <h3 class="pull-left" style="padding-left:10px;"><% if @my_transaction_detail.payment_id == nil%>Offline Transaction<%else%>PayPal Transaction<%end%></h3> -->
+	        	<% if @my_payment.blank? %>
+	        		<h3 style="text-align: center;font-size: 32px;">No Transactions found</h3>
+	        	<% else %>
+		        	<% if not @my_payment.blank? %>
+						
 						<div class="col-xs-12 pad-none">
 							<table class="table table-hover">
 							    <thead>
@@ -24,34 +26,47 @@
 							        <th style= "text-align: center;">Name</th>
 							        <th style="text-align: center;">Date</th>
 							        <th style="text-align: center;">Quantity</th>
-							        <th style="text-align: center;">Amount</th>
+							        <th style="text-align: center;">Rate</th>
 							        <th style="text-align: center;">Total</th>
 
 							      </tr>
 							    </thead>
 							    <tbody>
-											<% @my_orders.each do |h|%>
-								      <tr>
-
-								        <td><%= Event.find(h.item_id).name %></td>
-    										<td><%= Event.find(h.item_id).date %></td>
-    										<td><%= h.quantity %></td>
-    										<td>AUD <%= h.rate %></td>
-    										<td>AUD <%=  @my_transaction_detail.total %></td>
-
-								      </tr>
-											<%end%>
+									<% @my_payment.each do |h|%>
+								       <tr>
+								        	<td><%= h['name'] %></td>
+											<td><%= h['event_date'] %></td>
+											<td><%= h['quantity'] %></td>
+											<td>AUD <%= h['amount'] %></td>
+											<td>AUD <%= h['total'] %></td>
+								       </tr>
+								 	<%end%>
 							    </tbody>
 							</table>
 
 						</div>
-
+					<% end %>
+				<% end %>
 
 	        </div>
     	</div>
     </div>
 
-
+</div>
 </div>
 </section>
+<style media="screen">
+	.table-hover th{
+		background-color: #F5BA13;
+		font-family: "proxima_novaregular";
+		text-align: center;
+		text-transform: uppercase;
+    vertical-align: middle;
+	}
+
+	.continue_shop:hover{
+		background-color: white !important;
+		color:  black !important;
+	}
+</style>
 <%= render 'layouts/footer'%>
