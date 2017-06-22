@@ -111,10 +111,12 @@
 
                           <th data-class="expand">Sr. no.</th>
                           <th >User</th>
-                          <th >Amount</th>
-                          <th data-hide="phone">Date</th>
                           <th data-hide="phone">Transaction Type</th>
                           <th data-hide="phone">Transaction Id</th>
+                          <th data-hide="phone">Date</th>
+                          <th >Amount</th>
+                          <th >Freight</th>
+                          <th >CC</th>
                           <th data-hide="phone">Actions</th>
 
                         </tr>
@@ -311,7 +313,7 @@
         aoColumnDefs: [
           {
              bSortable: false,
-             aTargets: [6]
+             aTargets: [8]
           },
           {
             "targets": [ 0 ],
