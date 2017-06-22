@@ -325,6 +325,7 @@ class ShoppingCartController < ApplicationController
 
             event = Event.find(i.item_id)
             data1['item_type'] = 'Event'
+            data1['item_cat_code'] = i.item_cat_code
             data1['name'] = event.name+", "+catagory['Name']
             data1['available'] = catagory['Available']
             data1['amount'] = catagory['Amount'].to_f % 1 == 0 ? catagory['Amount'].to_i : helpers.number_with_precision(catagory['Amount'].to_f, :precision => 2)
@@ -349,6 +350,7 @@ class ShoppingCartController < ApplicationController
 
             event = Event.find(i.item_id)
             data1['item_type'] = 'Event'
+            data1['item_cat_code'] = i.item_cat_code
             data1['name'] = event.name+", "+catagory['Name']
             data1['available'] = catagory['Available']
             data1['amount'] = catagory['Amount'].to_f % 1 == 0 ? catagory['Amount'].to_i : helpers.number_with_precision(catagory['Amount'].to_f, :precision => 2)
