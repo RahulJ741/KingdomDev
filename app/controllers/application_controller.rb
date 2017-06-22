@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
     payload["ContactComponentSubmission"]={}
     payload["ContactComponentSubmission"]["LastName"] = user.last_name
     payload["ContactComponentSubmission"]["FirstName"] = user.first_name
-    payload["ContactComponentSubmission"]["Title"] = "Dr"
+    payload["ContactComponentSubmission"]["Title"] = ""
     payload["ContactComponentSubmission"]["Organization"] = ""
     payload["ContactComponentSubmission"]["EmailAddress"] = user.email
     payload["ContactComponentSubmission"]["OfficeNumber"] = ""
@@ -47,7 +47,9 @@ class ApplicationController < ActionController::Base
       data1["NoTickets"] = i["quantity"].to_i
       payload["Functions"].push(data1) 
     end
-
+    puts "====================="
+    puts payload
+    puts "====================="
     http = Net::HTTP.new(url.host, url.port)
     http.use_ssl = true
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
