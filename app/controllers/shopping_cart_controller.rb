@@ -351,7 +351,7 @@ class ShoppingCartController < ApplicationController
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
 
-      payment = MyPayment.where("user_id = ?" ,session[:user_id])
+      payment = MyPayment.where("user_id = ?" ,session[:user_id]).order('id desc')
 
       @my_payment = []
       for p in payment
