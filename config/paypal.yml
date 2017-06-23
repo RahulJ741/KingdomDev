@@ -1,15 +1,16 @@
 test: &default
 
   # Credentials for REST APIs
-  # client_id: AZZisWwctBSGSOMCwWvqWJCAU8gsQXxgD6SYUNhXcj-E_do_ZCfu7wJ0uv9jwuqcDCFT_9S25mtUjBxK
-  # client_secret: EH1O8yOpWVn-X_5teg-yNgboqEATWTKvTxABYYJEbG5wYL72iJcnAroO9jeY7RdifBHdExLxekQ5XxxL
+  client_id: AZZisWwctBSGSOMCwWvqWJCAU8gsQXxgD6SYUNhXcj-E_do_ZCfu7wJ0uv9jwuqcDCFT_9S25mtUjBxK
+  client_secret: EH1O8yOpWVn-X_5teg-yNgboqEATWTKvTxABYYJEbG5wYL72iJcnAroO9jeY7RdifBHdExLxekQ5XxxL
 
-  client_id: AaVa-io3leksIJCL51QFZq_glgy78IwqocxFQZFvE7KD13JyNELG6ctgmiVDHfkWDcQDpzi1knIe1P1g
-  client_secret: EISGvVbPyrSZ8-mNm8s8QhsHRZGQJjn_Tm9nfMwUP5B-IOCnszaibXqnU_O36jZ94NqPMpQQ1euyFemm
+  # client_id: AaVa-io3leksIJCL51QFZq_glgy78IwqocxFQZFvE7KD13JyNELG6ctgmiVDHfkWDcQDpzi1knIe1P1g
+  # client_secret: EISGvVbPyrSZ8-mNm8s8QhsHRZGQJjn_Tm9nfMwUP5B-IOCnszaibXqnU_O36jZ94NqPMpQQ1euyFemm
 
 
   # Mode can be 'live' or 'sandbox'
-  mode: live
+  mode: sandbox
+  # mode: live
 
   # Credentials for Classic APIs
   # app_id: APP-80W284485P519543T
