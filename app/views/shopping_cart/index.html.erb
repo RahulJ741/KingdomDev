@@ -21,18 +21,18 @@
 				 <p style="text-align: left;padding-left: 10px;">Transactions found to have breached the terms and conditions of sale may be cancelled by the KSG Team.</p>
 				 <p style="text-align: left;padding-left: 10px;">For more information on the Terms and Conditions please download them <a href='http://dev2.infiny.in:3333/assets/Terms_and_Conditions_of_Sale_KSG_LEGAL_POLICY_v3.pdf'><strong style="text-decoration:underline">here</strong></a></p>
 	        </div>
-	        <% if @is_exceed %>
-	        	<div class="alert alert-danger alert-dismissable">
-							<i class="fa fa-info-circle pull-left" style="padding-top: 3px;"></i>
-		          <p style="text-align: left;padding-left: 10px;">Alert :Some or all of the quantity for your event selected is not in stock.</p>
-							<p style="text-align: left;padding-left: 10px;">You can:
-								<ul style="text-align: left; padding-left: 25px;">
-									<li>Reduce the number of tickets requested </li>
-									<li>Contact KSG on <a href="mailto:info@kingdomsg.com?subject=feedback">info@kingdomsg.com</a> to request a waitlist of these tickets.</li>
-								</ul>
-							</p>
-		        </div>
-	        <% end %>
+	        
+        	<div class="alert alert-danger alert-dismissable" style="display:none">
+						<i class="fa fa-info-circle pull-left" style="padding-top: 3px;"></i>
+	          <p style="text-align: left;padding-left: 10px;">Alert :Some or all of the quantity for your event selected is not in stock.</p>
+						<p style="text-align: left;padding-left: 10px;">You can:
+							<ul style="text-align: left; padding-left: 25px;">
+								<li>Reduce the number of tickets requested </li>
+								<li>Contact KSG on <a href="mailto:info@kingdomsg.com?subject=feedback">info@kingdomsg.com</a> to request a waitlist of these tickets.</li>
+							</ul>
+						</p>
+	        </div>
+	     
 
         	<% if @cart_data.blank? %>
         		<h3 style="text-align: center;font-size: 32px;">You have not added nothing to cart yet</h3>
@@ -62,7 +62,7 @@
 											<td><%= i['event_date'] %></td>
 											<td style="padding-top: 2px;padding-bottom: 2px;"><input type="number" data-amount="<%= i['amount'] %>" data-item_id="<%= i['cart_id'] %>" min="1" 
 
-											<% if i['Available'].to_i <=9 %>  	max="<%= i['available'] %>"
+											<% if i['available'].to_i <=9 %>  	max="<%= i['available'] %>"
 		                                    <% else %>
 		                                      max="9"
 		                                    <% end %>
@@ -123,6 +123,9 @@
 </style>
 <script>
 	$(document).ready(function(){
+		<% if @is_exceed %>
+			$('.alert-danger').show();
+		<% end %>
 		$(document).on('click','.eventcart',function(){
 			if($(this).parents('.cat_box').find('.quantity').val()){
 				$('#eventModal').find('#item_id').val($(this).data('item_id'));
