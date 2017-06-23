@@ -35,7 +35,7 @@
 							<td>AUD <%= i['amount'] %></td>
 							<td>AUD <%= @freight.to_f %></td>
 							<td>AUD <%= @cc_amount.to_f %></td>
-							<td>AUD <%= i['amount'].to_f * i['quantity'].to_f * @freight.to_f * @cc_amount.to_f %></td>
+							<td>AUD <%= i['amount'].to_f * i['quantity'].to_f + @freight.to_f + @cc_amount.to_f %></td>
         </tr>
         <%end%>
       </tbody>
