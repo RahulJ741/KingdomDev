@@ -118,7 +118,7 @@ class ShoppingCartController < ApplicationController
         @cart_data.push(data1)
       end
       total = @cart_data.map {|s| s['amount'].to_f * s['quantity'].to_f}.reduce(0, :+)
-      
+
       if MyPayment.where(user_id: session[:user_id]).all.blank?
         @freight = 100
       else
@@ -229,6 +229,7 @@ class ShoppingCartController < ApplicationController
         data1['amount'] = catagory['Amount']
         data1['quantity'] = i.quantity
         data1['event_date'] = event.date.strftime("%d %b %y")
+
       end
       @cart_data.push(data1)
     end
@@ -240,7 +241,7 @@ class ShoppingCartController < ApplicationController
       @freight = 0
     end
     total = total.to_f+@freight.to_f
-    
+
 
     url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/BookFunction")
     if params[:from_card].blank?
@@ -255,8 +256,8 @@ class ShoppingCartController < ApplicationController
         order_id = (MyPayment.where('order_id Is NOT NULL').last.order_id)+1
       end
       c_data = @cart_data
-      WelcomeEmailMailer.rate_exteted(c_data,user).deliver_now
-      WelcomeEmailMailer.admin_rate_exteted(c_data,user).deliver_now
+      WelcomeEmailMailer.rate_exteted(c_data,@freight,@cc_amount,user).deliver_now
+      WelcomeEmailMailer.admin_rate_exteted(c_data,@freight,@cc_amount,user).deliver_now
       pymt = MyPayment.create(user_id: session[:user_id], order_id: order_id, total: booking_total, date: Time.current.to_date,freight: @freight,cc_amount: @cc_amount)
       data =[]
       @cart_data.each do |mo|
@@ -316,8 +317,8 @@ class ShoppingCartController < ApplicationController
         # my paymment update after making a payment
         @del_cart = Cart.where(user_id: session[:user_id])
         c_data = @cart_data
-        WelcomeEmailMailer.shoppingdetails(c_data,user).deliver_now
-        WelcomeEmailMailer.admin_shopping_cart(c_data, user).deliver_now
+        WelcomeEmailMailer.shoppingdetails(c_data,@freight,@cc_amount,user).deliver_now
+        WelcomeEmailMailer.admin_shopping_cart(c_data,@freight,@cc_amount, user).deliver_now
         pymt = MyPayment.create(user_id: session[:user_id], payment_id: @payment.id, total: booking_total, date: Time.current.to_date,freight: @freight,cc_amount: @cc_amount)
         data = []
         @cart_data.each do |mo|
@@ -356,7 +357,7 @@ class ShoppingCartController < ApplicationController
       @my_payment = []
       for p in payment
         data1 = {}
-        data1['id'] = p.id 
+        data1['id'] = p.id
         if p.payment_id.blank?
           data1['pay_type'] = 'Invoice'
           data1['pay_id'] = 'N/A'
@@ -367,7 +368,7 @@ class ShoppingCartController < ApplicationController
         data1['date'] = p.date
         data1['total'] = p.total
         data1['freight'] = p.freight
-        data1['cc_amount'] = p.cc_amount  
+        data1['cc_amount'] = p.cc_amount
         data1['freight']= data1['freight'].to_f % 1 == 0 ? data1['freight'].to_i : helpers.number_with_precision(data1['freight'].to_f, :precision => 2)
         data1['cc_amount']= data1['cc_amount'].to_f % 1 == 0 ? data1['cc_amount'].to_i : helpers.number_with_precision(data1['cc_amount'].to_f, :precision => 2)
         data1['total']= data1['total'].to_f % 1 == 0 ? data1['total'].to_i : helpers.number_with_precision(data1['total'].to_f, :precision => 2)

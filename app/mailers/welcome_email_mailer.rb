@@ -8,17 +8,21 @@ class WelcomeEmailMailer < ApplicationMailer
 
   end
 
-  def shoppingdetails(cart ,user)
+  def shoppingdetails(cart,freight,cc_amount ,user)
     @cart  = cart
     @user = user
-    admin_shopping_cart(@cart, @user)
+    @freight = freight
+    @cc_amount = cc_amount
+    # admin_shopping_cart(@cart, @user)
     mail :to => user.email, :subject => "Thank you for your order"
   end
 
-  def rate_exteted(cart, user)
+  def rate_exteted(cart,freight,cc_amount, user)
     @cart = cart
     @user = user
-    admin_rate_exteted(@cart ,@user)
+    @freight = freight
+    @cc_amount = cc_amount
+    # admin_rate_exteted(@cart ,@user)
     mail :to => user.email, :subject => " Your order is registered over $2,500 and will be actioned by Kingdom Sports Group"
 
     # mail to: => "", :subject => "Payment exteded of user"
@@ -34,16 +38,20 @@ class WelcomeEmailMailer < ApplicationMailer
     mail :to => ig_email, :subject => "Complete Subscription"
   end
 
-  def admin_rate_exteted(cart,user)
+  def admin_rate_exteted(cart,freight,cc_amount,user)
     @cart = cart
     @user = user
+    @freight = freight
+    @cc_amount = cc_amount
     mail :to => "info@kingdomsg.com", :subject => "A customer has placed an order over $2500"
     # info@kingdomsg.com
   end
 
-  def admin_shopping_cart(cart, user)
+  def admin_shopping_cart(cart,freight,cc_amount, user)
     @cart = cart
     @user = user
+    @freight = freight
+    @cc_amount = cc_amount
     mail :to => "info@kingdomsg.com", :subject => "User shopping cart details"
   end
 
