@@ -60,7 +60,14 @@
 								        <td><%= i['item_type'] %></td>
 											<td><%= i['name'] %></td>
 											<td><%= i['event_date'] %></td>
-											<td style="padding-top: 2px;padding-bottom: 2px;"><input type="number" data-amount="<%= i['amount'] %>" data-item_id="<%= i['cart_id'] %>" min="1" max="<%= i['available'] %>" class="form-control quantity" placeholder="Enter Quantity" style="width: 50%; margin: auto;" value="<%= i['quantity'] %>"></td>
+											<td style="padding-top: 2px;padding-bottom: 2px;"><input type="number" data-amount="<%= i['amount'] %>" data-item_id="<%= i['cart_id'] %>" min="1" 
+
+											<% if i['Available'].to_i <=9 %>  	max="<%= i['available'] %>"
+		                                    <% else %>
+		                                      max="9"
+		                                    <% end %>
+
+											 class="form-control quantity" placeholder="Enter Quantity" style="width: 50%; margin: auto;" value="<%= i['quantity'] %>"></td>
 											<td>AUD <%= i['amount'] %> </td>
 											<td >AUD <span class="row_total"></span></td>
 											<td><a href="/cart/remove/<%= i['cart_id'] %>"><i class="fa fa-trash" style="margin-right:5px"> </i>Remove</a></td>
@@ -87,7 +94,7 @@
 							Continue Shopping
 						</a>
 
-						<a id="checkout_btn" <% if @is_exceed %>class="btn subscribe-submit disabled" href="javascript:void(0)" <%else%>class="subscribe-submit" href="/checkout/" <% end %>style="padding: 10px 15px !important; width: 100PX !important; margin: 9px 0px 10px 0px !important; font-size: 14px;box-shadow: 0 5px 0 0 #a1790c;">
+						<a id="checkout_btn" <% if @is_exceed %>class="btn subscribe-submit disabled" href="javascript:void(0)" <%else%>class="btn subscribe-submit" href="/checkout/" <% end %>style="padding: 10px 15px !important; width: 100PX !important; margin: 9px 0px 10px 0px !important; font-size: 14px;box-shadow: 0 5px 0 0 #a1790c;">
 							Checkout
 						</a>
 
@@ -165,7 +172,7 @@
 
 
 	    $(document).on('change',"[type='number']",function(){
-	    	if(parseInt($(this).val()) <= parseInt($(this).attr('max')) ){
+	    	if(parseInt($(this).val()) <= parseInt($(this).attr('max'))  && parseInt($(this).val()) <= 9 ){
 	    		var item_id = $(this).data('item_id');
 	    		var quantity = $(this).val();
 	    		var this1 = $(this);

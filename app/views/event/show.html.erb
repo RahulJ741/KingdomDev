@@ -102,14 +102,25 @@
 			                                    In Stock
 			                                </div>
 			                                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 10px 15px; border-bottom: 1px solid #cccccc;">
-			                                    <input type="number"  min="1" max="<%= i['Available'] %>" data-max="<%= i['Available'] %>"class="form-control quantity" placeholder="Quantity" style="width: 50%; margin: auto;">
+			                                    <input type="number"  min="1"  <% if i['Available'].to_i <=9 %> max="<%= i['Available'] %>"
+			                                    	data-max="<%= i['Available'] %>" 
+			                                    <% else %>
+			                                    	max="9"
+			                                    	data-max="9"
+			                                    <% end %>
+			                                    class="form-control quantity" placeholder="Quantity" style="width: 50%; margin: auto;">
 			                                </div>
 			                            <% else %>
 			                            	<div class="col-md-12 col-sm-12 col-xs-12" style="padding: 10px 15px; border-bottom: 1px solid #cccccc;background-color: #f2dede;">
 			                                    Out Of Stock
 			                                </div>
 			                                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 10px 15px; border-bottom: 1px solid #cccccc;">
-			                                    <input type="number"  min="1" max="<%= i['Available'] %>" class="form-control quantity" placeholder="Enter Quantity" style="width: 50%; margin: auto;" disabled>
+			                                    <input type="number"  min="1" 
+			                                    <% if i['Available'].to_i <=9 %> max="<%= i['Available'] %>" 
+			                                    <% else %>
+			                                    	max="9"
+			                                    <% end %>
+			                                     class="form-control quantity" placeholder="Enter Quantity" style="width: 50%; margin: auto;" disabled>
 			                                </div>
 			                           	<% end %>
 
@@ -313,7 +324,7 @@
 
 
 	    $(document).on('change',"[type='number']",function(){
-	    	if($(this).val() > 0 && $(this).val() <= parseInt($(this).data('max')) ){
+	    	if($(this).val() > 0 && $(this).val() <= parseInt($(this).data('max')) && parseInt($(this).val()) <= 9 ){
 	    		$(this).parents('.cat_box').find('button').removeClass('disabled');
 	    		var cost = $(this).parents('.cat_box').find('.cost');
 
