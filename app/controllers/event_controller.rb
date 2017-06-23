@@ -23,6 +23,7 @@ class EventController < ApplicationController
 	        data1['venue'] = event.venue
 	        data1['gender'] = event.gender
 	        data1['date'] = event.date.strftime("%d %b %y")
+          data1["start_time"] = event.start_time
 	        data1["time"] = event.start_time.strftime("%I:%M %p")+" - "+event.end_time.strftime("%I:%M %p")
 	        data1['event_id'] = event.id
           data1['event_uid'] = i['Id']
@@ -37,7 +38,7 @@ class EventController < ApplicationController
 	    end
 
     end
-    @events= @events.sort_by { |hsh| hsh['date'] }
+    @events= @events.sort_by { |hsh| [hsh['date'],hsh['start_time']] }
 	  puts data['Functions'].count
 
     url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetFunctionGroups")
