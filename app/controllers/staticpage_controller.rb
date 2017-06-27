@@ -2,6 +2,10 @@ class StaticpageController < ApplicationController
   require 'uri'
   require 'net/http'
   require 'digest/md5'
+  # require "browser/aliases"
+  # Browser::Base.include(Browser::Aliases)
+  # browser = Browser.new("Some user agent")
+
 
   def add_image
 
@@ -13,7 +17,7 @@ class StaticpageController < ApplicationController
   end
 
   def test_payment
-    
+
     url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/BookFunction")
     data = {"ContactComponentSubmission": {
                 "Title": "Mr",
@@ -97,12 +101,21 @@ class StaticpageController < ApplicationController
   def index
       # @lists = Gibbon::API.lists
     puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<"
+    puts request.remote_ip
+    # puts request.user_agent
+    # puts response.inspect
+    # puts browser.platform.name
+    # puts browser.known?
+    # puts browser.meta
+    # puts browser.modern?
+    puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
     # puts session.inspect
     puts session[:user_id]
 
     if session[:user_id]
       @current_user = User.find(session["user_id"])
       puts session[:user_id]
+
     else
       @current_user = nil
     end
@@ -419,10 +432,10 @@ class StaticpageController < ApplicationController
     puts ENV["MAILCHIMP_LIST_ID"]
     puts params[:email]
     # gibbon.lists(list_id).members.create(body: {email_address: params[:email], status: "subscribed", merge_fields: {FNAME: "First Name", LNAME: "Last Name",MESSAGE: "done"}})
-    tivd = gibbon.lists(ENV["MAILCHIMP_LIST_ID"]).members.create(body: {email_address: params[:email], status: "unsubscribed"})
+    tivd = gibbon.lists(ENV["MAILCHIMP_LIST_ID"]).members.create(body: {email_address: params[:email], status: "subscribed"})
 
     WelcomeEmailMailer.complete_subscription(params[:email]).deliver_now
-    redirect_to root_path, :flash => {:success => "Please check your email to complete subscription process"}
+    redirect_to root_path, :flash => {:success => "Subscription Complete"}
     # vids = Net::HTTP.get_response(tivd)
     # tivd = gibbon.lists(ENV["MAILCHIMP_LIST_ID"]).members.retrieve
     # tivd = gibbon.lists(ENV["MAILCHIMP_LIST_ID"]).members(9842F915B22D76D38AA32CD4B8C2DE05).retrieve
