@@ -35,7 +35,7 @@ class WelcomeEmailMailer < ApplicationMailer
     puts "======================="
 
     puts ig_email
-    mail :to => ig_email, :subject => "Complete Subscription"
+    mail :to => ig_email, :subject => "Thank you for subscribing"
   end
 
   def admin_rate_exteted(cart,freight,cc_amount,user)

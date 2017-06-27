@@ -83,7 +83,7 @@ class ShoppingCartController < ApplicationController
       redirect_to :back, :flash => {:error => 'Event already added to cart'}
     else
       Cart.create(:user_id => session[:user_id],:item => 0,:item_id => params[:item_id],:item_uid => params[:item_uid],:item_cat_code => params[:item_cat_code],:quantity => ((params[:quantity]).to_i).abs )
-      redirect_to params[:prev_url], :flash => {:success => 'Added to cart'}
+      redirect_to session[:url], :flash => {:success => 'Added to cart'}
     end
   end
 
@@ -268,11 +268,13 @@ class ShoppingCartController < ApplicationController
         MyOrder.create(user_id: session[:user_id], item: mo['item'], item_id: mo['item_id'], item_uid: mo['item_uid'], item_cat_code: mo['item_cat_code'], quantity: mo['quantity'],rate: mo['amount'], my_payment_id: pymt.id)
       end
 
-      @del_cart.destroy_all
+
       response = kingdomsg_booking_api(url,data,booking_total,@freight,@cc_amount)
       if not response == "success"
-        redirect_to '/cart', :flash => {:error => 'Somthing went wrong'}
+        @message_res = (response.split('-').last).strip
+        redirect_to '/cart', :flash => {:error => @message_res }
       else
+        @del_cart.destroy_all
         redirect_to '/thank_you', :flash => {:success => 'Booking Successfull'}
       end
 
@@ -329,17 +331,20 @@ class ShoppingCartController < ApplicationController
           MyOrder.create(user_id: session[:user_id], item: mo['item'], item_id: mo['item_id'], item_uid: mo['item_uid'], item_cat_code: mo['item_cat_code'], quantity: mo['quantity'],rate: mo['amount'], my_payment_id: pymt.id)
         end
 
-        @del_cart.destroy_all
+
         response = kingdomsg_booking_api(url,data,booking_total,@freight,@cc_amount)
         if not response == "success"
-          redirect_to '/cart', :flash => {:error => 'Somthing went wrong'}
+          @message_res = (response.split('-').last).strip
+          redirect_to '/cart', :flash => {:error => @message_res }
         else
+          @del_cart.destroy_all
           redirect_to '/thank_you', :flash => {:success => 'Booking Successfull'}
         end
       else
         puts "not deone"
         puts @payment.error  # Error Hash
-        redirect_to '/cart', :flash => {:error => 'Somthing went wrong'}
+        puts @payment.error["message"]
+        redirect_to '/cart', :flash => {:error => @payment.error["message"] }
       end
 
     end
