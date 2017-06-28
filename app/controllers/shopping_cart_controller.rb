@@ -272,7 +272,11 @@ class ShoppingCartController < ApplicationController
       response = kingdomsg_booking_api(url,data,booking_total,@freight,@cc_amount)
       if not response == "success"
         @message_res = (response.split('-').last).strip
-        redirect_to '/cart', :flash => {:error => @message_res }
+        if @message_res == "There is insufficient function registration inventory available."
+          redirect_to '/cart', :flash => {:error => "There is not enough tickets to fulfil your order."}
+        else
+          redirect_to '/cart', :flash => {:error => @message_res }
+        end
       else
         @del_cart.destroy_all
         redirect_to '/thank_you', :flash => {:success => 'Booking Successfull'}
@@ -335,7 +339,12 @@ class ShoppingCartController < ApplicationController
         response = kingdomsg_booking_api(url,data,booking_total,@freight,@cc_amount)
         if not response == "success"
           @message_res = (response.split('-').last).strip
-          redirect_to '/cart', :flash => {:error => @message_res }
+          if @message_res == "There is insufficient function registration inventory available."
+            redirect_to '/cart', :flash => {:error => "There is not enough tickets to fulfil your order."}
+          else
+            redirect_to '/cart', :flash => {:error => @message_res }
+          end
+          # redirect_to '/cart', :flash => {:error => @message_res }
         else
           @del_cart.destroy_all
           redirect_to '/thank_you', :flash => {:success => 'Booking Successfull'}
