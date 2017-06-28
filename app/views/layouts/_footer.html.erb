@@ -502,24 +502,6 @@ css/master.css
 	color: red;
 }*/
 </style>
-<script>
-$(document).ready(function(){
-	$(document).on('click','.signup-tab',function(e){
-		e.preventDefault();
-	    $('#signup-taba').tab('show');
-	});
-
-	$(document).on('click','.signin-tab',function(e){
-	   	e.preventDefault();
-	    $('#signin-taba').tab('show');
-	});
-
-	$(document).on('click','.forgetpass-tab',function(e){
-	 	e.preventDefault();
-	   	$('#forgetpass-taba').tab('show');
-	});
-});
-</script>
 
 
     <script src="/assets/js/wow.js"></script>
@@ -539,12 +521,59 @@ $(document).ready(function(){
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-datetimepicker/2.7.1/js/bootstrap-material-datetimepicker.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js"></script>
+
+<script>
+$(window).on('load',function(){
+    /*alert();*/
+    $(document).find('.Loading').hide();
+    $(document).find('.MainBody').show();
+});
+
+
+$(document).ready(function(){
+	$.unblockUI();
+	$(document).on('click','.signup-tab',function(e){
+		e.preventDefault();
+	    $('#signup-taba').tab('show');
+	});
+
+	$(document).on('click','.signin-tab',function(e){
+	   	e.preventDefault();
+	    $('#signin-taba').tab('show');
+	});
+
+	$(document).on('click','.forgetpass-tab',function(e){
+	 	e.preventDefault();
+	   	$('#forgetpass-taba').tab('show');
+	});
+});
+</script>
 
 
 
 		<script>
 
+
+
+
     $(document).ready(function(){
+
+
+			// $('#event_button').click(function() {
+        // $.blockUI({ css: {
+        //     border: 'none',
+        //     padding: '15px',
+        //     backgroundColor: '#000',
+        //     '-webkit-border-radius': '10px',
+        //     '-moz-border-radius': '10px',
+        //     opacity: .5,
+        //     color: '#fff'
+				//
+        // } });
+
+      //   setTimeout($.unblockUI, 2000);
+    	// });
 
 
 			$("#checkout_btn").click(function(){
