@@ -2,6 +2,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   require 'uri'
   require 'net/http'
+
+  $country = Country.all
+
+
+
   def kingdomsg_api(url)
     http = Net::HTTP.new(url.host, url.port)
     http.use_ssl = true
@@ -45,7 +50,7 @@ class ApplicationController < ActionController::Base
       data1["UniqueFunctionCode"] = i["code"]
       data1["FunctionPaycode"] = "No Charge"
       data1["NoTickets"] = i["quantity"].to_s
-      payload["Functions"].push(data1) 
+      payload["Functions"].push(data1)
     end
     if freight.to_i > 0
       data1 ={}
@@ -73,7 +78,7 @@ class ApplicationController < ActionController::Base
     request1["content-type"] = 'application/json'
     puts data.to_json
     request1.body= payload.to_json
-    
+
     response = http.request(request1)
     data = response.body
     return data

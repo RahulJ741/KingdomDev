@@ -157,15 +157,49 @@
 								  	<div class="form-group">
 
 								      <input type="text" class="form-control" name="first_name" placeholder="First Name">
-
-
 								  	</div>
+
+										<div class="form-group">
+								      <input type="text" class="form-control" name="middle_name"  placeholder="Middle Name">
+								  	</div>
+
 								  	<div class="form-group">
 								      <input type="text" class="form-control" name="last_name"  placeholder="Last Name">
-
-
 								  	</div>
-								  	<div class="form-group">
+										<!-- from here -->
+
+										<div class="form-group">
+								      <input type="text" class="form-control" name="phone"  placeholder="Phone">
+								  	</div>
+										<div class="form-group">
+								      <textarea class="form-control" name="address" id="address" rows="5" cols="80" placeholder="Address"></textarea>
+								  	</div>
+										<div class="form-group">
+								      <input type="text" class="form-control" name="city"  placeholder="City">
+								  	</div>
+
+										<div class="form-group">
+								      <input type="text" class="form-control" name="state"  placeholder="State">
+								  	</div>
+
+										<div class="form-group">
+								      <input type="text" class="form-control" name="post_code"  placeholder="Postcode">
+								  	</div>
+										<div class="form-group">
+											<select class="custom-select form-control" name="country">
+												<option value="">Choose Country</option>
+												<% $country.each do |c| %>
+
+												<option value="<%= c.name %>"><%= c.name %></option>
+												<%end%>
+											</select>
+								  	</div>
+
+
+
+
+
+										<div class="form-group">
 
 								      	<input type="password" class="form-control" name="password" id="pwd" placeholder="Password">
 
@@ -173,7 +207,6 @@
 								  	</div>
 								  	<div class="form-group">
 								      <input type="password" class="form-control" name="conpass"  placeholder="Confirm Password">
-
 
 								  	</div>
 						  			<button type="submit" id="register_btn" class="btn btn-block bt-login" data-loading-text="Registering...." style="background:#27ae60; color:white;">Register</button>
@@ -720,7 +753,22 @@ $(document).ready(function(){
             type: "POST",
             dataType: "json"
         }
-	    }
+	    },
+			phone: {
+				required :true
+			},
+			address: {
+				required: true
+			},
+			city :{
+				required: true
+			},
+			post_code:{
+				required: true
+			},
+			country:{
+				required: true
+			}
 
 	    },
 	    messages: {
@@ -737,7 +785,22 @@ $(document).ready(function(){
 	            required:"This field is required",
 	            minlength: "Enter the same password",
 	            equalTo : "Enter same password again"
-	          }
+	          },
+						phone:{
+							required: "This field is required"
+						},
+						address:{
+							required: "This field is required"
+						},
+						city: {
+							required: "This field is required"
+						},
+						post_code:{
+							required: "This field is required"
+						},
+						country:{
+							required: "This field is required"
+						}
 
 	        }
 	    });

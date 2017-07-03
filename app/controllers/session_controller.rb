@@ -19,7 +19,7 @@ class SessionController < ApplicationController
   end
 
   def sign_up
-    @user = User.create(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], active: 'false')
+    @user = User.create(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], active: 'false', :phone => params[:phone], :address => params[:address], :city => params[:city], :state => params[:state], :post_code => params[:post_code], :country => params[:country], :middle_name => params[:middle_name] )
     @user.password_digest = BCrypt::Password.create(params[:password])
     @user.activation_code = SecureRandom.urlsafe_base64
     if @user.save
