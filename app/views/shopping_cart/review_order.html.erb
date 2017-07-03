@@ -94,7 +94,7 @@
 
 						  <div class="form-group">
 							<select class="custom-select form-control" name="country">
-								<option value="">Choose</option>
+								<option value="">Choose Country</option>
 								<% Country.all.each do |c| %>
 
 									<option value="<%= c.name %>" <% if @current_user.country == c.name %>selected=""<% end %>><%= c.name %></option>
