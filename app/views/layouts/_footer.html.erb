@@ -625,9 +625,15 @@ $(document).ready(function(){
 				}
 			});
 
-
+			var is_click = false;
 			$("#submit_cart").click(function(){
-				$("#payment-form").submit();
+				if(!is_click){
+					$("#payment-form").submit();
+					is_click =true;
+				}
+				else{
+					// alert("proccss");
+				}
 			});
 
 
