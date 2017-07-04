@@ -608,10 +608,17 @@ $(document).ready(function(){
     	// });
 
 			$("#checkout_btn").click(function(){
-				if (($('input[type="checkbox"]').prop("checked") == true) && ($("#phone").val() == "") && ($("#address").val() == "")) {
+				if (($('input[type="checkbox"]').prop("checked") == true) && ($("#phone").val() == "") || ($("#address").val() == "")) {
 					// alert("hohoo");
-					window.location.href = '#payment-form';
+					// window.location.href = '#';
+					// $('html,body').animate({
+        	// scrollTop:$("#allert_info").offset().top
+    			// 	},'slow')
+					window.scrollTo(0, 300);
+					// document.location.href = '#allert_info';
+					// parent.document.location.href = "/review_order/";
 				}
+
 
 			});
 

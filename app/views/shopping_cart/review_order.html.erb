@@ -13,7 +13,7 @@
 			<h2 class="fadeInUp wow" data-wow-duration="2s" data-wow-delay="0s">Review Booking</h2>
 			<div class="col-sm-12 col-md-10 col-md-offset-1">
 				<% if @is_exceed %>
-		        	<div class="alert alert-danger alert-dismissable">
+		        	<div class="alert alert-danger alert-dismissable" id="allert_info">
 			          <p><i class="fa fa-info-circle"></i>Alert :Some or all of the quantity for your event selected is not in stock.</p>
 								<p>You can:
 									<ul>
@@ -35,9 +35,9 @@
 		        <div class="col-sm-12 col-md-10 col-md-offset-1">
 		        	<% if not @is_pro_complete %>
 		        		<input type="hidden" name="is_user_update" value="true">
-						<div class="alert alert-info alert-dismissable">
+						<div class="alert alert-warning alert-dismissable">
 				          <i class="fa fa-info-circle"></i>
-						   Note: Your profile is imcomplete. we need more details about you ,to process your order
+						   Note: Your profile is incomplete. we need more details about you ,to process your order
 				        </div>
 
 						<h3 class="pull-left" style="padding-left:10px;">Your Information</h3>
