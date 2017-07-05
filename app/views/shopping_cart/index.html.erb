@@ -21,7 +21,7 @@
 				 <p style="text-align: left;padding-left: 10px;">Transactions found to have breached the terms and conditions of sale may be cancelled by the KSG Team.</p>
 				 <p style="text-align: left;padding-left: 10px;">For more information on the Terms and Conditions please download them <a href='http://kingdomsg2018.kingdomsg.com/assets/Terms_and_Conditions_of_Sale_KSG_LEGAL_POLICY_v3.pdf'><strong style="text-decoration:underline">here</strong></a></p>
 	        </div>
-	        
+
         	<div class="alert alert-danger alert-dismissable" style="display:none">
 						<i class="fa fa-info-circle pull-left" style="padding-top: 3px;"></i>
 	          <p style="text-align: left;padding-left: 10px;">Alert :Some or all of the quantity for your event selected is not in stock.</p>
@@ -32,7 +32,7 @@
 							</ul>
 						</p>
 	        </div>
-	     
+
 
         	<% if @cart_data.blank? %>
         		<h3 style="text-align: center;font-size: 32px;">You have not added anything to your cart yet</h3>
@@ -60,7 +60,7 @@
 								        <td><%= i['item_type'] %></td>
 											<td><%= i['name'] %></td>
 											<td><%= i['event_date'] %></td>
-											<td style="padding-top: 2px;padding-bottom: 2px;"><input type="number" data-amount="<%= i['amount'] %>" data-item_id="<%= i['cart_id'] %>" min="1" 
+											<td style="padding-top: 2px;padding-bottom: 2px;"><input type="number" data-amount="<%= i['amount'] %>" data-item_id="<%= i['cart_id'] %>" min="1"
 
 											<% if i['available'].to_i <=9 %>  	max="<%= i['available'] %>"
 		                                    <% else %>
@@ -82,12 +82,12 @@
 
 
 					<div class="col col-xs-12" style="text-align:right;">
-						
+
 						<% if @is_new %>
-							<h3 style="font-size: 22px;font-weight: normal;">freight : AUD <span id="freight_amount">100</span></h3>
+							<h3 style="font-size: 22px;font-weight: normal;">Freight : AUD <span id="freight_amount">100</span></h3>
 						<% end %>
-						<h3 style="font-size: 22px;font-weight: normal">total : AUD <span id="table_total"></span></h3>
-						<h3 id="cc_row" style="font-size: 22px;font-weight: normal;display:none">cc : AUD <span id="cc_amount"></span></h3>
+						<h3 style="font-size: 22px;font-weight: normal">Total : AUD <span id="table_total"></span></h3>
+						<h3 id="cc_row" style="font-size: 22px;font-weight: normal;display:none">CC : AUD <span id="cc_amount"></span></h3>
 
 						<h3>Grand Total : AUD <span id="grand_total"></span></h3>
 						<a class="subscribe-submit" href="/event/index/?event=Athletics" style="padding: 10px 15px !important; width: auto !important; margin: 9px 0px 10px 0px !important; font-size: 14px;">
@@ -151,7 +151,7 @@
 		  ~String(parseFloat(row_total)).indexOf(".") ? row_total = parseFloat(row_total).toFixed(2) : row_total = parseFloat(row_total);
 		  $(this).parents('tr').find('.row_total').html(row_total);
 		});
-		
+
 		grand_total = parseFloat(grand_total)+parseFloat(freight);
 		$("#table_total").html(grand_total);
 		if (grand_total <= parseFloat(2500.00)){
@@ -165,8 +165,8 @@
 		else{
 			$("#cc_row").hide();
 		}
-		
-		
+
+
 		~String(parseFloat(grand_total)).indexOf(".") ? grand_total = parseFloat(grand_total).toFixed(2) : grand_total = parseFloat(grand_total);
 		$('#grand_total').html(grand_total);
 		$("[type='number']").bind("cut copy paste",function(evt) {
@@ -196,7 +196,7 @@
 		          	$( ".row_total" ).each(function( index ) {
 					  g_total = g_total + parseFloat($(this).html());
 					});
-					
+
 					g_total = parseFloat(g_total)+parseFloat(freight);
 					$("#table_total").html(g_total);
 					if (g_total <= parseFloat(2500.00)){
@@ -209,7 +209,7 @@
 					else{
 						$("#cc_row").hide();
 					}
-					
+
 					~String(parseFloat(g_total)).indexOf(".") ? g_total = parseFloat(g_total).toFixed(2) : g_total = parseFloat(g_total);
 					$('#grand_total').html(g_total);
 					if ($('.is_exceed').length == 0){

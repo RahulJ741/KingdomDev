@@ -166,11 +166,11 @@
 						</table>
 						<div style="text-align: right;">
 							<% if not @freight==0 %>
-								<h3 style="font-size: 22px;font-weight: normal;">freight : AUD <span id="freight_amount">100</span></h3>
+								<h3 style="font-size: 22px;font-weight: normal;">Freight : AUD <span id="freight_amount">100</span></h3>
 							<% end %>
 							<h3 style="font-size: 22px;font-weight: normal;">Total : AUD <span ><%= @booking_total %></span></h3>
 							<% if not @cc_amount.blank? %>
-								<h3 style="font-size: 22px;font-weight: normal;">cc : AUD <span id="cc_amount"><%= @cc_amount %></span></h3>
+								<h3 style="font-size: 22px;font-weight: normal;">CC : AUD <span id="cc_amount"><%= @cc_amount %></span></h3>
 							<% end %>
 							<h3 >Grand Total : AUD <%= @total %></h3>
 						</div>
