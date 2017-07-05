@@ -3,7 +3,7 @@ class EventController < ApplicationController
   def helpers
     ActionController::Base.helpers
   end
-  
+
   def index
     if params[:event].blank? and params[:start_date].blank? and params[:end_date].blank?
       url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetFunctions")
@@ -58,6 +58,9 @@ class EventController < ApplicationController
 
     if session[:user_id]
       @current_user = User.find(session["user_id"])
+      session[:url] = request.original_url
+      # puts "check out this shit"
+      puts session[:url]
       puts session[:user_id]
       @cart_count = Cart.where(:user_id => session[:user_id]).count
     else
