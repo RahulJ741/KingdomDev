@@ -63,10 +63,12 @@ Rails.application.routes.draw do
   get '/admin/user_list' => 'admin#user_list'
   get 'admin/user_ajax' => 'admin#user_ajax'
   get '/admin/user/show/:id' => 'admin#user_show'
+  get '/admin/user/edit/:id' => 'admin#edit_user'
   get "admin/index_ajax" => 'admin#index_ajax'
   get "/admin/transaction/show/:my_payment_id" => 'admin#transaction_detail'
   get '/thank_you' => 'staticpage#thank_you'
   get '/tour' => 'staticpage#tour'
+  post '/admin/update_user' => 'admin#update_user'
 
   post '/book_function' => 'staticpage#book_function'
   # comment after demo
@@ -83,5 +85,5 @@ Rails.application.routes.draw do
   # match 'add_image' => 'staticpage#add_image', :via => [:get, :post]
 
   get '/subscribed_user/:email' => 'staticpage#subscribed_user'
-  
+
 end
