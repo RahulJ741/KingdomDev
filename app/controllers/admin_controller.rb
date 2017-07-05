@@ -100,7 +100,7 @@ class AdminController < ApplicationController
 			data1.append("AUD "+i.total.to_s)
 			data1.append("AUD "+i.freight.to_s)
 			data1.append("AUD "+i.cc_amount.to_s)
-			
+
 			data1.append('<a href="/admin/transaction/show/'+i['id'].to_s+'">
 				<button class="btn btn-primary" type="button">
 					View
@@ -208,6 +208,10 @@ class AdminController < ApplicationController
 				<button class="btn btn-primary" type="button">
 					View
 				</button>
+			</a> <a href="/admin/user/edit/'+i['id'].to_s+'">
+				<button class="btn btn-warning" type="button">
+					Edit
+				</button>
 			</a>')
 			data.append(data1)
 		end
@@ -253,6 +257,33 @@ class AdminController < ApplicationController
 	      @current_user = nil
 	    end
 		@user = User.find(params[:id])
+	end
+
+
+	def edit_user
+		if session[:user_id]
+	      @current_user = User.find(session["user_id"])
+	    else
+	      @current_user = nil
+	    end
+		@user = User.find(params[:id])
+	end
+
+	def update_user
+		if session[:user_id]
+	      @current_user = User.find(session["user_id"])
+	   else
+	      @current_user = nil
+	  end
+		@user = User.find(params[:id])
+		if @user.update(:first_name => params[:first_name], :last_name => params[:last_name],:email => params[:email] ,:phone => params[:phone], :address => params[:address], :city => params[:city], :state => params[:state], :post_code => params[:post_code], :country => params[:country], :middle_name => params[:middle_name], :active => params[:active] )
+      @user.save
+      redirect_to '/admin/user_list', :flash => {:success => "User info updated"}
+      # reset_session
+    else
+      redirect_to '/admin/user_list', :flash => {:error => "User profile cannot be updated"}
+    end
+
 	end
 
 end
