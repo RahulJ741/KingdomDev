@@ -24,6 +24,10 @@ Rails.application.routes.draw do
   get 'athleticspackages/silver' => 'staticpage#athleticspackages_silver'
   get 'athleticspackages/silver_brisbane' => 'staticpage#athleticspackages_silver_brisbane'
   get 'athleticspackages/bronze' => 'staticpage#athleticspackages_bronze'
+  get 'netball' => 'staticpage#netball'
+  get 'openingpackages' => 'staticpage#openingpackagesinfo'
+  get 'swimmingpackages' => 'staticpage#swimmingpackagesinfo'
+  get 'netball_detail' => 'staticpage#netball_detail'
   post 'sign_up' => 'session#sign_up'
   match 'activate_user/:activation_code' => 'session#activate_user', :via => [:get, :post]
   post 'reset' => 'session#reset'

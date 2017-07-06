@@ -2380,8 +2380,8 @@ footer.accomdation-footer2.event-tickets-footer2 {
 .ticket2-applications-right-purpel2 {
   background: rgba(0, 0, 0, 0) url("../images/ticket-clender-purpel-bg1.png") no-repeat center top;
   display: table;
-  /*padding: 10px 10px 10px 50px !important;*/
-	padding: 0px 10px 4px 50px !important;
+  padding: 10px 10px 10px 50px !important;
+	/*padding: 0px 10px 4px 50px !important;*/
   background-size: cover;
    /*width: 86%;*/
 }
@@ -4142,6 +4142,14 @@ footer.accomdation-footer2.tour-footer-bg2 {
   z-index: 9;
 }
 
+.banner-main.netball-packages-banner {
+  background: url(../images/athletic-baner-details-banner2.jpg) no-repeat center top / cover ;
+  float: left;
+  padding: 240px 0 130px !important;
+  position: relative;
+  width: 100%;
+  z-index: 9;
+}
 
 /*athletics-packages*/
 

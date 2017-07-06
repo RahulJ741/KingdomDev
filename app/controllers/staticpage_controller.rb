@@ -16,87 +16,89 @@ class StaticpageController < ApplicationController
     end
   end
 
-  def test_payment
-
-    url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/BookFunction")
-    data = {"ContactComponentSubmission": {
-                "Title": "Mr",
-                "Position": "CTO",
-                "FirstName": "John",
-                "MiddleName": "Singleton",
-                "Email": "xxx@jxxx.com",
-                "Organization": "Centium Software",
-                "AddressLineOne": "15 Miles Platting Road",
-                "AddressLineTwo": "",
-                "City": "Eight Mile Plains",
-                "State": "QLD",
-                "Postcode": "4213",
-                "Country": "Australia"
-
-            },
-                "Functions": [
-                {
-                  "UniqueFunctionCode": "AT0902A",
-                  "FunctionPaycode": "No Charge",
-                  "NoTickets": 155
-                }
-              ]
-            }
-    respose = kingdomsg_booking_api(url,data)
-    puts "===================="
-    puts respose
-  end
-
   # def test_payment
-  #   require 'paypal-sdk-rest'
-  #   @current_user = User.find(session["user_id"])
-  #   # Update client_id, client_secret and redirect_uri
-  #   # PayPal::SDK.configure({
-  #   #   :openid_client_id     => "client_id",
-  #   #   :openid_client_secret => "client_secret",
-  #   #   :openid_redirect_uri  => "http://localhost:3000/"
-  #   # })
-  #   # include PayPal::SDK::OpenIDConnect
-  #   @payment = PayPal::SDK::REST::Payment.new({
-  #         :intent => "sale",
-  #         :payer => {
-  #           :payment_method => "credit_card",
-  #           :funding_instruments => [{
-  #             :credit_card => {
-  #               :type => "visa",
-  #               :number => "4916550067336072",
-  #               :expire_month => "11",
-  #               :expire_year => "2019",
-  #               :cvv2 => "874",
-  #               :first_name => "Joe",
-  #               :last_name => "Shopper",
-  #               :billing_address => {
-  #                   :line1 => @current_user.address,
-  #                   :city => @current_user.city,
-  #                   :state => @current_user.state,
-  #                   :postal_code => @current_user.post_code,
-  #                   :country_code => "AU" }
-  #               }}]},
-  #         :transactions => [{
-
-  #           :amount => {
-  #             :total => "1.00",
-  #             :currency => "AUD" },
-  #           :description => "This is the payment transaction description." }]})
-
-  #       # Create Payment and return the status(true or false)
-  #       puts "==============="
-  #       if @payment.create
-  #         puts "done"
-  #         puts @payment.inspect     # Payment Id
-  #       else
-  #         puts "not deone"
-  #         puts @payment.error  # Error Hash
-  #       end
-  #   #   puts "}}}}}}}}}"
-  #   # puts PayPal::SDK::REST::Payment.find("PAY-6ML74144SL1948036LE74JCA").inspect
-  #       # redirect_to '/'
+  #
+  #   url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/BookFunction")
+  #   data = {"ContactComponentSubmission": {
+  #               "Title": "Mr",
+  #               "Position": "CTO",
+  #               "FirstName": "John",
+  #               "MiddleName": "Singleton",
+  #               "Email": "xxx@jxxx.com",
+  #               "Organization": "Centium Software",
+  #               "AddressLineOne": "15 Miles Platting Road",
+  #               "AddressLineTwo": "",
+  #               "City": "Eight Mile Plains",
+  #               "State": "QLD",
+  #               "Postcode": "4213",
+  #               "Country": "Australia"
+  #
+  #           },
+  #               "Functions": [
+  #               {
+  #                 "UniqueFunctionCode": "AT0902A",
+  #                 "FunctionPaycode": "No Charge",
+  #                 "NoTickets": 155
+  #               }
+  #             ]
+  #           }
+  #   respose = kingdomsg_booking_api(url,data)
+  #   puts "===================="
+  #   puts respose
   # end
+
+  def self.test_payment
+    require 'paypal-sdk-rest'
+    # @current_user = User.find(session["user_id"])
+    @current_user = User.find(6)
+    # Update client_id, client_secret and redirect_uri
+    # PayPal::SDK.configure({
+    #   :openid_client_id     => "client_id",
+    #   :openid_client_secret => "client_secret",
+    #   :openid_redirect_uri  => "http://localhost:3000/"
+    # })
+    # include PayPal::SDK::OpenIDConnect
+    @payment = PayPal::SDK::REST::Payment.new({
+          :intent => "sale",
+          :payer => {
+            :payment_method => "credit_card",
+            :funding_instruments => [{
+              :credit_card => {
+                :type => "visa",
+                :number => "4916550067336072",
+                :expire_month => "11",
+                :expire_year => "2019",
+                :cvv2 => "874",
+                :first_name => "Joe",
+                :last_name => "Shopper",
+                :billing_address => {
+                    :line1 => @current_user.address,
+                    :city => @current_user.city,
+                    :state => @current_user.state,
+                    :postal_code => @current_user.post_code,
+                    :country_code => "AU" }
+                }}]},
+          :transactions => [{
+
+            :amount => {
+              :total => "1.00",
+              :currency => "AUD" },
+            :description => "This is the payment transaction description." }]})
+
+        # Create Payment and return the status(true or false)
+        @payment.create == false
+        puts "==============="
+        if @payment.create
+          puts "done"
+          puts @payment.inspect     # Payment Id
+        else
+          puts "not deone"
+          puts @payment.error  # Error Hash
+        end
+    #   puts "}}}}}}}}}"
+    # puts PayPal::SDK::REST::Payment.find("PAY-6ML74144SL1948036LE74JCA").inspect
+        # redirect_to '/'
+  end
 
   def index
       # @lists = Gibbon::API.lists
@@ -498,7 +500,15 @@ class StaticpageController < ApplicationController
 
 
   def tour
+    if session[:user_id]
+      @current_user = User.find(session["user_id"])
+      puts session[:user_id]
+      # @cart = ShoppingCart.where(:user_id => session[:user_id])
+      @cart_count = Cart.where(:user_id => session[:user_id]).count
 
+    else
+      @current_user = nil
+    end
   end
 
   def self.book_function
@@ -577,6 +587,52 @@ end
 
  end
 
+  def netball
+    if session[:user_id]
+      @current_user = User.find(session["user_id"])
+      puts session[:user_id]
+      # @cart = ShoppingCart.where(:user_id => session[:user_id])
+      @cart_count = Cart.where(:user_id => session[:user_id]).count
 
+    else
+      @current_user = nil
+    end
+  end
+
+  def openingpackagesinfo
+    if session[:user_id]
+      @current_user = User.find(session["user_id"])
+      puts session[:user_id]
+      # @cart = ShoppingCart.where(:user_id => session[:user_id])
+      @cart_count = Cart.where(:user_id => session[:user_id]).count
+
+    else
+      @current_user = nil
+    end
+  end
+
+  def swimmingpackagesinfo
+    if session[:user_id]
+      @current_user = User.find(session["user_id"])
+      puts session[:user_id]
+      # @cart = ShoppingCart.where(:user_id => session[:user_id])
+      @cart_count = Cart.where(:user_id => session[:user_id]).count
+
+    else
+      @current_user = nil
+    end
+  end
+
+  def netball_detail
+    if session[:user_id]
+      @current_user = User.find(session["user_id"])
+      puts session[:user_id]
+      # @cart = ShoppingCart.where(:user_id => session[:user_id])
+      @cart_count = Cart.where(:user_id => session[:user_id]).count
+
+    else
+      @current_user = nil
+    end
+  end
 
 end

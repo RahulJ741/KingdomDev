@@ -6,6 +6,13 @@ class ShoppingCartController < ApplicationController
 
   def index
     @cart_count = Cart.where(:user_id => session[:user_id]).count
+    # @carttr = Cart.where(:user_id => session[:user_id])
+    # @carttr.each do |hit|
+    #   @o = ErrorCart.create(hit.attributes)
+    #   @o.error_message = "hihihihiihihihii"
+    #   @o.save
+    # end
+
     if MyPayment.where(user_id: session[:user_id]).all.blank?
       @is_new =true
     else
@@ -82,8 +89,13 @@ class ShoppingCartController < ApplicationController
     if @cart.present?
       redirect_to :back, :flash => {:error => 'Event already added to cart'}
     else
-      Cart.create(:user_id => session[:user_id],:item => 0,:item_id => params[:item_id],:item_uid => params[:item_uid],:item_cat_code => params[:item_cat_code],:quantity => ((params[:quantity]).to_i).abs )
-      redirect_to session[:url], :flash => {:success => 'Added to cart'}
+      if params[:item_id].blank? or params[:item_uid].blank? or params[:item_cat_code].blank? or params[:quantity].blank?
+        redirect_to session[:url], :flash => {:error => 'Item not added to cart.Please try again'}
+      else
+        Cart.create(:user_id => session[:user_id],:item => 0,:item_id => params[:item_id],:item_uid => params[:item_uid],:item_cat_code => params[:item_cat_code],:quantity => ((params[:quantity]).to_i).abs )
+        redirect_to session[:url], :flash => {:success => 'Added to cart'}
+      end
+
     end
   end
 
@@ -353,6 +365,12 @@ class ShoppingCartController < ApplicationController
         puts "not deone"
         puts @payment.error  # Error Hash
         puts @payment.error["message"]
+        # cart.each do |er|
+        #   @o = ErrorCart.create(er.attributes)
+        #   @o.error_message = @payment.error["message"]
+        #   @o.save
+        #   # ErrorCart.create(item: er.item, item_id: er.item_id, item_uid: er.item_uid, item_cat_code: er.item_cat_code, quantity: er.quantity, user_id: er.user_id, error_message: @payment.error["message"] )
+        # end
         redirect_to '/cart', :flash => {:error => @payment.error["message"] }
       end
 
