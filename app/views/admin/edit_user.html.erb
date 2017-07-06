@@ -302,6 +302,7 @@
 <script src="/assets/js_a/plugin/datatables/dataTables.tableTools.min.js"></script>
 <script src="/assets/js_a/plugin/datatables/dataTables.bootstrap.min.js"></script>
 <script src="/assets/js_a/plugin/datatable-responsive/datatables.responsive.min.js"></script>
+<script src="/assets/js/toastr.min.js"></script>
 
 <script type="text/javascript">
   $(document).ready(function() {
@@ -370,6 +371,36 @@
 
 
   });
+</script>
+<script type="text/javascript">
+toastr.options = {
+  "closeButton": false,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": false,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+};
+var msg = '<%= flash[:success]  %>'
+var msg1 = '<%= flash[:error] %>'
+var msg2 = '<%= flash[:notice] %>'
+if(msg){
+toastr.success(msg);
+}else if (msg1) {
+toastr.error(msg1);
+}else if (msg2) {
+toastr.info(msg2);
+}
+
 </script>
 
 </body>
