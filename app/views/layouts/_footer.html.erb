@@ -196,9 +196,6 @@
 								  	</div>
 
 
-
-
-
 										<div class="form-group">
 
 								      	<input type="password" class="form-control" name="password" id="pwd" placeholder="Password">
@@ -209,7 +206,7 @@
 								      <input type="password" class="form-control" name="conpass"  placeholder="Confirm Password">
 
 								  	</div>
-						  			<button type="submit" id="register_btn" class="btn btn-block bt-login" data-loading-text="Registering...." style="background:#27ae60; color:white;">Register</button>
+						  			<button type="button" id="register_btn" class="btn btn-block bt-login" data-loading-text="Registering...." style="background:#27ae60; color:white;">Register</button>
 									<div class="clearfix"></div>
 									<div class="login-modal-footer">
 						  				<div class="row">
@@ -623,7 +620,9 @@ $(document).ready(function(){
 			});
 
 
-
+			$('#register_btn').one('click', function(event){
+				$("#sign_up_form").submit();
+			});
 
 
 			$("#checkout_btn").click(function(){
