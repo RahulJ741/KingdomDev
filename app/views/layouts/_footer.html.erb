@@ -538,7 +538,8 @@ css/master.css
 		<script src="/assets/js/owl.carousel.js"></script>
 		<!-- <script src="/assets/js/jssor.slider.mini.js"></script> -->
 		<script src="/assets/js/jquery.scrollTo-min.js"></script>
-		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<!-- uncommet this jquery ui -->
+		<!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
 		<script src="/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 		<script src="/assets/js/jquery-3.js" type="text/javascript"></script>
 		<script src="/assets/js/carousel-j.js" type="text/javascript"></script>
@@ -550,8 +551,8 @@ css/master.css
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-datetimepicker/2.7.1/js/bootstrap-material-datetimepicker.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js"></script>
-
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js"></script> -->
+		<!-- uncommet above for jquery blocak ui -->
 <script>
 $(window).on('load',function(){
     /*alert();*/
@@ -561,7 +562,9 @@ $(window).on('load',function(){
 
 
 $(document).ready(function(){
-	$.unblockUI();
+	// uncommet below for block uiform
+
+	// $.unblockUI();
 	$(document).on('click','.signup-tab',function(e){
 		e.preventDefault();
 	    $('#signup-taba').tab('show');
@@ -576,6 +579,8 @@ $(document).ready(function(){
 	 	e.preventDefault();
 	   	$('#forgetpass-taba').tab('show');
 	});
+
+	$('[data-toggle="tooltip"]').tooltip();
 });
 </script>
 
@@ -620,8 +625,19 @@ $(document).ready(function(){
 			});
 
 
-			$('#register_btn').one('click', function(event){
-				$("#sign_up_form").submit();
+			// $('#register_btn').one('click', function(event){
+			// 	$("#sign_up_form").submit();
+			// });
+
+			var is_click1 = false;
+			$("#register_btn").click(function(){
+				if(!is_click1){
+					$("#sign_up_form").submit();
+					is_click1 =true;
+				}
+				else{
+					// alert("proccss");
+				}
 			});
 
 
