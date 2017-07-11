@@ -212,9 +212,7 @@ jQuery.validator.addMethod("cardExpiry", function(value, element) {
     return this.optional(element) || Stripe.card.validateExpiry(value.month, value.year);
 }, "Invalid expiration date.");
 
-jQuery.validator.addMethod("trioDate",function(value, element) {
-  	return value.match(/^\d{1,2}\/\d{4}$/);
-}, "Please enter a date in the format mm/yyyy");
+
 
 jQuery.validator.addMethod("cardCVC", function(value, element) {
     return this.optional(element) || Stripe.card.validateCVC(value);
@@ -228,8 +226,8 @@ $form.validate({
         },
         cardExpiry: {
             required: true,
-            cardExpiry: true,
-						trioDate:true
+            cardExpiry: true
+
         },
         cardCVC: {
             required: true,
