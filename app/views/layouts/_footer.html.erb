@@ -626,10 +626,20 @@ $(document).ready(function(){
 
 
 			$('#register_btn').on('click', function(event){
+				if ( $("#sign_up_form").valid() ) {
+					$("#sign_up_form").submit();
+					$('#register_btn').attr('disabled', 'disabled');
+				} else {
 
-				$(this).attr('disabled', 'disabled');
-				$("#sign_up_form").submit();
+				}
+				// $(this).attr('disabled', 'disabled');
+				// $("#sign_up_form").submit();
 			});
+
+			// $("#sign_up_form").submit(function(){
+			// 	$('#register_btn').attr('disabled', 'disabled');
+			// });
+
 			$('#register_btn').on('dbclick', function(event){
 				event.preventDefault();
 			});
