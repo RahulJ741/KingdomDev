@@ -66,17 +66,26 @@
                         </div>
                         <div class="row">
                             <div class="col-xs-7 col-md-7">
-                                <div class="form-group">
+                                <div class="form-group input-group date" id='datetimepicker10'>
                                     <label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
-                                    <input
-                                        type="tel"
+                                    <!-- <input
+                                        type="text"
                                         class="form-control"
                                         name="cardExpiry"
                                         placeholder="MM / YYYY eg. 11/2018"
                                         autocomplete="cc-exp"
                                         required
-                                    />
+
+                                    /> -->
+																	<div class='input-group date' id='datetimepicker10'>
+											                <input type='text' class="form-control" name="cardExpiry"/>
+											                <span class="input-group-addon">
+											                    <span class="glyphicon glyphicon-calendar">
+											                    </span>
+											                </span>
+											            </div>
                                 </div>
+
                             </div>
                             <div class="col-xs-5 col-md-5 pull-right">
                                 <div class="form-group">
@@ -199,7 +208,7 @@ var $form = $('#payment-form');
 /* Fancy restrictive input formatting via jQuery.payment library*/
 $('input[name=cardNumber]').payment('formatCardNumber');
 $('input[name=cardCVC]').payment('formatCardCVC');
-$('input[name=cardExpiry]').payment('formatCardExpiry');
+// $('input[name=cardExpiry]').payment('formatCardExpiry');
 
 /* Form validation using Stripe client-side validation helpers */
 jQuery.validator.addMethod("cardNumber", function(value, element) {
@@ -213,7 +222,6 @@ jQuery.validator.addMethod("cardExpiry", function(value, element) {
 }, "Invalid expiration date.");
 
 
-
 jQuery.validator.addMethod("cardCVC", function(value, element) {
     return this.optional(element) || Stripe.card.validateCVC(value);
 }, "Invalid CVC.");
@@ -225,8 +233,8 @@ $form.validate({
             cardNumber: true
         },
         cardExpiry: {
-            required: true,
-            cardExpiry: true
+            required: true
+
 
         },
         cardCVC: {
