@@ -17,8 +17,6 @@
             <th >Date</th>
             <th >Quantity</th>
 						<th>Amount</th>
-						<th>Freight</th>
-						<th>CC</th>
 						<th>Total</th>
 
           </tr>
@@ -33,13 +31,23 @@
               <td ><%= i['event_date'] %></td>
               <td ><%= i['quantity'] %></td>
 							<td>AUD <%= i['amount'] %></td>
-							<td>AUD <%= @freight.to_f %></td>
-							<td>AUD <%= @cc_amount.to_f %></td>
 							<td>AUD <%= i['amount'].to_f * i['quantity'].to_f + @freight.to_f + @cc_amount.to_f %></td>
         </tr>
         <%end%>
       </tbody>
     </table>
+		<div style="display:table;">
+			<div style="display:inline-flex">
+				<h3>Frieght:</h3> <h4><%= @freight.to_f %></h4>
+			</div><br>
+			<div style="display:inline-flex">
+				<h3>CC:</h3> <h4><%= @cc_amount.to_f %> </h4>
+			</div><br>
+			<div style="display:inline-flex">
+				<h3>Grand Total:</h3> <h4><%= @total.to_f %></h4>
+			</div>
+
+		</div>
 
 	<p>If any of your order is not in stock you can contact KSG at <a href="mailto:info@kingdomsg.com?subject=feedback">info@kingdomsg.com</a> and request a waitlist.</p>
 </div>
