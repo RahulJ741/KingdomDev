@@ -353,6 +353,9 @@ class ShoppingCartController < ApplicationController
 
 
         response = kingdomsg_booking_api(url,data,booking_total,@freight,@cc_amount)
+        puts "_________________++++++++++++++++++++++_________________"
+        puts response
+        puts "_________________++++++++++++++++++++++_________________"
         if not response == "success"
           @message_res = (response.split('-').last).strip
           if @message_res == "There is insufficient function registration inventory available."
