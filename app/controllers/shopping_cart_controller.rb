@@ -41,6 +41,9 @@ class ShoppingCartController < ApplicationController
           data1['amount'] =  catagory['Amount'].to_f % 1 == 0 ? catagory['Amount'].to_i : helpers.number_with_precision(catagory['Amount'].to_f, :precision => 2)
           data1['quantity'] = i.quantity
           data1['event_date'] = event.date.strftime("%d %b %y")
+          data1['start_time'] = event.start_time.strftime("%I:%M %p")
+          data1['end_date'] = event.end_time.strftime("%I:%M %p")
+          data1['code'] = catagory['Code']
           if i.quantity.to_i > catagory['Available'].to_i
             data1['is_exceed'] = true
             @is_exceed = true

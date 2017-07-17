@@ -1,5 +1,5 @@
 <%= render 'layouts/header'%>
-<section class="banner-main accomodation-banner" style="background: rgba(0, 0, 0, 0) url('/assets/images/star.png') no-repeat scroll center top / cover;">
+<section class="banner-main accomodation-banner" style="background: rgba(0, 0, 0, 0) url('/assets/images/star.png') no-repeat scroll center center / cover;">
 	<div class="container">
 	</div>
 	<div class="gold-cost-right" >
@@ -47,7 +47,7 @@
 							      <tr>
 							        <th>Item</th>
 							        <th>Name</th>
-							        <th>Date</th>
+							        <th>Date / Time</th>
 							        <th>Quantity</th>
 							        <th>Rate</th>
 							        <th>Total</th>
@@ -58,8 +58,10 @@
 							    	<% @cart_data.each do |i| %>
 								      <tr <% if i['is_exceed'] %>style="background-color: #f2dede;" class="is_exceed" <% end %>>
 								        <td><%= i['item_type'] %></td>
-											<td><%= i['name'] %></td>
-											<td><%= i['event_date'] %></td>
+											<td><%= i['name'] %> (<%= i['code']%>)</td>
+											<td>
+												<a href="" data-toggle="tooltip" data-html="true" title="<b>Time:</b> <%= i['start_time']%>-<%= i['end_date'] %> "><%= i['event_date'] %></a>
+											</td>
 											<td style="padding-top: 2px;padding-bottom: 2px;"><input type="number" data-amount="<%= i['amount'] %>" data-item_id="<%= i['cart_id'] %>" min="1"
 
 											<% if i['available'].to_i <=9 %>  	max="<%= i['available'] %>"
