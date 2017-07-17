@@ -339,8 +339,8 @@ class ShoppingCartController < ApplicationController
         # my paymment update after making a payment
         @del_cart = Cart.where(user_id: session[:user_id])
         c_data = @cart_data
-        WelcomeEmailMailer.shoppingdetails(c_data,@freight,@cc_amount,user,total).deliver_now
-        WelcomeEmailMailer.admin_shopping_cart(c_data,@freight,@cc_amount, user,total).deliver_now
+        # WelcomeEmailMailer.shoppingdetails(c_data,@freight,@cc_amount,user,total).deliver_now
+        # WelcomeEmailMailer.admin_shopping_cart(c_data,@freight,@cc_amount, user,total).deliver_now
         pymt = MyPayment.create(user_id: session[:user_id], payment_id: @payment.id, total: booking_total, date: Time.current.to_date,freight: @freight,cc_amount: @cc_amount)
         data = []
         @cart_data.each do |mo|
@@ -351,7 +351,7 @@ class ShoppingCartController < ApplicationController
           MyOrder.create(user_id: session[:user_id], item: mo['item'], item_id: mo['item_id'], item_uid: mo['item_uid'], item_cat_code: mo['item_cat_code'], quantity: mo['quantity'],rate: mo['amount'], my_payment_id: pymt.id)
         end
 
-
+        puts "{{{{{{{{{{{{{{{{{{{{{}}}}}}}}}}}}}}}}}}}}}"
         response = kingdomsg_booking_api(url,data,booking_total,@freight,@cc_amount)
         puts "_________________++++++++++++++++++++++_________________"
         puts response
