@@ -255,7 +255,10 @@ class ShoppingCartController < ApplicationController
     total = total.to_f+@freight.to_f
 
 
-    url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/BookFunction")
+    # url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/BookFunction")
+    url = URI("https://kingdomsg.eventsair.com/ksgapi/paymenttest/ksgapi/ksgapi/BookFunction")
+    puts "the url is mofu:"
+    puts url
     if params[:from_card].blank?
       @cc_amount = 0
       @cc_amount = @cc_amount.to_f % 1 == 0 ? @cc_amount.to_i : helpers.number_with_precision(@cc_amount.to_f, :precision => 2)
@@ -268,8 +271,8 @@ class ShoppingCartController < ApplicationController
         order_id = (MyPayment.where('order_id Is NOT NULL').last.order_id)+1
       end
       c_data = @cart_data
-      WelcomeEmailMailer.rate_exteted(c_data,@freight,@cc_amount,user).deliver_now
-      WelcomeEmailMailer.admin_rate_exteted(c_data,@freight,@cc_amount,user).deliver_now
+      WelcomeEmailMailer.rate_exteted(c_data,@freight,@cc_amount,user,total).deliver_now
+      WelcomeEmailMailer.admin_rate_exteted(c_data,@freight,@cc_amount,user,total).deliver_now
       pymt = MyPayment.create(user_id: session[:user_id], order_id: order_id, total: booking_total, date: Time.current.to_date,freight: @freight,cc_amount: @cc_amount)
       data =[]
       @cart_data.each do |mo|
@@ -331,12 +334,13 @@ class ShoppingCartController < ApplicationController
       if @payment.create
         puts "done"
         puts @payment.id # Payment Id
-
+        puts @payment
+        puts @payment.inspect
         # my paymment update after making a payment
         @del_cart = Cart.where(user_id: session[:user_id])
         c_data = @cart_data
-        WelcomeEmailMailer.shoppingdetails(c_data,@freight,@cc_amount,user).deliver_now
-        WelcomeEmailMailer.admin_shopping_cart(c_data,@freight,@cc_amount, user).deliver_now
+        WelcomeEmailMailer.shoppingdetails(c_data,@freight,@cc_amount,user,total).deliver_now
+        WelcomeEmailMailer.admin_shopping_cart(c_data,@freight,@cc_amount, user,total).deliver_now
         pymt = MyPayment.create(user_id: session[:user_id], payment_id: @payment.id, total: booking_total, date: Time.current.to_date,freight: @freight,cc_amount: @cc_amount)
         data = []
         @cart_data.each do |mo|
@@ -359,6 +363,7 @@ class ShoppingCartController < ApplicationController
           # redirect_to '/cart', :flash => {:error => @message_res }
         else
           @del_cart.destroy_all
+
           redirect_to '/thank_you', :flash => {:success => 'Booking Successfull'}
         end
       else
