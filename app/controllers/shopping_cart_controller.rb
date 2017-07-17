@@ -177,6 +177,9 @@ class ShoppingCartController < ApplicationController
         data1['available'] = catagory['Available']
         data1['amount'] = catagory['Amount'].to_f % 1 == 0 ? catagory['Amount'].to_i : helpers.number_with_precision(catagory['Amount'].to_f, :precision => 2)
         data1['quantity'] = i.quantity
+        data1['start_time'] = event.start_time.strftime("%I:%M %p")
+        data1['end_date'] = event.end_time.strftime("%I:%M %p")
+        data1['code'] = catagory['Code']
         puts "==================="
         puts data1['available'].to_i
         puts data1['quantity'].to_i
