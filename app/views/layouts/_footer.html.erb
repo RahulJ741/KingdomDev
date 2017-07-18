@@ -624,6 +624,8 @@ $(document).ready(function(){
     	// });
 
 			$("#checkout_btn").click(function(){
+				// comment out this when site reopens
+				$(this).attr('disabled', 'disabled');
 				if (($('input[type="checkbox"]').prop("checked") == true) && ($("#phone").val() == "") || ($("#address").val() == "") || ($("#city").val() == "")) {
 					// alert("hohoo");
 					// window.location.href = '#';
@@ -671,6 +673,8 @@ $(document).ready(function(){
 
 
 			$("#checkout_btn").click(function(){
+				// comment this after sit reopens
+				$(this).attr('disabled', 'disabled');
 				if ($("#payment-form").valid()){
 					$("#Submit_query").modal('show');
 				}
