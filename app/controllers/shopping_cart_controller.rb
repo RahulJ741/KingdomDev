@@ -345,8 +345,8 @@ class ShoppingCartController < ApplicationController
         # my paymment update after making a payment
         @del_cart = Cart.where(user_id: session[:user_id])
         c_data = @cart_data
-        # WelcomeEmailMailer.shoppingdetails(c_data,@freight,@cc_amount,user,total).deliver_now
-        # WelcomeEmailMailer.admin_shopping_cart(c_data,@freight,@cc_amount, user,total).deliver_now
+        WelcomeEmailMailer.shoppingdetails(c_data,@freight,@cc_amount,user,total).deliver_now
+        WelcomeEmailMailer.admin_shopping_cart(c_data,@freight,@cc_amount, user,total).deliver_now
         pymt = MyPayment.create(user_id: session[:user_id], payment_id: @payment.id, total: booking_total, date: Time.current.to_date,freight: @freight,cc_amount: @cc_amount)
         data = []
         @cart_data.each do |mo|
