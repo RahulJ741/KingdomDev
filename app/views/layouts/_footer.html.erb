@@ -684,6 +684,7 @@ $(document).ready(function(){
 			$("#submit_cart").click(function(){
 				if(!is_click){
 					$("#payment-form").submit();
+					$(this).attr('disabled', 'disabled');
 					is_click =true;
 				}
 				else{
