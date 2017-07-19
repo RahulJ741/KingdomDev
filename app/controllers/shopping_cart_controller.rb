@@ -271,23 +271,27 @@ class ShoppingCartController < ApplicationController
       total = total.to_f+@cc_amount.to_f
       total = total.to_f % 1 == 0 ? total.to_i : helpers.number_with_precision(total.to_f, :precision => 2)
       @del_cart = Cart.where(user_id: session[:user_id])
-      if MyPayment.where('order_id Is NOT NULL').last.blank?
-        order_id = 1
-      else
-        order_id = (MyPayment.where('order_id Is NOT NULL').last.order_id)+1
-      end
-      c_data = @cart_data
-      # mailers
-      # WelcomeEmailMailer.rate_exteted(c_data,@freight,@cc_amount,user,total).deliver_now
-      # WelcomeEmailMailer.admin_rate_exteted(c_data,@freight,@cc_amount,user,total).deliver_now
-      pymt = MyPayment.create(user_id: session[:user_id], order_id: order_id, total: booking_total, date: Time.current.to_date,freight: @freight,cc_amount: @cc_amount)
+
+      # ------->
+      # if MyPayment.where('order_id Is NOT NULL').last.blank?
+      #   order_id = 1
+      # else
+      #   order_id = (MyPayment.where('order_id Is NOT NULL').last.order_id)+1
+      # end
+      # c_data = @cart_data
+      # # mailers
+      # # WelcomeEmailMailer.rate_exteted(c_data,@freight,@cc_amount,user,total).deliver_now
+      # # WelcomeEmailMailer.admin_rate_exteted(c_data,@freight,@cc_amount,user,total).deliver_now
+      # pymt = MyPayment.create(user_id: session[:user_id], order_id: order_id, total: booking_total, date: Time.current.to_date,freight: @freight,cc_amount: @cc_amount)
+      # <-------
+
       data =[]
       @cart_data.each do |mo|
         data1 ={}
         data1['code'] = mo['item_cat_code']
         data1['quantity'] = mo['quantity']
         data.push(data1)
-        MyOrder.create(user_id: session[:user_id], item: mo['item'], item_id: mo['item_id'], item_uid: mo['item_uid'], item_cat_code: mo['item_cat_code'], quantity: mo['quantity'],rate: mo['amount'], my_payment_id: pymt.id)
+        MyOrder.create(user_id: session[:user_id], item: mo['item'], item_id: mo['item_id'], item_uid: mo['item_uid'], item_cat_code: mo['item_cat_code'], quantity: mo['quantity'],rate: mo['amount'])
       end
 
 
