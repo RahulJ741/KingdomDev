@@ -44,9 +44,17 @@ class ApplicationController < ActionController::Base
     payload["ContactComponentSubmission"]["AddressState"] = user.state
     payload["ContactComponentSubmission"]["AddressPostcode"] = user.post_code.to_s
     payload["ContactComponentSubmission"]["Privacy"] = "None"
+    payload["ContactComponentSubmission"]["RedirectUrl"] =  "http://kingdomsg2018.kingdomsg.com/response/6/"
     payload["Functions"] = []
+    puts "thisa is data"
+    puts data
     for i in data
-      data1 ={}
+      puts "this is it mofo"
+      puts i.inspect
+      data1 = {}
+      # puts i.errors.full_messages
+      puts "+++++++++++++++++++++++++"
+      puts i['code']
       data1["UniqueFunctionCode"] = i["code"]
       data1["FunctionPaycode"] = "No Charge"
       data1["NoTickets"] = i["quantity"].to_s
