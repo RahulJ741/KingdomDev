@@ -106,7 +106,7 @@
 							Continue Shopping
 						</a>
 
-						<a id="checkout_btn" <% if @is_exceed %>class="btn subscribe-submit disabled" href="javascript:void(0)" <%else%>class="btn subscribe-submit" href="/review_order/" <% end %>style="padding: 10px 15px !important; width: 100PX !important; margin: 9px 0px 10px 0px !important; font-size: 14px;box-shadow: 0 5px 0 0 #a1790c;">
+						<a id="checkout_btn" <% if @is_exceed %>class="btn subscribe-submit disabled" href="javascript:void(0)" <%else%>class="btn subscribe-submit" href="" <% end %>style="padding: 10px 15px !important; width: 100PX !important; margin: 9px 0px 10px 0px !important; font-size: 14px;box-shadow: 0 5px 0 0 #a1790c;">
 							Checkout
 						</a>
 
@@ -135,8 +135,8 @@
 </style>
 <script>
 	$(document).ready(function(){
-		// $('#checkout_btn').attr('disabled', 'disabled');
-		// $('.offline').show();
+		$('#checkout_btn').attr('disabled', 'disabled');
+		$('.offline').show();
 		<% if @is_exceed %>
 			$('.alert-danger').show();
 		<% end %>
