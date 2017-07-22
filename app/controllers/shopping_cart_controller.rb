@@ -454,11 +454,11 @@ class ShoppingCartController < ApplicationController
       @del_cart.each do |mytr|
         MyOrder.create(user_id: params[:user_id], item: mytr.item, item_id: mytr.item_id, item_uid: mytr.item_uid, item_cat_code: mytr[:item_cat_code], quantity: mytr[:quantity], my_payment_id: pymt.id)
       end
-      if @freight == 0
-        @freight.to_i
-      else
-        @freight.to_f
-      end
+      # if @freight == 0
+      #   @freight.to_i
+      # else
+      #   @freight.to_f
+      # end
       WelcomeEmailMailer.shoppingdetails(c_data,@freight,@cc_amount,user,total).deliver_now
       WelcomeEmailMailer.admin_shopping_cart(c_data,@freight,@cc_amount, user,total).deliver_now
 
