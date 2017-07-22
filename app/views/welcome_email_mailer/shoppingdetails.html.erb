@@ -39,15 +39,15 @@
         <%end%>
       </tbody>
     </table>
-		<div style="display:table;">
+		<div style="display:table; margin-left:43%">
 			<div style="display:inline-flex">
-				<h3>Frieght:</h3> <h4><%= @freight.to_f %></h4>
+				<h3>Frieght:</h3>&emsp;<h4>AUD <%= @freight.to_f %></h4>
+			</div>&emsp; &emsp;
+			<div style="display:inline-flex">
+				<h3>CC:</h3>&emsp;<h4>AUD <%= @cc_amount.to_f %> </h4>
 			</div><br>
 			<div style="display:inline-flex">
-				<h3>CC:</h3> <h4><%= @cc_amount.to_f %> </h4>
-			</div><br>
-			<div style="display:inline-flex">
-				<h3>Grand Total:</h3> <h4><%= @total.to_f %></h4>
+				<h3>Grand Total:</h3> <h4>AUD <%= @total.to_f %></h4>
 			</div>
 
 		</div>
