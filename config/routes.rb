@@ -89,5 +89,5 @@ Rails.application.routes.draw do
   # match 'add_image' => 'staticpage#add_image', :via => [:get, :post]
 
   get '/subscribed_user/:email' => 'staticpage#subscribed_user'
-
+  match '/response/:user_id/' => 'shopping_cart#response_url', :via => [:get, :post]
 end

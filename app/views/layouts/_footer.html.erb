@@ -1055,31 +1055,31 @@ $(document).ready(function(){
 
 
 
-		$('#nws_btn').click(function(){
-			var email = $('#email').val();
-
-			$.ajax({
-				url: "https://kingdomsg.com/kingdomsg2018/home/newsletter",
-				type: 'post',
-
-				data: {'email':email},
-				// dataType: "jsonp",
-				crossDomain:true,
-				success: function(data){
-
-					if(data == 1){
-						$('#email').val('');
-						$('#msg').show().html('Subscription is completed.').css('color','#fff');
-					}else{
-						$('#msg').show().html(data).css('color','red');
-					}
-				},
-				error: function(data){
-
-					// $('#msg').show().html('something went wrong').css('color','red');
-				}
-			});
-		});
+		// $('#nws_btn').click(function(){
+		// 	var email = $('#email').val();
+		//
+		// 	$.ajax({
+		// 		url: "https://kingdomsg.com/kingdomsg2018/home/newsletter",
+		// 		type: 'post',
+		//
+		// 		data: {'email':email},
+		// 		// dataType: "jsonp",
+		// 		crossDomain:true,
+		// 		success: function(data){
+		//
+		// 			if(data == 1){
+		// 				$('#email').val('');
+		// 				$('#msg').show().html('Subscription is completed.').css('color','#fff');
+		// 			}else{
+		// 				$('#msg').show().html(data).css('color','red');
+		// 			}
+		// 		},
+		// 		error: function(data){
+		//
+		// 			// $('#msg').show().html('something went wrong').css('color','red');
+		// 		}
+		// 	});
+		// });
 
         $(window).scroll(function(){
                 if( $(window).scrollTop() > 0 ) {

@@ -44,7 +44,9 @@ class ApplicationController < ActionController::Base
     payload["ContactComponentSubmission"]["AddressState"] = user.state
     payload["ContactComponentSubmission"]["AddressPostcode"] = user.post_code.to_s
     payload["ContactComponentSubmission"]["Privacy"] = "None"
-    payload["ContactComponentSubmission"]["RedirectUrl"] =  "http://kingdomsg2018.kingdomsg.com/response/6/"
+    # payload["ContactComponentSubmission"]["RedirectUrl"] =  "http://kingdomsg2018.kingdomsg.com/response/#{ user.id }/"
+    payload["ContactComponentSubmission"]["RedirectUrl"] =  "http://http://dev2.infiny.in:3333/response/#{ user.id }/"
+
     payload["Functions"] = []
     puts "thisa is data"
     puts data
