@@ -260,8 +260,8 @@ class ShoppingCartController < ApplicationController
     total = total.to_f+@freight.to_f
     puts total
 
-    # url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/BookFunction")
-    url = URI("https://kingdomsg.eventsair.com/ksgapi/paymenttest/ksgapi/ksgapi/BookFunction")
+    url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/BookFunction")
+    # url = URI("https://kingdomsg.eventsair.com/ksgapi/paymenttest/ksgapi/ksgapi/BookFunction")
     puts "the url is mofu:"
     puts url
     # if total.to_f > 2500
