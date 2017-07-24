@@ -102,51 +102,51 @@ class ShoppingCartController < ApplicationController
     end
   end
 
-  # def checkout
-  #
-  #   if session[:user_id]
-  #     @current_user = User.find(session["user_id"])
-  #     puts session[:user_id]
-  #     @cart_count = Cart.where(:user_id => session[:user_id]).count
-  #
-  #     # getting total with api call
-  #     puts "hihihihiihihihii"
-  #     cart = Cart.where(:user_id => session[:user_id])
-  #     puts cart.inspect
-  #
-  #     @cart_data = []
-  #     for i in cart
-  #       data1 = {}
-  #       if i.item == 'event'
-  #         url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetFunctionInfo?functionid="+i.item_uid)
-  #         data = kingdomsg_api(url)
-  #         catagory =  (data['FunctionInfo']['FeeTypes'].select {|cat| cat["Code"] == i.item_cat_code })[0]
-  #
-  #         event = Event.find(i.item_id)
-  #         data1['item_type'] = 'Event'
-  #         data1['name'] = event.name+", "+catagory['Name']
-  #         data1['available'] = catagory['Available']
-  #         data1['amount'] = catagory['Amount']
-  #         data1['quantity'] = i.quantity
-  #         data1['event_date'] = event.date.strftime("%d %b %y")
-  #       end
-  #       @cart_data.push(data1)
-  #     end
-  #     total = @cart_data.map {|s| s['amount'].to_f * s['quantity'].to_f}.reduce(0, :+)
-  #
-  #     if MyPayment.where(user_id: session[:user_id]).all.blank?
-  #       @freight = 100
-  #     else
-  #       @freight = 0
-  #     end
-  #     total = total.to_f+@freight.to_f
-  #     if total.to_f > 2500
-  #       redirect_to "/review_order/"
-  #     end
-  #   else
-  #     @current_user = nil
-  #   end
-  # end
+  def checkout
+
+    if session[:user_id]
+      @current_user = User.find(session["user_id"])
+      puts session[:user_id]
+      @cart_count = Cart.where(:user_id => session[:user_id]).count
+
+      # getting total with api call
+      puts "hihihihiihihihii"
+      cart = Cart.where(:user_id => session[:user_id])
+      puts cart.inspect
+
+      @cart_data = []
+      for i in cart
+        data1 = {}
+        if i.item == 'event'
+          url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetFunctionInfo?functionid="+i.item_uid)
+          data = kingdomsg_api(url)
+          catagory =  (data['FunctionInfo']['FeeTypes'].select {|cat| cat["Code"] == i.item_cat_code })[0]
+
+          event = Event.find(i.item_id)
+          data1['item_type'] = 'Event'
+          data1['name'] = event.name+", "+catagory['Name']
+          data1['available'] = catagory['Available']
+          data1['amount'] = catagory['Amount']
+          data1['quantity'] = i.quantity
+          data1['event_date'] = event.date.strftime("%d %b %y")
+        end
+        @cart_data.push(data1)
+      end
+      total = @cart_data.map {|s| s['amount'].to_f * s['quantity'].to_f}.reduce(0, :+)
+
+      if MyPayment.where(user_id: session[:user_id]).all.blank?
+        @freight = 100
+      else
+        @freight = 0
+      end
+      total = total.to_f+@freight.to_f
+      if total.to_f > 2500
+        redirect_to "/review_order/"
+      end
+    else
+      @current_user = nil
+    end
+  end
 
   def review_order
     if session[:user_id]
@@ -197,13 +197,13 @@ class ShoppingCartController < ApplicationController
       @cart_data.push(data1)
     end
 
-    # if not params[:from_cart].blank?
-    #   @card_data={}
-    #   @card_data['cardNumber']=params[:cardNumber]
-    #   @card_data['cardExpiry']=params[:cardExpiry]
-    #   @card_data['cardCVC']=params[:cardCVC]
-    #   @card_data['cardtype']=params[:cardtype]
-    # end
+    if not params[:from_cart].blank?
+      @card_data={}
+      @card_data['cardNumber']=params[:cardNumber]
+      @card_data['cardExpiry']=params[:cardExpiry]
+      @card_data['cardCVC']=params[:cardCVC]
+      @card_data['cardtype']=params[:cardtype]
+    end
     @total = @cart_data.map {|s| s['amount'].to_f * s['quantity'].to_f}.reduce(0, :+)
     if MyPayment.where(user_id: session[:user_id]).all.blank?
       @freight = 100
@@ -212,125 +212,167 @@ class ShoppingCartController < ApplicationController
     end
     @total = @total.to_f+@freight.to_f
     @booking_total = @total
-    # if @total.to_f <= 2500
-    @cc_amount = @total*0.025
-    @cc_amount = @cc_amount.to_f % 1 == 0 ? @cc_amount.to_i : helpers.number_with_precision(@cc_amount.to_f, :precision => 2)
-    @total = @total.to_f+@cc_amount.to_f
-    # end
+    if @total.to_f <= 2500
+      @cc_amount = @total*0.025
+      @cc_amount = @cc_amount.to_f % 1 == 0 ? @cc_amount.to_i : helpers.number_with_precision(@cc_amount.to_f, :precision => 2)
+      @total = @total.to_f+@cc_amount.to_f
+    end
     @total = @total.to_f % 1 == 0 ? @total.to_i : helpers.number_with_precision(@total.to_f, :precision => 2)
   end
 
   def make_payment
-    cart = Cart.where(:user_id => session[:user_id])
-
-    user = User.find(session[:user_id])
-    if not params[:is_user_update].blank?
-      user.update(:first_name => params[:first_name], :last_name => params[:last_name],:email => params[:email] ,:phone => params[:phone], :address => params[:address], :city => params[:city], :state => params[:state], :post_code => params[:post_code], :country => params[:country], :middle_name => params[:middle_name] )
-    end
-    @cart_data = []
-    for i in cart
-      data1 = {}
-      if i.item == 'event'
-        url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetFunctionInfo?functionid="+i.item_uid)
-        data = kingdomsg_api(url)
-        catagory =  (data['FunctionInfo']['FeeTypes'].select {|cat| cat["Code"] == i.item_cat_code })[0]
-
-        event = Event.find(i.item_id)
-        data1['item'] = 0
-        data1['item_type'] = 'Event'
-        data1['item_id'] = i.item_id
-        data1['item_uid'] = i.item_uid
-        data1['item_cat_code'] = i.item_cat_code
-        data1['name'] = event.name+", "+catagory['Name']
-        data1['available'] = catagory['Available']
-        data1['amount'] = catagory['Amount']
-        data1['quantity'] = i.quantity
-        data1['event_date'] = event.date.strftime("%d %b %y")
-
+      # delete this Code
+      cart = Cart.where(:user_id => session[:user_id])
+      user = User.find(session[:user_id])
+      if not params[:is_user_update].blank?
+        user.update(:first_name => params[:first_name], :last_name => params[:last_name],:email => params[:email] ,:phone => params[:phone], :address => params[:address], :city => params[:city], :state => params[:state], :post_code => params[:post_code], :country => params[:country], :middle_name => params[:middle_name] )
       end
-      @cart_data.push(data1)
-    end
-    total = @cart_data.map {|s| s['amount'].to_f * s['quantity'].to_f}.reduce(0, :+)
-    booking_total = total
-    if MyPayment.where(user_id: session[:user_id]).all.blank?
-      @freight = 100
-    else
-      @freight = 0
-    end
-    total = total.to_f+@freight.to_f
-    puts total
-
-    url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/BookFunction")
-    # url = URI("https://kingdomsg.eventsair.com/ksgapi/paymenttest/ksgapi/ksgapi/BookFunction")
-    puts "the url is mofu:"
-    puts url
-    # if total.to_f > 2500
-    #   @cc_amount = 0
-    #   @cc_amount = @cc_amount.to_f % 1 == 0 ? @cc_amount.to_i : helpers.number_with_precision(@cc_amount.to_f, :precision => 2)
-    #   total = total.to_f+@cc_amount.to_f
-    #   total = total.to_f % 1 == 0 ? total.to_i : helpers.number_with_precision(total.to_f, :precision => 2)
-    #
-    #
-    #   data =[]
-    #   @cart_data.each do |mo|
-    #     data1 ={}
-    #     data1['code'] = mo['item_cat_code']
-    #     data1['quantity'] = mo['quantity']
-    #     data.push(data1)
-    #   end
-    #
-    #   response = kingdomsg_booking_api(url,data,booking_total,@freight,@cc_amount)
-    #   puts "_________________++++++++++++++++++++++_________________"
-    #   puts response
-    #   puts response["Error"]
-    #   hhit = JSON.parse response
-    #   puts hhit
-    #   puts "_________________++++++++++++++++++++++_________________"
-    #   if not hhit["Error"].blank?
-    #     puts hhit["Error"]
-    #     puts "Error ^^^^^^^^^^^^^^^^^^^^^^"
-    #     redirect_to :back, flash:{:error => hhit["Error"]}
-    #   else
-    #
-    #     redirect_to hhit["PaymentUrl"]
-    #
-    #   end
-    #
-    # else
-      @cc_amount = total*0.025
-      @cc_amount = @cc_amount.to_f % 1 == 0 ? @cc_amount.to_i : helpers.number_with_precision(@cc_amount.to_f, :precision => 2)
-      total = total.to_f+@cc_amount.to_f
-      total = total.to_f % 1 == 0 ? total.to_i : helpers.number_with_precision(total.to_f, :precision => 2)
-
-      data = []
+      @cart_data = []
+      for i in cart
+        data1 = {}
+        if i.item == 'event'
+          url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetFunctionInfo?functionid="+i.item_uid)
+          data = kingdomsg_api(url)
+          catagory =  (data['FunctionInfo']['FeeTypes'].select {|cat| cat["Code"] == i.item_cat_code })[0]
+          event = Event.find(i.item_id)
+          data1['item'] = 0
+          data1['item_type'] = 'Event'
+          data1['item_id'] = i.item_id
+          data1['item_uid'] = i.item_uid
+          data1['item_cat_code'] = i.item_cat_code
+          data1['name'] = event.name+", "+catagory['Name']
+          data1['available'] = catagory['Available']
+          data1['amount'] = catagory['Amount']
+          data1['quantity'] = i.quantity
+          data1['event_date'] = event.date.strftime("%d %b %y")
+        end
+        @cart_data.push(data1)
+      end
+      total = @cart_data.map {|s| s['amount'].to_f * s['quantity'].to_f}.reduce(0, :+)
+      booking_total = total
+      if MyPayment.where(user_id: session[:user_id]).all.blank?
+        @freight = 100
+      else
+        @freight = 0
+      end
+      total = total.to_f+@freight.to_f
+      url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/BookFunction")
+      if params[:from_card].blank?
+        @cc_amount = 0
+        @cc_amount = @cc_amount.to_f % 1 == 0 ? @cc_amount.to_i : helpers.number_with_precision(@cc_amount.to_f, :precision => 2)
+        total = total.to_f+@cc_amount.to_f
+        total = total.to_f % 1 == 0 ? total.to_i : helpers.number_with_precision(total.to_f, :precision => 2)
+        @del_cart = Cart.where(user_id: session[:user_id])
+        if MyPayment.where('order_id Is NOT NULL').last.blank?
+          order_id = 1
+        else
+          order_id = (MyPayment.where('order_id Is NOT NULL').last.order_id)+1
+        end
+        c_data = @cart_data
+        WelcomeEmailMailer.rate_exteted(c_data,@freight,@cc_amount,user).deliver_now
+        WelcomeEmailMailer.admin_rate_exteted(c_data,@freight,@cc_amount,user).deliver_now
+        pymt = MyPayment.create(user_id: session[:user_id], order_id: order_id, total: booking_total, date: Time.current.to_date,freight: @freight,cc_amount: @cc_amount)
+        data =[]
         @cart_data.each do |mo|
           data1 ={}
           data1['code'] = mo['item_cat_code']
           data1['quantity'] = mo['quantity']
           data.push(data1)
-
+          MyOrder.create(user_id: session[:user_id], item: mo['item'], item_id: mo['item_id'], item_uid: mo['item_uid'], item_cat_code: mo['item_cat_code'], quantity: mo['quantity'],rate: mo['amount'], my_payment_id: pymt.id)
         end
-
-      response = kingdomsg_booking_api(url,data,booking_total,@freight,@cc_amount)
-      puts "_________________++++++++++++++++++++++_________________"
-      puts response
-      puts response["Error"]
-      hhit = JSON.parse response
-      puts hhit
-      puts "_________________++++++++++++++++++++++_________________"
-      if not hhit["Error"].blank?
-        puts hhit["Error"]
-        puts "Error ^^^^^^^^^^^^^^^^^^^^^^"
-        redirect_to :back, flash:{:error => hhit["Error"]}
+        response = kingdomsg_booking_api(url,data,booking_total,@freight,@cc_amount)
+        if not response == "success"
+          @message_res = (response.split('-').last).strip
+          if @message_res == "There is insufficient function registration inventory available."
+            redirect_to '/cart', :flash => {:error => "There is not enough tickets to fulfil your order."}
+          else
+            redirect_to '/cart', :flash => {:error => @message_res }
+          end
+        else
+          @del_cart.destroy_all
+          redirect_to '/thank_you', :flash => {:success => 'Booking Successfull'}
+        end
       else
-
-        redirect_to hhit["PaymentUrl"]
+        @cc_amount = total*0.025
+        @cc_amount = @cc_amount.to_f % 1 == 0 ? @cc_amount.to_i : helpers.number_with_precision(@cc_amount.to_f, :precision => 2)
+        total = total.to_f+@cc_amount.to_f
+        total = total.to_f % 1 == 0 ? total.to_i : helpers.number_with_precision(total.to_f, :precision => 2)
+        require 'paypal-sdk-rest'
+        @payment = PayPal::SDK::REST::Payment.new({
+              :intent => "sale",
+              :payer => {
+                :payment_method => "credit_card",
+                :funding_instruments => [{
+                  :credit_card => {
+                    :type => params[:cardtype],
+                    :number => params[:cardNumber].delete(' '),
+                    :expire_month => params[:cardExpiry].split('/')[0].delete(' '),
+                    :expire_year => params[:cardExpiry].split('/')[1].delete(' '),
+                    :cvv2 => params[:cardCVC].delete(' '),
+                    :first_name => user.first_name,
+                    :last_name => user.last_name,
+                    :billing_address => {
+                      :line1 => user.address,
+                      :city => user.city,
+                      :state => user.state,
+                      :postal_code => user.post_code,
+                      :country_code => "AU" }}}]},
+              :transactions => [{
+                :amount => {
+                  :total => total,
+                  :currency => "AUD" },
+                :description => "This is the payment transaction description." }]})
+        # Create Payment and return the status(true or false)
+        if @payment.create
+          puts "done"
+          puts @payment.id # Payment Id
+          # my paymment update after making a payment
+          @del_cart = Cart.where(user_id: session[:user_id])
+          c_data = @cart_data
+          WelcomeEmailMailer.shoppingdetails(c_data,@freight,@cc_amount,user,total).deliver_now
+          WelcomeEmailMailer.admin_shopping_cart(c_data,@freight,@cc_amount, user,total).deliver_now
+          pymt = MyPayment.create(user_id: session[:user_id], payment_id: @payment.id, total: booking_total, date: Time.current.to_date,freight: @freight,cc_amount: @cc_amount)
+          data = []
+          @cart_data.each do |mo|
+            data1 ={}
+            data1['code'] = mo['item_cat_code']
+            data1['quantity'] = mo['quantity']
+            data.push(data1)
+            MyOrder.create(user_id: session[:user_id], item: mo['item'], item_id: mo['item_id'], item_uid: mo['item_uid'], item_cat_code: mo['item_cat_code'], quantity: mo['quantity'],rate: mo['amount'], my_payment_id: pymt.id)
+          end
+          response = kingdomsg_booking_api(url,data,booking_total,@freight,@cc_amount)
+          puts "{{{{{{{{{{{{{{{{{}}}}}}}}}}}}}}}}}"
+          puts response
+          puts response.inspect
+          puts JSON.parse(response)
+          puts response["Error"]
+          hhit = JSON.parse(response)
+          if not hhit["Error"].blank? #response == "success"
+            @message_res = hhit["Error"] #(response.split('-').last).strip
+            if @message_res == "There is insufficient function registration inventory available."
+              redirect_to '/cart', :flash => {:error => "There is not enough tickets to fulfil your order."}
+            else
+              redirect_to '/cart', :flash => {:error => @message_res }
+            end
+            # redirect_to '/cart', :flash => {:error => @message_res }
+          else
+            @del_cart.destroy_all
+            redirect_to '/thank_you', :flash => {:success => 'Booking Successfull'}
+          end
+        else
+          puts "not deone"
+          puts @payment.error  # Error Hash
+          puts @payment.error["message"]
+          # cart.each do |er|
+          #   @o = ErrorCart.create(er.attributes)
+          #   @o.error_message = @payment.error["message"]
+          #   @o.save
+          #   # ErrorCart.create(item: er.item, item_id: er.item_id, item_uid: er.item_uid, item_cat_code: er.item_cat_code, quantity: er.quantity, user_id: er.user_id, error_message: @payment.error["message"] )
+          # end
+          redirect_to '/cart', :flash => {:error => @payment.error["message"] }
+        end
       end
-
-    # end
-
-  end
-
+    end
 
   def my_transaction
     @cart_count = Cart.where(:user_id => session[:user_id]).count

@@ -1,6 +1,6 @@
 class WelcomeEmailMailer < ApplicationMailer
   default from: 'info@kingdomsg.com'
-
+  # default from: 'contact@kingdomsg.com'
   def welcomeemail(user)
     @greeting = "Hi"
     @user = user
