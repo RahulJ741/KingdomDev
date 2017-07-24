@@ -212,11 +212,11 @@ class ShoppingCartController < ApplicationController
     end
     @total = @total.to_f+@freight.to_f
     @booking_total = @total
-    if @total.to_f <= 2500
-      @cc_amount = @total*0.025
-      @cc_amount = @cc_amount.to_f % 1 == 0 ? @cc_amount.to_i : helpers.number_with_precision(@cc_amount.to_f, :precision => 2)
-      @total = @total.to_f+@cc_amount.to_f
-    end
+    # if @total.to_f <= 2500
+    @cc_amount = @total*0.025
+    @cc_amount = @cc_amount.to_f % 1 == 0 ? @cc_amount.to_i : helpers.number_with_precision(@cc_amount.to_f, :precision => 2)
+    @total = @total.to_f+@cc_amount.to_f
+    # end
     @total = @total.to_f % 1 == 0 ? @total.to_i : helpers.number_with_precision(@total.to_f, :precision => 2)
   end
 
@@ -264,39 +264,39 @@ class ShoppingCartController < ApplicationController
     url = URI("https://kingdomsg.eventsair.com/ksgapi/paymenttest/ksgapi/ksgapi/BookFunction")
     puts "the url is mofu:"
     puts url
-    if total.to_f > 2500
-      @cc_amount = 0
-      @cc_amount = @cc_amount.to_f % 1 == 0 ? @cc_amount.to_i : helpers.number_with_precision(@cc_amount.to_f, :precision => 2)
-      total = total.to_f+@cc_amount.to_f
-      total = total.to_f % 1 == 0 ? total.to_i : helpers.number_with_precision(total.to_f, :precision => 2)
-
-
-      data =[]
-      @cart_data.each do |mo|
-        data1 ={}
-        data1['code'] = mo['item_cat_code']
-        data1['quantity'] = mo['quantity']
-        data.push(data1)
-      end
-
-      response = kingdomsg_booking_api(url,data,booking_total,@freight,@cc_amount)
-      puts "_________________++++++++++++++++++++++_________________"
-      puts response
-      puts response["Error"]
-      hhit = JSON.parse response
-      puts hhit
-      puts "_________________++++++++++++++++++++++_________________"
-      if not hhit["Error"].blank?
-        puts hhit["Error"]
-        puts "Error ^^^^^^^^^^^^^^^^^^^^^^"
-        redirect_to :back, flash:{:error => hhit["Error"]}
-      else
-
-        redirect_to hhit["PaymentUrl"]
-
-      end
-
-    else
+    # if total.to_f > 2500
+    #   @cc_amount = 0
+    #   @cc_amount = @cc_amount.to_f % 1 == 0 ? @cc_amount.to_i : helpers.number_with_precision(@cc_amount.to_f, :precision => 2)
+    #   total = total.to_f+@cc_amount.to_f
+    #   total = total.to_f % 1 == 0 ? total.to_i : helpers.number_with_precision(total.to_f, :precision => 2)
+    #
+    #
+    #   data =[]
+    #   @cart_data.each do |mo|
+    #     data1 ={}
+    #     data1['code'] = mo['item_cat_code']
+    #     data1['quantity'] = mo['quantity']
+    #     data.push(data1)
+    #   end
+    #
+    #   response = kingdomsg_booking_api(url,data,booking_total,@freight,@cc_amount)
+    #   puts "_________________++++++++++++++++++++++_________________"
+    #   puts response
+    #   puts response["Error"]
+    #   hhit = JSON.parse response
+    #   puts hhit
+    #   puts "_________________++++++++++++++++++++++_________________"
+    #   if not hhit["Error"].blank?
+    #     puts hhit["Error"]
+    #     puts "Error ^^^^^^^^^^^^^^^^^^^^^^"
+    #     redirect_to :back, flash:{:error => hhit["Error"]}
+    #   else
+    #
+    #     redirect_to hhit["PaymentUrl"]
+    #
+    #   end
+    #
+    # else
       @cc_amount = total*0.025
       @cc_amount = @cc_amount.to_f % 1 == 0 ? @cc_amount.to_i : helpers.number_with_precision(@cc_amount.to_f, :precision => 2)
       total = total.to_f+@cc_amount.to_f
@@ -327,7 +327,7 @@ class ShoppingCartController < ApplicationController
         redirect_to hhit["PaymentUrl"]
       end
 
-    end
+    # end
 
   end
 
