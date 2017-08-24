@@ -384,6 +384,44 @@ class StaticpageController < ApplicationController
     else
       @current_user = nil
     end
+
+
+    url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetPackages")
+    data = get_function(url)
+    @event = []
+    for i in data['Packages']
+      data1 = {}
+      data1['id'] = i['Id']
+      data1['Amount'] = i['PackageAmount']
+      data1['Code'] = i['UniquePackageCode'].first
+      data1['Hotel'] = []
+      data1['Event'] = []
+
+      for b in i['HotelRooms']
+        data2 = {}
+        data2['Hotelname'] = b['HotelName']
+        data2['Room_type'] = b['Name'].split('-').first
+        data2['max_people'] = b['MaxOccupancy']
+        data2['photo'] = b['Photos']
+        data2['start_date'] = b['Range'].first['Date']
+        data2['end_date'] = b['Range'].last['Date']
+        data1['Hotel'].push(data2)
+      end
+      for e in i['Functions']
+        data3 = {}
+        data3['Name'] = e['FunctionName'].split(" ").second
+        data3['Date'] = e['FunctionName'].split(" ").third
+        data3['start_time'] = e['FunctionName'].split(" ").fourth
+        data3['end_time'] = e['FunctionName'].split(" ").last
+        data3['category'] = e['Name']
+        data3['cat_code'] = e['Code']
+        data1['Event'].push(data3)
+      end
+
+
+      @event.push(data1)
+    end
+
   end
 
   def athleticspackages_silver

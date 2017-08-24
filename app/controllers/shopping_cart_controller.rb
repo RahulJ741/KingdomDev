@@ -1,5 +1,5 @@
 class ShoppingCartController < ApplicationController
-
+  require 'date'
   def helpers
     ActionController::Base.helpers
   end
@@ -50,6 +50,18 @@ class ShoppingCartController < ApplicationController
           else
             data1['is_exceed'] = false
           end
+        elsif i.item = 'package'
+          url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetPackage?packageid="+i.item_uid)
+          data = kingdomsg_api(url)
+          puts "???????????????????"
+          puts data
+          pack = data['Package']
+          data1['cart_id'] = i.id
+          data1['item_type'] = 'Package'
+          data1['name'] = pack['PackageGroupName']+ " " +pack['Functions'].first['FunctionGroupName']
+          data1['amount'] = pack['PackageAmount']
+          data1['quantity'] = 1
+          data1['event_date'] = DateTime.parse(pack['HotelRooms'][0]['Range'].first['Date']).strftime("%d %b %y")+ " - " +DateTime.parse(pack['HotelRooms'][0]['Range'].last['Date']).strftime("%d %b %y")
         end
         @cart_data.push(data1)
       end
@@ -101,6 +113,24 @@ class ShoppingCartController < ApplicationController
 
     end
   end
+
+  def package_add_cart
+    @cart = Cart.find_by_item_uid_and_user_id(params[:item_uid], session[:user_id])
+    if @cart.present?
+      redirect_to :back, :flash => {:error => "Package already present in cart"}
+    else
+      if params[:user_id].blank? or params[:item_uid].blank?
+        redirect_to :back, :flash => {:error => "package cannot be added to cart"}
+      else
+        Cart.create(user_id: session[:user_id], item_uid: params[:item_uid], item: 2)
+        redirect_to :back, :flash => {:success => "packages added"}
+      end
+    end
+
+
+
+  end
+
 
   def checkout
 

@@ -24,6 +24,23 @@ class ApplicationController < ActionController::Base
     return data
   end
 
+  def get_function(url)
+    http = Net::HTTP.new(url.host, url.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+    request1 = Net::HTTP::Get.new(url)
+    request1["apikey"] = 'wmQ87NZhMvWx5ZvrrStJPr9FG9WQ0wOSGVXxbUKDbjAuZC6k42M3x9GOzFt2umSQhRGylMwmBmlcU'
+    request1["appusername"] = 'aaa@aaa.com'
+    request1["apppassword"] = 'aaa@aaa.com'
+    request1["content-type"] = 'application/json'
+
+    response = http.request(request1)
+    # puts response.read_body
+    data = JSON.parse(response.body)
+    return data
+  end
+
   def kingdomsg_booking_api(url,data,booking_total,freight,cc_amount)
     user = User.find(session[:user_id])
 
@@ -44,7 +61,7 @@ class ApplicationController < ActionController::Base
     payload["ContactComponentSubmission"]["AddressState"] = user.state
     payload["ContactComponentSubmission"]["AddressPostcode"] = user.post_code.to_s
     payload["ContactComponentSubmission"]["Privacy"] = "None"
-    payload["ContactComponentSubmission"]["RedirectUrl"] =  "http://kingdomsg2018.kingdomsg.com/response/#{ user.id }/"
+    payload["ContactComponentSubmission"]["RedirectUrl"] =  "https://www.kingdomsg.com/kingdomsg2018/response/#{ user.id }/"
     # payload["ContactComponentSubmission"]["RedirectUrl"] =  "http://dev2.infiny.in:3333/response/#{ user.id }/"
 
     payload["Functions"] = []

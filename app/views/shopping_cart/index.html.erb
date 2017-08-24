@@ -67,19 +67,25 @@
 							    <tbody>
 							    	<% @cart_data.each do |i| %>
 								      <tr <% if i['is_exceed'] %>style="background-color: #f2dede;" class="is_exceed" <% end %>>
-								        <td><%= i['item_type'] %></td>
+								        <td class="item_type"><%= i['item_type'] %></td>
 											<td><%= i['name'] %> (<%= i['code']%>)</td>
 											<td>
 												<a href="" data-toggle="tooltip" data-html="true" title="<b>Time:</b> <%= i['start_time']%>-<%= i['end_date'] %> "><%= i['event_date'] %></a>
 											</td>
-											<td style="padding-top: 2px;padding-bottom: 2px;"><input type="number" data-amount="<%= i['amount'] %>" data-item_id="<%= i['cart_id'] %>" min="1"
+											<% if i['item_type']=='Package' %>
+												<td style="padding-top: 2px;padding-bottom: 2px;"class="number_val">N/A
+													<input type="number" style="display:none" class="form-control quantity" value="1" data-amount="<%= i['amount'] %>">
+												</td>
+											<% else %>
+												<td style="padding-top: 2px;padding-bottom: 2px; width: 20%;"><input type="number" data-amount="<%= i['amount'] %>" data-item_id="<%= i['cart_id'] %>" min="1"
 
-											<% if i['available'].to_i <=9 %>  	max="<%= i['available'] %>"
-		                                    <% else %>
-		                                      max="9"
-		                                    <% end %>
+												<% if i['available'].to_i <=9 %>  	max="<%= i['available'] %>"
+			                                    <% else %>
+			                                      max="9"
+			                                    <% end %>
 
-											 class="form-control quantity" placeholder="Enter Quantity" style="width: 50%; margin: auto;" value="<%= i['quantity'] %>"></td>
+												 class="form-control quantity" placeholder="Enter Quantity" style="width: 50%; margin: auto;" value="<%= i['quantity'] %>"></td>
+											<% end %>
 											<td>AUD <%= i['amount'] %> </td>
 											<td >AUD <span class="row_total"></span></td>
 											<td><a href="/cart/remove/<%= i['cart_id'] %>"><i class="fa fa-trash" style="margin-right:5px"> </i>Remove</a></td>
@@ -251,6 +257,9 @@
 
 	    });
 
+			// if (".item_type.val() == 'Package'") {
+			// 	$(this).parents('tr').find(".number_val input:number").attr('disabled', true);
+			// }
 	});
 </script>
 <%= render 'layouts/footer'%>

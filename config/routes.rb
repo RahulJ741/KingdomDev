@@ -90,4 +90,9 @@ Rails.application.routes.draw do
 
   get '/subscribed_user/:email' => 'staticpage#subscribed_user'
   match '/response/:user_id/' => 'shopping_cart#response_url', :via => [:get, :post]
+
+  post '/package_add_cart' => 'shopping_cart#package_add_cart'
+
+
+
 end
