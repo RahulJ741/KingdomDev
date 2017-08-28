@@ -120,10 +120,10 @@ class ShoppingCartController < ApplicationController
       redirect_to :back, :flash => {:error => "Package already present in cart"}
     else
       if params[:user_id].blank? or params[:item_uid].blank?
-        redirect_to :back, :flash => {:error => "package cannot be added to cart"}
+        redirect_to :back, :flash => {:error => "Package cannot be added to cart"}
       else
         Cart.create(user_id: session[:user_id], item_uid: params[:item_uid], item: 2)
-        redirect_to :back, :flash => {:success => "packages added"}
+        redirect_to :back, :flash => {:success => "Package added"}
       end
     end
 
