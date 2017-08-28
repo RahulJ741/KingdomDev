@@ -414,6 +414,9 @@ class StaticpageController < ApplicationController
         data3['start_time'] = e['FunctionName'].split(" ").fourth
         data3['end_time'] = e['FunctionName'].split(" ").last
         data3['category'] = e['Name']
+        # data3['code_to_check'] = e['FunctionName'].split(" ").first
+        # puts "+++++++++++++++++++++++++++++++++++++++++++++++"
+        # puts data3['code_to_check']
         data3['cat_code'] = e['Code']
         data1['Event'].push(data3)
       end
