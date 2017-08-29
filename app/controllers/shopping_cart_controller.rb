@@ -114,6 +114,7 @@ class ShoppingCartController < ApplicationController
     end
   end
 
+
   def package_add_cart
     @cart = Cart.find_by_item_uid_and_user_id(params[:item_uid], session[:user_id])
     if @cart.present?
@@ -126,8 +127,6 @@ class ShoppingCartController < ApplicationController
         redirect_to :back, :flash => {:success => "Package added"}
       end
     end
-
-
 
   end
 
@@ -159,8 +158,22 @@ class ShoppingCartController < ApplicationController
           data1['amount'] = catagory['Amount']
           data1['quantity'] = i.quantity
           data1['event_date'] = event.date.strftime("%d %b %y")
+        elsif i.item = 'package'
+          url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetPackage?packageid="+i.item_uid)
+          data = kingdomsg_api(url)
+          puts "???????????????????"
+          puts data
+          pack = data['Package']
+          data1['cart_id'] = i.id
+          data1['item_type'] = 'Package'
+          data1['name'] = pack['PackageGroupName']+ " " +pack['Functions'].first['FunctionGroupName']
+          data1['amount'] = pack['PackageAmount']
+          data1['quantity'] = 1
+          data1['event_date'] = DateTime.parse(pack['HotelRooms'][0]['Range'].first['Date']).strftime("%d %b %y")+ " - " +DateTime.parse(pack['HotelRooms'][0]['Range'].last['Date']).strftime("%d %b %y")
         end
         @cart_data.push(data1)
+        # end
+        # @cart_data.push(data1)
       end
       total = @cart_data.map {|s| s['amount'].to_f * s['quantity'].to_f}.reduce(0, :+)
 

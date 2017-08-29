@@ -68,10 +68,19 @@
 							    	<% @cart_data.each do |i| %>
 								      <tr <% if i['is_exceed'] %>style="background-color: #f2dede;" class="is_exceed" <% end %>>
 								        <td class="item_type"><%= i['item_type'] %></td>
-											<td><%= i['name'] %> (<%= i['code']%>)</td>
-											<td>
-												<a href="" data-toggle="tooltip" data-html="true" title="<b>Time:</b> <%= i['start_time']%>-<%= i['end_date'] %> "><%= i['event_date'] %></a>
-											</td>
+												<% if i['item_type']=='Package' %>
+													<td><%= i['name'] %> </td>
+													<td>
+														<%= i['event_date'] %></a>
+													</td>
+												<% else %>
+													<td><%= i['name'] %> (<%= i['code']%>)</td>
+													<td>
+														<a href="" data-toggle="tooltip" data-html="true" title="<b>Time:</b> <%= i['start_time']%>-<%= i['end_date'] %> "><%= i['event_date'] %></a>
+													</td>
+												<% end %>
+
+
 											<% if i['item_type']=='Package' %>
 												<td style="padding-top: 2px;padding-bottom: 2px;"class="number_val">N/A
 													<input type="number" style="display:none" class="form-control quantity" value="1" data-amount="<%= i['amount'] %>">

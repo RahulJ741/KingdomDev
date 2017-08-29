@@ -409,10 +409,10 @@ class StaticpageController < ApplicationController
       end
       for e in i['Functions']
         data3 = {}
-        data3['Name'] = e['FunctionName'].split(" ").second
-        data3['Date'] = e['FunctionName'].split(" ").third
-        data3['start_time'] = e['FunctionName'].split(" ").fourth
-        data3['end_time'] = e['FunctionName'].split(" ").last
+        data3['Name'] = e['FunctionGroupName']
+        data3['Date'] = e['FunctionName'].split[-4]
+        data3['start_time'] = e['FunctionName'].split[-3]
+        data3['end_time'] = e['FunctionName'].split.last
         data3['category'] = e['Name']
         # data3['code_to_check'] = e['FunctionName'].split(" ").first
         # puts "+++++++++++++++++++++++++++++++++++++++++++++++"
