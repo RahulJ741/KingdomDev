@@ -377,6 +377,7 @@ class ShoppingCartController < ApplicationController
 
         response = kingdomsg_booking_api(url,data,booking_total,@freight,@cc_amount)
       end
+      
       if not @package_cart_data.blank?
         total = @package_cart_data.map {|s| s['amount'].to_f * s['quantity'].to_f}.reduce(0, :+)
         booking_total = total

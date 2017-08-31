@@ -81,7 +81,7 @@ class ApplicationController < ActionController::Base
     main_load['Functions'] = []
     for i in data['Functions']
       temp2={}
-      temp2['UniqueFunctionCode'] = i.['Function_code']
+      temp2['UniqueFunctionCode'] = i['Function_code']
       temp2['FunctionPaycode'] = 'No Charge'
       temp2['NoTickets'] =
       main_load['Functions'].push(temp1)
