@@ -676,4 +676,69 @@ end
     end
   end
 
+
+
+
+  def get_packages
+
+    if session[:user_id]
+      @current_user = User.find(session["user_id"])
+      puts session[:user_id]
+      # @cart = ShoppingCart.where(:user_id => session[:user_id])
+      @cart_count = Cart.where(:user_id => session[:user_id]).count
+
+    else
+      @current_user = nil
+    end
+
+    @category_name = params[:category]
+    # if params[:event_name].include? '_'
+    #   @event_name = params[:event_name].gsub! '_' , '+'
+    # else
+    #   @event_name = params[:event_name]
+    # end
+    @event_name = params[:event_name]
+    url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetPackages?eventGroup=#{@event_name}&group=#{@category_name}")
+    # url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetPackages?group=bronze&eventGroup=Athletics")
+    puts "???????????????????????????????/////////////////////////////////////"
+    puts url
+    data = get_function(url)
+    @event = []
+    for i in data['Packages']
+      data1 = {}
+      data1['id'] = i['Id']
+      data1['Amount'] = i['PackageAmount']
+      data1['Code'] = i['UniquePackageCode'].first
+      data1['Hotel'] = []
+      data1['Event'] = []
+
+      for b in i['HotelRooms']
+        data2 = {}
+        data2['Hotelname'] = b['HotelName']
+        data2['Room_type'] = b['Name'].split('-').first
+        data2['max_people'] = b['MaxOccupancy']
+        data2['photo'] = b['Photos']
+        data2['start_date'] = b['Range'].first['Date']
+        data2['end_date'] = b['Range'].last['Date']
+        data1['Hotel'].push(data2)
+      end
+      for e in i['Functions']
+        data3 = {}
+        data3['Name'] = e['FunctionGroupName']
+        data3['Date'] = e['FunctionName'].split[-4]
+        data3['start_time'] = e['FunctionName'].split[-3]
+        data3['end_time'] = e['FunctionName'].split.last
+        data3['category'] = e['Name']
+        # data3['code_to_check'] = e['FunctionName'].split(" ").first
+        # puts "+++++++++++++++++++++++++++++++++++++++++++++++"
+        # puts data3['code_to_check']
+        data3['cat_code'] = e['Code']
+        data1['Event'].push(data3)
+      end
+
+      @event.push(data1)
+    end
+
+  end
+
 end

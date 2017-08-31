@@ -92,6 +92,7 @@ Rails.application.routes.draw do
   match '/response/:user_id/' => 'shopping_cart#response_url', :via => [:get, :post]
 
   post '/package_add_cart' => 'shopping_cart#package_add_cart'
+  get '/packages_info/:event_name/:category' => 'staticpage#get_packages'
 
 
 

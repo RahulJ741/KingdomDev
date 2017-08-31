@@ -125,8 +125,13 @@
 						</div>
 						<div class="row" style="background-color: #fff;padding-top: 10px;box-shadow: 0px 0px 2px 0px;height: 210px;">
 							<div class="col col-sm-5 col-xs-5" style="padding-right:0px;">
-								<img src="/assets/images/artique-resort-hotel023.jpg" alt="" style="height:auto; width:75%;">
-								<a href="#"> <h5 style="padding-left:15%;">View details</h5></a>
+                <% if hotel['photo'].blank? %>
+                  <img src="/assets/No_image_found.jpg" alt="" style="height:auto; width:75%;">
+                <% else %>
+                  <img src="<%= hotel['photo'].split(',').first %>" alt="" style="height:auto; width:75%;">
+                <% end %>
+								<!-- <img src="/assets/images/artique-resort-hotel023.jpg" alt="" style="height:auto; width:75%;"> -->
+								<!-- <a href="#"> <h5 style="padding-left:15%;">View details</h5></a> -->
 							</div>
 							<div class="col col-sm-7 col-xs-7" style="padding-left: 0px;">
 								<h3 style="margin-top:0px;"><%= hotel['Hotelname'] %></h3>
@@ -188,12 +193,12 @@
 				</div>
 
 				<% if @current_user.present? %>
-					<button type="button" data-item_uid='<%= f['id'] %>'  class="btn pull-right Package_in" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;width: 100%;margin-bottom:10px;" ><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to cart</button><br>
-					<!-- <button type="button" name="view_detail" class="btn pull-right Package_in" style="background-color:green; box-shadow: 0 3px 0 0 darkgreen;border: 0 none;color: #000;width: 100%;" ><i class="fa fa-eye" aria-hidden="true"></i>View Detail</button> -->
+					<button type="button" data-item_uid='<%= f['id'] %>'  class="btn pull-right Package_in" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;width: 100%;margin-bottom:10px;margin-bottom: 10px;" ><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to cart</button><br>
+					<button type="button" name="view_detail" class="btn pull-right Package_in" style="background-color:#008007; box-shadow: 0 3px 0 0 #006400;border: 0 none;color: #000;width: 100%;" ><i class="fa fa-eye" aria-hidden="true"></i>View Detail</button>
 				<% else %>
-					<button type="button" class="btn pull-right Packages_out " style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;width: 100%;" data-toggle="modal" data-target="#loginModal"><i class="fa fa-cart-plus" aria-hidden="true"></i>
+					<button type="button" class="btn pull-right Packages_out " style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;width: 100%;margin-bottom: 10px;" data-toggle="modal" data-target="#loginModal"><i class="fa fa-cart-plus" aria-hidden="true"></i>
 				Add to cart</button><br>
-				<!-- <button type="button" name="view_detail" class="btn pull-right Package_in" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;width: 100%;" ><i class="fa fa-eye" aria-hidden="true"></i>View Detail</button> -->
+				<button type="button" name="view_detail" class="btn pull-right Package_in" style="background-color:#008007;box-shadow: 0 3px 0 0 #006400;border: 0 none;color: #000;width: 100%;" ><i class="fa fa-eye" aria-hidden="true"></i>View Detail</button>
 				<% end %>
 				<!-- <button type="button" class="btn btn-warning btn-block" name="button">Buy</button> -->
 			</div>
