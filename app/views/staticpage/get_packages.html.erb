@@ -126,7 +126,7 @@
 						<div class="row" style="background-color: #fff;padding-top: 10px;box-shadow: 0px 0px 2px 0px;height: 210px;">
 							<div class="col col-sm-5 col-xs-5" style="padding-right:0px; height:100%;">
                 <% if hotel['photo'].blank? %>
-                  <img src="/assets/No_image_found.jpg" alt="" style="height:94%; width:90%;">
+                  <img src="/assets/No_image_found.jpg" alt="" style="height:94%; width:90%; object-fit: cover;">
                 <% else %>
                   <img src="<%= hotel['photo'].split(',').first %>" alt="" style="height:94%; width:90%;">
                 <% end %>
@@ -186,7 +186,7 @@
 			</div>
 
 			<div class="col col-md-2 col-sm-2 col-xs-12 irg" >
-				<div class="" style="margin-top: 35%;">
+				<div class="right_view" style="margin-top: 35%;">
 
 					<h3 class="top_rem" style="text-align:right; color:green;">AUD <%= f['Amount']%></h3>
 					<p style="text-align:right;">Max Person: <% amx = []%><% f['Hotel'].each do |max_p| %><% amx.push(max_p['max_people'])%><% end %> <%= amx.max %></p>
@@ -319,6 +319,20 @@
 	.ribbon{
 		display: none;
 	}
+
+
+	.right_view{
+		margin-top: 6% !important;
+	}
+
+ 	.right_view h3 {
+		text-align: center !important;
+	}
+
+	.right_view p {
+		text-align: center !important;
+	}
+
 }
 
 @media screen and (min-device-width: 765px) and (max-device-width: 770px) {
