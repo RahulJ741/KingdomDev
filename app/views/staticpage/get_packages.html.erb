@@ -128,7 +128,7 @@
                 <% if hotel['photo'].blank? %>
                   <img src="/assets/No_image_found.jpg" alt="" style="height:94%; width:90%; object-fit: cover;">
                 <% else %>
-                  <img src="<%= hotel['photo'].split(',').first %>" alt="" style="height:94%; width:90%;">
+                  <img src="<%= hotel['photo'].split(',').first %>" alt="" style="height:94%; width:90%; object-fit: cover;">
                 <% end %>
 								<!-- <img src="/assets/images/artique-resort-hotel023.jpg" alt="" style="height:auto; width:75%;"> -->
 								<!-- <a href="#"> <h5 style="padding-left:15%;">View details</h5></a> -->
