@@ -93,7 +93,7 @@ Rails.application.routes.draw do
 
   post '/package_add_cart' => 'shopping_cart#package_add_cart'
   get '/packages_info/:event_name/:category' => 'staticpage#get_packages'
-
+  get '/stats/:category/:event' => 'staticpage#stats'
 
 
 end

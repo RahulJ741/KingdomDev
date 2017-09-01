@@ -741,4 +741,49 @@ end
 
   end
 
+
+
+  def stats
+    if session[:user_id]
+      @current_user = User.find(session["user_id"])
+      puts session[:user_id]
+      # @cart = ShoppingCart.where(:user_id => session[:user_id])
+      @cart_count = Cart.where(:user_id => session[:user_id]).count
+
+    else
+      @current_user = nil
+    end
+
+    staticpage_redirect = {
+      "Opening+Ceremony/Silver" => 'openingpackages.html.erb',
+      "Swimming/silver" => 'swimmingpackages.html.erb',
+      "Netball/Silver" => 'netball_detail.html.erb'
+    }
+
+    # render 'staticpage/athleticspackages_silver_brisbane.html.erb'
+    @keys_s = (params[:event]+"/"+params[:category]).to_s
+    puts ":::::::::::::::::::::::::::@keys_s"
+    puts @keys_s
+    if staticpage_redirect.key?@keys_s
+      puts "true"
+      puts staticpage_redirect[@keys_s]
+      @hit = "staticpage"+"/"+(staticpage_redirect[@keys_s])
+      puts @hit
+      render @hit
+    else
+      render 'layouts/404.html.erb'
+    end
+
+
+
+
+
+
+  end
+
+
+
+
+
+
 end
