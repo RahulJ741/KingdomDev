@@ -194,7 +194,7 @@
 
 				<% if @current_user.present? %>
 					<button type="button" data-item_uid='<%= f['id'] %>'  class="btn pull-right Package_in" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;width: 100%;margin-bottom:10px;margin-bottom: 10px;" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button><br>
-					<a href="/stats/<%= @category_name %>/<%= @event_name %>"><button type="button" name="view_detail" class="btn pull-right Package_in" style="background-color:#008007; box-shadow: 0 3px 0 0 #006400;border: 0 none;color: #ffffff;width: 100%;" ><i class="fa fa-eye" aria-hidden="true"></i> View Detail</button></a>
+					<a href="/stats/<%= @category_name %>/<%= @event_name %>"><button type="button" name="view_detail" class="btn pull-right Package_out" style="background-color:#008007; box-shadow: 0 3px 0 0 #006400;border: 0 none;color: #ffffff;width: 100%;" ><i class="fa fa-eye" aria-hidden="true"></i> View Detail</button></a>
 				<% else %>
 					<button type="button" class="btn pull-right Packages_out " style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;width: 100%;margin-bottom: 10px;" data-toggle="modal" data-target="#loginModal"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button><br>
 				<a href="/stats/<%= @category_name %>/<%= @event_name %>"> <button type="button" name="view_detail" class="btn pull-right Package_in" style="background-color:#008007;box-shadow: 0 3px 0 0 #006400;border: 0 none;color: #ffffff;width: 100%;" ><i class="fa fa-eye" aria-hidden="true"></i> View Detail</button></a>
