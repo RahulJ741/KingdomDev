@@ -124,11 +124,11 @@
 							<p style="margin-bottom:5px; margin-left:-15px; color:#5f5e5f;" class="hotel_i"><img src="/assets/images/hotel_icon.png" height="25px" width="25px" alt=""> Hotels</p>
 						</div>
 						<div class="row" style="background-color: #fff;padding-top: 10px;box-shadow: 0px 0px 2px 0px;height: 210px;">
-							<div class="col col-sm-5 col-xs-5" style="padding-right:0px;">
+							<div class="col col-sm-5 col-xs-5" style="padding-right:0px; height:100%;">
                 <% if hotel['photo'].blank? %>
-                  <img src="/assets/No_image_found.jpg" alt="" style="height:auto; width:75%;">
+                  <img src="/assets/No_image_found.jpg" alt="" style="height:94%; width:90%;">
                 <% else %>
-                  <img src="<%= hotel['photo'].split(',').first %>" alt="" style="height:auto; width:75%;">
+                  <img src="<%= hotel['photo'].split(',').first %>" alt="" style="height:94%; width:90%;">
                 <% end %>
 								<!-- <img src="/assets/images/artique-resort-hotel023.jpg" alt="" style="height:auto; width:75%;"> -->
 								<!-- <a href="#"> <h5 style="padding-left:15%;">View details</h5></a> -->
