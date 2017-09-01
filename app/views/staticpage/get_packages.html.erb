@@ -137,11 +137,11 @@
 								<h3 style="margin-top:0px;"><%= hotel['Hotelname'] %></h3>
 								<!-- <p style="color:#696969;">hotel details</p> -->
 								<span>
-                  <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                  <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                  <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                  <i class="fa fa-star sim-stars" aria-hidden="true"></i>
-                  <i class="fa fa-star-half-o sim-stars" aria-hidden="true"></i>
+                  <i class="fa fa-star sim-stars" aria-hidden="true" style="color:#F5BA13;"></i>
+                  <i class="fa fa-star sim-stars" aria-hidden="true" style="color:#F5BA13;"></i>
+                  <i class="fa fa-star sim-stars" aria-hidden="true" style="color:#F5BA13;"></i>
+                  <i class="fa fa-star sim-stars" aria-hidden="true" style="color:#F5BA13;"></i>
+                  <i class="fa fa-star-half-o sim-stars" aria-hidden="true" style="color:#F5BA13;"></i>
 								</span><br>
 								<h5><b>Room type:</b> <%= hotel['Room_type']%></h5>
 								<!-- <button type="button" name="button" class="btn btn-primary change_hotel">Change hotel</button> -->
@@ -159,7 +159,7 @@
 
 							<div class="col col-sm-12 col-xs-12" style="height:211px; overflow-y:scroll;">
 								<!-- <h5>Events: </h5> -->
-								<ul class="list-group">
+								<ul class="list-group" style="margin-top: 15px;">
 								  <!-- <li class="list-group-item"><img src="http://dev2.infiny.in/assets/images/KSGAthletics.png" alt="" height="20px">&ensp; Event name &ensp; 12/4/2018  <a href="#" class="pull-right" data-toggle="tooltip"  data-placement="left" data-html="true" title="<p><b>Event</b>: Swimming Event <br> <b>Date:</b>12/4/2018 <br> <b>Venue:</b> gold cost stadum <br> <b>Time:</b>12-2 pm</p>" style="z-index:99999999999999999999; position:absolute;right: 8px;"><span class="badge">i</span></a></li>
 								  <li class="list-group-item"><img src="http://dev2.infiny.in/assets/images/KSGAthletics.png" alt="" height="20px">&ensp; Event name &ensp; 12/4/2018  <a href="#" class="pull-right" data-toggle="tooltip"  data-placement="left" data-html="true" title="<p><b>Event</b>: Swimming Event <br> <b>Date:</b>12/4/2018 <br> <b>Venue:</b> gold cost stadum <br> <b>Time:</b>12-2 pm</p>" style="z-index:99999999999999999999; position:absolute;right: 8px;"><span class="badge">i</span></a></li>
 								  <li class="list-group-item"><img src="http://dev2.infiny.in/assets/images/KSGAthletics.png" alt="" height="20px">&ensp; Event name &ensp; 12/4/2018  <a href="#" class="pull-right" data-toggle="tooltip"  data-placement="left" data-html="true" title="<p><b>Event</b>: Swimming Event <br> <b>Date:</b>12/4/2018 <br> <b>Venue:</b> gold cost stadum <br> <b>Time:</b>12-2 pm</p>" style="z-index:99999999999999999999; position:absolute;right: 8px;"><span class="badge">i</span></a></li>
@@ -168,7 +168,7 @@
 									<li class="list-group-item"><img src="http://dev2.infiny.in/assets/images/KSGAthletics.png" alt="" height="20px">&ensp; Event name &ensp; 12/4/2018  <a href="#" class="pull-right" data-toggle="tooltip"  data-placement="left" data-html="true" title="<p><b>Event</b>: Swimming Event <br> <b>Date:</b>12/4/2018 <br> <b>Venue:</b> gold cost stadum <br> <b>Time:</b>12-2 pm</p>" style="z-index:99999999999999999999; position:absolute;right: 8px;"><span class="badge">i</span></a></li>
 									<li class="list-group-item"><img src="http://dev2.infiny.in/assets/images/KSGAthletics.png" alt="" height="20px">&ensp; Event name &ensp; 12/4/2018  <a href="#" class="pull-right" data-toggle="tooltip"  data-placement="left" data-html="true" title="<p><b>Event</b>: Swimming Event <br> <b>Date:</b>12/4/2018 <br> <b>Venue:</b> gold cost stadum <br> <b>Time:</b>12-2 pm</p>" style="z-index:99999999999999999999; position:absolute;right: 8px;"><span class="badge">i</span></a></li> -->
 									<% f['Event'].each do |eve| %>
-										<li class="list-group-item" style="border: 0px !important;"><img src="https://www.kingdomsg.com/kingdomsg2018/assets/images/KSGAthletics.png" alt="" height="20px">&ensp; <%= eve['Name'] %> &ensp; <%= eve['Date'] %>  <a href="#" class="pull-right" data-toggle="tooltip"  data-placement="left" data-html="true" title="<p><b>Event</b>: <%= eve['Name'] %> <br> <b>Date:</b> <%= eve['Date'] %> <br> <b>Time:</b> <%= eve['start_time'] %> - <%= eve['end_time'] %> </p>" style="z-index:99999999999999999999; position:absolute;right: 8px; "><span class="badge">i</span></a></li>
+										<li class="list-group-item" style="border: 0px !important;"><img src="https://www.kingdomsg.com/kingdomsg2018/assets/images/KSGAthletics.png" alt="" height="20px" style="border-radius: 20px;">&ensp; <%= eve['Name'] %> &ensp; <%= eve['Date'] %>  <a href="#" class="pull-right" data-toggle="tooltip"  data-placement="left" data-html="true" title="<p><b>Event</b>: <%= eve['Name'] %> <br> <b>Date:</b> <%= eve['Date'] %> <br> <b>Time:</b> <%= eve['start_time'] %> - <%= eve['end_time'] %> </p>" style="z-index:99999999999999999999; position:absolute;right: 8px; "><span class="badge" style='padding-left: 8px; padding-top: 4px;'>i</span></a></li>
 									<% end %>
 								</ul>
 							</div>
@@ -193,12 +193,11 @@
 				</div>
 
 				<% if @current_user.present? %>
-					<button type="button" data-item_uid='<%= f['id'] %>'  class="btn pull-right Package_in" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;width: 100%;margin-bottom:10px;margin-bottom: 10px;" ><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to cart</button><br>
-					<button type="button" name="view_detail" class="btn pull-right Package_in" style="background-color:#008007; box-shadow: 0 3px 0 0 #006400;border: 0 none;color: #000;width: 100%;" ><i class="fa fa-eye" aria-hidden="true"></i>View Detail</button>
+					<button type="button" data-item_uid='<%= f['id'] %>'  class="btn pull-right Package_in" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;width: 100%;margin-bottom:10px;margin-bottom: 10px;" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button><br>
+					<button type="button" name="view_detail" class="btn pull-right Package_in" style="background-color:#008007; box-shadow: 0 3px 0 0 #006400;border: 0 none;color: #ffffff;width: 100%;" ><i class="fa fa-eye" aria-hidden="true"></i> View Detail</button>
 				<% else %>
-					<button type="button" class="btn pull-right Packages_out " style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;width: 100%;margin-bottom: 10px;" data-toggle="modal" data-target="#loginModal"><i class="fa fa-cart-plus" aria-hidden="true"></i>
-				Add to cart</button><br>
-				<button type="button" name="view_detail" class="btn pull-right Package_in" style="background-color:#008007;box-shadow: 0 3px 0 0 #006400;border: 0 none;color: #000;width: 100%;" ><i class="fa fa-eye" aria-hidden="true"></i>View Detail</button>
+					<button type="button" class="btn pull-right Packages_out " style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;width: 100%;margin-bottom: 10px;" data-toggle="modal" data-target="#loginModal"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button><br>
+				<button type="button" name="view_detail" class="btn pull-right Package_in" style="background-color:#008007;box-shadow: 0 3px 0 0 #006400;border: 0 none;color: #ffffff;width: 100%;" ><i class="fa fa-eye" aria-hidden="true"></i> View Detail</button>
 				<% end %>
 				<!-- <button type="button" class="btn btn-warning btn-block" name="button">Buy</button> -->
 			</div>
