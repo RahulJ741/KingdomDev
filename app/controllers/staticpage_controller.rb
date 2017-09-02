@@ -755,21 +755,30 @@ end
     end
 
     staticpage_redirect = {
-      "Opening+Ceremony/Silver" => 'openingpackages.html.erb',
-      "Swimming/silver" => 'swimmingpackages.html.erb',
-      "Netball/Silver" => 'netball_detail.html.erb'
+      "Opening+Ceremony/Silver" => 'staticpage/openingpackages.html.erb',
+      "Swimming/silver" => 'staticpage/swimmingpackages.html.erb',
+      "Netball/Silver" => 'staticpage/netball_detail.html.erb',
+      "Rugby+Sevens/Gold" => 'staticpage/rugbypackages_gold.html.erb',
+      "Rugby+Sevens/Silver" => 'staticpage/rugbypackages_silver.html.erb',
+      "Rugby+Sevens/Silver-Brs" => 'layouts/404.html.erb',
+      "Rugby+Sevens/Bronze" => 'staticpage/rugbypackages_bronze.html.erb',
+      "Athletics/Platinum" => 'staticpage/athleticspackages_platinum.html.erb',
+      "Athletics/Gold" => 'staticpage/athleticspackages_gold.html.erb',
+      "Athletics/Silver" => 'staticpage/athleticspackages_silver.html.erb',
+      "Athletics/Silver-Brs" => 'staticpage/athleticspackages_silver_brisbane.html.erb',
+      "Athletics/Bronze" => 'staticpage/athleticspackages_bronze.html.erb'
     }
 
     # render 'staticpage/athleticspackages_silver_brisbane.html.erb'
     @keys_s = (params[:event]+"/"+params[:category]).to_s
-    puts ":::::::::::::::::::::::::::@keys_s"
-    puts @keys_s
+    # puts ":::::::::::::::::::::::::::@keys_s"
+    # puts @keys_s
     if staticpage_redirect.key?@keys_s
-      puts "true"
-      puts staticpage_redirect[@keys_s]
-      @hit = "staticpage"+"/"+(staticpage_redirect[@keys_s])
-      puts @hit
-      render @hit
+      # puts "true"
+      # puts staticpage_redirect[@keys_s]
+      # @hit = "staticpage"+"/"+(staticpage_redirect[@keys_s])
+      # puts @hit
+      render staticpage_redirect[@keys_s]
     else
       render 'layouts/404.html.erb'
     end

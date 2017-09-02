@@ -60,12 +60,18 @@
 								<div class="row" style="padding-bottom: 20px;">
 									<div class="col col-md-9 col-sm-9 col-xs-9">
 										<h3>Filter by</h3>
-										<div class="col-xs-4">
-											<input type="text" name="" value="" class="form-control">
-										</div>
-										<div class="col-xs-4">
-											<input type="text" name="" value="" class="form-control">
-										</div>
+										<form class="form" action="/" method="post">
+											<div class="col-xs-4">
+												<input type="date" name="start_date" class="form-control datepicker">
+											</div>
+											<div class="col-xs-4">
+												<input type="date" name="end_date" class="form-control datepicker">
+											</div>
+											<div class="col-xs-2">
+												<button type="submit" name="button" class="btn btn-primary">Submit</button>
+											</div>
+										</form>
+
 
 									</div>
 									<div class="col col-md-3 col-sm-3 col-xs-3">
@@ -149,7 +155,7 @@
 						</div>
 					</div>
 					<% end %>
-					<img src="/assets/plus_rev.png" alt="plus" id="plus" height="30px" width="30px"style="position: absolute;top: 46%;z-index: 9999999999999;left: 49%;">
+					<img src="/assets/plus_rev.png" alt="plus" id="plus" height="30px" width="30px"style="position: absolute;top: 46%;z-index: 9999;left: 49%;">
 					<!-- <i class="fa fa-plus fa-2x" style="position: absolute;top: 44%;z-index: 9999999999999;left: 49%;"></i> -->
 					<div class="col col-md-6" >
 						<div class="">
@@ -168,12 +174,12 @@
 									<li class="list-group-item"><img src="http://dev2.infiny.in/assets/images/KSGAthletics.png" alt="" height="20px">&ensp; Event name &ensp; 12/4/2018  <a href="#" class="pull-right" data-toggle="tooltip"  data-placement="left" data-html="true" title="<p><b>Event</b>: Swimming Event <br> <b>Date:</b>12/4/2018 <br> <b>Venue:</b> gold cost stadum <br> <b>Time:</b>12-2 pm</p>" style="z-index:99999999999999999999; position:absolute;right: 8px;"><span class="badge">i</span></a></li>
 									<li class="list-group-item"><img src="http://dev2.infiny.in/assets/images/KSGAthletics.png" alt="" height="20px">&ensp; Event name &ensp; 12/4/2018  <a href="#" class="pull-right" data-toggle="tooltip"  data-placement="left" data-html="true" title="<p><b>Event</b>: Swimming Event <br> <b>Date:</b>12/4/2018 <br> <b>Venue:</b> gold cost stadum <br> <b>Time:</b>12-2 pm</p>" style="z-index:99999999999999999999; position:absolute;right: 8px;"><span class="badge">i</span></a></li> -->
 									<% f['Event'].each do |eve| %>
-										<li class="list-group-item" style="border: 0px !important;"><img src="https://www.kingdomsg.com/kingdomsg2018/assets/images/KSGAthletics.png" alt="" height="20px" style="border-radius: 20px;">&ensp; <%= eve['Name'] %> &ensp; <%= eve['Date'] %>  <a href="#" class="pull-right" data-toggle="tooltip"  data-placement="left" data-html="true" title="<p><b>Event</b>: <%= eve['Name'] %> <br> <b>Date:</b> <%= eve['Date'] %> <br> <b>Time:</b> <%= eve['start_time'] %> - <%= eve['end_time'] %> </p>" style="z-index:99999999999999999999; position:absolute;right: 8px; "><span class="badge" style='padding-left: 8px; padding-top: 4px;'>i</span></a></li>
+										<li class="list-group-item" style="border: 0px !important;"><img src="https://www.kingdomsg.com/kingdomsg2018/assets/images/KSGAthletics.png" alt="" height="20px" style="border-radius: 20px;">&ensp; <%= eve['Name'] %> &ensp; <%= eve['Date'] %>  <a href="#" class="pull-right" data-toggle="tooltip"  data-placement="left" data-html="true" title="<p><b>Event</b>: <%= eve['Name'] %> <br> <b>Date:</b> <%= eve['Date'] %> <br> <b>Time:</b> <%= eve['start_time'] %> - <%= eve['end_time'] %> </p>" style="z-index:9999; position:absolute;right: 8px; "><span class="badge" style='padding-left: 8px; padding-top: 4px;'>i</span></a></li>
 									<% end %>
 								</ul>
 							</div>
 						</div>
-						<img src="/assets/equal_to.png" alt="equalTo" class="equalTo" height="30px" width="30px" style="position: absolute;top: 45%;z-index: 999999999;right: -5%;-webkit-transform: rotate(90deg);
+						<img src="/assets/equal_to.png" alt="equalTo" class="equalTo" height="30px" width="30px" style="position: absolute;top: 45%;z-index: 9999;right: -5%;-webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
     -o-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
