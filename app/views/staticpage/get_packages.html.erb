@@ -102,37 +102,80 @@
 		<div class="row row_med" style="margin-top: 30px; display:flex;">
 			<div class="col col-md-10 col-sm-10 col-xs-12">
 				<div class="row" style="background-color:#dcdcdc; padding:15px; border:1px solid #cbcac9; display:flex; border-top-left-radius: 2px;    border-bottom-left-radius: 2px;" >
-					<% f['Hotel'].each do |hotel| %>
-					<div class="col col-md-6">
-						<div class="">
-							<p style="margin-bottom:5px; margin-left:-15px; color:#5f5e5f;" class="hotel_i"><img src="/assets/images/hotel_icon.png" height="25px" width="25px" alt=""> Hotels</p>
-						</div>
-						<div class="row" style="background-color: #fff;padding-top: 10px;box-shadow: 0px 0px 2px 0px;height: 210px;">
-							<div class="col col-sm-5 col-xs-5 ibf" style="padding-right:0px; height:100%;">
-                <% if hotel['photo'].blank? %>
-                  <img src="/assets/No_image_found.jpg" alt="" style="height:94%; width:90%; object-fit: cover;">
-                <% else %>
-                  <img src="<%= hotel['photo'].split(',').first %>" alt="" style="height:94%; width:90%; object-fit: cover;">
-                <% end %>
-								<!-- <img src="/assets/images/artique-resort-hotel023.jpg" alt="" style="height:auto; width:75%;"> -->
-								<!-- <a href="#"> <h5 style="padding-left:15%;">View details</h5></a> -->
+
+					<% if f['Hotel'].blank? %>
+
+						<div class="col col-md-6">
+							<div class="">
+								<p style="margin-bottom:5px; margin-left:-15px; color:#5f5e5f;" class="hotel_i"><img src="/assets/images/hotel_icon.png" height="25px" width="25px" alt=""> Hotels</p>
 							</div>
-							<div class="col col-sm-7 col-xs-7" style="padding-left: 0px;">
-								<h3 style="margin-top:0px;"><%= hotel['Hotelname'] %></h3>
-								<!-- <p style="color:#696969;">hotel details</p> -->
-								<span>
-                  <i class="fa fa-star sim-stars" aria-hidden="true" style="color:#F5BA13;"></i>
-                  <i class="fa fa-star sim-stars" aria-hidden="true" style="color:#F5BA13;"></i>
-                  <i class="fa fa-star sim-stars" aria-hidden="true" style="color:#F5BA13;"></i>
-                  <i class="fa fa-star sim-stars" aria-hidden="true" style="color:#F5BA13;"></i>
-                  <i class="fa fa-star-half-o sim-stars" aria-hidden="true" style="color:#F5BA13;"></i>
-								</span><br>
-								<h5><b>Room type:</b> <%= hotel['Room_type']%></h5>
-								<!-- <button type="button" name="button" class="btn btn-primary change_hotel">Change hotel</button> -->
+							<div class="row" style="background-color: #fff;padding-top: 10px;box-shadow: 0px 0px 2px 0px;height: 210px;display: flex;">
+								<div class="col col-sm-5 col-xs-5 ibf" style="padding-right:0px; height:100%;">
+										<img src="/assets/No_image_found.jpg" alt="" style="height:94%; width:90%; object-fit: cover;">
+								</div>
+								<div class="col col-sm-7 col-xs-7" style="padding-left: 0px;">
+									<h3 style="margin-top:0px;"> N/A </h3>
+									<!-- <p style="color:#696969;">hotel details</p> -->
+									<span>
+										<i class="fa fa-star-o sim-stars" aria-hidden="true" style="color:#b8860b;"></i>
+										<i class="fa fa-star-o sim-stars" aria-hidden="true" style="color:#b8860b;"></i>
+										<i class="fa fa-star-o sim-stars" aria-hidden="true" style="color:#b8860b;"></i>
+										<i class="fa fa-star-o sim-stars" aria-hidden="true" style="color:#b8860b;"></i>
+										<i class="fa fa-star-o sim-stars" aria-hidden="true" style="color:#b8860b;"></i>
+
+									</span><br>
+									<h5><b>Room type:</b> N/A </h5>
+									<!-- <button type="button" name="button" class="btn btn-primary change_hotel">Change hotel</button> -->
+
+								</div>
 							</div>
 						</div>
-					</div>
+
+					<% else %>
+
+						<% f['Hotel'].each do |hotel| %>
+						<div class="col col-md-6">
+							<div class="">
+								<p style="margin-bottom:5px; margin-left:-15px; color:#5f5e5f;" class="hotel_i"><img src="/assets/images/hotel_icon.png" height="25px" width="25px" alt=""> Hotels</p>
+							</div>
+							<div class="row" style="background-color: #fff;padding-top: 10px;box-shadow: 0px 0px 2px 0px;height: 210px;display:flex;">
+								<div class="col col-sm-5 col-xs-5 ibf" style="padding-right:0px; height:100%;">
+									<% if hotel['photo'].blank? %>
+										<img src="/assets/No_image_found.jpg" alt="" style="height:94%; width:90%; object-fit: cover;">
+									<% else %>
+										<img src="<%= hotel['photo'].split(',').first %>" alt="" style="height:94%; width:90%; object-fit: cover;">
+									<% end %>
+									<!-- <img src="/assets/images/artique-resort-hotel023.jpg" alt="" style="height:auto; width:75%;"> -->
+									<!-- <a href="#"> <h5 style="padding-left:15%;">View details</h5></a> -->
+								</div>
+								<div class="col col-sm-7 col-xs-7" style="padding-left: 0px;">
+									<h3 style="margin-top:0px;"><%= hotel['Hotelname'] %></h3>
+									<!-- <p style="color:#696969;">hotel details</p> -->
+									<span>
+										<i class="fa fa-star sim-stars" aria-hidden="true" style="color:#F5BA13;"></i>
+										<i class="fa fa-star sim-stars" aria-hidden="true" style="color:#F5BA13;"></i>
+										<i class="fa fa-star sim-stars" aria-hidden="true" style="color:#F5BA13;"></i>
+										<i class="fa fa-star sim-stars" aria-hidden="true" style="color:#F5BA13;"></i>
+										<i class="fa fa-star-half-o sim-stars" aria-hidden="true" style="color:#F5BA13;"></i>
+									</span><br>
+									<h5><b>Room type:</b> <%= hotel['Room_type']%></h5>
+									<!-- <button type="button" name="button" class="btn btn-primary change_hotel">Change hotel</button> -->
+									<% if hotel['description'].blank? %>
+									<%else%>
+										<!-- <details>
+											<summary>Hotel Description</summary>
+											<%= hotel['description'] %>
+										</details> -->
+										<a href="#" class="pull-right" data-toggle="tooltip"  data-placement="right" data-html="true" title="<p><b>Detail</b>: <%= hotel['description'] %>" style="z-index:9999; position:absolute;"><span class="badge" style='padding-left: 8px; padding-top: 4px;'>Hotel Detail</span></a>
+										<!-- <button type="button" name="button" class="btn btn-primary">Detail</button> -->
+									<%end%>
+								</div>
+							</div>
+						</div>
+						<% end %>
+
 					<% end %>
+
 					<img src="/assets/plus_rev.png" alt="plus" id="plus" height="30px" width="30px"style="position: absolute;top: 46%;z-index: 9999;left: 49%;">
 					<!-- <i class="fa fa-plus fa-2x" style="position: absolute;top: 44%;z-index: 9999999999999;left: 49%;"></i> -->
 					<div class="col col-md-6" >

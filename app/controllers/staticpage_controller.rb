@@ -715,6 +715,7 @@ end
       for b in i['HotelRooms']
         data2 = {}
         data2['Hotelname'] = b['HotelName']
+        data2['description'] = b['Description']
         data2['Room_type'] = b['Name'].split('-').first
         data2['max_people'] = b['MaxOccupancy']
         data2['photo'] = b['Photos']
