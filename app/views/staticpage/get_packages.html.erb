@@ -60,7 +60,8 @@
 								<div class="row" style="padding-bottom: 20px;">
 									<div class="col col-md-9 col-sm-9 col-xs-9">
 										<h3>Filter by</h3>
-										<form class="form" action="/" method="post">
+										<!-- <form class="form" action="" method="post"> -->
+											<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 											<div class="col-xs-4">
 												<input type="date" name="start_date" class="form-control datepicker">
 											</div>
@@ -68,9 +69,9 @@
 												<input type="date" name="end_date" class="form-control datepicker">
 											</div>
 											<div class="col-xs-2">
-												<button type="submit" name="button" class="btn btn-primary">Submit</button>
+												<button type="button" name="button" class="btn btn-primary">Submit</button>
 											</div>
-										</form>
+										<!-- </form> -->
 
 
 									</div>
@@ -89,27 +90,7 @@
 				  </div>
 
 				</div>
-				<!-- <div class="row" style="padding-bottom: 20px;">
-					<div class="col col-md-9 col-sm-9 col-xs-9">
-						<h3>Filter by</h3>
-						<div class="col-xs-4">
-							<input type="text" name="" value="" class="form-control">
-						</div>
-						<div class="col-xs-4">
-							<input type="text" name="" value="" class="form-control">
-						</div>
 
-					</div>
-					<div class="col col-md-3 col-sm-3 col-xs-3">
-						<h3>Sort by</h3>
-						<select class="form-control" name="">
-							<option value="">Choose</option>
-							<option value="">Date</option>
-							<option value="">Price</option>
-							<option value="">Availability</option>
-						</select>
-					</div>
-				</div> -->
 			</div>
 		</div>
 		<hr>
@@ -123,9 +104,6 @@
 				<div class="row" style="background-color:#dcdcdc; padding:15px; border:1px solid #cbcac9; display:flex; border-top-left-radius: 2px;    border-bottom-left-radius: 2px;" >
 					<% f['Hotel'].each do |hotel| %>
 					<div class="col col-md-6">
-						<!-- <div class="row" style="margin-bottom:2px;">
-							<p>Hotel name</p>
-						</div><br> -->
 						<div class="">
 							<p style="margin-bottom:5px; margin-left:-15px; color:#5f5e5f;" class="hotel_i"><img src="/assets/images/hotel_icon.png" height="25px" width="25px" alt=""> Hotels</p>
 						</div>
@@ -166,13 +144,7 @@
 							<div class="col col-sm-12 col-xs-12" style="height:211px; overflow-y:scroll;">
 								<!-- <h5>Events: </h5> -->
 								<ul class="list-group" style="margin-top: 15px;">
-								  <!-- <li class="list-group-item"><img src="http://dev2.infiny.in/assets/images/KSGAthletics.png" alt="" height="20px">&ensp; Event name &ensp; 12/4/2018  <a href="#" class="pull-right" data-toggle="tooltip"  data-placement="left" data-html="true" title="<p><b>Event</b>: Swimming Event <br> <b>Date:</b>12/4/2018 <br> <b>Venue:</b> gold cost stadum <br> <b>Time:</b>12-2 pm</p>" style="z-index:99999999999999999999; position:absolute;right: 8px;"><span class="badge">i</span></a></li>
-								  <li class="list-group-item"><img src="http://dev2.infiny.in/assets/images/KSGAthletics.png" alt="" height="20px">&ensp; Event name &ensp; 12/4/2018  <a href="#" class="pull-right" data-toggle="tooltip"  data-placement="left" data-html="true" title="<p><b>Event</b>: Swimming Event <br> <b>Date:</b>12/4/2018 <br> <b>Venue:</b> gold cost stadum <br> <b>Time:</b>12-2 pm</p>" style="z-index:99999999999999999999; position:absolute;right: 8px;"><span class="badge">i</span></a></li>
-								  <li class="list-group-item"><img src="http://dev2.infiny.in/assets/images/KSGAthletics.png" alt="" height="20px">&ensp; Event name &ensp; 12/4/2018  <a href="#" class="pull-right" data-toggle="tooltip"  data-placement="left" data-html="true" title="<p><b>Event</b>: Swimming Event <br> <b>Date:</b>12/4/2018 <br> <b>Venue:</b> gold cost stadum <br> <b>Time:</b>12-2 pm</p>" style="z-index:99999999999999999999; position:absolute;right: 8px;"><span class="badge">i</span></a></li>
-									<li class="list-group-item"><img src="http://dev2.infiny.in/assets/images/KSGAthletics.png" alt="" height="20px">&ensp; Event name &ensp; 12/4/2018  <a href="#" class="pull-right" data-toggle="tooltip"  data-placement="left" data-html="true" title="<p><b>Event</b>: Swimming Event <br> <b>Date:</b>12/4/2018 <br> <b>Venue:</b> gold cost stadum <br> <b>Time:</b>12-2 pm</p>" style="z-index:99999999999999999999; position:absolute;right: 8px;"><span class="badge">i</span></a></li>
-									<li class="list-group-item"><img src="http://dev2.infiny.in/assets/images/KSGAthletics.png" alt="" height="20px">&ensp; Event name &ensp; 12/4/2018  <a href="#" class="pull-right" data-toggle="tooltip"  data-placement="left" data-html="true" title="<p><b>Event</b>: Swimming Event <br> <b>Date:</b>12/4/2018 <br> <b>Venue:</b> gold cost stadum <br> <b>Time:</b>12-2 pm</p>" style="z-index:99999999999999999999; position:absolute;right: 8px;"><span class="badge">i</span></a></li>
-									<li class="list-group-item"><img src="http://dev2.infiny.in/assets/images/KSGAthletics.png" alt="" height="20px">&ensp; Event name &ensp; 12/4/2018  <a href="#" class="pull-right" data-toggle="tooltip"  data-placement="left" data-html="true" title="<p><b>Event</b>: Swimming Event <br> <b>Date:</b>12/4/2018 <br> <b>Venue:</b> gold cost stadum <br> <b>Time:</b>12-2 pm</p>" style="z-index:99999999999999999999; position:absolute;right: 8px;"><span class="badge">i</span></a></li>
-									<li class="list-group-item"><img src="http://dev2.infiny.in/assets/images/KSGAthletics.png" alt="" height="20px">&ensp; Event name &ensp; 12/4/2018  <a href="#" class="pull-right" data-toggle="tooltip"  data-placement="left" data-html="true" title="<p><b>Event</b>: Swimming Event <br> <b>Date:</b>12/4/2018 <br> <b>Venue:</b> gold cost stadum <br> <b>Time:</b>12-2 pm</p>" style="z-index:99999999999999999999; position:absolute;right: 8px;"><span class="badge">i</span></a></li> -->
+
 									<% f['Event'].each do |eve| %>
 										<li class="list-group-item" style="border: 0px !important;"><img src="https://www.kingdomsg.com/kingdomsg2018/assets/images/KSGAthletics.png" alt="" height="20px" style="border-radius: 20px;">&ensp; <%= eve['Name'] %> &ensp; <%= eve['Date'] %>  <a href="#" class="pull-right" data-toggle="tooltip"  data-placement="left" data-html="true" title="<p><b>Event</b>: <%= eve['Name'] %> <br> <b>Date:</b> <%= eve['Date'] %> <br> <b>Time:</b> <%= eve['start_time'] %> - <%= eve['end_time'] %> </p>" style="z-index:9999; position:absolute;right: 8px; "><span class="badge" style='padding-left: 8px; padding-top: 4px;'>i</span></a></li>
 									<% end %>
@@ -203,9 +175,9 @@
 					<a href="/stats/<%= @category_name %>/<%= @event_name %>"><button type="button" name="view_detail" class="btn pull-right Package_out" style="background-color:#008007; box-shadow: 0 3px 0 0 #006400;border: 0 none;color: #ffffff;width: 100%;" ><i class="fa fa-eye" aria-hidden="true"></i> View Detail</button></a>
 				<% else %>
 					<button type="button" class="btn pull-right Packages_out " style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;width: 100%;margin-bottom: 10px;" data-toggle="modal" data-target="#loginModal"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button><br>
-				<a href="/stats/<%= @category_name %>/<%= @event_name %>"> <button type="button" name="view_detail" class="btn pull-right Package_in" style="background-color:#008007;box-shadow: 0 3px 0 0 #006400;border: 0 none;color: #ffffff;width: 100%;" ><i class="fa fa-eye" aria-hidden="true"></i> View Detail</button></a>
+				<a href="/stats/<%= @category_name %>/<%= @event_name %>"> <button type="button" name="view_detail" class="btn pull-right Package_out" style="background-color:#008007;box-shadow: 0 3px 0 0 #006400;border: 0 none;color: #ffffff;width: 100%;" ><i class="fa fa-eye" aria-hidden="true"></i> View Detail</button></a>
 				<% end %>
-				<!-- <button type="button" class="btn btn-warning btn-block" name="button">Buy</button> -->
+
 			</div>
 
 

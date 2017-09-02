@@ -691,6 +691,7 @@ end
       @current_user = nil
     end
 
+
     @category_name = params[:category]
     # if params[:event_name].include? '_'
     #   @event_name = params[:event_name].gsub! '_' , '+'
@@ -699,7 +700,6 @@ end
     # end
     @event_name = params[:event_name]
     url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetPackages?eventGroup=#{@event_name}&group=#{@category_name}")
-    # url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetPackages?group=bronze&eventGroup=Athletics")
     puts "???????????????????????????????/////////////////////////////////////"
     puts url
     data = get_function(url)
@@ -739,6 +739,8 @@ end
       @event.push(data1)
     end
 
+    @event = @event.sort_by {|x| x['Amount']}
+
   end
 
 
@@ -763,7 +765,7 @@ end
       "Rugby+Sevens/Silver-Brs" => 'layouts/404.html.erb',
       "Rugby+Sevens/Bronze" => 'staticpage/rugbypackages_bronze.html.erb',
       "Athletics/Platinum" => 'staticpage/athleticspackages_platinum.html.erb',
-      "Athletics/Gold" => 'staticpage/athleticspackages_gold.html.erb',
+      "Athletics/Gold" => 'layouts/404.html.erb',
       "Athletics/Silver" => 'staticpage/athleticspackages_silver.html.erb',
       "Athletics/Silver-Brs" => 'staticpage/athleticspackages_silver_brisbane.html.erb',
       "Athletics/Bronze" => 'staticpage/athleticspackages_bronze.html.erb'
@@ -782,9 +784,6 @@ end
     else
       render 'layouts/404.html.erb'
     end
-
-
-
 
 
 
