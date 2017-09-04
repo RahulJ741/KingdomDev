@@ -785,12 +785,48 @@ end
     else
       render 'layouts/404.html.erb'
     end
-
-
-
   end
 
 
+
+  def hotel_info_redirect
+    if session[:user_id]
+      @current_user = User.find(session["user_id"])
+      puts session[:user_id]
+      # @cart = ShoppingCart.where(:user_id => session[:user_id])
+      @cart_count = Cart.where(:user_id => session[:user_id]).count
+
+    else
+      @current_user = nil
+    end
+
+    hotel_info = {
+      'Ocean Pacific Resort' => '/hotel/ocean_pacific',
+      'The Bay Apartments' => '/hotel/bay_apartments',
+      'Baronnet Apartments' => '/hotel/baronnet_apartment',
+      'Swiss-Belhotel Brisbane' => '/hotel/swiss_belhotel',
+      'South Pacific Plaza' => '/hotel/south_pacific_plaza',
+      'The Chancellor Lakeside' => '/hotel/chancellor_executive',
+      'The Chancellor Executive'=> '/hotel/chancellor_executive',
+      'Quest Spring Hill' => '/hotel/quest_spring_hill',
+      'Ocean Pacific Resort' => '/hotel/ocean_pacific',
+      'Synergy Broadbeach' => '/hotel/synergy',
+      'Palazzo Versace' => '/hotel/plazzo'
+    }
+
+    # puts "}}}}}}}}}}}}}}}}}}}}}}}]"
+    # puts params[:hotel_name]
+    if hotel_info.key?params[:hotel_name]
+      # puts 'true'
+      @raoute = params[:hotel_name]
+      # puts @raoute
+      # puts hotel_info[@raoute]
+      redirect_to hotel_info[@raoute]
+    else
+      render 'layouts/404.html.erb'
+    end
+
+  end
 
 
 

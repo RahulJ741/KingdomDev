@@ -166,7 +166,7 @@
 											<summary>Hotel Description</summary>
 											<%= hotel['description'] %>
 										</details> -->
-										<a href="#" class="pull-right" data-toggle="tooltip"  data-placement="right" data-html="true" title="<p><b>Detail</b>: <%= hotel['description'] %>" style="z-index:9999; position:absolute;"><span class="badge" style='padding-left: 8px; padding-top: 4px;'>Hotel Detail</span></a>
+										<a href="/hotel_detail/<%= hotel['Hotelname'] %>"><button type="button" class="btn btn-primary" name="button">Hotel info</button></a>
 										<!-- <button type="button" name="button" class="btn btn-primary">Detail</button> -->
 									<%end%>
 								</div>
