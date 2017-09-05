@@ -2,6 +2,7 @@ class StaticpageController < ApplicationController
   require 'uri'
   require 'net/http'
   require 'digest/md5'
+  skip_before_action :verify_authenticity_token
   # require "browser/aliases"
   # Browser::Base.include(Browser::Aliases)
   # browser = Browser.new("Some user agent")
