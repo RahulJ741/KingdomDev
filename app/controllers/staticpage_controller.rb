@@ -699,6 +699,23 @@ end
     #   @event_name = params[:event_name]
     # end
     @event_name = params[:event_name]
+
+    event_pic = {
+      'Athletics' => '/assets/images/games/KSGAthletics.jpg',
+      'Rugby+Sevens' => '/assets/images/games/KSGRugby.jpg',
+      'Opening+Ceremony' => '/assets/images/KSGOpeningCeremony.png',
+      'Swimming' => '/assets/images/games/KSGSwimming.png',
+      'Netball' => '/assets/images/games/KSGNetball.jpg'
+    }
+
+    if event_pic.key?@event_name
+      @pic = event_pic[@event_name]
+    else
+      @pic = '/assets/images/games/KSGAthletics.jpg'
+    end
+
+
+
     url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetPackages?eventGroup=#{@event_name}&group=#{@category_name}")
     puts "???????????????????????????????/////////////////////////////////////"
     puts url

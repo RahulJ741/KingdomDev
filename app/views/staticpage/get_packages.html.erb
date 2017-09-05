@@ -103,7 +103,7 @@
 
 				<div class="row row_med" style="margin-top: 30px; display:flex;">
 					<div class="col col-md-10 col-sm-10 col-xs-12">
-						<div class="row" style="background-color:#dcdcdc; padding:15px; border:1px solid #cbcac9; display:flex; border-top-left-radius: 2px;    border-bottom-left-radius: 2px;" >
+						<div class="row" style="background-color:#dcdcdc; padding:15px; border:1px solid #cbcac9; display:flex; border-top-left-radius: 2px; border-bottom-left-radius: 2px;" >
 
 
 								<% f['Hotel'].each do |hotel| %>
@@ -162,7 +162,7 @@
 										<ul class="list-group" style="margin-top: 15px;">
 
 											<% f['Event'].each do |eve| %>
-												<li class="list-group-item" style="border: 0px !important;"><img src="https://www.kingdomsg.com/kingdomsg2018/assets/images/KSGAthletics.png" alt="" height="20px" style="border-radius: 20px;">&ensp; <%= eve['Name'] %> &ensp; <%= eve['Date'] %>  <a href="#" class="pull-right" data-toggle="tooltip"  data-placement="left" data-html="true" title="<p><b>Event</b>: <%= eve['Name'] %> <br> <b>Date:</b> <%= eve['Date'] %> <br> <b>Time:</b> <%= eve['start_time'] %> - <%= eve['end_time'] %> </p>" style="z-index:9999; position:absolute;right: 8px; "><span class="badge" style='padding-left: 8px; padding-top: 4px;'>i</span></a></li>
+												<li class="list-group-item" style="border: 0px !important;"><img src="<%= @pic %>" alt="" height="20px" style="border-radius: 20px;">&ensp; <%= eve['Name'] %> &ensp; <%= eve['Date'] %>  <a href="#" class="pull-right" data-toggle="tooltip"  data-placement="left" data-html="true" title="<p><b>Event</b>: <%= eve['Name'] %> <br> <b>Date:</b> <%= eve['Date'] %> <br> <b>Time:</b> <%= eve['start_time'] %> - <%= eve['end_time'] %> </p>" style="z-index:9999; position:absolute;right: 8px; "><span class="badge" style='padding-left: 8px; padding-top: 4px;'>i</span></a></li>
 											<% end %>
 										</ul>
 									</div>
