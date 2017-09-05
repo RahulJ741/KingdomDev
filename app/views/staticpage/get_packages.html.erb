@@ -43,14 +43,14 @@
 <section style="position: relative;">
 	<img src="/assets/images/tour2-design-bgnw.png" class="tour2-design-bgnw" alt="">
 	<div class="container" style="padding: 40px 0px;">
-		<!-- <div class="row" style="margin-top: 30px;">
-			<div class="col-md-12" style="background-color: #dcdcdc;">
+		<div class="row" style="margin-top: 30px;">
+			<div class="col-md-12" style="background-color: #fff; box-shadow: 2px 2px 1px 2px lightgrey;">
 				<div id="accordion" role="tablist" aria-multiselectable="true">
 
 				  <div class="card">
 				    <div class="card-header" role="tab" id="headingTwo">
 				      <h5 class="mb-0">
-				        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+				        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="font-size: 18px;">
 				          Filter <i class="fa fa-plus pull-right"></i>
 				        </a>
 				      </h5>
@@ -58,24 +58,37 @@
 				    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
 				      <div class="card-block">
 								<div class="row" style="padding-bottom: 20px;">
-									<div class="col col-md-9 col-sm-9 col-xs-9">
+									<div class="col col-md-12 col-sm-12 col-xs-12">
 										<h3>Filter by</h3>
-
+										<form class="form event_change" action="" method="post">
 											<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 											<div class="col-xs-4">
-												<input type="date" name="start_date" class="form-control datepicker">
+												<select class="form-control" name="event_name">
+													<option value="">Select Value</option>
+													<option value="Athletics">Athletics</option>
+													<option value="Netball">Netball</option>
+													<option value="Swimming">Swimming</option>
+													<option value="Rugby+Sevens">Rugby</option>
+													<option value="Opening+Ceremony">Opening Ceremony</option>
+												</select>
 											</div>
 											<div class="col-xs-4">
-												<input type="date" name="end_date" class="form-control datepicker">
+												<select class="form-control category_name" name="category">
+													<option value="">Select Value</option>
+												</select>
 											</div>
 											<div class="col-xs-2">
-												<button type="button" name="button" class="btn btn-primary">Submit</button>
+												<button type="submit" name="button" class="btn btn-primary" style="background-color: #F5BA13;
+    box-shadow: 0 3px 0 0 #a1790c;
+    border: 0 none;
+    color: #000;
+    width: 100%;
+    margin-bottom: 10px;">Submit</button>
 											</div>
-
-
+										</form>
 
 									</div>
-									<div class="col col-md-3 col-sm-3 col-xs-3">
+									<!-- <div class="col col-md-3 col-sm-3 col-xs-3">
 										<h3>Sort by</h3>
 										<select class="form-control" name="">
 											<option value="">Choose</option>
@@ -83,7 +96,7 @@
 											<option value="">Price</option>
 											<option value="">Availability</option>
 										</select>
-									</div>
+									</div> -->
 								</div>
 				      </div>
 				    </div>
@@ -93,7 +106,7 @@
 
 			</div>
 		</div>
-		<hr> -->
+		<hr>
 		<div class="">
 
 			<% @event.each do |f| %>
@@ -131,6 +144,8 @@
 														<i class="fa fa-star sim-stars" aria-hidden="true" style="color:#F5BA13;"></i>
 														<i class="fa fa-star-half-o sim-stars" aria-hidden="true" style="color:#F5BA13;"></i>
 													</span><br>
+													<h5><b>Package Type:</b> <%= f['PackageType'].titleize %></h5>
+													<h5><b>Event Type:</b> <%= f['EventType'].titleize %></h5>
 													<h5><b>Room type:</b> <%= hotel['Room_type']%></h5>
 													<!-- <button type="button" name="button" class="btn btn-primary change_hotel">Change hotel</button> -->
 													<% if hotel['description'].blank? %>
@@ -389,14 +404,35 @@
 		$("#PackageModal").modal('show');
 	});
 
-	// if ($(".try_it").val() == []) {
-	// 	// alert("hihihihiihihihii");
-	// 	$(".row_med").hide();
-	// }
+	$(document).ready(function(){
+		$(document).on('change', "select[name='event_name']",function(){
+			// alert("kkkk");
+			var event_name = $(this).val();
+			// alert(event_name);
+			$.ajax({
+				url: "/event_data/",
+				type: "post",
+				data: {event_name : event_name },
+				dataType: 'json',
+				success : function(response) {
+					console.log(response);
+					var category = '<option value=" ">Select</option>';
+					$.each(response, function(i,o){
+						category += "<option value='"+o+"'>" + o + "</option>"
+					});
+					$(".category_name").html(category);
+				}
+			});
+		});
 
-	// if (typeof name[] !== 'undefined' && name[] !== null) {
-	// 	alert("P");
-	// }
-
+		$(document).on('change', "select[name='category']", function(){
+			var event_name = $("select[name='event_name']").val();
+			var category = $("select[name='category']").val();
+			// alert(event_name);
+			// alert(category);
+			var action_url = "/packages_info/"+event_name+"/"+ category
+			$('.event_change').attr('action', action_url);
+		});
+	});
 </script>
 <%= render 'layouts/footer'%>

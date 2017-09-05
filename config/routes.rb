@@ -95,5 +95,5 @@ Rails.application.routes.draw do
   match '/packages_info/:event_name/:category' => 'staticpage#get_packages', :via => [:get, :post]
   get '/stats/:category/:event' => 'staticpage#stats'
   get '/hotel_detail/:hotel_name' => 'staticpage#hotel_info_redirect'
-
+  post '/event_data' => 'staticpage#event_data'
 end

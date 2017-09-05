@@ -714,9 +714,13 @@ end
       @pic = '/assets/images/games/KSGAthletics.jpg'
     end
 
+    if request.post?
+      url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetPackages?eventGroup=#{@event_name}&group=#{@category_name}")
+    else
+      url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetPackages?eventGroup=Athletics&group=Platinum")
+    end
 
 
-    url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetPackages?eventGroup=#{@event_name}&group=#{@category_name}")
     puts "???????????????????????????????/////////////////////////////////////"
     puts url
     data = get_function(url)
@@ -726,6 +730,8 @@ end
       data1['id'] = i['Id']
       data1['Amount'] = i['PackageAmount']
       data1['Code'] = i['UniquePackageCode'].first
+      data1['PackageType'] = i['PackageGroupName'].to_s
+      data1['EventType'] = i['Functions'][0]['FunctionGroupName']
       data1['Hotel'] = []
       data1['Event'] = []
 
@@ -844,6 +850,56 @@ end
     end
 
   end
+
+
+  def event_data
+    # url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetFunctions?group="+params[:event_name])
+    # data = kingdomsg_api(url)
+    # puts data
+    # puts "==========="
+    # @events = []
+    # for i in data['Functions']
+    #   event = Event.find_by_event_code(i['Code'])
+    #   if event
+    #     data1 = {}
+    #     # data1['name'] = event.name
+    #     # data1['venue'] = event.venue
+    #     # data1['gender'] = event.gender
+    #     data1['date'] = event.date.strftime("%d %b %y")
+    #     # data1["start_time"] = event.start_time
+    #     data1["time"] = event.start_time.strftime("%I:%M %p")+" - "+event.end_time.strftime("%I:%M %p")
+    #     data1['event_id'] = event.id
+    #     data1['event_uid'] = i['Id']
+    #     data1['event_code'] = i['Code']
+    #     cat  =[]
+    #     for j in i['FeeTypes']
+    #       cat.push(j['Name'])
+    #     end
+    #     data1['cats'] = cat.sort
+    #     puts data1['cats']
+    #     @events.push(data1)
+    #   end
+    #   @events= @events.sort_by{ |hsh| hsh['date'] }.reverse!
+    # end
+    category = {
+      'Athletics' => '["Platinum", "Gold", "Silver", "Silver-Brs", "Bronze"]',
+      'Rugby+Sevens' => '["Gold", "Silver", "Silver-Brs", "Bronze"]',
+      'Netball' => '["Silver"]',
+      'Swimming' => '["Silver"]',
+      'Opening+Ceremony' => '["Silver"]'
+    }
+
+    if category.key?params[:event_name]
+      @response = params[:event_name]
+      @array = category[@response]
+    end
+
+   respond_to do |format|
+      format.json { render json: @array }
+    end
+
+ end
+
 
 
 
