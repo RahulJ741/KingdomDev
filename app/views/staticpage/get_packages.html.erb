@@ -60,10 +60,10 @@
 								<div class="row" style="padding-bottom: 20px;">
 									<div class="col col-md-12 col-sm-12 col-xs-12">
 										<h3>Filter by</h3>
-										<form class="form event_change" action="" method="post">
+										<form class="form event_change" action="" method="post" id="change_category">
 											<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 											<div class="col-xs-5 select_event">
-												<select class="form-control" name="event_name">
+												<select class="form-control required" name="event_name" required="true" id="event_name">
 													<option value="">Select Event</option>
 													<option value="Athletics">Athletics</option>
 													<option value="Netball">Netball</option>
@@ -73,12 +73,12 @@
 												</select>
 											</div>
 											<div class="col-xs-5 select_category">
-												<select class="form-control category_name" name="category">
+												<select class="form-control category_name required" name="category" required="true">
 													<option value="">Select Category</option>
 												</select>
 											</div>
 											<div class="col-xs-2">
-												<button type="submit" name="button" class="btn btn-primary" style="background-color: #F5BA13; box-shadow: 0 3px 0 0 #a1790c;
+												<button type="submit" name="button" id="submit_event" class="btn btn-primary" style="background-color: #F5BA13; box-shadow: 0 3px 0 0 #a1790c;
     border: 0 none; color: #000; width: 100%; margin-bottom: 10px;">Submit</button>
 											</div>
 										</form>
@@ -215,6 +215,8 @@
 
 		<% end %>
 	</div>
+
+
 
 </section>
 
@@ -436,13 +438,34 @@
 			// });
 		});
 
-		$(document).on('change', "select[name='category']", function(){
+		// $(document).on('click', "#fetch", function(){
+		// 	$.ajax({
+		// 		url: '/get_whole_data',
+		// 		type: "post",
+		// 		dataType: "json",
+		// 		success : function(response){
+		// 			console.log(response);
+		// 			$("#text_try").val(response);
+		// 		}
+		// 	});
+		// });
+
+		$(document).on('click', "select[name='event_name'], select[name='category']", function(){
 			var event_name = $("select[name='event_name']").val();
-			var category = $("select[name='category']").val();
-			var action_url = "/packages_info/"+event_name+"/"+ category
-			$('.event_change').attr('action', action_url);
+			setTimeout(function(){
+				var category = $("select[name='category']").val();
+				var action_url = "/packages_info/"+event_name+"/"+ category
+				$('.event_change').attr('action', action_url);
+			}, 300);
+			// var category = $("select[name='category']").val();
+			// var action_url = "/packages_info/"+event_name+"/"+ category
+			// $('.event_change').attr('action', action_url);
 		});
 	});
+
+
+
+
 
 
 	function event(event_name){
@@ -454,7 +477,7 @@
 			dataType: 'json',
 			success : function(response) {
 				console.log(response);
-				var category = '<option value=" ">Select Category</option>';
+				var category = '<option value="All_Categories" selected>All_Categories</option>';
 				$.each(response, function(i,o){
 					category += "<option value='"+o+"'>" + o + "</option>"
 				});
@@ -466,5 +489,8 @@
 			}
 		});
 	}
+
+
+
 </script>
 <%= render 'layouts/footer'%>

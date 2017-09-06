@@ -716,7 +716,12 @@ end
     end
 
     if request.post?
-      url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetPackages?eventGroup=#{@event_name}&group=#{@category_name}")
+      if not @category == "All_Categories"
+        url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetPackages?eventGroup=#{@event_name}&group=#{@category_name}")
+      else
+        url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetPackages?eventGroup=#{@event_name}")
+      end
+
     else
       url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetPackages?eventGroup=Athletics&group=Platinum")
     end
@@ -901,7 +906,13 @@ end
 
  end
 
-
+ # def whole_data
+ #   url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetFunctions")
+ #   data = kingdomsg_api(url)
+ #   respond_to do |data1|
+ #     data1.json { render json: data }
+ #   end
+ # end
 
 
 

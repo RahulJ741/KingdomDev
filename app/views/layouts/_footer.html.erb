@@ -1053,6 +1053,29 @@ $(document).ready(function(){
 			});
 
 
+
+			$("#change_category").validate({
+				onfocusout: function(e) {
+						 this.element(e);
+					},
+					rules: {
+						event_name: {
+							required: true
+						},
+						category :{
+							required:true
+						}
+					},
+					messages:{
+						event_name:{
+							required: ""
+						},
+						category: {
+							required: ""
+						}
+					}
+
+			});
 			// $('#reset').validate({
       //            onfocusout: function(e) {
       //               this.element(e);
