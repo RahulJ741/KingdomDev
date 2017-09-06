@@ -477,7 +477,7 @@
 			dataType: 'json',
 			success : function(response) {
 				console.log(response);
-				var category = '<option value="All_Categories" selected>All_Categories</option>';
+				var category = '<option value="All_Categories" selected>Select Category</option>';
 				$.each(response, function(i,o){
 					category += "<option value='"+o+"'>" + o + "</option>"
 				});
