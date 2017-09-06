@@ -402,6 +402,7 @@
 		$("#PackageModal").modal('show');
 	});
 	var cat_name = "";
+	var clicked = 0;
 	$(document).ready(function(){
 		var url = $(location).attr('href');
 		var test = url.split("/");
@@ -421,6 +422,7 @@
 		cat_name = test[5];
 		$(document).on('click', "select[name='event_name']",function(){
 			var event_name = $(this).val();
+			clicked = 1;
 			event(event_name);
 			// $.ajax({
 			// 	url: "/event_data/",
@@ -452,6 +454,7 @@
 
 		$(document).on('click', "select[name='event_name'], select[name='category']", function(){
 			var event_name = $("select[name='event_name']").val();
+			clicked = 1;
 			setTimeout(function(){
 				var category = $("select[name='category']").val();
 				var action_url = "/packages_info/"+event_name+"/"+ category
@@ -461,6 +464,14 @@
 			// var action_url = "/packages_info/"+event_name+"/"+ category
 			// $('.event_change').attr('action', action_url);
 		});
+
+		if (clicked == 0) {
+			var url = $(location).attr('href');
+			var test = url.split("/");
+			var action_url = "/packages_info/"+test[4]+"/"+ test[5]
+			$('.event_change').attr('action', action_url);
+		}
+
 	});
 
 
