@@ -131,7 +131,7 @@
 													<!-- <a href="#"> <h5 style="padding-left:15%;">View details</h5></a> -->
 												</div>
 												<div class="col col-sm-7 col-xs-7" style="padding-left: 0px;">
-													<a href="/hotel_detail/<%= hotel['Hotelname'] %>"><h3 style="margin-top:0px;"><%= hotel['Hotelname'] %></h3></a>
+													<h3 style="margin-top:0px;"><%= hotel['Hotelname'] %></h3>
 													<!-- <p style="color:#696969;">hotel details</p> -->
 													<span>
 														<i class="fa fa-star sim-stars" aria-hidden="true" style="color:#F5BA13;"></i>
@@ -150,7 +150,7 @@
 															<summary>Hotel Description</summary>
 															<%= hotel['description'] %>
 														</details> -->
-														<!-- <a href="/hotel_detail/<%= hotel['Hotelname'] %>"><button type="button" class="btn btn-primary" name="button">Hotel info</button></a> -->
+														<a href="/hotel_detail/<%= hotel['Hotelname'] %>"><button type="button" class="btn btn-primary" name="button">Hotel info</button></a>
 														<!-- <button type="button" name="button" class="btn btn-primary">Detail</button> -->
 													<%end%>
 												</div>
@@ -214,6 +214,10 @@
 
 
 		<% end %>
+	</div>
+
+	<div class="test_ajax">
+		<h3>hihihihiihihihii</h3>
 	</div>
 
 
@@ -306,6 +310,7 @@
 	.ibf img {
 		height: 60% !important;
 	}
+
 
 
 }
@@ -406,6 +411,7 @@
 	$(document).ready(function(){
 		var url = $(location).attr('href');
 		var test = url.split("/");
+		get_event_data();
 		// change this when uploading to kingdomsg/kingdomsg2018
 		// alert(url);
 		// alert(test[4]);
@@ -435,7 +441,7 @@
 			// 		$.each(response, function(i,o){
 			// 			category += "<option value='"+o+"'>" + o + "</option>"
 			// 		});
-			// 		$(".category_name").html(category);
+			// 		$(".category_name").html(category);</a>
 			// 	}
 			// });
 		});
@@ -498,6 +504,22 @@
 					cat_name = "";
 				}
 			}
+		});
+	}
+
+
+	function get_event_data(){
+		$.ajax({
+			url: "/pack_all",
+			type: "get",
+			dataType: 'text',
+			success : function(response) {
+				console.log(response);
+				alert(response);
+
+				// $(".test_ajax").html(print);
+			}
+
 		});
 	}
 

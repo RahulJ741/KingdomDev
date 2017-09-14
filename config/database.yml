@@ -8,12 +8,12 @@ default: &default
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  # database: Kingdom_peter
-  database: kingdomsport
+  database: Kingdom_peter
+  # database: kingdomsport
   pool: 20
   username: root
-  # password: 'infiny123'
-  password: 'infiny2!@#'
+  password: 'infiny123'
+  # password: 'infiny2!@#'
   host: localhost
   # socket: /opt/local/var/run/mysql5/mysqld.sock
 
@@ -21,12 +21,12 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  # database: Kingdom_peter
-  database: kingdomsport
+  database: Kingdom_peter
+  # database: kingdomsport
   pool: 20
   username: root
-  # password: 'infiny123'
-  password: 'infiny2!@#'
+  password: 'infiny123'
+  # password: 'infiny2!@#'
   host: localhost
   # socket: /opt/local/var/run/mysql5/mysqld.sock
 
@@ -37,12 +37,12 @@ test:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  # database: Kingdom_peter
-  database: kingdomsport
+  database: Kingdom_peter
+  # database: kingdomsport
   pool: 5
   username: root
-  # password: 'infiny123'
-  password: 'infiny2!@#'
+  password: 'infiny123'
+  # password: 'infiny2!@#'
   host: localhost
   # socket: /opt/local/var/run/mysql5/mysqld.sock
 
@@ -50,11 +50,11 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  # database: Kingdom_peter
-  database: kingdomsport
+  database: Kingdom_peter
+  # database: kingdomsport
   pool: 20
   username: root
-  # password: 'infiny123'
-  password: 'infiny2!@#'
+  password: 'infiny123'
+  # password: 'infiny2!@#'
   host: localhost
   # socket: /opt/local/var/run/mysql5/mysqld.sock

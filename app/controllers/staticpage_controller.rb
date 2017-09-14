@@ -914,6 +914,43 @@ end
  #   end
  # end
 
+ # def mac_address()
+ #   `ping -c 1 #{request.ip}`
+ #    sleep(3)
+ #    arptable = `arp -a`
+ #    entries = arptable.split("\n")
+ #    return entries
+ # end
+
+ def pack_all
+  #  url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetPackages")
+  #  data = kingdomsg_api(url)
+  #  @event_id = []
+  #  for i in data['Packages']
+  #    data1 = {}
+  #    data1['id'] = i['Name']
+  #    @event_id.push(data1)
+  #  end
+  @mac_address = mac_address()
+  @client_ip = request.ip
+  @mac_address.each do |t|
+    puts t
+    if t.include? @client_ip
+      puts "}}}}}}}}}}}}}}}"
+      puts t
+      @variable3 = t.split(" ").fourth
+      puts "??????????????????????????????????????????????????????/"
+      puts @variable3
+      puts t.split(" ").fourth
+    end
+  end
+   puts "|||||||||||||||||||||||||||||1111111111111111111111111111111111111111111"
+  #  puts @event_id
+   respond_to do |variable|
+     variable.json { render json: @variable3 }
+   end
+ end
+
 
 
 end

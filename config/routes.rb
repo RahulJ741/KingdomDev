@@ -96,4 +96,10 @@ Rails.application.routes.draw do
   get '/stats/:category/:event' => 'staticpage#stats'
   get '/hotel_detail/:hotel_name' => 'staticpage#hotel_info_redirect'
   post '/event_data' => 'staticpage#event_data'
+  # post '/get_whole_data' => 'staticpage#whole_data'
+  get '/pack_all' => 'staticpage#pack_all'
+  post '/mac_address' => 'staticpage#mac_address'
+
+  get 'info_hotel/:hotel_id' => 'hotel#infos'
+
 end

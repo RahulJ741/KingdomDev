@@ -79,52 +79,44 @@ class HotelController < ApplicationController
   def accommodation
 
 
-    # url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetHotels")
-    #
-    # http = Net::HTTP.new(url.host, url.port)
-    # http.use_ssl = true
-    # http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-    #
-    # request1 = Net::HTTP::Get.new(url)
-    # request1["apikey"] = 'wmQ87NZhMvWx5ZvrrStJPr9FG9WQ0wOSGVXxbUKDbjAuZC6k42M3x9GOzFt2umSQhRGylMwmBmlcU'
-    # request1["appusername"] = 'aaa@aaa.com'
-    # request1["apppassword"] = 'aaa@aaa.com'
-    # request1["content-type"] = 'application/json'
-    # request1["cache-control"] = 'no-cache'
-    #
-    #
-    # response = http.request(request1)
-    # # puts response.read_body
-    # data = JSON.parse(response.body)
-    # @hotels = data['Hotels'].pluck('Id','Name','Stars')
-    # # @hotels[11][2]=2
-    # puts @hotels.inspect
-    # if request.post?
-    #   @hotels = @hotels.select{ |h| h[2].to_i== params[:star_rating].to_i }
-    #   # @hotels = Hotel.star_rating(params[:star_rating]) if params[:star_rating].present?
-    #   @opt_val = params[:star_rating]
-    # end
-    #
-    #  @cart_count = Cart.where(:user_id => session[:user_id]).count
+    url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetHotels")
 
-    hotel = Hotel.all
+    data = kingdomsg_api(url)
 
+    # puts data
     @hotel = []
-    for i in hotel
-      data1 = {}
-        # url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetHotels")
-        # data = kingdomsg_api(url)
-        # catagory =  (data['FunctionInfo']['FeeTypes'].select {|cat| cat["Code"] == i.item_cat_code })[0]
 
-        # event = Event.find(i.item_id)
-        data1['id'] = i.id
-        data1['name'] = i.name
-        data1['image'] = i.pics
-        data1['star'] = i.star_rating
-        data1['address'] = i.address
-        # data1['city'] = i.city
-      end
+    for i in data['Hotels']
+      data1 ={}
+      data1['id']  = i['Id']
+      data1['name'] = i['Name']
+      data1['description'] = i['Description']
+      # data1['address'] = i['Address1']
+      # data1['city'] = i['City']
+      # data1['email'] = i['Email']
+      # data1['website'] = i['Website']
+      data1['star'] = i['Stars']
+      # data1['venue'] = i['Venue']
+
       @hotel.push(data1)
+    end
+
+    # @hotel = []
+    # for i in hotel
+    #   data1 = {}
+    #     # url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetHotels")
+    #     # data = kingdomsg_api(url)
+    #     # catagory =  (data['FunctionInfo']['FeeTypes'].select {|cat| cat["Code"] == i.item_cat_code })[0]
+    #
+    #     # event = Event.find(i.item_id)
+    #     data1['id'] = i.id
+    #     data1['name'] = i.name
+    #     data1['image'] = i.pics
+    #     data1['star'] = i.star_rating
+    #     data1['address'] = i.address
+    #     # data1['city'] = i.city
+    #   end
+    #   @hotel.push(data1)
 
 
 
@@ -139,5 +131,69 @@ class HotelController < ApplicationController
     end
 
   end
+
+
+  def infos
+    if session[:user_id]
+      @current_user = User.find(session["user_id"])
+      puts session[:user_id]
+      @cart_count = Cart.where(:user_id => session[:user_id]).count
+    else
+      @current_user = nil
+    end
+
+    url = URI('https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetHotelInfo?hotelid='+params["hotel_id"])
+    data = kingdomsg_api(url)
+
+    @info = data['HotelInfo']
+
+    # for i in data['HotelInfo']
+    #   data1 = {}
+    #   data1['name'] = i['Name']
+    #   data1['id'] = i['Id']
+    #   data1['description'] = i['Description']
+    #   data1['address'] = i['Address1']
+    #   data1['city'] = i['City']
+    #   data1['email'] = i['Email']
+    #   data1['website'] = i['Website']
+    #   data1['star'] = i['Stars']
+    #   data1['venue'] = i['Venue']
+    #   data1['rooms'] = []
+    #   data1['interior_pics'] = []
+    #   data1['google_url'] = i['MapLinkUrl']
+    #   data1['contact'] = i['Mobile']
+    #
+    #   for j in i['Rooms']
+    #     data2 = {}
+    #     data2['id'] = j['Id']
+    #     data2['code'] = j['Code']
+    #     data2['name'] = j['Name']
+    #     data2['description'] = j['Description']
+    #     data2['max_people'] = j['MaxOccupancy']
+    #     data2['start_date'] = j['Range'].first['Date']
+    #     data2['end_date'] = j['Range'].last['Date']
+    #     data2['rate'] = j['Range'].first['Rate']
+    #     data2['available_rooms'] = j['Range'].first['Inventory']
+    #     data2['pics'] = []
+    #
+    #     @ary2 = j['Photos'].split(',')
+    #     for k in @ary2
+    #       data2.push(k)
+    #     end
+    #
+    #     data1['rooms'].push(data2)
+    #   end
+    #
+    #   @ary = i['Photos'].split(',')
+    #   for m in @ary
+    #     data1['interior_pics'].push(m)
+    #   end
+    #
+    #   @info.push(data1)
+    # end
+
+  end
+
+
 
 end
