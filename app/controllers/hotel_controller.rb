@@ -1,5 +1,5 @@
 class HotelController < ApplicationController
-
+  skip_before_action :verify_authenticity_token
   require 'uri'
   require 'net/http'
 
@@ -83,6 +83,28 @@ class HotelController < ApplicationController
 
     data = kingdomsg_api(url)
 
+    @image_url = {
+      "South Pacific Plaza" => 'http://kingdomsg.com/kingdomsg2018/assets/images/south-pacific-plaza021.jpg',
+      "Palazzo Versace" => 'http://kingdomsg.com/kingdomsg2018/assets/images/pallazo-versace-hotel01.jpg',
+      "Seaworld Resort" => 'http://kingdomsg.com/kingdomsg2018/assets/images/south-pacific-plaza021.jpg',
+      "The Star" => 'http://kingdomsg.com/kingdomsg2018/assets/images/south-pacific-plaza021.jpg',
+      "The Bay Apartments" => 'http://kingdomsg.com/kingdomsg2018/assets/images/bay-apartments02.png',
+      "Swiss-Belhotel Brisbane" => 'http://kingdomsg.com/kingdomsg2018/assets/images/swiss-belhotelo02.png',
+      "QT Gold Coast" => 'http://kingdomsg.com/kingdomsg2018/assets/images/south-pacific-plaza021.jpg',
+      "Aruba Surf Resort" => 'http://kingdomsg.com/kingdomsg2018/assets/images/south-pacific-plaza021.jpg',
+      "Pacific Resort Broadbeach" => 'http://kingdomsg.com/kingdomsg2018/assets/images/pacific-resort-broadbeach.jpg',
+      "Broadbeach Travel Inn Apartments" => 'http://kingdomsg.com/kingdomsg2018/assets/images/south-pacific-plaza021.jpg',
+      "Circle on Cavill" => 'http://kingdomsg.com/kingdomsg2018/assets/images/south-pacific-plaza021.jpg',
+      "Maldives Resort" => 'http://kingdomsg.com/kingdomsg2018/assets/images/south-pacific-plaza021.jpg',
+      "The Chancellor Lakeside" => 'http://kingdomsg.com/kingdomsg2018/assets/images/chancellor-executive02.png',
+      "Synergy Broadbeach" => 'http://kingdomsg.com/kingdomsg2018/assets/images/synergy-broadbeach-hotel02.png',
+      "Artique Resort" => 'http://kingdomsg.com/kingdomsg2018/assets/images/artique-resort-hotel023.jpg',
+      "Quest Spring Hill" => 'http://kingdomsg.com/kingdomsg2018/assets/images/Quest-spring-hill-brisbane02.png',
+      "The Chancellor Executive" => 'http://kingdomsg.com/kingdomsg2018/assets/images/chancellor-executive02.png',
+      "Montego Sands Resort" => 'http://kingdomsg.com/kingdomsg2018/assets/images/south-pacific-plaza021.jpg',
+      "Baronnet Apartments" => 'http://kingdomsg.com/kingdomsg2018/assets/images/baronnet-apartments02.png',
+      "Ocean Pacific Resort" => 'http://kingdomsg.com/kingdomsg2018/assets/images/ocean-pacific-resort022.jpg',
+    }
     # puts data
     @hotel = []
 
@@ -90,7 +112,9 @@ class HotelController < ApplicationController
       data1 ={}
       data1['id']  = i['Id']
       data1['name'] = i['Name']
+      tert = i['Name']
       data1['description'] = i['Description']
+      data1['image'] = @image_url[tert]
       # data1['address'] = i['Address1']
       # data1['city'] = i['City']
       # data1['email'] = i['Email']
@@ -145,6 +169,7 @@ class HotelController < ApplicationController
     url = URI('https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetHotelInfo?hotelid='+params["hotel_id"])
     data = kingdomsg_api(url)
 
+
     @info = data['HotelInfo']
 
     # for i in data['HotelInfo']
@@ -191,6 +216,45 @@ class HotelController < ApplicationController
     #
     #   @info.push(data1)
     # end
+
+  end
+
+  def images
+    @image_url = {
+      "South Pacific Plaza" => 'http://kingdomsg.com/kingdomsg2018/assets/images/south-pacific-plaza021.jpg',
+      "Palazzo Versace" => 'http://kingdomsg.com/kingdomsg2018/assets/images/pallazo-versace-hotel01.jpg',
+      # "Seaworld Resort" => 'http://kingdomsg.com',
+      # "The Star" => 'http://kingdomsg.com',
+      "The Bay Apartments" => 'http://kingdomsg.com/kingdomsg2018/assets/images/bay-apartments02.png',
+      "Swiss-Belhotel Brisbane" => 'http://kingdomsg.com/kingdomsg2018/assets/images/swiss-belhotelo02.png',
+      # "QT Gold Coast" => 'http://kingdomsg.com',
+      # "Aruba Surf Resort" => 'http://kingdomsg.com',
+      "Pacific Resort Broadbeach" => 'http://kingdomsg.com/kingdomsg2018/assets/images/pacific-resort-broadbeach.jpg',
+      # "Broadbeach Travel Inn Apartments" => 'http://kingdomsg.com',
+      # "Circle on Cavill" => 'http://kingdomsg.com',
+      # "Maldives Resort" => 'http://kingdomsg.com',
+      "The Chancellor Lakeside" => 'http://kingdomsg.com/kingdomsg2018/assets/images/chancellor-executive02.png',
+      "Synergy Broadbeach" => 'http://kingdomsg.com/kingdomsg2018/assets/images/synergy-broadbeach-hotel02.png',
+      "Artique Resort" => 'http://kingdomsg.com/kingdomsg2018/assets/images/artique-resort-hotel023.jpg',
+      "Quest Spring Hill" => 'http://kingdomsg.com/kingdomsg2018/assets/images/Quest-spring-hill-brisbane02.png',
+      "The Chancellor Executive" => 'http://kingdomsg.com/kingdomsg2018/assets/images/chancellor-executive02.png',
+      # "Montego Sands Resort" => 'http://kingdomsg.com',
+      "Baronnet Apartments" => 'http://kingdomsg.com/kingdomsg2018/assets/images/baronnet-apartments02.png',
+      "Ocean Pacific Resort" => 'http://kingdomsg.com/kingdomsg2018/assets/images/ocean-pacific-resort022.jpg',
+    }
+
+    if @image_url.key?params[:hotel_name]
+      @name = params[:hotel_name]
+      @response_img = @image_url[@name]
+    else
+      @response_img = "http://kingdomsg.com/kingdomsg2018/assets/images/south-pacific-plaza021.jpg"
+    end
+    puts "::::::::::::::::::::::::::::::::::::::::::::::<<<<<<<<<<<<<<<<<<<<"
+    puts @response_img
+    respond_to do |format|
+       format.text { render json: @response_img }
+    end
+
 
   end
 

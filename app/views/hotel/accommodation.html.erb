@@ -75,7 +75,7 @@
 								<div class="col-xs-12 col-sm-3 col-md-3 pad_none hotels-first4-outer">
 									<a href="/info_hotel/<%= f['id'] %>" >
 										<div class="col-md-12 pad_none jupiter-hotel-first">
-											<img src="/assets/images/synergy-broadbeach-hotel02.png" alt="">
+											<img src="<%= f['image'] %>" alt="">
 											<div class="col-xs-12 pad_none jupiter3-hotel-rating-sec">
 												<h4><%= f['name'] %></h4>
 												<!--<span><img src="< ?php echo base_url();?>assets/images/ratings2w.png" alt=""></span>-->
@@ -319,6 +319,28 @@
 
 
 <script>
+
+// $(document).ready(function(){
+// 	var hotel_name9 = $(".pallazo-versace-left-sec h3").text().trim();
+// 	console.log("}}}}}}}}}}}}}}}}}}}");
+// 	console.log(hotel_name9);
+// 	// alert(hotel_name9);
+// 	$.ajax({
+// 		url: '/hotel_images',
+// 		type: "post",
+// 		dataType: 'text',
+// 		data: {hotel_name : hotel_name9},
+// 		success: function(response){
+// 			console.log("PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP");
+// 			console.log(response);
+// 			// alert(response);
+// 		},
+// 		error: function (textStatus, errorThrown) {
+//       console.log("ASdasdsa");
+//   	}
+// 	});
+// });
+
 
 function getHotel(name){
 

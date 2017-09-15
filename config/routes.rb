@@ -101,5 +101,5 @@ Rails.application.routes.draw do
   post '/mac_address' => 'staticpage#mac_address'
 
   get 'info_hotel/:hotel_id' => 'hotel#infos'
-
+  post '/hotel_images/' => 'hotel#images'
 end
