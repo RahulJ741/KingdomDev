@@ -14,6 +14,7 @@
 					<h3>
 						<%= @info['Name'] %>
 					</h3>
+					<!-- <a href="<%= @info['MapLinkUrl'] %>" target="_blank">View map</a> -->
 					<h6 style="display:none"><%= form_authenticity_token %></h6>
 					<p>
 						<i class="fa fa-map-marker map-marker-new3" aria-hidden="true"></i>
@@ -70,22 +71,22 @@
 
   					<div class="row" style="box-shadow: 2px 2px 2px 2px #a9a9a9; margin-bottom:30px;">
 
-
-  						<div class="col-xs-12 col-sm-12 col-md-12 pad_none defination-luxury-inner-left" style="margin-bottom: 20px !important;">
+  						<div class="col-xs-12 col-sm-12 col-md-12 pad_none defination-luxury-inner-left" style="/* margin-bottom: 20px !important; */">
   							<div class="row">
   								<div class="col col-xs-6">
-  									<h6 style="text-decoration: underline; font-weight: bold; padding-left:10px; padding-top: 25px; font-size: 22px;"><%= rmf['Name'].split('-').first %></h6>
+  									<h6 style="text-decoration: underline; font-weight: bold; padding-left:10px; padding-top: 25px; font-size: 22px;"><%= rmf['Name'].split('-').first %> ( <%= rmf['Code'] %> )</h6>
   								</div>
   								<div class="col col-xs-6" style="padding-right: 25px; padding-top:25px;">
+
   									<% if @current_user.present? %>
 
   										<% if @current_user.middle_name.present? && @current_user.address.present? && @current_user.city.present? && @current_user.state.present? && @current_user.country.present? && @current_user.post_code.present? && @current_user.first_name.present? && @current_user.last_name.present? %>
-  											<button type="button" class="btn btn-warning pull-right Shopcart" name="button" data-button='{"hotel_id": "<%= @info['Id'] %>","room_unique_id": "<%= rmf['Id'] %>","rate":"<%= rmf['Range'].first['Rate'] %>", "room_type":"<%= rmf['Name'].split("-").first %>"}' style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;" data-toggle="modal" data-target="#ShopModal"><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to cart</button>
+  											<button type="button" class="btn btn-warning pull-right Shopcart" name="button" data-button='{"room_unique_id": "<%= rmf['Id'] %>","rate":"<%= rmf['Range'].first['Rate'] %>", "room_type":"<%= rmf['Name'].split("-").first %>", "quantity": "1"}' style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;" data-toggle="modal" data-target="#ShopModal"><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to cart</button>
   										<%else%>
   											<button type="button" class="btn btn-warning pull-right Shopcart" name="button" style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;" data-toggle="modal" data-target="#UpdateprofileModal"><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to cart</button>
   										<%end%>
   									<% else %>
-  										<button type="button" class="btn btn-warning pull-right" name="button" data-button='{"room_id":"19","room_unique_id": "<%#= rmf.first %>","rate":"<%#= rmf.fourth.pluck("Rate").first %>"}' style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;" data-toggle="modal" data-target="#loginModal"><i class="fa fa-cart-plus" aria-hidden="true"></i>
+  										<button type="button" class="btn btn-warning pull-right" name="button" data-button='{"room_unique_id": "<%= rmf['Id'] %>","rate":"<%= rmf['Range'].first['Rate'] %>", "room_type":"<%= rmf['Name'].split("-").first %>", "quantity": "1"}' style="background-color:#F5BA13;box-shadow: 0 3px 0 0 #a1790c;border: 0 none;color: #000;" data-toggle="modal" data-target="#loginModal"><i class="fa fa-cart-plus" aria-hidden="true"></i>
   					 					Add to cart</button>
   									<% end %>
   								</div>
@@ -109,7 +110,8 @@
 							</div>
 							<hr>
   						<div class="col-xs-12 pad_none details-feature-out2 ">
-  							<h3 style=" margin-left: 12%;font-size: 19px; ">DETAILS</h3>
+  							<h3 style=" margin-left: 12%;font-size: 19px; text-decoration: underline; ">DETAILS:</h3>
+
   							<div class="col-xs-12 pad_none details-out-inner2" style="box-shadow: 0 0 0 0;">
   								<div class="col-xs-12 col-sm-6 col-md-6 details-out-inner-left2">
   									<p>

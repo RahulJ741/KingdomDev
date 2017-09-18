@@ -50,11 +50,11 @@ class ShoppingCartController < ApplicationController
           else
             data1['is_exceed'] = false
           end
-        elsif i.item = 'package'
+        elsif i.item == 'package'
           url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetPackage?packageid="+i.item_uid)
           data = kingdomsg_api(url)
           puts "???????????????????"
-          puts data
+          # puts data
           pack = data['Package']
           data1['cart_id'] = i.id
           data1['item_type'] = 'Package'
@@ -62,6 +62,19 @@ class ShoppingCartController < ApplicationController
           data1['amount'] = pack['PackageAmount']
           data1['quantity'] = 1
           data1['event_date'] = DateTime.parse(pack['HotelRooms'][0]['Range'].first['Date']).strftime("%d %b %y")+ " - " +DateTime.parse(pack['HotelRooms'][0]['Range'].last['Date']).strftime("%d %b %y")
+
+        elsif i.item == 'hotel'
+          url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetRoom?roomtypeid="+i.item_uid)
+          data = kingdomsg_api(url)
+          puts ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+          puts data['RoomInfo']
+          hotel = data['RoomInfo']
+          data1['cart_id'] = i.id
+          data1['item_type'] = 'Hotel'
+          data1['name'] = hotel['Name'].split("-").first
+          data1['quantity'] = 1
+          data1['amount'] = hotel['Range'].first['Rate']
+          data1['event_date'] = DateTime.parse(hotel['Range'].first['Date']).strftime("%d %b %y")+ " - " +DateTime.parse(hotel['Range'].last['Date']).strftime("%d %b %y")
         end
         @cart_data.push(data1)
       end
@@ -70,13 +83,19 @@ class ShoppingCartController < ApplicationController
     end
   end
 
-  # def add_cart
-  #   @cart = HotelShoppingCart.create(:user_id => params[:user_id],:room_type => params[:room_type],rate: params[:rate],hotel_id: params[:hotel_id],room_unique_id: params[:room_unique_id])
-  #   @cart.save()
-  #   puts "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH"
-  #   puts @cart.errors.full_messages
-  #   redirect_to :back, :flash => {:success => 'Added to cart'}
-  # end
+  def add_cart
+    @cart = Cart.find_by_user_id_and_item_uid(session[:user_id], params[:room_unique_id])
+    if @cart.present?
+      redirect_to :back, :flash => {:error => 'Already added to cart'}
+    else
+      @cart = Cart.create(user_id: params[:user_id], item_uid: params[:room_unique_id], item: 1, quantity: params['quantity'])
+      @cart.save()
+      puts "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH"
+      puts @cart.errors.full_messages
+      redirect_to :back, :flash => {:success => 'Added to cart'}
+    end
+
+  end
 
   def remove_from_cart_hotel
     @cart = HotelShoppingCart.find(params[:id]).destroy
@@ -377,7 +396,7 @@ class ShoppingCartController < ApplicationController
 
         response = kingdomsg_booking_api(url,data,booking_total,@freight,@cc_amount)
       end
-      
+
       if not @package_cart_data.blank?
         total = @package_cart_data.map {|s| s['amount'].to_f * s['quantity'].to_f}.reduce(0, :+)
         booking_total = total

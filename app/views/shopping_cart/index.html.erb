@@ -76,7 +76,7 @@
 												<% end %>
 
 
-											<% if i['item_type']=='Package' %>
+											<% if i['item_type']=='Package' || i['item_type']=='Hotel' %>
 												<td style="padding-top: 2px;padding-bottom: 2px;"class="number_val">N/A
 													<input type="number" style="display:none" class="form-control quantity" value="1" data-amount="<%= i['amount'] %>">
 												</td>
