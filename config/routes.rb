@@ -102,4 +102,10 @@ Rails.application.routes.draw do
 
   get 'info_hotel/:hotel_id' => 'hotel#infos'
   post '/hotel_images/' => 'hotel#images'
+
+  # changes here
+  # match '/404', to: "staticpage#not_found",       as: "not_found", :via => [:get, :post]
+  # match '/422', to: "staticpage#rejected",        as: "rejected", :via => [:get, :post]
+  # match '/500', to: "staticpage#something_wrong", as: "something_wrong", :via => [:get, :post]
+
 end

@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  # config.exceptions_app = self.routes
   protect_from_forgery with: :exception
   require 'uri'
   require 'net/http'

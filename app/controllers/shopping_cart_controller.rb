@@ -12,6 +12,18 @@ class ShoppingCartController < ApplicationController
     #   @o.error_message = "hihihihiihihihii"
     #   @o.save
     # end
+    @cart = Cart.where(:user_id => session[:user_id])
+    @cart.each do |gm|
+      url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetFunctionInfo?functionid="+gm.item_uid)
+      data = kingdomsg_api(url)
+      catagory =  (data['FunctionInfo']['FeeTypes'].select {|cat| cat["Code"] == gm.item_cat_code })[0]
+      if catagory.present?
+
+      else
+        Cart.delete(gm.id)
+        @cart_count = 0
+      end
+    end
 
     if MyPayment.where(user_id: session[:user_id]).all.blank?
       @is_new =true
@@ -33,23 +45,34 @@ class ShoppingCartController < ApplicationController
           data = kingdomsg_api(url)
           catagory =  (data['FunctionInfo']['FeeTypes'].select {|cat| cat["Code"] == i.item_cat_code })[0]
 
-          event = Event.find(i.item_id)
-          data1['cart_id'] = i.id
-          data1['item_type'] = 'Event'
-          data1['name'] = event.name+", "+catagory['Name']
-          data1['available'] = catagory['Available']
-          data1['amount'] =  catagory['Amount'].to_f % 1 == 0 ? catagory['Amount'].to_i : helpers.number_with_precision(catagory['Amount'].to_f, :precision => 2)
-          data1['quantity'] = i.quantity
-          data1['event_date'] = event.date.strftime("%d %b %y")
-          data1['start_time'] = event.start_time.strftime("%I:%M %p")
-          data1['end_date'] = event.end_time.strftime("%I:%M %p")
-          data1['code'] = catagory['Code']
-          if i.quantity.to_i > catagory['Available'].to_i
-            data1['is_exceed'] = true
-            @is_exceed = true
+          if catagory.present?
+            event = Event.find(i.item_id)
+            data1['cart_id'] = i.id
+            data1['item_type'] = 'Event'
+            data1['name'] = event.name+", "+catagory['Name']
+            data1['available'] = catagory['Available']
+            data1['amount'] =  catagory['Amount'].to_f % 1 == 0 ? catagory['Amount'].to_i : helpers.number_with_precision(catagory['Amount'].to_f, :precision => 2)
+            data1['quantity'] = i.quantity
+            data1['event_date'] = event.date.strftime("%d %b %y")
+            data1['start_time'] = event.start_time.strftime("%I:%M %p")
+            data1['end_date'] = event.end_time.strftime("%I:%M %p")
+            data1['code'] = catagory['Code']
+            if i.quantity.to_i > catagory['Available'].to_i
+              data1['is_exceed'] = true
+              @is_exceed = true
+            else
+              data1['is_exceed'] = false
+            end
+
           else
-            data1['is_exceed'] = false
+            # data1['cart_id'] = i.id
+            # Cart.delete(i.id)
+            # data1['quantity'] = 0
+            # @is_exceed = true
+
           end
+
+
         elsif i.item == 'package'
           url = URI("https://kingdomsg.eventsair.com/ksgapi/gc2018/tour/ksgapi/GetPackage?packageid="+i.item_uid)
           data = kingdomsg_api(url)

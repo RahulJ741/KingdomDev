@@ -147,9 +147,11 @@
 	$(document).ready(function(){
 		// $('#checkout_btn').attr('disabled', 'disabled');
 		// $('.offline').show();
+
 		<% if @is_exceed %>
 			$('.alert-danger').show();
 		<% end %>
+
 		$(document).on('click','.eventcart',function(){
 			if($(this).parents('.cat_box').find('.quantity').val()){
 				$('#eventModal').find('#item_id').val($(this).data('item_id'));
@@ -206,7 +208,7 @@
 	    		$.ajax({
 		          url : "/cart/update/", // the endpoint
 		          type : "post", // http method
-		          data : { item_id : item_id,quantity : quantity }, // data sent with the post request
+		          data : { item_id : item_id, quantity : quantity }, // data sent with the post request
 		          dataType: 'json',
 		          success : function(msg) {
 
